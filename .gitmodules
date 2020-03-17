@@ -1,12 +1,1 @@
-[submodule "pelican-plugins"]
-path = pelican-plugins
-url = git@github.com:getpelican/pelican-plugins.git
-[submodule "theme/bulrush"]
-path = theme/bulrush
-url = https://github.com/amitness/bulrush.git
-[submodule "themes/pneumatic"]
-path = themes/pneumatic
-url = https://github.com/iKevinY/pneumatic.git
-[submodule "themes/Flex"]
-path = themes/Flex
-url = https://github.com/alexandrevicenzi/Flex.git
+

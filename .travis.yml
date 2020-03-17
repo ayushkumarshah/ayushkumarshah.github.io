@@ -1,0 +1,16 @@
+language: python
+cache: pip
+branches:
+  only:
+    - source
+python:
+  - 3.5
+install:
+  - gem install sass
+  - npm i -g katex
+  - pip install -r requirements.txt
+  - git config --global user.email "ayush.kumar.shah@gmail.com"
+  - git config --global user.name "ayushkumarshah"
+
+script:
+  - fab publish:"Build site"

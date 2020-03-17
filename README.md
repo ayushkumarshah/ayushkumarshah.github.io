@@ -1,8 +1,8 @@
 # Personal Blog [![Build Status](https://travis-ci.org/amitness/amitness.github.io.svg?branch=source)](https://travis-ci.org/amitness/amitness.github.io)
 
-This repository hosts the code for my personal [blog](https://amitness.com).
+This repository hosts the code for my personal [blog](https://ayushkshah.com).
 
-The website is powered by [Pelican](http://getpelican.com/) — a static site generator written in Python — and uses a theme based on [bulrush](https://github.com/amitness/bulrush).
+The website is powered by [Pelican](http://getpelican.com/) — a static site generator written in Python — and uses a theme based on [pneumati ](https://github.com/iKevinY/pneumatic).
 
 
 ## Build Locally
@@ -52,7 +52,7 @@ And you should see the blog if you visit [http://localhost:8000](http://localhos
 
 If you're interested in writing a blog post for the website, you need to:
 
-- [Fork](https://github.com/amitness/amitness.github.io/fork) the repository
+- [Fork](https://github.com/ayushkumarshah/ayushkumarshah.github.io/fork) the repository
 - Write a blog post using Markdown in the `content` directory
 - Push the changes to a topic branch, like `an-example-article`, on *your* fork of the repository
 - Make a [pull request](https://help.github.com/articles/using-pull-requests/) against the `source` branch
@@ -67,4 +67,4 @@ The source code for generation of the blog is under MIT License. Content is copy
 
 ## Contact
 
-If you have any questions, you can [email](mailto:meamitkc@gmail.com) me.
+If you have any questions, you can [email](mailto:ayush.kumar.shah@gmail.com) me.

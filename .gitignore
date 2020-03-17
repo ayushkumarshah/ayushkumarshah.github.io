@@ -44,6 +44,9 @@ nosetests.xml
 coverage.xml
 *,cover
 
+#From mac
+.DS_Store
+
 # Translations
 *.mo
 *.pot
@@ -57,9 +60,9 @@ docs/_build/
 # PyBuilder
 target/
 
-pelican-plugins
-themes
-venv
+# pelican-plugins
+# themes
+.venv
 output
 *.pid
 
