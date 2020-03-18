@@ -1,8 +1,8 @@
-# Personal Blog [![Build Status](https://travis-ci.org/amitness/amitness.github.io.svg?branch=source)](https://travis-ci.org/amitness/amitness.github.io)
+# Personal Blog [![Build Status](https://travis-ci.org/ayushkumarshah/ayushkumarshah.github.io.svg?branch=source)](https://travis-ci.org/ayushkumarshah/ayushkumarshah.github.io)
 
 This repository hosts the code for my personal [blog](https://ayushkshah.com).
 
-The website is powered by [Pelican](http://getpelican.com/) — a static site generator written in Python — and uses a theme based on [pneumati ](https://github.com/iKevinY/pneumatic).
+The website is powered by [Pelican](http://getpelican.com/) — a static site generator written in Python — and uses a theme based on [pneumatic](https://github.com/iKevinY/pneumatic).
 
 
 ## Build Locally
