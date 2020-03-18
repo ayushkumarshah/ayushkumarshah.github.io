@@ -10,7 +10,7 @@ install:
   - npm i -g katex
   - pip install -r requirements.txt
   - git config --global user.email "ayush.kumar.shah@gmail.com"
-  - git config --global user.name "ayushkumarshah"
+  - git config --global user.name "Ayush Kumar Shah"
 
 script:
   - fab publish:"Build site"
