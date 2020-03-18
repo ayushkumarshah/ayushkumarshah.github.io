@@ -12,6 +12,11 @@ BIO_TEXT = 'Ideas & Thoughts'
 SITE_AUTHOR = 'Ayush Kumar Shah'
 INDEX_DESCRIPTION = 'Machine Learning Engineer .'
 
+SIDEBAR_LINKS = [
+    '<a href="/about/">About</a>',
+    '<a href="/contact/">Contact</a>',
+]
+
 ICONS_PATH = 'images/icons'
 
 GOOGLE_FONTS = [
@@ -19,8 +24,17 @@ GOOGLE_FONTS = [
     'Source Code Pro',
 ]
 
+SOCIAL_ICONS = [
+    ('mailto:ayushkumarshah@gmail.com', 'Email me', 'fa-envelope'),
+    ('http://github.com/ayushkumarshah', 'Browse my projects', 'fa-github'),
+    ('https://np.linkedin.com/in/ayush7', 'View Linkedin Profile', 'fa-linkedin'),
+    ('https://twitter.com/ayushkumarshah7', 'View Twitter Profile', 'fa-twitter'),
+    ('/atom.xml', 'Atom Feed', 'fa-rss'),
+]
+
 TWITTER_USERNAME = 'ayushkumarshah7'
 
+THEME_COLOR = '#FF8000'
 
 # Pelican settings
 RELATIVE_URLS = True
@@ -32,29 +46,9 @@ DEFAULT_PAGINATION = False
 SUMMARY_MAX_LENGTH = 42
 
 # Theme Location
-THEME = 'themes/Flex'
-JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
-JINJA_FILTERS = bulrush.FILTERS
-
-# Social widget
-SOCIAL = (
-    ('GitHub', 'https://github.com/ayushkumarshah'),
-    ('Twitter', 'https://twitter.com/ayushkumarshah7'),
-    ('Linkedin', 'https://np.linkedin.com/in/ayush7'),
-    ('Email', 'mailto:ayush.kumar.shah@gmail.com'),
-    ('Feed', '/atom.xml')
-)
-
-NAVBAR_LABEL = 'ayushkumarshah'
-
-DISPLAY_CATEGORIES_ON_MENU = False
-
-MENUITEMS = (
-    ('contact', '/contact/'),
-    ('archive', '/archives'),
-    ('about', '/about/'),
-)
-
+THEME = 'themes/pneumatic'
+# JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
+# JINJA_FILTERS = bulrush.FILTERS
 
 DEFAULT_PAGINATION = 4
 
@@ -109,7 +103,6 @@ MARKDOWN = {
     'output_format': 'html5',
 }
 
-
 PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['assets', 'neighbors', 'pelican_katex', 'sitemap', 'share_post']
 # ASSET_SOURCE_PATHS = ['static']
@@ -135,3 +128,6 @@ SITEMAP = {
         'pages': 'monthly',
     }
 }
+
+# Enable comments
+DISQUS_SITENAME = 'ayushkumarshah'
