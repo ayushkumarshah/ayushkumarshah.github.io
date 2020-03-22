@@ -140,7 +140,7 @@ visit
 
 Congratulations, you have generated your first website.
 
-[![First site](/images/first_site.png){.img-center}](https://ibb.co/ZJdh95N)
+[![First site](/images/first_site.png){.img-center}](https://ibb.co/wLVFGcf)
 
 Click the image to view the full sized image.
 
@@ -213,7 +213,7 @@ Open your browser and visit
 
 You should see your website in a new theme.
 
-[![Flex](/images/Flex.png){.img-center}](https://ibb.co/wLVFGcf)
+[![Flex](/images/Flex.png){.img-center}](https://ibb.co/ZJdh95N)
 
 **Congratulations**, you have completed the basic setup for Pelican. 
 
@@ -225,4 +225,4 @@ However, your site has no content. Start writing content in the [part 2](https:/
 - [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
 - [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
 
-Or, goto the [home-page of the article.](https://https://shahayush.com/drafts/web-develop-pelican-travis-intro)
+Or, goto the [home-page of the article.](https://shahayush.com/drafts/web-develop-pelican-travis-intro)
