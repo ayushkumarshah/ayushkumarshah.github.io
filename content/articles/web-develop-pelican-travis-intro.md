@@ -14,27 +14,32 @@ continuous integration pipelines, etc might have prevented  you from doing so.
 In this article, I will explain the complete steps to build your personal static website using a static site generator
 called [Pelican](https://docs.getpelican.com/en/stable/index.html), which is written in Python, deploy it on [GitHub
 Pages](https://pages.github.com/) along with continuous integration (CI) using [Travis-CI](https://travis-ci.org/) and
-linking it to your custom domain name, all without
-requiring the knowledge of HTML and CSS, databases or deployment pipelines. Furthermore, I will also explain the way to
-integrate a comment system called [Disqus](https://disqus.com/) in your site and also help you to link [Google analytics](https://analytics.google.com/analytics/web/) to your site so that you can analyze in-depth detail about the visitors on your website.
+linking it to your custom domain name, all without requiring the knowledge of HTML and CSS, databases or deployment
+pipelines. Furthermore, I will also explain the way to integrate a comment system called [Disqus](https://disqus.com/)
+in your site and also help you to link [Google analytics](https://analytics.google.com/analytics/web/) to your site so
+that you can analyze in-depth detail about the visitors on your website.
 
-The most striking advantage about this technique is that you can perform the complete process for free except the fee to register your domain name. You can also avoid this fee
-by hosting the site only on GitHub pages where you can host a website like `your_username.github.io`. The only
-prerequisite for completing this process is the basic knowledge of Python and Markdown for writing the articles. You
-might have used Markdown in jupyter notebook or in the `Readme.md` file of your GitHub repository. Don't
-worry if you are completely unaware about them. You can still manage to learn them through this article as they are
-extremely simple to catch up.
+The most striking advantage about this technique is that you can perform the complete process for free except the fee to
+register your domain name. You can also avoid this fee by hosting the site only on GitHub pages where you can host a
+website like `your_username.github.io`. The only prerequisite for completing this process is the basic knowledge of
+Python and Markdown for writing the articles. You might have used Markdown in jupyter notebook or in the `Readme.md`
+file of your GitHub repository. Don't worry if you are completely unaware about them. You can still manage to learn them
+through this article as they are extremely simple to catch up.
 
 ### Advantages of Pelican over wordpress
 
 You may wonder that the same thing can be achieved using wordpress and has a wider community compared to pelican. So,
 why use Pelican? I have listed a few advantages of Pelican over wordpress:
 
-1. **speed:** a static blog is going to be faster than a dynamically generated site, no matter how much you try to optimize your Wordpress site / cache / database. This site now serves up nothing more than HTML, CSS, and JS files.
-2. **simplicity:** as mentioned above, there's no need to set up, configure, and optimize your Wordpress installation. Simplicity in this sense also refers to the fact that this site is now powered by a smaller, simple to understand stack, rather than a giant and much more complex PHP stack that regularly attracts attackers...
-3. **improved workflow:** you can use your preferred editor and your preferred VCS to create and keep track of your blog posts. Markdown is a nice bonus as well (it's the sweet spot between a WYSIWYG editor and raw HTML).
-4. **mobility/deployment:** static site = easier to move around (just copy the files; there's no database to worry about) and
-  deploy (and often cheaper to deploy; you can do so for free with Github Pages, for example).
+1. **speed:** a static blog is going to be faster than a dynamically generated site, no matter how much you try to
+   optimize your Wordpress site / cache / database. This site now serves up nothing more than HTML, CSS, and JS files.
+2. **simplicity:** as mentioned above, there's no need to set up, configure, and optimize your Wordpress installation.
+   Simplicity in this sense also refers to the fact that this site is now powered by a smaller, simple to understand
+   stack, rather than a giant and much more complex PHP stack that regularly attracts attackers...
+3. **improved workflow:** you can use your preferred editor and your preferred VCS to create and keep track of your blog
+   posts. Markdown is a nice bonus as well (it's the sweet spot between a WYSIWYG editor and raw HTML).
+4. **mobility/deployment:** static site = easier to move around (just copy the files; there's no database to worry
+   about) and deploy (and often cheaper to deploy; you can do so for free with Github Pages, for example).
 
 Also, switching to Pelican means that I get to move off of Wordpress.com infrastracture, hence no more ads (and no need
 to pay $30/yr to get rid of them), no restrictions on the amount and type of content I upload, and being able to use my
@@ -42,13 +47,13 @@ own domain name (without having to pay for it), and of course not having to rely
 
 ## Let's get started
 
-For ease, I have divided the article into 7 parts as:
+For ease, I have divided the article into 6 parts as:
 
-- [Web development using Pelican and Travis-CI - Part 1: Setting up Pelican - Installation and Theme](https://ayushkumarshah.github.io/drafts/web-develop-pt1-pelican-setup)
-- [Web development using Pelican and Travis-CI - Part 2: Writing content using Markdown](https://ayushkumarshah.github.io/drafts/site-deploy-pt1-pelican-setup)
-- [Web development using Pelican and Travis-CI - Part 3: Hosting your website to GitHub Pages and custom domain](https://ayushkumarshah.github.io/drafts/site-deploy-pt1-pelican-setup)
-- [Web development using Pelican and Travis-CI - Part 4: Setting up Travis-CI for continuous integration of Builds](https://ayushkumarshah.github.io/drafts/site-deploy-pt1-pelican-setup)
-- [Web development using Pelican and Travis-CI - Part 5: Linking Disqus comments to your website](https://ayushkumarshah.github.io/drafts/site-deploy-pt1-pelican-setup)
-- [Web development using Pelican and Travis-CI - Part 6: Using Google Analytics with Pelican](https://ayushkumarshah.github.io/drafts/site-deploy-pt1-pelican-setup)
+- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
+- [Part 2: Writing content using Markdown](https://shahayush.com/drafts/site-deploy-pt1-pelican-setup)
+- [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/drafts/site-deploy-pt1-pelican-setup)
+- [Part 4: Setting up Travis-CI for continuous integration of Builds](https://shahayush.com/drafts/site-deploy-pt1-pelican-setup)
+- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/site-deploy-pt1-pelican-setup)
+- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/site-deploy-pt1-pelican-setup)
 
 Click on the respective links to get started.

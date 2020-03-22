@@ -9,7 +9,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 # Deployment Settings
-SITEURL = 'https://ayushkumarshah.gthub.io'
+SITEURL = 'https://shahayush.com'
 DOMAIN = SITEURL
 FEED_DOMAIN = SITEURL
 RELATIVE_URLS = False

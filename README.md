@@ -1,6 +1,6 @@
 # Personal Blog [![Build Status](https://travis-ci.org/ayushkumarshah/ayushkumarshah.github.io.svg?branch=source)](https://travis-ci.org/ayushkumarshah/ayushkumarshah.github.io)
 
-This repository hosts the code for my personal [blog](https://ayushkumarshah.github.io).
+This repository hosts the code for my personal [blog](https://shahayush.com).
 
 The website is powered by [Pelican](http://getpelican.com/) — a static site generator written in Python — and uses a theme based on [pneumatic](https://github.com/iKevinY/pneumatic).
 
