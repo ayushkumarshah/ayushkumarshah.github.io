@@ -1,9 +1,3 @@
-[submodule "themes/pneumatic"]
-path = themes/pneumatic
-url = https://github.com/iKevinY/pneumatic.git
 [submodule "pelican-plugins"]
 path = pelican-plugins
 url = https://github.com/getpelican/pelican-plugins.git
-[submodule "themes/bulrush"]
-path = themes/bulrush
-url = https://github.com/textbook/bulrush.git
