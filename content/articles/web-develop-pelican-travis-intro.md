@@ -29,7 +29,9 @@ through this article as they are extremely simple to catch up.
 ### Advantages of Pelican over wordpress
 
 You may wonder that the same thing can be achieved using wordpress and has a wider community compared to pelican. So,
-why use Pelican? I have listed a few advantages of Pelican over wordpress:
+why use Pelican? I have listed a few advantages of Pelican over wordpress written by [Vincent Cheng](http://www.vcheng.org/) in his article [Migrating from
+Wordpress to
+Pelican](http://www.vcheng.org/2014/02/22/migrating-from-wordpress-to-pelican/?fbclid=IwAR0dlc-OGv6B0fQ7rGSP5lHY3Ei0oNT6k9WwvX-_TB2yU_dC51uj1Y9gWkI).
 
 1. **speed:** a static blog is going to be faster than a dynamically generated site, no matter how much you try to
    optimize your Wordpress site / cache / database. This site now serves up nothing more than HTML, CSS, and JS files.
@@ -40,20 +42,19 @@ why use Pelican? I have listed a few advantages of Pelican over wordpress:
    posts. Markdown is a nice bonus as well (it's the sweet spot between a WYSIWYG editor and raw HTML).
 4. **mobility/deployment:** static site = easier to move around (just copy the files; there's no database to worry
    about) and deploy (and often cheaper to deploy; you can do so for free with Github Pages, for example).
-
-Also, switching to Pelican means that I get to move off of Wordpress.com infrastracture, hence no more ads (and no need
-to pay $30/yr to get rid of them), no restrictions on the amount and type of content I upload, and being able to use my
-own domain name (without having to pay for it), and of course not having to rely on a third-party to host my blog.
+5. **less cost:** Switching to Pelican means that you get to move off of Wordpress.com infrastracture, hence no more ads (and no need
+to pay $30/yr to get rid of them), no restrictions on the amount and type of content you upload, and being able to use your
+own domain name (without having to pay extra for it), and of course not having to rely on a third-party to host your blog.
 
 ## Let's get started
 
 For ease, I have divided the article into 6 parts as:
 
 - [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
-- [Part 2: Writing content using Markdown](https://shahayush.com/drafts/site-deploy-pt1-pelican-setup)
-- [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/drafts/site-deploy-pt1-pelican-setup)
-- [Part 4: Setting up Travis-CI for continuous integration of Builds](https://shahayush.com/drafts/site-deploy-pt1-pelican-setup)
-- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/site-deploy-pt1-pelican-setup)
-- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/site-deploy-pt1-pelican-setup)
+- [Part 2: Writing content using Markdown](https://shahayush.com/drafts/web-develop-pt2-content-markdown)
+- [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/drafts/web-develop-pt3-github-pages)
+- [Part 4: Setting up Travis-CI for continuous integration of Builds](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
+- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
+- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
 
 Click on the respective links to get started.
