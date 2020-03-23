@@ -81,7 +81,7 @@ def serve():
         sys.exit(getattr(e, 'exitcode', 1))
 
     print("Serving at https://%s:%s." % (SERVER, PORT))
-    webbrowser.open_new_tab("http://127.0.0.1:8000/")
+    # webbrowser.open_new_tab("http://127.0.0.1:8000/")
 
     try:
         httpd.serve_forever()

@@ -2,7 +2,7 @@ Title: Web development using Pelican and Travis-CI - Part 3: Hosting your websit
 Date: 2020-03-17 00:00
 Category: Web development and hosting
 Slug: web-develop-pt3-github-pages
-Summary:
+Summary: In this article, you will learn how to install pelican and set up your project. You will also learn to install a theme for your website.
 Tags: pelican, python, pelican-plugin, pneumatic
 Authors: Ayush Kumar Shah
 Status: draft
@@ -20,6 +20,4 @@ Status: draft
     Paste the link you copied from the forked repo instead of `https://github.com/ayushkumarshah/Flex.git` and
         `themes/name_of_theme` as 2nd argument in the command below.
 
-    ```
-    (.venv) $ git submodule add https://github.com/ayushkumarshah/Flex.git themes/Flex
-    ```
+      (.venv) $ git submodule add https://github.com/ayushkumarshah/Flex.git themes/Flex

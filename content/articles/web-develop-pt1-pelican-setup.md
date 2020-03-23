@@ -2,7 +2,7 @@ Title: Web development using Pelican and Travis-CI - Part 1: Setting up Pelican 
 Date: 2020-03-17 00:00
 Category: Web development and hosting
 Slug: web-develop-pt1-pelican-setup
-Summary:
+Summary: In this article, you will learn how to install pelican and set up your project. You will also learn to install a theme for your website.
 Tags: pelican, python, pelican-plugin, pneumatic
 Authors: Ayush Kumar Shah
 Status: draft
@@ -26,24 +26,32 @@ Status: draft
 Project Structure:
 Create any folder for your project. For example: web_development
 
-    $ mkdir web_development
-    $ cd web_development
+```console
+$ mkdir web_development
+$ cd web_development
+```
 
 ## 1. Installation and Configuration
 
 First, install virtualenv via pip and then create a virtual environment for your project.
 
-    $ pip install virtualenv
-    $ virtualenv .venv
+```console
+$ pip install virtualenv
+$ virtualenv .venv
+```
 
 Activate the virtual environment
 
-    $ source .venv/bin/activate
+```console
+$ source .venv/bin/activate
+```
 
 Now, install pelican inside the virtual environment
 
-    (.venv) $ pip install pelican==3.7.1
-    (.venn) $ pelican-quickstart
+```console
+(.venv) $ pip install pelican==3.7.1
+(.venv) $ pelican-quickstart
+```
 
 Pelican asks a series of questions to help you get started by building required configuration files.
 
@@ -85,7 +93,9 @@ While answering the questions, please keep these things in mind:
 
 You may delete the Makefile as we will not be using it.
 
-    (.venv) $ rm Makefile
+```console
+(.venv) $ rm Makefile
+```
 
 After successfully running the command, your directory should look like this:
 
@@ -111,25 +121,33 @@ Till now, we have installed and configured pelican successfully.
 Let's generate our first website and preview what it looks like. Make sure you are inside .venv environment. We will
 first install Fabric which is required to run scripts from fabfile.py.
 
-    (.venv) $ pip install Fabric==1.13.2
-    (.venv) $ pip install Fabric3==1.14.post1
+```console
+(.venv) $ pip install Fabric==1.13.2
+(.venv) $ pip install Fabric3==1.14.post1
+```
 
 Open fabfile.py and replace all instances of SocketServer by socketserver. (SocketServer is for python2).
 
-    # import SocketServer
-    import socketserver
-    ...
-    # class AddressReuseTCPServer(SocketServer.TCPServer):
-    class AddressReuseTCPServer(socketserver.TCPServer):
+```python
+# import SocketServer
+import socketserver
+...
+# class AddressReuseTCPServer(SocketServer.TCPServer):
+class AddressReuseTCPServer(socketserver.TCPServer):
+```
 
 Now, we are ready to generate and view our site.
 
-    (.venv) $ fab build
-    (.venv) $ fab serve
+```console
+(.venv) $ fab build
+(.venv) $ fab serve
+```
 
 You may also run a single command equivalent to the 2 commands above:
 
-    (.venv) $ fab reserve
+```console
+(.venv) $ fab reserve
+```
 
 After running the command, you will notice html files generated inside the output folder. These files are the html files
 of your website.
@@ -161,8 +179,9 @@ First, open and clone the [Flex
   repository](https://github.com/alexandrevicenzi/Flex) or the repository
   of the theme you chose. Make sure you are inside the web_development directory.
 
-    (.venv) $ git clone https://github.com/alexandrevicenzi/Flex.git themes/Flex
-
+```console
+(.venv) $ git clone https://github.com/alexandrevicenzi/Flex.git themes/Flex
+```
 Here, the 2nd argument is the destination directory of the theme in your project. You can replace `themes/Flex` by
 `themes/name_of_theme`.
 
@@ -174,16 +193,18 @@ Although Flex theme reqires no additional plugin, most of the themes require var
 [pelican-plugins](https://github.com/getpelican/pelican-plugins) into your project. Note that you may skip this step if
 you want to use [Flex](https://github.com/alexandrevicenzi/Flex) theme.
 
-    (.venv) $ git clone https://github.com/getpelican/pelican-plugins.git
+```console
+(.venv) $ git clone https://github.com/getpelican/pelican-plugins.git
+```
 
 Now, add the path of the plugins in `pelicanconf.py` in the similar way as before by adding the following lines:
 
     PLUGIN_PATHS = ['./pelican-plugins']
 
 Also add the a line specifying a list of plugins required in your theme. You can view the name of plugins required in
-the repository of the theme. However, Flex theme requires no plugin. So, it is not required.
+the repository of the theme.
 
-    PLUGINS = ['assets', 'neighbors', 'pelican_katex', 'sitemap', 'share_post'] # These are the plugins required for bulrush theme
+    PLUGINS = ['sitemap', 'post_stats', 'feed_summary']
 
 At this state, your directory structure should look like this:
 
@@ -203,17 +224,100 @@ If it doesn't, then you probably did something wrong.
 
 So, by now we have successfully installed the [Flex](https://github.com/alexandrevicenzi/Flex) theme in our website. You
 
-We can check our new theme by generating and serving our new website again. Close the previous reserve if it is still
-running by pressing Ctrl+C or Cmd+C. Now, 
+### Flex Configurations
+We can check our new theme by generating and serving our new website again.
 
-    (.venv) $ fab reserve
+Close the previous reserve if it is still
+running by pressing Ctrl+C or Cmd+C. Now,
 
+```console
+(.venv) $ fab reserve
+```
 Open your browser and visit
 [localhost:8000](localhost:8000)
 
 You should see your website in a new theme.
 
 [![Flex](/images/Flex.png){.img-center}](https://ibb.co/ZJdh95N)
+
+However, it is not customized to include your profile. So, let's customize the site by adding some attributes of
+the theme.
+
+First, let's create some folders inside the content directory.
+
+```console
+(.venv) $ mkdir content/images
+(.venv) $ mkdir content/pages
+(.venv) $ mkdir content/extras
+```
+
+Let's replace the default profile photo and favicon by your own.
+> Copy the profile image `profile.png` and the collection of favicon files like `favicon.ico`, `favicon-16x16.png`, etc into the images directory you just created.
+
+Note: A favicon is a small pixel icon that appears at the top of the browser before the site name. It serves as branding
+for your website. You can create one [online](https://realfavicongenerator.net/#.XnO555MzZhE).
+
+Also, install the following dependencies:
+
+```console
+(.venv) $ pip install bs4==0.0.1
+(.venv) $ pip install beautifulsoup4==4.5.3
+```
+
+Different themes have different attributes or configurations.
+
+Check the documentation or the Readme.md file
+of the respective theme. For [Flex](https://github.com/alexandrevicenzi/Flex) theme, a sample pelicanconfig.py can be
+found inside the docs folder. Check it for reference and also compare it with the [live version of the
+theme](http://flex.alxd.me/blog/). You can find more examples of the configurations in the [Flex
+Wiki](https://github.com/alexandrevicenzi/Flex/wiki) for reference.
+
+I will demonstrate using a sample configuration for this theme. For that, add the following lines in your
+`pelicanconfig.py` file.
+
+    ### Flex configurations
+
+    SITETITLE = 'Ayush Kumar Shah'  # Replace with your name
+    SITESUBTITLE = 'Ideas and Thoughts'
+    SITELOGO = '/images/profile.png'
+    FAVICON = '/images/favicon.ico'
+
+    # Sitemap Settings
+    SITEMAP = {
+        'format': 'xml',
+        'priorities': {
+            'articles': 0.6,
+            'indexes': 0.6,
+            'pages': 0.5,
+        },
+        'changefreqs': {
+            'articles': 'monthly',
+            'indexes': 'daily',
+            'pages': 'monthly',
+        }
+    }
+
+    # Add a link to your social media accounts
+    SOCIAL = (
+        ('github', 'https://github.com/alexandrevicenzi/Flex'),
+        ('envelope', 'mailto:ayushkumarshah@gmail.com'),
+        ('linkedin','https://np.linkedin.com/in/ayush7'),
+        ('twitter','https://twitter.com/ayushkumarshah7'),
+        ('facebook','https://www.facebook.com/ayushkumarshah'),
+        ('reddit','https://www.reddit.com/user/ayushkumarshah')
+    )
+
+    STATIC_PATHS = ['images', 'extra']
+
+    # # Blogroll
+    # Add links to your about and contact page
+    LINKS = (('About', '/pages/about'),
+            ('Contact', '/pages/contact/'),)
+
+    # Main Menu Items
+    MAIN_MENU = True
+    MENUITEMS = (('Archives', '/archives'),('Categories', '/categories'),('Tags', '/tags'),)
+
 
 **Congratulations**, you have completed the basic setup for Pelican. 
 
