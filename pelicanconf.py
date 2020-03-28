@@ -34,7 +34,9 @@ ARCHIVES_SAVE_AS = 'archives.html'
 YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 
+USE_LESS = False
 CACHE_CONTENT = False
+
 # DELETE_OUTPUT_DIRECTORY = True
 # OUTPUT_PATH = 'develop'
 PATH = 'content'
@@ -76,7 +78,7 @@ SITEMAP = {
 }
 
 SOCIAL = (
-    ('github', 'https://github.com/alexandrevicenzi/Flex'),
+    ('github', 'https://github.com/ayushkumarshah'),
     ('envelope', 'mailto:ayushkumarshah@gmail.com'),
     ('linkedin','https://np.linkedin.com/in/ayush7'),
     ('twitter','https://twitter.com/ayushkumarshah7'),
@@ -111,5 +113,5 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-HOME_HIDE_TAGS = True
+# HOME_HIDE_TAGS = True
 FEED_USE_SUMMARY = True

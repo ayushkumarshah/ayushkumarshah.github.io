@@ -1,5 +1,6 @@
 Title: Web development using Pelican and Travis-CI - Part 3: Hosting your website to GitHub Pages and custom domain
 Date: 2020-03-17 00:00
+Modified: 2020-03-17 00:00
 Category: Web development and hosting
 Slug: web-develop-pt3-github-pages
 Summary: In this article, you will learn how to install pelican and set up your project. You will also learn to install a theme for your website.

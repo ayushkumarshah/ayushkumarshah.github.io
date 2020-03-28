@@ -1,11 +1,12 @@
 Title: Web development using Pelican and Travis-CI - Part 1: Setting up Pelican - Installation and Theme
 Date: 2020-03-17 00:00
+Modified: 2020-03-17 00:00
 Category: Web development and hosting
 Slug: web-develop-pt1-pelican-setup
 Summary: In this article, you will learn how to install pelican and set up your project. You will also learn to install a theme for your website.
 Tags: pelican, python, pelican-plugin, pneumatic
 Authors: Ayush Kumar Shah
-Status: draft
+Status: published
 
 [Pelican](https://docs.getpelican.com/en/stable/index.html) is a static site generator, written in Python.
 
@@ -46,10 +47,66 @@ Activate the virtual environment
 $ source .venv/bin/activate
 ```
 
-Now, install pelican inside the virtual environment
+Now, to install pelican and all packages and dependencies that we will be using later, we need to create a requirements.txt
+file
 
 ```console
-(.venv) $ pip install pelican==3.7.1
+(.venv) $ touch requirements.txt
+```
+
+ and paste the following lines into the file.
+
+    appdirs==1.4.3
+    asn1crypto==0.22.0
+    bcrypt==3.1.7
+    beautifulsoup4==4.5.3
+    blinker==1.4
+    bs4==0.0.1
+    bulrush==0.3.2
+    cffi==1.10.0
+    cryptography==2.8
+    cssmin==0.2.0
+    docutils==0.13.1
+    ecdsa==0.13.3
+    enum34==1.1.6
+    Fabric==1.13.2
+    Fabric3==1.14.post1
+    feedgenerator==1.9
+    ghp-import==0.5.5
+    idna==2.5
+    ipaddress==1.0.18
+    Jinja2==2.9.6
+    Markdown==2.6.8
+    MarkupSafe==1.0
+    packaging==16.8
+    paramiko==2.4.2
+    pelican==3.7.1
+    pelican-katex==1.0.0
+    ply==3.11
+    pyasn1==0.2.3
+    pycparser==2.17
+    pycrypto==2.6.1
+    Pygments==2.2.0
+    pygments-style-github==0.4
+    PyNaCl==1.3.0
+    pyparsing==2.2.0
+    python-dateutil==2.6.0
+    pytz==2017.2
+    six==1.10.0
+    smartypants==2.0.0
+    typogrify==2.0.7
+    Unidecode==0.4.20
+    webassets==0.12.1
+
+Then just run the following command inside the virtual environment to install all these packages
+
+```console
+(.venv) $ pip install -r requirements.txt
+```
+
+Let's now run quickstart configuration script for pelican.
+
+```console
 (.venv) $ pelican-quickstart
 ```
 
@@ -78,11 +135,11 @@ needed by Pelican.
     > Do you want to upload your website using GitHub Pages? (y/N) y
     > Is this your personal page (username.github.io)? (y/N) y
 
-Done. Your new project is available at `/Users/ayushkumarshah/Desktop/Blog_writing/web`
+Done. Your new project is available at **/Users/ayushkumarshah/Desktop/Blog_writing/web**
 
 While answering the questions, please keep these things in mind:
 
-- Title and Author: Replace `Ayush Kumar Shah` with the title and author's name that you want.
+- Title and Author: Replace **Ayush Kumar Shah** with the title and author's name that you want.
 - Default language : You can set any language using the standard [ISO 639.1](https://www.loc.gov/standards/iso639-2/php/code_list.php) 2 letter code.
 
 - Article Pagination: If you do not want to limit the number or articles in a page, enter n.
@@ -104,7 +161,8 @@ After successfully running the command, your directory should look like this:
         ├── fabfile.py
         ├── output/
         ├── pelicanconf.py
-        └── publishconf.py
+        ├── publishconf.py
+        └── requirements.txt
 
 Let me tell you with the purpose of each of these files :
 
@@ -113,18 +171,13 @@ Let me tell you with the purpose of each of these files :
 - output/ - directory which stores the html files of the generated static website
 - pelicanconf.py - file containing all the configurations of the website
 publishconf.py - file containing additional website configurations used while publishing the website
+requirements.txt - contains all the packages and dependencies required
 
 ## 2. Generate and view your website
 
 Till now, we have installed and configured pelican successfully. 
 
-Let's generate our first website and preview what it looks like. Make sure you are inside .venv environment. We will
-first install Fabric which is required to run scripts from fabfile.py.
-
-```console
-(.venv) $ pip install Fabric==1.13.2
-(.venv) $ pip install Fabric3==1.14.post1
-```
+Let's generate our first website and preview what it looks like. Make sure you are inside .venv environment.
 
 Open fabfile.py and replace all instances of SocketServer by socketserver. (SocketServer is for python2).
 
@@ -160,8 +213,6 @@ Congratulations, you have generated your first website.
 
 [![First site](/images/first_site.png){.img-center}](https://ibb.co/wLVFGcf)
 
-Click the image to view the full sized image.
-
 ## 3. Installing Pelican Themes
 
 Now that we have built our website, let's make the design more beautiful and responsive. There are numerous Pelican
@@ -182,10 +233,11 @@ First, open and clone the [Flex
 ```console
 (.venv) $ git clone https://github.com/alexandrevicenzi/Flex.git themes/Flex
 ```
-Here, the 2nd argument is the destination directory of the theme in your project. You can replace `themes/Flex` by
-`themes/name_of_theme`.
 
-Now, specify the path of your theme in the configuration file `pelicanconf.py` by adding the following line:
+Here, the 2nd argument is the destination directory of the theme in your project. You can replace **themes/Flex** by
+**themes/name_of_theme**.
+
+Now, specify the path of your theme in the configuration file **pelicanconf.py** by adding the following line:
 
     THEME = 'themes/Flex'
 
@@ -197,7 +249,7 @@ you want to use [Flex](https://github.com/alexandrevicenzi/Flex) theme.
 (.venv) $ git clone https://github.com/getpelican/pelican-plugins.git
 ```
 
-Now, add the path of the plugins in `pelicanconf.py` in the similar way as before by adding the following lines:
+Now, add the path of the plugins in **pelicanconf.py** in the similar way as before by adding the following lines:
 
     PLUGIN_PATHS = ['./pelican-plugins']
 
@@ -218,7 +270,8 @@ At this state, your directory structure should look like this:
         ├── pelican-plugins
             ├── ... (various plugin directories)
         ├── pelicanconf.py
-        └── publishconf.py
+        ├──publishconf.py
+        └──requirements.txt
 
 If it doesn't, then you probably did something wrong.
 
@@ -227,7 +280,7 @@ So, by now we have successfully installed the [Flex](https://github.com/alexandr
 ### Flex Configurations
 We can check our new theme by generating and serving our new website again.
 
-Close the previous reserve if it is still
+Close the previous process  i.e. **fab reserve** if it is still
 running by pressing Ctrl+C or Cmd+C. Now,
 
 ```console
@@ -247,22 +300,14 @@ First, let's create some folders inside the content directory.
 
 ```console
 (.venv) $ mkdir content/images
-(.venv) $ mkdir content/pages
-(.venv) $ mkdir content/extras
+(.venv) $ mkdir content/extra
 ```
 
 Let's replace the default profile photo and favicon by your own.
-> Copy the profile image `profile.png` and the collection of favicon files like `favicon.ico`, `favicon-16x16.png`, etc into the images directory you just created.
+> Copy the profile image **profile.png** and the collection of favicon files like **favicon.ico, favicon-16x16.png**, etc into the images directory you just created.
 
 Note: A favicon is a small pixel icon that appears at the top of the browser before the site name. It serves as branding
 for your website. You can create one [online](https://realfavicongenerator.net/#.XnO555MzZhE).
-
-Also, install the following dependencies:
-
-```console
-(.venv) $ pip install bs4==0.0.1
-(.venv) $ pip install beautifulsoup4==4.5.3
-```
 
 Different themes have different attributes or configurations.
 
@@ -273,10 +318,12 @@ theme](http://flex.alxd.me/blog/). You can find more examples of the configurati
 Wiki](https://github.com/alexandrevicenzi/Flex/wiki) for reference.
 
 I will demonstrate using a sample configuration for this theme. For that, add the following lines in your
-`pelicanconfig.py` file.
+**pelicanconfig.py** file.
 
     ### Flex configurations
 
+    PLUGINS = ['sitemap', 'post_stats', 'feed_summary']
+    SITEURL = 'http://localhost:8000'
     SITETITLE = 'Ayush Kumar Shah'  # Replace with your name
     SITESUBTITLE = 'Ideas and Thoughts'
     SITELOGO = '/images/profile.png'
@@ -299,7 +346,7 @@ I will demonstrate using a sample configuration for this theme. For that, add th
 
     # Add a link to your social media accounts
     SOCIAL = (
-        ('github', 'https://github.com/alexandrevicenzi/Flex'),
+        ('github', 'https://github.com/ayushkumarshah'),
         ('envelope', 'mailto:ayushkumarshah@gmail.com'),
         ('linkedin','https://np.linkedin.com/in/ayush7'),
         ('twitter','https://twitter.com/ayushkumarshah7'),
@@ -309,21 +356,46 @@ I will demonstrate using a sample configuration for this theme. For that, add th
 
     STATIC_PATHS = ['images', 'extra']
 
-    # # Blogroll
-    # Add links to your about and contact page
-    LINKS = (('About', '/pages/about'),
-            ('Contact', '/pages/contact/'),)
-
     # Main Menu Items
     MAIN_MENU = True
-    MENUITEMS = (('Archives', '/archives'),('Categories', '/categories'),('Tags', '/tags'),)
+    MENUITEMS = (('Archives', '/archives'),('Categories', '/categories'),('Tags', '/tags'))
 
+    # Code highlighting theme
+    PYGMENTS_STYLE = 'friendly'
+
+    ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}/'
+    ARTICLE_SAVE_AS = ARTICLE_URL + 'index.html'
+
+    PAGE_URL = '{slug}/'
+    PAGE_SAVE_AS = PAGE_URL + 'index.html'
+
+    ARCHIVES_SAVE_AS = 'archives.html'
+    YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
+    MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+
+You may remove the **LINKS** variable from the configuration file **pelicanconfig.py** as you don't need those links. We can check our new configuration by generating and serving our website again.
+
+Close the previous process  i.e. **fab reserve** if it is still
+running by pressing Ctrl+C or Cmd+C. Now,
+
+```console
+(.venv) $ fab reserve
+```
+
+Open your browser and visit
+[localhost:8000](localhost:8000)
+
+You should see your website with your new configuration. Feel free to modify it as per your liking.
+
+[![Flex2](/images/Flex2.png){.img-center}](https://ibb.co/fvfQRmT)
 
 **Congratulations**, you have completed the basic setup for Pelican. 
 
-However, your site has no content. Start writing content in the [part 2](https://shahayush.com/drafts/web-develop-pt2-content-markdown) of the article.
+However, your site has no content. Start writing content in the [part
+2](https://shahayush.com/drafts/web-develop-pt2-content-markdown) of the article.
 
-- [Part 2: Writing content using Markdown](https://shahayush.com/drafts/web-develop-pt2-content-markdown)
+- [<span style="color:green">Part 1: Setting up Pelican - Installation and Theme</span>](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
+- [**Part 2: Writing content using Markdown**](https://shahayush.com/drafts/web-develop-pt2-content-markdown)
 - [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/drafts/web-develop-pt3-github-pages)
 - [Part 4: Setting up Travis-CI for continuous integration of Builds](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
 - [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
