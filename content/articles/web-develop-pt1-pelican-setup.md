@@ -6,7 +6,7 @@ Slug: web-develop-pt1-pelican-setup
 Summary: In this article, you will learn how to install pelican and set up your project. You will also learn to install a theme for your website.
 Tags: pelican, python, pelican-plugin, pneumatic
 Authors: Ayush Kumar Shah
-Status: published
+Status: draft
 
 [Pelican](https://docs.getpelican.com/en/stable/index.html) is a static site generator, written in Python.
 

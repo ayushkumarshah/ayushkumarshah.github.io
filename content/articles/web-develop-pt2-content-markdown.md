@@ -6,7 +6,7 @@ Slug: web-develop-pt2-content-markdown
 Summary: In this article, you will learn how to write your articles or blogs using Markdown.
 Tags: pelican, python, pelican-plugin, pneumatic
 Authors: Ayush Kumar Shah
-Status: published
+Status: draft
 
 Now that you have setup your website, the next step is to start writing some content -- articles, blogs, about page,
 contact page, etc. We will use Markdown for writing any content you create. If you have not heard about Markdown, don't
