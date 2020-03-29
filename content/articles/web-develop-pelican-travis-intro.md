@@ -1,9 +1,9 @@
 Title: Building and deploying static websites using Pelican and Travis-CI
 Date: 2020-03-19 21:00
-Modified: 2020-03-17 00:00
+Modified: 2020-03-19 21:00
 Category: Web development and hosting
 Slug: web-develop-pelican-travis-intro
-Summary: In this article, you will learn how to install pelican and set up your project. You will also learn to install a theme for your website.
+Summary: In this article, you will get to know the basic introduction of pelican and travis-ci and a brief overview on how pelican can be used to build and deploy your static website.
 Tags: pelican, python, markdown, github-pages, travis-ci, disqus, google analytics
 Authors: Ayush Kumar Shah
 Status: draft
@@ -54,7 +54,7 @@ For ease, I have divided the article into 6 parts as:
 - [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
 - [Part 2: Writing content using Markdown](https://shahayush.com/drafts/web-develop-pt2-content-markdown)
 - [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/drafts/web-develop-pt3-github-pages)
-- [Part 4: Setting up Travis-CI for continuous integration of Builds](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
+- [Part 4: Setting up Travis-CI for continuous integration of Builds](https://shahayush.com/drafts/web-develop-pt4-travis-pelican)
 - [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
 - [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
 

@@ -15,7 +15,6 @@ SITEURL = 'http://localhost:8000'
 TIMEZONE = 'Asia/Kathmandu'
 DEFAULT_DATE = 'fs'
 DEFAULT_DATE_FORMAT = '%B %d, %Y'
-SUMMARY_MAX_LENGTH = 42
 
 # Theme Location
 THEME = 'themes/Flex'
