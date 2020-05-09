@@ -1,10 +1,10 @@
-Title: Web development using Pelican and Travis-CI - Part 4: Setting up Travis-CI for automating deployment
-Date: 2020-03-29 21:47
-Modified: 2020-03-29 21:47
+Title: Using Disqus comments with Pelican
+Date: 2020-05-10 00:45
+Modified: 2020-05-10 00:45
 Category: Web development and hosting
-Slug: web-develop-pt4-travis-pelican
-Summary: Learn to use Travis-CI to automate deploying your website to master branch
-Tags: pelican, python, github-pages
+Slug: web-develop-pt5-disqus
+Summary: Learn to link disqus comments to your site
+Tags: disqus, comments
 Authors: Ayush Kumar Shah
 Status: draft
 
@@ -17,12 +17,9 @@ Travis-CI](https://shahayush.com/drafts/web-develop-pelican-travis-intro)
 - [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-develop-pt1-pelican-setup)
 - [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-develop-pt2-content-markdown)
 - [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/2020/03/web-develop-pt3-github-pages)
+- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/drafts/web-develop-pt4-travis-pelican)
 
 Upto this point, you have created and hosted your static website on github pages.
-
-Now, learn to automate the process of pushing to source and deploying to master branch by using continuous integration
-tools like [Travis-CI](https://travis-ci.org/) in the [part
-4](https://shahayush.com/drafts/web-develop-pt1-pelican-setup) of the article.
 
 # Check back later. Article not completed
 
@@ -33,4 +30,4 @@ tools like [Travis-CI](https://travis-ci.org/) in the [part
 - [**Part 5: Linking Disqus comments to your website**](https://shahayush.com/drafts/web-develop-pt5-disqus)
 - [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt6-analytics)
 
-Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-develop-pelican-travis-intro)
+Or, goto the [home-page of the article.](https://shahayush.com/drafts/web-develop-pelican-travis-intro)

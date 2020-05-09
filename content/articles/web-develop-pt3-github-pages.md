@@ -1,12 +1,12 @@
 Title: Web development using Pelican and Travis-CI - Part 3: Hosting your website to GitHub Pages and custom domain
 Date: 2020-03-28 22:30
-Modified: 2020-03-29 21:47
+Modified: 2020-05-10 00:38
 Category: Web development and hosting
 Slug: web-develop-pt3-github-pages
-Summary: In this article, you will learn how to host your static website in github pages for free.
+Summary: Learn to host your website in github pages or custom domain for free.
 Tags: pelican, python, github-pages
 Authors: Ayush Kumar Shah
-Status: draft
+Status: published
 
 This article is a part of a series of articles for web development using pelican. So, if you haven't read the previous
 articles, please check it out by clicking the links below.
@@ -14,8 +14,8 @@ articles, please check it out by clicking the links below.
 [Building and deploying static websites using Pelican and
 Travis-CI](https://shahayush.com/drafts/web-develop-pelican-travis-intro)
 
-- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
-- [Part 2: Writing content using Markdown](https://shahayush.com/drafts/web-develop-pt2-content-markdown)
+- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-develop-pt1-pelican-setup)
+- [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-develop-pt2-content-markdown)
 
 Upto this point, you have created your static website locally. You surely want to share it with the public so that they
 can view your articles. There are several ways of deploying your websites but the best option is by using github pages.
@@ -79,79 +79,7 @@ can view your articles. There are several ways of deploying your websites but th
 (.venv) $ touch .gitignore
 ```
 
-- Open the file .gitignore and paste the following lines in it:
-
-```python
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
-
-#From mac
-.DS_Store
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-pelican-plugins
-themes
-.venv/
-output
-*.pid
-
-.vscode/
-```
+- Copy all the lines from this link: [.gitignore](https://raw.githubusercontent.com/ayushkumarshah/ayushkumarshah.github.io/source/.gitignore) and paste it in the newly created `.gitignore` file.
 
 - You may also create a **Readme.md** file for your repository. Create it in the main directory **web_development**
 
@@ -159,72 +87,14 @@ output
 (.venv) $ touch Readme.md
 ```
 
-- You can add information about your project in the **Readme.md** file  similar to one below.
-
-```
-# Personal Blog 
-
-This repository hosts the code for my personal [blog](https://your-username..github.io).
-
-The website is powered by [Pelican](http://getpelican.com/) — a static site generator written in Python — and uses a theme based on [pneumatic](https://github.com/iKevinY/pneumatic).
-
-## Build Locally
-
-The easiest way to do this is in a Python [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/). 
-
-### Create a Virtual Environment
-
-Once you have `virtualenv` installed, create a virtual environment to hold Pelican and its dependencies:
-
-    $ virtualenv .venv
-    $ source .venv/bin/activate
-
-This creates a virtual environment and then activates it. If you want to exit the virtual environment, type:
-
-    $ deactivate
-
-### Fork / Clone the Repo
-
-If you haven't already, clone your version of the repo:
-
-    $ git clone --recurse-submodules https://github.com/yourusername/repo/fork
-
-### Install Pelican & Dependancies
-
-Use `pip` to install the list of dependencies (including Pelican) into your virtual environment:
-
-    $ pip install -r requirements.txt
-
-### Generate the Website
-
-Now that the dependencies exists, we can build:
-
-    $ fab build
-
-This takes the Markdown files from the `content/` directory and generates static HTML pages inside the `output/` directory. That's it. No database required.
-
-### Preview the Website
-
-You can serve the generated site so it can be previewed in your browser:
-
-    $ fab serve
-
-And you should see the blog if you visit [http://localhost:8000](http://localhost:8000).
-
-## License
-
-The source code for generation of the blog is under MIT License. Content is copyrighted.
-
-## Contact
-
-If you have any questions, you can [email](mailto:ayush.kumar.shah@gmail.com) me.
-```
+- You can add information about your project in the **Readme.md** file  similar to mine. You can copy it from this link:
+ [Readme.md](https://raw.githubusercontent.com/ayushkumarshah/ayushkumarshah.github.io/source/README.md) and modify it accordingly. 
 
 ### 2. Build and publish your website
 
 - Let's modify the configuration for publishing the website by opening **publishconfig.py** and modifying/adding the following settings.
 
-```
+```python
 SITEURL = 'https://username.github.io'
 DOMAIN = SITEURL
 FEED_DOMAIN = SITEURL
@@ -283,7 +153,55 @@ device and visit [https://your-username.github.io](https://your-username.github.
 
 ![Github Site](/images/github_site.png){.img-center}
 
-### 3. Add forked repo of theme **(Optional)**
+That's it. You have now learnt to create and host your static website in github pages.
+
+### 3. Linking your site to a custom domain (Optional)
+
+You might want to host your site to a custom domain of your choice  rather than github pages. This can be done
+completely free of cost if you have a custom domain registered already.
+
+If you don't have a custom domain, you can buy them at several websites like [Namesilo](https://www.namesilo.com/),
+[GoDaddy](https://in.godaddy.com/domains), etc.
+
+You can make your domain secure and managebale using [Cloudflare Service](https://cloudflare.com/)
+
+- The first step is to create a file called `CNAME` inside the `content/extra ` directory.
+
+```console
+(.venv) $ touch content/extra/CNAME
+```
+
+- Then, add (copy and paste) the name of your site i.e. `www.your-site-name.com` in the file `CNAME`.
+
+- Change the value of `SITEURL` in the `publishconf.py` file.
+
+```python
+SITEURL = 'https://you-site-name.com'
+```
+
+- Now, you need to redirect your site to point to your contents hosted in github-pages. For that, you need to use your
+  domain management site which you used to buy the domain or some 3rd party management site like
+  [Cloudflare](https://www.cloudflare.com).
+
+  - Go to the DNS section and add A records one by one to redirect your site to following 4 ip addresses (github-pages):
+    You can see the image below for reference. I used [Cloudflare](https://www.cloudflare.com) for DNS management.
+
+    - 185.199.108.153
+    - 185.199.109.153
+    - 185.199.111.153
+    - 185.199.110.153
+
+  ![dns](/images/dns.png){.img-center}
+
+- If you want to redirect the github-pages site to your custom domain, then goto the repository settings and add your
+  site name in the Custom domain field of Github Pages section as shown below.
+
+![custom-github](/images/custom-github.png){.img-center}
+
+Congratulations!! Your blogs have been redirected to tour own custom domain. You can browse your site and check if it is
+working.
+
+### 4. Add forked repo of theme **(Optional)**
 
 This is an optional step. Perform these steps only if want to modify or tweak with the theme (Flex in this case) to give
 your website a slightly different look. You may modify colours, styles or even perform changes in the design (if you
@@ -322,17 +240,15 @@ the gif below):
 Now, you may modify the theme by tweaking with the html and css files inside the **themes/Flex/** directory and then
 commit the changes to the forked repository separately.
 
-That's it. You have now learnt to create and host your static website in github pages.
-
-Now, learn to automate the process of pushing to source and deploying to master branch by using continuous integration
-methods like [Travis-CI](https://travis-ci.org/) in the [part
+In the next part, learn to automate the process of pushing to source and deploying to master branch by using Continuous Integration
+tools like [Travis-CI](https://travis-ci.org/) in the [part
 4](https://shahayush.com/drafts/web-develop-pt1-pelican-setup) of the article.
 
-- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
-- [Part 2: Writing content using Markdown](https://shahayush.com/drafts/web-develop-pt2-content-markdown)
-- [<span style="color:green">Part 3: Hosting your website to GitHub Pages and custom domain</span>](https://shahayush.com/drafts/web-develop-pt3-github-pages)
+- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-develop-pt1-pelican-setup)
+- [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-develop-pt2-content-markdown)
+- [<span style="color:green">Part 3: Hosting your website to GitHub Pages and custom domain</span](https://shahayush.com/2020/03/web-develop-pt3-github-pages)
 - [**Part 4: Setting up Travis-CI for automating deployment**](https://shahayush.com/drafts/web-develop-pt4-travis-pelican)
-- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
-- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
+- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt5-disqus)
+- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt6-analytics)
 
-Or, goto the [home-page of the article.](https://shahayush.com/drafts/web-develop-pelican-travis-intro)
+Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-develop-pelican-travis-intro)

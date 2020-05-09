@@ -7,3 +7,6 @@ url = https://github.com/getpelican/pelican-plugins.git
 [submodule "themes/Flex"]
 	path = themes/Flex
 	url = https://github.com/ayushkumarshah/Flex.git
+[submodule "themes/bulrush"]
+	path = themes/bulrush
+	url = https://github.com/ayushkumarshah/bulrush.git

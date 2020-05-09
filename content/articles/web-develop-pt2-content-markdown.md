@@ -3,10 +3,10 @@ Date: 2020-03-24 08:00
 Modified: 2020-03-28 22:25
 Category: Web development and hosting
 Slug: web-develop-pt2-content-markdown
-Summary: In this article, you will learn how to write your articles or blogs using Markdown.
+Summary: Learn how to write your articles or blogs using Markdown.
 Tags: pelican, markdown, python
 Authors: Ayush Kumar Shah
-Status: draft
+Status: published
 
 This article is a part of a series of articles for web development using pelican. So, if you haven't read the previous
 articles, please check it out by clicking the links below.
@@ -14,7 +14,7 @@ articles, please check it out by clicking the links below.
 [Building and deploying static websites using Pelican and
 Travis-CI](https://shahayush.com/drafts/web-develop-pelican-travis-intro)
 
-- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
+- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-develop-pt1-pelican-setup)
 
 Now that you have setup your website, the next step is to start writing some content -- articles, blogs, about page,
 contact page, etc. We will use Markdown for writing any content you create. If you have not heard about Markdown, don't
@@ -301,11 +301,11 @@ directory and follow the similar steps.
 Although your site has been built, it is not publicly available. Learn how to host your site in github pages or a custom domain in [part
 3](https://shahayush.com/drafts/web-develop-pt3-github-pages) of the article.
 
-- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
-- [<span style="color:green">Part 2: Writing content using Markdown</span>](https://shahayush.com/drafts/web-develop-pt2-content-markdown)
-- [**Part 3: Hosting your website to GitHub Pages and custom domain**](https://shahayush.com/drafts/web-develop-pt3-github-pages)
+- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-develop-pt1-pelican-setup)
+- [<span style="color:green">Part 2: Writing content using Markdown</span>](https://shahayush.com/2020/03/web-develop-pt2-content-markdown)
+- [**Part 3: Hosting your website to GitHub Pages and custom domain**](https://shahayush.com/2020/03/web-develop-pt3-github-pages)
 - [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/drafts/web-develop-pt4-travis-pelican)
-- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
-- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
+- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt5-disqus)
+- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt6-analytics)
 
-Or, goto the [home-page of the article.](https://shahayush.com/drafts/web-develop-pelican-travis-intro)
+Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-develop-pelican-travis-intro)

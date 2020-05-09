@@ -3,16 +3,16 @@ Date: 2020-03-20 08:00
 Modified: 2020-03-22 09:00
 Category: Web development and hosting
 Slug: web-develop-pt1-pelican-setup
-Summary: In this article, you will learn how to install pelican and set up your project. You will also learn to install a theme for your website.
+Summary: Learn to install pelican and set up your project with a theme for your website.
 Tags: pelican, python, pelican-plugin, flex
 Authors: Ayush Kumar Shah
-Status: draft
+Status: published
 
 This article is a part of a series of articles for web development using pelican. So, if you haven't read the previous
 article, please check it out by clicking the link below.
 
 [Building and deploying static websites using Pelican and
-Travis-CI](https://shahayush.com/drafts/web-develop-pelican-travis-intro)
+Travis-CI](https://shahayush.com/2020/03/web-develop-pelican-travis-intro)
 
 [Pelican](https://docs.getpelican.com/en/stable/index.html) is a static site generator, written in Python.
 
@@ -411,11 +411,11 @@ You should see your website with your new configuration. Feel free to modify it 
 However, your site has no content. Start writing content in the [part
 2](https://shahayush.com/drafts/web-develop-pt2-content-markdown) of the article.
 
-- [<span style="color:green">Part 1: Setting up Pelican - Installation and Theme</span>](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
-- [**Part 2: Writing content using Markdown**](https://shahayush.com/drafts/web-develop-pt2-content-markdown)
-- [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/drafts/web-develop-pt3-github-pages)
+- [<span style="color:green">Part 1: Setting up Pelican - Installation and Theme</span>](https://shahayush.com/2020/03/web-develop-pt1-pelican-setup)
+- [**Part 2: Writing content using Markdown**](https://shahayush.com/2020/03/web-develop-pt2-content-markdown)
+- [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/2020/03/web-develop-pt3-github-pages)
 - [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/drafts/web-develop-pt4-travis-pelican)
-- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
-- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt1-pelican-setup)
+- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt5-disqus)
+- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt6-analytics)
 
-Or, goto the [home-page of the article.](https://shahayush.com/drafts/web-develop-pelican-travis-intro)
+Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-develop-pelican-travis-intro)
