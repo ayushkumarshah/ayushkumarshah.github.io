@@ -8,9 +8,11 @@ python:
 install:
   - gem install sass
   - npm i -g katex
+  - npm install -g less
   - pip install -r requirements.txt
   - git config --global user.email "ayush.kumar.shah@gmail.com"
   - git config --global user.name "Ayush Kumar Shah"
 
 script:
+  - lessc ./themes/bulrush/bulrush/static/css/main.less ./themes/bulrush/bulrush/static/css/main.css
   - fab publish:"Build site"
