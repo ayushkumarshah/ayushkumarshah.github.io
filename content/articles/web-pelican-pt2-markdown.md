@@ -1,8 +1,8 @@
-Title: Web development using Pelican and Travis-CI - Part 2: Writing content using Markdown
+Title: Part 2: Writing content using Markdown
 Date: 2020-03-24 08:00
 Modified: 2020-03-28 22:25
-Category: Web development and hosting
-Slug: web-develop-pt2-content-markdown
+Category: Pelican for website creation
+Slug: web-pelican-pt2-markdown
 Summary: Learn how to write your articles or blogs using Markdown.
 Tags: pelican, markdown, python
 Authors: Ayush Kumar Shah
@@ -11,10 +11,9 @@ Status: published
 This article is a part of a series of articles for web development using pelican. So, if you haven't read the previous
 articles, please check it out by clicking the links below.
 
-[Building and deploying static websites using Pelican and
-Travis-CI](https://shahayush.com/drafts/web-develop-pelican-travis-intro)
+[Creating and deploying static websites using Markdown and the Python library Pelican](https://shahayush.com/drafts/web-pelican-intro)
 
-- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-develop-pt1-pelican-setup)
+- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-pelican-pt1-setup)
 
 Now that you have setup your website, the next step is to start writing some content -- articles, blogs, about page,
 contact page, etc. We will use Markdown for writing any content you create. If you have not heard about Markdown, don't
@@ -67,7 +66,7 @@ At this point, your project structure should look like:
 ### Define metadata for article
 
 Before writing the actual content, we need to define the metadata for the article. Metadata carries important information about
-your article. Open the file **first_article.md** and add the following metadata lines:
+your article. Open the file `first_article.md` and add the following metadata lines:
 
     Title: My First Article
     Date: 2020-03-17 00:00
@@ -218,7 +217,7 @@ reference.
 
 Now, let's view how your article looks in the website.
 
-Close the previous process  i.e. **fab reserve** if it is still
+Close the previous process  i.e. `fab reserve` if it is still
 running by pressing Ctrl+C or Cmd+C. Then,
 
 ```console
@@ -243,7 +242,7 @@ page. We have added the links to the pages in the navigation bar.
 
 ### About page
 
-Open **about.md** and add the following metadata lines like you did before. As you can see the difference as it is not
+Open `about.md` and add the following metadata lines like you did before. As you can see the difference as it is not
 as detailed as before.
 
     Title: About
@@ -267,7 +266,7 @@ page. I have provided a simple example for my about page below.
 
 ### Contact page
 
-You can configure your **contact.md** file in the similar way. Have a look at a simple example below and create a
+You can configure your `contact.md` file in the similar way. Have a look at a simple example below and create a
 similar one.
 
     Title: Contact
@@ -284,7 +283,7 @@ similar one.
 
 [![Contact](/images/contact.png){.img-center}](https://ibb.co/)
 
-Finally, let's define a page for error as well. Open **404.md** and add the following lines
+Finally, let's define a page for error as well. Open `404.md` and add the following lines
 
     Title: Not Found
     Status: hidden
@@ -295,17 +294,17 @@ Finally, let's define a page for error as well. Open **404.md** and add the foll
 
     [1]: {index}
 
-Finally, your site is ready. You may now add more articles by creating more .md files into the **content/articles/**
+Finally, your site is ready. You may now add more articles by creating more .md files into the `content/articles/`
 directory and follow the similar steps.
 
 Although your site has been built, it is not publicly available. Learn how to host your site in github pages or a custom domain in [part
-3](https://shahayush.com/drafts/web-develop-pt3-github-pages) of the article.
+3](https://shahayush.com/2020/03/web-pelican-pt3-hosting) of the article.
 
-- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-develop-pt1-pelican-setup)
-- [<span style="color:green">Part 2: Writing content using Markdown</span>](https://shahayush.com/2020/03/web-develop-pt2-content-markdown)
-- [**Part 3: Hosting your website to GitHub Pages and custom domain**](https://shahayush.com/2020/03/web-develop-pt3-github-pages)
-- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/drafts/web-develop-pt4-travis-pelican)
-- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt5-disqus)
-- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt6-analytics)
+- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-pelican-pt1-setup)
+- [<span style="color:green">Part 2: Writing content using Markdown</span>](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
+- [**Part 3: Hosting your website to GitHub Pages and custom domain**](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
+- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/drafts/web-pelican-pt4-travisci)
+- [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/drafts/web-pelican-pt5-disqus)
+- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/drafts/web-pelican-pt6-analytics)
 
-Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-develop-pelican-travis-intro)
+Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)

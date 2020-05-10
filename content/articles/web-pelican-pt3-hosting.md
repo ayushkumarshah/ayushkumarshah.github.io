@@ -1,8 +1,8 @@
-Title: Web development using Pelican and Travis-CI - Part 3: Hosting your website to GitHub Pages and custom domain
+Title: Part 3: Hosting your website to GitHub Pages and custom domain
 Date: 2020-03-28 22:30
 Modified: 2020-05-10 00:38
-Category: Web development and hosting
-Slug: web-develop-pt3-github-pages
+Category: Pelican for website creation
+Slug: web-pelican-pt3-hosting
 Summary: Learn to host your website in github pages or custom domain for free.
 Tags: pelican, python, github-pages
 Authors: Ayush Kumar Shah
@@ -11,16 +11,15 @@ Status: published
 This article is a part of a series of articles for web development using pelican. So, if you haven't read the previous
 articles, please check it out by clicking the links below.
 
-[Building and deploying static websites using Pelican and
-Travis-CI](https://shahayush.com/drafts/web-develop-pelican-travis-intro)
+[Creating and deploying static websites using Markdown and the Python library Pelican](https://shahayush.com/2020/03/web-pelican-intro)
 
-- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-develop-pt1-pelican-setup)
-- [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-develop-pt2-content-markdown)
+- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-pelican-pt1-setup)
+- [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 
 Upto this point, you have created your static website locally. You surely want to share it with the public so that they
 can view your articles. There are several ways of deploying your websites but the best option is by using github pages.
 
-## Why Github Pages ?
+## Why Github Pages?
 
 1. It is completely free of cost. You don't need to buy any hosting services. Github hosts your website for free.
 
@@ -39,7 +38,7 @@ can view your articles. There are several ways of deploying your websites but th
 
     ![create_repo](/images/create_repo.gif){.img-center}
 
-- Now, goto your project directory i.e. **'web_development'** perform the following commands to add your remote
+- Now, goto your project directory i.e. `'web_development'` perform the following commands to add your remote
   repository that you just created to your project.
 
 ```console
@@ -59,21 +58,21 @@ can view your articles. There are several ways of deploying your websites but th
 (.venv) $ git config --global user.name "your-github-name"
 ```
 
-- We will be using 2 branches in our repository - **source** and **master**.
+- We will be using 2 branches in our repository - `source` and `master`.
 
-    - **source:** store the source code of our project (i.e. all folders and files except the output folder)
+    - `source:` store the source code of our project (i.e. all folders and files except the output folder)
 
-    - **master:** store the contents of the output folder. i.e. all the html files generated after building the site. The
+    - `master:` store the contents of the output folder. i.e. all the html files generated after building the site. The
       master branch will be used to host the website to github-pages.
 
-- So, let's switch to the **source** branch.
+- So, let's switch to the `source` branch.
 
 ```console
 # Create and switch to a new branch source
 (.venv) $ git checkout -b source
 ```
 
-- Create a **.gitignore** file to mark the files which should not be added into the repository.
+- Create a `.gitignore` file to mark the files which should not be added into the repository.
 
 ```console
 (.venv) $ touch .gitignore
@@ -81,18 +80,18 @@ can view your articles. There are several ways of deploying your websites but th
 
 - Copy all the lines from this link: [.gitignore](https://raw.githubusercontent.com/ayushkumarshah/ayushkumarshah.github.io/source/.gitignore) and paste it in the newly created `.gitignore` file.
 
-- You may also create a **Readme.md** file for your repository. Create it in the main directory **web_development**
+- You may also create a `Readme.md` file for your repository. Create it in the main directory `web_development`
 
 ```console
 (.venv) $ touch Readme.md
 ```
 
-- You can add information about your project in the **Readme.md** file  similar to mine. You can copy it from this link:
+- You can add information about your project in the `Readme.md` file  similar to mine. You can copy it from this link:
  [Readme.md](https://raw.githubusercontent.com/ayushkumarshah/ayushkumarshah.github.io/source/README.md) and modify it accordingly. 
 
 ### 2. Build and publish your website
 
-- Let's modify the configuration for publishing the website by opening **publishconfig.py** and modifying/adding the following settings.
+- Let's modify the configuration for publishing the website by opening `publishconfig.py` and modifying/adding the following settings.
 
 ```python
 SITEURL = 'https://username.github.io'
@@ -101,7 +100,7 @@ FEED_DOMAIN = SITEURL
 HTTPS = True
 ```
 
-- Also, let's modify the commands in the file **fabfile.py**. Open the file and add the following settings if not
+- Also, let's modify the commands in the file `fabfile.py`. Open the file and add the following settings if not
   present already.
 
 ```python
@@ -118,7 +117,7 @@ SERVER = '127.0.0.1'
 PORT = 8000
 ```
 
-- Also, we need to add a **deploy()** function in **publishconfig.py**.
+- Also, we need to add a `deploy()` function in `publishconfig.py`.
 
 ```python
 def deploy():
@@ -224,7 +223,7 @@ the gif below):
   repository](https://github.com/alexandrevicenzi/Flex/tree/b3bd59002a3e85803332c35702d90e1e19ef39b6) or the repository
   of the theme you chose.
 
-- Then, copy the **https** (not ssh) link of the forked repository.
+- Then, copy the `https` (not ssh) link of the forked repository.
 
 ![Forking_and_cloning_repo](/images/fork_clone.gif){.img-center}
 
@@ -237,18 +236,18 @@ the gif below):
 (.venv) $ git clone 'https://github.com/ayushkumarshah/Flex.git' 'themes/Flex'
 ```
 
-Now, you may modify the theme by tweaking with the html and css files inside the **themes/Flex/** directory and then
+Now, you may modify the theme by tweaking with the html and css files inside the `themes/Flex/` directory and then
 commit the changes to the forked repository separately.
 
 In the next part, learn to automate the process of pushing to source and deploying to master branch by using Continuous Integration
 tools like [Travis-CI](https://travis-ci.org/) in the [part
-4](https://shahayush.com/drafts/web-develop-pt1-pelican-setup) of the article.
+4](https://shahayush.com/2020/03/web-pelican-pt1-setup) of the article.
 
-- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-develop-pt1-pelican-setup)
-- [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-develop-pt2-content-markdown)
-- [<span style="color:green">Part 3: Hosting your website to GitHub Pages and custom domain</span](https://shahayush.com/2020/03/web-develop-pt3-github-pages)
-- [**Part 4: Setting up Travis-CI for automating deployment**](https://shahayush.com/drafts/web-develop-pt4-travis-pelican)
-- [Part 5: Linking Disqus comments to your website](https://shahayush.com/drafts/web-develop-pt5-disqus)
-- [Part 6: Using Google Analytics with Pelican](https://shahayush.com/drafts/web-develop-pt6-analytics)
+- [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-pelican-pt1-setup)
+- [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
+- [<span style="color:green">Part 3: Hosting your website to GitHub Pages and custom domain</span](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
+- [**Part 4: Setting up Travis-CI for automating deployment**](https://shahayush.com/drafts/web-pelican-pt4-travisci)
+- [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/drafts/web-pelican-pt5-disqus)
+- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/drafts/web-pelican-pt6-analytics)
 
-Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-develop-pelican-travis-intro)
+Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)
