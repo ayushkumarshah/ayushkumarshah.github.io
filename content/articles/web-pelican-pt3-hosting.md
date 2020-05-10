@@ -78,7 +78,7 @@ can view your articles. There are several ways of deploying your websites but th
 (.venv) $ touch .gitignore
 ```
 
-- Copy all the lines from this link: [.gitignore](https://raw.githubusercontent.com/ayushkumarshah/ayushkumarshah.github.io/source/.gitignore) and paste it in the newly created `.gitignore` file.
+- Copy all the lines from this link: [.gitignore](https://raw.githubusercontent.com/ayushblog/ayushblog.github.io/source/.gitignore) and paste it in the newly created `.gitignore` file.
 
 - You may also create a `Readme.md` file for your repository. Create it in the main directory `web_development`
 
@@ -241,12 +241,12 @@ commit the changes to the forked repository separately.
 
 In the next part, learn to automate the process of pushing to source and deploying to master branch by using Continuous Integration
 tools like [Travis-CI](https://travis-ci.org/) in the [part
-4](https://shahayush.com/2020/03/web-pelican-pt1-setup) of the article.
+4](https://shahayush.com/2020/03/web-pelican-pt4-travisci) of the article.
 
 - [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-pelican-pt1-setup)
 - [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 - [<span style="color:green">Part 3: Hosting your website to GitHub Pages and custom domain</span>](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
-- [**Part 4: Setting up Travis-CI for automating deployment**](https://shahayush.com/drafts/web-pelican-pt4-travisci)
+- [**Part 4: Setting up Travis-CI for automating deployment**](https://shahayush.com/2020/03/web-pelican-pt4-travisci)
 - [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/drafts/web-pelican-pt5-disqus)
 - [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/drafts/web-pelican-pt6-analytics)
 

@@ -28,7 +28,7 @@ First, let us create required directories for articles and pages.
 (.venv) $ mkdir content/pages
 ```
 
-Now, let's create a file for your first article inside the articles directory.
+Now, let's create a file for your first article inside the articles directory. Note that the `touch` command is being used only to create a file. You can create a file without using any command too. It's up to you.
 
 ```console
 (.venv) $ touch content/articles/first_article.md
@@ -94,6 +94,8 @@ These keywords are pretty much self explanatory. I will just explain the new one
     - hidden: In this mode, the article is just not shown in the website.
 
 ### Write article content
+
+> Useful tip: Use VSCode as a text editor to manage your project and write content as you can preview .md files (content files written in markdown) in real-time directly using the Preview functionality. Hence, it becomes easy for you to view how your content will look like in real-time.
 
 Now add the following lines in the file first_article.md just below the metadata defined above.
 
@@ -303,7 +305,7 @@ Although your site has been built, it is not publicly available. Learn how to ho
 - [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-pelican-pt1-setup)
 - [<span style="color:green">Part 2: Writing content using Markdown</span>](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 - [**Part 3: Hosting your website to GitHub Pages and custom domain**](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
-- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/drafts/web-pelican-pt4-travisci)
+- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/2020/03/web-pelican-pt4-travisci)
 - [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/drafts/web-pelican-pt5-disqus)
 - [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/drafts/web-pelican-pt6-analytics)
 

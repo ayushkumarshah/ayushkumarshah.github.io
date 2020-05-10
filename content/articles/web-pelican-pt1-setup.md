@@ -373,7 +373,7 @@ However, your site has no content. Start writing content in the [part
 - [<span style="color:green">Part 1: Setting up Pelican - Installation and Theme</span>](https://shahayush.com/2020/03/web-pelican-pt1-setup)
 - [**Part 2: Writing content using Markdown**](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 - [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
-- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/drafts/web-pelican-pt4-travisci)
+- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/2020/03/web-pelican-pt4-travisci)
 - [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/drafts/web-pelican-pt5-disqus)
 - [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/drafts/web-pelican-pt6-analytics)
 
