@@ -2,12 +2,11 @@
 
 This repository hosts the code for my personal [blog](https://shahayush.com).
 
-The website is powered by [Pelican](http://getpelican.com/) — a static site generator written in Python — and uses a theme based on [pneumatic](https://github.com/iKevinY/pneumatic).
-
+The website is powered by [Pelican](http://getpelican.com/) — a static site generator written in Python — and uses a theme based on [bulrush](https://github.com/ayushkumarshah/bulrush).
 
 ## Build Locally
 
-The easiest way to do this is in a Python [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/). 
+The easiest way to do this is in a Python [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
 ### Create a Virtual Environment
 
@@ -63,7 +62,7 @@ This blog is hosted by [GitHub Pages](https://pages.github.com/) and uses [Cloud
 
 ## License
 
-The source code for generation of the blog is under MIT License. Content is copyrighted.
+The source code for generation of the blog is under [MIT License](https://github.com/ayushkumarshah/ayushkumarshah.github.io/blob/source/LICENSE.md). Content is copyrighted.
 
 ## Contact
 
