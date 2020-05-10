@@ -108,7 +108,7 @@ MARKDOWN = {
 }
 
 PLUGIN_PATHS = ['./pelican-plugins']
-PLUGINS = ['assets', 'sitemap', 'post_stats', 'feed_summary', 'share_post']
+PLUGINS = ['assets', 'sitemap', 'post_stats', 'feed_summary', 'share_post', 'neighbors', 'related_posts',]
 
 # Sitemap Settings
 SITEMAP = {
