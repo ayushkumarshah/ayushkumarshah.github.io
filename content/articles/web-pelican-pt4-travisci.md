@@ -1,10 +1,9 @@
 Title: Part 4: Setting up Travis-CI for automating deployment
-Date: 2020-03-29 21:47
-Modified: 2020-03-29 21:47
+Date: 2020-05-10 21:47
 Category: Pelican for website creation
 Slug: web-pelican-pt4-travisci
 Summary: Learn to use Travis-CI to automate deploying your website to master branch
-Tags: pelican, python, github-pages
+Tags: pelican, python, travis-ci, build, website
 Authors: Ayush Kumar Shah
 Status: published
 
@@ -108,14 +107,23 @@ If the build fails, the new contents are not pushed to the master branch and hen
 
 Hence, after successful configuration, every time you update your source code and push to the source branch, automatic testing occurs and the website's html files are pushed to the master branch.
 
-In the next part, learn to integrate Disqus comments in your website in the [part
-5](https://shahayush.com/drafts/web-pelican-pt5-disqus) of the article.
+Learn to integrate Disqus comments in your website in the [part
+5](https://shahayush.com/2020/05/web-pelican-pt5-disqus) of the article.
+
+If you have any confusion in any article, feel free to comment your queries. I will be more than happy to help. I am
+also open to suggestions and feedbacks.  
+
+>Also, you can use my github repository for my blog post: [**ayushkumarshah.github.io**](https://github.com/ayushkumarshah/ayushkumarshah.github.io) as a
+reference in any point of the article. I have followed the exact same steps mentioned in this series to create my blog
+website that you are seeing right now.
+
+If you want to visit any specific parts of the article, you can do so from the links below.
 
 - [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-pelican-pt1-setup)
 - [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 - [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
-- [<span style="color:green">Part 4: Setting up Travis-CI for automating deployment</span>](https://shahayush.com/2020/03/web-pelican-pt4-travisci)
-- [**Part 5: Integrate Disqus comments with Pelican**](https://shahayush.com/drafts/web-pelican-pt5-disqus)
-- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/drafts/web-pelican-pt6-analytics)
+- [<span style="color:green">Part 4: Setting up Travis-CI for automating deployment</span>](https://shahayush.com/2020/05/web-pelican-pt4-travisci)
+- [**Part 5: Integrate Disqus comments with Pelican**](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
+- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt6-analytics)
 
 Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)

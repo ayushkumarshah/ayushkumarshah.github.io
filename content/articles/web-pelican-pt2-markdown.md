@@ -4,7 +4,7 @@ Modified: 2020-03-28 22:25
 Category: Pelican for website creation
 Slug: web-pelican-pt2-markdown
 Summary: Learn how to write your articles or blogs using Markdown.
-Tags: pelican, markdown, python
+Tags: pelican, markdown, python, website
 Authors: Ayush Kumar Shah
 Status: published
 
@@ -302,11 +302,20 @@ directory and follow the similar steps.
 Although your site has been built, it is not publicly available. Learn how to host your site in github pages or a custom domain in [part
 3](https://shahayush.com/2020/03/web-pelican-pt3-hosting) of the article.
 
+If you have any confusion in any article, feel free to comment your queries. I will be more than happy to help. I am
+also open to suggestions and feedbacks.  
+
+>Also, you can use my github repository for my blog post: [**ayushkumarshah.github.io**](https://github.com/ayushkumarshah/ayushkumarshah.github.io) as a
+reference in any point of the article. I have followed the exact same steps mentioned in this series to create my blog
+website that you are seeing right now.
+
+If you want to visit any specific parts of the article, you can do so from the links below.
+
 - [Part 1: Setting up Pelican - Installation and Theme](https://shahayush.com/2020/03/web-pelican-pt1-setup)
 - [<span style="color:green">Part 2: Writing content using Markdown</span>](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 - [**Part 3: Hosting your website to GitHub Pages and custom domain**](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
-- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/2020/03/web-pelican-pt4-travisci)
-- [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/drafts/web-pelican-pt5-disqus)
-- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/drafts/web-pelican-pt6-analytics)
+- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/2020/05/web-pelican-pt4-travisci)
+- [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
+- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt6-analytics)
 
 Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)

@@ -11,7 +11,7 @@ You may have the desire to build your personal site and host it in your own doma
 incomplete knowledge of HTML and CSS, databases; financial burden to host your site; the complexities of deployment and
 continuous integration pipelines, etc might have prevented  you from doing so.
 
-In this article, I will explain the complete steps to build your personal static website using a static site generator
+In this article, I will explain the complete steps to build your personal static website like the one I have built ([shahayush](https://shahayush.com)) using a static site generator
 called [Pelican](https://docs.getpelican.com/en/stable/index.html), which is written in Python, deploy it on [GitHub
 Pages](https://pages.github.com/) along with continuous integration (CI) using [Travis-CI](https://travis-ci.org/) and
 linking it to your custom domain name, all without requiring the knowledge of HTML and CSS, databases or deployment
@@ -53,8 +53,8 @@ For ease, I have divided the article into 6 parts as:
 - [**Part 1: Setting up Pelican - Installation and Theme**](https://shahayush.com/2020/03/web-pelican-pt1-setup)
 - [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 - [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
-- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/2020/03/web-pelican-pt4-travisci)
-- [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/drafts/web-pelican-pt5-disqus)
-- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/drafts/web-pelican-pt6-analytics)
+- [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/2020/05/web-pelican-pt4-travisci)
+- [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
+- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt6-analytics)
 
 Click on the respective links to get started.
