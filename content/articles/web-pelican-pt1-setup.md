@@ -8,8 +8,7 @@ Tags: pelican, python, pelican-plugin, flex, website
 Authors: Ayush Kumar Shah
 Status: published
 
-This article is a part of a series of articles for web development using pelican. So, if you haven't read the previous
-article, please check it out by clicking the link below.
+This article is a part of a series of articles for web development using pelican. So, if you haven't read the previous article, please check it out by clicking the link below.
 
 [Creating and deploying static websites using Markdown and the Python library Pelican](https://shahayush.com/2020/03/web-pelican-intro)
 
@@ -30,7 +29,7 @@ article, please check it out by clicking the link below.
 ## Setting up Pelican
 
 Project Structure:
-Create any folder for your project. For example: web_development
+Create any folder for your project. For example web_development
 
 ```console
 $ mkdir web_development
@@ -67,7 +66,7 @@ Then just run the following command inside the virtual environment to install al
 (.venv) $ pip install -r requirements.txt
 ```
 
-Let's now run quickstart configuration script for pelican.
+Let's now run a quickstart configuration script for pelican.
 
 ```console
 (.venv) $ pelican-quickstart
@@ -103,13 +102,13 @@ Done. Your new project is available at `/Users/ayushkumarshah/Desktop/Blog_writi
 While answering the questions, please keep these things in mind:
 
 - Title and Author: Replace `Ayush Kumar Shah` with the title and author's name that you want.
-- Default language : You can set any language using the standard [ISO 639.1](https://www.loc.gov/standards/iso639-2/php/code_list.php) 2 letter code.
+- Default language: You can set any language using the standard [ISO 639.1](https://www.loc.gov/standards/iso639-2/php/code_list.php) 2 letter code.
 
-- Article Pagination: If you do not want to limit the number or articles in a page, enter n.
+- Article Pagination: If you do not want to limit the number of articles on a page, enter n.
 
 - Time zone: Choose your timezone from the [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
-- Fabfile will help in the further processes. So enter Y.
+- Fabfile will help in further processes. So enter Y.
 
 You may delete the Makefile as we will not be using it.
 
@@ -130,15 +129,15 @@ After successfully running the command, your directory should look like this:
 Let me tell you with the purpose of each of these files :
 
 - content/ - directory that stored al the website content
-- fabfile.py - script that helps us automate website genration and publishing
-- output/ - directory which stores the html files of the generated static website
+- fabfile.py - script that helps us automate website generation and publishing
+- output/ - directory which stores the HTML files of the generated static website
 - pelicanconf.py - file containing all the configurations of the website
 publishconf.py - file containing additional website configurations used while publishing the website
 requirements.txt - contains all the packages and dependencies required
 
 ## 2. Generate and view your website
 
-Till now, we have installed and configured pelican successfully. 
+Till now, we have installed and configured Pelican successfully. 
 
 Let's generate our first website and preview what it looks like. Make sure you are inside .venv environment.
 
@@ -165,7 +164,7 @@ You may also run a single command equivalent to the 2 commands above:
 (.venv) $ fab reserve
 ```
 
-After running the command, you will notice html files generated inside the output folder. These files are the html files
+After running the command, you will notice HTML files generated inside the output folder. These files are the HTML files
 of your website.
 
 Your website should be already running in port 8000 of your localhost. To view your website, open your browser and
@@ -190,8 +189,7 @@ version](http://flex.alxd.me/blog/)), [Pneumatic](https://github.com/iKevinY/pne
 [Flex](https://github.com/alexandrevicenzi/Flex) theme.
 
 First, open and clone the [Flex
-  repository](https://github.com/alexandrevicenzi/Flex) or the repository
-  of the theme you chose. Make sure you are inside the web_development directory.
+  repository](https://github.com/alexandrevicenzi/Flex) or the repository of the theme you chose. Make sure you are inside the web_development directory.
 
 ```console
 (.venv) $ git clone https://github.com/alexandrevicenzi/Flex.git themes/Flex
@@ -204,7 +202,7 @@ Now, specify the path of your theme in the configuration file `pelicanconf.py` b
 
     THEME = 'themes/Flex'
 
-Although Flex theme reqires no additional plugin, most of the themes require various Pelican plugins. So, let's download the
+Although Flex theme requires no additional plugin, most of the themes require various Pelican plugins. So, let's download the
 [pelican-plugins](https://github.com/getpelican/pelican-plugins) into your project. Note that you may skip this step if
 you want to use [Flex](https://github.com/alexandrevicenzi/Flex) theme.
 
@@ -212,11 +210,11 @@ you want to use [Flex](https://github.com/alexandrevicenzi/Flex) theme.
 (.venv) $ git clone https://github.com/getpelican/pelican-plugins.git
 ```
 
-Now, add the path of the plugins in `pelicanconf.py` in the similar way as before by adding the following lines:
+Now, add the path of the plugins in `pelicanconf.py` in a similar way as before by adding the following lines:
 
     PLUGIN_PATHS = ['./pelican-plugins']
 
-Also add the a line specifying a list of plugins required in your theme. You can view the name of plugins required in
+Also, add a line specifying a list of plugins required in your theme. You can view the name of plugins required in
 the repository of the theme.
 
     PLUGINS = ['sitemap', 'post_stats', 'feed_summary']
@@ -227,7 +225,7 @@ At this state, your directory structure should look like this:
         ├── content/
         ├── fabfile.py
         ├── output
-            ├── ... (many html files)
+            ├── ... (many HTML files)
         ├── themes
             ├── Flex/
         ├── pelican-plugins
@@ -238,7 +236,7 @@ At this state, your directory structure should look like this:
 
 If it doesn't, then you probably did something wrong.
 
-So, by now we have successfully installed the [Flex](https://github.com/alexandrevicenzi/Flex) theme in our website. You
+So, by now we have successfully installed the [Flex](https://github.com/alexandrevicenzi/Flex) theme on our website. You
 
 ### Flex Configurations
 We can check our new theme by generating and serving our new website again.
@@ -274,7 +272,7 @@ for your website. You can create one [online](https://realfavicongenerator.net/#
 
 Different themes have different attributes or configurations.
 
-Check the documentation or the Readme.md file
+Check the documentation or the README.md file
 of the respective theme. For [Flex](https://github.com/alexandrevicenzi/Flex) theme, a sample pelicanconfig.py can be
 found inside the docs folder. Check it for reference and also compare it with the [live version of the
 theme](http://flex.alxd.me/blog/). You can find more examples of the configurations in the [Flex
@@ -324,7 +322,7 @@ STATIC_PATHS = ['images', 'extra']
 MAIN_MENU = True
 MENUITEMS = (('Archives', '/archives'),('Categories', '/categories'),('Tags', '/tags'))
 
-# Code highlighting theme
+# Code highlighting the theme
 PYGMENTS_STYLE = 'friendly'
 
 ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}/'
@@ -370,11 +368,11 @@ You should see your website with your new configuration. Feel free to modify it 
 However, your site has no content. Start writing content in the [part
 2](https://shahayush.com/2020/03/web-pelican-pt2-markdown) of the article.
 
-If you have any confusion in any article, feel free to comment your queries. I will be more than happy to help. I am
+If you have any confusion in any article, feel free to comment on your queries. I will be more than happy to help. I am
 also open to suggestions and feedbacks.  
 
->Also, you can use my github repository for my blog post: [**ayushkumarshah.github.io**](https://github.com/ayushkumarshah/ayushkumarshah.github.io) as a
-reference in any point of the article. I have followed the exact same steps mentioned in this series to create my blog
+>Also, you can use my GitHub repository for my blog post: [**ayushkumarshah.github.io**](https://github.com/ayushkumarshah/ayushkumarshah.github.io) as a
+reference in any point of the article. I have followed the same steps mentioned in this series to create my blog
 website that you are seeing right now.
 
 If you want to visit any specific parts of the article, you can do so from the links below.
@@ -386,4 +384,4 @@ If you want to visit any specific parts of the article, you can do so from the l
 - [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
 - [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt6-analytics)
 
-Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)
+Or, go to the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)

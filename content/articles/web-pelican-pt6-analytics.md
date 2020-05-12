@@ -3,7 +3,7 @@ Date: 2020-05-11 01:45
 Category: Pelican for website creation
 Slug: web-pelican-pt6-analytics
 Summary: Learn to link google analytics to your site
-Tags: pelican, analytics, analyze, website
+Tags: pelican, analytics, website
 Authors: Ayush Kumar Shah
 Status: published
 
@@ -18,7 +18,7 @@ articles, please check it out by clicking the links below.
 - [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/2020/05/web-pelican-pt4-travisci)
 - [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
 
-Upto this point, you have created and hosted your static website on github pages/ custom domain and also learnt to integrate disqus comments. Now, we will learn to integrate google analytics in our
+Up to this point, you have created and hosted your static website on GitHub pages/ custom domain and also learned to integrate Disqus comments. Now, we will learn to integrate google analytics into our
 site in so that you can analyze in-depth detail about the visitors on your website.
 
 - Create an account for google analytics by visiting this link: [Analytics - Create Account](https://analytics.google.com/analytics/web/provision/#/provision/create). Write an account name.
@@ -47,9 +47,9 @@ GOOGLE_ANALYTICS = "UA-166070073-1"
 
 That's all. Now just push the updated source code to the source branch and the analytics of your website will be tracked by google.
 
-To view your detailed analytics, just login to the [Google Analytics website](https://analytics.google.com/analytics/web/). 
+To view your detailed analytics, just log in to the [Google Analytics website](https://analytics.google.com/analytics/web/). 
 
-You can view detailed stats of your website visitors like number of total visitors, active visitors, bounce rate, location of visitors. You can also view the real-time data of your visitors. How cool
+You can view detailed stats of your website visitors like the number of total visitors, active visitors, bounce rate, location of visitors. You can also view the real-time data of your visitors. How cool
 is that?
 
 ![analytics](/images/analytics.png){.img-center}
@@ -57,11 +57,11 @@ is that?
 **`Congratulations!!`** You have completed the entire series of articles on [Creating and deploying static websites using Markdown and the Python library
 Pelican](https://shahayush.com/2020/03/web-pelican-intro).
 
-If you have any confusion in any article, feel free to comment your queries. I will be more than happy to help. I am
+If you have any confusion in any article, feel free to comment on your queries. I will be more than happy to help. I am
 also open to suggestions and feedbacks.  
 
->Also, you can use my github repository for my blog post: [**ayushkumarshah.github.io**](https://github.com/ayushkumarshah/ayushkumarshah.github.io) as a
-reference in any point of the article. I have followed the exact same steps mentioned in this series to create my blog
+>Also, you can use my GitHub repository for my blog post: [**ayushkumarshah.github.io**](https://github.com/ayushkumarshah/ayushkumarshah.github.io) as a
+reference in any point of the article. I have followed the same steps mentioned in this series to create my blog
 website that you are seeing right now.
 
 If you want to visit any specific parts of the article, you can do so from the links below.
@@ -73,4 +73,4 @@ If you want to visit any specific parts of the article, you can do so from the l
 - [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
 - [<span style="color:green">Part 6: Integrate Google Analytics with Pelican</span>](https://shahayush.com/2020/05/web-pelican-pt6-analytics)
 
-Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)
+Or, go to the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)

@@ -3,7 +3,7 @@ Date: 2020-05-10 21:47
 Category: Pelican for website creation
 Slug: web-pelican-pt4-travisci
 Summary: Learn to use Travis-CI to automate deploying your website to master branch
-Tags: pelican, python, travis-ci, build, website
+Tags: pelican, python, Travis-ci, build, website
 Authors: Ayush Kumar Shah
 Status: published
 
@@ -16,19 +16,19 @@ articles, please check it out by clicking the links below.
 - [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 - [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
 
-Upto this point, you have created and hosted your static website on github pages and custom domain as well.
+Up to this point, you have created and hosted your static website on GitHub pages and custom domain as well.
 
-Now, let's learn to automate the process of pushing to source and deploying to master branch by using continuous integration
+Now, let's learn to automate the process of pushing to source and deploying to the master branch by using continuous integration
 tools like [Travis-CI](https://travis-ci.org/) so that you don't need to manually push to two branches every time you
 update your site.
 
-- First, visit [Travis-CI](https://travis-ci.org/) and login using your github account.
+- First, visit [Travis-CI](https://travis-ci.org/) and log in using your GitHub account.
 
 - Then, add your repository `yourusername.github.io` in the [Repositories section](https://travis-ci.org/account/repositories) as shown below.
 
 ![travis-repo](/images/travis-repo.png){.img-center}
 
-- Now, we need to generate Personal access tokens in github. Go to [Generate new token for Github](https://github.com/settings/tokens/new)
+- Now, we need to generate Personal access tokens in GitHub. Go to [Generate new token for Github](https://github.com/settings/tokens/new)
 
 - Check the `public_repo` checkbox and click `Generate Token` as shown below.
 
@@ -61,7 +61,7 @@ def publish(commit_message):
         local("git push -fq https://{GH_TOKEN}@github.com/{TRAVIS_REPO_SLUG}.git {github_pages_branch}".format(**env))
 ```
 
-- Now, create a `.travis.yml` configuration file in the root directory for automatic deploment.
+- Now, create a `.travis.yml` configuration file in the root directory for automatic deployment.
 
 ```console
 (.venv) $ touch .travis.yml
@@ -89,7 +89,7 @@ script:
   - fab publish:"Build site"
 ```
 
-The above file is responsible for testing every pushed source code and also for automatic deployment of the output folder contents (html) to the master branch. Chnage the theme repository in the above file if you are using a different theme.
+The above file is responsible for testing every pushed source code and also for automatic deployment of the output folder contents (HTML) to the master branch. Change the theme repository in the above file if you are using a different theme.
 
 - The final step is to add the following line to the top of your `README.md` file.
 
@@ -103,18 +103,18 @@ Note that you must replace `username` by your username in the above line. The ab
 
 You can click the build button to view the build status in Travis-CI in detail. You can view why the build failed in detail if the build failed and hence make the necessary corrections in the source code.
 
-If the build fails, the new contents are not pushed to the master branch and hence your website won't be updated by failed content caused by error in the source code. This enables your website to run without errors at all times.
+If the build fails, the new contents are not pushed to the master branch and hence your website won't be updated by failed content caused by an error in the source code. This enables your website to run without errors at all times.
 
-Hence, after successful configuration, every time you update your source code and push to the source branch, automatic testing occurs and the website's html files are pushed to the master branch.
+Hence, after a successful configuration, every time you update your source code and push to the source branch, automatic testing occurs and the website's HTML files are pushed to the master branch.
 
 Learn to integrate Disqus comments in your website in the [part
 5](https://shahayush.com/2020/05/web-pelican-pt5-disqus) of the article.
 
-If you have any confusion in any article, feel free to comment your queries. I will be more than happy to help. I am
+If you have any confusion in any article, feel free to comment on your queries. I will be more than happy to help. I am
 also open to suggestions and feedbacks.  
 
->Also, you can use my github repository for my blog post: [**ayushkumarshah.github.io**](https://github.com/ayushkumarshah/ayushkumarshah.github.io) as a
-reference in any point of the article. I have followed the exact same steps mentioned in this series to create my blog
+>Also, you can use my GitHub repository for my blog post: [**ayushkumarshah.github.io**](https://github.com/ayushkumarshah/ayushkumarshah.github.io) as a
+reference in any point of the article. I have followed the same steps mentioned in this series to create my blog
 website that you are seeing right now.
 
 If you want to visit any specific parts of the article, you can do so from the links below.
@@ -126,4 +126,4 @@ If you want to visit any specific parts of the article, you can do so from the l
 - [**Part 5: Integrate Disqus comments with Pelican**](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
 - [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt6-analytics)
 
-Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)
+Or, go to the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)

@@ -2,8 +2,8 @@ Title: Part 5: Integrate Disqus comments with Pelican
 Date: 2020-05-11 00:45
 Category: Pelican for website creation
 Slug: web-pelican-pt5-disqus
-Summary: Learn to link disqus comments to your site
-Tags: pelican, disqus, comments, discussion, website
+Summary: Learn to link Disqus comments to your site
+Tags: pelican, Disqus, comments, discussion, website
 Authors: Ayush Kumar Shah
 Status: published
 
@@ -17,7 +17,7 @@ articles, please check it out by clicking the links below.
 - [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
 - [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/2020/05/web-pelican-pt4-travisci)
 
-Upto this point, you have created and hosted your static website on github pages / custom domain and also learnt to automate deployment.
+Up to this point, you have created and hosted your static website on GitHub pages/custom domain and also learned to automate deployment.
 
 Now, let's integrate [Disqus comment service]((https://disqus.com/)) system in the articles.
 
@@ -39,15 +39,15 @@ In the website name field, you may enter any name for your website.
 
 ![disqus-platform](/images/disqus-platform.png){.img-center}
 
-- Skip the installation step, goto the bottom of the page and click `Configure`.
+- Skip the installation step, go to the bottom of the page, and click `Configure`.
 
 ![disqus-config](/images/disqus-config.png){.img-center}
 
-- Add the website name (the github page link or the custom domain if you have it linked) as shown below. 
+- Add the website name (the GitHub page link or the custom domain if you have it linked) as shown below. 
 
 ![disqus-finalconfig](/images/disqus-finalconfig.png){.img-center}
 
-- Go to `Edit Settings` and click `General`. There, you can see your disqus website shortname in the `Shortname` field. Copy that name.
+- Go to `Edit Settings` and click `General`. There, you can see your Disqus website shortname in the `Shortname` field. Copy that name.
 
 ![disqus-editsettings](/images/disqus-editsettings.png){.img-center}
 
@@ -65,13 +65,13 @@ That's it. You can check by using the command
 (.venv) fab reserve
 ```
 
-Then visit [localhost:8000](localhost:8000). At the bottom, you can see the disqus comment section.
+Then visit [localhost:8000](localhost:8000). At the bottom, you can see the Disqus comment section.
 
-![disqus-comments](/images/disqus-comments.png){.img-center}
+![disqus-comment](/images/disqus-comment.png){.img-center}
 
-You can push the updated source code to view the changes in your website.
+You can push the updated source code to view the changes on your website.
 
-Whenever someone comments, then it is added in the disqus site rather than directly being posted. You need to approve the comment by going to the [moderate section of disqus](https://disqus.com/admin/moderate/). You have the ability to approve or delete the comment. If you approve, only then it can be viewed by everyone in your website.
+You can configure the appearance and other preferences of the comment system by logging in to this link: [Disqus admin panel]((https://disqus.com/admin/). You can also choose to moderate the comments before making it visible to the public. If you do so, you can moderate the comments by going to the [moderate section of disqus](https://disqus.com/admin/moderate/). You can approve or delete the comment. 
 
 ![disqus-approve](/images/disqus-approve.png)
 
@@ -82,11 +82,11 @@ You can approve the comments by logging in to [Disqus](https://disqus.com/)
 Learn to integrate Google Analytics in your website in the [part
 6](https://shahayush.com/2020/03/web-pelican-pt6-analytics) of the article.
 
-If you have any confusion in any article, feel free to comment your queries. I will be more than happy to help. I am
+If you have any confusion in any article, feel free to comment on your queries. I will be more than happy to help. I am
 also open to suggestions and feedbacks.  
 
->Also, you can use my github repository for my blog post: [**ayushkumarshah.github.io**](https://github.com/ayushkumarshah/ayushkumarshah.github.io) as a
-reference in any point of the article. I have followed the exact same steps mentioned in this series to create my blog
+>Also, you can use my GitHub repository for my blog post: [**ayushkumarshah.github.io**](https://github.com/ayushkumarshah/ayushkumarshah.github.io) as a
+reference in any point of the article. I have followed the same steps mentioned in this series to create my blog
 website that you are seeing right now.
 
 If you want to visit any specific parts of the article, you can do so from the links below.
@@ -98,4 +98,4 @@ If you want to visit any specific parts of the article, you can do so from the l
 - [<span style="color:green">Part 5: Integrate Disqus comments with Pelican</span>](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
 - [**Part 6: Integrate Google Analytics with Pelican**](https://shahayush.com/2020/05/web-pelican-pt6-analytics)
 
-Or, goto the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)
+Or, go to the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)
