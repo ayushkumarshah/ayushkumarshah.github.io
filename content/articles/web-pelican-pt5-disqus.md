@@ -71,7 +71,7 @@ Then visit [localhost:8000](localhost:8000). At the bottom, you can see the Disq
 
 You can push the updated source code to view the changes on your website.
 
-You can configure the appearance and other preferences of the comment system by logging in to this link: [Disqus admin panel]((https://disqus.com/admin/). You can also choose to moderate the comments before making it visible to the public. If you do so, you can moderate the comments by going to the [moderate section of disqus](https://disqus.com/admin/moderate/). You can approve or delete the comment. 
+You can configure the appearance and other preferences of the comment system by logging in to this link: [Disqus admin panel](https://disqus.com/admin/). You can also choose to moderate the comments before making it visible to the public. If you do so, you can moderate the comments by going to the [moderate section of disqus](https://disqus.com/admin/moderate/). You can approve or delete the comment. 
 
 ![disqus-approve](/images/disqus-approve.png)
 
