@@ -254,7 +254,7 @@ If you want to visit any specific parts of the article, you can do so from the l
 - [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 - [<span style="color:green">Part 3: Hosting your website to GitHub Pages and custom domain</span>](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
 - [**Part 4: Setting up Travis-CI for automating deployment**](https://shahayush.com/2020/05/web-pelican-pt4-travisci)
-- [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
-- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt6-analytics)
+- [Part 5: Integrate Disqus comments and Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus-analytics)
+
 
 Or, go to the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)

@@ -137,11 +137,11 @@ requirements.txt - contains all the packages and dependencies required
 
 ## 2. Generate and view your website
 
-Till now, we have installed and configured Pelican successfully. 
+Till now, we have installed and configured Pelican successfully.
 
 Let's generate our first website and preview what it looks like. Make sure you are inside .venv environment.
 
-Open fabfile.py and replace all instances of SocketServer by socketserver. (SocketServer is for python2).
+Open `fabfile.py` and replace all instances of SocketServer by socketserver. (SocketServer is for python2).
 
 ```python
 # import SocketServer
@@ -164,7 +164,13 @@ You may also run a single command equivalent to the 2 commands above:
 (.venv) $ fab reserve
 ```
 
-After running the command, you will notice HTML files generated inside the output folder. These files are the HTML files
+> In case an error occurs, open `fabfile.py` again and change the import line to
+
+```python
+import SocketServer as socketserver
+```
+
+After running the fab command, you will notice HTML files generated inside the output folder. These files are the HTML files
 of your website.
 
 Your website should be already running in port 8000 of your localhost. To view your website, open your browser and
@@ -183,7 +189,8 @@ themes to choose from. Both the [live version of the themes](http://www.pelicant
 that suits your website. My favorite themes are
 [Flex](https://github.com/alexandrevicenzi/Flex) ([live
 version](http://flex.alxd.me/blog/)), [Pneumatic](https://github.com/iKevinY/pneumatic) ([live version](https://kevinyap.ca/)) and
-[Bulrush](https://github.com/textbook/bulrush) ([live version](https://blog.jonrshar.pe/)).
+[Bulrush](https://github.com/textbook/bulrush) ([live version](https://blog.jonrshar.pe/)). I am currently using the [Bulrush](https://github.com/textbook/bulrush) theme with some custom
+modifications for my website.
 
 > I will demonstrate using the
 [Flex](https://github.com/alexandrevicenzi/Flex) theme.
@@ -215,9 +222,14 @@ Now, add the path of the plugins in `pelicanconf.py` in a similar way as before 
     PLUGIN_PATHS = ['./pelican-plugins']
 
 Also, add a line specifying a list of plugins required in your theme. You can view the name of plugins required in
-the repository of the theme.
+the documentation of the GitHub repository of the corresponding theme. Three most common plugins required by most of the themes are listed below. You can add the following line in the same file `pelicanconf.py`.
 
     PLUGINS = ['sitemap', 'post_stats', 'feed_summary']
+
+Some themes may require additional plugins, for which you have to search the documentation. 
+
+Another way to find the plugin name required is to just skip it for a while and after everything is done,
+while trying to serve your website, you will get an error message stating the name of missing plugins. Then you can add these plugins in the `pelicanconf.py` file.
 
 At this state, your directory structure should look like this:
 
@@ -381,7 +393,7 @@ If you want to visit any specific parts of the article, you can do so from the l
 - [**Part 2: Writing content using Markdown**](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 - [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
 - [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/2020/05/web-pelican-pt4-travisci)
-- [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
-- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt6-analytics)
+- [Part 5: Integrate Disqus comments and Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus-analytics)
+
 
 Or, go to the [home-page of the article.](https://shahayush.com/2020/03/web-pelican-intro)

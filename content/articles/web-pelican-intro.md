@@ -24,9 +24,49 @@ register your domain name. You can also avoid this fee by hosting the site only 
 website like `your_username.github.io`. The only prerequisite for completing this process is the basic knowledge of
 Python and Markdown for writing the articles. You might have used Markdown in jupyter notebook or the `Readme.md`
 file of your GitHub repository. Don't worry if you are completely unaware of them. You can still manage to learn them
-through this article as they are extremely simple to catch up.
+through this article as they are extremely simple to catch up. 
 
-### Advantages of Pelican over WordPress
+By part 2 of the article series, you will have your website ready which will look something like this:
+
+[![First Article](/images/first_article.png){.img-center}](https://ibb.co/px31tnG)
+
+My current [website](https://shahayush.com) is also built using the same methods discussed in this article series.
+
+## Some samples of websites built using pelican
+
+- Theme: bulrush
+
+![bulrush](/images/sample1_bulrush.png){.img-center}
+
+<br>
+
+- Theme: medius
+
+![medius](/images/sample2_medius.png){.img-center}
+
+Demo website: [medius](https://onur.github.io/medius/medius.html) by [Onur Aslan](https://onur.github.io/medius/author/onur-aslan.html)
+
+<br>
+
+- Theme: hyde
+
+![hyde](/images/sample3_hyde.png){.img-center}
+
+Demo website: [hyde](http://jvanz.com/) by [vanz](http://jvanz.com/)
+
+<br>
+
+- Theme: pneumatic
+
+![pneumatic](/images/sample4_pneumatic.png){.img-center}
+
+Demo website: [pneumatic](https://kevinyap.ca/)  by [Kevin Yap](https://kevinyap.ca/about/)
+
+<br>
+
+Details on how to use these themes will be discussed in the [Part 1](https://shahayush.com/2020/03/web-pelican-pt1-setup) of this article series. I just wanted to give some overview on how the website will look like in the end.
+
+## Advantages of Pelican over WordPress
 
 You may wonder that the same thing can be achieved using WordPress and has a wider community compared to Pelican. So,
 why use Pelican? I have listed a few advantages of Pelican over WordPress written by [Vincent Cheng](http://www.vcheng.org/) in his article [Migrating from
@@ -46,13 +86,13 @@ own domain name (without having to pay extra for it), and of course not having t
 
 ## Let's get started
 
+Now that you have got an overall insight of what this article series is about along with the benefits of using Pelican, get started by building your own website
 For ease, I have divided the article into 6 parts as:
 
 - [**Part 1: Setting up Pelican - Installation and Theme**](https://shahayush.com/2020/03/web-pelican-pt1-setup)
 - [Part 2: Writing content using Markdown](https://shahayush.com/2020/03/web-pelican-pt2-markdown)
 - [Part 3: Hosting your website to GitHub Pages and custom domain](https://shahayush.com/2020/03/web-pelican-pt3-hosting)
 - [Part 4: Setting up Travis-CI for automating deployment](https://shahayush.com/2020/05/web-pelican-pt4-travisci)
-- [Part 5: Integrate Disqus comments with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus)
-- [Part 6: Integrate Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt6-analytics)
+- [Part 5: Integrate Disqus comments and Google Analytics with Pelican](https://shahayush.com/2020/05/web-pelican-pt5-disqus-analytics)
 
 Click on the respective links to get started.
