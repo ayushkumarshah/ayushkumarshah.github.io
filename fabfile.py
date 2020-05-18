@@ -2,11 +2,11 @@ import os
 import shutil
 import sys
 import webbrowser
+import socketserver
 from datetime import datetime
 
 from fabric.api import env, local, hide
-from pelican.server import ComplexHTTPRequestHandler, socketserver
-
+from pelican.server import ComplexHTTPRequestHandler
 # Local path configuration (can be absolute or relative to fabfile)
 env.deploy_path = 'output'
 DEPLOY_PATH = env.deploy_path
@@ -71,23 +71,14 @@ def serve():
     """Serve site at http://localhost:8000/"""
     os.chdir(env.deploy_path)
 
-    socketserver.TCPServer.allow_reuse_address = True
+    class AddressReuseTCPServer(socketserver.TCPServer):
+        allow_reuse_address = True
 
-    try:
-        httpd = socketserver.TCPServer(
-            (SERVER, PORT), ComplexHTTPRequestHandler)
-    except OSError as e:
-        print("Could not listen on port %s, server %s." % (PORT, SERVER))
-        sys.exit(getattr(e, 'exitcode', 1))
+    server = AddressReuseTCPServer(('', PORT), ComplexHTTPRequestHandler)
 
     print("Serving at https://%s:%s." % (SERVER, PORT))
     # webbrowser.open_new_tab("http://127.0.0.1:8000/")
-
-    try:
-        httpd.serve_forever()
-    except KeyboardInterrupt as e:
-        print("Shutting down server.")
-        httpd.socket.close()
+    server.serve_forever()
 
 
 def reserve():
