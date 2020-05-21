@@ -4,7 +4,7 @@ Modified: 2020-03-18 08:00
 
 |              | |  |
 :-------------------------:|:-------------------------:|:-------------------------
-| <img src="/images/icons/avatar.png" alt="profile" width="200"/>  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | <h1>**Ayush Kumar Shah**</h1>  <br> <h3>Machine Learning Engineer, </h3> [Fusemachines](https://www.fusemachines.com), Nepal <br><br>  Computer Science Instructor, <br> Samriddhi College |
+| [<img src="/images/icons/avatar.png" alt="profile" width="200"/>](https://github.com/ayushkumarshah)  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | <h1>**Ayush Kumar Shah**</h1>  <br> <h3>Machine Learning Engineer, </h3> [Fusemachines](https://www.fusemachines.com), Nepal <br><br>  Computer Science Instructor, <br> Samriddhi College |
 
 <br>
 
@@ -137,7 +137,7 @@ An android app that solves different types of mathematical equations, numerical 
 
 ---
 
-:   **ADDITIONAL EXPERIENCE AND CERTIFICATE:**
+:   **ADDITIONAL EXPERIENCE AND CERTIFICATES:**
 
 ---
 
@@ -160,7 +160,7 @@ An android app that solves different types of mathematical equations, numerical 
 :   **LANGUAGES AND TECHNOLOGIES**
  ---
 
-∙	Proficient: Python, (Numpy, Pandas, Matplotlib, OpenCV, nltk, Keras, TensorFlow, Pytorch), git
+∙	Proficient: Python, Numpy, Pandas, Matplotlib, OpenCV, nltk, Keras, TensorFlow, Pytorch, git
 
 ∙	Familiar With: C, C++, SQL, AWS, LaTeX
 
