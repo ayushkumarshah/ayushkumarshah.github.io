@@ -91,7 +91,7 @@ MAILCHIMP = dict(
 PATH = 'content'
 PAGE_EXCLUDES = ['404.html']
 
-STATIC_PATHS = ['images', 'extra']
+STATIC_PATHS = ['images', 'extra', 'pdfs']
 IGNORE_FILES = ['.DS_Store', 'pneumatic.scss', 'pygments.css', 'icomoon.css']
 
 extras = ['CNAME', 'favicon.ico', 'robots.txt', 'ads.txt']

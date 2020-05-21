@@ -18,7 +18,7 @@ character recognition system, waste classification system, Computer Vision Syste
 
 ---
 
-Check out my short resume below. You can view or download the complete pdf version here: [**Resume.pdf**](https://ayushkumarshah.s3.amazonaws.com/CV/CV_AyushKumarShah.pdf)
+Check out my short resume below. You can view or download the complete pdf version of my CV here: [**CV_AyushKumarShah.pdf**](/pdfs/CV_AyushKumarShah.pdf)
 
 ---
 <hr>
@@ -61,6 +61,12 @@ Aarya Tower Bhawan, Hattisar, Nepal
 
 <br>
 
+Working on several client-based ML projects from the US in domains like Recommendation systems and Waste classification as well as internal ML projects of the company in the field of NLP and Computer
+vision. Worked on the whole ML pipeline: data collection, data cleaning and pre-processing, model building, tuning hyperparameters, model training, and model evaluation. Some of the projects I have worked
+in are:
+
+<br>
+
 ∙	Nepali Intelligent Character Recognition System
 
 A framework built by combining RNN and CNN to predict the handwritten or printed texts in both English and Nepali language in different fields of a form. Worked on building binary language classifiers and a complete prediction pipeline for texts in images of different types of forms. 
@@ -78,12 +84,13 @@ Techniques used: Item-to-Item models, (Neural) Collaborative Filtering, Factoriz
 
 ∙	Involved in design, review, and refinement of content - quizzes, assignments, and projects for one of the "Foundations in AI" course offered by fuse.ai - "Mathematics for AI", which is also a preliminary course for the students who will be taking Micro Degree® in AI Program.
 
+---
 
 <br>
 
 Jan 2020 - Present 
 
-:   **Course Instructor**
+:   **Computer Science Instructor**
 
 Samriddhi College, <br> 
 Kathmandu, Nepal
@@ -134,19 +141,19 @@ An android app that solves different types of mathematical equations, numerical 
 
 ---
 
-∙	Fusemachines Artificial Intelligence Scholarship Program (Nov 2018 - May 2019)
-
 ∙   [DeepLearning Nanodegree - Udacity](https://confirm.udacity.com/M7HJGNR3)
 
 ∙   [Natural Language Processing Nanodegree - Udacity](https://confirm.udacity.com/SKL4AQE3)
+
+∙	[Pandas foundations - Datacamp](https://www.datacamp.com/statement-of-accomplishment/course/cbfa5d9e55822bb0766ab866a4dde1c79e7509fa)
+
+∙   [Software Engineering for Data Scientists in Python - Datacamp](https://www.datacamp.com/statement-of-accomplishment/course/57f6c72aa989430f77a1b66c081dc40ca7cb8d03)
 
 ∙	Multivariable calculus - Khan Academy
 
 ∙	Statistics and Probability - Khan Academy
 
-∙	[Pandas foundations - Datacamp](https://www.datacamp.com/statement-of-accomplishment/course/cbfa5d9e55822bb0766ab866a4dde1c79e7509fa)
-
-∙   [Software Engineering for Data Scientists in Python - Datacamp](https://www.datacamp.com/statement-of-accomplishment/course/57f6c72aa989430f77a1b66c081dc40ca7cb8d03)
+∙	Fusemachines Artificial Intelligence Scholarship Program (Nov 2018 - May 2019)
 
 ---
 
