@@ -373,7 +373,7 @@ Open your browser and visit
 
 You should see your website with your new configuration. Feel free to modify it as per your liking.
 
-[![Flex2](/images/Flex2.png){.img-center}](https://ibb.co/fvfQRmT)
+[![Flex2](/images/Flex2.png){.img-center}](https://ibb.co/Jv8K8Sc)
 
 **Congratulations**, you have completed the basic setup for Pelican. 
 

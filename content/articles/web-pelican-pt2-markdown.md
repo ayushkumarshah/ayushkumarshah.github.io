@@ -228,9 +228,9 @@ running by pressing Ctrl+C or Cmd+C. Then,
 Open your browser and visit
 [localhost:8000](localhost:8000)
 
-[![First Article](/images/first_article.png){.img-center}](https://ibb.co/px31tnG)
+[![First Article](/images/first_article.png){.img-center}](https://ibb.co/ZdWNsvr)
 
-[![First Article 2](/images/first_article2.png){.img-center}](https://ibb.co/b6mDjN9)
+[![First Article 2](/images/first_article2.png){.img-center}](https://ibb.co/7tcxVB8)
 
 **Congratulations**, your first article has been published on your website.
 It was as simple as that. Compare the article output in the website as shown in the image above and the
@@ -263,7 +263,7 @@ page. I have provided a simple example for my `about` page below.
 
     Thank you for visiting my blog.
 
-[![About](/images/about.png){.img-center}](https://ibb.co/)
+[![About](/images/about.png){.img-center}](https://ibb.co/FWS0rD5)
 
 ### Contact page
 
@@ -282,7 +282,7 @@ similar one.
 
     Likewise, if you want to inform about any type of error in my blogs, you can open an issue [here](https://github.com/ayushkumarshah/ayushkumarshah.github.io/issues/new).
 
-[![Contact](/images/contact.png){.img-center}](https://ibb.co/)
+[![Contact](/images/contact.png){.img-center}](https://ibb.co/7z0P49d)
 
 Finally, let's define a page for error as well. Open `404.md` and add the following lines
 
