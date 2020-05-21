@@ -100,31 +100,31 @@ Kathmandu, Nepal
 
 :   **Projects**
 
-∙	Nepali Plagiarism Detection (NLP)
+∙	[Nepali Plagiarism Detection (NLP)](https://github.com/ayushkumarshah/Nepali_Plagiarism_Detection)
     
 An application that detects plagiarised Devanagari text files using a self-built rule-based stemming algorithm and Cosine similarity on TF-IDF vector representations of the documents.
 
 <br>
 
-∙	Sarangi: Nepali lyrics emotions extraction (NLP)
-
-A framework that categorizes songs written in the Devanagari script into four emotions using Naive Bayes and SVM.
-
-<br>
-
-∙	Guitar chord recognition app
+∙	[Guitar chord recognition app](https://github.com/ayushkumarshah/Guitar-Chords-recognition)
 
 An application that predicts the chords when the Mel spectrograms of guitar sound are fed into a CNN.
 
 <br>
 
-∙	AI Plays GTA 5: Simulating self-driving vehicles
+∙	[Sarangi: Nepali lyrics emotions extraction (NLP)](https://github.com/ayushkumarshah/sarangi)
+
+A framework that categorizes songs written in the Devanagari script into four emotions using Naive Bayes and SVM.
+
+<br>
+
+∙	[AI Plays GTA 5: Simulating self-driving vehicles](https://github.com/ayushkumarshah/AI-Plays-GTA5)
 
 A bike-riding agent in a virtual environment (GTA5), built using CNN, used for simulating self-driving vehicles.
 
 <br>
 
-∙	MathMate – advanced mathematical calculator
+∙	[MathMate – advanced mathematical calculator](https://github.com/ayushkumarshah/MathMate)
 
 An android app that solves different types of mathematical equations, numerical computations, and calculus problems showing involved steps
 
@@ -136,17 +136,17 @@ An android app that solves different types of mathematical equations, numerical 
 
 ∙	Fusemachines Artificial Intelligence Scholarship Program (Nov 2018 - May 2019)
 
-∙   DeepLearning Nanodegree - Udacity
+∙   [DeepLearning Nanodegree - Udacity](https://confirm.udacity.com/M7HJGNR3)
 
-∙   Natural Language Processing Nanodegree - Udacity
+∙   [Natural Language Processing Nanodegree - Udacity](https://confirm.udacity.com/SKL4AQE3)
 
 ∙	Multivariable calculus - Khan Academy
 
 ∙	Statistics and Probability - Khan Academy
 
-∙	Pandas foundations - Datacamp
+∙	[Pandas foundations - Datacamp](https://www.datacamp.com/statement-of-accomplishment/course/cbfa5d9e55822bb0766ab866a4dde1c79e7509fa)
 
-∙   Software Engineering for Data Scientists in Python - Datacamp
+∙   [Software Engineering for Data Scientists in Python - Datacamp](https://www.datacamp.com/statement-of-accomplishment/course/57f6c72aa989430f77a1b66c081dc40ca7cb8d03)
 
 ---
 
