@@ -33,8 +33,8 @@ can view your articles. There are several ways of deploying your websites but th
 
 - If you don't already have a GitHub account, go to [GitHub](https://github.com) and create one.
 
-- Login to [github](https://github.com) and create a repository with the name username.github.io (Replace username by
-  your GitHub's username) and copy the clone address as shown in the gif below.
+- Login to [github](https://github.com) and create a repository with the name `username.github.io` (Replace username by
+  your GitHub's username. For eg, mine is `ayushkumarshah.github.io`) and copy the clone address as shown in the gif below.
 
     ![create_repo](/images/create_repo.gif){.img-center}
 
@@ -115,7 +115,7 @@ SERVER = '127.0.0.1'
 PORT = 8000
 ```
 
-- Also, we need to add a `deploy()` function in `publishconfig.py`.
+- Also, we need to add a `deploy()` function in `fabfile.py`.
 
 ```python
 def deploy():
