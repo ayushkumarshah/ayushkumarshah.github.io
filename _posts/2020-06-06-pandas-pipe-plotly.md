@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Oraganize pandas notebook with cool hacks
+title: Organize pandas notebook with cool hacks
 categories: [python-hacks]
 tags: [datascience, pandas, plotly, pipeline, EDA]
-summary: Learn a cool hack to make pandas code clean, well-organized and highly efficient.
+summary: Learn a cool hack to make pandas code clean, well-organized, and highly efficient.
 date: 2020-06-06 20:45:00 +0545
 minutes: 10 mins
 author: Ayush Kumar Shah
@@ -13,21 +13,21 @@ author: Ayush Kumar Shah
 
 Does it ring a bell looking at this messy notebook? I am sure you must have created or encountered a similar kind of notebook while performing data analysis tasks in pandas. 
 
-Pandas is widely used by data scientists and ML Engineers all around the world to perform all kinds of data related tasks like data cleaning and prerprocessing, data anlysis, data manipulation, data conversion, etc. However, most of us are not using it right, as seen in the above example, which has decreased our productivity a lot.
+Pandas is widely used by data scientists and ML Engineers all around the world to perform all kinds of data related tasks like data cleaning and preprocessing, data analysis, data manipulation, data conversion, etc. However, most of us are not using it right, as seen in the above example, which has decreased our productivity a lot.
 
 You might wonder then what is the correct way to use pandas. Is there any particular way that we can make the notebook clean and modular so that we can increase our productivity? 
 
-Luckily, there is a type of quick hack or technique, whatever you may call it, which can be used to greatly improve the workflow and make notebooks not only clean and well organized but highly productive and efficient. The good thing is that you don't need to install any extra packages or libraries. At the end, your notebook will look something like this.
+Luckily, there is a type of quick hack or technique, whatever you may call it, which can be used to greatly improve the workflow and make notebooks not only clean and well organized but highly productive and efficient. The good thing is that you don't need to install any extra packages or libraries. In the end, your notebook will look something like this.
 
 ![Clean notebook](/assets/img/sample/clean_nb.png)
 
-> Note: Dark mode is available in this website. You can switch between the modes by clicking the leftmost button at the bottom of the left sidebar.
+> Note: Dark mode is available on this website. You can switch between the modes by clicking the leftmost button at the bottom of the left sidebar.
 
   ![dark_mode](/assets/img/sample/dark_mode.png)
 
 # Untitled12.ipynb
 
-The way to achieve clean and well organized pandas notebooks was explored in the presentation [Untitled12.ipynb](https://pydata.org/eindhoven2019/schedule/presentation/19/untitled12ipynb/) by [Vincent D. Warmerdam](https://twitter.com/fishnets88?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) at [PyData Eindhoven 2019](https://pydata.org/eindhoven2019/)
+The way to achieve clean and well-organized pandas notebooks was explored in the presentation [Untitled12.ipynb](https://pydata.org/eindhoven2019/schedule/presentation/19/untitled12ipynb/) by [Vincent D. Warmerdam](https://twitter.com/fishnets88?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) at [PyData Eindhoven 2019](https://pydata.org/eindhoven2019/)
 
 The presentation [Untitled12.ipynb: Prevent Miles of Scrolling, Reduce the Spaghetti Code from the Copy Pasta](https://www.youtube.com/watch?v=MpFZUshKypk&t=1292s) has been uploaded in youtube as well. You can watch the video below if you want:
 
@@ -35,19 +35,19 @@ The presentation [Untitled12.ipynb: Prevent Miles of Scrolling, Reduce the Spagh
 
 <br>
 
-In this article, I will briefly summarize the presenation by [Vincent D. Warmerdam](https://twitter.com/fishnets88?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) and then move on to the code implementation (solution) and a few code examples based on the methods used in his presentation.
+In this article, I will briefly summarize the presentation by [Vincent D. Warmerdam](https://twitter.com/fishnets88?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) and then move on to the code implementation (solution) and a few code examples based on the methods used in his presentation.
 
 **The Untitled phenomena**
 
 ![Untitled12.ipynb](/assets/img/sample/Untitled12.png)
 
-He began his talk by introducing a term called **`Untitled phenomena`**. The term simple refers to the bad practice of not naming the notebook files which eventually creates an unorganized bunch of Untitled notebooks. As a result, he also named the presentation **`Untitled12.ipynb`**. 
+He began his talk by introducing a term called **`Untitled phenomena`**. The term simply refers to the bad practice of not naming the notebook files which eventually creates an unorganized bunch of Untitled notebooks. As a result, he also named the presentation **`Untitled12.ipynb`**. 
 
-Moreover, not only the bad practice of naming that we follow, but also the bad organization of code inside the notebook needs to be improved. Copying and pasting code multiple times creates spaghetti code. This is especially true for a lot of data science based Jupyter notebooks. The goal of his talk was to uncover a great pattern for pandas that would prevent loads of scrolling such that the code behaves like lego. He also gave some useful tricks and tips on how to prevent miles of scrolling and reduce the spaghetti code when creating Jupyter notebooks.
+Moreover, not only the bad practice of naming that we follow but also the bad organization of code inside the notebook needs to be improved. Copying and pasting code multiple times creates spaghetti code. This is especially true for a lot of data science based Jupyter notebooks. The goal of his talk was to uncover a great pattern for pandas that would prevent loads of scrolling such that the code behaves like lego. He also gave some useful tricks and tips on how to prevent miles of scrolling and reduce the spaghetti code when creating Jupyter notebooks.
 
 ## > [**Skip to coding solution**](#solution)
 
-I have intially written a brief summary of the talk Untitled12.ipynb and explored some sommon problems in the usual coding style before moving to the solution. If you want to directly jump to the coding solution to create clean pandas notebook using pipeline, then click the link above. However, I recommend you to read the common problems I have mentioned before going to the solution.
+I have initially written a summary of the talk Untitled12.ipynb and explored some common problems in the usual coding style before moving to the solution. If you want to directly jump to the coding solution to create a clean pandas notebook using a pipeline, then click the link above. However, I recommend you to read the common problems I have mentioned before going to the solution.
 
 
 
@@ -68,11 +68,11 @@ I will be talking about the following topics which will more or less revolve aro
 
 ## Importance of Workflow
 
-At the beginning of the presentaion, he began by discussing the following points that highlights the importance of workflows and the need of jupyter-notebook and pandas over excel:
+At the beginning of the presentation, he began by discussing the following points that highlight the importance of workflows and the need of jupyter-notebook and pandas over excel:
 
 - We want to separate the data from the analysis: Tha analysis portion should not modify the raw data. The raw data should be safe from these modifications so that it can be reused later as well. However, this is not possible in excel.
 
-- We want to be able to automate our analysis. The main aim of programming and workflow is automation. Our tasks become a lot easier if we are able to automate the anlayis using a pandas script rather than performing the analysis every time using Excel.
+- We want to be able to automate our analysis. The main aim of programming and workflow is automation. Our tasks become a lot easier if we can automate the analysis using a pandas script rather than performing the analysis every time using Excel.
 
 - We want our analysis to be reproducible i.e. we must be able to reproduce the same analysis results on the data at a later time in the future.
 
@@ -88,8 +88,8 @@ However, the current style of coding in pandas and jupyter notebook has solved o
 
 Let's explore the common practice of writing pandas code and try to point out the major problems in such approaches.
 
-Intially, I will show the general workflow that most of us follow while using pandas. I will be performing some analysis on the real COVID 19 dataset of the U.S. states obtained from
-[The COVID Tracking Project](https://covidtracking.com/) which is avilable under the [Creative Commons CC BY-NC-4.0 license](https://creativecommons.org/licenses/by-nc/4.0/). The dataset is updated each day between 4pm and 5pm EDT.
+Initially, I will show the general workflow that most of us follow while using pandas. I will be performing some analysis on the real COVID 19 dataset of the U.S. states obtained from
+[The COVID Tracking Project](https://covidtracking.com/) which is available under the [Creative Commons CC BY-NC-4.0 license](https://creativecommons.org/licenses/by-nc/4.0/). The dataset is updated each day between 4 pm and 5 pm EDT.
 
 After showing the common approach, I will point out the major pitfalls and then move on to the solution.
 
@@ -765,7 +765,7 @@ df.info()
     dtypes: float64(13), int64(14), object(7)
     memory usage: 1.4+ MB
 
-You can see that there are various columns that are not of use. So, I decide to remove such columns.
+You can see that various columns are not of use. So, I decide to remove such columns.
 
 ```python
 df.drop([*df.columns[4:10], *df.columns[11:15], 'posNeg', 'fips'], 
@@ -1010,7 +1010,7 @@ df.head()
 </div>
 
 
-I also want to add a column corresponding to state name instead of the abbreviation. So, I merge state_info with the current dataframe.
+I also want to add a column corresponding to the state name instead of the abbreviation. So, I merge state_info with the current dataframe.
 
 ```python
 df2 = pd.read_csv('data/state_info.csv', usecols=['state', 'name'])
@@ -1207,7 +1207,7 @@ df3.head()
 </div>
 
 
-I realize that the date index is lost. So, I reset the date index. Also, it is better to rename column name as state_name.
+I realize that the date index is lost. So, I reset the date index. Also, it is better to rename the column name as state_name.
 
 ```python
 df3.set_index('date', inplace=True)
@@ -1439,9 +1439,9 @@ py.plot(fig1, filename = 'daily_deaths', auto_open=True)
 
 {% include iframe_holder.html url="//plotly.com/~ayush.kumar.shah/1.embed" width="900" height="800" scrolling="no" %}
 
-> Note: These plots are interactive plots, so you can zoom in or out, pinch, hover over the graph, download it, and so on.  
+> Note: These plots are interactive, so you can zoom in or out, pinch, hover over the graph, download it, and so on.  
 
-Now, I decide to calculalte the total deaths in the US across all states and plot it. 
+Now, I decide to calculate the total deaths in the US across all states and plot it. 
 
 ```python
 df4 = df3.resample('D').sum()
@@ -1649,7 +1649,7 @@ I also want to calculate the number of Active cases i.e.
 df4['active'] = df4['positive'] - df4['death'] - df4['recovered']
 ```
 
-Now, after calculating active column, I want to plot active cases instead of death. So, I go to previous cell and replace `death` by `active` and generate the plot.
+Now, after calculating the active column, I want to plot active cases instead of death. So, I go to the previous cell and replace `death` by `active` and generate the plot.
 
 In [25]: df4['~~death~~'].plot()
 
@@ -1670,7 +1670,7 @@ py.plot(fig3, filename = 'total_daily_active', auto_open=True)
 
 {% include iframe_holder.html url="//plotly.com/~ayush.kumar.shah/6.embed" width="900" height="800" scrolling="no" %}
 
-Then I decide to calculate statistics of a single month May only. Since the data is cumulative, I need to subtract the data of May from data of April to find the increase in various statistics in May after which I plot the results.
+Then I decide to calculate the statistics of a single month of May only. Since the data is cumulative, I need to subtract the data of May from data of April to find the increase in various statistics in May after which I plot the results.
 
 ```python
 df5 = (df3.loc['2020-05']
@@ -1869,23 +1869,23 @@ Now that I have demonstrated the usual approach followed in pandas notebook, let
 
 ### 1. Flow is disrupted:
 
-The flow of the notebook is very difficult to understand and also creates problems. For example, we may create a variabe name under the plot that needs it. In the above code as well, we created **`df3['active']`** below the cell in which it is needed. So, it may cause errors when run by others. Also, you may have to scroll the notebook for miles and miles.
+The flow of the notebook is very difficult to understand and also creates problems. For example, we may create a variable name under the plot that needs it. In the above code as well, we created **`df3['active']`** below the cell in which it is needed. So, it may cause errors when run by others. Also, you may have to scroll the notebook for miles and miles.
 
 ### 2. No reproducibility: 
 
-When the notebook is shared with others, the other person faces a lot of problems to execute or understand the notebook. For instance, the name of the dataframes doesn't signify any information about the type of dataframe. It runs from **`df1`** to **`df7`** and creates a lot of confusions. But you want to create a notebook whih is very easy to iterate on and the one you can actually share with your colleagues. 
+When the notebook is shared with others, the other person faces a lot of problems to execute or understand the notebook. For instance, the name of the dataframes doesn't signify any information about the type of dataframe. It runs from **`df1`** to **`df7`** and creates a lot of confusion. But you want to create a notebook which is very easy to iterate on and the one you can share with your colleagues. 
 
 ### 3. Difficult to move the code to production:
 
-With this approach, your code is not ready to moved into prodcution. You end up having to rewrite the whole notebook before moving it to production which is obviously not effective.
+With this approach, your code is not ready to move into production. You end up having to rewrite the whole notebook before moving it to production which is not effective.
 
 ### 4. Unable to automate: 
 
-The notebook in the current condition cannot be automated for analysis since there may occur a lot of problems like error in code execution, unavailability of filenames used.
+The notebook in the current condition cannot be automated for analysis since there may occur a lot of problems like an error in code execution, unavailability of filenames used.
 
-Although the code may give a interesting conclusion or desired output, we are not quite sure that conclusion is at least correct.
+Although the code may give an interesting conclusion or desired output, we are not quite sure that conclusion is at least correct.
 
-Despite having so many problems associated with this approach, it is common for everyone to still use this type of flow while making a notebook since while coding, people enjoy when the code works when they check the outputs and hence keep on continuing the coding in similar way. 
+Despite having so many problems associated with this approach, it is common for everyone to still use this type of flow while making a notebook since while coding, people enjoy when the code works when they check the outputs and hence keep on similarly continuing the coding. 
 
 <a name="solution"></a>
 
@@ -1905,7 +1905,7 @@ Follow a naming convention for the notebook according to the task as suggested b
 
 ### 2. Plan your steps beforehand
 
-Load the data and then think in advanced about all the steps of analysis or tasks you could be doing in the notebook. You don't need to think the logic rightaway but just keep in mind the steps.
+Load the data and then think in advance about all the steps of analysis or tasks you could be doing in the notebook. You don't need to think the logic right away but just keep in mind the steps.
 
 
 ```python
@@ -1914,16 +1914,16 @@ df = pd.read_csv('data/covid19_us_states_daily.csv', index_col='date')
 
 ### 3. Create functions
 
-You know that initially you want to clean the data and make sure the columns and indexes are in proper usable format. So, why not create a function for that and name it according to the subtasks on the dataframe. 
+You know that initially, you want to clean the data and make sure the columns and indexes are in a proper usable format. So, why not create a function for that and name it according to the subtasks on the dataframe. 
 
-> For example, initally you want to make the index a proper datetime object. Then you may want to do ,... , then .... Just add these functions without even thinking the logic and then later you can add the logics. This way, you will be on track and not lost.
+> For example, initially you want to make the index a proper datetime object. Then you may want to do remove the duplicates, then add state name. Just add these functions without even thinking the logic and then later you can add the logic. This way, you will be on track and not lost.
 
 The functions are created after creating the decorator.
 
 
 ### 4. Create proper decorators
 
-Before adding functions, let's also think about some additional utility that would be helpful. During the pandas analysis, you often check the shape, columns, and other information associated to the dataframe after performing an operation. However, decorator can help automate this process. 
+Before adding functions, let's also think about some additional utility that would be helpful. During the pandas analysis, you often check the shape, columns, and other information associated to the dataframe after performing an operation. However, a decorator can help automate this process. 
 
 **`Decorator`** is simply a function that expects a function and returns a function. It's really functional right, haha. Don't get confused by the definition. It is not so difficult as it sounds. We will see how it works in the code below.
 
@@ -1950,9 +1950,9 @@ def df_info(f):
     return wrapper
 ```
 
-We have created a decorator called **`df_info`** which displays information like time taken by the function, shape and columns after appling any function **`f`**.
+We have created a decorator called **`df_info`** which displays information like time taken by the function, shape, and columns after applying any function **`f`**.
 
-The advantage of using deorator is that we get logging. You can modify the decorator according to the information that you want to log or display after applying performing an operation on the dataframe.
+The advantage of using a deorator is that we get logging. You can modify the decorator according to the information that you want to log or display after performing an operation on the dataframe.
 
 Now, we create functions as our plan and use these decorators on them by using **`@df_info`**. This will be equivalent to calling **`df_info(f(df, *args, **kwargs))`**
 
@@ -2033,7 +2033,7 @@ def create_month_only(df, month):
 
 ### 5. Remove side effect
  
-However, these function make changes which are inplace (side effects) i.e. modifies the original loaded dataframe. So, to solve this, we add a function called start pipeline, which returns a copy of dataframe.
+However, these functions make changes that are inplace (side effects) i.e. modifies the originally loaded dataframe. So, to solve this, we add a function called start pipeline, which returns a copy of dataframe.
 
 
 ```python
@@ -2043,7 +2043,7 @@ def start_pipeline(df):
 
 ### 6. Constructing pandas pipelines (Main step)
 
-Now, let's use this functions to achieve the previous tasks using **`pipe`**
+Now, let's use these functions to achieve the previous tasks using **`pipe`**
 
 ```python
 df_daily = (df.pipe(start_pipeline)
@@ -2690,7 +2690,7 @@ df.head()
 
 ### 7. Create a module
 
-Finally, you can create a module (eg `processing.py`) and keep all the above functions in the module. You can simply import them here and use it directly. It will clean the notebook further. 
+Finally, you can create a module (eg `processing.py`) and keep all the above functions in the module. You can simply import them here and use them directly. It will clean the notebook further. 
 
 **`processing.py`**
 
@@ -2711,17 +2711,17 @@ from processing import *
 
 ## Advantages
 
-### 1. Effective for long run (Maintainability)
+### 1. Effective for the long run (Maintainability)
 
-Although, the approach may look like an inefficient method of coding but it is very effective for the long run since you will not have to spend hours maintaining the notebook. Given the functions are well written and well defined, they are ready for production.
+Although, the approach may look like an inefficient method of coding but it is very effective in the long run since you will not have to spend hours maintaining the notebook. Given the functions are well written and well defined, they are ready for production.
 
-The code is easily sharable as well as anyone can understand the code unlike in the previous appraoch. Also, for complex analysis tasks, this approach can be esaily used for maintaining the notebook.
+The code is easily sharable as well as anyone can understand the code unlike in the previous approach. Also, for complex analysis tasks, this approach can be easily used for maintaining the notebook.
 
 ### 2. Proper flow and planning
 
-You do not need to think about logic of the analysis at the beginning. You can just plan your tasks and write down the required functions which already gives you kind of a framework of mind which helps to be on track. The calm that will follow is likely going to have a greater impact in innovation. 
+You do not need to think about the logic of the analysis at the beginning. You can just plan your tasks and write down the required functions which already gives you kind of a framework of mind which helps to be on track. The calm that will follow is likely going to have a greater impact on innovation. 
 
-Then, you can finally define the logic at the end to make it actually work.  
+Then, you can finally define the logic at the end to make it work.  
 
 ### 3. Easier to modify
 
@@ -2744,11 +2744,11 @@ df_daily = (df.pipe(start_pipeline)
 
 ### 4. Easier to debug
 
-In this approach, you know what is actually happening in each step which makes it a lot easier to debug. Furthermore, since all the operations are functions, you can easily debug the code by performing unit tests or using other methods on the functions. 
+In this approach, you know what is happening in each step which makes it a lot easier to debug. Furthermore, since all the operations are functions, you can easily debug the code by performing unit tests or using other methods on the functions. 
 
 ### 5. Readability
 
-This approach helps you prevent miles of scrolling and also is easily readable than the previous approach. By lloking at the code, you can easily understand what operations are being performed on the data and also can see the effect of those operations on the data in each step using decorator.
+This approach helps you prevent miles of scrolling and also is easily readable than the previous approach. By looking at the code, you can easily understand what operations are being performed on the data and also can see the effect of those operations on the data in each step using decorator.
 
 Example:
 
@@ -2772,7 +2772,7 @@ Chicken.Season(with Spices)
         .Serve()
 ```
 
-The pipe functionality helps us to write code in the latter way, which is alos much more readable.
+The pipe functionality helps us to write code in the latter way, which is also much more readable.
 
 ### 6. Reusability
 
@@ -2780,20 +2780,15 @@ During production, we turn the project into a Python package. You can import you
 
 ### 7. Separation into analysis and data manipulation
 
-Once your functions have been moved to a separate module, two levels of abstraction is obtained: analysis and data manipulation. 
+Once your functions have been moved to a separate module, two levels of abstraction are obtained: analysis and data manipulation. 
 
 You can fiddle around on a high level and keep the details on a low level. The notebook
 then becomes the summary and a user interface where you can very quickly make nice little charts instead of manipulating data or performing analytical steps to get a result.
 
 # Final notes
 
-Hence, following these practices while coding in pandas or performing other similar tasks like building scikin-learn pipelines or other ML pipelnes, can be extremely beneficial for developers. Also, all the 4 problems mentioned in the beginning has been solved in this approach. Thus, giving utmost priority to clarity and interoperability, we should remember that it's a lot easier to solve a problem if we understand the problem well. 
+Hence, following these practices while coding in pandas or performing other similar tasks like building scikit-learn pipelines or other ML pipelines, can be extremely beneficial for developers. Also, all the 4 problems mentioned in the beginning have been solved in this approach. Thus, giving utmost priority to clarity and interoperability, we should remember that it's a lot easier to solve a problem if we understand the problem well. 
 
-Moreover, if you find writing these codes difficult, Vincent and his team has developed  a package called [Scikit-lego](https://scikit-lego.readthedocs.io/en/latest/pandas_pipeline.html#) which does all this for you with additional features like custom logging. Do check it out.
+Moreover, if you find writing these codes difficult, Vincent and his team have developed a package called [Scikit-lego](https://scikit-lego.readthedocs.io/en/latest/pandas_pipeline.html#) which does all this for you with additional features like custom logging. Do check it out.
 
-Also, if you have any confusions or sugestions, feel free to comment. I am all ears. Thank you.
-
-
-
-
-
+Also, if you have any confusion or suggestions, feel free to comment. I am all ears. Thank you.
