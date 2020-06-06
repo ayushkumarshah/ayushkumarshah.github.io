@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pandas efficient coding hack
+title: Oraganize pandas notebook with cool hacks
 categories: [python-hacks]
 tags: [datascience, pandas, plotly, pipeline, EDA]
 summary: Learn a cool hack to make pandas code clean, well-organized and highly efficient.
