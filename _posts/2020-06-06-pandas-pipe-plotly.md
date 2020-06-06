@@ -2789,6 +2789,6 @@ then becomes the summary and a user interface where you can very quickly make ni
 
 Hence, following these practices while coding in pandas or performing other similar tasks like building scikit-learn pipelines or other ML pipelines, can be extremely beneficial for developers. Also, all the 4 problems mentioned in the beginning have been solved in this approach. Thus, giving utmost priority to clarity and interoperability, we should remember that it's a lot easier to solve a problem if we understand the problem well. 
 
-Moreover, if you find writing these codes difficult, Vincent and his team have developed a package called [Scikit-lego](https://scikit-lego.readthedocs.io/en/latest/pandas_pipeline.html#) which does all this for you with additional features like custom logging. Do check it out.
+Moreover, if you find writing these codes difficult, an open source package called [Scikit-lego](https://scikit-lego.readthedocs.io/en/latest/pandas_pipeline.html#) maintained by Vincent and MatthijsB, with contributions from all around the world, is available.  This package does all the hard work for you to create such pipelines along with additional features like custom logging. Do check it out.
 
 Also, if you have any confusion or suggestions, feel free to comment. I am all ears. Thank you.
