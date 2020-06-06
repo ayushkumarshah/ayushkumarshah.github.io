@@ -18,7 +18,8 @@ description: >-                        # used by seo meta and the atom feed
   Artificial Intelligence and Python.
 
 # Replace with the website url, e.g. 'https://username.github.io'
-url: 'https://ayushkumarshah7.github.io'
+url: 'https://shahayush.com/'
+assets_url: '/assets'
 
 author: Ayush Kumar Shah                  # change to your full name
 
