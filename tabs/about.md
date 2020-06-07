@@ -62,9 +62,9 @@ June 17, 2019 - Present
 Fusemachines Nepal, <br> 
 Aarya Tower Bhawan, Hattisar, Nepal
 
-Working on several client-based ML projects from the US in domains like Recommendation systems and Waste classification as well as internal ML projects of the company in the field of NLP and Computer
-vision. Worked on the whole ML pipeline: data collection, data cleaning and pre-processing, model building, tuning hyperparameters, model training, and model evaluation. Some of the projects I have worked
-in are:
+Working on several client-based ML projects from the US as well as internal ML projects of the company in the field of NLP, Computer vision, 
+Recommendation systems. Worked on the whole ML pipeline: data collection, data cleaning and
+pre-processing, model building, tuning hyperparameters, model training, and model evaluation. Some of the projects I have worked in are:
 
 - Nepali Intelligent Character Recognition System<br>
   A framework built by combining RNN and CNN to predict the handwritten or printed texts in both English and Nepali language in different fields of a form. Worked on building binary language classifiers and a complete prediction pipeline for texts in images of different types of forms. 
@@ -74,7 +74,7 @@ Techniques used: Item-to-Item models, (Neural) Collaborative Filtering, Factoriz
 
 - Automatic classification of products on the basis of various chemical attributes to optimize business decisions for products that go unsold. Worked on Boosting algorithms like Gradient Boosting, Random Forests, XGBoost, LightGBM and so on for regression and classification tasks.
 
-- Involved in design, review, and refinement of content - quizzes, assignments, and projects for one of the "Foundations in AI" course offered by fuse.ai - "Mathematics for AI", which is also a preliminary course for the students who will be taking Micro Degree® in AI Program.
+- Involved in design, review, and refinement of content - reading material, quizzes, assignments, and projects for Fusemachines AI Education Programs - “Foundations in AI: Mathematics for AI”, "Micro Degree™ in Artificial Intelligence: Machine Learning, Computer Vision"
 
 ---
 

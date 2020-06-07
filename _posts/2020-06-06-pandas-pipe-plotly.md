@@ -125,7 +125,6 @@ First, I will download the U.S. COVID-19 dataset using the API provided by [The 
 
 
 ```python
-import numpy as mp
 import pandas as pd 
 # Importing plotly library for plotting interactive graphs
 import plotly.graph_objects as go
