@@ -2207,6 +2207,7 @@ df_daily = (df.pipe(start_pipeline)
                    '2020-06-03', '2020-06-04'],
                   dtype='datetime64[ns]', name='date', length=135, freq='D')
 
+Check out all the logs displayed above. We are able to view in detail how each operation changed the data without having to print the dataframe after each operation.
 
 ```python
 fig2 = px.line(df_daily, x=df_daily.index, y='death')
