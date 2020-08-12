@@ -117,8 +117,11 @@ Kathmandu, Nepal
 
 ---
 
-- [DeepLearning Nanodegree - Udacity](https://confirm.udacity.com/M7HJGNR3)
+- [Computer Vision Nanodegree - Udacity](https://graduation.udacity.com/confirm/GGYLDZPA)
+- [Deep Learning Nanodegree - Udacity](https://confirm.udacity.com/M7HJGNR3)
 - [Natural Language Processing Nanodegree - Udacity](https://confirm.udacity.com/SKL4AQE3)
+- [Python: Design Patterns - Linkedin Learning](https://drive.google.com/file/d/13eVXfETo4OkJzkFmeen-RzH9cSSOZXQA/view)
+- [Full Stack Web Development with Flask - Linkedin Learning](https://drive.google.com/file/d/1k-9cZ6Zp6wpVCeuantBlSHa4FNKUNWbF/view)
 - [Pandas foundations - Datacamp](https://www.datacamp.com/statement-of-accomplishment/course/cbfa5d9e55822bb0766ab866a4dde1c79e7509fa)
 - [Software Engineering for Data Scientists in Python - Datacamp](https://www.datacamp.com/statement-of-accomplishment/course/57f6c72aa989430f77a1b66c081dc40ca7cb8d03)
 - Multivariable calculus - Khan Academy
