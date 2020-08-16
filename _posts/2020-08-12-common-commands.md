@@ -301,7 +301,7 @@ To apply latest settings:
 
 - Select files to rename using visual selection
 - :bulkrename
-- 
+ 
 ### 1. vim-surround commands
 
 |||
