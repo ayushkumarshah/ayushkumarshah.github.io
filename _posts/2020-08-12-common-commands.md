@@ -115,7 +115,9 @@ File explorer: Other locations > Connect to server > sftp://username@ip/
 
 # Vim commands
 
-## Syntax:
+## I. Pure Vim
+
+### Syntax:
 
 Verbs (operations) + Noun (text on which operation is performed)
 
@@ -123,14 +125,25 @@ Verbs (operations) + Noun (text on which operation is performed)
 [count] [operation] [text object / motion]
 ```
 
-## 1. VIM Verbs (operations)
+### Run bash commands in vim
+
+```vim
+:[.]!command
+```
+
+`. (dot)` - outputs the command into the current buffer
+
+### 1. VIM Verbs (operations)
 
 |||
 |--|--|
 |c                                |change                                             |
 |d                                |delete                                            |
-|`<c-x>` (Custom command) |cut                                                   |
+|D                                |delete  everything from where your cursor is to the end of the line|
+|dd                                |delete a line                             |
+|x                                |delete a sigle character                                            |
 |y| yank text into the copy buffer.                                                    |
+|yy| yank line into the copy buffer.                                                    |
 |v| highlight one character at a time.                                                 |
 |V |highlight one line at a time.                                                      |
 |`<c-v>` | highlight by columns.                                                         |
@@ -143,9 +156,9 @@ Verbs (operations) + Noun (text on which operation is performed)
 |gu | make lowercase                                                                  |
 |~ | swap case                                                                        |
 
-## 2. VIM Nouns (text)
+### 2. VIM Nouns (text)
 
-### i. Text Objects 
+#### i. Text Objects 
 
 Must be combined with verbs 
 
@@ -174,8 +187,7 @@ Combination examples:
 |yis| copy inner sentence|
 |di"| delete inner quotes|
 
-
-### ii. Motions
+#### ii. Motions
 
 Can be combined with verbs or used independently
 
@@ -185,15 +197,15 @@ Can be combined with verbs or used independently
 |[count] b/B | go a (word / word with whitespace) to left   |
 |[count] e/E | go to the end of (word / word with whitespace) |
 |[count] ]m | go to the beginning of next method |
-|[count] h / j / k / l | left / down / up / right 
-|[count] f/F [char] | go to the next occurence of character   |
-|[count] t/T [char] | go to just before the next occurence of character |
-|% | move to matching parenthesis pair                                                  |
-|[count] +| down to first non blank char of the line.                                     |
-|[count]$| moves the cursor to the end of the line.                                           |
-|0| moves the cursor to the end of the line.                                           |
-|G| move to the end of the file.                                                       |
-|gg| move to the beginning of the file.                                                |
+|[count] h / j / k / l | left / down / up / right
+|[count] f/F [char] [;,]+ | go to the next occurence of character   |
+|[count] t/T [char] [;,]+ | go to just before the next occurence of character |
+|% | move to matching parenthesis pair    |
+|[count] +| down to first non blank char of the line.  |
+|[count]$| moves the cursor to the end of the line.        |
+|0| moves the cursor to the end of the line.                 |
+|G| move to the end of the file.                                |
+|gg| move to the beginning of the file.                         |
 
 Combination examples:
 
@@ -204,18 +216,17 @@ Combination examples:
 |ctL| change upto before the next occurence of L |
 |d]m| delete start of next method |
 
-
-## 3. Other important vim commands
+### 3. Other important vim commands
 
 |||
 |--|--|
-|i| Insert to left of cursor                                                          |
-|a| Insert to right of cursor                                                          |
-|A| insert at end of line                                                              |
-|I| insert at beginning of line                                                        |
-|u | undo                                                                            |
-|`<c-r>` | will redo the last undo.                                                      |
-|/text| search for text                                                                |
+|i| Insert to left of cursor                |
+|a| Insert to right of cursor                |
+|A| insert at end of line                    |
+|I| insert at beginning of line              |
+|u | undo                                  |
+|`<c-r>` | will redo the last undo.            |
+|/text| search for text                      |
 |:%s/text/replacement text/g| search through the entire document for text and replace it with replacement text.
 |:%s/text/replacement text/gc |search through the entire document and confirm before replacing text.
 |*|search forward for word under cursor
@@ -232,9 +243,10 @@ Combination examples:
 |gr | Goto References
 |[:vert] :sf filename| find file and open in split mode
 |`<c-v>` select multiple lines then I| insert at multiple lines     |
+|q `<char`> commands q <br> @`<char`>| record command macros <br> apply recorded commands|
 
 
-## 4. Custom (Remapped) vim commands
+### 4. Custom (Remapped) vim commands
 
 |||
 |--|--|
@@ -249,7 +261,7 @@ Combination examples:
 |nnoremap ``<C-k>``| ``<C-w>k``
 |nnoremap ``<C-l>``| ``<C-w>l``
 
-## 5. Using Args
+### 5. Using Args
 
 Args are list of files initially opened. So, it's a subset of buffers.
 
@@ -264,7 +276,7 @@ Args are list of files initially opened. So, it's a subset of buffers.
 |:vim TODO/ ## |search in all args files|
 |:cdo s/TODO/DONE/g |replace in all args files|
 
-## 6. Scrolling and motions 
+### 6. Scrolling and motions 
 
 |||
 |--|--|
@@ -276,7 +288,21 @@ Args are list of files initially opened. So, it's a subset of buffers.
 |zz|Put current cursor position to middle|
 |zb|Put current cursor position to bottom|
 
-## 7. vim-surround commands
+
+## II. Vim Plugins commands
+
+To apply latest settings:
+
+```vim
+:source $MYVIMRC
+```
+
+### Bulk-rename in ranger
+
+- Select files to rename using visual selection
+- :bulkrename
+- 
+### 1. vim-surround commands
 
 |||
 |--|--|
@@ -293,9 +319,7 @@ Examples:
 | if *x>3{ | ysW( | if ( x>3 ) {
 |*"hello"| ysWf print<cr(Enter)>| print("hello")
 
-## 8. Addtional vim plugin commands
-
-### Git plugins commands
+### 2. Git plugins commands
 
 |||
 |--|--|
@@ -305,7 +329,7 @@ Examples:
 |:GBrowse       |Open the repository in github
 |:GV            |Show git commit history 
 
-### Coc commands
+### 3. Coc commands
 
 |||
 |--|--|
@@ -315,7 +339,7 @@ Examples:
 |:CocCommand| execute a COC command
 |o | expand/collapse in Coc explorer
 
-### coc-python
+### 4. coc-python
 
 |||
 |--|--|
@@ -324,7 +348,7 @@ Examples:
 |``<C-w>``w | Switch cursors between sidebar and code
 |``<C-n>`` ``<C-n>`` ``<C-n>``<br> c <br> I <br> A | multiple cursors: <br> change <br> Insert at first <br> Insert at end
 
-### FZF
+### 5. FZF
 
 |||
 |--|--|
@@ -338,14 +362,14 @@ Examples:
 |gf | Goto file: open file directly from path written in vim
 
 
-### Startify
+### 6. Startify
 
 |||
 |--|--|
 |:SSave| Save session
 |:SLoad| Load session
 
-### vim-commentary
+### 7. vim-commentary
 
 |||
 |--|--|
@@ -638,3 +662,4 @@ brew 'myservice', restart_service: true
 # Only restart when installing or upgrading myservice
 brew 'myservice', restart_service: :changed
 ```
+
