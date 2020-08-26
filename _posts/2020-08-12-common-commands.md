@@ -23,7 +23,9 @@ author: Ayush Kumar Shah
 |pwd| get current path
 |pwd &#124; pbcopy | copy current path to clipboard
 |cd -  | go back to previous location|
+|ls -ls or l| list files with detailed info (permission, date, symoblic links)|
 |cat filename| show the contents of the file filename|
+|free -sh                 |Show RAM - space used and free           |
 |df -h                    |Show disk information - sapce used and free           |
 |du -sh .                 |Show total size occupied by current directory           |
 |du -sh *                 |Show size of each file or folder in current directory           |
@@ -54,11 +56,15 @@ ssh-keygen -t rsa
 Modify this file: `~/.ssh/config`
 
 ```config
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa
+
 Host targaryen
     HostName 192.168.1.10
     User daenerys
     Port 7654
-    IdentityFile ~/.ssh/targaryen.key
 
 Host tyrell
     HostName 192.168.10.20
@@ -67,7 +73,7 @@ Host martell
     HostName 192.168.10.50
 
 Host *ell
-    user oberyn
+    User oberyn
 
 Host * !martell
     LogLevel INFO
@@ -80,9 +86,10 @@ Host *
 
 **Save ssh password so that no need to re-enter everytime**
 
+Run this in client (not server)
+
 ```console
- ssh-copy-id username@ip-address
-~/.ssh/config : save host info
+ssh-copy-id username@ip-address
 ```
 
 **Open server in nautilus / file explorer**
@@ -224,6 +231,8 @@ Combination examples:
 |a| Insert to right of cursor                |
 |A| insert at end of line                    |
 |I| insert at beginning of line              |
+|o| insert at beginning of next line              |
+|O| insert at beginning of previous line              |
 |u | undo                                  |
 |`<c-r>` | will redo the last undo.            |
 |/text| search for text                      |
