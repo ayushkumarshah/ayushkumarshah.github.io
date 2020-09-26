@@ -14,16 +14,16 @@ author: Ayush Kumar Shah
 - [Vim Commands](#vim-commands)
 - [Git Commands](#git-commands)
 - [i3wm commands](#i3wm-commands)
-- [Brew bundle](#brew-bundle)
+- [Brew bundle](#brew-bundle-for-osx)
 
 # General shell commands
 
 |||
 |--|--|
 |pwd| get current path
-|pwd &#124; pbcopy | copy current path to clipboard
+|pwd &#124; pbcopy | copy current path to clipboard (Use xcopy or xsel for linux)
 |cd -  | go back to previous location|
-|ls -ls or l| list files with detailed info (permission, date, symoblic links)|
+|ls -ls| list files with detailed info (permission, date, symoblic links)|
 |cat filename| show the contents of the file filename|
 |free -sh                 |Show RAM - space used and free           |
 |df -h                    |Show disk information - sapce used and free           |
@@ -31,10 +31,10 @@ author: Ayush Kumar Shah
 |du -sh *                 |Show size of each file or folder in current directory           |
 |du -sh * &#124; tail -1  |Show total size occupied by the last file in the current directory|
 |stat filename            |Display file status         |
-|htop or ytop             |Process info and CPU Usage  |
+|top or htop or ytop             |Process info and CPU Usage  (You need to install htop or ytop)|
 |man command-name         |Information about the command|
-|tree [-aldf][-L level][-P pattern][-I pattern][-o filename] |display directory's contents in a  tree <br> a - all files <br> l - symbolic links <br> d - directories only <br> L - limit number of levels of directory <br> I - files not matching pattern <br> P - files matching pattern <br> o - output to filename|
-|`<C-T>`|fzf: fuzzy finding files or directories|
+|tree [-aldf][-L level][-P pattern][-I pattern][-o filename] |display directory's contents in a  tree <br> a - all files <br> l - symbolic links <br> d - directories only <br> L - limit number of levels of directory <br> I - files not matching pattern <br> P - files matching pattern <br> o - output to filename <br> You need to install tree|
+|`<C-T>`|fzf: fuzzy finding files or directories <br> You need to install fzf|
 |`<C-R>`|fzf: fuzzy finding commands in history|
 |`<Esc-C>`|fzf: fuzzy finding files or directories from current path|
 
@@ -43,8 +43,16 @@ author: Ayush Kumar Shah
 
 ## SSH Tunnelling
 
+To access servers hosted on the remote machine from the local machine
+
 ```console
-ssh -NL 8888:localhost:8888 username@ip-address
+$ ssh -NL port_no_server:localhost:port_no_local username@ip-address
+```
+
+Example:
+
+```console
+$ ssh -NL 8888:localhost:8888 ayush@192.168.100.7
 ```
 
 ## Copy multiple files from remote to local:
@@ -59,7 +67,7 @@ $ scp username@remote-ip:'/path1/file1 /path2/file2 /path3/file3' /localPath
 **Generate ssh key:**
 
 ```console
-ssh-keygen -t rsa
+$ ssh-keygen -t rsa
 ```
 
 **Save ssh host info**
@@ -94,7 +102,7 @@ Host *
 
 ```
 
-**Save ssh password so that no need to re-enter everytime**
+**Save ssh password so that no need to re-enter every time**
 
 Run this in client (not server)
 
@@ -102,7 +110,7 @@ Run this in client (not server)
 ssh-copy-id username@ip-address
 ```
 
-**Open server in nautilus / file explorer**
+**Open server in nautilus / file explorer in linux**
 
 ```markdown
 File explorer: Other locations > Connect to server > sftp://username@ip/
@@ -126,7 +134,7 @@ File explorer: Other locations > Connect to server > sftp://username@ip/
 |```<prefix>``` x| Kill current window                                           |
 |```<prefix>``` d| Detach tmux (exit back to normal terminal)                    |
 |```<prefix>``` z| the active pane is toggled between zoomed and unzoomed        |
-|```<prefix>``` `<c-S>` | save current state                                        |
+|```<prefix>``` `<c-S>` | save current state <br> You need to install tmux-resurrect |
 |```<prefix>``` `<c-R>` | reload saved state                                        |
 
 
@@ -265,7 +273,7 @@ Combination examples:
 |q `<char`> commands q <br> @`<char`>| record command macros <br> apply recorded commands|
 
 
-### 4. Custom (Remapped) vim commands
+### 4. Useful key remappings 
 
 |||
 |--|--|
@@ -310,6 +318,8 @@ Args are list of files initially opened. So, it's a subset of buffers.
 
 ## II. Vim Plugins commands
 
+Install any vim plugin manager like vim-plug.
+
 To apply latest settings:
 
 ```vim
@@ -322,6 +332,8 @@ To apply latest settings:
 - :bulkrename
  
 ### 1. vim-surround commands
+
+Install Plug `tpope/vim-surround`
 
 |||
 |--|--|
@@ -340,6 +352,21 @@ Examples:
 
 ### 2. Git plugins commands
 
+Install these plugins first
+
+```vim
+" Show differences with style
+Plug 'mhinz/vim-signify'
+" Main GIT PLugin :Git
+Plug 'tpope/vim-fugitive'
+" Git Hub plugin, enables :Gbrowse
+Plug 'tpope/vim-rhubarb'
+" Git commit browser
+Plug 'junegunn/gv.vim'
+" Git commit history in each line
+```
+
+
 |||
 |--|--|
 |``<c-o>`` ``<c-i>`` | Toggle between buffers
@@ -349,6 +376,13 @@ Examples:
 |:GV            |Show git commit history 
 
 ### 3. Coc commands
+
+Install COC plugin first
+
+```vim
+" Intellisense
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+```
 
 |||
 |--|--|
@@ -360,6 +394,12 @@ Examples:
 
 ### 4. coc-python
 
+Install coc-python first
+
+```vim
+:CocInstall coc-python
+```
+
 |||
 |--|--|
 |Shift K | doc hint
@@ -368,6 +408,34 @@ Examples:
 |``<C-n>`` ``<C-n>`` ``<C-n>``<br> c <br> I <br> A | multiple cursors: <br> change <br> Insert at first <br> Insert at end
 
 ### 5. FZF
+
+Install fzf in system and fzf plugin
+
+OSx
+
+```console
+brew install fzf
+
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+
+brew install ripgrep
+```
+
+Linux
+
+```console
+sudo apt install fzf
+sudo apt install ripgrep
+```
+
+FZF Plugin
+
+```vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
+```
 
 |||
 |--|--|
@@ -383,6 +451,13 @@ Examples:
 
 ### 6. Startify
 
+Install Startify Plugin for Project management
+
+```vim
+" Start Screen
+Plug 'mhinz/vim-startify'
+```
+
 |||
 |--|--|
 |:SSave| Save session
@@ -390,10 +465,15 @@ Examples:
 
 ### 7. vim-commentary
 
+```vim
+" Better Comments
+Plug 'tpope/vim-commentary'
+```
+
 |||
 |--|--|
-|nnoremap ``<space>``/| :Commentary``<CR>``
-|vnoremap ``<space>``/| :Commentary``<CR>``
+|nnoremap ``<leader>``/| :Commentary``<CR>``
+|vnoremap ``<leader>``/| :Commentary``<CR>``
 
 # Git commands
 
@@ -552,7 +632,7 @@ git rm --cached | file removed from the index (staging it for deletion on the ne
 
 Alt+Shift- Change keyboard language
 
-# Brew bundle
+# Brew bundle for OSx
 
 ## Usage
 
