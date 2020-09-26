@@ -320,6 +320,7 @@ Args are list of files initially opened. So, it's a subset of buffers.
 |||
 |--|--|
 |`<c-u`> , `<c-d`>|Up, down scroll|
+|{ }|Up, down scroll between spaces|
 |`<c-b`> , `<c-f`>|Up, down full screen scroll|
 |`<c-y`> , `<c-e`>|Up, down scroll by lines|
 |H / M / L|Navigations to top / middle / bottom|
