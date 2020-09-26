@@ -66,8 +66,14 @@ $ scp username@remote-ip:'/path1/file1 /path2/file2 /path3/file3' /localPath
 
 **Generate ssh key:**
 
+Using ed25519 (more secure: Recommended)
 ```console
-$ ssh-keygen -t rsa
+$ ssh-keygen -t ed25519
+```
+
+Using RSA
+```console
+$ ssh-keygen -t rsa -b 3072
 ```
 
 **Save ssh host info**
@@ -77,7 +83,7 @@ Modify this file: `~/.ssh/config`
 Host *
     AddKeysToAgent yes
     UseKeychain yes
-    IdentityFile ~/.ssh/id_rsa
+    IdentityFile ~/.ssh/id_rsa (path/to/key)
 
 Host targaryen
     HostName 192.168.1.10
@@ -107,7 +113,13 @@ Host *
 Run this in client (not server)
 
 ```console
-ssh-copy-id username@ip-address
+ssh-copy-id -i path/to/key.pub username@server-ip-address
+```
+
+Example:
+
+```console
+ssh-copy-id -i ~/.ssh/id_rsa.pub ayush@192.168.1.107
 ```
 
 **Open server in nautilus / file explorer in linux**
@@ -120,10 +132,11 @@ File explorer: Other locations > Connect to server > sftp://username@ip/
 
 |||
 |--|--|
-|tmux                      |                                                |
-|tmux new -s name          |                                                |
-|tmux ls                   |                                                |
-|tmux a -t name            |                                           |
+|tmux                      |Create a tmux session with default window name 0 
+|tmux new -As name          |Create a tmux session with a name or attach to an existing session (if it exists)|
+|tmux ls                   |List the active tmux sessions                                                |
+|tmux a -t name            |Attach to an existing tmux session                                           |
+|tmux kill-session- t name |Kill an existing tmux session                                           |
 |`<prefix>` = `<c-B>` (default), can be changed to `<c-A>`  |                     |
 |```<prefix>``` [%"] | (Splitting panes)                                           |
 |[c-D] | (exit)                                                             |
@@ -164,18 +177,19 @@ Verbs (operations) + Noun (text on which operation is performed)
 |--|--|
 |c                                |change                                             |
 |d                                |delete                                            |
-|D                                |delete  everything from where your cursor is to the end of the line|
+|C                                |change everything from where your cursor is to the end of the line|
+|D                                |delete everything from where your cursor is to the end of the line|
 |dd                                |delete a line                             |
 |x                                |delete a sigle character                                            |
 |y| yank text into the copy buffer.                                                    |
-|yy| yank line into the copy buffer.                                                    |
+|yy or Y| yank line into the copy buffer.                                                    |
 |v| highlight one character at a time.                                                 |
 |V |highlight one line at a time.                                                      |
 |`<c-v>` | highlight by columns.                                                         |
 |p| paste text after the current line.                                                 |
 |P| paste text on the current line.                                                    |
 |>| Shift Right                                                    |
-|>| Shift Left                                                    |
+|<| Shift Left                                                    |
 |=| Indent |
 |gU | make uppercase                                                                  |
 |gu | make lowercase                                                                  |
@@ -228,7 +242,7 @@ Can be combined with verbs or used independently
 |% | move to matching parenthesis pair    |
 |[count] +| down to first non blank char of the line.  |
 |[count]$| moves the cursor to the end of the line.        |
-|0| moves the cursor to the end of the line.                 |
+|0| moves the cursor to the beginning of the line.                 |
 |G| move to the end of the file.                                |
 |gg| move to the beginning of the file.                         |
 
@@ -236,7 +250,7 @@ Combination examples:
 
 |||
 |--|--|
-|3ce| Change 3 wrods to end |
+|3ce| Change 3 words to end |
 |d]m| delete start of next method |
 |ctL| change upto before the next occurence of L |
 |d]m| delete start of next method |
@@ -440,9 +454,9 @@ Plug 'airblade/vim-rooter'
 |||
 |--|--|
 |:Rg | Find word inside file
-|:BLines | Find all occurences of word in a giant file
+|:BLines | Find all occurrences of word in a giant file
 |:Lines | Same as above but search in all buffers
-|:History: | HOstory of commands ran in vim
+|:History: | History of commands ran in vim
 |:Ag | similar to Rg but
 |:Buffers | Search through buffers
 |> | Tab
