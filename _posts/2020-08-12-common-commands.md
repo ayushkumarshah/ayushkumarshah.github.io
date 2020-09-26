@@ -280,8 +280,6 @@ Combination examples:
 |:q! or ZQ | force quit                                                         |
 |:wq or ZZ | write and quit                                        |
 |:bd | remove buffer
-|gd | Goto Definitions
-|gr | Goto References
 |[:vert] :sf filename| find file and open in split mode
 |`<c-v>` select multiple lines then I| insert at multiple lines     |
 |q `<char`> commands q <br> @`<char`>| record command macros <br> apply recorded commands|
@@ -400,11 +398,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 |||
 |--|--|
-|:CocInstall coc-python| Installing coc tools
-|:CocUninstall| Uninstalling coc tools
+|gd | Goto Definitions of variable under cursor
+|gr | Goto References of variable under cursor
+|:CocInstall tool_name E.g. :CocInstall coc-python| Installing coc tools
+|:CocUninstall tool_name| Uninstalling coc tools
 |:CocList extensions (Tab for autocompletion)| Show extensions
 |:CocCommand| execute a COC command
-|o | expand/collapse in Coc explorer
+|o | expand/collapse in Coc explorer (First run :CocInstall coc-explorer)
 
 ### 4. coc-python
 
