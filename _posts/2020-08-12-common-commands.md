@@ -777,3 +777,8 @@ brew 'myservice', restart_service: true
 brew 'myservice', restart_service: :changed
 ```
 
+# References
+
+- [Vim: Tutorial on Editing, Navigation, and File Management (2018)](https://youtu.be/E-ZbrtoSuzw)
+- [Mastering the Vim Language](https://youtu.be/wlR5gYd6um0)
+- [Stack Overflow: Git commits](https://stackoverflow.com/a/4114122)
