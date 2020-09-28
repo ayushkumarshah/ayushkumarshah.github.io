@@ -147,6 +147,9 @@ File explorer: Other locations > Connect to server > sftp://username@ip/
 |```<prefix>``` x| Kill current window                                           |
 |```<prefix>``` d| Detach tmux (exit back to normal terminal)                    |
 |```<prefix>``` z| the active pane is toggled between zoomed and unzoomed        |
+|```<prefix>``` space| switch between split orientations|
+|```<prefix>``` !| Break current pane to a new window |
+|```<prefix>``` :join-pane [-dhv] [-l size `|` -p percentage] [-s src-pane] [-t dst-pane] <br> Eg: `<prefix>` :join-pane -v -s 4 -t :1 | Join one pane to another  
 |```<prefix>``` `<c-S>` | save current state <br> You need to install tmux-resurrect |
 |```<prefix>``` `<c-R>` | reload saved state                                        |
 

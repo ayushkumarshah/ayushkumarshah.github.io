@@ -10,17 +10,12 @@ title: About
 
 # Ayush Kumar Shah
 
-Machine Learning Engineer, <br>
-[Fusemachines](https://www.fusemachines.com), Nepal
+Graduate Research Assisstant, <br>
+[Rochester Institute of Technology](https://www.rit.edu), New York
 
-Computer Science Instructor, <br>
-Samriddhi College 
+I am a Ph.D. student at Rochester Institute of Technology and one of the members of the [MathSeer project](https://www.cs.rit.edu/~dprl/mathseer/) which is a system to make finding mathematical information easier. I am conducting research under Prof. Richard Zanibbi to create innovative search engines, interfaces, and algorithms for extracting and recognizing math.
 
-Hello! It's me, Ayush Kumar Shah, an Artificial Intelligence enthisiast. Currently, I am active in working with global
-client teams to build state-of-the-art products. I have worked in the domains of Recommendation System, Handwritten
-character recognition system, waste classification system, Computer Vision Systems during my time at Fusemachines.
-
- My inquisitive nature, craving for knowledge, and longing for novelty and innovation strengthen my passion to work and learn daily to increase my knowledge horizon. I am mostly into python and AI, so my blog will be a reflection of whatever new thing I learn about them. Thank you for visiting my blog. <br>
+My inquisitive nature, craving for knowledge, and longing for novelty and innovation strengthen my passion to work and learn daily to increase my knowledge horizon. I am mostly into python and AI, so my blog will be a reflection of whatever new thing I learn about them. Thank you for visiting my blog. <br>
 
 ---
 
@@ -33,6 +28,15 @@ Check out my short resume below. You can view or download the complete pdf versi
 ---
 
 ## EDUCATION
+
+---
+
+2020-Present
+
+### PhD, Computing and Information Sciences
+
+Rochester Institute of Technology, <br> 
+Rochester, New York
 
 ---
 
@@ -55,7 +59,18 @@ Software Engineering; Digital Signal Processing; Embedded Systems
 
 ---
 
-June 17, 2019 - Present
+Aug 18, 2020 - Present 
+
+### Graduate Research Assisstant
+
+Rochester Institute of Technology, <br> 
+Rochester, New York
+
+One of the members of the [MathSeer Project,](https://www.cs.rit.edu/~dprl/mathseer/) which is a system to make finding mathematical information easier. I am conducting research under Prof. Richard Zanibbi to create innovative search engines, interfaces, and algorithms for extracting and recognizing math.
+
+---
+
+June 17, 2019 - Aug 31, 2020
 
 ### Machine Learning Engineer
 
@@ -85,7 +100,7 @@ Jan 2020 - Present
 Samriddhi College, <br> 
 Kathmandu, Nepal
 
-- Teaching the course "Foundations in AI: Computer Science and Mathematics" offered by Fusemachines to undergraduate BSc.CSIT students.
+Teaching the course "Foundations in AI: Computer Science and Mathematics" offered by Fusemachines to undergraduate BSc.CSIT students.
 
 ---
 
@@ -120,6 +135,7 @@ Kathmandu, Nepal
 - [Computer Vision Nanodegree - Udacity](https://graduation.udacity.com/confirm/GGYLDZPA)
 - [Deep Learning Nanodegree - Udacity](https://confirm.udacity.com/M7HJGNR3)
 - [Natural Language Processing Nanodegree - Udacity](https://confirm.udacity.com/SKL4AQE3)
+- [Faster Python Code - Linkedin Learning](https://drive.google.com/file/d/1irBSMbfj227TnGsWVk1xeRQSDRx67t8P/view?usp=sharing)
 - [Python: Design Patterns - Linkedin Learning](https://drive.google.com/file/d/13eVXfETo4OkJzkFmeen-RzH9cSSOZXQA/view)
 - [Full Stack Web Development with Flask - Linkedin Learning](https://drive.google.com/file/d/1k-9cZ6Zp6wpVCeuantBlSHa4FNKUNWbF/view)
 - [Pandas foundations - Datacamp](https://www.datacamp.com/statement-of-accomplishment/course/cbfa5d9e55822bb0766ab866a4dde1c79e7509fa)
@@ -134,7 +150,7 @@ Kathmandu, Nepal
  
 ---
 
-- Proficient: Python, Numpy, Pandas, Matplotlib, OpenCV, nltk, Keras, TensorFlow, Pytorch, git
+- Proficient: Python, Matlab, R, Numpy, Pandas, Matplotlib, OpenCV, nltk, Keras, TensorFlow, Pytorch, git
 - Familiar With: C, C++, SQL, AWS, LaTeX
 
 ---
