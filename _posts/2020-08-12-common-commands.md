@@ -25,7 +25,7 @@ author: Ayush Kumar Shah
 |cd -  | go back to previous location|
 |ls -ls| list files with detailed info (permission, date, symoblic links)|
 |cat filename| show the contents of the file filename|
-|free -sh                 |Show RAM - space used and free           |
+|free -h                 |Show RAM - space used and free           |
 |df -h                    |Show disk information - sapce used and free           |
 |du -sh .                 |Show total size occupied by current directory           |
 |du -sh *                 |Show size of each file or folder in current directory           |
