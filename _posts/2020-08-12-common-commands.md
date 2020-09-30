@@ -490,6 +490,12 @@ Plug 'tpope/vim-commentary'
 
 |||
 |--|--|
+|gc`[<count>] <Text object>` (Examples below)| Comment out the target of a motion
+|gcap| Comment out a paragraph
+|gcw| Comment out the current line
+|gc2j| Comment out the current line and 2 lines below it
+
+Easy remapping
 |nnoremap ``<leader>``/| :Commentary``<CR>``
 |vnoremap ``<leader>``/| :Commentary``<CR>``
 
