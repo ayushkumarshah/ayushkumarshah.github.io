@@ -149,6 +149,11 @@ File explorer: Other locations > Connect to server > sftp://username@ip/
 |```<prefix>``` z| the active pane is toggled between zoomed and unzoomed        |
 |```<prefix>``` space| switch between split orientations|
 |```<prefix>``` !| Break current pane to a new window |
+|```<prefix>``` :move-window -t 2| rename current window to 2 if 2 does not exist
+|```<prefix>``` :resize-pane -D n| Resizes the current pane down by n cells
+|```<prefix>``` :resize-pane -U n| Resizes the current pane upward by n cells
+|```<prefix>``` :resize-pane -L n| Resizes the current pane left by n cells
+|```<prefix>``` :resize-pane -R n| Resizes the current pane right by n cells
 |```<prefix>``` :join-pane [-dhv] [-l size `|` -p percentage] [-s src-pane] [-t dst-pane] <br> Eg: `<prefix>` :join-pane -v -s 4 -t :1 | Join one pane to another  
 |```<prefix>``` `<c-S>` | save current state <br> You need to install tmux-resurrect |
 |```<prefix>``` `<c-R>` | reload saved state                                        |
