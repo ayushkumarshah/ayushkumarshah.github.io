@@ -149,6 +149,8 @@ File explorer: Other locations > Connect to server > sftp://username@ip/
 |```<prefix>``` z| the active pane is toggled between zoomed and unzoomed        |
 |```<prefix>``` space| switch between split orientations|
 |```<prefix>``` !| Break current pane to a new window |
+|```<prefix>``` \| Swap pane within a window |
+|```<prefix>``` `<C-o>`| Swap pane within a window |
 |```<prefix>``` :move-window -t 2| rename current window to 2 if 2 does not exist
 |```<prefix>``` :resize-pane -D n| Resizes the current pane down by n cells
 |```<prefix>``` :resize-pane -U n| Resizes the current pane upward by n cells
