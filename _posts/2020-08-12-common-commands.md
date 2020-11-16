@@ -255,6 +255,7 @@ Can be combined with verbs or used independently
 |0| moves the cursor to the beginning of the line.                 |
 |G| move to the end of the file.                                |
 |gg| move to the beginning of the file.                         |
+|]m or [m| Mode between methods.                         |
 
 Combination examples:
 
