@@ -2,7 +2,7 @@
 layout: post
 title: Common commands 
 date: 2020-08-12 13:00
-categories: [linux, mac]
+categories: [commands]
 summary: A curated list of common commands that makes usage easy
 tags: [linux, mac, vim, tmux, neovim, ssh, i32m, brew, shell]
 author: Ayush Kumar Shah
@@ -26,6 +26,7 @@ author: Ayush Kumar Shah
 |ls -ls| list files with detailed info (permission, date, symoblic links)|
 |ls -1 &#124; wc -l | count number of files in a directory|
 |cat filename| show the contents of the file filename|
+|tee <br> Eg: df -h &#124; tee usage.txt | display stdout of a command and write it in a file|
 |free -h                 |Show RAM - space used and free           |
 |df -h                    |Show disk information - sapce used and free           |
 |du -sh .                 |Show total size occupied by current directory           |
@@ -286,15 +287,18 @@ Combination examples:
 |#|search backward for word under cursor
 |:vsplit        |vertical split windows
 |m[a-zA-Z]|sets a custom mark whose location can be accessed using `[mark] and line accessed using '[mark]|
+|g;| goto last cursor position|
 |'.| move to the last edit                                                            |
 |:marks| show all current marks that are being used                    |
 |:q  | quit                                                                                 |
 |:q! or ZQ | force quit                                                         |
 |:wq or ZZ | write and quit                                        |
+|:w !sudo tee % | Write with sudo permissions if permission not available|
 |:bd | remove buffer
 |[:vert] :sf filename| find file and open in split mode
 |`<c-v>` select multiple lines then I| insert at multiple lines     |
 |q `<char`> commands q <br> [count] @`<char`>| record command macros <br> apply recorded commands|
+|:ab ipho International Physics Olympiad| Set abbreviation for long terms for easy typing <br> Use `<C-v>` to prevent expansion|
 
 
 ### 4. Useful key remappings 
