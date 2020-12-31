@@ -24,6 +24,7 @@ author: Ayush Kumar Shah
 |pwd &#124; pbcopy | copy current path to clipboard (Use xcopy or xsel for linux)
 |cd -  | go back to previous location|
 |ls -ls| list files with detailed info (permission, date, symoblic links)|
+|ls -1 &#124; wc -l | count number of files in a directory|
 |cat filename| show the contents of the file filename|
 |free -h                 |Show RAM - space used and free           |
 |df -h                    |Show disk information - sapce used and free           |
@@ -178,11 +179,11 @@ Verbs (operations) + Noun (text on which operation is performed)
 ```vim
 :[.]!command
 ```
-
+  
 `. (dot)` - outputs the command into the current buffer
-
+  
 ### 1. VIM Verbs (operations)
-
+ 
 |||
 |--|--|
 |c                                |change                                             |
@@ -293,7 +294,7 @@ Combination examples:
 |:bd | remove buffer
 |[:vert] :sf filename| find file and open in split mode
 |`<c-v>` select multiple lines then I| insert at multiple lines     |
-|q `<char`> commands q <br> @`<char`>| record command macros <br> apply recorded commands|
+|q `<char`> commands q <br> [count] @`<char`>| record command macros <br> apply recorded commands|
 
 
 ### 4. Useful key remappings 
