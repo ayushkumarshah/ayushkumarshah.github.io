@@ -18,27 +18,53 @@ author: Ayush Kumar Shah
 
 # General shell commands
 
-|||
+|Commands|Description|
 |--|--|
-|pwd| get current path
+|`echo $SHELL`|Display name of active shell (bash or zsh or others)|
+|`man command-name` <br> Eg: man bash &#124; grep -C2 '$@'|Get information about the command <br> Here, return 2 leading and trailing lines around the matching text '$@' in the information|
+|`command-name --help`|Information about the command usage|
+|`pwd`| get current path
 |pwd &#124; pbcopy | copy current path to clipboard (Use xcopy or xsel for linux)
-|cd -  | go back to previous location|
-|ls -ls| list files with detailed info (permission, date, symoblic links)|
+|`cd -`  | go back to previous location|
+|`ls -al`|List. a - all <br> l - long listing format <br> d means directory - means file|
+|`ls -ls`| list files with detailed info (permission, date, symoblic links)|
 |ls -1 &#124; wc -l | count number of files in a directory|
-|cat filename| show the contents of the file filename|
+|`cat filename`| show the contents of the file filename|
 |tee <br> Eg: df -h &#124; tee usage.txt | display stdout of a command and write it in a file|
-|free -h                 |Show RAM - space used and free           |
-|df -h                    |Show disk information - sapce used and free           |
-|du -sh .                 |Show total size occupied by current directory           |
-|du -sh *                 |Show size of each file or folder in current directory           |
+|`free -h`                 |Show RAM - space used and free           |
+|`df -h`                    |Show disk information - space used and free           |
+|`du -sh .`                 |Show total size occupied by current directory           |
+|`du -sh *`                 |Show size of each file or folder in current directory           |
 |du -sh * &#124; tail -1  |Show total size occupied by the last file in the current directory|
-|stat filename            |Display file status         |
-|top or htop or ytop             |Process info and CPU Usage  (You need to install htop or ytop)|
-|man command-name         |Information about the command|
-|tree [-aldf][-L level][-P pattern][-I pattern][-o filename] |display directory's contents in a  tree <br> a - all files <br> l - symbolic links <br> d - directories only <br> L - limit number of levels of directory <br> I - files not matching pattern <br> P - files matching pattern <br> o - output to filename <br> You need to install tree|
+|ps ax[c] [&#124; less]|List currently running programs. <br>c - easier to read<br>less - easier to navigate|
+|`pidof process-name`|Get the process id of a running process.|
+|`kill process-id`|Kill the process|
+|`uname [-[s][a]]`|Display name of OS Distribution. a - Detailed info.|
+|`stat filename`            |Display file status         |
+|`alias alias-name`|Shows the alias actual command|
+|`date +format` E.g. `date +%d/%m/%Y`|Date command|
+|`cal [-3] [[month] year]` <br> E.g. `cal -3 june 1996` or `cal 1997` or `cal`|Calendar command. -3 means show previous and the next month as well.|
+|`less file.txt`|Show file contents (similar to cat but allows to move up and down)|
+|`more file.txt`|Show file contents (similar to cat but allows to move up and down)|
+|`rm -ir`|Remove. i - prompt to ask permission for each file. r - recursively delete|
+|`grep [-i] text_to_search /path/to/file`|Search for contents in a file , i - case insensitive|
+|`grep -v text_to_search /path/to/file`|Search for contents not matching the pattern in a file|
+|`command > file.txt`|adds output of command to file.txt. Creates a new file if does not exist. If exists, overwrites the contents of the file.|
+|`command >> file.txt`|adds output of command to file.txt. Creates a new file if does not exist. If exists, appends the outputs to the contents of the file.|
+|`find / -name "file_name" [2>/dev/null]` <br> Eg: `find \ -name "*backup*" 2/dev/null`| Find file from the root directory <br> 2/dev/null: 2 takes error output and redirects to dev/null where it is deleted|
+|`find . -not -name "file_name"`|Find files not matching the filename|
+|find . -name "file_name" &#124; xargs -I % rm %|Find and delete files matching the filename|
+|`find . -name "file_name" -exec rm -i {} \;`|Find and delete files matching the filename|
+|`find . -name "file_name" -exec grep "Hello" -i {} \;`|Find and search "Hello" in files matching the filename|
+|`find -E . -regex ".*/file_name[0-9].sh"`|Find files matching the regular expression (this syntax works only in osx)|
+|`find -E . -not -regex ".*/file_name[0-9].sh"`|Find files not matching the regular expression (this syntax works only in osx)|
+|command &#124; grep text_to_search <br> Eg: find / -name "*backup*" 2>/dev/null &#124; grep $USER|Using pipe to combine grep with other commands|
+|`awk`|very powerful command for pattern scanning and processing|
 |`<C-T>`|fzf: fuzzy finding files or directories <br> You need to install fzf|
 |`<C-R>`|fzf: fuzzy finding commands in history|
 |`<Esc-C>`|fzf: fuzzy finding files or directories from current path|
+|`top` or `htop` or `ytop` or `gotop`             |Process info and CPU Usage  (You need to install htop or ytop)|
+|`tree [-aldf][-L level][-P pattern][-I pattern][-o filename] `|display directory's contents in a  tree <br> a - all files <br> l - symbolic links <br> d - directories only <br> L - limit number of levels of directory <br> I - files not matching pattern <br> P - files matching pattern <br> o - output to filename <br> You need to install tree|
 
 
 # SSH Commands
@@ -152,6 +178,7 @@ File explorer: Other locations > Connect to server > sftp://username@ip/
 |```<prefix>``` space| switch between split orientations|
 |```<prefix>``` !| Break current pane to a new window |
 |```<prefix>``` \| Swap pane within a window |
+|```<prefix>``` ()| Switch between tmux sessions |
 |```<prefix>``` `<C-o>`| Swap pane within a window |
 |```<prefix>``` :move-window -t 2| rename current window to 2 if 2 does not exist
 |```<prefix>``` :resize-pane -D n| Resizes the current pane down by n cells
@@ -290,6 +317,8 @@ Combination examples:
 |g;| goto last cursor position|
 |'.| move to the last edit                                                            |
 |:marks| show all current marks that are being used                    |
+|:w| write|
+|:w file_name| write the changes to a new file|
 |:q  | quit                                                                                 |
 |:q! or ZQ | force quit                                                         |
 |:wq or ZZ | write and quit                                        |
