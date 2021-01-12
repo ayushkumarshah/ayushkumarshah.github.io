@@ -325,9 +325,12 @@ Combination examples:
 |:w !sudo tee % | Write with sudo permissions if permission not available|
 |:bd | remove buffer
 |[:vert] :sf filename| find file and open in split mode
-|`<c-v>` select multiple lines then I| insert at multiple lines     |
+|`<c-v>` select multiple lines then I or A and type the required text|insert text at multiple lines at the beginning or the end|
 |q `<char`> commands q <br> [count] @`<char`>| record command macros <br> apply recorded commands|
 |:ab ipho International Physics Olympiad| Set abbreviation for long terms for easy typing <br> Use `<C-v>` to prevent expansion|
+|norm command. Eg <br> `vip` then `:norm Ithis comes to the left`|Applies sequence of button presses / commands to each line selected <br> Select a paragraph and add the text to the left of each line in the paragraph
+|Global commands. Eg <br> `:g/^@/m$`|Apply commands to lines matching particular pattern <br> Move all lines starting with @ to the end of the document|
+|Timetravel Eg <br> `:earlier 10m` <br> `:earlier 5h` <br> `:later 2h`| Move to the file state in the past or future as specified|
 
 
 ### 4. Useful key remappings 
