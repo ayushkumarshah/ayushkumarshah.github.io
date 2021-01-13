@@ -387,10 +387,50 @@ To apply latest settings:
 :source $MYVIMRC
 ```
 
-### Bulk-rename in ranger
+### Ranger
 
-- Select files to rename using visual selection
-- :bulkrename
+First, instll ranger
+
+Mac
+```zsh
+brew install ranger
+```
+
+Linux
+```zsh
+sudo apt install ranger
+```
+
+Install ranger plugin for vim
+
+```vim
+" Ranger in vim
+Plug 'francoiscabrol/ranger.vim'
+" Dependency for ranger in neovim
+Plug 'rbgrouleff/bclose.vim'
+```
+
+When ranger is open in vim or externally
+
+|||
+|--|--|
+|`cw`|Rename file/dir : change word|
+|`A`|Rename file: add at the end of extension|
+|`a`|Rename file: add just before the extension|
+|`I`|Rename file/dir: add at the front of the filename/directory|
+|`:bulkrename`|Rename a list of files/directories|
+|`:mkdir newdir`|Create new directory|
+|`Space`|Highlight/Select files / directories|
+|`V`|Highlight/Select files / directories similar to visual mode|
+|`uv`|Undo highlight/select|
+|`yy`|Copy/yank file/dir|
+|`dd`|Cut file/dir|
+|`pp`|Paste file/dir. If file exists, new file created with _ at the end of the name|
+|`po`|Paste but overwrite file/dir|
+|`uy`|Undo Copy/yank|
+|`dD`|Delete|
+|`Z` (Custom mapping)|Compress using an external script mapped to ranger|
+|`x` (Custom mapping)|Extract using an external script mapped to ranger|
  
 ### 1. vim-surround commands
 
