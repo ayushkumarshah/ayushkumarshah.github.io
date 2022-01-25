@@ -26,6 +26,7 @@ author: Ayush Kumar Shah
 |`pwd`| get current path
 |pwd &#124; pbcopy | copy current path to clipboard (Use xcopy or xsel for linux)
 |`cd -`  | go back to previous location|
+|`take new_dir`  | create new_dir and cd into it i.e. `mkdir new_dir; cd new_dir`
 |`ls -al`|List. a - all <br> l - long listing format <br> d means directory - means file|
 |`ls -ls`| list files with detailed info (permission, date, symoblic links)|
 |ls -1 &#124; wc -l | count number of files in a directory|
@@ -74,7 +75,7 @@ author: Ayush Kumar Shah
 To access servers hosted on the remote machine from the local machine
 
 ```console
-$ ssh -NL port_no_server:localhost:port_no_local username@ip-address
+$ ssh -NL port1_server:localhost:port1_local [-NL port2_server:localhost:port2_local]{multiple ports possible} username@remote-ip-address
 ```
 
 Example:
