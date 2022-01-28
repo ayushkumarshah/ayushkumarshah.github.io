@@ -10,6 +10,7 @@ pdf: '/files/Shah2021_MathSeer.pdf'
 citation: 'A. K. Shah, A. Dey, and R. Zanibbi, “A Math Formula Extraction and Evaluation Framework for PDF Documents,” in Document Analysis and Recognition – ICDAR 2021, Cham, 2021, pp. 19–34. doi: 10.1007/978-3-030-86331-9_2.'
 poster: '/files/237-presentation.pdf'
 video: '/files/237-teaser.mp4'
+code: 'https://gitlab.com/dprl/MathSeer-extraction-pipeline'
 ---
 
 ## Abstract:

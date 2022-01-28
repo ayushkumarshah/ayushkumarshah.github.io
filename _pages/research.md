@@ -20,6 +20,9 @@ search engines, interfaces, and algorithms for extracting and recognizing math
 - Worked on a PDF symbol extractor that identifies precise bounding box locations in born-digital PDF documents
 - Developed a simple and effective algorithm to perform detection of math expressions using visual features alone
 - Wrote an API for recognizing handwritten and typeset formulas and output the corresponding LATEX and MathML
-- Currently working on improving the accuracy of the math formula parser by experimenting better visual features
+
+**Current work:**
+
+- Working on improving the accuracy of the math formula parser by experimenting better visual features
 and attention mechanisms
-- Currently working on adopting the parser to work with more complex graphical structures like chemical diagrams
+- Working on adopting the parser to work with more complex graphical structures like chemical diagrams
