@@ -30,7 +30,7 @@ learning, natural language processing
 
 ---
 
-Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_updated)
+Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_updated.pdf)
 
 ---
 
