@@ -1,0 +1,2514 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Common commands - Ayush Kumar Shah</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Ayush Kumar Shah">
+<meta property="og:title" content="Common commands">
+
+
+  <link rel="canonical" href="http://localhost:4000/2020/08/common-commands/">
+  <meta property="og:url" content="http://localhost:4000/2020/08/common-commands/">
+
+
+
+  <meta property="og:description" content="  General Shell Commands  SSH Commands  tmux commands  Vim Commands  Git Commands  i3wm commands  Brew bundle">
+
+
+
+  <meta name="twitter:site" content="@ayushkumarshah7">
+  <meta name="twitter:title" content="Common commands">
+  <meta name="twitter:description" content="  General Shell Commands  SSH Commands  tmux commands  Vim Commands  Git Commands  i3wm commands  Brew bundle">
+  <meta name="twitter:url" content="http://localhost:4000/2020/08/common-commands/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2020-08-12T13:00:00-04:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Ayush Kumar Shah",
+      "url" : "http://localhost:4000",
+      "sameAs" : ["https://twitter.com/ayushkumarshah7","https://github.com/ayushkumarshah","https://www.facebook.com/ayushkumarshah","https://www.linkedin.com/in/ayush7"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="qgX-LJLtkvIk5WkHJP5FSa31RN98a1WhAjPK8w8JPxE" />
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ayush Kumar Shah Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="http://localhost:4000/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="http://localhost:4000/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="http://localhost:4000/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="http://localhost:4000/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="http://localhost:4000/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="http://localhost:4000/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="http://localhost:4000/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="http://localhost:4000/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="http://localhost:4000/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Ayush Kumar Shah</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/research/">Research</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/year-archive/">Blog Posts</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/cv/">CV</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <div class="author__avatar">
+    
+    	<img src="http://localhost:4000/images/profile.png" class="author__avatar" alt="Ayush Kumar Shah">
+    
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">Ayush Kumar Shah</h3>
+    <p class="author__bio">Computer Science Ph.D. Student</p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Rochester, New York</li>
+      
+      
+      
+      
+        <li><a href="mailto:ayush.kumar.shah@gmail.com"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+      
+      
+       
+      
+        <li><a href="https://twitter.com/ayushkumarshah7"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+      
+      
+      
+      
+        <li><a href="https://www.linkedin.com/in/ayush7"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+      
+      
+      
+      
+      
+      
+        <li><a href="https://github.com/ayushkumarshah"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="http://orcid.org/0000-0001-6158-7632"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
+      
+      
+      
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Common commands">
+    <!-- <meta itemprop="description" content="A curated list of common commands that makes usage easy."> -->
+    <meta itemprop="description" content="  General Shell Commands  SSH Commands  tmux commands  Vim Commands  Git Commands  i3wm commands  Brew bundle">
+    <meta itemprop="datePublished" content="August 12, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Common commands
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  25 minute read
+	
+</p>
+          
+        
+        
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2020-08-12T13:00:00-04:00">August 12, 2020</time></p>
+        
+        
+        
+        
+        
+        
+        
+    
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <ul>
+  <li><a href="#general-shell-commands">General Shell Commands</a></li>
+  <li><a href="#ssh-commands">SSH Commands</a></li>
+  <li><a href="#tmux-commands">tmux commands</a></li>
+  <li><a href="#vim-commands">Vim Commands</a></li>
+  <li><a href="#git-commands">Git Commands</a></li>
+  <li><a href="#i3wm-commands">i3wm commands</a></li>
+  <li><a href="#brew-bundle-for-osx">Brew bundle</a></li>
+</ul>
+
+<h1 id="general-shell-commands">General shell commands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Commands</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">echo $SHELL</code></td>
+      <td>Display name of active shell (bash or zsh or others)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">man command-name</code> <br /> Eg: man bash | grep -C2 ‘$@’</td>
+      <td>Get information about the command <br /> Here, return 2 leading and trailing lines around the matching text ‘$@’ in the information</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">command-name --help</code></td>
+      <td>Information about the command usage</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pwd</code></td>
+      <td>get current path</td>
+    </tr>
+    <tr>
+      <td>pwd | pbcopy</td>
+      <td>copy current path to clipboard (Use xcopy or xsel for linux)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cd -</code></td>
+      <td>go back to previous location</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">take new_dir</code></td>
+      <td>create new_dir and cd into it i.e. <code class="language-plaintext highlighter-rouge">mkdir new_dir; cd new_dir</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ls -al</code></td>
+      <td>List. a - all <br /> l - long listing format <br /> d means directory - means file</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ls -ls</code></td>
+      <td>list files with detailed info (permission, date, symoblic links)</td>
+    </tr>
+    <tr>
+      <td>ls -1 | wc -l</td>
+      <td>count number of files in a directory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat filename</code></td>
+      <td>show the contents of the file filename</td>
+    </tr>
+    <tr>
+      <td>tee <br /> Eg: df -h | tee usage.txt</td>
+      <td>display stdout of a command and write it in a file</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">free -h</code></td>
+      <td>Show RAM - space used and free</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">df -h</code></td>
+      <td>Show disk information - space used and free</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">du -sh .</code></td>
+      <td>Show total size occupied by current directory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">du -sh *</code></td>
+      <td>Show size of each file or folder in current directory</td>
+    </tr>
+    <tr>
+      <td>du -sh * | tail -1</td>
+      <td>Show total size occupied by the last file in the current directory</td>
+    </tr>
+    <tr>
+      <td>ps ax[c] [| less]</td>
+      <td>List currently running programs. <br />c - easier to read<br />less - easier to navigate</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pidof process-name</code></td>
+      <td>Get the process id of a running process.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kill process-id</code></td>
+      <td>Kill the process</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">uname [-[s][a]]</code></td>
+      <td>Display name of OS Distribution. a - Detailed info.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">stat filename</code></td>
+      <td>Display file status</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">alias alias-name</code></td>
+      <td>Shows the alias actual command</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">date +format</code> E.g. <code class="language-plaintext highlighter-rouge">date +%d/%m/%Y</code></td>
+      <td>Date command</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cal [-3] [[month] year]</code> <br /> E.g. <code class="language-plaintext highlighter-rouge">cal -3 june 1996</code> or <code class="language-plaintext highlighter-rouge">cal 1997</code> or <code class="language-plaintext highlighter-rouge">cal</code></td>
+      <td>Calendar command. -3 means show previous and the next month as well.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">less file.txt</code></td>
+      <td>Show file contents (similar to cat but allows to move up and down)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">more file.txt</code></td>
+      <td>Show file contents (similar to cat but allows to move up and down)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rm -ir</code></td>
+      <td>Remove. i - prompt to ask permission for each file. r - recursively delete</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">grep [-i] text_to_search /path/to/file</code></td>
+      <td>Search for contents in a file , i - case insensitive</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">grep -v text_to_search /path/to/file</code></td>
+      <td>Search for contents not matching the pattern in a file</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">command &gt; file.txt</code></td>
+      <td>adds output of command to file.txt. Creates a new file if does not exist. If exists, overwrites the contents of the file.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">command &gt;&gt; file.txt</code></td>
+      <td>adds output of command to file.txt. Creates a new file if does not exist. If exists, appends the outputs to the contents of the file.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">find / -name "file_name" [2&gt;/dev/null]</code> <br /> Eg: <code class="language-plaintext highlighter-rouge">find \ -name "*backup*" 2/dev/null</code></td>
+      <td>Find file from the root directory <br /> 2/dev/null: 2 takes error output and redirects to dev/null where it is deleted</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">find . -not -name "file_name"</code></td>
+      <td>Find files not matching the filename</td>
+    </tr>
+    <tr>
+      <td>find . -name “file_name” | xargs -I % rm %</td>
+      <td>Find and delete files matching the filename</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">find . -name "file_name" -exec rm -i {} \;</code></td>
+      <td>Find and delete files matching the filename</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">find . -name "file_name" -exec grep "Hello" -i {} \;</code></td>
+      <td>Find and search “Hello” in files matching the filename</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">find -E . -regex ".*/file_name[0-9].sh"</code></td>
+      <td>Find files matching the regular expression (this syntax works only in osx)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">find -E . -not -regex ".*/file_name[0-9].sh"</code></td>
+      <td>Find files not matching the regular expression (this syntax works only in osx)</td>
+    </tr>
+    <tr>
+      <td>command | grep text_to_search <br /> Eg: find / -name “<em>backup</em>” 2&gt;/dev/null | grep $USER</td>
+      <td>Using pipe to combine grep with other commands</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">awk</code></td>
+      <td>very powerful command for pattern scanning and processing</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;C-T&gt;</code></td>
+      <td>fzf: fuzzy finding files or directories <br /> You need to install fzf</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;C-R&gt;</code></td>
+      <td>fzf: fuzzy finding commands in history</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Esc-C&gt;</code></td>
+      <td>fzf: fuzzy finding files or directories from current path</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">top</code> or <code class="language-plaintext highlighter-rouge">htop</code> or <code class="language-plaintext highlighter-rouge">ytop</code> or <code class="language-plaintext highlighter-rouge">gotop</code></td>
+      <td>Process info and CPU Usage  (You need to install htop or ytop)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tree [-aldf][-L level][-P pattern][-I pattern][-o filename] </code></td>
+      <td>display directory’s contents in a  tree <br /> a - all files <br /> l - symbolic links <br /> d - directories only <br /> L - limit number of levels of directory <br /> I - files not matching pattern <br /> P - files matching pattern <br /> o - output to filename <br /> You need to install tree</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="ssh-commands">SSH Commands</h1>
+
+<h2 id="ssh-tunnelling">SSH Tunnelling</h2>
+
+<p>To access servers hosted on the remote machine from the local machine</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ssh <span class="nt">-NL</span> port1_server:localhost:port1_local <span class="o">[</span><span class="nt">-NL</span> port2_server:localhost:port2_local]<span class="o">{</span>multiple ports possible<span class="o">}</span> username@remote-ip-address
+</code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ssh <span class="nt">-NL</span> 8888:localhost:8888 ayush@192.168.100.7
+</code></pre></div></div>
+
+<h2 id="copy-multiple-files-from-remote-to-local">Copy multiple files from remote to local:</h2>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>scp username@remote-ip:/some/remote/directory/<span class="se">\{</span>file1,file2,file3<span class="se">\}</span> /localpath
+<span class="gp">$</span><span class="w"> </span>scp username@remote-ip:<span class="s1">'/path1/file1 /path2/file2 /path3/file3'</span> /localPath
+</code></pre></div></div>
+
+<h2 id="other-ssh-commands">Other ssh commands</h2>
+
+<p><strong>Generate ssh key:</strong></p>
+
+<p>Using ed25519 (more secure: Recommended)</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ssh-keygen <span class="nt">-t</span> ed25519
+</code></pre></div></div>
+
+<p>Using RSA</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-b</span> 3072
+</code></pre></div></div>
+
+<p><strong>Save ssh host info</strong>
+Modify this file: <code class="language-plaintext highlighter-rouge">~/.ssh/config</code></p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Host</span> *
+    <span class="n">AddKeysToAgent</span> <span class="n">yes</span>
+    <span class="n">UseKeychain</span> <span class="n">yes</span>
+    <span class="n">IdentityFile</span> ~/.<span class="n">ssh</span>/<span class="n">id_rsa</span> (<span class="n">path</span>/<span class="n">to</span>/<span class="n">key</span>)
+
+<span class="n">Host</span> <span class="n">targaryen</span>
+    <span class="n">HostName</span> <span class="m">192</span>.<span class="m">168</span>.<span class="m">1</span>.<span class="m">10</span>
+    <span class="n">User</span> <span class="n">daenerys</span>
+    <span class="n">Port</span> <span class="m">7654</span>
+
+<span class="n">Host</span> <span class="n">tyrell</span>
+    <span class="n">HostName</span> <span class="m">192</span>.<span class="m">168</span>.<span class="m">10</span>.<span class="m">20</span>
+
+<span class="n">Host</span> <span class="n">martell</span>
+    <span class="n">HostName</span> <span class="m">192</span>.<span class="m">168</span>.<span class="m">10</span>.<span class="m">50</span>
+
+<span class="n">Host</span> *<span class="n">ell</span>
+    <span class="n">User</span> <span class="n">oberyn</span>
+
+<span class="n">Host</span> * !<span class="n">martell</span>
+    <span class="n">LogLevel</span> <span class="n">INFO</span>
+
+<span class="n">Host</span> *
+    <span class="n">User</span> <span class="n">root</span>
+    <span class="n">Compression</span> <span class="n">yes</span>
+
+</code></pre></div></div>
+
+<p><strong>Save ssh password so that no need to re-enter every time</strong></p>
+
+<p>Run this in client (not server)</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ssh-copy-id -i path/to/key.pub username@server-ip-address
+</span></code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ssh-copy-id -i ~/.ssh/id_rsa.pub ayush@192.168.1.107
+</span></code></pre></div></div>
+
+<p><strong>Open server in nautilus / file explorer in linux</strong></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>File explorer: Other locations &gt; Connect to server &gt; sftp://username@ip/
+</code></pre></div></div>
+
+<h1 id="tmux-commands">tmux commands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tmux</td>
+      <td>Create a tmux session with default window name 0</td>
+    </tr>
+    <tr>
+      <td>tmux new -As name</td>
+      <td>Create a tmux session with a name or attach to an existing session (if it exists)</td>
+    </tr>
+    <tr>
+      <td>tmux ls</td>
+      <td>List the active tmux sessions</td>
+    </tr>
+    <tr>
+      <td>tmux a -t name</td>
+      <td>Attach to an existing tmux session</td>
+    </tr>
+    <tr>
+      <td>tmux kill-session- t name</td>
+      <td>Kill an existing tmux session</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> = <code class="language-plaintext highlighter-rouge">&lt;c-B&gt;</code> (default), can be changed to <code class="language-plaintext highlighter-rouge">&lt;c-A&gt;</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> [%”]</td>
+      <td>(Splitting panes)</td>
+    </tr>
+    <tr>
+      <td>[c-D]</td>
+      <td>(exit)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> D</td>
+      <td>(get out )</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> c</td>
+      <td>Create a new window (appears in status bar)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> 0</td>
+      <td>Switch to window 0</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> 1</td>
+      <td>Switch to window 1</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> x</td>
+      <td>Kill current window</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> d</td>
+      <td>Detach tmux (exit back to normal terminal)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> z</td>
+      <td>the active pane is toggled between zoomed and unzoomed</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> space</td>
+      <td>switch between split orientations</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> !</td>
+      <td>Break current pane to a new window</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> | Swap pane within a window</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> ()</td>
+      <td>Switch between tmux sessions</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;C-o&gt;</code></td>
+      <td>Swap pane within a window</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> :move-window -t 2</td>
+      <td>rename current window to 2 if 2 does not exist</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> :resize-pane -D n</td>
+      <td>Resizes the current pane down by n cells</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> :resize-pane -U n</td>
+      <td>Resizes the current pane upward by n cells</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> :resize-pane -L n</td>
+      <td>Resizes the current pane left by n cells</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> :resize-pane -R n</td>
+      <td>Resizes the current pane right by n cells</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> :join-pane [-dhv] [-l size <code class="language-plaintext highlighter-rouge">|</code> -p percentage] [-s src-pane] [-t dst-pane] <br /> Eg: <code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> :join-pane -v -s 4 -t :1</td>
+      <td>Join one pane to another</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;c-S&gt;</code></td>
+      <td>save current state <br /> You need to install tmux-resurrect</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;prefix&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;c-R&gt;</code></td>
+      <td>reload saved state</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="vim-commands">Vim commands</h1>
+
+<h2 id="i-pure-vim">I. Pure Vim</h2>
+
+<h3 id="syntax">Syntax:</h3>
+
+<p>Verbs (operations) + Noun (text on which operation is performed)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[count] [operation] [text object / motion]
+</code></pre></div></div>
+
+<h3 id="run-bash-commands-in-vim">Run bash commands in vim</h3>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:[.]!</span>command
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">. (dot)</code> - outputs the command into the current buffer</p>
+
+<h3 id="1-vim-verbs-operations">1. VIM Verbs (operations)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>c</td>
+      <td>change</td>
+    </tr>
+    <tr>
+      <td>d</td>
+      <td>delete</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>change everything from where your cursor is to the end of the line</td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>delete everything from where your cursor is to the end of the line</td>
+    </tr>
+    <tr>
+      <td>dd</td>
+      <td>delete a line</td>
+    </tr>
+    <tr>
+      <td>x</td>
+      <td>delete a sigle character</td>
+    </tr>
+    <tr>
+      <td>y</td>
+      <td>yank text into the copy buffer.</td>
+    </tr>
+    <tr>
+      <td>yy or Y</td>
+      <td>yank line into the copy buffer.</td>
+    </tr>
+    <tr>
+      <td>v</td>
+      <td>highlight one character at a time.</td>
+    </tr>
+    <tr>
+      <td>V</td>
+      <td>highlight one line at a time.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;c-v&gt;</code></td>
+      <td>highlight by columns.</td>
+    </tr>
+    <tr>
+      <td>p</td>
+      <td>paste text after the current line.</td>
+    </tr>
+    <tr>
+      <td>P</td>
+      <td>paste text on the current line.</td>
+    </tr>
+    <tr>
+      <td>&gt;</td>
+      <td>Shift Right</td>
+    </tr>
+    <tr>
+      <td>&lt;</td>
+      <td>Shift Left</td>
+    </tr>
+    <tr>
+      <td>=</td>
+      <td>Indent</td>
+    </tr>
+    <tr>
+      <td>gU</td>
+      <td>make uppercase</td>
+    </tr>
+    <tr>
+      <td>gu</td>
+      <td>make lowercase</td>
+    </tr>
+    <tr>
+      <td>~</td>
+      <td>swap case</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-vim-nouns-text">2. VIM Nouns (text)</h3>
+
+<h4 id="i-text-objects">i. Text Objects</h4>
+
+<p>Must be combined with verbs</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>iw</td>
+      <td>inner word (non whitespace) (works from anywhere in a word)</td>
+    </tr>
+    <tr>
+      <td>aw</td>
+      <td>word with surrounding white space (works from anywhere in a word) <br /> aw ~ W. Difference in position. E.g. For dw, cursor must be at beginning, whereas daw works from any position.</td>
+    </tr>
+    <tr>
+      <td>ib</td>
+      <td>inner bracket (the contents of an HTML tag)</td>
+    </tr>
+    <tr>
+      <td>ab</td>
+      <td>a bracket</td>
+    </tr>
+    <tr>
+      <td>it</td>
+      <td>inner tag (the contents of an HTML tag)</td>
+    </tr>
+    <tr>
+      <td>at</td>
+      <td>a tag block</td>
+    </tr>
+    <tr>
+      <td>i”</td>
+      <td>inner quotes</td>
+    </tr>
+    <tr>
+      <td>a”</td>
+      <td>a quote</td>
+    </tr>
+    <tr>
+      <td>ip</td>
+      <td>inner paragraph</td>
+    </tr>
+    <tr>
+      <td>ap</td>
+      <td>a paragraph</td>
+    </tr>
+    <tr>
+      <td>is</td>
+      <td>inner sentence</td>
+    </tr>
+    <tr>
+      <td>as</td>
+      <td>a sentence</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Combination examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>gUiw</td>
+      <td>capitalize a word</td>
+    </tr>
+    <tr>
+      <td>ci(</td>
+      <td>change inner bracket</td>
+    </tr>
+    <tr>
+      <td>6dW</td>
+      <td>delete 6 words</td>
+    </tr>
+    <tr>
+      <td>yis</td>
+      <td>copy inner sentence</td>
+    </tr>
+    <tr>
+      <td>di”</td>
+      <td>delete inner quotes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ii-motions">ii. Motions</h4>
+
+<p>Can be combined with verbs or used independently</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[count] w/W</td>
+      <td>go a (word / word with whitespace) to right</td>
+    </tr>
+    <tr>
+      <td>[count] b/B</td>
+      <td>go a (word / word with whitespace) to left</td>
+    </tr>
+    <tr>
+      <td>[count] e/E</td>
+      <td>go to the end of (word / word with whitespace)</td>
+    </tr>
+    <tr>
+      <td>[count] ]m</td>
+      <td>go to the beginning of next method</td>
+    </tr>
+    <tr>
+      <td>[count] h / j / k / l</td>
+      <td>left / down / up / right</td>
+    </tr>
+    <tr>
+      <td>[count] f/F [char] [;,]+</td>
+      <td>go to the next occurence of character</td>
+    </tr>
+    <tr>
+      <td>[count] t/T [char] [;,]+</td>
+      <td>go to just before the next occurence of character</td>
+    </tr>
+    <tr>
+      <td>%</td>
+      <td>move to matching parenthesis pair</td>
+    </tr>
+    <tr>
+      <td>[count] +</td>
+      <td>down to first non blank char of the line.</td>
+    </tr>
+    <tr>
+      <td>[count]$</td>
+      <td>moves the cursor to the end of the line.</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>moves the cursor to the beginning of the line.</td>
+    </tr>
+    <tr>
+      <td>G</td>
+      <td>move to the end of the file.</td>
+    </tr>
+    <tr>
+      <td>gg</td>
+      <td>move to the beginning of the file.</td>
+    </tr>
+    <tr>
+      <td>]m or [m</td>
+      <td>Mode between methods.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Combination examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3ce</td>
+      <td>Change 3 words to end</td>
+    </tr>
+    <tr>
+      <td>d]m</td>
+      <td>delete start of next method</td>
+    </tr>
+    <tr>
+      <td>ctL</td>
+      <td>change upto before the next occurence of L</td>
+    </tr>
+    <tr>
+      <td>d]m</td>
+      <td>delete start of next method</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="3-other-important-vim-commands">3. Other important vim commands</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>i</td>
+      <td>Insert to left of cursor</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Insert to right of cursor</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>insert at end of line</td>
+    </tr>
+    <tr>
+      <td>I</td>
+      <td>insert at beginning of line</td>
+    </tr>
+    <tr>
+      <td>o</td>
+      <td>insert at beginning of next line</td>
+    </tr>
+    <tr>
+      <td>O</td>
+      <td>insert at beginning of previous line</td>
+    </tr>
+    <tr>
+      <td>u</td>
+      <td>undo</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;c-r&gt;</code></td>
+      <td>will redo the last undo.</td>
+    </tr>
+    <tr>
+      <td>/text</td>
+      <td>search for text</td>
+    </tr>
+    <tr>
+      <td>:%s/text/replacement text/g</td>
+      <td>search through the entire document for text and replace it with replacement text.</td>
+    </tr>
+    <tr>
+      <td>:%s/text/replacement text/gc</td>
+      <td>search through the entire document and confirm before replacing text.</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>search forward for word under cursor</td>
+    </tr>
+    <tr>
+      <td>#</td>
+      <td>search backward for word under cursor</td>
+    </tr>
+    <tr>
+      <td>:vsplit</td>
+      <td>vertical split windows</td>
+    </tr>
+    <tr>
+      <td>m[a-zA-Z]</td>
+      <td>sets a custom mark whose location can be accessed using `[mark] and line accessed using ‘[mark]</td>
+    </tr>
+    <tr>
+      <td>g;</td>
+      <td>goto last cursor position</td>
+    </tr>
+    <tr>
+      <td>’.</td>
+      <td>move to the last edit</td>
+    </tr>
+    <tr>
+      <td>:marks</td>
+      <td>show all current marks that are being used</td>
+    </tr>
+    <tr>
+      <td>:w</td>
+      <td>write</td>
+    </tr>
+    <tr>
+      <td>:w file_name</td>
+      <td>write the changes to a new file</td>
+    </tr>
+    <tr>
+      <td>:q</td>
+      <td>quit</td>
+    </tr>
+    <tr>
+      <td>:q! or ZQ</td>
+      <td>force quit</td>
+    </tr>
+    <tr>
+      <td>:wq or ZZ</td>
+      <td>write and quit</td>
+    </tr>
+    <tr>
+      <td>:w !sudo tee %</td>
+      <td>Write with sudo permissions if permission not available</td>
+    </tr>
+    <tr>
+      <td>:bd</td>
+      <td>remove buffer</td>
+    </tr>
+    <tr>
+      <td>[:vert] :sf filename</td>
+      <td>find file and open in split mode</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;c-v&gt;</code> select multiple lines then I or A and type the required text</td>
+      <td>insert text at multiple lines at the beginning or the end</td>
+    </tr>
+    <tr>
+      <td>q <code class="language-plaintext highlighter-rouge">&lt;char</code>&gt; commands q <br /> [count] @<code class="language-plaintext highlighter-rouge">&lt;char</code>&gt;</td>
+      <td>record command macros <br /> apply recorded commands</td>
+    </tr>
+    <tr>
+      <td>:ab ipho International Physics Olympiad</td>
+      <td>Set abbreviation for long terms for easy typing <br /> Use <code class="language-plaintext highlighter-rouge">&lt;C-v&gt;</code> to prevent expansion</td>
+    </tr>
+    <tr>
+      <td>norm command. Eg <br /> <code class="language-plaintext highlighter-rouge">vip</code> then <code class="language-plaintext highlighter-rouge">:norm Ithis comes to the left</code></td>
+      <td>Applies sequence of button presses / commands to each line selected <br /> Select a paragraph and add the text to the left of each line in the paragraph</td>
+    </tr>
+    <tr>
+      <td>Global commands. Eg <br /> <code class="language-plaintext highlighter-rouge">:g/^@/m$</code></td>
+      <td>Apply commands to lines matching particular pattern <br /> Move all lines starting with @ to the end of the document</td>
+    </tr>
+    <tr>
+      <td>Timetravel Eg <br /> <code class="language-plaintext highlighter-rouge">:earlier 10m</code> <br /> <code class="language-plaintext highlighter-rouge">:earlier 5h</code> <br /> <code class="language-plaintext highlighter-rouge">:later 2h</code></td>
+      <td>Move to the file state in the past or future as specified</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="4-useful-key-remappings">4. Useful key remappings</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>jk (Custom- <code class="language-plaintext highlighter-rouge">inoremap jk &lt;Esc&gt;</code> )</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Esc&gt;</code></td>
+    </tr>
+    <tr>
+      <td>kj (Custom)<code class="language-plaintext highlighter-rouge">inoremap kj &lt;Esc&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;Esc&gt;</code></td>
+    </tr>
+    <tr>
+      <td>nnoremap <code class="language-plaintext highlighter-rouge">&lt;C-c&gt;| &lt;Esc&gt;</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>nnoremap <code class="language-plaintext highlighter-rouge">&lt;C-s&gt;</code></td>
+      <td>:w<code class="language-plaintext highlighter-rouge">&lt;CR&gt;</code></td>
+    </tr>
+    <tr>
+      <td>nnoremap <code class="language-plaintext highlighter-rouge">&lt;C-Q&gt;</code></td>
+      <td>:wq!<code class="language-plaintext highlighter-rouge">&lt;CR&gt;</code></td>
+    </tr>
+    <tr>
+      <td>Better window navigation</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>nnoremap <code class="language-plaintext highlighter-rouge">&lt;C-h&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;C-w&gt;h</code></td>
+    </tr>
+    <tr>
+      <td>nnoremap <code class="language-plaintext highlighter-rouge">&lt;C-j&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;C-w&gt;j</code></td>
+    </tr>
+    <tr>
+      <td>nnoremap <code class="language-plaintext highlighter-rouge">&lt;C-k&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;C-w&gt;k</code></td>
+    </tr>
+    <tr>
+      <td>nnoremap <code class="language-plaintext highlighter-rouge">&lt;C-l&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;C-w&gt;l</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="5-using-args">5. Using Args</h3>
+
+<p>Args are list of files initially opened. So, it’s a subset of buffers.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>:args</td>
+      <td>display args files</td>
+    </tr>
+    <tr>
+      <td>:args <em>*/</em>.yaml</td>
+      <td>add files to args</td>
+    </tr>
+    <tr>
+      <td>:sall</td>
+      <td>open all args files in split mode</td>
+    </tr>
+    <tr>
+      <td>:vert sall</td>
+      <td>open all args files in vertical split mode</td>
+    </tr>
+    <tr>
+      <td>:windo difft</td>
+      <td>show differences in all args files</td>
+    </tr>
+    <tr>
+      <td>c-x, c-l</td>
+      <td>autocomplete</td>
+    </tr>
+    <tr>
+      <td>:vim TODO/ ##</td>
+      <td>search in all args files</td>
+    </tr>
+    <tr>
+      <td>:cdo s/TODO/DONE/g</td>
+      <td>replace in all args files</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="6-scrolling-and-motions">6. Scrolling and motions</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;c-u</code>&gt; , <code class="language-plaintext highlighter-rouge">&lt;c-d</code>&gt;</td>
+      <td>Up, down scroll</td>
+    </tr>
+    <tr>
+      <td>{ }</td>
+      <td>Up, down scroll between spaces</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;c-b</code>&gt; , <code class="language-plaintext highlighter-rouge">&lt;c-f</code>&gt;</td>
+      <td>Up, down full screen scroll</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;c-y</code>&gt; , <code class="language-plaintext highlighter-rouge">&lt;c-e</code>&gt;</td>
+      <td>Up, down scroll by lines</td>
+    </tr>
+    <tr>
+      <td>H / M / L</td>
+      <td>Navigations to top / middle / bottom</td>
+    </tr>
+    <tr>
+      <td>zt</td>
+      <td>Put current cursor position to top</td>
+    </tr>
+    <tr>
+      <td>zz</td>
+      <td>Put current cursor position to middle</td>
+    </tr>
+    <tr>
+      <td>zb</td>
+      <td>Put current cursor position to bottom</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ii-vim-plugins-commands">II. Vim Plugins commands</h2>
+
+<p>Install any vim plugin manager like vim-plug.</p>
+
+<p>To apply latest settings:</p>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">source</span> $MYVIMRC
+</code></pre></div></div>
+
+<h3 id="ranger">Ranger</h3>
+
+<p>First, instll ranger</p>
+
+<p>Mac</p>
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>ranger
+</code></pre></div></div>
+
+<p>Linux</p>
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ranger
+</code></pre></div></div>
+
+<p>Install ranger plugin for vim</p>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">" Ranger in vim</span>
+Plug <span class="s1">'francoiscabrol/ranger.vim'</span>
+<span class="c">" Dependency for ranger in neovim</span>
+Plug <span class="s1">'rbgrouleff/bclose.vim'</span>
+</code></pre></div></div>
+
+<p>When ranger is open in vim or externally</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cw</code></td>
+      <td>Rename file/dir : change word</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">A</code></td>
+      <td>Rename file: add at the end of extension</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">a</code></td>
+      <td>Rename file: add just before the extension</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">I</code></td>
+      <td>Rename file/dir: add at the front of the filename/directory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">:bulkrename</code></td>
+      <td>Rename a list of files/directories</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">:mkdir newdir</code></td>
+      <td>Create new directory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Space</code></td>
+      <td>Highlight/Select files / directories</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">V</code></td>
+      <td>Highlight/Select files / directories similar to visual mode</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">uv</code></td>
+      <td>Undo highlight/select</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">yy</code></td>
+      <td>Copy/yank file/dir</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">dd</code></td>
+      <td>Cut file/dir</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pp</code></td>
+      <td>Paste file/dir. If file exists, new file created with _ at the end of the name</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">po</code></td>
+      <td>Paste but overwrite file/dir</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">uy</code></td>
+      <td>Undo Copy/yank</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">dD</code></td>
+      <td>Delete</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Z</code> (Custom mapping)</td>
+      <td>Compress using an external script mapped to ranger</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x</code> (Custom mapping)</td>
+      <td>Extract using an external script mapped to ranger</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="1-vim-surround-commands">1. vim-surround commands</h3>
+
+<p>Install Plug <code class="language-plaintext highlighter-rouge">tpope/vim-surround</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ds[‘“bB<a href=""></a>{}t]</td>
+      <td>delete surrounding quotes</td>
+    </tr>
+    <tr>
+      <td>cs[‘“bB<a href=""></a>{}t] [‘“bB<a href=""></a>{}t]</td>
+      <td>change surrounding quotes</td>
+    </tr>
+    <tr>
+      <td>ysiw[‘“bB<a href=""></a>{}t]</td>
+      <td>add surrounding quotes “</td>
+    </tr>
+    <tr>
+      <td>v-select, S[‘“bB<a href=""></a>{}t]</td>
+      <td>add surrounding</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> Hello <code class="language-plaintext highlighter-rouge">&lt;/p&gt;</code></td>
+      <td>cst<code class="language-plaintext highlighter-rouge">&lt;h2&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;h2&gt;</code> Hello <code class="language-plaintext highlighter-rouge">&lt;/h2&gt;</code></td>
+    </tr>
+    <tr>
+      <td>if *x&gt;3{</td>
+      <td>ysW(</td>
+      <td>if ( x&gt;3 ) {</td>
+    </tr>
+    <tr>
+      <td>*“hello”</td>
+      <td>ysWf print&lt;cr(Enter)&gt;</td>
+      <td>print(“hello”)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-git-plugins-commands">2. Git plugins commands</h3>
+
+<p>Install these plugins first</p>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">" Show differences with style</span>
+Plug <span class="s1">'mhinz/vim-signify'</span>
+<span class="c">" Main GIT PLugin :Git</span>
+Plug <span class="s1">'tpope/vim-fugitive'</span>
+<span class="c">" Git Hub plugin, enables :Gbrowse</span>
+Plug <span class="s1">'tpope/vim-rhubarb'</span>
+<span class="c">" Git commit browser</span>
+Plug <span class="s1">'junegunn/gv.vim'</span>
+<span class="c">" Git commit history in each line</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;c-o&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;c-i&gt;</code></td>
+      <td>Toggle between buffers</td>
+    </tr>
+    <tr>
+      <td>:Git diff</td>
+      <td>Show git differences</td>
+    </tr>
+    <tr>
+      <td>:Gdiffsplit</td>
+      <td>Show differences in split mode</td>
+    </tr>
+    <tr>
+      <td>:GBrowse</td>
+      <td>Open the repository in github</td>
+    </tr>
+    <tr>
+      <td>:GV</td>
+      <td>Show git commit history</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="3-coc-commands">3. Coc commands</h3>
+
+<p>Install COC plugin first</p>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">" Intellisense</span>
+Plug <span class="s1">'neoclide/coc.nvim'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'branch'</span><span class="p">:</span> <span class="s1">'release'</span><span class="p">}</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>gd</td>
+      <td>Goto Definitions of variable under cursor</td>
+    </tr>
+    <tr>
+      <td>gr</td>
+      <td>Goto References of variable under cursor</td>
+    </tr>
+    <tr>
+      <td>:CocInstall tool_name E.g. :CocInstall coc-python</td>
+      <td>Installing coc tools</td>
+    </tr>
+    <tr>
+      <td>:CocUninstall tool_name</td>
+      <td>Uninstalling coc tools</td>
+    </tr>
+    <tr>
+      <td>:CocList extensions (Tab for autocompletion)</td>
+      <td>Show extensions</td>
+    </tr>
+    <tr>
+      <td>:CocCommand</td>
+      <td>execute a COC command</td>
+    </tr>
+    <tr>
+      <td>o</td>
+      <td>expand/collapse in Coc explorer (First run :CocInstall coc-explorer)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="4-coc-python">4. coc-python</h3>
+
+<p>Install coc-python first</p>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span>CocInstall coc<span class="p">-</span><span class="k">python</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Shift K</td>
+      <td>doc hint</td>
+    </tr>
+    <tr>
+      <td>:Format</td>
+      <td>autopep8 formatting</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;C-w&gt;</code>w</td>
+      <td>Switch cursors between sidebar and code</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;C-n&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;C-n&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;C-n&gt;</code><br /> c <br /> I <br /> A</td>
+      <td>multiple cursors: <br /> change <br /> Insert at first <br /> Insert at end</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="5-fzf">5. FZF</h3>
+
+<p>Install fzf in system and fzf plugin</p>
+
+<p>OSx</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">brew install fzf
+
+</span><span class="gp">#</span><span class="w"> </span>To <span class="nb">install </span>useful key bindings and fuzzy completion:
+<span class="gp">$</span><span class="o">(</span>brew <span class="nt">--prefix</span><span class="o">)</span>/opt/fzf/install
+<span class="go">
+brew install ripgrep
+</span></code></pre></div></div>
+
+<p>Linux</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">sudo apt install fzf
+sudo apt install ripgrep
+</span></code></pre></div></div>
+
+<p>FZF Plugin</p>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Plug <span class="s1">'junegunn/fzf'</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'do'</span><span class="p">:</span> <span class="p">{</span> <span class="p">-&gt;</span> fzf#install<span class="p">()</span> <span class="p">}</span> <span class="p">}</span>
+Plug <span class="s1">'junegunn/fzf.vim'</span>
+Plug <span class="s1">'airblade/vim-rooter'</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>:Rg</td>
+      <td>Find word inside file</td>
+    </tr>
+    <tr>
+      <td>:BLines</td>
+      <td>Find all occurrences of word in a giant file</td>
+    </tr>
+    <tr>
+      <td>:Lines</td>
+      <td>Same as above but search in all buffers</td>
+    </tr>
+    <tr>
+      <td>:History:</td>
+      <td>History of commands ran in vim</td>
+    </tr>
+    <tr>
+      <td>:Ag</td>
+      <td>similar to Rg but</td>
+    </tr>
+    <tr>
+      <td>:Buffers</td>
+      <td>Search through buffers</td>
+    </tr>
+    <tr>
+      <td>&gt;</td>
+      <td>Tab</td>
+    </tr>
+    <tr>
+      <td>gf</td>
+      <td>Goto file: open file directly from path written in vim</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="6-startify">6. Startify</h3>
+
+<p>Install Startify Plugin for Project management</p>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">" Start Screen</span>
+Plug <span class="s1">'mhinz/vim-startify'</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>:SSave</td>
+      <td>Save session</td>
+    </tr>
+    <tr>
+      <td>:SLoad</td>
+      <td>Load session</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="7-vim-commentary">7. vim-commentary</h3>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">" Better Comments</span>
+Plug <span class="s1">'tpope/vim-commentary'</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>gc<code class="language-plaintext highlighter-rouge">[&lt;count&gt;] &lt;Text object&gt;</code> (Examples below)</td>
+      <td>Comment out the target of a motion</td>
+    </tr>
+    <tr>
+      <td>gcap</td>
+      <td>Comment out a paragraph</td>
+    </tr>
+    <tr>
+      <td>gcw</td>
+      <td>Comment out the current line</td>
+    </tr>
+    <tr>
+      <td>gc2j</td>
+      <td>Comment out the current line and 2 lines below it</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Easy remapping
+|nnoremap <code class="language-plaintext highlighter-rouge">&lt;leader&gt;</code>/| :Commentary<code class="language-plaintext highlighter-rouge">&lt;CR&gt;</code>
+|vnoremap <code class="language-plaintext highlighter-rouge">&lt;leader&gt;</code>/| :Commentary<code class="language-plaintext highlighter-rouge">&lt;CR&gt;</code></p>
+
+<h1 id="git-commands">Git commands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git commit –amend</td>
+      <td>add to previous commits</td>
+    </tr>
+    <tr>
+      <td>git push origin -f branchname</td>
+      <td>forced push</td>
+    </tr>
+    <tr>
+      <td>git rebase master</td>
+      <td>merge changes of master onto the current branch (first pull from master before rebase)</td>
+    </tr>
+    <tr>
+      <td>git log</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>git diff</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>git remote -v</td>
+      <td>show repo information</td>
+    </tr>
+    <tr>
+      <td>git reset –hard <SOME-COMMIT> eg git reset --hard HEAD@1</SOME-COMMIT></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>git show</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>git config –global user.name</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>git config –global user.email</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>git reset <file></file></td>
+      <td>remove file from the current index (the “about to be committed” list) without changing anything else.</td>
+    </tr>
+    <tr>
+      <td>git checkout filename</td>
+      <td>Undo local changes to latest commit</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ignore-files-that-have-already-been-committed-to-the-repo">Ignore files that have already been committed to the repo</h2>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git <span class="nb">rm</span> <span class="nt">-r</span> <span class="nt">--cached</span> <span class="nb">.</span>
+<span class="gp">$</span><span class="w"> </span>git add <span class="nb">.</span>
+<span class="gp">$</span><span class="w"> </span>git commit <span class="nt">-m</span> <span class="s2">"Clean up ignored files"</span>
+</code></pre></div></div>
+
+<h2 id="hard-delete-unpublished-commits">Hard delete unpublished commits</h2>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git reset --hard commit_id (reset to the particular commit. It will destroy any local modifications.)
+</span></code></pre></div></div>
+
+<h2 id="alternatively-if-theres-work-to-keep">Alternatively, if there’s work to keep</h2>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git stash
+git reset --hard commit_id
+git stash pop
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>This saves the modifications, then reapplies that patch after resetting. You could get merge conflicts, if you’ve modified things which were changed since the commit you reset to.</p>
+</blockquote>
+
+<h2 id="undo-published-commits-with-new-commits">Undo published commits with new commits</h2>
+
+<blockquote>
+  <p>This will create three separate revert commits:</p>
+</blockquote>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git revert a867b4af 25eee4ca 0766c053
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>It also takes ranges. This will revert the last two commits:</p>
+</blockquote>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git revert HEAD~2..HEAD
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>Similarly, you can revert a range of commits using commit hashes:</p>
+</blockquote>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git revert a867b4af..0766c053
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>Reverting a merge commit</p>
+</blockquote>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">git revert -m 1 &lt;merge_commit_sha&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>To get just one, you could use <code class="language-plaintext highlighter-rouge">rebase -i</code> to squash them afterwards Or, you
+could do it manually (be sure to do this at top level of the repo)
+get your index and work tree into the desired state, without changing HEAD:</p>
+</blockquote>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git checkout 0d1d7fc32 .
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>Then commit. Be sure and write a good message describing what you just did</p>
+</blockquote>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git commit
+</span></code></pre></div></div>
+
+<h2 id="git-reset">Git reset</h2>
+
+<p>git reset does know five “modes”: soft, mixed, hard, merge and keep. I will start with the first three, since these are the modes you’ll usually encounter. After that you’ll find a nice little a bonus, so stay tuned.</p>
+
+<ul>
+  <li>
+    <p>soft</p>
+
+    <p>When using</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  git reset --soft HEAD~1
+</span></code></pre></div>    </div>
+
+    <p>you will remove the last commit from the current branch, but the file changes
+  will stay in your working tree. Also the changes will stay on your index, so following with a git commit will create a commit with the exact same changes as the commit you “removed” before.</p>
+  </li>
+  <li>
+    <p>mixed</p>
+
+    <p>This is the default mode and quite similar to soft. When “removing” a commit
+  with</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  git reset HEAD~1
+</span></code></pre></div>    </div>
+
+    <p>you will still keep the changes in your working tree but not on the index; so if you want to “redo” the commit, you will have to add the changes (git add) before commiting.</p>
+  </li>
+  <li>
+    <p>hard</p>
+
+    <p>When using</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  git reset --hard HEAD~1
+</span></code></pre></div>    </div>
+
+    <p>you will lose all uncommited changes in addition to the changes introduced in the last commit. The changes won’t stay in your working tree so doing a git status command will tell you that you don’t have any changes in your repository.</p>
+
+    <blockquote>
+      <p>Tread carefully with this one. If you accidentally remove uncommited changes which were never tracked by git (speak: committed or at least added to the index), you have no way of getting them back using git.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Bonus (keep)</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  git reset --keep HEAD~1
+</span></code></pre></div>    </div>
+
+    <p>is an interesting and useful one. It only resets the files which are different between the current HEAD and the given commit. It aborts the reset if anyone of these files has uncommited changes. It’s basically acts as a safer version of hard.</p>
+
+    <blockquote>
+      <p>This mode is particularly useful when you have a bunch of changes and want to switch to a different branch without losing these changes - for example when you started to work on the wrong branch.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="remove-sensitive-file-from-github-repo-history">Remove sensitive file from github repo history</h2>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git filter-branch --index-filter "git rm -rf --cached --ignore-unmatch path_to_file" HEAD
+git push -f origin master
+</span></code></pre></div></div>
+
+<h2 id="other-git-commands">Other git commands</h2>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git rm | rm plus git add combined
+git rm --cached | file removed from the index (staging it for deletion on the next commit), but keep your  copy in the local file system.
+</span></code></pre></div></div>
+
+<h1 id="i3wm-commands">i3wm commands</h1>
+
+<ul>
+  <li>pavucontrol</li>
+  <li>alsamixer</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>mod + r - resize mode , then arrow keys or vim keys</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>mod + Shift + e - exit</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>mod + d - dmenu</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>mod+Shift+c reload</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>mod+Shift+r restart</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Alt+Shift- Change keyboard language</p>
+
+<h1 id="brew-bundle-for-osx">Brew bundle for OSx</h1>
+
+<h2 id="usage">Usage</h2>
+
+<p>Create a <code class="language-plaintext highlighter-rouge">Brewfile</code> in the root of your project with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>Brewfile
+</code></pre></div></div>
+
+<p>Add your dependencies in your <code class="language-plaintext highlighter-rouge">Brewfile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tap</span> <span class="s2">"homebrew/cask"</span>
+<span class="n">tap</span> <span class="s2">"user/tap-repo"</span><span class="p">,</span> <span class="s2">"https://user@bitbucket.org/user/homebrew-tap-repo.git"</span>
+<span class="n">cask_args</span> <span class="ss">appdir: </span><span class="s2">"/Applications"</span>
+
+<span class="n">brew</span> <span class="s2">"imagemagick"</span>
+<span class="n">brew</span> <span class="s2">"denji/nginx/nginx-full"</span><span class="p">,</span> <span class="ss">args: </span><span class="p">[</span><span class="s2">"with-rmtp-module"</span><span class="p">]</span>
+<span class="n">brew</span> <span class="s2">"mysql@5.6"</span><span class="p">,</span> <span class="ss">restart_service: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">link: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">conflicts_with: </span><span class="p">[</span><span class="s2">"mysql"</span><span class="p">]</span>
+
+<span class="n">cask</span> <span class="s2">"firefox"</span><span class="p">,</span> <span class="ss">args: </span><span class="p">{</span> <span class="ss">appdir: </span><span class="s2">"~/my-apps/Applications"</span> <span class="p">}</span>
+<span class="n">cask</span> <span class="s2">"google-chrome"</span>
+<span class="n">cask</span> <span class="s2">"java"</span> <span class="k">unless</span> <span class="nb">system</span> <span class="s2">"/usr/libexec/java_home --failfast"</span>
+
+<span class="n">mas</span> <span class="s2">"1Password"</span><span class="p">,</span> <span class="ss">id: </span><span class="mi">443987910</span>
+
+<span class="n">whalebrew</span> <span class="s2">"whalebrew/wget"</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">cask</code> and <code class="language-plaintext highlighter-rouge">mas</code> entries are automatically skipped on Linux.
+Other entries can be run only on (or not on) Linux with <code class="language-plaintext highlighter-rouge">if OS.mac?</code> or <code class="language-plaintext highlighter-rouge">if OS.linux?</code>.</p>
+
+<h2 id="install">Install</h2>
+
+<p>You can then easily install all dependencies with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew bundle
+</code></pre></div></div>
+
+<p>Any previously-installed dependencies which have upgrades available will be upgraded.</p>
+
+<p><code class="language-plaintext highlighter-rouge">brew bundle</code> will look for a <code class="language-plaintext highlighter-rouge">Brewfile</code> in the current directory. Use <code class="language-plaintext highlighter-rouge">--file</code> to specify a path to a different <code class="language-plaintext highlighter-rouge">Brewfile</code>, or set the <code class="language-plaintext highlighter-rouge">HOMEBREW_BUNDLE_FILE</code> environment variable; <code class="language-plaintext highlighter-rouge">--file</code> takes precedence if both are provided.</p>
+
+<p>My <code class="language-plaintext highlighter-rouge">.Brewfile</code> is stored in the home directory and the <code class="language-plaintext highlighter-rouge">HOMEBREW_BUNDLE_FILE</code> environment variable is set to <code class="language-plaintext highlighter-rouge">~/.Brewfile</code></p>
+
+<p>You can skip the installation of dependencies by adding space-separated values to one or more of the following environment variables:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">HOMEBREW_BUNDLE_BREW_SKIP</code></li>
+  <li><code class="language-plaintext highlighter-rouge">HOMEBREW_BUNDLE_CASK_SKIP</code></li>
+  <li><code class="language-plaintext highlighter-rouge">HOMEBREW_BUNDLE_MAS_SKIP</code></li>
+  <li><code class="language-plaintext highlighter-rouge">HOMEBREW_BUNDLE_WHALEBREW_SKIP</code></li>
+  <li><code class="language-plaintext highlighter-rouge">HOMEBREW_BUNDLE_TAP_SKIP</code></li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">brew bundle</code> will output a <code class="language-plaintext highlighter-rouge">Brewfile.lock.json</code> in the same directory as the <code class="language-plaintext highlighter-rouge">Brewfile</code> if all dependencies are installed successfully. This contains dependency and system status information which can be useful in debugging <code class="language-plaintext highlighter-rouge">brew bundle</code> failures and replicating a “last known good build” state.</p>
+
+<p>You can opt-out of this behaviour by setting the <code class="language-plaintext highlighter-rouge">HOMEBREW_BUNDLE_NO_LOCK</code> environment variable or passing the <code class="language-plaintext highlighter-rouge">--no-lock</code> option.</p>
+
+<p>You may wish to check this file into the same version control system as your <code class="language-plaintext highlighter-rouge">Brewfile</code> (or ensure your version control system ignores it if you’d prefer to rely on debugging information from a local machine).</p>
+
+<h2 id="dump">Dump</h2>
+
+<p>You can create a <code class="language-plaintext highlighter-rouge">Brewfile</code> from all the existing Homebrew packages you have installed with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew bundle dump
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">--force</code> option will allow an existing <code class="language-plaintext highlighter-rouge">Brewfile</code> to be overwritten as well.
+The <code class="language-plaintext highlighter-rouge">--describe</code> option will output a description comment above each line.
+The <code class="language-plaintext highlighter-rouge">--no-restart</code> option will prevent <code class="language-plaintext highlighter-rouge">restart_service</code> from being added to <code class="language-plaintext highlighter-rouge">brew</code> lines with running services.</p>
+
+<h2 id="cleanup">Cleanup</h2>
+
+<p>You can also use a <code class="language-plaintext highlighter-rouge">Brewfile</code> to list the only packages that should be installed, removing any package not present or dependent. This workflow is useful for maintainers or testers who regularly install lots of formulae. To uninstall all Homebrew formulae not listed in the <code class="language-plaintext highlighter-rouge">Brewfile</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew bundle cleanup
+</code></pre></div></div>
+
+<p>Unless the <code class="language-plaintext highlighter-rouge">--force</code> option is passed, formulae that would be uninstalled will be listed rather than actually be uninstalled.</p>
+
+<h2 id="check">Check</h2>
+
+<p>You can check there’s anything to install/upgrade in the <code class="language-plaintext highlighter-rouge">Brewfile</code> by running:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew bundle check
+</code></pre></div></div>
+
+<p>This provides a successful exit code if everything is up-to-date, making it useful for scripting.</p>
+
+<p>For a list of dependencies that are missing, pass <code class="language-plaintext highlighter-rouge">--verbose</code>. This will also check <em>all</em> dependencies by not exiting on the first missing dependency category.</p>
+
+<h2 id="list">List</h2>
+
+<p>Outputs a list of all of the entries in the Brewfile.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew bundle list
+</code></pre></div></div>
+
+<p>Pass one of <code class="language-plaintext highlighter-rouge">--casks</code>, <code class="language-plaintext highlighter-rouge">--taps</code>, <code class="language-plaintext highlighter-rouge">--mas</code>, <code class="language-plaintext highlighter-rouge">--whalebrew</code> or <code class="language-plaintext highlighter-rouge">--brews</code> to limit output to that type. Defaults to <code class="language-plaintext highlighter-rouge">--brews</code>. Pass <code class="language-plaintext highlighter-rouge">--all</code> to see everything.</p>
+
+<p>Note that the <em>type</em> of the package is <strong>not</strong> included in this output.</p>
+
+<h2 id="exec">Exec</h2>
+
+<p>Runs an external command within Homebrew’s superenv build environment.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew bundle <span class="nb">exec</span> <span class="nt">--</span> bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>This sanitized build environment ignores unrequested dependencies, which makes sure that things you didn’t specify in your <code class="language-plaintext highlighter-rouge">Brewfile</code> won’t get picked up by commands like <code class="language-plaintext highlighter-rouge">bundle install</code>, <code class="language-plaintext highlighter-rouge">npm install</code>, etc. It will also add compiler flags which will help find keg-only dependencies like <code class="language-plaintext highlighter-rouge">openssl</code>, <code class="language-plaintext highlighter-rouge">icu4c</code>, etc.</p>
+
+<h2 id="restarting-services">Restarting services</h2>
+
+<p>You can choose whether <code class="language-plaintext highlighter-rouge">brew bundle</code> restarts a service every time it’s run, or
+only when the formula is installed or upgraded in your <code class="language-plaintext highlighter-rouge">Brewfile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Always restart myservice</span>
+<span class="n">brew</span> <span class="s1">'myservice'</span><span class="p">,</span> <span class="ss">restart_service: </span><span class="kp">true</span>
+
+<span class="c1"># Only restart when installing or upgrading myservice</span>
+<span class="n">brew</span> <span class="s1">'myservice'</span><span class="p">,</span> <span class="ss">restart_service: :changed</span>
+</code></pre></div></div>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li><a href="https://youtu.be/E-ZbrtoSuzw">Vim: Tutorial on Editing, Navigation, and File Management (2018)</a></li>
+  <li><a href="https://youtu.be/wlR5gYd6um0">Mastering the Vim Language</a></li>
+  <li><a href="https://stackoverflow.com/a/4114122">Stack Overflow: Git commits</a></li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/tags/#brew" class="page__taxonomy-item" rel="tag">brew</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#i32m" class="page__taxonomy-item" rel="tag">i32m</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#linux" class="page__taxonomy-item" rel="tag">linux</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#mac" class="page__taxonomy-item" rel="tag">mac</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#neovim" class="page__taxonomy-item" rel="tag">neovim</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#shell" class="page__taxonomy-item" rel="tag">shell</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#ssh" class="page__taxonomy-item" rel="tag">ssh</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#tmux" class="page__taxonomy-item" rel="tag">tmux</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#vim" class="page__taxonomy-item" rel="tag">vim</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/categories/#commands" class="page__taxonomy-item" rel="tag">commands</a>
+    
+    </span>
+  </p>
+
+
+      </footer>
+
+      
+
+<section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/2020/08/common-commands/" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2020/08/common-commands/" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2020/08/common-commands/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="http://localhost:4000/2020/06/pandas-pipe-plotly/" class="pagination--pager" title="Organize pandas notebook with cool hacks
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      
+
+<div class="page__comments">
+  
+  
+    <h4 class="page__comments-title">Leave a Comment</h4>
+    <section id="disqus_thread"></section>
+  
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      
+        <h4 class="page__related-title">You May Also Enjoy</h4>
+      
+      <div class="grid__wrapper">
+        
+          
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2020/06/pandas-pipe-plotly/" rel="permalink">Organize pandas notebook with cool hacks
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  36 minute read
+	
+</p>
+    
+
+        
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2020-06-06T11:00:00-04:00">June 06, 2020</time></p>
+        
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>Learn a cool hack to make pandas code clean, well-organized, and highly efficient.</p>
+</p>
+    
+    
+    
+    
+    
+    
+    
+
+  </article>
+</div>
+
+        
+          
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2020/05/web-pelican-pt5-disqus-analytics/" rel="permalink">Part 5 - Integrate Disqus comments and Google Analytics with Pelican
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  4 minute read
+	
+</p>
+    
+
+        
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2020-05-11T00:45:00-04:00">May 11, 2020</time></p>
+        
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>Learn to link Disqus comments and Google Analytics to your site</p>
+</p>
+    
+    
+    
+    
+    
+    
+    
+
+  </article>
+</div>
+
+        
+          
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2020/05/web-pelican-pt4-travisci/" rel="permalink">Part 4 - Setting up Travis-CI for automating deployment
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  4 minute read
+	
+</p>
+    
+
+        
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2020-05-10T21:47:00-04:00">May 10, 2020</time></p>
+        
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>Learn to use Travis-CI to automate deploying your website to master branch</p>
+</p>
+    
+    
+    
+    
+    
+    
+    
+
+  </article>
+</div>
+
+        
+          
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2020/03/web-pelican-pt3-hosting/" rel="permalink">Part 3 - Hosting your website to GitHub Pages and custom domain
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  8 minute read
+	
+</p>
+    
+
+        
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2020-03-28T22:30:00-04:00">March 28, 2020</time></p>
+        
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>Learn to host your website in GitHub pages or custom domain for free.</p>
+</p>
+    
+    
+    
+    
+    
+    
+    
+
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/ayushkumarshah7"><i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+      <li><a href="http://github.com/ayushkumarshah"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Ayush Kumar Shah. </div>
+
+      </footer>
+    </div>
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  
+  <script type="text/javascript">
+  	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  	var disqus_shortname = 'ayushkumarshah';
+
+  	/* * * DON'T EDIT BELOW THIS LINE * * */
+  	(function() {
+  		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  	})();
+
+  	/* * * DON'T EDIT BELOW THIS LINE * * */
+  	(function () {
+  		var s = document.createElement('script'); s.async = true;
+  		s.type = 'text/javascript';
+  		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  	}());
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+  </body>
+</html>
+

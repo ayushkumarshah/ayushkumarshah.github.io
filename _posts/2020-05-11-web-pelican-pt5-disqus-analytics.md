@@ -1,8 +1,7 @@
 ---
-layout: post
 title: Part 5 - Integrate Disqus comments and Google Analytics with Pelican
 date: 2020-05-11 00:45
-categories: [Pelican for website creation]
+categories: [Pelican-for-website-creation]
 summary: Learn to link Disqus comments and Google Analytics to your site
 tags: [pelican, Disqus, comments, discussion, website, analytics]
 author: Ayush Kumar Shah

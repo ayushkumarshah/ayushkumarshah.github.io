@@ -1,8 +1,7 @@
 ---
-layout: post
 title: Part 4 - Setting up Travis-CI for automating deployment
 date: 2020-05-10 21:47
-categories: [Pelican for website creation]
+categories: [Pelican-for-website-creation]
 summary: Learn to use Travis-CI to automate deploying your website to master branch
 tags: [pelican, python, Travis-ci, build, website]
 author: Ayush Kumar Shah

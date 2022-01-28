@@ -1,0 +1,1098 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Part 1 - Setting up Pelican - Installation and Theme - Ayush Kumar Shah</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Ayush Kumar Shah">
+<meta property="og:title" content="Part 1 - Setting up Pelican - Installation and Theme">
+
+
+  <link rel="canonical" href="http://localhost:4000/2020/03/web-pelican-pt1-setup/">
+  <meta property="og:url" content="http://localhost:4000/2020/03/web-pelican-pt1-setup/">
+
+
+
+  <meta property="og:description" content="This article is a part of a series of articles for web development using pelican. So, if you haven’t read the previous article, please check it out by clicking the link below.">
+
+
+
+  <meta name="twitter:site" content="@ayushkumarshah7">
+  <meta name="twitter:title" content="Part 1 - Setting up Pelican - Installation and Theme">
+  <meta name="twitter:description" content="This article is a part of a series of articles for web development using pelican. So, if you haven’t read the previous article, please check it out by clicking the link below.">
+  <meta name="twitter:url" content="http://localhost:4000/2020/03/web-pelican-pt1-setup/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Ayush Kumar Shah">
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2020-03-20T08:00:00-04:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Ayush Kumar Shah",
+      "url" : "http://localhost:4000",
+      "sameAs" : ["https://twitter.com/ayushkumarshah7","https://github.com/ayushkumarshah","https://www.facebook.com/ayushkumarshah","https://www.linkedin.com/in/ayush7"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="qgX-LJLtkvIk5WkHJP5FSa31RN98a1WhAjPK8w8JPxE" />
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ayush Kumar Shah Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="http://localhost:4000/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="http://localhost:4000/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="http://localhost:4000/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="http://localhost:4000/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="http://localhost:4000/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="http://localhost:4000/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="http://localhost:4000/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="http://localhost:4000/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="http://localhost:4000/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Ayush Kumar Shah</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/research/">Research</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/year-archive/">Blog Posts</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/cv/">CV</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <div class="author__avatar">
+    
+    	<img src="http://localhost:4000/images/profile.png" class="author__avatar" alt="Ayush Kumar Shah">
+    
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">Ayush Kumar Shah</h3>
+    <p class="author__bio">Computer Science Ph.D. Student</p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Rochester, New York</li>
+      
+      
+      
+      
+        <li><a href="mailto:ayush.kumar.shah@gmail.com"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+      
+      
+       
+      
+        <li><a href="https://twitter.com/ayushkumarshah7"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+      
+      
+      
+      
+        <li><a href="https://www.linkedin.com/in/ayush7"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+      
+      
+      
+      
+      
+      
+        <li><a href="https://github.com/ayushkumarshah"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="http://orcid.org/0000-0001-6158-7632"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
+      
+      
+      
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Part 1 - Setting up Pelican - Installation and Theme">
+    <!-- <meta itemprop="description" content="Learn to install pelican and set up your project with a theme for your website."> -->
+    <meta itemprop="description" content="This article is a part of a series of articles for web development using pelican. So, if you haven’t read the previous article, please check it out by clicking the link below.">
+    <meta itemprop="datePublished" content="March 20, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Part 1 - Setting up Pelican - Installation and Theme
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  12 minute read
+	
+</p>
+          
+        
+        
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2020-03-20T08:00:00-04:00">March 20, 2020</time></p>
+        
+        
+        
+        
+        
+        
+        
+    
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>This article is a part of a series of articles for web development using pelican. So, if you haven’t read the previous article, please check it out by clicking the link below.</p>
+
+<p><a href="https://shahayush.com/2020/03/web-pelican-intro">Creating and deploying static websites using Markdown and the Python library Pelican</a></p>
+
+<p><a href="https://docs.getpelican.com/en/stable/index.html">Pelican</a> is a static site generator, written in Python.</p>
+
+<h2 id="features-of-pelican">Features of Pelican</h2>
+
+<ul>
+  <li>Articles (e.g., blog posts) and pages (e.g., “About”, “Projects”, “Contact”)</li>
+  <li>Comments, via an external service (<a href="https://disqus.com/">Disqus</a>). If you prefer to have more control over your comment data, self-hosted comments are another option. Check out the <a href="https://github.com/getpelican/pelican-plugins">Pelican Plugins</a> repository for more details.</li>
+  <li>Theming support (themes are created using <a href="https://palletsprojects.com/p/jinja/">Jinja2</a> templates)</li>
+  <li>Publication of articles in multiple languages</li>
+  <li>Atom/RSS feeds</li>
+  <li>Code syntax highlighting</li>
+  <li>Import from WordPress, Dotclear, or RSS feeds</li>
+  <li>Integration with external tools: Twitter, Google Analytics, etc. (optional)</li>
+  <li>Fast rebuild times thanks to content caching and selective output writing</li>
+</ul>
+
+<h2 id="setting-up-pelican">Setting up Pelican</h2>
+
+<p>Project Structure:
+Create any folder for your project. For example web_development</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">mkdir </span>web_development
+<span class="gp">$</span><span class="w"> </span><span class="nb">cd </span>web_development
+</code></pre></div></div>
+
+<h2 id="1-installation-and-configuration">1. Installation and Configuration</h2>
+
+<p>First, install virtualenv via pip and then create a virtual environment for your project.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>pip <span class="nb">install </span>virtualenv
+<span class="gp">$</span><span class="w"> </span>virtualenv .venv
+</code></pre></div></div>
+
+<p>Activate the virtual environment</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">source</span> .venv/bin/activate
+</code></pre></div></div>
+
+<p>Now, to install pelican and all packages and dependencies that we will be using later, we need to create a requirements.txt
+file</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span><span class="nb">touch </span>requirements.txt
+</code></pre></div></div>
+
+<p>and paste the lines from this link: <a href="https://raw.githubusercontent.com/ayushkumarshah/ayushkumarshah.github.io/source/requirements.txt">requirements.txt</a> into the file.</p>
+
+<p>Then just run the following command inside the virtual environment to install all these packages</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<p>Let’s now run a quickstart configuration script for pelican.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span>pelican-quickstart
+</code></pre></div></div>
+
+<p>Pelican asks a series of questions to help you get started by building required configuration files.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Welcome to pelican-quickstart v3.7.1.
+</code></pre></div></div>
+
+<p>This script will help you create a new Pelican-based website. Please answer the following questions so this script can generate the files
+needed by Pelican.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; Where do you want to create your new web site? [.] .
+&gt; What will be the title of this web site? Ayush Kumar Shah
+&gt; Who will be the author of this web site? Ayush Kumar Shah
+&gt; What will be the default language of this web site? [en] en
+&gt; Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) n
+&gt; Do you want to enable article pagination? (Y/n) Y
+&gt; How many articles per page do you want? [10] 5
+&gt; What is your time zone? [Europe/Paris] Asia/Kathmandu
+&gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) Y
+&gt; Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development? (Y/n) n
+&gt; Do you want to upload your website using FTP? (y/N) N
+&gt; Do you want to upload your website using SSH? (y/N) N
+&gt; Do you want to upload your website using Dropbox? (y/N) N
+&gt; Do you want to upload your website using S3? (y/N) N
+&gt; Do you want to upload your website using Rackspace Cloud Files? (y/N) N
+&gt; Do you want to upload your website using GitHub Pages? (y/N) y
+&gt; Is this your personal page (username.github.io)? (y/N) y
+</code></pre></div></div>
+
+<p>Done. Your new project is available at <code class="language-plaintext highlighter-rouge">/Users/ayushkumarshah/Desktop/Blog_writing/web</code></p>
+
+<p>While answering the questions, please keep these things in mind:</p>
+
+<ul>
+  <li>Title and Author: Replace <code class="language-plaintext highlighter-rouge">Ayush Kumar Shah</code> with the title and author’s name that you want.</li>
+  <li>
+    <p>Default language: You can set any language using the standard <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">ISO 639.1</a> 2 letter code.</p>
+  </li>
+  <li>
+    <p>Article Pagination: If you do not want to limit the number of articles on a page, enter n.</p>
+  </li>
+  <li>
+    <p>Time zone: Choose your timezone from the <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia</a>.</p>
+  </li>
+  <li>Fabfile will help in further processes. So enter Y.</li>
+</ul>
+
+<p>You may delete the Makefile as we will not be using it.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span><span class="nb">rm </span>Makefile
+</code></pre></div></div>
+
+<p>After successfully running the command, your directory should look like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>web_development
+    ├── content/
+    ├── fabfile.py
+    ├── output/
+    ├── pelicanconf.py
+    ├── publishconf.py
+    └── requirements.txt
+</code></pre></div></div>
+
+<p>Let me tell you with the purpose of each of these files :</p>
+
+<ul>
+  <li>content/ - directory that stored al the website content</li>
+  <li>fabfile.py - script that helps us automate website generation and publishing</li>
+  <li>output/ - directory which stores the HTML files of the generated static website</li>
+  <li>pelicanconf.py - file containing all the configurations of the website
+publishconf.py - file containing additional website configurations used while publishing the website
+requirements.txt - contains all the packages and dependencies required</li>
+</ul>
+
+<h2 id="2-generate-and-view-your-website">2. Generate and view your website</h2>
+
+<p>Till now, we have installed and configured Pelican successfully.</p>
+
+<p>Let’s generate our first website and preview what it looks like. Make sure you are inside .venv environment.</p>
+
+<p>Open <code class="language-plaintext highlighter-rouge">fabfile.py</code> and replace all instances of SocketServer by socketserver. (SocketServer is for python2).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># import SocketServer
+</span><span class="kn">import</span> <span class="nn">socketserver</span>
+<span class="p">...</span>
+<span class="c1"># class AddressReuseTCPServer(SocketServer.TCPServer):
+</span><span class="k">class</span> <span class="nc">AddressReuseTCPServer</span><span class="p">(</span><span class="n">socketserver</span><span class="p">.</span><span class="n">TCPServer</span><span class="p">):</span>
+</code></pre></div></div>
+
+<p>Now, we are ready to generate and view our site.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span>fab build
+<span class="gp">(.venv) $</span><span class="w"> </span>fab serve
+</code></pre></div></div>
+
+<p>You may also run a single command equivalent to the 2 commands above:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span>fab reserve
+</code></pre></div></div>
+
+<blockquote>
+  <p>In case an error occurs, open <code class="language-plaintext highlighter-rouge">fabfile.py</code> again and change the import line to</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">SocketServer</span> <span class="k">as</span> <span class="n">socketserver</span>
+</code></pre></div></div>
+
+<p>After running the fab command, you will notice HTML files generated inside the output folder. These files are the HTML files
+of your website.</p>
+
+<p>Your website should be already running in port 8000 of your localhost. To view your website, open your browser and
+visit
+<a href="localhost:8000">localhost:8000</a></p>
+
+<p>Congratulations, you have generated your first website.</p>
+
+<p><a href="https://ibb.co/wLVFGcf"><img src="/assets/img/sample/first_site.png" alt="First site" /></a></p>
+
+<h2 id="3-installing-pelican-themes">3. Installing Pelican Themes</h2>
+
+<p>Now that we have built our website, let’s make the design more beautiful and responsive. There are numerous Pelican
+themes to choose from. Both the <a href="http://www.pelicanthemes.com/">live version of the themes</a> and the
+<a href="https://github.com/getpelican/pelican-themes">repositories</a> are available. You can check them out and select the one
+that suits your website. My favorite themes are
+<a href="https://github.com/alexandrevicenzi/Flex">Flex</a> (<a href="http://flex.alxd.me/blog/">live
+version</a>), <a href="https://github.com/iKevinY/pneumatic">Pneumatic</a> (<a href="https://kevinyap.ca/">live version</a>) and
+<a href="https://github.com/textbook/bulrush">Bulrush</a> (<a href="https://blog.jonrshar.pe/">live version</a>). I am currently using the <a href="https://github.com/textbook/bulrush">Bulrush</a> theme with some custom
+modifications for my website.</p>
+
+<blockquote>
+  <p>I will demonstrate using the
+<a href="https://github.com/alexandrevicenzi/Flex">Flex</a> theme.</p>
+</blockquote>
+
+<p>First, open and clone the <a href="https://github.com/alexandrevicenzi/Flex">Flex
+  repository</a> or the repository of the theme you chose. Make sure you are inside the web_development directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span>git clone https://github.com/alexandrevicenzi/Flex.git themes/Flex
+</code></pre></div></div>
+
+<p>Here, the 2nd argument is the destination directory of the theme in your project. You can replace <code class="language-plaintext highlighter-rouge">themes/Flex</code> by
+<code class="language-plaintext highlighter-rouge">themes/name_of_theme</code>.</p>
+
+<p>Now, specify the path of your theme in the configuration file <code class="language-plaintext highlighter-rouge">pelicanconf.py</code> by adding the following line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>THEME = 'themes/Flex'
+</code></pre></div></div>
+
+<p>Although Flex theme requires no additional plugin, most of the themes require various Pelican plugins. So, let’s download the
+<a href="https://github.com/getpelican/pelican-plugins">pelican-plugins</a> into your project. Note that you may skip this step if
+you want to use <a href="https://github.com/alexandrevicenzi/Flex">Flex</a> theme.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span>git clone https://github.com/getpelican/pelican-plugins.git
+</code></pre></div></div>
+
+<p>Now, add the path of the plugins in <code class="language-plaintext highlighter-rouge">pelicanconf.py</code> in a similar way as before by adding the following lines:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PLUGIN_PATHS = ['./pelican-plugins']
+</code></pre></div></div>
+
+<p>Also, add a line specifying a list of plugins required in your theme. You can view the name of plugins required in
+the documentation of the GitHub repository of the corresponding theme. Three most common plugins required by most of the themes are listed below. You can add the following line in the same file <code class="language-plaintext highlighter-rouge">pelicanconf.py</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PLUGINS = ['sitemap', 'post_stats', 'feed_summary']
+</code></pre></div></div>
+
+<p>Some themes may require additional plugins, for which you have to search the documentation.</p>
+
+<p>Another way to find the plugin name required is to just skip it for a while and after everything is done,
+while trying to serve your website, you will get an error message stating the name of missing plugins. Then you can add these plugins in the <code class="language-plaintext highlighter-rouge">pelicanconf.py</code> file.</p>
+
+<p>At this state, your directory structure should look like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>web_development
+    ├── content/
+    ├── fabfile.py
+    ├── output
+        ├── ... (many HTML files)
+    ├── themes
+        ├── Flex/
+    ├── pelican-plugins
+        ├── ... (various plugin directories)
+    ├── pelicanconf.py
+    ├──publishconf.py
+    └──requirements.txt
+</code></pre></div></div>
+
+<p>If it doesn’t, then you probably did something wrong.</p>
+
+<p>So, by now we have successfully installed the <a href="https://github.com/alexandrevicenzi/Flex">Flex</a> theme on our website. You</p>
+
+<h3 id="flex-configurations">Flex Configurations</h3>
+<p>We can check our new theme by generating and serving our new website again.</p>
+
+<p>Close the previous process  i.e. <code class="language-plaintext highlighter-rouge">fab reserve</code> if it is still
+running by pressing Ctrl+C or Cmd+C. Now,</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span>fab reserve
+</code></pre></div></div>
+<p>Open your browser and visit
+<a href="localhost:8000">localhost:8000</a></p>
+
+<p>You should see your website in a new theme.</p>
+
+<p><a href="https://ibb.co/ZJdh95N"><img src="/assets/img/sample/Flex.png" alt="Flex" /></a></p>
+
+<p>However, it is not customized to include your profile. So, let’s customize the site by adding some attributes of
+the theme.</p>
+
+<p>First, let’s create some folders inside the content directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span><span class="nb">mkdir </span>content/images
+<span class="gp">(.venv) $</span><span class="w"> </span><span class="nb">mkdir </span>content/extra
+</code></pre></div></div>
+
+<p>Let’s replace the default profile photo and favicon by your own.</p>
+<blockquote>
+  <p>Copy the profile image <code class="language-plaintext highlighter-rouge">profile.png</code> and the collection of favicon files like <code class="language-plaintext highlighter-rouge">favicon.ico, favicon-16x16.png</code>, etc into the images directory you just created.</p>
+</blockquote>
+
+<p>Note: A favicon is a small pixel icon that appears at the top of the browser before the site name. It serves as branding
+for your website. You can create one <a href="https://realfavicongenerator.net/#.XnO555MzZhE">online</a>.</p>
+
+<p>Different themes have different attributes or configurations.</p>
+
+<p>Check the documentation or the README.md file
+of the respective theme. For <a href="https://github.com/alexandrevicenzi/Flex">Flex</a> theme, a sample pelicanconfig.py can be
+found inside the docs folder. Check it for reference and also compare it with the <a href="http://flex.alxd.me/blog/">live version of the
+theme</a>. You can find more examples of the configurations in the <a href="https://github.com/alexandrevicenzi/Flex/wiki">Flex
+Wiki</a> for reference.</p>
+
+<p>I will demonstrate using a sample configuration for this theme. For that, add the following lines in your
+<code class="language-plaintext highlighter-rouge">pelicanconfig.py</code> file.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">### Flex configurations
+</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s">'sitemap'</span><span class="p">,</span> <span class="s">'post_stats'</span><span class="p">,</span> <span class="s">'feed_summary'</span><span class="p">]</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">'http://localhost:8000'</span>
+<span class="n">SITETITLE</span> <span class="o">=</span> <span class="s">'Ayush Kumar Shah'</span>  <span class="c1"># Replace with your name
+</span><span class="n">SITESUBTITLE</span> <span class="o">=</span> <span class="s">'Ideas and Thoughts'</span>
+<span class="n">SITELOGO</span> <span class="o">=</span> <span class="s">'/assets/img/sample/profile.png'</span>
+<span class="n">FAVICON</span> <span class="o">=</span> <span class="s">'/assets/img/sample/favicon.ico'</span>
+
+<span class="c1"># Sitemap Settings
+</span><span class="n">SITEMAP</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'format'</span><span class="p">:</span> <span class="s">'xml'</span><span class="p">,</span>
+    <span class="s">'priorities'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'articles'</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span>
+        <span class="s">'indexes'</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span>
+        <span class="s">'pages'</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s">'changefreqs'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'articles'</span><span class="p">:</span> <span class="s">'monthly'</span><span class="p">,</span>
+        <span class="s">'indexes'</span><span class="p">:</span> <span class="s">'daily'</span><span class="p">,</span>
+        <span class="s">'pages'</span><span class="p">:</span> <span class="s">'monthly'</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Add a link to your social media accounts
+</span><span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">'github'</span><span class="p">,</span> <span class="s">'https://github.com/ayushkumarshah'</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">'envelope'</span><span class="p">,</span> <span class="s">'mailto:ayushkumarshah@gmail.com'</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">'linkedin'</span><span class="p">,</span><span class="s">'https://np.linkedin.com/in/ayush7'</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">'twitter'</span><span class="p">,</span><span class="s">'https://twitter.com/ayushkumarshah7'</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">'facebook'</span><span class="p">,</span><span class="s">'https://www.facebook.com/ayushkumarshah'</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">'reddit'</span><span class="p">,</span><span class="s">'https://www.reddit.com/user/ayushkumarshah'</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">'images'</span><span class="p">,</span> <span class="s">'extra'</span><span class="p">]</span>
+
+<span class="c1"># Main Menu Items
+</span><span class="n">MAIN_MENU</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">MENUITEMS</span> <span class="o">=</span> <span class="p">((</span><span class="s">'Archives'</span><span class="p">,</span> <span class="s">'/archives'</span><span class="p">),(</span><span class="s">'Categories'</span><span class="p">,</span> <span class="s">'/categories'</span><span class="p">),(</span><span class="s">'Tags'</span><span class="p">,</span> <span class="s">'/tags'</span><span class="p">))</span>
+
+<span class="c1"># Code highlighting the theme
+</span><span class="n">PYGMENTS_STYLE</span> <span class="o">=</span> <span class="s">'friendly'</span>
+
+<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s">'{date:%Y}/{date:%m}/{slug}/'</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="n">ARTICLE_URL</span> <span class="o">+</span> <span class="s">'index.html'</span>
+
+<span class="n">PAGE_URL</span> <span class="o">=</span> <span class="s">'{slug}/'</span>
+<span class="n">PAGE_SAVE_AS</span> <span class="o">=</span> <span class="n">PAGE_URL</span> <span class="o">+</span> <span class="s">'index.html'</span>
+
+<span class="n">ARCHIVES_SAVE_AS</span> <span class="o">=</span> <span class="s">'archives.html'</span>
+<span class="n">YEAR_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s">'{date:%Y}/index.html'</span>
+<span class="n">MONTH_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s">'{date:%Y}/{date:%m}/index.html'</span>
+
+<span class="c1"># Feed generation is usually not desired when developing
+</span><span class="n">FEED_DOMAIN</span> <span class="o">=</span> <span class="n">SITEURL</span>
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s">'feeds/all.atom.xml'</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s">'feeds/%s.atom.xml'</span>
+<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># HOME_HIDE_TAGS = True
+</span><span class="n">FEED_USE_SUMMARY</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<p>You may remove the <code class="language-plaintext highlighter-rouge">LINKS</code> variable from the configuration file <code class="language-plaintext highlighter-rouge">pelicanconfig.py</code> as you don’t need those links. We can check our new configuration by generating and serving our website again.</p>
+
+<p>Close the previous process  i.e. <code class="language-plaintext highlighter-rouge">fab reserve</code> if it is still
+running by pressing Ctrl+C or Cmd+C. Now,</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">(.venv) $</span><span class="w"> </span>fab reserve
+</code></pre></div></div>
+
+<p>Open your browser and visit
+<a href="localhost:8000">localhost:8000</a></p>
+
+<p>You should see your website with your new configuration. Feel free to modify it as per your liking.</p>
+
+<p><a href="https://ibb.co/Jv8K8Sc"><img src="/assets/img/sample/Flex2.png" alt="Flex2" /></a></p>
+
+<p><strong>Congratulations</strong>, you have completed the basic setup for Pelican.</p>
+
+<p>However, your site has no content. Start writing content in the <a href="https://shahayush.com/2020/03/web-pelican-pt2-markdown">part
+2</a> of the article.</p>
+
+<p>If you have any confusion in any article, feel free to comment on your queries. I will be more than happy to help. I am
+also open to suggestions and feedbacks.</p>
+
+<blockquote>
+  <p>Also, you can use my GitHub repository for my blog post: <a href="https://github.com/ayushkumarshah/ayushkumarshah.github.io/tree/pelican-backup"><strong>ayushkumarshah.github.io</strong></a> as a
+reference in any point of the article. I have followed the same steps mentioned in this series to create my blog
+website that you are seeing right now.</p>
+</blockquote>
+
+<p>If you want to visit any specific parts of the article, you can do so from the links below.</p>
+
+<ul>
+  <li><a href="https://shahayush.com/2020/03/web-pelican-pt1-setup"><span style="color:green">Part 1: Setting up Pelican - Installation and Theme</span></a></li>
+  <li><a href="https://shahayush.com/2020/03/web-pelican-pt2-markdown"><strong>Part 2: Writing content using Markdown</strong></a></li>
+  <li><a href="https://shahayush.com/2020/03/web-pelican-pt3-hosting">Part 3: Hosting your website to GitHub Pages and custom domain</a></li>
+  <li><a href="https://shahayush.com/2020/05/web-pelican-pt4-travisci">Part 4: Setting up Travis-CI for automating deployment</a></li>
+  <li><a href="https://shahayush.com/2020/05/web-pelican-pt5-disqus-analytics">Part 5: Integrate Disqus comments and Google Analytics with Pelican</a></li>
+</ul>
+
+<p>Or, go to the <a href="https://shahayush.com/2020/03/web-pelican-intro">home-page of the article.</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/tags/#flex" class="page__taxonomy-item" rel="tag">flex</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#pelican" class="page__taxonomy-item" rel="tag">pelican</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#pelican-plugin" class="page__taxonomy-item" rel="tag">pelican-plugin</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#python" class="page__taxonomy-item" rel="tag">python</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#website" class="page__taxonomy-item" rel="tag">website</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/categories/#pelican-for-website-creation" class="page__taxonomy-item" rel="tag">Pelican-for-website-creation</a>
+    
+    </span>
+  </p>
+
+
+      </footer>
+
+      
+
+<section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/2020/03/web-pelican-pt1-setup/" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2020/03/web-pelican-pt1-setup/" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2020/03/web-pelican-pt1-setup/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="http://localhost:4000/2020/03/web-pelican-intro/" class="pagination--pager" title="Creating and deploying static websites using Markdown and the Python library Pelican
+">Previous</a>
+    
+    
+      <a href="http://localhost:4000/2020/03/web-pelican-pt2-markdown/" class="pagination--pager" title="Part 2 - Writing content using Markdown
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      
+
+<div class="page__comments">
+  
+  
+    <h4 class="page__comments-title">Leave a Comment</h4>
+    <section id="disqus_thread"></section>
+  
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      
+        <h4 class="page__related-title">You May Also Enjoy</h4>
+      
+      <div class="grid__wrapper">
+        
+          
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2020/08/common-commands/" rel="permalink">Common commands
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  26 minute read
+	
+</p>
+    
+
+        
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2020-08-12T13:00:00-04:00">August 12, 2020</time></p>
+        
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>A curated list of common commands that makes usage easy.</p>
+</p>
+    
+    
+    
+    
+    
+    
+    
+
+  </article>
+</div>
+
+        
+          
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2020/06/pandas-pipe-plotly/" rel="permalink">Organize pandas notebook with cool hacks
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  37 minute read
+	
+</p>
+    
+
+        
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2020-06-06T11:00:00-04:00">June 06, 2020</time></p>
+        
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>Learn a cool hack to make pandas code clean, well-organized, and highly efficient.</p>
+</p>
+    
+    
+    
+    
+    
+    
+    
+
+  </article>
+</div>
+
+        
+          
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2020/05/web-pelican-pt5-disqus-analytics/" rel="permalink">Part 5 - Integrate Disqus comments and Google Analytics with Pelican
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  4 minute read
+	
+</p>
+    
+
+        
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2020-05-11T00:45:00-04:00">May 11, 2020</time></p>
+        
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>Learn to link Disqus comments and Google Analytics to your site</p>
+</p>
+    
+    
+    
+    
+    
+    
+    
+
+  </article>
+</div>
+
+        
+          
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/2020/05/web-pelican-pt4-travisci/" rel="permalink">Part 4 - Setting up Travis-CI for automating deployment
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  4 minute read
+	
+</p>
+    
+
+        
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2020-05-10T21:47:00-04:00">May 10, 2020</time></p>
+        
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>Learn to use Travis-CI to automate deploying your website to master branch</p>
+</p>
+    
+    
+    
+    
+    
+    
+    
+
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/ayushkumarshah7"><i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+      <li><a href="http://github.com/ayushkumarshah"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Ayush Kumar Shah. </div>
+
+      </footer>
+    </div>
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  
+  <script type="text/javascript">
+  	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  	var disqus_shortname = 'ayushkumarshah';
+
+  	/* * * DON'T EDIT BELOW THIS LINE * * */
+  	(function() {
+  		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  	})();
+
+  	/* * * DON'T EDIT BELOW THIS LINE * * */
+  	(function () {
+  		var s = document.createElement('script'); s.async = true;
+  		s.type = 'text/javascript';
+  		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  	}());
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+  </body>
+</html>
+

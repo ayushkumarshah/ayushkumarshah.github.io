@@ -1,9 +1,8 @@
 ---
-layout: post
 title: Part 3 - Hosting your website to GitHub Pages and custom domain
 date: 2020-03-28 22:30
 Modified: 2020-05-10 00:38
-categories: [Pelican for website creation]
+categories: [Pelican-for-website-creation]
 summary: Learn to host your website in GitHub pages or custom domain for free.
 tags: [pelican, python, GitHub-pages, website]
 author: Ayush Kumar Shah

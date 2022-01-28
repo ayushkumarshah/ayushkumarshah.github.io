@@ -1,8 +1,7 @@
 ---
-layout: post
 title: Creating and deploying static websites using Markdown and the Python library Pelican
 date: 2020-03-19 21:00
-categories: [Pelican for website creation]
+categories: [Pelican-for-website-creation]
 summary: Get to know how markdown and the python library pelican can be used to create your static website.
 tags: [pelican, python, markdown, GitHub-pages, Travis-ci, Disqus, google analytics]
 author: Ayush Kumar Shah
