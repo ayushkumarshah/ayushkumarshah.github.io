@@ -1,61 +1,59 @@
-# The Site Settings
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# © 2017-2019 Cotes Chung
-# MIT licensed
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
 
+# Site Settings
+locale                   : "en-US"
+title                    : "Ayush Kumar Shah"
+title_separator          : "-"
+name                     : &name "Ayush Kumar Shah"
+description              : &description "My personal website to share my academic profile and research contributions. I also share my ideas and a reflection of intereseting topics I learn mostly in the field of Artificial Intelligence and Python."
+url                      : https://shahayush.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
+repository               : "ayushkumarshah/ayushkumarshah.github.io"
+teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+breadcrumbs              : false # true, false (default)
+words_per_minute         : 160
+future                   : true
+read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
+talkmap_link             : false #change to true to add link to talkmap on talks page
+comments:
+  provider               : "disqus"
+  disqus:
+    shortname            : ayushkumarshah
+  discourse:
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    appid                :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
+staticman:
+  allowedFields          : ['name', 'email', 'url', 'message']
+  branch                 : "gh-pages" # "master", "gh-pages"
+  commitMessage          : "New comment."
+  filename               : comment-{@timestamp}
+  format                 : "yml"
+  moderation             : true
+  path                   : "_data/comments/{options.slug}"
+  requiredFields         : ['name', 'email', 'message']
+  transforms:
+    email                : "md5"
+  generatedFields:
+    date:
+      type               : "date"
+      options:
+        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+atom_feed:
+  path                   : # blank (default) uses feed.xml
 
-# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-#--------------------------
-
-title: Ayush Kumar Shah                          # the main title
-
-tagline: My personal blog posts  # it will display as the sub-title
-
-description: >-                        # used by seo meta and the atom feed
-  My personal blog site to share my ideas and a reflection 
-  of intereseting topics I learn mostly in the field of 
-  Artificial Intelligence and Python.
-
-# Replace with the website url, e.g. 'https://username.github.io'
-url: 'https://shahayush.com/'
-assets_url: '/assets'
-
-author: Ayush Kumar Shah                  # change to your full name
-
-avatar: /assets/img/sample/avatar.jpg   # support internet resources
-
-github:
-  username: ayushkumarshah             # change to your github username
-
-twitter:
-  username: ayushkumarshah7            # change to your twitter username
-
-linkedin:
-  username: ayush7
-  
-social:
-  name: Ayush Kumar Shah  # it will shows as the copyright owner in Footer
-  email: ayush.kumar.shah@gmail.com             # change to your email address
-  links:
-    # The first element serves as the copyright owner's link
-    - https://twitter.com/ayushkumarshah7      # change to your twitter homepage
-    - https://github.com/ayushkumarshah       # change to your github homepage
-    # Uncomment below to add more social links
-    - https://www.facebook.com/ayushkumarshah
-    - https://www.linkedin.com/in/ayush7
-
+# SEO Related
 google_site_verification: 'qgX-LJLtkvIk5WkHJP5FSa31RN98a1WhAjPK8w8JPxE' # change to your verification string
-
-#--------------------------
-
-
-# Only if your site type is GitHub Project sites and doesn't have a custom domain,
-# change below value to '/${projectname}'.
-baseurl: ''
-
-# Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Kathmandu
+bing_site_verification   :
+alexa_site_verification  :
+yandex_site_verification :
 
 google_analytics:
   id: 'UA-160976128-1'          # Fill with your Google Analytics ID
@@ -68,141 +66,267 @@ google_analytics:
     proxy_endpoint: ''
     cache: false  # pv data local cache, good for the users from GFW area.
 
-disqus:
-  comments: true  # boolean type, the global switch for posts comments.
-  shortname: 'ayushkumarshah'    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-
-# plugins:
-#   - jekyll-target-blank
-
-# Prefer color scheme setting, available values:
-#
-#     dual   - Follow the system prefer color by default, and a toggle will display
-#              in the left bottom of Sidebar, which used for switch the theme between dark and light.
-#
-#     light  - Use the light color scheme
-#
-#     dark   - Use the dark color scheme
-#
-theme_mode: dual
-
-# boolean type, global switch for ToC in posts.
 toc: true
 
-paginate: 5
+# Social Sharing
+twitter:
+  username               : &twitter ayushkumarshah7
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 :  # Open Graph/Twitter default site image
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  name: Ayush Kumar Shah  # it will shows as the copyright owner in Footer
+  email: ayush.kumar.shah@gmail.com             # change to your email address
+  links:
+    # The first element serves as the copyright owner's link
+    - https://twitter.com/ayushkumarshah7      # change to your twitter homepage
+    - https://github.com/ayushkumarshah       # change to your github homepage
+    # Uncomment below to add more social links
+    - https://www.facebook.com/ayushkumarshah
+    - https://www.linkedin.com/in/ayush7
 
+
+# Analytics
+analytics:
+  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  google:
+    tracking_id          :
+
+
+# Site Author
+author:
+  name             : "Ayush Kumar Shah"
+  avatar           : "profile.png"
+  bio              : "Computer Science Ph.D. Student"
+  location         : "Rochester, New York"
+  employer         :
+  # pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  # googlescholar    : "http://yourfullgooglescholarurl.com"
+  email            : "ayush.kumar.shah@gmail.com"
+  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  uri              :
+  bitbucket        :
+  codepen          :
+  dribbble         :
+  flickr           :
+  facebook         :
+  foursquare       :
+  github           : "ayushkumarshah"
+  google_plus      :
+  keybase          :
+  instagram        :
+  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
+  lastfm           :
+  linkedin         : "ayush7"
+  orcid            : "http://orcid.org/0000-0001-6158-7632"
+  pinterest        :
+  soundcloud       :
+  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  steam            :
+  tumblr           :
+  twitter          : "ayushkumarshah7"
+  vine             :
+  weibo            :
+  xing             :
+  youtube          :
+  wikipedia        :
+
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - config
+  - gulpfile.js
+  - log
+  - node_modules
+  - package.json
+  - tmp
+  - vendor
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+
+# Conversion
 markdown: kramdown
-
 highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 
+
+# Markdown Processing
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
-    css_class: 'highlight'
-    # default_lang: console
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
-# DO NOT change this unless you're a Pro user on Jekyll and Web development,
-# or you think you're smart enough to change other relevant URLs within this template.
 
-permalink: /:year/:month/:title/
+# Collections
+collections:
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
 
+
+# Defaults
 defaults:
-  -
-    scope:
-      path: ""          # An empty string here means all files in the project
+  # _posts
+  - scope:
+      path: ""
       type: posts
     values:
-      layout: post
-      comments: true    # Enable comments in posts.
-      toc: true         # Display TOC column in posts.
-      location: Post
-      breadcrumb:
-        -
-          label: Posts
-          url: /
-  -
-    scope:
-      path: _drafts
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      toc: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
     values:
-      comments: false
-  -
-    scope:
-      path: tags
+      layout: single
+      author_profile: true
+  # _teaching
+  - scope:
+      path: ""
+      type: teaching
     values:
-      tab_active: Tags
-      location: Tag
-      breadcrumb:
-        -
-          label: Home
-          url: /
-        -
-          label: Tags
-          url: /tabs/tags/
-  -
-    scope:
-      path: categories
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _publications
+  - scope:
+      path: ""
+      type: publications
     values:
-      tab_active: Categories
-      location: Category
-      breadcrumb:
-        -
-          label: Home
-          url: /
-        -
-          label: Categories
-          url: /tabs/categories/
-  -
-    scope:
-      path: tabs
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
     values:
-      layout: page
-      dynamic_title: true    # Hide title in mobile screens.
-      breadcrumb:
-        -
-          label: Home
-          url: /
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
+  # _talks
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: talk
+      author_profile: true
+      share: true
 
-
+# Sass/SCSS
 sass:
-  sass_dir: /assets/css
-  style: compressed
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
+# Outputting
+# permalink: /:categories/:title/
+permalink: /:year/:month/:title/
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
+timezone: America/New_York # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-redirect-from
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path/my-awesome-category/index.html ~> path: /
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
+
+# HTML Compression
+# - http://jch.penibelst.de/
 compress_html:
   clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: [html, head, body, dt, dd, rt, rp,
-            optgroup, option, colgroup, caption,
-            thead, tbody, tfoot, tr, td, th]
-  profile: false
-  blanklines: false
   ignore:
-    envs: []
-
-exclude:
-  - vendor        # Avoid Jekyll mistakenly read the vendor directory on Travis-CI's VM .
-  - Gemfile.lock
-  - Gemfile
-  - tools
-  - docs
-  - README.md
-
-sitemap_exclude:  # Sitemap will exclude the following items.
-  fuzzy:
-    - /assets/
-  accurate:
-    - /norobots/
-    - /tabs/
-    - /categories/
-    - /tags/
-    - /posts/
-    - 404.html
-    - feed.xml
-    - sitemap.xml
-    - robots.txt
-    - redirects.json
+    envs: development

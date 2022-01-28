@@ -1,9 +1,8 @@
 ---
-layout: post
 title: Part 2 - Writing content using Markdown
 date: 2020-03-24 08:00
 Modified: 2020-03-28 22:25
-categories: [Pelican for website creation]
+categories: [Pelican-for-website-creation]
 summary: Learn how to write your articles or blogs using Markdown.
 tags: [pelican, markdown, python, website]
 author: Ayush Kumar Shah

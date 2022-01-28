@@ -1,9 +1,8 @@
 ---
-layout: post
 title: Part 1 - Setting up Pelican - Installation and Theme
 date: 2020-03-20 08:00
 Modified: 2020-03-22 09:00
-categories: [Pelican for website creation]
+categories: [Pelican-for-website-creation]
 summary: Learn to install pelican and set up your project with a theme for your website.
 tags: [pelican, python, pelican-plugin, flex, website]
 author: Ayush Kumar Shah

@@ -1,11 +1,18 @@
 ---
-layout: post
 title: Common commands 
-date: 2020-08-12 13:00
 categories: [commands]
-summary: A curated list of common commands that makes usage easy
-tags: [linux, mac, vim, tmux, neovim, ssh, i32m, brew, shell]
-author: Ayush Kumar Shah
+summary: A curated list of common commands that makes usage easy.
+date: 2020-08-12 13:00
+tags: 
+    - linux 
+    - mac
+    - vim
+    - tmux
+    - neovim
+    - ssh 
+    - i32m 
+    - brew 
+    - shell
 ---
 
 - [General Shell Commands](#general-shell-commands)
