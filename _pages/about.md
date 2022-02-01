@@ -30,7 +30,7 @@ learning, natural language processing
 
 ---
 
-Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_updated.pdf)
+Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 
 ---
 
@@ -69,18 +69,18 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_updated.pdf)
 
 ---
 
-2020-Present
-
 ### PhD, Computing and Information Sciences
+
+2020-Present
 
 Rochester Institute of Technology, <br> 
 Rochester, New York
 
 ---
 
-2015-2019
-
 ### BE, Computer Engineering
+
+2015-2019
 
 Kathmandu University, <br> 
 Dhulikhel, Nepal
@@ -97,9 +97,9 @@ Software Engineering; Digital Signal Processing; Embedded Systems
 
 ---
 
-Aug 18, 2020 - Present 
-
 ### Graduate Research Assisstant
+
+Aug 18, 2020 - Present 
 
 Rochester Institute of Technology, <br> 
 Rochester, New York
@@ -108,9 +108,9 @@ One of the members of the [MathSeer Project,](https://www.cs.rit.edu/~dprl/maths
 
 ---
 
-June 17, 2019 - Aug 31, 2020
-
 ### Machine Learning Engineer
+
+June 17, 2019 - Aug 31, 2020
 
 Fusemachines Nepal, <br> 
 Aarya Tower Bhawan, Hattisar, Nepal
@@ -132,9 +132,9 @@ etc.), “Micro Degree™ in Artificial Intelligence: Machine Learning, Computer
 
 ---
 
-Jan 2020 - Present
-
 ### Computer Science Instructor
+
+Jan 2020 - June 2020
 
 Samriddhi College, <br> 
 Kathmandu, Nepal
