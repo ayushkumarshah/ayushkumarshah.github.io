@@ -7,8 +7,10 @@ header:
   og_image: "/files/237-image.png"
 ---
 
-**Research Interests**: Pattern recognition, computer vision, detection and recognition of graphical structures, deep
-learning, natural language processing. 
+**Research Interests**: 
+Pattern recognition, computer vision, detection and recognition of graphical 
+structures, multi-modal deep learning, natural
+language processing, visual scene parsing.
 
 My research works and projects include:
 
