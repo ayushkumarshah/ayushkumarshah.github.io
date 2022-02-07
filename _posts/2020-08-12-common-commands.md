@@ -597,6 +597,7 @@ Easy remapping
 |||
 |--|--|
 |git commit --amend | add to previous commits
+|git commit -m $'Heading commit\n\nCommit description\nLine 2 of description'| Commit and commit description in 1 line
 |git push origin -f branchname | forced push
 |git rebase master | merge changes of master onto the current branch (first pull from master before rebase)
 |git log
