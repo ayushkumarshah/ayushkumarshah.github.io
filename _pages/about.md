@@ -127,7 +127,7 @@ and Nepali) in manually-filled form fields with an accuracy of 95%.
 - Analysed data provided by a subscription-based e-commerce client for building a recommendation system, which
 led to an increase in revenue through cross-selling by 6% (large as we were serving 600k users).
 
-- Designed, reviewed, and refined reading materials, quizzes, assignments, and projects for Fusemachines AI Education Programs - “Foundations in AI: Mathematics for AI” (linear algebra, calculus, probability and statistics,
+- Designed, reviewed, and refined reading materials, quizzes, assignments, and projects for [Fusemachines AI Education Programs](https://fusemachines.com/ai-education/for-engineers/) - “Foundations in AI: Mathematics for AI” (linear algebra, calculus, probability and statistics,
 etc.), “Micro Degree™ in Artificial Intelligence: Machine Learning, Computer Vision” (regresssion, image processing, feature detection, image classification, object recognition, etc.)
 
 ---
@@ -139,8 +139,9 @@ Jan 2020 - June 2020
 Samriddhi College, <br> 
 Kathmandu, Nepal
 
-Designed and implemented daily lesson plans and coding sessions for the course “Foundations in AI: Computer
-Science and Mathematics” to undergraduate BSc.CSIT students. The course topics include: Introduction to AI,
+Designed and implemented daily lesson plans and coding sessions for the course [“Foundations in AI: Computer
+Science and Mathematics”](https://fusemachines.com/ai-education/for-engineers/) to undergraduate BSc.CSIT students. 
+The course topics include: Introduction to AI,
 Fundamentals of CS, Python Programming, Data Structure, Database Management System.
 
 ---
