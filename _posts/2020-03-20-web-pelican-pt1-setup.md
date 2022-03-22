@@ -280,7 +280,12 @@ Let's replace the default profile photo and favicon by your own.
 > Copy the profile image `profile.png` and the collection of favicon files like `favicon.ico, favicon-16x16.png`, etc into the images directory you just created.
 
 Note: A favicon is a small pixel icon that appears at the top of the browser before the site name. It serves as branding
-for your website. You can create one [online](https://realfavicongenerator.net/#.XnO555MzZhE).
+for your website. You can create one using various tools online like 
+[realfavicongenerator](https://realfavicongenerator.net/#.XnO555MzZhE) or the favicon generator from 
+[websiteplanet](https://www.websiteplanet.com/webtools/favicon-generator/)
+(Thanks to [Estefany](mailto:estefany.mesber@gmail.com) for mentioning this site
+which allows image size upto 5 MB)
+
 
 Different themes have different attributes or configurations.
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-06T23:57:01-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ayush Kumar Shah</title><subtitle>My personal website to share my academic profile and research contributions. I also share my ideas and a reflection of intereseting topics I learn mostly in the field of Artificial Intelligence and Python.</subtitle><author><name>Ayush Kumar Shah</name><email>ayush.kumar.shah@gmail.com</email></author><entry><title type="html">Common commands</title><link href="http://localhost:4000/2020/08/common-commands/" rel="alternate" type="text/html" title="Common commands" /><published>2020-08-12T13:00:00-04:00</published><updated>2020-08-12T13:00:00-04:00</updated><id>http://localhost:4000/2020/08/common-commands</id><content type="html" xml:base="http://localhost:4000/2020/08/common-commands/">&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-22T01:46:13-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ayush Kumar Shah</title><subtitle>My personal website to share my academic profile and research contributions. I also share my ideas and a reflection of intereseting topics I learn mostly in the field of Artificial Intelligence and Python.</subtitle><author><name>Ayush Kumar Shah</name><email>ayush.kumar.shah@gmail.com</email></author><entry><title type="html">Common commands</title><link href="http://localhost:4000/2020/08/common-commands/" rel="alternate" type="text/html" title="Common commands" /><published>2020-08-12T13:00:00-04:00</published><updated>2020-08-12T13:00:00-04:00</updated><id>http://localhost:4000/2020/08/common-commands</id><content type="html" xml:base="http://localhost:4000/2020/08/common-commands/">&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#general-shell-commands&quot;&gt;General Shell Commands&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#ssh-commands&quot;&gt;SSH Commands&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#tmux-commands&quot;&gt;tmux commands&lt;/a&gt;&lt;/li&gt;
@@ -5740,7 +5740,11 @@ the theme.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Note: A favicon is a small pixel icon that appears at the top of the browser before the site name. It serves as branding
-for your website. You can create one &lt;a href=&quot;https://realfavicongenerator.net/#.XnO555MzZhE&quot;&gt;online&lt;/a&gt;.&lt;/p&gt;
+for your website. You can create one using various tools online like 
+&lt;a href=&quot;https://realfavicongenerator.net/#.XnO555MzZhE&quot;&gt;realfavicongenerator&lt;/a&gt; or the favicon generator from 
+&lt;a href=&quot;https://www.websiteplanet.com/webtools/favicon-generator/&quot;&gt;websiteplanet&lt;/a&gt;
+(Thanks to &lt;a href=&quot;mailto:estefany.mesber@gmail.com&quot;&gt;Estefany&lt;/a&gt; for mentioning this site
+which allows image size upto 5 MB)&lt;/p&gt;
 
 &lt;p&gt;Different themes have different attributes or configurations.&lt;/p&gt;
 
