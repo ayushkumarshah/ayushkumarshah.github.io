@@ -36,6 +36,8 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 
 ## News
 
+- (04/2022): Accepted for **Applied Scientist Intern** role at Amazon.
+ 
 - (09/2021): Gave a poster presentation talk on the 
     MathSeer extraction pipeline at [ICDAR 2021](https://icdar2021.org/).
  
