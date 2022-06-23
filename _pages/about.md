@@ -37,7 +37,7 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 ## News
 
 - (04/2022): Started as **Applied Scientist Intern** Amazon. Will work on the Alexa
-    Perceptual Technologies: Alexa AI Speaker Understanding team
+    Perceptual Technologies: Alexa AI Speaker Understanding team.
  
 - (09/2021): Gave a poster presentation talk on the 
     MathSeer extraction pipeline at [ICDAR 2021](https://icdar2021.org/).
