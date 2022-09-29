@@ -17,7 +17,7 @@ Graduate Research Assisstant, <br>
 [Rochester Institute of Technology](https://www.rit.edu), New York
  -->
 
-I am a 2nd year Computer Science Ph.D. student at Rochester Institute of
+I am a 3rd year Computer Science Ph.D. student at Rochester Institute of
 Technology (RIT), conducting research under [Prof. Richard Zanibbi](https://www.cs.rit.edu/~rlaz/)
 at the [Document and Pattern Recognition Lab (DPRL), RIT](https://www.cs.rit.edu/~dprl/index.html).
 Currently, I am involved in the [MathSeer project](https://www.cs.rit.edu/~dprl/mathseer/),
@@ -36,37 +36,47 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 
 ## News
 
-- (04/2022): Started as **Applied Scientist Intern** at Amazon (Alexa AI). 
+- (Sept 27-28, 2022): Co-presented a poster on "Reconstructing the Structure of Molecular Diagrams in PDF Documents 
+using a CNN-Attention-Based Parsing Model" at the Molecule Maker Lab Institute (MMLI) All-Institute Retreat at
+University of Illinois Urbana-Champaign (UIUC).
+
+- (Aug 28, 2022): Successfully completed **Applied Scientist Intern** at Amazon (Alexa AI). Started as
+**Graduate Teaching Assisstant (GTA)** for the undergraduate course CSCI-335 Machine Learning.
+
+- (May 23, 2022): Started as **Applied Scientist Intern** at Amazon (Alexa AI). 
    Worked on the Alexa Perceptual Technologies - Speaker Understanding team
    to improve speaker identification in Alexa devices.
  
-- (09/2021): Gave a poster presentation talk on the 
+- (Sep 2021): Gave a poster presentation talk on the 
     MathSeer extraction pipeline at [ICDAR 2021](https://icdar2021.org/).
  
-- (09/2021): MathSeer extraction pipeline released. This tool extracts formula
+- (Sep 2021): MathSeer extraction pipeline released. This tool extracts formula
   locations and content in PDF documents. The pipeline is available from
   [GitLab](https://gitlab.com/dprl/MathSeer-extraction-pipeline), and includes 
   improved versions of SymbolScraper, ScanSSD (now,
   ScanSSD-XYc), and QD-GGA. The pipeline was prepared by **Ayush K. Shah**,
   Abhisek Dey, Matt Langsenkamp, and Prof. Zanibbi.
 
-- (04/2021): Our paper on the MathSeer formula
-    extraction and evaluation pipeline accepted for publication at
+- (Apr 2021): Our [paper](https://shahayush.com/publication/2021-09-01-mathseer-pipeline) 
+    on the MathSeer formula extraction and evaluation pipeline accepted for publication at
     ICDAR 2021.
 
-- (05/2021): Successfully defended and passed my Ph.D. Research Potential Assessment (RPA).
+- (May 2021): Successfully defended and passed my Ph.D. Research Potential Assessment (RPA).
 
-- (08/2020): Joined Rochester Institute of Technology (RIT) for Ph.D. in Computing and Information Sciences.
+- (Aug 2020): Joined Rochester Institute of Technology (RIT) for Ph.D. in Computing and Information Sciences.
+    Started as **Graduate Research Assisstant (GRA)**  at the [Document and
+    Pattern Recognition Lab (DPRL)](https://www.cs.rit.edu/~dprl/) under [Prof.
+    Richard Zanibbi](https://www.cs.rit.edu/~rlaz/).
 
-- (01/2020): Promoted to Machine Learning Engineer Level 1 at Fusemachines
+- (Jan 2020): Promoted to Machine Learning Engineer Level 1 at Fusemachines
     Nepal.
 
-- (08/2019): Promoted to Machine Learning Engineer Associate at Fusemachines
+- (Aug 2019): Promoted to Machine Learning Engineer Associate at Fusemachines
     Nepal.
 
-- (08/2019): Graduated from Kathmandu University as a Computer Engineer.
+- (Aug 2019): Graduated from Kathmandu University as a Computer Engineer.
 
-- (06/2019): Started working as a Machine Learning Engineer Trainee at
+- (Jun 2019): Started working as a Machine Learning Engineer Trainee at
     Fusemachines Nepal.
 
 ## Education

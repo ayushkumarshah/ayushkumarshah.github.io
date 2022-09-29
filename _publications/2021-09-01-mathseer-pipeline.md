@@ -24,7 +24,8 @@ bounding boxes for non-Latin symbols, a novel Single Shot Detectorbased formula 
 CROHME competitions) to allow viewing all instances of specific errors
 by clicking on HTML links. Our source code is publicly available.
 
-{% include iframe_holder.html url="/files/237-teaser.mp4" width="560" height="315" %}
+<iframe src="/files/Shah2021_MathSeer.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+
 
 **.bib:**
 
@@ -40,3 +41,4 @@ pages="19--34",                                                              \\
 isbn="978-3-030-86331-9"                                                     \\
 }
 
+{% include iframe_holder.html url="/files/237-teaser.mp4" width="560" height="325" %}
