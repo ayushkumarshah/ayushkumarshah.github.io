@@ -5,7 +5,17 @@ permalink: /teaching/
 author_profile: true
 ---
 
-### Computer Science Instructor
+
+## Graduate Teaching Assistant
+
+Aug 2022 -- Dec 2022
+
+Rochester Institute of Technology, <br>
+Rochester, New York
+
+Course: Introduction to Machine Learning
+
+## Computer Science Instructor
 
 Jan 2020 - June 2020
 

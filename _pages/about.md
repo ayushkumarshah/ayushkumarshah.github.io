@@ -37,8 +37,11 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 ## News
 
 - (Sept 27-28, 2022): Co-presented a poster on "Reconstructing the Structure of Molecular Diagrams in PDF Documents 
-using a CNN-Attention-Based Parsing Model" at the Molecule Maker Lab Institute (MMLI) All-Institute Retreat at
-University of Illinois Urbana-Champaign (UIUC).
+using a CNN-Attention-Based Parsing Model" at the **Molecule Maker Lab Institute (MMLI) All-Institute Retreat at
+University of Illinois Urbana-Champaign (UIUC)**.
+
+- (Sep 5, 2021) Gave a guest lecture on “Bayesian Decision Theory” for RIT’s undergraduate course - 
+    Intro to Machine Learning (40 students).
 
 - (Aug 28, 2022): Successfully completed **Applied Scientist Intern** at Amazon (Alexa AI). Started as
 **Graduate Teaching Assisstant (GTA)** for the undergraduate course CSCI-335 Machine Learning.
@@ -47,8 +50,13 @@ University of Illinois Urbana-Champaign (UIUC).
    Worked on the Alexa Perceptual Technologies - Speaker Understanding team
    to improve speaker identification in Alexa devices.
  
-- (Sep 2021): Gave a poster presentation talk on the 
-    MathSeer extraction pipeline at [ICDAR 2021](https://icdar2021.org/).
+- (Apr 7, 2022) Gave a **Research Idea Ring (RIR) talk** on “A Fast and Interpretable 
+    Context-aware Parser for Isolated Formulas and Chemical Diagrams” at RIT.
+
+- (Sep 9, 2021): Gave a poster presentation talk on the 
+    MathSeer extraction pipeline at the 16th International Conference
+    on Document Analysis and Recognition [ICDAR 2021](https://icdar2021.org/), 
+    Lausanne, Switzerland virtually.
  
 - (Sep 2021): MathSeer extraction pipeline released. This tool extracts formula
   locations and content in PDF documents. The pipeline is available from
@@ -117,8 +125,9 @@ May 23, 2022 - Aug 26, 2022
 Amazon - Alexa AI <br>
 Sunnyvale, California
  
-Worked on the Alexa Perceptual Technologies - Speaker Understanding team
-to improve speaker identification in Alexa devices.
+Reduced annotation costs and training time, with competitive speaker
+identification results in voice assistants (e.g., Alexa) using semi-supervised
+techniques (Alexa Speaker Understanding team).
 
 ### Graduate Research Assisstant
 
@@ -127,7 +136,10 @@ Aug 18, 2020 - Present
 Rochester Institute of Technology, <br> 
 Rochester, New York
 
-One of the members of the [MathSeer Project,](https://www.cs.rit.edu/~dprl/mathseer/) which is a system to make finding mathematical information easier. I am conducting research under Prof. Richard Zanibbi to create innovative search engines, interfaces, and algorithms for extracting and recognizing math.
+One of the members of the [MathSeer Project,](https://www.cs.rit.edu/~dprl/mathseer/) which 
+is a system to make finding mathematical information easier. 
+I am conducting research under Prof. Richard Zanibbi to create innovative search
+engines, interfaces, and algorithms for extracting and recognizing math.
 
 ---
 
