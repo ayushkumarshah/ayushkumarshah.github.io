@@ -40,7 +40,7 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 using a CNN-Attention-Based Parsing Model" at the **Molecule Maker Lab Institute (MMLI) All-Institute Retreat at
 University of Illinois Urbana-Champaign (UIUC)**.
 
-- (Sep 5, 2021) Gave a guest lecture on “Bayesian Decision Theory” for RIT’s undergraduate course - 
+- (Sep 5, 2021): Gave a guest lecture on “Bayesian Decision Theory” for RIT’s undergraduate course - 
     Intro to Machine Learning (40 students).
 
 - (Aug 28, 2022): Successfully completed **Applied Scientist Intern** at Amazon (Alexa AI). Started as
@@ -50,7 +50,7 @@ University of Illinois Urbana-Champaign (UIUC)**.
    Worked on the Alexa Perceptual Technologies - Speaker Understanding team
    to improve speaker identification in Alexa devices.
  
-- (Apr 7, 2022) Gave a **Research Idea Ring (RIR) talk** on “A Fast and Interpretable 
+- (Apr 7, 2022): Gave a **Research Idea Ring (RIR) talk** on “A Fast and Interpretable 
     Context-aware Parser for Isolated Formulas and Chemical Diagrams” at RIT.
 
 - (Sep 9, 2021): Gave a poster presentation talk on the 
