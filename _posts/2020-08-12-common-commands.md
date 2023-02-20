@@ -609,6 +609,11 @@ Easy remapping
 |git config --global user.email
 |git reset <file> | remove file from the current index (the "about to be committed" list) without changing anything else.
 |git checkout filename | Undo local changes to latest commit
+|git stash | Stash local changes temporarily
+|git stash list | Show stashed branches
+|git stash show | Show the latest stashed file changes
+|git stash show -p N | Show the Nth (see number in git stash list) stashed file changes
+|`git stash list | awk -F: '{ print "\n\n\n\n"; print $0; print "\n\n"; system("git stash show -p " $1); }'` | Show the changes in the stash in detail
 
 ## Ignore files that have already been committed to the repo
 

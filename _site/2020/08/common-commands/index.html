@@ -1811,6 +1811,26 @@ Plug <span class="s1">'tpope/vim-commentary'</span>
       <td>git checkout filename</td>
       <td>Undo local changes to latest commit</td>
     </tr>
+    <tr>
+      <td>git stash</td>
+      <td>Stash local changes temporarily</td>
+    </tr>
+    <tr>
+      <td>git stash list</td>
+      <td>Show stashed branches</td>
+    </tr>
+    <tr>
+      <td>git stash show</td>
+      <td>Show the latest stashed file changes</td>
+    </tr>
+    <tr>
+      <td>git stash show -p N</td>
+      <td>Show the Nth (see number in git stash list) stashed file changes</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git stash list | awk -F: '{ print "\n\n\n\n"; print $0; print "\n\n"; system("git stash show -p " $1); }'</code></td>
+      <td>Show the changes in the stash in detail</td>
+    </tr>
   </tbody>
 </table>
 
@@ -2477,7 +2497,7 @@ only when the formula is installed or upgraded in your <code class="language-pla
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2022 Ayush Kumar Shah. </div>
+<div class="page__footer-copyright">&copy; 2023 Ayush Kumar Shah. </div>
 
       </footer>
     </div>
