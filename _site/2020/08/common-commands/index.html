@@ -1828,6 +1828,14 @@ Plug <span class="s1">'tpope/vim-commentary'</span>
       <td>Show the Nth (see number in git stash list) stashed file changes</td>
     </tr>
     <tr>
+      <td>git stash drop stash@{index}</td>
+      <td>Remove the given stash</td>
+    </tr>
+    <tr>
+      <td>git stash clear</td>
+      <td>Remove all stashes</td>
+    </tr>
+    <tr>
       <td><code class="language-plaintext highlighter-rouge">git stash list | awk -F: '{ print "\n\n\n\n"; print $0; print "\n\n"; system("git stash show -p " $1); }'</code></td>
       <td>Show the changes in the stash in detail</td>
     </tr>
