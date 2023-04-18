@@ -36,6 +36,9 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 
 ## News
 
+- (Apr 17, 2023): Gave a **Research Idea Ring (RIR) talk** on “Line-of-sight with Graph Attention Parser 
+    (LGAP) for Math Formulas” at RIT.
+
 - (Sept 27-28, 2022): Co-presented a poster on "Reconstructing the Structure of Molecular Diagrams in PDF Documents 
 using a CNN-Attention-Based Parsing Model" at the **Molecule Maker Lab Institute (MMLI) All-Institute Retreat at
 University of Illinois Urbana-Champaign (UIUC)**.
