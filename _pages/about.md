@@ -36,8 +36,19 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 
 ## News
 
+- (Aug 22-23, 2023): Gave a poster presentation talk 
+    at Poster session 1 and doctoral consortium at
+    the 17th International Conference on Document Analysis and Recognition,
+    [ICDAR 2023](https://icdar2023.org/), San José, California.
+ 
 - (Apr 17, 2023): Gave a **Research Idea Ring (RIR) talk** on “Line-of-sight with Graph Attention Parser 
     (LGAP) for Math Formulas” at RIT.
+
+- (Apr 2023): Our [paper](https://shahayush.com/publication/2023-04-30-lgap) 
+    on the Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas
+    accepted for publication at 
+    the 17th International Conference on Document Analysis and Recognition,
+    [ICDAR 2023](https://icdar2023.org/), San José, California.
 
 - (Sept 27-28, 2022): Co-presented a poster on "Reconstructing the Structure of Molecular Diagrams in PDF Documents 
 using a CNN-Attention-Based Parsing Model" at the **Molecule Maker Lab Institute (MMLI) All-Institute Retreat at
@@ -57,8 +68,9 @@ University of Illinois Urbana-Champaign (UIUC)**.
     Context-aware Parser for Isolated Formulas and Chemical Diagrams” at RIT.
 
 - (Sep 9, 2021): Gave a poster presentation talk on the 
-    MathSeer extraction pipeline at the 16th International Conference
-    on Document Analysis and Recognition [ICDAR 2021](https://icdar2021.org/), 
+    MathSeer extraction pipeline at 
+    the 16th International Conference on Document Analysis and Recognition,
+    [ICDAR 2021](https://icdar2021.org/), 
     Lausanne, Switzerland virtually.
  
 - (Sep 2021): MathSeer extraction pipeline released. This tool extracts formula
@@ -70,7 +82,8 @@ University of Illinois Urbana-Champaign (UIUC)**.
 
 - (Apr 2021): Our [paper](https://shahayush.com/publication/2021-09-01-mathseer-pipeline) 
     on the MathSeer formula extraction and evaluation pipeline accepted for publication at
-    ICDAR 2021.
+    the 16th International Conference on Document Analysis and Recognition, 
+  [ICDAR 2021](https://icdar2021.org/), Lausanne, Switzerland.
 
 - (May 2021): Successfully defended and passed my Ph.D. Research Potential Assessment (RPA).
 
