@@ -36,10 +36,20 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 
 ## News
 
+- (Sept 12, 2023): Co-presented a poster on "ChemScraper: Extracting Molecule Diagrams
+    from PDF Vector and Raster Images with CDXML and SMILES Output" 
+    at the Molecule Maker Lab Institute **(MMLI) All-Institute Retreat at
+University of Illinois Urbana-Champaign (UIUC)**.
+
 - (Aug 22-23, 2023): Gave a poster presentation talk 
     at Poster session 1 and doctoral consortium at
     the 17th International Conference on Document Analysis and Recognition,
     [ICDAR 2023](https://icdar2023.org/), San José, California.
+
+
+- (June 28, 2023): Co-presented a poster on "ChemScraper: Extracting Molecule Diagrams
+    from PDF Vector Images with Page-Level CDXML (ChemDraw) and SMILES Output" 
+    at the **NSF Annual Review Meeting at University of Illinois Urbana-Champaign (UIUC)**.
  
 - (Apr 17, 2023): Gave a **Research Idea Ring (RIR) talk** on “Line-of-sight with Graph Attention Parser 
     (LGAP) for Math Formulas” at RIT.
@@ -51,10 +61,10 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
     [ICDAR 2023](https://icdar2023.org/), San José, California.
 
 - (Sept 27-28, 2022): Co-presented a poster on "Reconstructing the Structure of Molecular Diagrams in PDF Documents 
-using a CNN-Attention-Based Parsing Model" at the **Molecule Maker Lab Institute (MMLI) All-Institute Retreat at
+using a CNN-Attention-Based Parsing Model" at the Molecule Maker Lab Institute **(MMLI) All-Institute Retreat at
 University of Illinois Urbana-Champaign (UIUC)**.
 
-- (Sep 5, 2021): Gave a guest lecture on “Bayesian Decision Theory” for RIT’s undergraduate course - 
+- (Sep 5, 2021): Gave a guest lecture on **“Bayesian Decision Theory”** for RIT’s undergraduate course - 
     Intro to Machine Learning (40 students).
 
 - (Aug 28, 2022): Successfully completed **Applied Scientist Intern** at Amazon (Alexa AI). Started as
