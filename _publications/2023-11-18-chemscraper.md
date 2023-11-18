@@ -4,7 +4,7 @@ title: "ChemScraper: Graphics Extraction, Molecular Diagram Parsing,
 collection: publications
 permalink: /publication/2023-11-18-chemscraper
 excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2023-11-18
+date: 2024-09-01
 venue: 'International Journal on Document Analysis and Recognition (IJDAR)'
 paperurl: ''
 pdf: '/files/ChemScraper-IJDAR-2024.pdf'

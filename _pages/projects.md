@@ -5,12 +5,35 @@ permalink: /projects/
 author_profile: true
 ---
 
-- [Nepali Plagiarism Detector (NLP)](https://github.com/ayushkumarshah/Nepali_Plagiarism_Detection)<br>
-An application that detects plagiarised Devanagari text files using a self-built rule-based stemming algorithm and
-Cosine similarity
+- [ChemScraper](https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024)<br>
+    A molecule diagram parser, which extracts characters and graphics 
+from PDF molecule images using typesetting instructions, applies simple graph transformation algorithms
+to convert them into visual and then chemical graphs — without OCR, GPU, or vectorization. 
+ChemScraper's fast speed and reliable accuracy enables it
+to contribute significantly in creating fine-grained annotated dataset for 
+training visual parsers.
+ 
+- [MathDeck](https://demo.mathdeck.org/)<br>
+    A system for searching PDF documents in a portion of the ACL Anthology, incorporating 
+    both formulas and text, displaying matched words and formulas in context.
+    Its user-friendly interface includes formula 'chips' for easy formula creation,
+    search, reuse and annotation. MathDeck supports both LaTeX and visual formula editing.
+
+- [Math Formula Extraction](https://gitlab.com/dprl/graphics-extraction)<br>
+A tool for detecting and recognizing math formulas from PDF documents using
+    both PDF information (without OCR) and visual features through a multi-task
+    learning framework based on ResNet-50 with line-of-sight (LOS) graph-based attention.
+
+- [LgEval](https://gitlab.com/dprl/lgeval)<br>
+A tool for graph-based evaluation of recognition results, with visualization
+tools for fine-grained error analyses at the level of input primitives.
 
 - [Guitar chord recognizer](https://github.com/ayushkumarshah/Guitar-Chords-recognition)<br>
 An application that predicts the chords when the Mel spectrograms of guitar sound are fed into a CNN.
+
+- [Nepali Plagiarism Detector (NLP)](https://github.com/ayushkumarshah/Nepali_Plagiarism_Detection)<br>
+An application that detects plagiarised Devanagari text files using a self-built rule-based stemming algorithm and
+Cosine similarity
 
 - [AI Plays GTA 5: Simulating self-driving vehicles](https://github.com/ayushkumarshah/AI-Plays-GTA5)<br>
 A bike-riding agent in a virtual environment (GTA5), built using CNN, used for simulating self-driving vehicles.
