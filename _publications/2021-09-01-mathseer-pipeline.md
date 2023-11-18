@@ -11,6 +11,7 @@ citation: 'A. K. Shah, A. Dey, and R. Zanibbi, “A Math Formula Extraction and 
 poster: '/files/237-presentation.pdf'
 video: '/files/237-teaser.mp4'
 code: 'https://gitlab.com/dprl/MathSeer-extraction-pipeline'
+published: 'True'
 ---
 
 ## Abstract:
