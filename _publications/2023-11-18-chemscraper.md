@@ -1,0 +1,49 @@
+---
+title: "ChemScraper: Graphics Extraction, Molecular Diagram Parsing,
+        and Annotated Data Generation for PDF Images"
+collection: publications
+permalink: /publication/2023-11-18-chemscraper
+excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+date: 2023-11-18
+venue: 'International Journal on Document Analysis and Recognition (IJDAR)'
+paperurl: ''
+pdf: '/files/ChemScraper-IJDAR-2024.pdf'
+citation: 'A. K. Shah, B. M. Amador, A. Dey, M. Creekmore, B. Ocampo, S. Denmark, and R. Zanibbi, "ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images," in Document Analysis and Recognition (Journal) - IJDAR vol. 27, May. 2024, submitted.'
+poster: ''
+video: ''
+code: 'https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024'
+---
+
+## Abstract:
+Existing visual parsers for molecule diagrams translate pixel-based raster images such as  PNGs to chemical structure representations (e.g., SMILES). However, PDFs created by word processors including \LaTeX{} and Word provide explicit locations and shapes for characters, lines, and polygons. We %introduce a method to 
+extract symbols from born-digital PDF molecule images and then apply simple graph transformations to capture both visual and chemical structure in editable ChemDraw files (CDXML). Our fast ( PDF $\rightarrow$ visual graph $\rightarrow$ chemical graph ) pipeline does not require GPUs, Optical Character Recognition (OCR) or vectorization.
+We evaluate on standard benchmarks using SMILES strings, along with a novel evaluation that provides graph-based metrics and error compilation using LgEval. 
+The geometric information in born-digital PDFs produces a highly accurate parser, motivating generating training data for visual parsers that recognize from raster images, with extracted graphics, visual structure, and chemical structure as annotations. To do this we render SMILES strings in Indigo, parse molecule structure, and then validate recognized structure to select correct files.
+
+
+<!-- <iframe src="/files/ICDAR2023.pdf" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe> -->
+
+<!-- <br> -->
+
+<iframe src="/files/ChemScraper-IJDAR-2024.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+
+
+<br>
+**.bib:**
+
+@article{shah_chemscraper_2024,\\
+  author = {Shah, Ayush Kumar and Amador, Bryan and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard},\\
+  title="ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images"\\
+  year = {2024},
+  month = sep,
+  journal = {International Journal on Document Analysis and Recognition (IJDAR)},
+  volume = {27},
+  <!-- number = {3}, -->
+  <!-- pages = {255--272}, -->
+  <!-- issn = {1433-2825}, -->
+  <!-- doi = {10.1007/s10032-023-00427-w}, -->
+  <!-- urldate = {2023-10-31}, -->
+  langid = {english},
+}
+
+<!-- {% include iframe_holder.html url="/files/P1.17-teaser.mov" width="560" height="325" %} -->

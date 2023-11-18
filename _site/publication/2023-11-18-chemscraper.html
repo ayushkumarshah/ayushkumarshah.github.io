@@ -19,7 +19,7 @@
 
 
 
-<title>Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas - Ayush Kumar Shah</title>
+<title>ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images - Ayush Kumar Shah</title>
 
 
 
@@ -29,11 +29,11 @@
 
 <meta property="og:locale" content="en-US">
 <meta property="og:site_name" content="Ayush Kumar Shah">
-<meta property="og:title" content="Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas">
+<meta property="og:title" content="ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images">
 
 
-  <link rel="canonical" href="http://localhost:4000/publication/2023-04-30-lgap">
-  <meta property="og:url" content="http://localhost:4000/publication/2023-04-30-lgap">
+  <link rel="canonical" href="http://localhost:4000/publication/2023-11-18-chemscraper">
+  <meta property="og:url" content="http://localhost:4000/publication/2023-11-18-chemscraper">
 
 
 
@@ -42,9 +42,9 @@
 
 
   <meta name="twitter:site" content="@ayushkumarshah7">
-  <meta name="twitter:title" content="Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas">
+  <meta name="twitter:title" content="ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images">
   <meta name="twitter:description" content="This paper is about the number 1. The number 2 is left for future work.">
-  <meta name="twitter:url" content="http://localhost:4000/publication/2023-04-30-lgap">
+  <meta name="twitter:url" content="http://localhost:4000/publication/2023-11-18-chemscraper">
 
   
     <meta name="twitter:card" content="summary">
@@ -64,7 +64,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2023-04-30T00:00:00-04:00">
+  <meta property="article:published_time" content="2023-11-18T00:00:00-05:00">
 
 
 
@@ -278,41 +278,41 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas">
+    <meta itemprop="headline" content="ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images">
     <!--  -->
     <meta itemprop="description" content="This paper is about the number 1. The number 2 is left for future work.">
-    <meta itemprop="datePublished" content="April 30, 2023">
+    <meta itemprop="datePublished" content="November 18, 2023">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas
+          <h1 class="page__title" itemprop="headline">ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images
 </h1>
           
         
         
         
-          <p>Published in <i>International Conference on Document Analysis and Recognition (ICDAR)</i>, 2023 </p>
+          <p>Published in <i>International Journal on Document Analysis and Recognition (IJDAR)</i>, 2023 </p>
         
         
         
-          <p>Recommended citation: A. K. Shah and R. Zanibbi, “Line-of-Sight with Graph Attention Parser (LGAP) for Math Formulas,” in Document Analysis and Recognition - ICDAR 2023, G. A. Fink, R. Jain, K. Kise, and R. Zanibbi, Eds., in Lecture Notes in Computer Science. Cham: Springer Nature Switzerland, 2023, pp. 401–419. doi: 10.1007/978-3-031-41734-4_25. </p>
+          <p>Recommended citation: A. K. Shah, B. M. Amador, A. Dey, M. Creekmore, B. Ocampo, S. Denmark, and R. Zanibbi, "ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images," in Document Analysis and Recognition (Journal) - IJDAR vol. 27, May. 2024, submitted. </p>
         
         
-          <a href=" https://link.springer.com/chapter/10.1007/978-3-031-41734-4_25 "><u>[url]</u></a>
+          <a href="  "><u>[url]</u></a>
         
         
-          <a href=" /files/Shah2023_LGAP.pdf "><u>[pdf]</u></a>
+          <a href=" /files/ChemScraper-IJDAR-2024.pdf "><u>[pdf]</u></a>
         
         
-          <a href=" /files/ICDAR2023.pdf "><u>[poster]</u></a>
+          <a href="  "><u>[poster]</u></a>
         
         
-          <a href=" /files/P1.17-teaser.mov "><u>[video]</u></a>
+          <a href="  "><u>[video]</u></a>
         
         
-          <a href=" https://gitlab.com/dprl/qdgga-parser "><u>[code]</u></a>
+          <a href=" https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024 "><u>[code]</u></a>
         
     
         </header>
@@ -320,65 +320,34 @@
 
       <section class="page__content" itemprop="text">
         <h2 id="abstract">Abstract:</h2>
+<p>Existing visual parsers for molecule diagrams translate pixel-based raster images such as  PNGs to chemical structure representations (e.g., SMILES). However, PDFs created by word processors including \LaTeX{} and Word provide explicit locations and shapes for characters, lines, and polygons. We %introduce a method to 
+extract symbols from born-digital PDF molecule images and then apply simple graph transformations to capture both visual and chemical structure in editable ChemDraw files (CDXML). Our fast ( PDF $\rightarrow$ visual graph $\rightarrow$ chemical graph ) pipeline does not require GPUs, Optical Character Recognition (OCR) or vectorization.
+We evaluate on standard benchmarks using SMILES strings, along with a novel evaluation that provides graph-based metrics and error compilation using LgEval. 
+The geometric information in born-digital PDFs produces a highly accurate parser, motivating generating training data for visual parsers that recognize from raster images, with extracted graphics, visual structure, and chemical structure as annotations. To do this we render SMILES strings in Indigo, parse molecule structure, and then validate recognized structure to select correct files.</p>
 
-<p>Recently there have been notable advancements in encoder-decoder models for 
-parsing the visual appearance of mathematical formulas. These approaches
-transform input formula images or handwritten stroke sequences into output 
-strings (e.g., LaTeX) representing recognized symbols and their spatial
-arrangement on writing lines (i.e., a Symbol Layout Tree (SLT)). These
-sequential encoder-decoder models
-produce state-of-the-art results but suffer from a lack of
-interpretability: there is no direct mapping between image regions or handwritten strokes 
-and detected
-symbols and relationships. In this paper, we present the Line-of-sight with 
-Graph Attention Parser (LGAP), a visual parsing model that treats recognizing
-formula appearance as a graph search
-problem. LGAP produces an output SLT from a Maximum  Spanning Tree (MST) over
-input primitives (e.g., connected components in images, or handwritten strokes).
-LGAP improves the earlier QD-GGA MST-based parser by
-representing punctuation relationships more consistently 
-in ground truth,  using additional context from line-of-sight graph
-neighbors in visual features, and pooling convolutional features using spatial
-pyramidal pooling rather than single-region average pooling. These changes
-improve accuracy while preserving the interpretibility of MST-based visual
-parsing.</p>
+<!-- <iframe src="/files/ICDAR2023.pdf" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe> -->
 
-<iframe src="/files/ICDAR2023.pdf" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+<!-- <br> -->
 
-<p><br /></p>
-
-<iframe src="/files/Shah2023_LGAP.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+<iframe src="/files/ChemScraper-IJDAR-2024.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
 
 <p><br />
 <strong>.bib:</strong></p>
 
-<p>@InProceedings{10.1007/978-3-031-41734-4_25,<br />
-author=”Shah, Ayush Kumar                   <br />
-and Zanibbi, Richard”,                      <br />
-editor=”Fink, Gernot A.                     <br />
-and Jain, Rajiv                             <br />
-and Kise, Koichi                            <br />
-and Zanibbi, Richard”,                      <br />
-title=”Line-of-Sight with Graph Attention Parser (LGAP) for Math Formulas”,<br />
-booktitle=”Document Analysis and Recognition - ICDAR 2023”,<br />
-year=”2023”,                                <br />
-publisher=”Springer Nature Switzerland”,    <br />
-address=”Cham”,                             <br />
-pages=”401–419”,                           <br />
-isbn=”978-3-031-41734-4”
+<p>@article{shah_chemscraper_2024,<br />
+  author = {Shah, Ayush Kumar and Amador, Bryan and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard},<br />
+  title=”ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images”<br />
+  year = {2024},
+  month = sep,
+  journal = {International Journal on Document Analysis and Recognition (IJDAR)},
+  volume = {27},
+  <!-- number = {3}, -->
+  <!-- pages = {255--272}, -->
+  <!-- issn = {1433-2825}, -->
+  <!-- doi = {10.1007/s10032-023-00427-w}, -->
+  <!-- urldate = {2023-10-31}, -->
+  langid = {english},
 }</p>
-
-<!-- @InProceedings{10.1007/978-3-030-86331-9_2,\\ -->
-<!-- author="**Shah, Ayush Kumar** and Dey, Abhisek and Zanibbi, Richard",\\ -->
-<!-- editor="Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi",\\ -->
-<!-- title="A Math Formula Extraction and Evaluation Framework for PDF Documents",\\ -->
-<!-- booktitle="Document Analysis and Recognition -- ICDAR 2021",                 \\ -->
-<!-- year="2021",                                                                 \\ -->
-<!-- publisher="Springer International Publishing",                               \\ -->
-<!-- address="Cham",                                                              \\ -->
-<!-- pages="19--34",                                                              \\ -->
-<!-- isbn="978-3-030-86331-9"                                                     \\ -->
-<!-- } -->
 
 <!-- 
 
@@ -412,11 +381,11 @@ isbn=”978-3-031-41734-4”
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/publication/2023-04-30-lgap" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/publication/2023-11-18-chemscraper" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/publication/2023-04-30-lgap" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/publication/2023-11-18-chemscraper" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/publication/2023-04-30-lgap" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/publication/2023-11-18-chemscraper" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
       
@@ -424,12 +393,11 @@ isbn=”978-3-031-41734-4”
 
   <nav class="pagination">
     
-      <a href="http://localhost:4000/publication/2023-04-26-search" class="pagination--pager" title="Searching the ACL Anthology with Math Formulas and Text
+      <a href="http://localhost:4000/publication/2023-04-30-lgap" class="pagination--pager" title="Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas
 ">Previous</a>
     
     
-      <a href="http://localhost:4000/publication/2023-11-18-chemscraper" class="pagination--pager" title="ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
