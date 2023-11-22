@@ -6,11 +6,9 @@ permalink: /publication/2023-11-18-chemscraper
 excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2024-09-01
 venue: 'International Journal on Document Analysis and Recognition (IJDAR)'
-paperurl: ''
+paperurl: 'https://arxiv.org/abs/2311.12161'
 pdf: '/files/ChemScraper-IJDAR-2024.pdf'
 citation: 'A. K. Shah, B. M. Amador, A. Dey, M. Creekmore, B. Ocampo, S. Denmark, and R. Zanibbi, "ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images," in Document Analysis and Recognition (Journal) - IJDAR vol. 27, May. 2024, submitted.'
-poster: ''
-video: ''
 code: 'https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024'
 ---
 
