@@ -29,19 +29,22 @@ The geometric information in born-digital PDFs produces a highly accurate parser
 <br>
 **.bib:**
 
-@article{shah_chemscraper_2024,\\
-  author = {Shah, Ayush Kumar and Amador, Bryan and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard},\\
-  title="ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images"\\
-  year = {2024},
-  month = sep,
-  journal = {International Journal on Document Analysis and Recognition (IJDAR)},
-  volume = {27},
-  <!-- number = {3}, -->
-  <!-- pages = {255--272}, -->
-  <!-- issn = {1433-2825}, -->
-  <!-- doi = {10.1007/s10032-023-00427-w}, -->
-  <!-- urldate = {2023-10-31}, -->
-  langid = {english},
+```bib
+@misc{shahChemScraperGraphicsExtraction2023,
+  title = {ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images},
+  shorttitle = {ChemScraper},
+  author = {Shah, Ayush Kumar and Amador, Bryan Manrique and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard},
+  year = {2023},
+  month = nov,
+  number = {arXiv:2311.12161},
+  eprint = {2311.12161},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2311.12161},
+  urldate = {2023-11-22},
+  archiveprefix = {arxiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition},
 }
+```
 
 <!-- {% include iframe_holder.html url="/files/P1.17-teaser.mov" width="560" height="325" %} -->

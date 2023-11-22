@@ -35,16 +35,18 @@ by clicking on HTML links. Our source code is publicly available.
 <br>
 **.bib:**
 
-@InProceedings{10.1007/978-3-030-86331-9_2,\\
-author="**Shah, Ayush Kumar** and Dey, Abhisek and Zanibbi, Richard",\\
-editor="Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi",\\
-title="A Math Formula Extraction and Evaluation Framework for PDF Documents",\\
-booktitle="Document Analysis and Recognition -- ICDAR 2021",                 \\
-year="2021",                                                                 \\
-publisher="Springer International Publishing",                               \\
-address="Cham",                                                              \\
-pages="19--34",                                                              \\
-isbn="978-3-030-86331-9"                                                     \\
+```bib
+@InProceedings{10.1007/978-3-030-86331-9_2,
+author="Shah, Ayush Kumar and Dey, Abhisek and Zanibbi, Richard",
+editor="Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi",
+title="A Math Formula Extraction and Evaluation Framework for PDF Documents",
+booktitle="Document Analysis and Recognition -- ICDAR 2021",                 
+year="2021",                                                                 
+publisher="Springer International Publishing",                               
+address="Cham",                                                              
+pages="19--34",                                                              
+isbn="978-3-030-86331-9"                                                     
 }
+```
 
 {% include iframe_holder.html url="/files/237-teaser.mp4" width="560" height="325" %}

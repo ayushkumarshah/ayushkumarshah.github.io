@@ -51,6 +51,12 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 
 ## News
 
+- (Nov 14, 2023): A paper describing ChemScraper parser for molecular diagrams in
+    PDF drawing instructions ('born-digital') is available on arXiv [here](https://arxiv.org/abs/2311.12161). 
+    The system can also generate annotated training data for visual parsers that recognize raster images
+    (i.e., pixel-based, such as PNG). A link to associated code is provided in 
+    a [footnote](https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024) in the paper.
+
 - (Sept 12, 2023): Co-presented a poster on "ChemScraper: Extracting Molecule Diagrams
     from PDF Vector and Raster Images with CDXML and SMILES Output" 
     at the Molecule Maker Lab Institute **(MMLI) All-Institute Retreat at
