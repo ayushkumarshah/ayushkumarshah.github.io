@@ -13,7 +13,7 @@ code: 'https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024'
 ---
 
 ## Abstract:
-Existing visual parsers for molecule diagrams translate pixel-based raster images such as  PNGs to chemical structure representations (e.g., SMILES). However, PDFs created by word processors including \LaTeX{} and Word provide explicit locations and shapes for characters, lines, and polygons. We %introduce a method to 
+Existing visual parsers for molecule diagrams translate pixel-based raster images such as  PNGs to chemical structure representations (e.g., SMILES). However, PDFs created by word processors including LaTeX and Word provide explicit locations and shapes for characters, lines, and polygons. We 
 extract symbols from born-digital PDF molecule images and then apply simple graph transformations to capture both visual and chemical structure in editable ChemDraw files (CDXML). Our fast ( PDF $\rightarrow$ visual graph $\rightarrow$ chemical graph ) pipeline does not require GPUs, Optical Character Recognition (OCR) or vectorization.
 We evaluate on standard benchmarks using SMILES strings, along with a novel evaluation that provides graph-based metrics and error compilation using LgEval. 
 The geometric information in born-digital PDFs produces a highly accurate parser, motivating generating training data for visual parsers that recognize from raster images, with extracted graphics, visual structure, and chemical structure as annotations. To do this we render SMILES strings in Indigo, parse molecule structure, and then validate recognized structure to select correct files.
