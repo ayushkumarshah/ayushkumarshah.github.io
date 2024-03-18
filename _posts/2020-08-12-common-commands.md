@@ -73,6 +73,7 @@ tags:
 |`<Esc-C>`|fzf: fuzzy finding files or directories from current path|
 |`top` or `htop` or `ytop` or `gotop`             |Process info and CPU Usage  (You need to install htop or ytop)|
 |`tree [-aldf][-L level][-P pattern][-I pattern][-o filename] `|display directory's contents in a  tree <br> a - all files <br> l - symbolic links <br> d - directories only <br> L - limit number of levels of directory <br> I - files not matching pattern <br> P - files matching pattern <br> o - output to filename <br> You need to install tree|
+|`lsof /dev/nvidia* | awk '{print $2}'`|Display ids of processes utilizing CUDA/GPU
 
 
 # SSH Commands
