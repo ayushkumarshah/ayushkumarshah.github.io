@@ -146,7 +146,7 @@
 </url>
 <url>
 <loc>http://localhost:4001/files/CV_AyushKumarShah_current.pdf</loc>
-<lastmod>2024-02-20T17:08:39-05:00</lastmod>
+<lastmod>2024-09-16T12:55:23-04:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4001/files/CV_AyushKumarShah_long.pdf</loc>
@@ -154,11 +154,15 @@
 </url>
 <url>
 <loc>http://localhost:4001/files/ChemScraper-IJDAR-2024.pdf</loc>
-<lastmod>2023-11-22T14:43:27-05:00</lastmod>
+<lastmod>2024-09-16T13:03:56-04:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4001/files/ICDAR2023.pdf</loc>
 <lastmod>2023-08-14T20:21:57-04:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4001/files/ICDAR2024.pdf</loc>
+<lastmod>2024-09-16T13:09:49-04:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4001/files/MathDeck-poster.pdf</loc>

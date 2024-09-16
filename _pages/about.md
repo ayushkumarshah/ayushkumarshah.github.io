@@ -16,28 +16,36 @@ redirect_from:
 Graduate Research Assisstant, <br>
 [Rochester Institute of Technology](https://www.rit.edu), New York
  -->
- 🔍 I'm a fourth-year Ph.D. candidate at Rochester Institute of Technology (RIT), 
- actively involved in cutting-edge research at the 
+
+ 🔍 I'm a fifth-year Ph.D. candidate at Rochester Institute of Technology (RIT),
+ conducting research at the
 [Document and Pattern Recognition Lab (DPRL)](https://www.cs.rit.edu/~dprl/index.html),
-under the guidance of [Prof. Richard Zanibbi](https://www.cs.rit.edu/~rlaz/).
+under the mentorship of [Dr. Richard Zanibbi](https://www.cs.rit.edu/~rlaz/).
 
-💡 My current focus revolves around developing a fast, interpretable visual parser for math and chemical formulas. 
-I specialize in recognizing graphical notations, including complex math and
-chemical formulas, across various mediums like born-digital PDFs, typeset images, and handwritten strokes. 
-Exploring innovative graph attention-based task interaction techniques, I aim to 
-enhance contextual information while maintaining a natural and interpretable graph representation.
+💡 My work centers around designing fast, efficient, and interpretable parsers for 
+recognizing complex mathematical and chemical formulas. I explore graphical 
+notations across multiple formats, including PDFs, typeset images, and 
+handwritten strokes. Through graph attention-based techniques, I aim to enhance
+how contextual information is processed, while preserving a natural and 
+interpretable graph representation.
 
-🎯 The ultimate goal? Achieving competitive accuracy recognizing math and
-chemical formulas, packaged in a faster and more interpretable model than traditional encoder-decoder setups.
+🎯 My goal is to deliver high accuracy in formula recognition through 
+models that are not only faster but also easier to interpret than traditional
+encoder-decoder architectures.
 
-💻 Recently, I completed ChemScraper, a molecule diagram parser, which extracts characters and graphics 
-from PDF molecule images using typesetting instructions, applies simple graph transformation algorithms
-to convert them into visual and then chemical graphs — without OCR, GPU, or vectorization. 
-ChemScraper's fast speed and reliable accuracy enables it
-to contribute significantly in creating fine-grained annotated dataset for 
-training visual parsers.
+💻 Recently, I developed ChemScraper, a molecule diagram parser that extracts
+characters and graphics directly from PDF molecule images. By utilizing
+typesetting instructions and simple graph transformations, it generates both
+visual and chemical graphs — without the need for OCR, GPUs, or vectorization.
+ChemScraper offers a practical approach to creating fine-grained, annotated
+datasets for training visual parsers, and also a visual parser for parsing
+molecule images (raster) directly.
 
-🌐 **Research interests:** pattern recognition, computer vision, deep learning, and speech and natural language processing.
+🌐 **Research interests:** Pattern recognition, recognition of graphical structures, 
+computer vision, speaker understanding, large language models, multi-modal deep learning, 
+natural language processing .
+<!-- pattern recognition, computer vision, deep learning, -->
+<!-- large language models, speech and natural language processing. -->
 <!-- I'm on a mission to decode the intricacies of graphical structures, from mathematical formulas to chemical diagrams. -->
 
 <!-- **Research Interests**: Pattern recognition, computer vision, detection and recognition of graphical structures, deep -->
@@ -50,6 +58,21 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 ---
 
 ## News
+
+- (Sept 3, 2024): Gave an oral presentation on "ChemScraper: Leveraging PDF
+    Graphics Instructions for Molecular Diagram Parsing" at
+    the 18th International Conference on Document Analysis and Recognition,
+    [ICDAR 2024](https://icdar2024.net/), Athens, Greece.
+
+- (May 2024): A revised paper on
+    [ChemScraper](https://shahayush.com/publication/) has been published at
+    the 18th International Conference on Document Analysis and Recognition,
+    [ICDAR 2024](https://icdar2024.net/), Athens, Greece -- Journal Track. The
+    paper describes (1) a fast and accurate technique for parsing born-digital
+    (vector) PDF images, and (2) its use to create training data for a new
+    approach to visual parsing of molecule diagrams in raster images (i.e.,
+    pixel-based such as from PNGs). [Code](https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024)
+    is available.
 
 - (Nov 14, 2023): A paper describing ChemScraper parser for molecular diagrams in
     PDF drawing instructions ('born-digital') is available on arXiv [here](https://arxiv.org/abs/2311.12161). 

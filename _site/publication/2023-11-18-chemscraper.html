@@ -294,12 +294,12 @@
 
         
             
-              <p>Submitted to <i>International Journal on Document Analysis and Recognition (IJDAR)</i>, 2024 </p>
+              <p>Published in <i>International Journal on Document Analysis and Recognition (IJDAR)</i>, 2024 </p>
             
         
 
         
-          <p>Recommended citation: A. K. Shah, B. M. Amador, A. Dey, M. Creekmore, B. Ocampo, S. Denmark, and R. Zanibbi, "ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images," in Document Analysis and Recognition (Journal) - IJDAR vol. 27, May. 2024, submitted. </p>
+          <p>Recommended citation: A. K. Shah, B. M. Amador, A. Dey, M. Creekmore, B. Ocampo, S. Denmark, and R. Zanibbi, “ChemScraper: Leveraging PDF Graphics Instructions for Molecular Diagram Parsing,” in Document Analysis and Recognition (Journal) - IJDAR 2024, vol. 27, Sep. 2024, pp. 395-414, doi: 10.1007/s10032-024-00486-7. </p>
         
         
           <a href=" https://arxiv.org/abs/2311.12161 "><u>[url]</u></a>
@@ -307,6 +307,8 @@
         
           <a href=" /files/ChemScraper-IJDAR-2024.pdf "><u>[pdf]</u></a>
         
+        
+          <a href=" /files/ICDAR2024.pdf "><u>[poster]</u></a>
         
         
         
@@ -318,35 +320,47 @@
 
       <section class="page__content" itemprop="text">
         <h2 id="abstract">Abstract:</h2>
-<p>Existing visual parsers for molecule diagrams translate pixel-based raster images such as  PNGs to chemical structure representations (e.g., SMILES). However, PDFs created by word processors including LaTeX and Word provide explicit locations and shapes for characters, lines, and polygons. We 
-extract symbols from born-digital PDF molecule images and then apply simple graph transformations to capture both visual and chemical structure in editable ChemDraw files (CDXML). Our fast ( PDF $\rightarrow$ visual graph $\rightarrow$ chemical graph ) pipeline does not require GPUs, Optical Character Recognition (OCR) or vectorization.
-We evaluate on standard benchmarks using SMILES strings, along with a novel evaluation that provides graph-based metrics and error compilation using LgEval. 
-The geometric information in born-digital PDFs produces a highly accurate parser, motivating generating training data for visual parsers that recognize from raster images, with extracted graphics, visual structure, and chemical structure as annotations. To do this we render SMILES strings in Indigo, parse molecule structure, and then validate recognized structure to select correct files.</p>
+<p>Most molecular diagram parsers recover chemical structure from raster images
+(e.g., PNGs). However, many PDFs include commands giving explicit locations and
+shapes for characters, lines, and polygons. We present a new parser that uses
+these born-digital PDF primitives as input. The parsing model is fast and
+accurate, and does not require GPUs, Optical Character Recognition (OCR), or
+vectorization. We use the parser to annotate raster images and then train a new
+multi-task neural network for recognizing molecules in raster images. We
+evaluate our parsers using SMILES and standard benchmarks, along with a novel
+evaluation protocol comparing molecular graphs directly that supports automatic
+error compilation and reveals errors missed by SMILES-based evaluation. On the
+synthetic USPTO benchmark, our born-digital parser obtains a recognition rate of
+98.4% (1% higher than previous models) and our relatively simple neural parser
+for raster images obtains a rate of 85% using less training data than existing
+neural approaches (thousands vs. millions of molecules).</p>
 
-<!-- <iframe src="/files/ICDAR2023.pdf" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe> -->
+<iframe src="/files/ICDAR2024.pdf" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
 
-<!-- <br> -->
+<p><br /></p>
 
 <iframe src="/files/ChemScraper-IJDAR-2024.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
 
 <p><br />
 <strong>.bib:</strong></p>
 
-<div class="language-bib highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@misc</span><span class="p">{</span><span class="nl">shahChemScraperGraphicsExtraction2023</span><span class="p">,</span>
-  <span class="na">title</span> <span class="p">=</span> <span class="s">{ChemScraper: Graphics Extraction, Molecular Diagram Parsing, and Annotated Data Generation for PDF Images}</span><span class="p">,</span>
-  <span class="na">shorttitle</span> <span class="p">=</span> <span class="s">{ChemScraper}</span><span class="p">,</span>
-  <span class="na">author</span> <span class="p">=</span> <span class="s">{Shah, Ayush Kumar and Amador, Bryan Manrique and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard}</span><span class="p">,</span>
-  <span class="na">year</span> <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
-  <span class="na">month</span> <span class="p">=</span> <span class="nv">nov</span><span class="p">,</span>
-  <span class="na">number</span> <span class="p">=</span> <span class="s">{arXiv:2311.12161}</span><span class="p">,</span>
-  <span class="na">eprint</span> <span class="p">=</span> <span class="s">{2311.12161}</span><span class="p">,</span>
-  <span class="na">primaryclass</span> <span class="p">=</span> <span class="s">{cs}</span><span class="p">,</span>
-  <span class="na">publisher</span> <span class="p">=</span> <span class="s">{arXiv}</span><span class="p">,</span>
-  <span class="na">doi</span> <span class="p">=</span> <span class="s">{10.48550/arXiv.2311.12161}</span><span class="p">,</span>
-  <span class="na">urldate</span> <span class="p">=</span> <span class="s">{2023-11-22}</span><span class="p">,</span>
-  <span class="na">archiveprefix</span> <span class="p">=</span> <span class="s">{arxiv}</span><span class="p">,</span>
-  <span class="na">keywords</span> <span class="p">=</span> <span class="s">{Computer Science - Computer Vision and Pattern Recognition}</span><span class="p">,</span>
-<span class="p">}</span>
+<div class="language-bib highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">shahChemScraper2024</span><span class="p">,</span>
+	<span class="na">abstract</span> <span class="p">=</span> <span class="s">{Most molecular diagram parsers recover chemical structure from raster images (e.g., PNGs). However, many PDFs include commands giving explicit locations and shapes for characters, lines, and polygons. We present a new parser that uses these born-digital PDF primitives as input. The parsing model is fast and accurate, and does not require GPUs, Optical Character Recognition (OCR), or vectorization. We use the parser to annotate raster images and then train a new multi-task neural network for recognizing molecules in raster images. We evaluate our parsers using SMILES and standard benchmarks, along with a novel evaluation protocol comparing molecular graphs directly that supports automatic error compilation and reveals errors missed by SMILES-based evaluation. On the synthetic USPTO benchmark, our born-digital parser obtains a recognition rate of 98.4{\%} (1{\%} higher than previous models) and our relatively simple neural parser for raster images obtains a rate of 85{\%} using less training data than existing neural approaches (thousands vs. millions of molecules).}</span><span class="p">,</span>
+	<span class="na">author</span> <span class="p">=</span> <span class="s">{Shah, Ayush Kumar and Amador, Bryan and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard}</span><span class="p">,</span>
+	<span class="na">date</span> <span class="p">=</span> <span class="s">{2024/09/01}</span><span class="p">,</span>
+	<span class="na">date-added</span> <span class="p">=</span> <span class="s">{2024-09-16 13:05:39 -0400}</span><span class="p">,</span>
+	<span class="na">date-modified</span> <span class="p">=</span> <span class="s">{2024-09-16 13:05:39 -0400}</span><span class="p">,</span>
+	<span class="na">doi</span> <span class="p">=</span> <span class="s">{10.1007/s10032-024-00486-7}</span><span class="p">,</span>
+	<span class="na">id</span> <span class="p">=</span> <span class="s">{Shah2024}</span><span class="p">,</span>
+	<span class="na">isbn</span> <span class="p">=</span> <span class="s">{1433-2825}</span><span class="p">,</span>
+	<span class="na">journal</span> <span class="p">=</span> <span class="s">{International Journal on Document Analysis and Recognition (IJDAR)}</span><span class="p">,</span>
+	<span class="na">number</span> <span class="p">=</span> <span class="s">{3}</span><span class="p">,</span>
+	<span class="na">pages</span> <span class="p">=</span> <span class="s">{395--414}</span><span class="p">,</span>
+	<span class="na">title</span> <span class="p">=</span> <span class="s">{ChemScraper: leveraging PDF graphics instructions for molecular diagram parsing}</span><span class="p">,</span>
+	<span class="na">url</span> <span class="p">=</span> <span class="s">{https://doi.org/10.1007/s10032-024-00486-7}</span><span class="p">,</span>
+	<span class="na">volume</span> <span class="p">=</span> <span class="s">{27}</span><span class="p">,</span>
+	<span class="na">year</span> <span class="p">=</span> <span class="s">{2024}</span><span class="p">,</span>
+	<span class="na">bdsk-url-1</span> <span class="p">=</span> <span class="s">{https://doi.org/10.1007/s10032-024-00486-7}</span><span class="p">}</span>
 </code></pre></div></div>
 
 <!-- 
