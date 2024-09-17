@@ -24,6 +24,20 @@ chemical formulas, across various mediums like born-digital PDFs, typeset images
 and handwritten strokes. 
 
 ## Past research works:
+- [ChemScraper](https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024),
+    a fast and accurate molecule diagram parser using 
+    characters and graphics extracted from born-digital (vector) PDF images—without
+    the need for OCR, GPU, or vectorization. It uses these outputs to create
+    training data for a new approach to visual parsing of molecule diagrams in
+    raster images (i.e., pixel-based formats like PNGs) using a multi-task,
+    segmentation-aware convolutional neural network (CNN).
+<!-- - --> 
+<!--     a molecule diagram parser, which extracts characters and graphics --> 
+<!--     from PDF molecule images using typesetting instructions, applies simple graph transformation algorithms -->
+<!--     to convert them into visual and then chemical graphs — without OCR, GPU, or vectorization. --> 
+<!--     ChemScraper's fast speed and reliable accuracy enables it -->
+<!--     to contribute significantly in creating fine-grained annotated dataset for --> 
+<!--     training visual parsers. -->
 - [MathDeck project](https://demo.mathdeck.org/), a 
     system for searching PDF documents in a portion of the ACL Anthology, incorporating 
     both formulas and text, displaying matched words and formulas in context.
