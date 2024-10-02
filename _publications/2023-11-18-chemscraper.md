@@ -1,12 +1,11 @@
 ---
-title: "ChemScraper: Graphics Extraction, Molecular Diagram Parsing,
-        and Annotated Data Generation for PDF Images"
+title: "ChemScraper: Leveraging PDF Graphics Instructions for Molecular Diagram Parsing"
 collection: publications
 permalink: /publication/2023-11-18-chemscraper
 excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2024-09-01
 venue: 'International Journal on Document Analysis and Recognition (IJDAR)'
-paperurl: 'https://arxiv.org/abs/2311.12161'
+paperurl: 'https://link.springer.com/article/10.1007/s10032-024-00486-7'
 poster: '/files/ICDAR2024.pdf'
 pdf: '/files/ChemScraper-IJDAR-2024.pdf'
 citation: 'A. K. Shah, B. M. Amador, A. Dey, M. Creekmore, B. Ocampo, S. Denmark, and R. Zanibbi, “ChemScraper: Leveraging PDF Graphics Instructions for Molecular Diagram Parsing,” in Document Analysis and Recognition (Journal) - IJDAR 2024, vol. 27, Sep. 2024, pp. 395-414, doi: 10.1007/s10032-024-00486-7.'
