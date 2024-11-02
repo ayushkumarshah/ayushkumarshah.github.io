@@ -145,8 +145,12 @@
 <lastmod>2023-06-29T02:26:45-04:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4001/files/CV_AyushKumarShah_current.pdf</loc>
+<loc>http://localhost:4001/files/CV_AyushKumarShah_current-latest.pdf</loc>
 <lastmod>2024-09-16T12:55:23-04:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4001/files/CV_AyushKumarShah_current.pdf</loc>
+<lastmod>2024-10-21T20:51:47-04:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4001/files/CV_AyushKumarShah_long.pdf</loc>
