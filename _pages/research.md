@@ -8,22 +8,21 @@ header:
 ---
 
 **Research Interests**: 
-Pattern recognition, computer vision, 
-and speech and natural language processing.
-detection and recognition of graphical 
-structures, multi-modal deep learning, speech and natural
-language processing, visual scene parsing.
 
+Pattern recognition, recognition of graphical structures,
+computer vision, speaker understanding, large language models, multi-modal deep
+learning, natural language processing.
 
 ## Current work:
-My current focus revolves around developing a fast, interpretable visual parser for math and chemical formulas. 
-Exploring innovative graph attention-based task interaction techniques, I aim to 
-enhance contextual information while maintaining a natural and interpretable graph representation to
-recognize graphical notations, including complex math and
-chemical formulas, across various mediums like born-digital PDFs, typeset images,
-and handwritten strokes. 
+My work centers around designing fast, efficient, and interpretable parsers
+for recognizing mathematical formulas and chemical diagrams
+across multiple formats, including PDFs, typeset images, and
+handwritten strokes. Through graph attention-based techniques and the
+integration of Large Language Models (LLMs), I aim to enhance how contextual
+information is processed while preserving a natural and interpretable graph
+representation.
 
-## Past research works:
+## Past/ongoing research works:
 - [ChemScraper](https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024),
     a fast and accurate molecule diagram parser using 
     characters and graphics extracted from born-digital (vector) PDF images—without

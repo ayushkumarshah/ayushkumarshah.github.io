@@ -17,21 +17,24 @@ Graduate Research Assisstant, <br>
 [Rochester Institute of Technology](https://www.rit.edu), New York
  -->
 
- 🔍 I'm a fifth-year Ph.D. candidate at Rochester Institute of Technology (RIT),
+ 🔍 I’m a fifth-year Ph.D. candidate at Rochester Institute of Technology (RIT),
  conducting research at the
 [Document and Pattern Recognition Lab (DPRL)](https://www.cs.rit.edu/~dprl/index.html),
 under the mentorship of [Dr. Richard Zanibbi](https://www.cs.rit.edu/~rlaz/).
 
-💡 My work centers around designing fast, efficient, and interpretable parsers for 
-recognizing complex mathematical and chemical formulas. I explore graphical 
-notations across multiple formats, including PDFs, typeset images, and 
-handwritten strokes. Through graph attention-based techniques, I aim to enhance
-how contextual information is processed, while preserving a natural and 
-interpretable graph representation.
+💡 My work centers around designing fast, efficient, and interpretable parsers
+for recognizing mathematical formulas and chemical diagrams
+across multiple formats, including PDFs, typeset images, and
+handwritten strokes. Through graph attention-based techniques and the
+integration of Large Language Models (LLMs), I aim to enhance how contextual
+information is processed while preserving a natural and interpretable graph
+representation.
 
-🎯 My goal is to deliver high accuracy in formula recognition through 
-models that are not only faster but also easier to interpret than traditional
-encoder-decoder architectures.
+🎯 My goal is to deliver high accuracy in math formula and chemical diagram
+recognition through models
+that are not only faster but also easier to interpret than traditional
+encoder-decoder architectures. Also, by leveraging LLMs, I've improved recognition
+accuracy in math and chemical diagram parsing.
 
 💻 Recently, I developed ChemScraper, a molecule diagram parser that extracts
 characters and graphics directly from PDF molecule images. By utilizing
@@ -41,9 +44,17 @@ ChemScraper offers a practical approach to creating fine-grained, annotated
 datasets for training visual parsers, and also a visual parser for parsing
 molecule images (raster) directly.
 
-🌐 **Research interests:** Pattern recognition, recognition of graphical structures, 
-computer vision, speaker understanding, large language models, multi-modal deep learning, 
-natural language processing .
+🎙️ In addition to my work at DPRL, I interned at Amazon with the Alexa Speaker
+Understanding team, where I focused on improving speech recognition and speaker
+identification using LLMs, generative AI models for speech synthesis, combined
+with a semi-supervised approach. This
+experience enhanced my skills in applying LLMs to real-world problems in speech
+technologies.
+
+🌐 **Research interests:** Pattern recognition, recognition of graphical structures,
+computer vision, speaker understanding, large language models, multi-modal deep
+learning, natural language processing.
+
 <!-- pattern recognition, computer vision, deep learning, -->
 <!-- large language models, speech and natural language processing. -->
 <!-- I'm on a mission to decode the intricacies of graphical structures, from mathematical formulas to chemical diagrams. -->
