@@ -23,18 +23,15 @@ Graduate Research Assisstant, <br>
 under the mentorship of [Dr. Richard Zanibbi](https://www.cs.rit.edu/~rlaz/).
 
 💡 My work centers around designing fast, efficient, and interpretable parsers
-for recognizing mathematical formulas and chemical diagrams
-across multiple formats, including PDFs, typeset images, and
-handwritten strokes. Through graph attention-based techniques and the
-integration of Large Language Models (LLMs), I aim to enhance how contextual
-information is processed while preserving a natural and interpretable graph
-representation.
+for recognizing complex mathematical and chemical formulas. I explore graphical
+notations across multiple formats, including PDFs, typeset images, and
+handwritten strokes. Through graph attention-based techniques, I aim to enhance
+how contextual information is processed, while preserving a natural and
+interpretable graph representation.
 
-🎯 My goal is to deliver high accuracy in math formula and chemical diagram
-recognition through models
+🎯 My goal is to deliver high accuracy in formula recognition through models
 that are not only faster but also easier to interpret than traditional
-encoder-decoder architectures. Also, by leveraging LLMs, I've improved recognition
-accuracy in math and chemical diagram parsing.
+encoder-decoder architectures.
 
 💻 Recently, I developed ChemScraper, a molecule diagram parser that extracts
 characters and graphics directly from PDF molecule images. By utilizing
@@ -46,14 +43,46 @@ molecule images (raster) directly.
 
 🎙️ In addition to my work at DPRL, I interned at Amazon with the Alexa Speaker
 Understanding team, where I focused on improving speech recognition and speaker
-identification using LLMs, generative AI models for speech synthesis, combined
-with a semi-supervised approach. This
-experience enhanced my skills in applying LLMs to real-world problems in speech
-technologies.
+identification using a semi-supervised approach. This
+experience enhanced my skills in solving real-world problems in speech
+technologies at scale.
 
 🌐 **Research interests:** Pattern recognition, recognition of graphical structures,
 computer vision, speaker understanding, large language models, multi-modal deep
 learning, natural language processing.
+
+<!--💡 My work centers around designing fast, efficient, and interpretable parsers-->
+<!--for recognizing mathematical formulas and chemical diagrams-->
+<!--across multiple formats, including PDFs, typeset images, and-->
+<!--handwritten strokes. Through graph attention-based techniques and the-->
+<!--integration of Large Language Models (LLMs), I aim to enhance how contextual-->
+<!--information is processed while preserving a natural and interpretable graph-->
+<!--representation.-->
+<!---->
+<!--🎯 My goal is to deliver high accuracy in math formula and chemical diagram-->
+<!--recognition through models-->
+<!--that are not only faster but also easier to interpret than traditional-->
+<!--encoder-decoder architectures. Also, by leveraging LLMs, I've improved recognition-->
+<!--accuracy in math and chemical diagram parsing.-->
+<!---->
+<!--💻 Recently, I developed ChemScraper, a molecule diagram parser that extracts-->
+<!--characters and graphics directly from PDF molecule images. By utilizing-->
+<!--typesetting instructions and simple graph transformations, it generates both-->
+<!--visual and chemical graphs — without the need for OCR, GPUs, or vectorization.-->
+<!--ChemScraper offers a practical approach to creating fine-grained, annotated-->
+<!--datasets for training visual parsers, and also a visual parser for parsing-->
+<!--molecule images (raster) directly.-->
+<!---->
+<!--🎙️ In addition to my work at DPRL, I interned at Amazon with the Alexa Speaker-->
+<!--Understanding team, where I focused on improving speech recognition and speaker-->
+<!--identification using LLMs, generative AI models for speech synthesis, combined-->
+<!--with a semi-supervised approach. This-->
+<!--experience enhanced my skills in applying LLMs to real-world problems in speech-->
+<!--technologies.-->
+<!---->
+<!--🌐 **Research interests:** Pattern recognition, recognition of graphical structures,-->
+<!--computer vision, speaker understanding, large language models, multi-modal deep-->
+<!--learning, natural language processing.-->
 
 <!-- pattern recognition, computer vision, deep learning, -->
 <!-- large language models, speech and natural language processing. -->
@@ -69,6 +98,10 @@ Get a PDF copy of my CV [here](/files/CV_AyushKumarShah_current.pdf)
 ---
 
 ## News
+
+- (Dec 19, 2024): Successfully defended and passed my Ph.D. dissertation proposal on 
+    "*Parsing of Math Formulas and Chemical Diagrams using Graph-Based
+        Representation and Attention Models*"
 
 - (Sept 3, 2024): Gave an oral presentation on "ChemScraper: Leveraging PDF
     Graphics Instructions for Molecular Diagram Parsing" at
