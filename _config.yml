@@ -142,7 +142,6 @@ include:
   - .htaccess
   - _pages
   - files
-  - valentines
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
