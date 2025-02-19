@@ -19,7 +19,7 @@
 
 
 
-<title>Page not in menu - Ayush Kumar Shah</title>
+<title>A Math Formula Extraction and Evaluation Framework for PDF Documents - Ayush Kumar Shah</title>
 
 
 
@@ -29,22 +29,22 @@
 
 <meta property="og:locale" content="en-US">
 <meta property="og:site_name" content="Ayush Kumar Shah">
-<meta property="og:title" content="Page not in menu">
+<meta property="og:title" content="A Math Formula Extraction and Evaluation Framework for PDF Documents">
 
 
-  <link rel="canonical" href="http://localhost:4001/non-menu-page/">
-  <meta property="og:url" content="http://localhost:4001/non-menu-page/">
+  <link rel="canonical" href="http://localhost:4001/publications/2021-09-01-mathseer-pipeline">
+  <meta property="og:url" content="http://localhost:4001/publications/2021-09-01-mathseer-pipeline">
 
 
 
-  <meta property="og:description" content="This is a page not in th emain menu">
+  <meta property="og:description" content="This paper is about a math extraction pipeline for PDF documents.">
 
 
 
   <meta name="twitter:site" content="@ayushkumarshah7">
-  <meta name="twitter:title" content="Page not in menu">
-  <meta name="twitter:description" content="This is a page not in th emain menu">
-  <meta name="twitter:url" content="http://localhost:4001/non-menu-page/">
+  <meta name="twitter:title" content="A Math Formula Extraction and Evaluation Framework for PDF Documents">
+  <meta name="twitter:description" content="This paper is about a math extraction pipeline for PDF documents.">
+  <meta name="twitter:url" content="http://localhost:4001/publications/2021-09-01-mathseer-pipeline">
 
   
     <meta name="twitter:card" content="summary">
@@ -62,6 +62,9 @@
 
 
 
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-09-01T00:00:00-04:00">
 
 
 
@@ -277,27 +280,43 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Page not in menu">
+    <meta itemprop="headline" content="A Math Formula Extraction and Evaluation Framework for PDF Documents">
     <!--  -->
-    <meta itemprop="description" content="This is a page not in th emain menu">
-    
+    <meta itemprop="description" content="This paper is about a math extraction pipeline for PDF documents.">
+    <meta itemprop="datePublished" content="September 01, 2021">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Page not in menu
+          <h1 class="page__title" itemprop="headline">A Math Formula Extraction and Evaluation Framework for PDF Documents
 </h1>
           
         
 
         
+            
+              <p>Published in <i>International Conference on Document Analysis and Recognition (ICDAR)</i>, 2021 </p>
+            
+        
 
         
+          <p>Recommended citation: A. K. Shah, A. Dey, and R. Zanibbi, “A Math Formula Extraction and Evaluation Framework for PDF Documents,” in Document Analysis and Recognition – ICDAR 2021, Cham, 2021, pp. 19–34. doi: 10.1007/978-3-030-86331-9_2. </p>
         
         
+          <a href=" https://doi.org/10.1007/978-3-030-86331-9_2 "><u>[url]</u></a>
         
         
+          <a href=" /files/Shah2021_MathSeer.pdf "><u>[pdf]</u></a>
+        
+        
+          <a href=" /files/237-presentation.pdf "><u>[poster]</u></a>
+        
+        
+          <a href=" /files/237-teaser.mp4 "><u>[video]</u></a>
+        
+        
+          <a href=" https://gitlab.com/dprl/MathSeer-extraction-pipeline "><u>[code]</u></a>
         
         
 
@@ -305,11 +324,43 @@
       
 
       <section class="page__content" itemprop="text">
-        <p>This is a page not in the menu. You can use markdown in this page.</p>
+        <h2 id="abstract">Abstract:</h2>
 
-<h1 id="heading-1">Heading 1</h1>
+<p>We present a processing pipeline for math formula extraction in PDF documents that takes advantage of character information
+in born-digital PDFs (e.g., created using LATEX or Word). Our pipeline
+is designed for indexing math in technical document collections to support math-aware search engines capable of processing queries containing
+keywords and formulas. The system includes user-friendly tools for visualizing recognition results in HTML pages. Our pipeline is comprised
+of a new state-of-the-art PDF character extractor that identifies precise
+bounding boxes for non-Latin symbols, a novel Single Shot Detectorbased formula detector, and an existing graph-based formula parser (QDGGA) for recognizing formula structure. To simplify analyzing structure recognition errors, we have extended the LgEval library (from the
+CROHME competitions) to allow viewing all instances of specific errors
+by clicking on HTML links. Our source code is publicly available.</p>
 
-<h1 id="heading-2">Heading 2</h1>
+<iframe src="/files/237-presentation.pdf" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+
+<p><br /></p>
+
+<iframe src="/files/Shah2021_MathSeer.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+
+<p><br />
+<strong>.bib:</strong></p>
+
+<div class="language-bib highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@InProceedings</span><span class="p">{</span><span class="nl">10.1007/978-3-030-86331-9_2</span><span class="p">,</span>
+<span class="na">author</span><span class="p">=</span><span class="s">"Shah, Ayush Kumar and Dey, Abhisek and Zanibbi, Richard"</span><span class="p">,</span>
+<span class="na">editor</span><span class="p">=</span><span class="s">"Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi"</span><span class="p">,</span>
+<span class="na">title</span><span class="p">=</span><span class="s">"A Math Formula Extraction and Evaluation Framework for PDF Documents"</span><span class="p">,</span>
+<span class="na">booktitle</span><span class="p">=</span><span class="s">"Document Analysis and Recognition -- ICDAR 2021"</span><span class="p">,</span>                 
+<span class="na">year</span><span class="p">=</span><span class="s">"2021"</span><span class="p">,</span>                                                                 
+<span class="na">publisher</span><span class="p">=</span><span class="s">"Springer International Publishing"</span><span class="p">,</span>                               
+<span class="na">address</span><span class="p">=</span><span class="s">"Cham"</span><span class="p">,</span>                                                              
+<span class="na">pages</span><span class="p">=</span><span class="s">"19--34"</span><span class="p">,</span>                                                              
+<span class="na">isbn</span><span class="p">=</span><span class="s">"978-3-030-86331-9"</span>                                                     
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="video-holder" style="padding-bottom: 58.03571428571429%">
+  <iframe width="560" height="325" src="/files/237-teaser.mp4" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+</div>
+
 
         
       </section>
@@ -325,11 +376,43 @@
 
       
 
+<section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4001/publications/2021-09-01-mathseer-pipeline" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4001/publications/2021-09-01-mathseer-pipeline" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4001/publications/2021-09-01-mathseer-pipeline" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
       
 
 
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="http://localhost:4001/publications/2023-04-26-search" class="pagination--pager" title="Searching the ACL Anthology with Math Formulas and Text
+">Next</a>
+    
+  </nav>
+
     </div>
 
+    
+      
+
+<div class="page__comments">
+  
+  
+    <h4 class="page__comments-title">Leave a Comment</h4>
+    <section id="disqus_thread"></section>
+  
+</div>
     
   </article>
 
@@ -382,6 +465,33 @@
   ga('create', '', 'auto');
   ga('send', 'pageview');
 </script>
+
+
+
+
+
+
+  
+  <script type="text/javascript">
+  	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  	var disqus_shortname = 'ayushkumarshah';
+
+  	/* * * DON'T EDIT BELOW THIS LINE * * */
+  	(function() {
+  		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  	})();
+
+  	/* * * DON'T EDIT BELOW THIS LINE * * */
+  	(function () {
+  		var s = document.createElement('script'); s.async = true;
+  		s.type = 'text/javascript';
+  		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  	}());
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
 

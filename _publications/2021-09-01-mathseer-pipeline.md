@@ -1,8 +1,8 @@
 ---
 title: "A Math Formula Extraction and Evaluation Framework for PDF Documents"
 collection: publications
-permalink: /publication/2021-09-01-mathseer-pipeline
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+permalink: /publications/2021-09-01-mathseer-pipeline
+excerpt: 'This paper is about a math extraction pipeline for PDF documents.'
 date: 2021-09-01
 venue: 'International Conference on Document Analysis and Recognition (ICDAR)'
 paperurl: 'https://doi.org/10.1007/978-3-030-86331-9_2'

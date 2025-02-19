@@ -19,7 +19,7 @@
 
 
 
-<title>A Math Formula Extraction and Evaluation Framework for PDF Documents - Ayush Kumar Shah</title>
+<title>Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas - Ayush Kumar Shah</title>
 
 
 
@@ -29,22 +29,22 @@
 
 <meta property="og:locale" content="en-US">
 <meta property="og:site_name" content="Ayush Kumar Shah">
-<meta property="og:title" content="A Math Formula Extraction and Evaluation Framework for PDF Documents">
+<meta property="og:title" content="Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas">
 
 
-  <link rel="canonical" href="http://localhost:4001/publication/2021-09-01-mathseer-pipeline">
-  <meta property="og:url" content="http://localhost:4001/publication/2021-09-01-mathseer-pipeline">
+  <link rel="canonical" href="http://localhost:4001/publications/2023-04-30-lgap">
+  <meta property="og:url" content="http://localhost:4001/publications/2023-04-30-lgap">
 
 
 
-  <meta property="og:description" content="This paper is about the number 1. The number 2 is left for future work.">
+  <meta property="og:description" content="This paper is about a new visual parsing model for math formulas.">
 
 
 
   <meta name="twitter:site" content="@ayushkumarshah7">
-  <meta name="twitter:title" content="A Math Formula Extraction and Evaluation Framework for PDF Documents">
-  <meta name="twitter:description" content="This paper is about the number 1. The number 2 is left for future work.">
-  <meta name="twitter:url" content="http://localhost:4001/publication/2021-09-01-mathseer-pipeline">
+  <meta name="twitter:title" content="Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas">
+  <meta name="twitter:description" content="This paper is about a new visual parsing model for math formulas.">
+  <meta name="twitter:url" content="http://localhost:4001/publications/2023-04-30-lgap">
 
   
     <meta name="twitter:card" content="summary">
@@ -64,7 +64,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-09-01T00:00:00-04:00">
+  <meta property="article:published_time" content="2023-04-30T00:00:00-04:00">
 
 
 
@@ -105,9 +105,11 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">
+<!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1739991299">
 
 <meta http-equiv="cleartype" content="on">
+
     
 
 <!-- start custom head snippets -->
@@ -278,43 +280,44 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="A Math Formula Extraction and Evaluation Framework for PDF Documents">
+    <meta itemprop="headline" content="Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas">
     <!--  -->
-    <meta itemprop="description" content="This paper is about the number 1. The number 2 is left for future work.">
-    <meta itemprop="datePublished" content="September 01, 2021">
+    <meta itemprop="description" content="This paper is about a new visual parsing model for math formulas.">
+    <meta itemprop="datePublished" content="April 30, 2023">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">A Math Formula Extraction and Evaluation Framework for PDF Documents
+          <h1 class="page__title" itemprop="headline">Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas
 </h1>
           
         
 
         
             
-              <p>Published in <i>International Conference on Document Analysis and Recognition (ICDAR)</i>, 2021 </p>
+              <p>Published in <i>International Conference on Document Analysis and Recognition (ICDAR)</i>, 2023 </p>
             
         
 
         
-          <p>Recommended citation: A. K. Shah, A. Dey, and R. Zanibbi, “A Math Formula Extraction and Evaluation Framework for PDF Documents,” in Document Analysis and Recognition – ICDAR 2021, Cham, 2021, pp. 19–34. doi: 10.1007/978-3-030-86331-9_2. </p>
+          <p>Recommended citation: A. K. Shah and R. Zanibbi, “Line-of-Sight with Graph Attention Parser (LGAP) for Math Formulas,” in Document Analysis and Recognition - ICDAR 2023, G. A. Fink, R. Jain, K. Kise, and R. Zanibbi, Eds., in Lecture Notes in Computer Science. Cham: Springer Nature Switzerland, 2023, pp. 401–419. doi: 10.1007/978-3-031-41734-4_25. </p>
         
         
-          <a href=" https://doi.org/10.1007/978-3-030-86331-9_2 "><u>[url]</u></a>
+          <a href=" https://link.springer.com/chapter/10.1007/978-3-031-41734-4_25 "><u>[url]</u></a>
         
         
-          <a href=" /files/Shah2021_MathSeer.pdf "><u>[pdf]</u></a>
+          <a href=" /files/Shah2023_LGAP.pdf "><u>[pdf]</u></a>
         
         
-          <a href=" /files/237-presentation.pdf "><u>[poster]</u></a>
+          <a href=" /files/ICDAR2023.pdf "><u>[poster]</u></a>
         
         
-          <a href=" /files/237-teaser.mp4 "><u>[video]</u></a>
+          <a href=" /files/P1.17-teaser.mov "><u>[video]</u></a>
         
         
-          <a href=" https://gitlab.com/dprl/MathSeer-extraction-pipeline "><u>[code]</u></a>
+          <a href=" https://gitlab.com/dprl/qdgga-parser "><u>[code]</u></a>
+        
         
 
         </header>
@@ -323,41 +326,74 @@
       <section class="page__content" itemprop="text">
         <h2 id="abstract">Abstract:</h2>
 
-<p>We present a processing pipeline for math formula extraction in PDF documents that takes advantage of character information
-in born-digital PDFs (e.g., created using LATEX or Word). Our pipeline
-is designed for indexing math in technical document collections to support math-aware search engines capable of processing queries containing
-keywords and formulas. The system includes user-friendly tools for visualizing recognition results in HTML pages. Our pipeline is comprised
-of a new state-of-the-art PDF character extractor that identifies precise
-bounding boxes for non-Latin symbols, a novel Single Shot Detectorbased formula detector, and an existing graph-based formula parser (QDGGA) for recognizing formula structure. To simplify analyzing structure recognition errors, we have extended the LgEval library (from the
-CROHME competitions) to allow viewing all instances of specific errors
-by clicking on HTML links. Our source code is publicly available.</p>
+<p>Recently there have been notable advancements in encoder-decoder models for 
+parsing the visual appearance of mathematical formulas. These approaches
+transform input formula images or handwritten stroke sequences into output 
+strings (e.g., LaTeX) representing recognized symbols and their spatial
+arrangement on writing lines (i.e., a Symbol Layout Tree (SLT)). These
+sequential encoder-decoder models
+produce state-of-the-art results but suffer from a lack of
+interpretability: there is no direct mapping between image regions or handwritten strokes 
+and detected
+symbols and relationships. In this paper, we present the Line-of-sight with 
+Graph Attention Parser (LGAP), a visual parsing model that treats recognizing
+formula appearance as a graph search
+problem. LGAP produces an output SLT from a Maximum  Spanning Tree (MST) over
+input primitives (e.g., connected components in images, or handwritten strokes).
+LGAP improves the earlier QD-GGA MST-based parser by
+representing punctuation relationships more consistently 
+in ground truth,  using additional context from line-of-sight graph
+neighbors in visual features, and pooling convolutional features using spatial
+pyramidal pooling rather than single-region average pooling. These changes
+improve accuracy while preserving the interpretibility of MST-based visual
+parsing.</p>
 
-<iframe src="/files/237-presentation.pdf" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+<iframe src="/files/ICDAR2023.pdf" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
 
 <p><br /></p>
 
-<iframe src="/files/Shah2021_MathSeer.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+<iframe src="/files/Shah2023_LGAP.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
 
 <p><br />
 <strong>.bib:</strong></p>
 
-<div class="language-bib highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@InProceedings</span><span class="p">{</span><span class="nl">10.1007/978-3-030-86331-9_2</span><span class="p">,</span>
-<span class="na">author</span><span class="p">=</span><span class="s">"Shah, Ayush Kumar and Dey, Abhisek and Zanibbi, Richard"</span><span class="p">,</span>
-<span class="na">editor</span><span class="p">=</span><span class="s">"Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi"</span><span class="p">,</span>
-<span class="na">title</span><span class="p">=</span><span class="s">"A Math Formula Extraction and Evaluation Framework for PDF Documents"</span><span class="p">,</span>
-<span class="na">booktitle</span><span class="p">=</span><span class="s">"Document Analysis and Recognition -- ICDAR 2021"</span><span class="p">,</span>                 
-<span class="na">year</span><span class="p">=</span><span class="s">"2021"</span><span class="p">,</span>                                                                 
-<span class="na">publisher</span><span class="p">=</span><span class="s">"Springer International Publishing"</span><span class="p">,</span>                               
-<span class="na">address</span><span class="p">=</span><span class="s">"Cham"</span><span class="p">,</span>                                                              
-<span class="na">pages</span><span class="p">=</span><span class="s">"19--34"</span><span class="p">,</span>                                                              
-<span class="na">isbn</span><span class="p">=</span><span class="s">"978-3-030-86331-9"</span>                                                     
+<div class="language-bib highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@InProceedings</span><span class="p">{</span><span class="nl">10.1007/978-3-031-41734-4_25</span><span class="p">,</span>
+<span class="na">author</span><span class="p">=</span><span class="s">"Shah, Ayush Kumar and Zanibbi, Richard"</span><span class="p">,</span>                      
+<span class="na">editor</span><span class="p">=</span><span class="s">"Fink, Gernot A. and Jain, Rajiv and Kise, Koichi and Zanibbi, Richard"</span><span class="p">,</span>                      
+<span class="na">title</span><span class="p">=</span><span class="s">"Line-of-Sight with Graph Attention Parser (LGAP) for Math Formulas"</span><span class="p">,</span>
+<span class="na">booktitle</span><span class="p">=</span><span class="s">"Document Analysis and Recognition - ICDAR 2023"</span><span class="p">,</span>
+<span class="na">year</span><span class="p">=</span><span class="s">"2023"</span><span class="p">,</span>                                
+<span class="na">publisher</span><span class="p">=</span><span class="s">"Springer Nature Switzerland"</span><span class="p">,</span>    
+<span class="na">address</span><span class="p">=</span><span class="s">"Cham"</span><span class="p">,</span>                             
+<span class="na">pages</span><span class="p">=</span><span class="s">"401--419"</span><span class="p">,</span>                           
+<span class="na">isbn</span><span class="p">=</span><span class="s">"978-3-031-41734-4"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<div class="video-holder" style="padding-bottom: 58.03571428571429%">
-  <iframe width="560" height="325" src="/files/237-teaser.mp4" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
-</div>
+<!-- @InProceedings{10.1007/978-3-030-86331-9_2,\\ -->
+<!-- author="**Shah, Ayush Kumar** and Dey, Abhisek and Zanibbi, Richard",\\ -->
+<!-- editor="Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi",\\ -->
+<!-- title="A Math Formula Extraction and Evaluation Framework for PDF Documents",\\ -->
+<!-- booktitle="Document Analysis and Recognition -- ICDAR 2021",                 \\ -->
+<!-- year="2021",                                                                 \\ -->
+<!-- publisher="Springer International Publishing",                               \\ -->
+<!-- address="Cham",                                                              \\ -->
+<!-- pages="19--34",                                                              \\ -->
+<!-- isbn="978-3-030-86331-9"                                                     \\ -->
+<!-- } -->
 
+<!-- 
+
+
+<div class="video-holder" style="padding-bottom: 58.03571428571429%">
+  <iframe width="560" 
+          height="325" 
+          src="/files/P1.17-teaser.mov" 
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen></iframe>
+</div>
+ -->
 
         
       </section>
@@ -378,11 +414,11 @@ by clicking on HTML links. Our source code is publicly available.</p>
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=http://localhost:4001/publication/2021-09-01-mathseer-pipeline" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4001/publications/2023-04-30-lgap" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4001/publication/2021-09-01-mathseer-pipeline" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4001/publications/2023-04-30-lgap" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4001/publication/2021-09-01-mathseer-pipeline" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4001/publications/2023-04-30-lgap" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
       
@@ -390,10 +426,11 @@ by clicking on HTML links. Our source code is publicly available.</p>
 
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="http://localhost:4001/publications/2023-04-26-search" class="pagination--pager" title="Searching the ACL Anthology with Math Formulas and Text
+">Previous</a>
     
     
-      <a href="http://localhost:4001/publication/2023-04-26-search" class="pagination--pager" title="Searching the ACL Anthology with Math Formulas and Text
+      <a href="http://localhost:4001/publications/2023-11-18-chemscraper" class="pagination--pager" title="ChemScraper: Leveraging PDF Graphics Instructions for Molecular Diagram Parsing
 ">Next</a>
     
   </nav>
