@@ -1,0 +1,72 @@
+---
+layout: archive
+---
+
+
+  <div class="archive">
+    <h1 class="page__title">{{ page.title }}</h1>
+
+    <div class="news-section">
+      {% assign news_by_year = site.data.news | group_by: "year" %}
+
+      {% for year_group in news_by_year %}
+        <h2>📰 {{ year_group.name }}</h2>
+        {% for news in year_group.items %}
+          <div class="news-item">
+            <span class="news-date">{{ news.date }}</span>
+            <p>{{ news.content }}</p>
+          </div>
+        {% endfor %}
+      {% endfor %}
+
+      <h2 class="older-news-toggle">📜 Older News <span class="toggle-icon">▼</span></h2>
+      <div class="older-news">
+        {% for news in site.data.news %}
+          {% if news.year < 2023 %}
+            <div class="news-item">
+              <span class="news-date">{{ news.date }}</span>
+              <p>{{ news.content }}</p>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+<style>
+  .news-section {
+    margin-top: 20px;
+  }
+  .news-item {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .news-date {
+    font-weight: bold;
+    color: #555;
+  }
+  .older-news {
+    display: none;
+  }
+  .older-news-toggle {
+    cursor: pointer;
+    color: #3498db;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  .toggle-icon {
+    font-size: 14px;
+  }
+</style>
+
+<script>
+  document.querySelector('.older-news-toggle').addEventListener('click', function() {
+    const olderNews = document.querySelector('.older-news');
+    olderNews.style.display = olderNews.style.display === 'none' ? 'block' : 'none';
+    const icon = document.querySelector('.toggle-icon');
+    icon.textContent = icon.textContent === '▼' ? '▲' : '▼';
+  });
+</script>

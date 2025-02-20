@@ -1,0 +1,130 @@
+---
+layout: archive
+---
+
+  <!-- About Section -->
+  <div class="about-section">
+    <!--<h1 class="page__title">{{ page.title }}</h1>-->
+    <div class="about-content">
+      {{ content }}
+    </div>
+  </div>
+
+
+  <!-- News Section -->
+
+<div class="news-section">
+  <h1>📰 News</h1>
+
+  {% assign news_by_year = site.data.news | group_by: "year" %}
+
+  {% for year_group in news_by_year %}
+    <div class="news-year-section">
+      <h2 class="news-year">{{ year_group.name }}</h2>
+      <hr class="news-separator">
+      {% for news in year_group.items %}
+        <div class="news-item">
+          <span class="news-date">{{ news.date }}</span>
+          <p>{{ news.content | markdownify }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+
+
+<style>
+  .news-section {
+    margin-top: 20px;
+  }
+  .news-year {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 20px;
+  }
+  .news-separator {
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #fc6d26);
+    border-radius: 2px;
+    margin-bottom: 15px;
+  }
+  .news-item {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .news-date {
+    font-weight: bold;
+    color: #555;
+  }
+
+  .about-section {
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .resume-container, .projects-container {
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center;
+      margin-top: 15px; /* Reduce top margin */
+  }
+
+  .btn-resume, .btn-projects {
+      display: inline-block;
+      padding: 8px 14px; /* Reduced padding (height and width) */
+      border-radius: 4px;
+      text-decoration: none !important;
+      font-size: 0.9rem; /* Slightly smaller text */
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-align: center;
+      width: auto;
+      min-width: 90px; /* Reduced minimum width */
+  }
+
+  .btn-resume {
+      background-color: #3498db; /* Blue */
+      color: white;
+  }
+
+  .btn-resume:hover {
+      transform: scale(1.05);
+      background-color: #2980b9; /* Darker blue on hover */
+  }
+
+  .btn-projects {
+      background-color: #2ecc71; /* Green */
+      color: white;
+  }
+
+  .btn-projects:hover {
+      transform: scale(1.05);
+      background-color: #27ae60; /* Darker green on hover */
+  }
+
+  /* Responsive Design */
+  @media (max-width: 600px) {
+      .btn-resume, .btn-projects {
+          width: 70%; /* Reduce width for smaller screens */
+          font-size: 0.85rem; /* Slightly smaller text for mobile */
+          padding: 6px 12px; /* Further reduce padding */
+      }
+  }
+
+</style>
+
+<!-- JavaScript for Toggle -->
+<script>
+  document.querySelector('.older-news-toggle').addEventListener('click', function() {
+    const olderNews = document.querySelector('.older-news');
+    olderNews.style.display = olderNews.style.display === 'none' ? 'block' : 'none';
+    const icon = document.querySelector('.toggle-icon');
+    icon.textContent = icon.textContent === '▼' ? '▲' : '▼';
+  });
+</script>
