@@ -94,7 +94,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740029133">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740039705">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -182,7 +182,150 @@
   </div>
 </div>
 
-    
+    <style>
+  .archive {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+    border-radius: 10px;
+  }
+  .publication-link {
+    text-decoration: none !important; color: inherit; border: none;
+    color: inherit;
+  }
+  .publication-item {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+  }
+  .publication-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .publication-links {
+      display: flex;
+      flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+      gap: 10px;
+      margin-top: 10px;
+      justify-content: center; /* Centers the buttons when wrapped */
+  }
+
+  .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      text-decoration: none !important;
+      border-radius: 5px;
+      font-weight: bold;
+      color: white;
+      transition: background 0.3s ease, transform 0.2s ease;
+      min-width: 120px; /* Prevents buttons from shrinking too much */
+      text-align: center; /* Ensures text is centered */
+  }
+
+  .btn:hover {
+      transform: scale(1.05);
+  }
+
+  /* Responsive Design: Stack buttons for very small screens */
+  @media (max-width: 480px) {
+      .publication-links {
+          flex-direction: column;
+          align-items: center; /* Center align buttons in column view */
+      }
+  }
+    .btn-paper { background-color: #3498db; }
+    .btn-pdf { background-color: #555555; }
+    .btn-poster { background-color: #9b59b6; }
+    .btn-video { background-color: #e74c3c; }
+    .btn-code { background-color: #fc6d26; }
+    .btn-demo { background-color: #2ecc71; }
+    .btn-info { background-color: #34495e; }
+    .publication-separator {
+      height: 3px;
+      background: linear-gradient(to right, #3498db, #fc6d26);
+      margin: 15px 0;
+    }
+
+/* ✅ Wrapper to ensure proper centering */
+.bibtex-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    width: 100%; /* Ensures full width */
+}
+
+/* ✅ Centering container */
+.bibtex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content */
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Ensures it doesn’t stretch too much */
+    text-align: center;
+}
+
+/* ✅ BibTeX Textarea */
+.bibtex-textarea {
+    width: 100%;
+    height: 400px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    resize: vertical;
+    border-radius: 5px;
+    display: none;
+    overflow-y: auto;
+}
+
+/* ✅ BibTeX Buttons */
+.btn-bibtex, .btn-bibtex-copy {
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 0.9rem;
+    text-align: center;
+    width: auto;
+    min-width: 100px;
+}
+
+/* ✅ Button Hover */
+.btn-bibtex:hover, .btn-bibtex-copy:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 600px) {
+    .bibtex-container {
+        max-width: 90%;
+    }
+
+    .bibtex-textarea {
+        height: 300px;
+        font-size: 0.8rem;
+    }
+
+    .btn-bibtex, .btn-bibtex-copy {
+        font-size: 0.8rem;
+        min-width: 120px;
+    }
+}
+
+</style>
+
+
 
 
 
@@ -288,7 +431,7 @@
  (2024)</h1>
           
           <p><strong>Venue:</strong> International Journal on Document Analysis and Recognition (IJDAR) </p>
-          <p> <strong>Status:</strong>  Published </p>
+          <p> <strong>Status:</strong>  Submitted </p>
 
           
             <p><strong>Recommended Citation:</strong> A. K. Shah, B. M. Amador, A. Dey, M. Creekmore, B. Ocampo, S. Denmark, and R. Zanibbi, “ChemScraper: Leveraging PDF Graphics Instructions for Molecular Diagram Parsing,” in Document Analysis and Recognition (Journal) - IJDAR 2024, vol. 27, Sep. 2024, pp. 395-414, doi: 10.1007/s10032-024-00486-7.</p>
@@ -312,6 +455,33 @@
               <a href="https://chemscraper.platform.moleculemaker.org/configuration" class="btn btn-demo" target="_blank">Live Demo</a>
             
           </div>
+          
+          <div class="bibtex-wrapper">
+              <div class="bibtex-container">
+                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-2024', event)">📋 Cite</button>
+                  <textarea id="bibtex-2024" class="bibtex-textarea" readonly style="display: none;">@article{shahChemScraper2024,
+    author = {Shah, Ayush Kumar and Amador, Bryan and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard},
+    date = {2024/09/01},
+    date-added = {2024-09-16 13:05:39 -0400},
+    date-modified = {2024-09-16 13:05:39 -0400},
+    doi = {10.1007/s10032-024-00486-7},
+    id = {Shah2024},
+    isbn = {1433-2825},
+    journal = {International Journal on Document Analysis and Recognition (IJDAR)},
+    number = {3},
+    pages = {395--414},
+    title = {ChemScraper: leveraging PDF graphics instructions for molecular diagram parsing},
+    url = {https://doi.org/10.1007/s10032-024-00486-7},
+    volume = {27},
+    year = {2024},
+    bdsk-url-1 = {https://doi.org/10.1007/s10032-024-00486-7}
+}
+</textarea>
+                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-2024', event)" style="display: none;">📋 Copy BibTeX</button>
+              </div>
+          </div>
+          
+
         </header>
       
 
@@ -338,27 +508,28 @@ neural approaches (thousands vs. millions of molecules).</p>
 
 <iframe src="/files/ChemScraper-IJDAR-2024.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
 
-<p><br />
-<strong>.bib:</strong></p>
-
-<div class="language-bib highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">shahChemScraper2024</span><span class="p">,</span>
-	<span class="na">abstract</span> <span class="p">=</span> <span class="s">{Most molecular diagram parsers recover chemical structure from raster images (e.g., PNGs). However, many PDFs include commands giving explicit locations and shapes for characters, lines, and polygons. We present a new parser that uses these born-digital PDF primitives as input. The parsing model is fast and accurate, and does not require GPUs, Optical Character Recognition (OCR), or vectorization. We use the parser to annotate raster images and then train a new multi-task neural network for recognizing molecules in raster images. We evaluate our parsers using SMILES and standard benchmarks, along with a novel evaluation protocol comparing molecular graphs directly that supports automatic error compilation and reveals errors missed by SMILES-based evaluation. On the synthetic USPTO benchmark, our born-digital parser obtains a recognition rate of 98.4{\%} (1{\%} higher than previous models) and our relatively simple neural parser for raster images obtains a rate of 85{\%} using less training data than existing neural approaches (thousands vs. millions of molecules).}</span><span class="p">,</span>
-	<span class="na">author</span> <span class="p">=</span> <span class="s">{Shah, Ayush Kumar and Amador, Bryan and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard}</span><span class="p">,</span>
-	<span class="na">date</span> <span class="p">=</span> <span class="s">{2024/09/01}</span><span class="p">,</span>
-	<span class="na">date-added</span> <span class="p">=</span> <span class="s">{2024-09-16 13:05:39 -0400}</span><span class="p">,</span>
-	<span class="na">date-modified</span> <span class="p">=</span> <span class="s">{2024-09-16 13:05:39 -0400}</span><span class="p">,</span>
-	<span class="na">doi</span> <span class="p">=</span> <span class="s">{10.1007/s10032-024-00486-7}</span><span class="p">,</span>
-	<span class="na">id</span> <span class="p">=</span> <span class="s">{Shah2024}</span><span class="p">,</span>
-	<span class="na">isbn</span> <span class="p">=</span> <span class="s">{1433-2825}</span><span class="p">,</span>
-	<span class="na">journal</span> <span class="p">=</span> <span class="s">{International Journal on Document Analysis and Recognition (IJDAR)}</span><span class="p">,</span>
-	<span class="na">number</span> <span class="p">=</span> <span class="s">{3}</span><span class="p">,</span>
-	<span class="na">pages</span> <span class="p">=</span> <span class="s">{395--414}</span><span class="p">,</span>
-	<span class="na">title</span> <span class="p">=</span> <span class="s">{ChemScraper: leveraging PDF graphics instructions for molecular diagram parsing}</span><span class="p">,</span>
-	<span class="na">url</span> <span class="p">=</span> <span class="s">{https://doi.org/10.1007/s10032-024-00486-7}</span><span class="p">,</span>
-	<span class="na">volume</span> <span class="p">=</span> <span class="s">{27}</span><span class="p">,</span>
-	<span class="na">year</span> <span class="p">=</span> <span class="s">{2024}</span><span class="p">,</span>
-	<span class="na">bdsk-url-1</span> <span class="p">=</span> <span class="s">{https://doi.org/10.1007/s10032-024-00486-7}</span><span class="p">}</span>
-</code></pre></div></div>
+<!--<br>-->
+<!--**.bib:**-->
+<!---->
+<!--```bib-->
+<!--@article{shahChemScraper2024,-->
+<!--	abstract = {Most molecular diagram parsers recover chemical structure from raster images (e.g., PNGs). However, many PDFs include commands giving explicit locations and shapes for characters, lines, and polygons. We present a new parser that uses these born-digital PDF primitives as input. The parsing model is fast and accurate, and does not require GPUs, Optical Character Recognition (OCR), or vectorization. We use the parser to annotate raster images and then train a new multi-task neural network for recognizing molecules in raster images. We evaluate our parsers using SMILES and standard benchmarks, along with a novel evaluation protocol comparing molecular graphs directly that supports automatic error compilation and reveals errors missed by SMILES-based evaluation. On the synthetic USPTO benchmark, our born-digital parser obtains a recognition rate of 98.4{\%} (1{\%} higher than previous models) and our relatively simple neural parser for raster images obtains a rate of 85{\%} using less training data than existing neural approaches (thousands vs. millions of molecules).},-->
+<!--	author = {Shah, Ayush Kumar and Amador, Bryan and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard},-->
+<!--	date = {2024/09/01},-->
+<!--	date-added = {2024-09-16 13:05:39 -0400},-->
+<!--	date-modified = {2024-09-16 13:05:39 -0400},-->
+<!--	doi = {10.1007/s10032-024-00486-7},-->
+<!--	id = {Shah2024},-->
+<!--	isbn = {1433-2825},-->
+<!--	journal = {International Journal on Document Analysis and Recognition (IJDAR)},-->
+<!--	number = {3},-->
+<!--	pages = {395--414},-->
+<!--	title = {ChemScraper: leveraging PDF graphics instructions for molecular diagram parsing},-->
+<!--	url = {https://doi.org/10.1007/s10032-024-00486-7},-->
+<!--	volume = {27},-->
+<!--	year = {2024},-->
+<!--	bdsk-url-1 = {https://doi.org/10.1007/s10032-024-00486-7}}-->
+<!--```-->
 
 <!-- 
 
@@ -378,63 +549,40 @@ neural approaches (thousands vs. millions of molecules).</p>
   </article>
 </div>
 
-<style>
-  .publication-links {
-      display: flex;
-      flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
-      gap: 10px;
-      margin-top: 10px;
-      justify-content: center; /* Centers the buttons when wrapped */
-  }
+<script>
+     // JavaScript for Expandable BibTeX and Copy to Clipboard
+    // ✅ Toggle BibTeX display
+    function toggleBibtex(id, event) {
+        event.stopPropagation(); // Prevents triggering the parent <a> link
 
-  .btn {
-      display: inline-block;
-      padding: 10px 15px;
-      text-decoration: none !important;
-      border-radius: 5px;
-      font-weight: bold;
-      color: white;
-      transition: background 0.3s ease, transform 0.2s ease;
-      min-width: 120px; /* Prevents buttons from shrinking too much */
-      text-align: center; /* Ensures text is centered */
-  }
+        var bibtexText = document.getElementById(id);
+        var copyButton = document.querySelector('[onclick="copyBibtex(\'' + id + '\', event)"]');
+        var showButton = document.querySelector('[onclick="toggleBibtex(\'' + id + '\', event)"]');
 
-  .btn:hover {
-      transform: scale(1.05);
-  }
+        if (bibtexText.style.display === "none") {
+            bibtexText.style.display = "block";
+            copyButton.style.display = "inline-block";
+            showButton.textContent = "🔽 Hide BibTeX";
+        } else {
+            bibtexText.style.display = "none";
+            copyButton.style.display = "none";
+            showButton.textContent = "📋 Cite";
+        }
+    }
 
-  /* Responsive Design: Stack buttons for very small screens */
-  @media (max-width: 480px) {
-      .publication-links {
-          flex-direction: column;
-          align-items: center; /* Center align buttons in column view */
-      }
-  }
+    // ✅ Copy BibTeX to Clipboard
+    function copyBibtex(id, event) {
+        event.stopPropagation(); // Prevents triggering the parent <a> link
 
-  <!--.publication-links {-->
-  <!--  display: flex;-->
-  <!--  gap: 10px;-->
-  <!--  margin-top: 10px;-->
-  <!--}-->
-  <!--.btn {-->
-  <!--  display: inline-block;-->
-  <!--  padding: 10px 15px;-->
-  <!--  text-decoration: none !important;-->
-  <!--  border-radius: 5px;-->
-  <!--  font-weight: bold;-->
-  <!--  color: white;-->
-  <!--  transition: background 0.3s ease, transform 0.2s ease;-->
-  <!--}-->
-  <!--.btn:hover {-->
-  <!--  transform: scale(1.05);-->
-  <!--}-->
-  .btn-paper { background-color: #3498db; }
-  .btn-pdf { background-color: #555555; }
-  .btn-poster { background-color: #9b59b6; }
-  .btn-video { background-color: #e74c3c; }
-  .btn-code { background-color: #fc6d26; }
-  .btn-demo { background-color: #2ecc71; }
-</style>
+        var bibtexText = document.getElementById(id);
+        navigator.clipboard.writeText(bibtexText.value).then(() => {
+            alert("📋 BibTeX copied to clipboard!");
+        }).catch(err => {
+            console.error("Failed to copy: ", err);
+        });
+    }
+</script>
+
 
 
     <div class="page__footer">

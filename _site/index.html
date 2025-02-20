@@ -91,7 +91,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740029133">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740039705">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -267,236 +267,341 @@
     
       <h1 class="page__title">About me</h1>
     
-    <!--
-# Ayush Kumar Shah
- -->
-
-<!--
-Graduate Research Assisstant, <br>
-[Rochester Institute of Technology](https://www.rit.edu), New York
- -->
-
-<p>🔍 I’m a fifth-year Ph.D. candidate at Rochester Institute of Technology (RIT),
+      <!-- About Section -->
+  <div class="about-section">
+    <!--<h1 class="page__title">About me</h1>-->
+    <div class="about-content">
+      <p>🔍 I’m a fifth-year Ph.D. candidate at Rochester Institute of Technology (RIT),
  conducting research at the
 <a href="https://www.cs.rit.edu/~dprl/index.html">Document and Pattern Recognition Lab (DPRL)</a>,
 under the mentorship of <a href="https://www.cs.rit.edu/~rlaz/">Dr. Richard Zanibbi</a>.</p>
 
 <p>💡 My work centers around designing fast, efficient, and interpretable parsers
-for recognizing complex mathematical and chemical formulas. I explore graphical
-notations across multiple formats, including PDFs, typeset images, and
-handwritten strokes. Through graph attention-based techniques, I aim to enhance
-how contextual information is processed, while preserving a natural and
+for recognizing mathematical formulas and chemical diagrams from documents across 
+multiple formats, including PDFs, typeset images, and handwritten strokes.
+Through graph attention-based techniques in a multi-task learning framework, I
+aim to enhance contextual information, while preserving a natural and
 interpretable graph representation.</p>
 
-<p>🎯 My goal is to deliver high accuracy in formula recognition through models
-that are not only faster but also easier to interpret than traditional
-encoder-decoder architectures.</p>
+<p>💻 <strong>Recent Projects:</strong></p>
+<ul>
+  <li><strong>Multiodal Chemical Search</strong>: A multimodal search tool for retrieving chemical reactions, molecular structures, and associated text from scientific literature, linking visual and textual representations of chemical information.</li>
+  <li><strong>ChemScraper</strong>: A molecule diagram parser for extracting molecular graphics from PDFs.</li>
+  <li><strong>MathDeck</strong>: A math-aware search system supporting formulas &amp; text.</li>
+</ul>
 
-<p>💻 Recently, I developed ChemScraper, a molecule diagram parser that extracts
-characters and graphics directly from PDF molecule images. By utilizing
-typesetting instructions and simple graph transformations, it generates both
-visual and chemical graphs — without the need for OCR, GPUs, or vectorization.
-ChemScraper offers a practical approach to creating fine-grained, annotated
-datasets for training visual parsers, and also a visual parser for parsing
-molecule images (raster) directly.</p>
+<div class="projects-container">
+  <a href="/projects/" class="btn btn-projects">View All Projects</a>
+</div>
 
-<p>🎙️ In addition to my work at DPRL, I interned at Amazon with the Alexa Speaker
-Understanding team, where I focused on improving speech recognition and speaker
-identification using a semi-supervised approach. This
-experience enhanced my skills in solving real-world problems in speech
-technologies at scale.</p>
+<!--🎙️ **Industry Experience:**-->
+<!--- **Amazon (Alexa AI, Speaker Understanding)** – Worked on improving speech recognition and speaker ID.-->
+<!---->
 
 <p>🌐 <strong>Research interests:</strong> Pattern recognition, recognition of graphical structures,
 computer vision, speaker understanding, large language models, multi-modal deep
 learning, natural language processing.</p>
 
-<!--💡 My work centers around designing fast, efficient, and interpretable parsers-->
-<!--for recognizing mathematical formulas and chemical diagrams-->
-<!--across multiple formats, including PDFs, typeset images, and-->
-<!--handwritten strokes. Through graph attention-based techniques and the-->
-<!--integration of Large Language Models (LLMs), I aim to enhance how contextual-->
-<!--information is processed while preserving a natural and interpretable graph-->
-<!--representation.-->
-<!---->
-<!--🎯 My goal is to deliver high accuracy in math formula and chemical diagram-->
-<!--recognition through models-->
-<!--that are not only faster but also easier to interpret than traditional-->
-<!--encoder-decoder architectures. Also, by leveraging LLMs, I've improved recognition-->
-<!--accuracy in math and chemical diagram parsing.-->
-<!---->
-<!--💻 Recently, I developed ChemScraper, a molecule diagram parser that extracts-->
-<!--characters and graphics directly from PDF molecule images. By utilizing-->
-<!--typesetting instructions and simple graph transformations, it generates both-->
-<!--visual and chemical graphs — without the need for OCR, GPUs, or vectorization.-->
-<!--ChemScraper offers a practical approach to creating fine-grained, annotated-->
-<!--datasets for training visual parsers, and also a visual parser for parsing-->
-<!--molecule images (raster) directly.-->
-<!---->
-<!--🎙️ In addition to my work at DPRL, I interned at Amazon with the Alexa Speaker-->
-<!--Understanding team, where I focused on improving speech recognition and speaker-->
-<!--identification using LLMs, generative AI models for speech synthesis, combined-->
-<!--with a semi-supervised approach. This-->
-<!--experience enhanced my skills in applying LLMs to real-world problems in speech-->
-<!--technologies.-->
-<!---->
-<!--🌐 **Research interests:** Pattern recognition, recognition of graphical structures,-->
-<!--computer vision, speaker understanding, large language models, multi-modal deep-->
-<!--learning, natural language processing.-->
+<div class="resume-container">
+  <a href="/files/Resume_AyushKumarShah_current.pdf" class="btn btn-resume" target="_blank">Download Resume</a>
+</div>
 
-<!-- pattern recognition, computer vision, deep learning, -->
-<!-- large language models, speech and natural language processing. -->
-<!-- I'm on a mission to decode the intricacies of graphical structures, from mathematical formulas to chemical diagrams. -->
+    </div>
+  </div>
 
-<!-- **Research Interests**: Pattern recognition, computer vision, detection and recognition of graphical structures, deep -->
-<!-- learning, natural language processing -->
 
-<hr />
+  <!-- News Section -->
 
-<p>Get a PDF copy of my Resume <a href="/files/Resume_AyushKumarShah_current.pdf">here</a></p>
+<div class="news-section">
+  <h1>📰 News</h1>
 
-<hr />
+  
 
-<h2 id="news">News</h2>
+  
+    <div class="news-year-section">
+      <h2 class="news-year">2025</h2>
+      <hr class="news-separator">
+      
+        <div class="news-item">
+          <span class="news-date">Feb 18, 2025</span>
+          <p><p>Submitted our <a href="https://shahayush.com/publications/2025-02-19-reaction-search">paper</a> on the <strong>“Multimodal Search in Chemical Documents and Reactions”</strong> for publication at Proceedings of the 48th International ACM <strong>SIGIR</strong> Conference on Research and Development in Information Retrieval, in <a href="https://sigir2025.dei.unipd.it/index.html">SIGIR ’25</a>, Padua, Italy. The system is available online at <a href="https://reactionminer-demo.platform.moleculemaker.org/reaction-miner">ReactionMiner</a>.</p>
+</p>
+        </div>
+      
+    </div>
+  
+    <div class="news-year-section">
+      <h2 class="news-year">2024</h2>
+      <hr class="news-separator">
+      
+        <div class="news-item">
+          <span class="news-date">Dec 19, 2024</span>
+          <p><p>Successfully defended and passed my Ph.D. dissertation proposal on <strong>“Parsing of Math Formulas and Chemical Diagrams using Graph-Based Representation and Attention Models”</strong>.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Sept 3, 2024</span>
+          <p><p>Gave an oral presentation on <strong>“ChemScraper: Leveraging PDF Graphics Instructions for Molecular Diagram Parsing”</strong> at the 18th International Conference on Document Analysis and Recognition, <a href="https://icdar2024.net/">ICDAR 2024</a>, Athens, Greece.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">May 2024</span>
+          <p><p>A revised paper on <a href="https://shahayush.com/publications/2023-11-18-chemscraper">ChemScraper</a> has been published at the 18th International Conference on Document Analysis and Recognition, <a href="https://icdar2024.net/">ICDAR 2024</a>, Athens, Greece – Journal Track. The paper describes (1) a fast and accurate technique for parsing born-digital (vector) PDF images, and (2) its use to create training data for a new approach to visual parsing of molecule diagrams in raster images (i.e., pixel-based such as from PNGs). <a href="https://gitlab.com/dprl/graphics-extraction/">Code</a> is available and the system is online at <a href="https://chemscraper.platform.moleculemaker.org/configuration">ChemScraper</a>.</p>
+</p>
+        </div>
+      
+    </div>
+  
+    <div class="news-year-section">
+      <h2 class="news-year">2023</h2>
+      <hr class="news-separator">
+      
+        <div class="news-item">
+          <span class="news-date">Nov 14, 2023</span>
+          <p><p>A paper describing ChemScraper parser for molecular diagrams in PDF drawing instructions (‘born-digital’) is available on arXiv <a href="https://arxiv.org/abs/2311.12161">here</a>. The system can also generate annotated training data for visual parsers that recognize raster images (i.e., pixel-based, such as PNG). A link to associated code is provided in a <a href="https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024">footnote</a> in the paper.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Sept 12, 2023</span>
+          <p><p>Co-presented a poster on <strong>“ChemScraper: Extracting Molecule Diagrams from PDF Vector and Raster Images with CDXML and SMILES Output”</strong> at the Molecule Maker Lab Institute **(MMLI) All-Institute Retreat at University of Illinois Urbana-Champaign (UIUC).</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Aug 22-23, 2023</span>
+          <p><p>Gave a poster presentation talk at Poster session 1 and doctoral consortium at the 17th International Conference on Document Analysis and Recognition, <a href="https://icdar2023.org/">ICDAR 2023</a>, San José, California.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">June 28, 2023</span>
+          <p><p>Co-presented a poster on “ChemScraper: Extracting Molecule Diagrams from PDF Vector Images with Page-Level CDXML (ChemDraw) and SMILES Output” at the <strong>NSF Annual Review Meeting at University of Illinois Urbana-Champaign (UIUC)</strong>.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Apr 17, 2023</span>
+          <p><p>Gave a <strong>Research Idea Ring (RIR) talk</strong> on “Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas” at RIT.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Apr 2023</span>
+          <p><p>Our <a href="https://shahayush.com/publications/2023-04-30-lgap">paper</a> on the <strong>“Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas”</strong> accepted for publication at the 17th International Conference on Document Analysis and Recognition, <a href="https://icdar2023.org/">ICDAR 2023</a>, San José, California.</p>
+</p>
+        </div>
+      
+    </div>
+  
+    <div class="news-year-section">
+      <h2 class="news-year">2022</h2>
+      <hr class="news-separator">
+      
+        <div class="news-item">
+          <span class="news-date">Sept 27-28, 2022</span>
+          <p><p>Co-presented a poster on “Reconstructing the Structure of Molecular Diagrams in PDF Documents using a CNN-Attention-Based Parsing Model” at the Molecule Maker Lab Institute **(MMLI) All-Institute Retreat at University of Illinois Urbana-Champaign (UIUC).</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Sep 5, 2022</span>
+          <p><p>Gave a guest lecture on <strong>“Bayesian Decision Theory”</strong> for RIT’s undergraduate course - Intro to Machine Learning (40 students).</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Aug 28, 2022</span>
+          <p><p>Successfully completed <strong>Applied Scientist Intern</strong> at Amazon (Alexa AI). Started as <strong>Graduate Teaching Assistant (GTA)</strong> for the undergraduate course CSCI-335 Machine Learning.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">May 23, 2022</span>
+          <p><p>Started as <strong>Applied Scientist Intern</strong> at Amazon (Alexa AI). Worked on the Alexa Perceptual Technologies - Speaker Understanding team to improve speaker identification in Alexa devices.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Apr 7, 2022</span>
+          <p><p>Gave a <strong>Research Idea Ring (RIR) talk</strong> on “A Fast and Interpretable Context-aware Parser for Isolated Formulas and Chemical Diagrams” at RIT.</p>
+</p>
+        </div>
+      
+    </div>
+  
+    <div class="news-year-section">
+      <h2 class="news-year">2021</h2>
+      <hr class="news-separator">
+      
+        <div class="news-item">
+          <span class="news-date">Sept 9, 2021</span>
+          <p><p>Gave a poster presentation talk on the MathSeer extraction pipeline at the 16th International Conference on Document Analysis and Recognition, <a href="https://icdar2021.org/">ICDAR 2021</a>, Lausanne, Switzerland virtually.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Sept, 2021</span>
+          <p><p>MathSeer extraction pipeline released. This tool extracts formula locations and content in PDF documents. The pipeline is available from <a href="https://gitlab.com/dprl/MathSeer-extraction-pipeline">GitLab</a>, and includes improved versions of SymbolScraper, ScanSSD (now, ScanSSD-XYc), and QD-GGA. The pipeline was prepared by <strong>Ayush K. Shah</strong>, Abhisek Dey, Matt Langsenkamp, and Prof. Zanibbi.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">May 2021</span>
+          <p><p>Successfully defended and passed my <strong>Ph.D. Research Potential Assessment (RPA)</strong> on <strong>“Recognition of Mathematical Formulas”</strong></p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Apr 2021</span>
+          <p><p>Our <a href="https://shahayush.com/publications/2021-09-01-mathseer-pipeline">paper</a> on the <strong>“MathSeer formula extraction and evaluation pipeline”</strong> accepted for publication at the 16th International Conference on Document Analysis and Recognition, <a href="https://icdar2021.org/">ICDAR 2021</a>, Lausanne, Switzerland.</p>
+</p>
+        </div>
+      
+    </div>
+  
+    <div class="news-year-section">
+      <h2 class="news-year">2020</h2>
+      <hr class="news-separator">
+      
+        <div class="news-item">
+          <span class="news-date">Aug 2020</span>
+          <p><p>Joined Rochester Institute of Technology (RIT) for Ph.D. in Computing and Information Sciences. Started as <strong>Graduate Research Assistant (GRA)</strong> at the <a href="https://www.cs.rit.edu/~dprl/">Document and Pattern Recognition Lab (DPRL)</a> under <a href="https://www.cs.rit.edu/~rlaz/">Prof. Richard Zanibbi</a>.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Jan 2020</span>
+          <p><p>Promoted to <strong>Machine Learning Engineer Level 1</strong> at Fusemachines Nepal.</p>
+</p>
+        </div>
+      
+    </div>
+  
+    <div class="news-year-section">
+      <h2 class="news-year">2019</h2>
+      <hr class="news-separator">
+      
+        <div class="news-item">
+          <span class="news-date">Aug 2019</span>
+          <p><p>Promoted to <strong>Machine Learning Engineer Associate</strong> at Fusemachines Nepal.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Aug 2019</span>
+          <p><p>Graduated from Kathmandu University as a <strong>Computer Engineer</strong>.</p>
+</p>
+        </div>
+      
+        <div class="news-item">
+          <span class="news-date">Jun 2019</span>
+          <p><p>Started working as a <strong>Machine Learning Engineer Trainee</strong> at Fusemachines Nepal.</p>
+</p>
+        </div>
+      
+    </div>
+  
+</div>
 
-<ul>
-  <li>
-    <p>(Feb 18, 2025): Submitted our
-  <a href="https://shahayush.com/publications/2025-02-19-reaction-search">paper</a> on the
-  <strong>“Multimodal Search in Chemical Documents and Reactions”</strong> for
-  publication at Proceedings of the 48th International ACM 
-  <strong>SIGIR</strong> Conference on Research and Development in Information Retrieval, in
-  <a href="https://https://sigir2025.dei.unipd.it/index.html">SIGIR ’25</a>, Padua,
-  Italy. The system is available online at
-  <a href="https://reactionminer-demo.platform.moleculemaker.org/reaction-miner">ReactionMiner</a>.</p>
-  </li>
-  <li>
-    <p>(Dec 19, 2024): Successfully defended and passed my Ph.D. dissertation proposal on 
-  <strong>“Parsing of Math Formulas and Chemical Diagrams using Graph-Based
-      Representation and Attention Models”</strong></p>
-  </li>
-  <li>
-    <p>(Sept 3, 2024): Gave an oral presentation on <strong>“ChemScraper: Leveraging PDF
-  Graphics Instructions for Molecular Diagram Parsing”</strong> at
-  the 18th International Conference on Document Analysis and Recognition,
-  <a href="https://icdar2024.net/">ICDAR 2024</a>, Athens, Greece.</p>
-  </li>
-  <li>
-    <p>(May 2024): A revised paper on
-  <a href="https://shahayush.com/publications/2023-11-18-chemscraper">ChemScraper</a> has been published at
-  the 18th International Conference on Document Analysis and Recognition,
-  <a href="https://icdar2024.net/">ICDAR 2024</a>, Athens, Greece – Journal Track. The
-  paper describes (1) a fast and accurate technique for parsing born-digital
-  (vector) PDF images, and (2) its use to create training data for a new
-  approach to visual parsing of molecule diagrams in raster images (i.e.,
-  pixel-based such as from PNGs). <a href="https://gitlab.com/dprl/graphics-extraction/">Code</a>
-  is available and the system is online at
-  <a href="https://chemscraper.platform.moleculemaker.org/configuration">ChemScraper</a></p>
-  </li>
-  <li>
-    <p>(Nov 14, 2023): A paper describing ChemScraper parser for molecular diagrams in
-  PDF drawing instructions (‘born-digital’) is available on arXiv <a href="https://arxiv.org/abs/2311.12161">here</a>. 
-  The system can also generate annotated training data for visual parsers that recognize raster images
-  (i.e., pixel-based, such as PNG). A link to associated code is provided in 
-  a <a href="https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024">footnote</a> in the paper.</p>
-  </li>
-  <li>
-    <p>(Sept 12, 2023): Co-presented a poster on <strong>“ChemScraper: Extracting Molecule Diagrams
-  from PDF Vector and Raster Images with CDXML and SMILES Output”</strong> 
-  at the Molecule Maker Lab Institute <strong>(MMLI) All-Institute Retreat at
-University of Illinois Urbana-Champaign (UIUC)</strong>.</p>
-  </li>
-  <li>
-    <p>(Aug 22-23, 2023): Gave a poster presentation talk 
-  at Poster session 1 and doctoral consortium at
-  the 17th International Conference on Document Analysis and Recognition,
-  <a href="https://icdar2023.org/">ICDAR 2023</a>, San José, California.</p>
-  </li>
-  <li>
-    <p>(June 28, 2023): Co-presented a poster on “ChemScraper: Extracting Molecule Diagrams
-  from PDF Vector Images with Page-Level CDXML (ChemDraw) and SMILES Output” 
-  at the <strong>NSF Annual Review Meeting at University of Illinois Urbana-Champaign (UIUC)</strong>.</p>
-  </li>
-  <li>
-    <p>(Apr 17, 2023): Gave a <strong>Research Idea Ring (RIR) talk</strong> on “Line-of-sight with Graph Attention Parser 
-  (LGAP) for Math Formulas” at RIT.</p>
-  </li>
-  <li>
-    <p>(Apr 2023): Our <a href="https://shahayush.com/publications/2023-04-30-lgap">paper</a> 
-  on the <strong>“Line-of-sight with Graph Attention Parser (LGAP) for Math
-  Formulas”</strong>
-  accepted for publication at 
-  the 17th International Conference on Document Analysis and Recognition,
-  <a href="https://icdar2023.org/">ICDAR 2023</a>, San José, California.</p>
-  </li>
-  <li>
-    <p>(Sept 27-28, 2022): Co-presented a poster on “Reconstructing the Structure of Molecular Diagrams in PDF Documents 
-using a CNN-Attention-Based Parsing Model” at the Molecule Maker Lab Institute <strong>(MMLI) All-Institute Retreat at
-University of Illinois Urbana-Champaign (UIUC)</strong>.</p>
-  </li>
-  <li>
-    <p>(Sep 5, 2021): Gave a guest lecture on <strong>“Bayesian Decision Theory”</strong> for RIT’s undergraduate course - 
-  Intro to Machine Learning (40 students).</p>
-  </li>
-  <li>
-    <p>(Aug 28, 2022): Successfully completed <strong>Applied Scientist Intern</strong> at Amazon (Alexa AI). Started as
-<strong>Graduate Teaching Assisstant (GTA)</strong> for the undergraduate course CSCI-335 Machine Learning.</p>
-  </li>
-  <li>
-    <p>(May 23, 2022): Started as <strong>Applied Scientist Intern</strong> at Amazon (Alexa AI). 
- Worked on the Alexa Perceptual Technologies - Speaker Understanding team
- to improve speaker identification in Alexa devices.</p>
-  </li>
-  <li>
-    <p>(Apr 7, 2022): Gave a <strong>Research Idea Ring (RIR) talk</strong> on “A Fast and Interpretable 
-  Context-aware Parser for Isolated Formulas and Chemical Diagrams” at RIT.</p>
-  </li>
-  <li>
-    <p>(Sep 9, 2021): Gave a poster presentation talk on the 
-  MathSeer extraction pipeline at 
-  the 16th International Conference on Document Analysis and Recognition,
-  <a href="https://icdar2021.org/">ICDAR 2021</a>, 
-  Lausanne, Switzerland virtually.</p>
-  </li>
-  <li>
-    <p>(Sep 2021): MathSeer extraction pipeline released. This tool extracts formula
-locations and content in PDF documents. The pipeline is available from
-<a href="https://gitlab.com/dprl/MathSeer-extraction-pipeline">GitLab</a>, and includes 
-improved versions of SymbolScraper, ScanSSD (now,
-ScanSSD-XYc), and QD-GGA. The pipeline was prepared by <strong>Ayush K. Shah</strong>,
-Abhisek Dey, Matt Langsenkamp, and Prof. Zanibbi.</p>
-  </li>
-  <li>
-    <p>(Apr 2021): Our <a href="https://shahayush.com/publications/2021-09-01-mathseer-pipeline">paper</a> 
-  on the <strong>“MathSeer formula extraction and evaluation pipeline”</strong> accepted for publication at
-  the 16th International Conference on Document Analysis and Recognition, 
-<a href="https://icdar2021.org/">ICDAR 2021</a>, Lausanne, Switzerland.</p>
-  </li>
-  <li>
-    <p>(May 2021): Successfully defended and passed my Ph.D. Research Potential Assessment (RPA).</p>
-  </li>
-  <li>
-    <p>(Aug 2020): Joined Rochester Institute of Technology (RIT) for Ph.D. in Computing and Information Sciences.
-  Started as <strong>Graduate Research Assisstant (GRA)</strong>  at the <a href="https://www.cs.rit.edu/~dprl/">Document and
-  Pattern Recognition Lab (DPRL)</a> under <a href="https://www.cs.rit.edu/~rlaz/">Prof.
-  Richard Zanibbi</a>.</p>
-  </li>
-  <li>
-    <p>(Jan 2020): Promoted to Machine Learning Engineer Level 1 at Fusemachines
-  Nepal.</p>
-  </li>
-  <li>
-    <p>(Aug 2019): Promoted to Machine Learning Engineer Associate at Fusemachines
-  Nepal.</p>
-  </li>
-  <li>
-    <p>(Aug 2019): Graduated from Kathmandu University as a Computer Engineer.</p>
-  </li>
-  <li>
-    <p>(Jun 2019): Started working as a Machine Learning Engineer Trainee at
-  Fusemachines Nepal.</p>
-  </li>
-</ul>
 
+<style>
+  .news-section {
+    margin-top: 20px;
+  }
+  .news-year {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 20px;
+  }
+  .news-separator {
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #fc6d26);
+    border-radius: 2px;
+    margin-bottom: 15px;
+  }
+  .news-item {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .news-date {
+    font-weight: bold;
+    color: #555;
+  }
+
+  .about-section {
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .resume-container, .projects-container {
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center;
+      margin-top: 15px; /* Reduce top margin */
+  }
+
+  .btn-resume, .btn-projects {
+      display: inline-block;
+      padding: 8px 14px; /* Reduced padding (height and width) */
+      border-radius: 4px;
+      text-decoration: none !important;
+      font-size: 0.9rem; /* Slightly smaller text */
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-align: center;
+      width: auto;
+      min-width: 90px; /* Reduced minimum width */
+  }
+
+  .btn-resume {
+      background-color: #3498db; /* Blue */
+      color: white;
+  }
+
+  .btn-resume:hover {
+      transform: scale(1.05);
+      background-color: #2980b9; /* Darker blue on hover */
+  }
+
+  .btn-projects {
+      background-color: #2ecc71; /* Green */
+      color: white;
+  }
+
+  .btn-projects:hover {
+      transform: scale(1.05);
+      background-color: #27ae60; /* Darker green on hover */
+  }
+
+  /* Responsive Design */
+  @media (max-width: 600px) {
+      .btn-resume, .btn-projects {
+          width: 70%; /* Reduce width for smaller screens */
+          font-size: 0.85rem; /* Slightly smaller text for mobile */
+          padding: 6px 12px; /* Further reduce padding */
+      }
+  }
+
+</style>
+
+<!-- JavaScript for Toggle -->
+<script>
+  document.querySelector('.older-news-toggle').addEventListener('click', function() {
+    const olderNews = document.querySelector('.older-news');
+    olderNews.style.display = olderNews.style.display === 'none' ? 'block' : 'none';
+    const icon = document.querySelector('.toggle-icon');
+    icon.textContent = icon.textContent === '▼' ? '▲' : '▼';
+  });
+</script>
 
   </div>
 </div>

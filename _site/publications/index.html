@@ -89,7 +89,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740029133">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740039705">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -177,7 +177,151 @@
   </div>
 </div>
 
-    
+    <style>
+  .archive {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+    border-radius: 10px;
+  }
+  .publication-link {
+    text-decoration: none !important; color: inherit; border: none;
+    color: inherit;
+  }
+  .publication-item {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+  }
+  .publication-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .publication-links {
+      display: flex;
+      flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+      gap: 10px;
+      margin-top: 10px;
+      justify-content: center; /* Centers the buttons when wrapped */
+  }
+
+  .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      text-decoration: none !important;
+      border-radius: 5px;
+      font-weight: bold;
+      color: white;
+      transition: background 0.3s ease, transform 0.2s ease;
+      min-width: 120px; /* Prevents buttons from shrinking too much */
+      text-align: center; /* Ensures text is centered */
+  }
+
+  .btn:hover {
+      transform: scale(1.05);
+  }
+
+  /* Responsive Design: Stack buttons for very small screens */
+  @media (max-width: 480px) {
+      .publication-links {
+          flex-direction: column;
+          align-items: center; /* Center align buttons in column view */
+      }
+  }
+    .btn-paper { background-color: #3498db; }
+    .btn-pdf { background-color: #555555; }
+    .btn-poster { background-color: #9b59b6; }
+    .btn-video { background-color: #e74c3c; }
+    .btn-code { background-color: #fc6d26; }
+    .btn-demo { background-color: #2ecc71; }
+    .btn-info { background-color: #34495e; }
+    .publication-separator {
+      height: 3px;
+      background: linear-gradient(to right, #3498db, #fc6d26);
+      margin: 15px 0;
+    }
+
+/* ✅ Wrapper to ensure proper centering */
+.bibtex-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    width: 100%; /* Ensures full width */
+}
+
+/* ✅ Centering container */
+.bibtex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content */
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Ensures it doesn’t stretch too much */
+    text-align: center;
+}
+
+/* ✅ BibTeX Textarea */
+.bibtex-textarea {
+    width: 100%;
+    height: 400px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    resize: vertical;
+    border-radius: 5px;
+    display: none;
+    overflow-y: auto;
+}
+
+/* ✅ BibTeX Buttons */
+.btn-bibtex, .btn-bibtex-copy {
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 0.9rem;
+    text-align: center;
+    width: auto;
+    min-width: 100px;
+}
+
+/* ✅ Button Hover */
+.btn-bibtex:hover, .btn-bibtex-copy:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 600px) {
+    .bibtex-container {
+        max-width: 90%;
+    }
+
+    .bibtex-textarea {
+        height: 300px;
+        font-size: 0.8rem;
+    }
+
+    .btn-bibtex, .btn-bibtex-copy {
+        font-size: 0.8rem;
+        min-width: 120px;
+    }
+}
+
+</style>
+
+
+
 
 
 
@@ -273,6 +417,7 @@
             <!--| <strong>Year:</strong> 2025</p>-->
           <!--<p><strong>Status:</strong> Submitted</p>-->
           <p>This paper introduces a multimodal search tool for retrieving chemical reactions, molecular structures, and associated text from scientific literature, linking visual and textual representations of chemical information.</p>
+      </a>
 
           <div class="publication-links">
             
@@ -291,8 +436,10 @@
           </div>
 
           <p><strong>Recommended Citation:</strong> A. K. Shah, A. Dey, L. Luo, B. M. Amador,  P. Philippy, M. Zhong, S. Ouyang, D. M. Friday, D. Bianchi, N. Jackson, R. Zanibbi, and J. Han, "Multimodal Search in Chemical Documents and Reactions," submitted in Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval, in SIGIR ’25. New York, NY, USA: Association for Computing Machinery, Jul. 2025</p>
-        </div>
-      </a>
+
+          
+      </div>
+
       <hr class="publication-separator">
     
       <a href="/publications/2023-11-18-chemscraper" class="publication-link">
@@ -302,6 +449,7 @@
             <!--| <strong>Year:</strong> 2024</p>-->
           <!--<p><strong>Status:</strong> Published</p>-->
           <p>ChemScraper is a molecular diagram parser that directly extracts characters and graphical elements from PDFs without using OCR or GPUs. The extracted data is used for training neural models for molecular recognition in raster images.</p>
+      </a>
 
           <div class="publication-links">
             
@@ -324,8 +472,35 @@
           </div>
 
           <p><strong>Recommended Citation:</strong> A. K. Shah, B. M. Amador, A. Dey, M. Creekmore, B. Ocampo, S. Denmark, and R. Zanibbi, “ChemScraper: Leveraging PDF Graphics Instructions for Molecular Diagram Parsing,” in Document Analysis and Recognition (Journal) - IJDAR 2024, vol. 27, Sep. 2024, pp. 395-414, doi: 10.1007/s10032-024-00486-7.</p>
-        </div>
-      </a>
+
+          
+          <div class="bibtex-wrapper">
+              <div class="bibtex-container">
+                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-2024', event)">📋 Cite</button>
+                  <textarea id="bibtex-2024" class="bibtex-textarea" readonly style="display: none;">@article{shahChemScraper2024,
+    author = {Shah, Ayush Kumar and Amador, Bryan and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard},
+    date = {2024/09/01},
+    date-added = {2024-09-16 13:05:39 -0400},
+    date-modified = {2024-09-16 13:05:39 -0400},
+    doi = {10.1007/s10032-024-00486-7},
+    id = {Shah2024},
+    isbn = {1433-2825},
+    journal = {International Journal on Document Analysis and Recognition (IJDAR)},
+    number = {3},
+    pages = {395--414},
+    title = {ChemScraper: leveraging PDF graphics instructions for molecular diagram parsing},
+    url = {https://doi.org/10.1007/s10032-024-00486-7},
+    volume = {27},
+    year = {2024},
+    bdsk-url-1 = {https://doi.org/10.1007/s10032-024-00486-7}
+}
+</textarea>
+                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-2024', event)" style="display: none;">📋 Copy BibTeX</button>
+              </div>
+          </div>
+          
+      </div>
+
       <hr class="publication-separator">
     
       <a href="/publications/2023-04-30-lgap" class="publication-link">
@@ -335,6 +510,7 @@
             <!--| <strong>Year:</strong> 2023</p>-->
           <!--<p><strong>Status:</strong> Published</p>-->
           <p>The Line-of-Sight with Graph Attention Parser (LGAP) is a graph-based approach to recognizing mathematical notation. It improves interpretability over encoder-decoder models while enhancing accuracy through context-aware graph pooling.</p>
+      </a>
 
           <div class="publication-links">
             
@@ -357,8 +533,29 @@
           </div>
 
           <p><strong>Recommended Citation:</strong> A. K. Shah and R. Zanibbi, “Line-of-Sight with Graph Attention Parser (LGAP) for Math Formulas,” in Document Analysis and Recognition - ICDAR 2023, G. A. Fink, R. Jain, K. Kise, and R. Zanibbi, Eds., in Lecture Notes in Computer Science. Cham: Springer Nature Switzerland, 2023, pp. 401–419. doi: 10.1007/978-3-031-41734-4_25.</p>
-        </div>
-      </a>
+
+          
+          <div class="bibtex-wrapper">
+              <div class="bibtex-container">
+                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-2023', event)">📋 Cite</button>
+                  <textarea id="bibtex-2023" class="bibtex-textarea" readonly style="display: none;">@InProceedings{Shah_LGAP_2023,
+    author="Shah, Ayush Kumar and Zanibbi, Richard",                      
+    editor="Fink, Gernot A. and Jain, Rajiv and Kise, Koichi and Zanibbi, Richard",                      
+    title="Line-of-Sight with Graph Attention Parser (LGAP) for Math Formulas",
+    booktitle="Document Analysis and Recognition - ICDAR 2023",
+    year="2023",                                
+    publisher="Springer Nature Switzerland",    
+    address="Cham",                             
+    pages="401--419",                           
+    isbn="978-3-031-41734-4"
+    }
+</textarea>
+                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-2023', event)" style="display: none;">📋 Copy BibTeX</button>
+              </div>
+          </div>
+          
+      </div>
+
       <hr class="publication-separator">
     
       <a href="/publications/2023-04-26-search" class="publication-link">
@@ -368,6 +565,7 @@
             <!--| <strong>Year:</strong> 2023</p>-->
           <!--<p><strong>Status:</strong> Published</p>-->
           <p>MathDeck enables math formula search in the ACL Anthology PDF collection, integrating text and formula-based queries. The system introduces formula "chips" for intuitive formula creation, reuse, and annotation.</p>
+      </a>
 
           <div class="publication-links">
             
@@ -392,8 +590,33 @@
           </div>
 
           <p><strong>Recommended Citation:</strong> B. Amador, M. Langsenkamp, A. Dey, A. K. Shah, and R. Zanibbi, “Searching the ACL Anthology with Math Formulas and Text,” in Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval, in SIGIR ’23. New York, NY, USA: Association for Computing Machinery, Jul. 2023, pp. 3110–3114. doi: 10.1145/3539618.3591803.</p>
-        </div>
-      </a>
+
+          
+          <div class="bibtex-wrapper">
+              <div class="bibtex-container">
+                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-2023', event)">📋 Cite</button>
+                  <textarea id="bibtex-2023" class="bibtex-textarea" readonly style="display: none;">@inproceedings{Amador_Mathdeck_2023,
+    author = {Amador, Bryan and Langsenkamp, Matt and Dey, Abhisek and Shah, Ayush Kumar and Zanibbi, Richard},
+    title = {Searching the ACL Anthology with Math Formulas and Text},                                         
+    year = {2023},                                                                                             
+    isbn = {9781450394086},                                                                                    
+    publisher = {Association for Computing Machinery},                                                         
+    address = {New York, NY, USA},                                                                             
+    url = {https://doi.org/10.1145/3539618.3591803},                                                           
+    doi = {10.1145/3539618.3591803},                                                                           
+    booktitle = {Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+    pages = {3110–3114},                                                                                       
+    numpages = {5},                                                                                            
+    keywords = {mathematical information retrieval (mir), multimodal retrieval, latex, pdf, math-aware search},
+    location = {Taipei, Taiwan},                                                                               
+    series = {SIGIR '23}
+</textarea>
+                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-2023', event)" style="display: none;">📋 Copy BibTeX</button>
+              </div>
+          </div>
+          
+      </div>
+
       <hr class="publication-separator">
     
       <a href="/publications/2021-09-01-mathseer-pipeline" class="publication-link">
@@ -403,6 +626,7 @@
             <!--| <strong>Year:</strong> 2021</p>-->
           <!--<p><strong>Status:</strong> Published</p>-->
           <p>This paper presents a math formula extraction pipeline for PDF documents, leveraging character-based information to support math-aware search engines. The system includes a novel formula detector and a graph-based parser for structure recognition.</p>
+      </a>
 
           <div class="publication-links">
             
@@ -425,82 +649,67 @@
           </div>
 
           <p><strong>Recommended Citation:</strong> A. K. Shah, A. Dey, and R. Zanibbi, “A Math Formula Extraction and Evaluation Framework for PDF Documents,” in Document Analysis and Recognition – ICDAR 2021, Cham, 2021, pp. 19–34. doi: 10.1007/978-3-030-86331-9_2.</p>
-        </div>
-      </a>
+
+          
+          <div class="bibtex-wrapper">
+              <div class="bibtex-container">
+                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-2021', event)">📋 Cite</button>
+                  <textarea id="bibtex-2021" class="bibtex-textarea" readonly style="display: none;">@InProceedings{ShahMath2021,
+    author="Shah, Ayush Kumar and Dey, Abhisek and Zanibbi, Richard",
+    editor="Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi",
+    title="A Math Formula Extraction and Evaluation Framework for PDF Documents",
+    booktitle="Document Analysis and Recognition -- ICDAR 2021",                 
+    year="2021",                                                                 
+    publisher="Springer International Publishing",                               
+    address="Cham",                                                              
+    pages="19--34",                                                              
+    isbn="978-3-030-86331-9"}
+</textarea>
+                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-2021', event)" style="display: none;">📋 Copy BibTeX</button>
+              </div>
+          </div>
+          
+      </div>
+
       <hr class="publication-separator">
     
   </div>
 </div>
 
-<style>
-  .archive {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
-    border-radius: 10px;
-  }
-  .publication-link {
-    text-decoration: none !important; color: inherit; border: none;
-    color: inherit;
-  }
-  .publication-item {
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  .publication-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-.publication-links {
-    display: flex;
-    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
-    gap: 10px;
-    margin-top: 10px;
-    justify-content: center; /* Centers the buttons when wrapped */
-}
+<script>
+     // JavaScript for Expandable BibTeX and Copy to Clipboard
+    // ✅ Toggle BibTeX display
+    function toggleBibtex(id, event) {
+        event.stopPropagation(); // Prevents triggering the parent <a> link
 
-.btn {
-    display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none !important;
-    border-radius: 5px;
-    font-weight: bold;
-    color: white;
-    transition: background 0.3s ease, transform 0.2s ease;
-    min-width: 120px; /* Prevents buttons from shrinking too much */
-    text-align: center; /* Ensures text is centered */
-}
+        var bibtexText = document.getElementById(id);
+        var copyButton = document.querySelector('[onclick="copyBibtex(\'' + id + '\', event)"]');
+        var showButton = document.querySelector('[onclick="toggleBibtex(\'' + id + '\', event)"]');
 
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* Responsive Design: Stack buttons for very small screens */
-@media (max-width: 480px) {
-    .publication-links {
-        flex-direction: column;
-        align-items: center; /* Center align buttons in column view */
+        if (bibtexText.style.display === "none") {
+            bibtexText.style.display = "block";
+            copyButton.style.display = "inline-block";
+            showButton.textContent = "🔽 Hide BibTeX";
+        } else {
+            bibtexText.style.display = "none";
+            copyButton.style.display = "none";
+            showButton.textContent = "📋 Cite";
+        }
     }
-}
-  .btn-paper { background-color: #3498db; }
-  .btn-pdf { background-color: #555555; }
-  .btn-poster { background-color: #9b59b6; }
-  .btn-video { background-color: #e74c3c; }
-  .btn-code { background-color: #fc6d26; }
-  .btn-demo { background-color: #2ecc71; }
-  .btn-info { background-color: #34495e; }
-  .publication-separator {
-    height: 3px;
-    background: linear-gradient(to right, #3498db, #fc6d26);
-    margin: 15px 0;
-  }
 
-</style>
+    // ✅ Copy BibTeX to Clipboard
+    function copyBibtex(id, event) {
+        event.stopPropagation(); // Prevents triggering the parent <a> link
+
+        var bibtexText = document.getElementById(id);
+        navigator.clipboard.writeText(bibtexText.value).then(() => {
+            alert("📋 BibTeX copied to clipboard!");
+        }).catch(err => {
+            console.error("Failed to copy: ", err);
+        });
+    }
+</script>
+
 
 
     <div class="page__footer">
