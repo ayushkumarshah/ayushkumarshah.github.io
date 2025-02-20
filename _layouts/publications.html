@@ -82,23 +82,37 @@ layout: default
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
-  .publication-links {
+.publication-links {
     display: flex;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
     gap: 10px;
     margin-top: 10px;
-  }
-  .btn {
+    justify-content: center; /* Centers the buttons when wrapped */
+}
+
+.btn {
     display: inline-block;
     padding: 10px 15px;
-    text-decoration: none !important; color: inherit;
+    text-decoration: none !important;
     border-radius: 5px;
     font-weight: bold;
     color: white;
     transition: background 0.3s ease, transform 0.2s ease;
-  }
-  .btn:hover {
+    min-width: 120px; /* Prevents buttons from shrinking too much */
+    text-align: center; /* Ensures text is centered */
+}
+
+.btn:hover {
     transform: scale(1.05);
-  }
+}
+
+/* Responsive Design: Stack buttons for very small screens */
+@media (max-width: 480px) {
+    .publication-links {
+        flex-direction: column;
+        align-items: center; /* Center align buttons in column view */
+    }
+}
   .btn-paper { background-color: #3498db; }
   .btn-pdf { background-color: #555555; }
   .btn-poster { background-color: #9b59b6; }
@@ -111,4 +125,5 @@ layout: default
     background: linear-gradient(to right, #3498db, #fc6d26);
     margin: 15px 0;
   }
+
 </style>
