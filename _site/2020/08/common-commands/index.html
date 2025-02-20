@@ -94,7 +94,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740016886">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740029133">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -158,13 +158,13 @@
             <li class="masthead__menu-item"><a href="http://localhost:4001/publications/">Publications</a></li>
           
             
+            <li class="masthead__menu-item"><a href="http://localhost:4001/projects/">Projects</a></li>
+          
+            
             <li class="masthead__menu-item"><a href="http://localhost:4001/research/">Research</a></li>
           
             
             <li class="masthead__menu-item"><a href="http://localhost:4001/cv/">CV</a></li>
-          
-            
-            <li class="masthead__menu-item"><a href="http://localhost:4001/projects/">Projects</a></li>
           
             
             <li class="masthead__menu-item"><a href="http://localhost:4001/teaching/">Teaching</a></li>
@@ -207,7 +207,7 @@
 
   <div class="author__content">
     <h3 class="author__name">Ayush Kumar Shah</h3>
-    <p class="author__bio">Computer Science Ph.D. Student</p>
+    <p class="author__bio">Computer Science Ph.D. Candidate</p>
   </div>
 
   <div class="author__urls-wrapper">
@@ -2148,22 +2148,54 @@ only when the formula is installed or upgraded in your <code class="language-pla
 
 <style>
   .publication-links {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+      gap: 10px;
+      margin-top: 10px;
+      justify-content: center; /* Centers the buttons when wrapped */
   }
+
   .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none !important;
-    border-radius: 5px;
-    font-weight: bold;
-    color: white;
-    transition: background 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+      padding: 10px 15px;
+      text-decoration: none !important;
+      border-radius: 5px;
+      font-weight: bold;
+      color: white;
+      transition: background 0.3s ease, transform 0.2s ease;
+      min-width: 120px; /* Prevents buttons from shrinking too much */
+      text-align: center; /* Ensures text is centered */
   }
+
   .btn:hover {
-    transform: scale(1.05);
+      transform: scale(1.05);
   }
+
+  /* Responsive Design: Stack buttons for very small screens */
+  @media (max-width: 480px) {
+      .publication-links {
+          flex-direction: column;
+          align-items: center; /* Center align buttons in column view */
+      }
+  }
+
+  <!--.publication-links {-->
+  <!--  display: flex;-->
+  <!--  gap: 10px;-->
+  <!--  margin-top: 10px;-->
+  <!--}-->
+  <!--.btn {-->
+  <!--  display: inline-block;-->
+  <!--  padding: 10px 15px;-->
+  <!--  text-decoration: none !important;-->
+  <!--  border-radius: 5px;-->
+  <!--  font-weight: bold;-->
+  <!--  color: white;-->
+  <!--  transition: background 0.3s ease, transform 0.2s ease;-->
+  <!--}-->
+  <!--.btn:hover {-->
+  <!--  transform: scale(1.05);-->
+  <!--}-->
   .btn-paper { background-color: #3498db; }
   .btn-pdf { background-color: #555555; }
   .btn-poster { background-color: #9b59b6; }

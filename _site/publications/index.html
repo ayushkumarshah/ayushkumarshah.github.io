@@ -89,7 +89,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740016886">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740029133">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -153,13 +153,13 @@
             <li class="masthead__menu-item"><a href="http://localhost:4001/publications/">Publications</a></li>
           
             
+            <li class="masthead__menu-item"><a href="http://localhost:4001/projects/">Projects</a></li>
+          
+            
             <li class="masthead__menu-item"><a href="http://localhost:4001/research/">Research</a></li>
           
             
             <li class="masthead__menu-item"><a href="http://localhost:4001/cv/">CV</a></li>
-          
-            
-            <li class="masthead__menu-item"><a href="http://localhost:4001/projects/">Projects</a></li>
           
             
             <li class="masthead__menu-item"><a href="http://localhost:4001/teaching/">Teaching</a></li>
@@ -200,7 +200,7 @@
 
   <div class="author__content">
     <h3 class="author__name">Ayush Kumar Shah</h3>
-    <p class="author__bio">Computer Science Ph.D. Student</p>
+    <p class="author__bio">Computer Science Ph.D. Candidate</p>
   </div>
 
   <div class="author__urls-wrapper">
@@ -272,7 +272,7 @@
           <p><strong>Venue:</strong> International ACM SIGIR Conference on Research and Development in Information | <strong>Status:</strong> Submitted</p>
             <!--| <strong>Year:</strong> 2025</p>-->
           <!--<p><strong>Status:</strong> Submitted</p>-->
-          <p>This paper is about multimodal search in chemical documents and reactions.</p>
+          <p>This paper introduces a multimodal search tool for retrieving chemical reactions, molecular structures, and associated text from scientific literature, linking visual and textual representations of chemical information.</p>
 
           <div class="publication-links">
             
@@ -301,7 +301,7 @@
           <p><strong>Venue:</strong> International Journal on Document Analysis and Recognition (IJDAR) | <strong>Status:</strong> Published</p>
             <!--| <strong>Year:</strong> 2024</p>-->
           <!--<p><strong>Status:</strong> Published</p>-->
-          <p>This paper is about a new parser for molecular diagrams.</p>
+          <p>ChemScraper is a molecular diagram parser that directly extracts characters and graphical elements from PDFs without using OCR or GPUs. The extracted data is used for training neural models for molecular recognition in raster images.</p>
 
           <div class="publication-links">
             
@@ -334,7 +334,7 @@
           <p><strong>Venue:</strong> International Conference on Document Analysis and Recognition (ICDAR) | <strong>Status:</strong> Published</p>
             <!--| <strong>Year:</strong> 2023</p>-->
           <!--<p><strong>Status:</strong> Published</p>-->
-          <p>This paper is about a new visual parsing model for math formulas.</p>
+          <p>The Line-of-Sight with Graph Attention Parser (LGAP) is a graph-based approach to recognizing mathematical notation. It improves interpretability over encoder-decoder models while enhancing accuracy through context-aware graph pooling.</p>
 
           <div class="publication-links">
             
@@ -367,7 +367,7 @@
           <p><strong>Venue:</strong> International ACM SIGIR Conference on Research and Development in Information | <strong>Status:</strong> Published</p>
             <!--| <strong>Year:</strong> 2023</p>-->
           <!--<p><strong>Status:</strong> Published</p>-->
-          <p>This paper is about searching the ACL Anthology with math formulas and text.</p>
+          <p>MathDeck enables math formula search in the ACL Anthology PDF collection, integrating text and formula-based queries. The system introduces formula "chips" for intuitive formula creation, reuse, and annotation.</p>
 
           <div class="publication-links">
             
@@ -402,7 +402,7 @@
           <p><strong>Venue:</strong> International Conference on Document Analysis and Recognition (ICDAR) | <strong>Status:</strong> Published</p>
             <!--| <strong>Year:</strong> 2021</p>-->
           <!--<p><strong>Status:</strong> Published</p>-->
-          <p>This paper is about a math extraction pipeline for PDF documents.</p>
+          <p>This paper presents a math formula extraction pipeline for PDF documents, leveraging character-based information to support math-aware search engines. The system includes a novel formula detector and a graph-based parser for structure recognition.</p>
 
           <div class="publication-links">
             
@@ -456,23 +456,37 @@
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
-  .publication-links {
+.publication-links {
     display: flex;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
     gap: 10px;
     margin-top: 10px;
-  }
-  .btn {
+    justify-content: center; /* Centers the buttons when wrapped */
+}
+
+.btn {
     display: inline-block;
     padding: 10px 15px;
-    text-decoration: none !important; color: inherit;
+    text-decoration: none !important;
     border-radius: 5px;
     font-weight: bold;
     color: white;
     transition: background 0.3s ease, transform 0.2s ease;
-  }
-  .btn:hover {
+    min-width: 120px; /* Prevents buttons from shrinking too much */
+    text-align: center; /* Ensures text is centered */
+}
+
+.btn:hover {
     transform: scale(1.05);
-  }
+}
+
+/* Responsive Design: Stack buttons for very small screens */
+@media (max-width: 480px) {
+    .publication-links {
+        flex-direction: column;
+        align-items: center; /* Center align buttons in column view */
+    }
+}
   .btn-paper { background-color: #3498db; }
   .btn-pdf { background-color: #555555; }
   .btn-poster { background-color: #9b59b6; }
@@ -485,6 +499,7 @@
     background: linear-gradient(to right, #3498db, #fc6d26);
     margin: 15px 0;
   }
+
 </style>
 
 
