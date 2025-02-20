@@ -11,6 +11,17 @@ citation: 'A. K. Shah, A. Dey, and R. Zanibbi, “A Math Formula Extraction and 
 poster: '/files/237-presentation.pdf'
 video: '/files/237-teaser.mp4'
 code: 'https://gitlab.com/dprl/MathSeer-extraction-pipeline'
+bibtex: |
+    @InProceedings{ShahMath2021,
+        author="Shah, Ayush Kumar and Dey, Abhisek and Zanibbi, Richard",
+        editor="Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi",
+        title="A Math Formula Extraction and Evaluation Framework for PDF Documents",
+        booktitle="Document Analysis and Recognition -- ICDAR 2021",                 
+        year="2021",                                                                 
+        publisher="Springer International Publishing",                               
+        address="Cham",                                                              
+        pages="19--34",                                                              
+        isbn="978-3-030-86331-9"}
 ---
 
 ## Abstract:
@@ -31,21 +42,21 @@ by clicking on HTML links. Our source code is publicly available.
 <iframe src="/files/Shah2021_MathSeer.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
 
 
-<br>
-**.bib:**
+<!--<br>-->
+<!--**.bib:**-->
+<!---->
+<!--```bib-->
+<!--@InProceedings{10.1007/978-3-030-86331-9_2,-->
+<!--author="Shah, Ayush Kumar and Dey, Abhisek and Zanibbi, Richard",-->
+<!--editor="Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi",-->
+<!--title="A Math Formula Extraction and Evaluation Framework for PDF Documents",-->
+<!--booktitle="Document Analysis and Recognition -- ICDAR 2021",                 -->
+<!--year="2021",                                                                 -->
+<!--publisher="Springer International Publishing",                               -->
+<!--address="Cham",                                                              -->
+<!--pages="19--34",                                                              -->
+<!--isbn="978-3-030-86331-9"                                                     -->
+<!--}-->
+<!--```-->
 
-```bib
-@InProceedings{10.1007/978-3-030-86331-9_2,
-author="Shah, Ayush Kumar and Dey, Abhisek and Zanibbi, Richard",
-editor="Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi",
-title="A Math Formula Extraction and Evaluation Framework for PDF Documents",
-booktitle="Document Analysis and Recognition -- ICDAR 2021",                 
-year="2021",                                                                 
-publisher="Springer International Publishing",                               
-address="Cham",                                                              
-pages="19--34",                                                              
-isbn="978-3-030-86331-9"                                                     
-}
-```
-
-{% include iframe_holder.html url="/files/237-teaser.mp4" width="560" height="325" %}
+<!--{% include iframe_holder.html url="/files/237-teaser.mp4" width="560" height="325" %}-->
