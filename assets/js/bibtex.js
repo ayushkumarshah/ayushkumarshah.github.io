@@ -1,27 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Toggle BibTeX display
+document.addEventListener("DOMContentLoaded", () => {
+    // Attach event listeners for Cite buttons
     document.querySelectorAll(".cite-btn").forEach(button => {
-        button.addEventListener("click", function () {
-            const targetId = this.getAttribute("data-target");
+        button.addEventListener("click", () => {
+            const targetId = button.dataset.target;
             const bibtexText = document.getElementById(targetId);
-            const copyButton = document.querySelector(`#copy-btn-${targetId.replace("bibtex-", "")}`);
+            const copyButton = button.parentElement.querySelector(".copy-btn");
 
             if (bibtexText.style.display === "none") {
                 bibtexText.style.display = "block";
                 copyButton.style.display = "inline-block";
-                this.textContent = "🔽 Hide BibTeX";
+                button.textContent = "🔽 Hide BibTeX";
             } else {
                 bibtexText.style.display = "none";
                 copyButton.style.display = "none";
-                this.textContent = "📋 Cite";
+                button.textContent = "📋 Cite";
             }
         });
     });
 
-    // Copy BibTeX to Clipboard
+    // Attach event listeners for Copy buttons
     document.querySelectorAll(".copy-btn").forEach(button => {
-        button.addEventListener("click", function () {
-            const targetId = this.getAttribute("data-target");
+        button.addEventListener("click", () => {
+            const targetId = button.dataset.target;
             const bibtexText = document.getElementById(targetId);
 
             navigator.clipboard.writeText(bibtexText.value).then(() => {

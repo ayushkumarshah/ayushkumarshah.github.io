@@ -68,10 +68,19 @@ layout: default
           </div>
           {% if page.bibtex %}
           <div class="bibtex-wrapper">
-              <div class="bibtex-container">
-                  <button class="btn btn-bibtex cite-btn" id="cite-btn-{{ page.date | slice: 0, 4 }}" data-target="bibtex-{{ page.date | slice: 0, 4 }}">📋 Cite</button>
-                  <textarea id="bibtex-{{ page.date | slice: 0, 4 }}" class="bibtex-textarea" readonly style="display: none;">{{ page.bibtex }}</textarea>
-                  <button class="btn btn-bibtex-copy copy-btn" id="copy-btn-{{ page.date | slice: 0, 4 }}" data-target="bibtex-{{ page.date | slice: 0, 4 }}" style="display: none;">📋 Copy BibTeX</button>
+              <div class="bibtex-container" data-bibtex-id="bibtex-{{ page.date | replace:'-','' }}-{{ page.title | slugify }}">
+                  <button class="btn btn-bibtex cite-btn"
+                          data-target="bibtex-{{ page.date | replace:'-','' }}-{{ page.title | slugify }}">
+                    📋 Cite
+                  </button>
+                  <textarea id="bibtex-{{ page.date | replace:'-','' }}-{{ page.title | slugify }}"
+                            class="bibtex-textarea"
+                            readonly
+                            style="display: none;">{{ page.bibtex }}</textarea>
+                  <button class="btn btn-bibtex-copy copy-btn"
+                          data-target="bibtex-{{ page.date | replace:'-','' }}-{{ page.title | slugify }}"
+                          style="display: none;">📋 Copy BibTeX
+                  </button>
               </div>
           </div>
           {% endif %}
