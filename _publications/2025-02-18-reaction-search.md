@@ -2,7 +2,7 @@
 title: "Multimodal Search in Chemical Documents and Reactions"
 collection: publications
 permalink: /publications/2025-02-18-reaction-search
-excerpt: 'This paper is about multimodal search in chemical documents and reactions.'
+excerpt: 'This paper introduces a multimodal search tool for retrieving chemical reactions, molecular structures, and associated text from scientific literature, linking visual and textual representations of chemical information.'
 date: 2025-02-18
 venue: 'International ACM SIGIR Conference on Research and Development in Information'
 pdf: '/files/reaction-search.pdf'

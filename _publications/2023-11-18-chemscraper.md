@@ -2,7 +2,7 @@
 title: "ChemScraper: Leveraging PDF Graphics Instructions for Molecular Diagram Parsing"
 collection: publications
 permalink: /publications/2023-11-18-chemscraper
-excerpt: 'This paper is about a new parser for molecular diagrams.'
+excerpt: 'ChemScraper is a molecular diagram parser that directly extracts characters and graphical elements from PDFs without using OCR or GPUs. The extracted data is used for training neural models for molecular recognition in raster images.'
 date: 2024-09-01
 venue: 'International Journal on Document Analysis and Recognition (IJDAR)'
 paperurl: 'https://link.springer.com/article/10.1007/s10032-024-00486-7'

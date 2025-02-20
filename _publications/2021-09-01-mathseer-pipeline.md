@@ -2,7 +2,7 @@
 title: "A Math Formula Extraction and Evaluation Framework for PDF Documents"
 collection: publications
 permalink: /publications/2021-09-01-mathseer-pipeline
-excerpt: 'This paper is about a math extraction pipeline for PDF documents.'
+excerpt: 'This paper presents a math formula extraction pipeline for PDF documents, leveraging character-based information to support math-aware search engines. The system includes a novel formula detector and a graph-based parser for structure recognition.'
 date: 2021-09-01
 venue: 'International Conference on Document Analysis and Recognition (ICDAR)'
 paperurl: 'https://doi.org/10.1007/978-3-030-86331-9_2'
