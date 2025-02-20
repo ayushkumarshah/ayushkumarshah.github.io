@@ -2,20 +2,24 @@
   description: "A system for searching chemical reactions, molecular structures, and text in scientific literature. It integrates text, SMILES, and reaction-based queries, linking extracted reaction details with molecular diagrams and textual descriptions. The interface provides structured reaction and molecule cards for easy navigation and retrieval, supporting chemists in literature exploration and data extraction."
   demo: "https://reactionminer-demo.platform.moleculemaker.org/reaction-miner"
   code: "https://gitlab.com/dprl/reactionminer_search"
+  image: "/images/projects/multimodal-chemical-search.jpeg"
 
 - title: "ChemScraper"
   description: "A fast and accurate molecule diagram parser using characters and graphics extracted from born-digital (vector) PDF images—without the need for OCR, GPU, or vectorization. It uses these outputs to create training data for a new approach to visual parsing of molecule diagrams in raster images (i.e., pixel-based formats like PNGs) using a multi-task, segmentation-aware convolutional neural network (CNN)."
   code: "https://gitlab.com/dprl/graphics-extraction/"
   demo: "https://chemscraper.platform.moleculemaker.org/configuration"
+  image: "/images/projects/chemscraper.png"
 
 - title: "MathDeck"
   description: "A system for searching PDF documents in a portion of the ACL Anthology, incorporating both formulas and text, displaying matched words and formulas in context. Its user-friendly interface includes formula 'chips' for easy formula creation, search, reuse, and annotation. MathDeck supports both LaTeX and visual formula editing."
   demo: "https://demo.mathdeck.org/"
   code: "https://gitlab.com/dprl/mathdeck"
+  image: "/images/projects/mathdeck.png"
 
 - title: "Math Formula Extraction"
   description: "A tool for detecting and recognizing math formulas from PDF documents using both PDF information (without OCR) and visual features through a multi-task learning framework based on ResNet-50 with line-of-sight (LOS) graph-based attention."
   code: "https://gitlab.com/dprl/graphics-extraction"
+  image: "/images/projects/math-pipeline.jpg"
 
 - title: "LgEval"
   description: "A tool for graph-based evaluation of recognition results, with visualization tools for fine-grained error analyses at the level of input primitives."
@@ -24,6 +28,7 @@
 - title: "Guitar chord recognizer"
   description: "An application that predicts the chords when the Mel spectrograms of guitar sound are fed into a CNN."
   code: "https://github.com/ayushkumarshah/Guitar-Chords-recognition"
+  image: "/images/projects/guitar.gif"
 
 - title: "Nepali Plagiarism Detector (NLP)"
   description: "An application that detects plagiarized Devanagari text files using a self-built rule-based stemming algorithm and Cosine similarity."
