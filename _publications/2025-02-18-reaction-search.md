@@ -9,6 +9,7 @@ pdf: '/files/reaction-search.pdf'
 citation: 'A. K. Shah, A. Dey, L. Luo, B. M. Amador,  P. Philippy, M. Zhong, S. Ouyang, D. M. Friday, D. Bianchi, N. Jackson, R. Zanibbi, and J. Han, "Multimodal Search in Chemical Documents and Reactions," submitted in Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval, in SIGIR ’25. New York, NY, USA: Association for Computing Machinery, Jul. 2025'
 code: 'https://gitlab.com/dprl/reactionminer_search'
 demo: 'https://reactionminer-demo.platform.moleculemaker.org/reaction-miner'
+status: 'Submitted'
 ---
 <!--paperurl: '/files/reaction-search.pdf'-->
 

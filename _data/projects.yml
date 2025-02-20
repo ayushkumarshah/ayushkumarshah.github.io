@@ -11,6 +11,7 @@
 - title: "MathDeck"
   description: "A system for searching PDF documents in a portion of the ACL Anthology, incorporating both formulas and text, displaying matched words and formulas in context. Its user-friendly interface includes formula 'chips' for easy formula creation, search, reuse, and annotation. MathDeck supports both LaTeX and visual formula editing."
   demo: "https://demo.mathdeck.org/"
+  code: "https://gitlab.com/dprl/mathdeck"
 
 - title: "Math Formula Extraction"
   description: "A tool for detecting and recognizing math formulas from PDF documents using both PDF information (without OCR) and visual features through a multi-task learning framework based on ResNet-50 with line-of-sight (LOS) graph-based attention."
