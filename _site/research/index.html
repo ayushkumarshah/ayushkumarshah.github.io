@@ -89,7 +89,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740039705">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740040524">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -369,6 +369,40 @@ various mediums like born-digital PDFs, typeset images, and handwritten strokes.
 
 
 
+
+<script>
+     // JavaScript for Expandable BibTeX and Copy to Clipboard
+    // ✅ Toggle BibTeX display
+    function toggleBibtex(id, event) {
+        event.stopPropagation(); // Prevents triggering the parent <a> link
+
+        var bibtexText = document.getElementById(id);
+        var copyButton = document.querySelector('[onclick="copyBibtex(\'' + id + '\', event)"]');
+        var showButton = document.querySelector('[onclick="toggleBibtex(\'' + id + '\', event)"]');
+
+        if (bibtexText.style.display === "none") {
+            bibtexText.style.display = "block";
+            copyButton.style.display = "inline-block";
+            showButton.textContent = "🔽 Hide BibTeX";
+        } else {
+            bibtexText.style.display = "none";
+            copyButton.style.display = "none";
+            showButton.textContent = "📋 Cite";
+        }
+    }
+
+    // ✅ Copy BibTeX to Clipboard
+    function copyBibtex(id, event) {
+        event.stopPropagation(); // Prevents triggering the parent <a> link
+
+        var bibtexText = document.getElementById(id);
+        navigator.clipboard.writeText(bibtexText.value).then(() => {
+            alert("📋 BibTeX copied to clipboard!");
+        }).catch(err => {
+            console.error("Failed to copy: ", err);
+        });
+    }
+</script>
 
 
   </body>
