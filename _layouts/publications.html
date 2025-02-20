@@ -58,9 +58,9 @@ layout: default
           {% if post.bibtex %}
           <div class="bibtex-wrapper">
               <div class="bibtex-container">
-                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-{{ post.date | slice: 0, 4 }}', event)">📋 Cite</button>
+                  <button class="btn btn-bibtex cite-btn" id="cite-btn-{{ post.date | slice: 0, 4 }}" data-target="bibtex-{{ post.date | slice: 0, 4 }}">📋 Cite</button>
                   <textarea id="bibtex-{{ post.date | slice: 0, 4 }}" class="bibtex-textarea" readonly style="display: none;">{{ post.bibtex }}</textarea>
-                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-{{ post.date | slice: 0, 4 }}', event)" style="display: none;">📋 Copy BibTeX</button>
+                  <button class="btn btn-bibtex-copy copy-btn" id="copy-btn-{{ post.date | slice: 0, 4 }}" data-target="bibtex-{{ post.date | slice: 0, 4 }}" style="display: none;">📋 Copy BibTeX</button>
               </div>
           </div>
           {% endif %}

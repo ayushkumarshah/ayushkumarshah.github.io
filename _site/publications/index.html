@@ -89,7 +89,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740040524">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740040877">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -476,7 +476,7 @@
           
           <div class="bibtex-wrapper">
               <div class="bibtex-container">
-                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-2024', event)">📋 Cite</button>
+                  <button class="btn btn-bibtex cite-btn" id="cite-btn-2024" data-target="bibtex-2024">📋 Cite</button>
                   <textarea id="bibtex-2024" class="bibtex-textarea" readonly style="display: none;">@article{shahChemScraper2024,
     author = {Shah, Ayush Kumar and Amador, Bryan and Dey, Abhisek and Creekmore, Ming and Ocampo, Blake and Denmark, Scott and Zanibbi, Richard},
     date = {2024/09/01},
@@ -495,7 +495,7 @@
     bdsk-url-1 = {https://doi.org/10.1007/s10032-024-00486-7}
 }
 </textarea>
-                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-2024', event)" style="display: none;">📋 Copy BibTeX</button>
+                  <button class="btn btn-bibtex-copy copy-btn" id="copy-btn-2024" data-target="bibtex-2024" style="display: none;">📋 Copy BibTeX</button>
               </div>
           </div>
           
@@ -537,7 +537,7 @@
           
           <div class="bibtex-wrapper">
               <div class="bibtex-container">
-                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-2023', event)">📋 Cite</button>
+                  <button class="btn btn-bibtex cite-btn" id="cite-btn-2023" data-target="bibtex-2023">📋 Cite</button>
                   <textarea id="bibtex-2023" class="bibtex-textarea" readonly style="display: none;">@InProceedings{Shah_LGAP_2023,
     author="Shah, Ayush Kumar and Zanibbi, Richard",                      
     editor="Fink, Gernot A. and Jain, Rajiv and Kise, Koichi and Zanibbi, Richard",                      
@@ -550,7 +550,7 @@
     isbn="978-3-031-41734-4"
     }
 </textarea>
-                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-2023', event)" style="display: none;">📋 Copy BibTeX</button>
+                  <button class="btn btn-bibtex-copy copy-btn" id="copy-btn-2023" data-target="bibtex-2023" style="display: none;">📋 Copy BibTeX</button>
               </div>
           </div>
           
@@ -594,7 +594,7 @@
           
           <div class="bibtex-wrapper">
               <div class="bibtex-container">
-                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-2023', event)">📋 Cite</button>
+                  <button class="btn btn-bibtex cite-btn" id="cite-btn-2023" data-target="bibtex-2023">📋 Cite</button>
                   <textarea id="bibtex-2023" class="bibtex-textarea" readonly style="display: none;">@inproceedings{Amador_Mathdeck_2023,
     author = {Amador, Bryan and Langsenkamp, Matt and Dey, Abhisek and Shah, Ayush Kumar and Zanibbi, Richard},
     title = {Searching the ACL Anthology with Math Formulas and Text},                                         
@@ -611,7 +611,7 @@
     location = {Taipei, Taiwan},                                                                               
     series = {SIGIR '23}
 </textarea>
-                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-2023', event)" style="display: none;">📋 Copy BibTeX</button>
+                  <button class="btn btn-bibtex-copy copy-btn" id="copy-btn-2023" data-target="bibtex-2023" style="display: none;">📋 Copy BibTeX</button>
               </div>
           </div>
           
@@ -653,7 +653,7 @@
           
           <div class="bibtex-wrapper">
               <div class="bibtex-container">
-                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-2021', event)">📋 Cite</button>
+                  <button class="btn btn-bibtex cite-btn" id="cite-btn-2021" data-target="bibtex-2021">📋 Cite</button>
                   <textarea id="bibtex-2021" class="bibtex-textarea" readonly style="display: none;">@InProceedings{ShahMath2021,
     author="Shah, Ayush Kumar and Dey, Abhisek and Zanibbi, Richard",
     editor="Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi",
@@ -665,7 +665,7 @@
     pages="19--34",                                                              
     isbn="978-3-030-86331-9"}
 </textarea>
-                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-2021', event)" style="display: none;">📋 Copy BibTeX</button>
+                  <button class="btn btn-bibtex-copy copy-btn" id="copy-btn-2021" data-target="bibtex-2021" style="display: none;">📋 Copy BibTeX</button>
               </div>
           </div>
           
@@ -812,6 +812,8 @@
     }
 </script>
 
+
+    <script src="/assets/js/bibtex.js"></script>
 
   </body>
 </html>
