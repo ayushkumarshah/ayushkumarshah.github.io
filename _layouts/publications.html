@@ -1,0 +1,114 @@
+---
+layout: default
+---
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <h1 class="page__title">{{ page.title }}</h1>
+    {% endunless %}
+  <div class="archive">
+    {% for post in site.publications reversed %}
+      <a href="{{ post.permalink }}" class="publication-link">
+        <div class="publication-item" style="background: linear-gradient(135deg, #d3d3d3, #f0f0f0); color: #222;">
+          <h2>{{ post.title }} ({{ post.date | slice: 0, 4 }}) </h2>
+          <p><strong>Venue:</strong> {{ post.venue }} | <strong>Status:</strong> {{ post.status | default: "Published" }}</p>
+            <!--| <strong>Year:</strong> {{ post.date | slice: 0, 4 }}</p>-->
+          <!--<p><strong>Status:</strong> {{ post.status | default: "Published" }}</p>-->
+          <p>{{ post.excerpt }}</p>
+
+          <div class="publication-links">
+            {% if post.paperurl %}
+              <a href="{{ post.paperurl }}" class="btn btn-paper" target="_blank">Publisher PDF</a>
+            {% endif %}
+            {% if post.pdf %}
+              <a href="{{ post.pdf }}" class="btn btn-pdf" target="_blank">Preprint PDF</a>
+            {% endif %}
+            {% if post.poster %}
+              <a href="{{ post.poster }}" class="btn btn-poster" target="_blank">View Poster</a>
+            {% endif %}
+            {% if post.video %}
+              <a href="{{ post.video }}" class="btn btn-video" target="_blank">Watch Video</a>
+            {% endif %}
+            {% if post.code %}
+              <a href="{{ post.code }}" class="btn btn-code" target="_blank">View Code</a>
+            {% endif %}
+            {% if post.demo %}
+              <a href="{{ post.demo }}" class="btn btn-demo" target="_blank">Live Demo</a>
+            {% endif %}
+            <a href="{{ post.permalink }}" class="btn btn-info">More Info</a>
+          </div>
+
+          <p><strong>Recommended Citation:</strong> {{ post.citation }}</p>
+        </div>
+      </a>
+      <hr class="publication-separator">
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .archive {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+    border-radius: 10px;
+  }
+  .publication-link {
+    text-decoration: none !important; color: inherit; border: none;
+    color: inherit;
+  }
+  .publication-item {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  .publication-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .publication-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none !important; color: inherit;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  .btn-paper { background-color: #3498db; }
+  .btn-pdf { background-color: #555555; }
+  .btn-poster { background-color: #9b59b6; }
+  .btn-video { background-color: #e74c3c; }
+  .btn-code { background-color: #fc6d26; }
+  .btn-demo { background-color: #2ecc71; }
+  .btn-info { background-color: #34495e; }
+  .publication-separator {
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #fc6d26);
+    margin: 15px 0;
+  }
+</style>
