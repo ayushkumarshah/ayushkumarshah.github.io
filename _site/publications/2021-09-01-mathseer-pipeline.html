@@ -94,7 +94,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740040877">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740041484">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -458,7 +458,7 @@
           
           <div class="bibtex-wrapper">
               <div class="bibtex-container">
-                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-2021', event)">📋 Cite</button>
+                  <button class="btn btn-bibtex cite-btn" id="cite-btn-2021" data-target="bibtex-2021">📋 Cite</button>
                   <textarea id="bibtex-2021" class="bibtex-textarea" readonly style="display: none;">@InProceedings{ShahMath2021,
     author="Shah, Ayush Kumar and Dey, Abhisek and Zanibbi, Richard",
     editor="Llad{\'o}s, Josep and Lopresti, Daniel and Uchida, Seiichi",
@@ -470,10 +470,11 @@
     pages="19--34",                                                              
     isbn="978-3-030-86331-9"}
 </textarea>
-                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-2021', event)" style="display: none;">📋 Copy BibTeX</button>
+                  <button class="btn btn-bibtex-copy copy-btn" id="copy-btn-2021" data-target="bibtex-2021" style="display: none;">📋 Copy BibTeX</button>
               </div>
           </div>
           
+      </div>
 
         </header>
       
@@ -577,40 +578,6 @@ by clicking on HTML links. Our source code is publicly available.</p>
 
 
 
-<script>
-     // JavaScript for Expandable BibTeX and Copy to Clipboard
-    // ✅ Toggle BibTeX display
-    function toggleBibtex(id, event) {
-        event.stopPropagation(); // Prevents triggering the parent <a> link
-
-        var bibtexText = document.getElementById(id);
-        var copyButton = document.querySelector('[onclick="copyBibtex(\'' + id + '\', event)"]');
-        var showButton = document.querySelector('[onclick="toggleBibtex(\'' + id + '\', event)"]');
-
-        if (bibtexText.style.display === "none") {
-            bibtexText.style.display = "block";
-            copyButton.style.display = "inline-block";
-            showButton.textContent = "🔽 Hide BibTeX";
-        } else {
-            bibtexText.style.display = "none";
-            copyButton.style.display = "none";
-            showButton.textContent = "📋 Cite";
-        }
-    }
-
-    // ✅ Copy BibTeX to Clipboard
-    function copyBibtex(id, event) {
-        event.stopPropagation(); // Prevents triggering the parent <a> link
-
-        var bibtexText = document.getElementById(id);
-        navigator.clipboard.writeText(bibtexText.value).then(() => {
-            alert("📋 BibTeX copied to clipboard!");
-        }).catch(err => {
-            console.error("Failed to copy: ", err);
-        });
-    }
-</script>
-
 
 
     <div class="page__footer">
@@ -687,42 +654,8 @@ by clicking on HTML links. Our source code is publicly available.</p>
 
 
 
-<script>
-     // JavaScript for Expandable BibTeX and Copy to Clipboard
-    // ✅ Toggle BibTeX display
-    function toggleBibtex(id, event) {
-        event.stopPropagation(); // Prevents triggering the parent <a> link
 
-        var bibtexText = document.getElementById(id);
-        var copyButton = document.querySelector('[onclick="copyBibtex(\'' + id + '\', event)"]');
-        var showButton = document.querySelector('[onclick="toggleBibtex(\'' + id + '\', event)"]');
-
-        if (bibtexText.style.display === "none") {
-            bibtexText.style.display = "block";
-            copyButton.style.display = "inline-block";
-            showButton.textContent = "🔽 Hide BibTeX";
-        } else {
-            bibtexText.style.display = "none";
-            copyButton.style.display = "none";
-            showButton.textContent = "📋 Cite";
-        }
-    }
-
-    // ✅ Copy BibTeX to Clipboard
-    function copyBibtex(id, event) {
-        event.stopPropagation(); // Prevents triggering the parent <a> link
-
-        var bibtexText = document.getElementById(id);
-        navigator.clipboard.writeText(bibtexText.value).then(() => {
-            alert("📋 BibTeX copied to clipboard!");
-        }).catch(err => {
-            console.error("Failed to copy: ", err);
-        });
-    }
-</script>
-
-
-    <script src="/assets/js/bibtex.js"></script>
+    <script src="/assets/js/bibtex.js" defer></script>
 
   </body>
 </html>

@@ -69,12 +69,13 @@ layout: default
           {% if page.bibtex %}
           <div class="bibtex-wrapper">
               <div class="bibtex-container">
-                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-{{ page.date | slice: 0, 4 }}', event)">📋 Cite</button>
+                  <button class="btn btn-bibtex cite-btn" id="cite-btn-{{ page.date | slice: 0, 4 }}" data-target="bibtex-{{ page.date | slice: 0, 4 }}">📋 Cite</button>
                   <textarea id="bibtex-{{ page.date | slice: 0, 4 }}" class="bibtex-textarea" readonly style="display: none;">{{ page.bibtex }}</textarea>
-                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-{{ page.date | slice: 0, 4 }}', event)" style="display: none;">📋 Copy BibTeX</button>
+                  <button class="btn btn-bibtex-copy copy-btn" id="copy-btn-{{ page.date | slice: 0, 4 }}" data-target="bibtex-{{ page.date | slice: 0, 4 }}" style="display: none;">📋 Copy BibTeX</button>
               </div>
           </div>
           {% endif %}
+      </div>
 
         </header>
       {% endunless %}
