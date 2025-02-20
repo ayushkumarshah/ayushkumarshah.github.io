@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% include _styles.html %}
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% endif %}
@@ -27,6 +29,7 @@ layout: default
             <!--| <strong>Year:</strong> {{ post.date | slice: 0, 4 }}</p>-->
           <!--<p><strong>Status:</strong> {{ post.status | default: "Published" }}</p>-->
           <p>{{ post.excerpt }}</p>
+      </a>
 
           <div class="publication-links">
             {% if post.paperurl %}
@@ -51,79 +54,21 @@ layout: default
           </div>
 
           <p><strong>Recommended Citation:</strong> {{ post.citation }}</p>
-        </div>
-      </a>
+
+          {% if post.bibtex %}
+          <div class="bibtex-wrapper">
+              <div class="bibtex-container">
+                  <button class="btn btn-bibtex" onclick="toggleBibtex('bibtex-{{ post.date | slice: 0, 4 }}', event)">📋 Cite</button>
+                  <textarea id="bibtex-{{ post.date | slice: 0, 4 }}" class="bibtex-textarea" readonly style="display: none;">{{ post.bibtex }}</textarea>
+                  <button class="btn btn-bibtex-copy" onclick="copyBibtex('bibtex-{{ post.date | slice: 0, 4 }}', event)" style="display: none;">📋 Copy BibTeX</button>
+              </div>
+          </div>
+          {% endif %}
+      </div>
+
       <hr class="publication-separator">
     {% endfor %}
   </div>
 </div>
 
-<style>
-  .archive {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
-    border-radius: 10px;
-  }
-  .publication-link {
-    text-decoration: none !important; color: inherit; border: none;
-    color: inherit;
-  }
-  .publication-item {
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  .publication-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-.publication-links {
-    display: flex;
-    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
-    gap: 10px;
-    margin-top: 10px;
-    justify-content: center; /* Centers the buttons when wrapped */
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none !important;
-    border-radius: 5px;
-    font-weight: bold;
-    color: white;
-    transition: background 0.3s ease, transform 0.2s ease;
-    min-width: 120px; /* Prevents buttons from shrinking too much */
-    text-align: center; /* Ensures text is centered */
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* Responsive Design: Stack buttons for very small screens */
-@media (max-width: 480px) {
-    .publication-links {
-        flex-direction: column;
-        align-items: center; /* Center align buttons in column view */
-    }
-}
-  .btn-paper { background-color: #3498db; }
-  .btn-pdf { background-color: #555555; }
-  .btn-poster { background-color: #9b59b6; }
-  .btn-video { background-color: #e74c3c; }
-  .btn-code { background-color: #fc6d26; }
-  .btn-demo { background-color: #2ecc71; }
-  .btn-info { background-color: #34495e; }
-  .publication-separator {
-    height: 3px;
-    background: linear-gradient(to right, #3498db, #fc6d26);
-    margin: 15px 0;
-  }
-
-</style>
+{% include _scripts.html %}
