@@ -70,8 +70,8 @@ google_analytics:
 toc: true
 
 # Social Sharing
-twitter:
-  username               : &twitter ayushkumarshah7
+# twitter:
+#   username               : &twitter ayushkumarshah7
 facebook:
   username               :
   app_id                 :
@@ -84,7 +84,7 @@ social:
   email: ayush.kumar.shah@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/ayushkumarshah7      # change to your twitter homepage
+    # - https://twitter.com/ayushkumarshah7      # change to your twitter homepage
     - https://github.com/ayushkumarshah       # change to your github homepage
     # Uncomment below to add more social links
     - https://www.facebook.com/ayushkumarshah
@@ -117,6 +117,7 @@ author:
   facebook         :
   foursquare       :
   github           : "ayushkumarshah"
+  gitlab           : "ayushkumarshah"
   google_plus      :
   keybase          :
   instagram        :
@@ -129,7 +130,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "ayushkumarshah7"
+  # twitter          : "ayushkumarshah7"
   vine             :
   weibo            :
   xing             :
