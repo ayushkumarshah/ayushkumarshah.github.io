@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "About me"
-excerpt: "About me"
+excerpt: "Welcome to my personal website, where I share my academic profile, research contributions, and reflections on intriguing topics—primarily in the fields of Artificial Intelligence and Python."
 author_profile: true
 redirect_from: 
   - /about/
