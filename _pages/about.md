@@ -9,7 +9,7 @@ redirect_from:
 layout: about
 ---
 
-🔍 I’m a fifth-year Ph.D. candidate at Rochester Institute of Technology (RIT),
+🔍 I’m a fifth-year Computer Science Ph.D. candidate at Rochester Institute of Technology (RIT),
  conducting research at the
 [Document and Pattern Recognition Lab (DPRL)](https://www.cs.rit.edu/~dprl/index.html),
 under the mentorship of [Dr. Richard Zanibbi](https://www.cs.rit.edu/~rlaz/).
