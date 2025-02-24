@@ -37,6 +37,8 @@
 
 
 
+  <meta property="og:description" content="Welcome to my projects page, where I showcase a selection of the research, tools, and academic endeavors I am currently working on. Here, you’ll find detailed information about my ongoing projects, primarily in Artificial Intelligence and Python, and other areas where I apply my skills to solve problems and explore new ideas.">
+
 
 
 
@@ -47,12 +49,23 @@
 
 
 
+  <meta property="og:image" content="http://localhost:4001/images/profile.jpeg">
 
 
 
 
 
 
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://localhost:4001",
+      "logo": "http://localhost:4001/images/profile.jpeg"
+    }
+  </script>
 
 
 
@@ -100,7 +113,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740412113">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740414136">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -284,7 +297,7 @@
 
     
     <div class="project-image">
-      <img src="/images/projects/multimodal-chemical-search.jpeg" alt="Multimodal Chemical Search">
+      <img src="/files/projects/multimodal-chemical-search.jpeg" alt="Multimodal Chemical Search">
     </div>
     
 
@@ -304,11 +317,11 @@
   
   <div class="project-item">
     <h2>ChemScraper</h2>
-    <p>A fast and accurate molecule diagram parser using characters and graphics extracted from born-digital (vector) PDF images—without the need for OCR, GPU, or vectorization. It uses these outputs to create training data for a new approach to visual parsing of molecule diagrams in raster images (i.e., pixel-based formats like PNGs) using a multi-task, segmentation-aware convolutional neural network (CNN).</p>
+    <p>A fast and accurate molecule diagram parser using characters and graphics extracted from born-digital (vector) PDF files—without the need for OCR, GPU, or vectorization. It uses these outputs to create training data for a new approach to visual parsing of molecule diagrams in raster files (i.e., pixel-based formats like PNGs) using a multi-task, segmentation-aware convolutional neural network (CNN).</p>
 
     
     <div class="project-image">
-      <img src="/images/projects/chemscraper.png" alt="ChemScraper">
+      <img src="/files/projects/chemscraper.png" alt="ChemScraper">
     </div>
     
 
@@ -332,7 +345,7 @@
 
     
     <div class="project-image">
-      <img src="/images/projects/mathdeck.png" alt="MathDeck">
+      <img src="/files/projects/mathdeck.png" alt="MathDeck">
     </div>
     
 
@@ -356,7 +369,7 @@
 
     
     <div class="project-image">
-      <img src="/images/projects/math-pipeline.jpg" alt="Math Formula Extraction">
+      <img src="/files/projects/math-pipeline.jpg" alt="Math Formula Extraction">
     </div>
     
 
@@ -394,7 +407,7 @@
 
     
     <div class="project-image">
-      <img src="/images/projects/guitar.gif" alt="Guitar chord recognizer">
+      <img src="/files/projects/guitar.gif" alt="Guitar chord recognizer">
     </div>
     
 
@@ -624,14 +637,16 @@
 
 
 
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'G-H6F3H1HTZV']);
+  _gaq.push(['_trackPageview']);
 
-  ga('create', '', 'auto');
-  ga('send', 'pageview');
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 </script>
 
 

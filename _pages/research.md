@@ -4,7 +4,8 @@ title: "Research"
 permalink: /research/
 author_profile: true
 header:
-  og_image: "/files/237-image.png"
+  image: "/files/projects/chemscraper.png"
+excerpt: "Welcome to my research page, where I share my academic interests, current projects, and past research contributions. My work primarily focuses on pattern recognition, graphical structure recognition, computer vision, speaker understanding, large language models, and multi-modal deep learning. Here, you'll find details about my ongoing research, including visual parsers for mathematical and chemical formulas, and past projects that explore innovative methods for document analysis and information retrieval. I’ve also included links to live demos, open-source code, and publications to make my research more accessible and engaging."
 ---
 
 **Research Interests**: 

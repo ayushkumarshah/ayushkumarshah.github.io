@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "About me"
-excerpt: "Welcome to my personal website, where I share my academic profile, research contributions, and reflections on intriguing topics—primarily in the fields of Artificial Intelligence and Python."
+excerpt: "Welcome to my personal website, where I share my academic journey, ongoing research projects, and personal reflections. My work primarily focuses on Artificial Intelligence, Python, Pattern Recognition, Computer Vision, Large Language Models (LLMs), Speaker Understanding, Multi-Modal Deep Learning, and Natural Language Processing. Feel free to explore and learn more about my background, research journey, and the discoveries I’ve made along the way."
 author_profile: true
 redirect_from: 
   - /about/
