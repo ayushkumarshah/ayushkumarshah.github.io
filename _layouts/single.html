@@ -39,8 +39,12 @@ layout: default
             <h1 class="page__title" itemprop="headline">{{ page.title |
               markdownify | remove: "<p>" | remove: "</p>" }} ({{page.date | date: "%Y"}})</h1>
           {% endif %}
-          <p><strong>Venue:</strong> {{ page.venue }} </p>
-          <p> <strong>Status:</strong> {% if page.published %} Published {% else %} Submitted {% endif %}</p>
+          {% if page.collection == 'publications' %}
+            <p><strong>Venue:</strong> {{ page.venue }} </p>
+            <p><strong>Status:</strong> {% if page.published %} Published {% else %} Submitted {% endif %}</p>
+          {% endif %}
+          <!--<p><strong>Venue:</strong> {{ page.venue }} </p>-->
+          <!--<p> <strong>Status:</strong> {% if page.published %} Published {% else %} Submitted {% endif %}</p>-->
 
           {% if page.citation %}
             <p><strong>Recommended Citation:</strong> {{ page.citation }}</p>
