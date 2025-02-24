@@ -30,13 +30,23 @@ various mediums like born-digital PDFs, typeset images, and handwritten strokes.
 <!--representation.-->
 
 ## Past/ongoing research works:
-- [ChemScraper](https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024),
+- [MultiModal Chemical Search](https://reactionminer-demo.platform.moleculemaker.org/reaction-miner),
+    A system for searching chemical reactions, molecular structures, and text in
+    scientific literature. It integrates text, SMILES, and reaction-based
+    queries, linking extracted reaction details with molecular diagrams and
+    textual descriptions. The interface provides structured reaction and
+    molecule cards for easy navigation and retrieval, supporting chemists in
+    literature exploration and data extraction. Code is open-source and
+    available [here](https://gitlab.com/dprl/reactionminer_search).
+
+- [ChemScraper](https://chemscraper.platform.moleculemaker.org/configuration),
     a fast and accurate molecule diagram parser using 
     characters and graphics extracted from born-digital (vector) PDF images—without
     the need for OCR, GPU, or vectorization. It uses these outputs to create
     training data for a new approach to visual parsing of molecule diagrams in
     raster images (i.e., pixel-based formats like PNGs) using a multi-task,
-    segmentation-aware convolutional neural network (CNN).
+    segmentation-aware convolutional neural network (CNN). Code is open-source
+    and available [here](https://gitlab.com/dprl/graphics-extraction/).
 <!-- - --> 
 <!--     a molecule diagram parser, which extracts characters and graphics --> 
 <!--     from PDF molecule images using typesetting instructions, applies simple graph transformation algorithms -->

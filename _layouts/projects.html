@@ -21,6 +21,9 @@ layout: archive
       {% if project.code %}
       <a href="{{ project.code }}" class="btn btn-code" target="_blank">View Code</a>
       {% endif %}
+      {% if project.video %}
+      <a href="{{ project.video }}" class="btn btn-video" target="_blank">Watch Video</a>
+      {% endif %}
     </div>
   </div>
   <div class="project-separator"></div>
@@ -36,6 +39,7 @@ layout: archive
     background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
     border-radius: 10px;
   }
+
   .project-item {
     padding: 25px;
     border-radius: 12px;
@@ -43,16 +47,19 @@ layout: archive
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
   }
+
   .project-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
   }
+
   .project-image {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 15px 0;
   }
+
   .project-image img {
     max-width: 100%;
     height: auto;
@@ -62,6 +69,7 @@ layout: archive
     max-height: 400px;
     object-fit: cover;
   }
+
   .project-links {
     display: flex;
     flex-wrap: wrap;
@@ -69,6 +77,7 @@ layout: archive
     margin-top: 10px;
     justify-content: center;
   }
+
   .btn {
     display: inline-block;
     padding: 10px 15px;
@@ -80,9 +89,11 @@ layout: archive
     min-width: 120px;
     text-align: center;
   }
+
   .btn:hover {
     transform: scale(1.05);
   }
+
   @media (max-width: 480px) {
     .project-links {
       flex-direction: column;
@@ -93,14 +104,22 @@ layout: archive
       max-height: 250px;
     }
   }
+
   .btn-demo {
     background-color: #3498db;
     color: white;
   }
+
   .btn-code {
     background-color: #fc6d26;
     color: white;
   }
+
+  .btn-video {
+    background-color: #e74c3c;
+    color: white;
+  }
+
   .project-separator {
     height: 3px;
     background: linear-gradient(to right, #3498db, #2ecc71);

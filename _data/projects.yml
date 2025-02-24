@@ -3,23 +3,27 @@
   demo: "https://reactionminer-demo.platform.moleculemaker.org/reaction-miner"
   code: "https://gitlab.com/dprl/reactionminer_search"
   image: "/images/projects/multimodal-chemical-search.jpeg"
+  video: "/files/rxn-tutorial.mp4"
 
 - title: "ChemScraper"
   description: "A fast and accurate molecule diagram parser using characters and graphics extracted from born-digital (vector) PDF images—without the need for OCR, GPU, or vectorization. It uses these outputs to create training data for a new approach to visual parsing of molecule diagrams in raster images (i.e., pixel-based formats like PNGs) using a multi-task, segmentation-aware convolutional neural network (CNN)."
   code: "https://gitlab.com/dprl/graphics-extraction/"
   demo: "https://chemscraper.platform.moleculemaker.org/configuration"
   image: "/images/projects/chemscraper.png"
+  video: "/files/chemscraper-video.mp4"
 
 - title: "MathDeck"
   description: "A system for searching PDF documents in a portion of the ACL Anthology, incorporating both formulas and text, displaying matched words and formulas in context. Its user-friendly interface includes formula 'chips' for easy formula creation, search, reuse, and annotation. MathDeck supports both LaTeX and visual formula editing."
   demo: "https://demo.mathdeck.org/"
   code: "https://gitlab.com/dprl/mathdeck"
   image: "/images/projects/mathdeck.png"
+  video: "/files/mathdeck-short.mp4"
 
 - title: "Math Formula Extraction"
   description: "A tool for detecting and recognizing math formulas from PDF documents using both PDF information (without OCR) and visual features through a multi-task learning framework based on ResNet-50 with line-of-sight (LOS) graph-based attention."
   code: "https://gitlab.com/dprl/graphics-extraction"
   image: "/images/projects/math-pipeline.jpg"
+  video: "/files/237-teaser.mp4"
 
 - title: "LgEval"
   description: "A tool for graph-based evaluation of recognition results, with visualization tools for fine-grained error analyses at the level of input primitives."
