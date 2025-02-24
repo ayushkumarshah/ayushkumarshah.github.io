@@ -57,7 +57,7 @@ alexa_site_verification  :
 yandex_site_verification :
 
 google_analytics:
-  id: 'UA-160976128-1'          # Fill with your Google Analytics ID
+  id: 'G-H6F3H1HTZV'          # Fill with your Google Analytics ID
   pv:
     # The Google Analytics pageviews switch.
     # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
@@ -93,9 +93,9 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               :  "google" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
+    tracking_id          : 'G-H6F3H1HTZV'
 
 
 # Site Author
