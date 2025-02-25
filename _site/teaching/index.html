@@ -37,6 +37,8 @@
 
 
 
+  <meta property="og:description" content="An overview of my teaching experiences, including my roles as a Graduate Teaching Assistant and Instructor, course details, and key responsibilities.">
+
 
 
 
@@ -111,7 +113,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740430506">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740456959">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -287,26 +289,123 @@
     
       <h1 class="page__title">Teaching</h1>
     
-    <h2 id="graduate-teaching-assistant">Graduate Teaching Assistant</h2>
+    <div class="teaching-experiences">
+  
+  <!--<div class="teaching-item" style="background: linear-gradient(135deg, #d3d3d3, #f0f0f0); color: #222;">-->
+  <div class="teaching-item">
+    <h2>Graduate Teaching Assistant</h2>
+    <p class="teaching-period"><strong>Aug 2022 – Dec 2022</strong></p>
+    <p class="teaching-location">Rochester Institute of Technology, <br>Rochester, New York</p>
 
-<p>Aug 2022 – Dec 2022</p>
+    
+    <p class="teaching-course"><strong>Course:</strong> <a href="https://www.cs.rit.edu/~rlaz/ml2022/" target="_blank">CSCI-335: Introduction to Machine Learning</a></p>
+    
 
-<p>Rochester Institute of Technology, <br />
-Rochester, New York</p>
+    <h3>Responsibilities:</h3>
+    <ul class="teaching-responsibilities">
+      
+      <li>Assisted in designing assignments, projects, and lecture slides, enhancing academic rigor.</li>
+      
+      <li>Delivered a guest lecture on "Bayesian Decision Theory", focusing on practical applications.</li>
+      
+      <li>Conducted in-person and virtual office hours, supporting students with concepts, assignments, and projects.</li>
+      
+      <li>Graded assignments and projects, providing detailed feedback.</li>
+      
+      <li>Led biweekly recitation sessions to review homework.</li>
+      
+      <li>Assisted with course logistics and scheduling.</li>
+      
+    </ul>
+  </div>
+  <div class="teaching-separator"></div>
+  
+  <!--<div class="teaching-item" style="background: linear-gradient(135deg, #d3d3d3, #f0f0f0); color: #222;">-->
+  <div class="teaching-item">
+    <h2>Computer Science Instructor</h2>
+    <p class="teaching-period"><strong>Jan 2020 – June 2020</strong></p>
+    <p class="teaching-location">Samriddhi College, <br>Kathmandu, Nepal</p>
 
-<p>Course: Introduction to Machine Learning</p>
+    
+    <p class="teaching-course"><strong>Course:</strong> <a href="https://fusemachines.com/ai-education/for-engineers/" target="_blank">Foundations in AI: Computer Science and Mathematics</a></p>
+    
 
-<h2 id="computer-science-instructor">Computer Science Instructor</h2>
+    <h3>Responsibilities:</h3>
+    <ul class="teaching-responsibilities">
+      
+      <li>Designed and delivered daily lesson plans and coding sessions.</li>
+      
+      <li>Covered topics including Introduction to AI, Python Programming, Data Structures, and DBMS.</li>
+      
+      <li>Facilitated hands-on coding exercises and projects.</li>
+      
+    </ul>
+  </div>
+  <div class="teaching-separator"></div>
+  
+</div>
 
-<p>Jan 2020 - June 2020</p>
+<style>
+  .teaching-experiences {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+    border-radius: 10px;
+  }
 
-<p>Samriddhi College, <br /> 
-Kathmandu, Nepal</p>
+  .teaching-item {
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    <!--background: #ffffff;-->
+  }
 
-<p>Designed and implemented daily lesson plans and coding sessions for the course <a href="https://fusemachines.com/ai-education/for-engineers/">“Foundations in AI: Computer
-Science and Mathematics”</a> to undergraduate BSc.CSIT students. 
-The course topics include: Introduction to AI,
-Fundamentals of CS, Python Programming, Data Structure, Database Management System.</p>
+  .teaching-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .teaching-period, .teaching-location, .teaching-course {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .teaching-course a {
+    color: #3498db;
+    text-decoration: none;
+  }
+
+  .teaching-course a:hover {
+    text-decoration: underline;
+  }
+
+  .teaching-responsibilities {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+
+  .teaching-separator {
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    margin: 15px 0;
+  }
+
+  @media (max-width: 600px) {
+    .teaching-item {
+      padding: 15px;
+    }
+
+    .teaching-period, .teaching-location {
+      font-size: 0.9rem;
+    }
+  }
+</style>
 
   </div>
 </div>
