@@ -1,0 +1,24 @@
+- position: "Graduate Teaching Assistant"
+  period: "Aug 2022 – Dec 2022"
+  institution: "Rochester Institute of Technology"
+  location: "Rochester, New York"
+  course: "CSCI-335: Introduction to Machine Learning"
+  course_url: "https://www.cs.rit.edu/~rlaz/ml2022/"
+  responsibilities:
+    - Assisted in designing assignments, projects, and lecture slides, enhancing academic rigor.
+    - Delivered a guest lecture on "Bayesian Decision Theory", focusing on practical applications.
+    - Conducted in-person and virtual office hours, supporting students with concepts, assignments, and projects.
+    - Graded assignments and projects, providing detailed feedback.
+    - Led biweekly recitation sessions to review homework.
+    - Assisted with course logistics and scheduling.
+
+- position: "Computer Science Instructor"
+  period: "Jan 2020 – June 2020"
+  institution: "Samriddhi College"
+  location: "Kathmandu, Nepal"
+  course: "Foundations in AI: Computer Science and Mathematics"
+  course_url: "https://fusemachines.com/ai-education/for-engineers/"
+  responsibilities:
+    - Designed and delivered daily lesson plans and coding sessions.
+    - Covered topics including Introduction to AI, Python Programming, Data Structures, and DBMS.
+    - Facilitated hands-on coding exercises and projects.

@@ -1,0 +1,91 @@
+---
+layout: archive
+title: "Teaching"
+permalink: /teaching/
+author_profile: true
+---
+
+<div class="teaching-experiences">
+  {% for experience in site.data.teaching %}
+  <!--<div class="teaching-item" style="background: linear-gradient(135deg, #d3d3d3, #f0f0f0); color: #222;">-->
+  <div class="teaching-item">
+    <h2>{{ experience.position }}</h2>
+    <p class="teaching-period"><strong>{{ experience.period }}</strong></p>
+    <p class="teaching-location">{{ experience.institution }}, <br>{{ experience.location }}</p>
+
+    {% if experience.course %}
+    <p class="teaching-course"><strong>Course:</strong> <a href="{{ experience.course_url }}" target="_blank">{{ experience.course }}</a></p>
+    {% endif %}
+
+    <h3>Responsibilities:</h3>
+    <ul class="teaching-responsibilities">
+      {% for responsibility in experience.responsibilities %}
+      <li>{{ responsibility }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="teaching-separator"></div>
+  {% endfor %}
+</div>
+
+<style>
+  .teaching-experiences {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+    border-radius: 10px;
+  }
+
+  .teaching-item {
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    <!--background: #ffffff;-->
+  }
+
+  .teaching-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .teaching-period, .teaching-location, .teaching-course {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .teaching-course a {
+    color: #3498db;
+    text-decoration: none;
+  }
+
+  .teaching-course a:hover {
+    text-decoration: underline;
+  }
+
+  .teaching-responsibilities {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+
+  .teaching-separator {
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    margin: 15px 0;
+  }
+
+  @media (max-width: 600px) {
+    .teaching-item {
+      padding: 15px;
+    }
+
+    .teaching-period, .teaching-location {
+      font-size: 0.9rem;
+    }
+  }
+</style>
