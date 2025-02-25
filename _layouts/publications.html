@@ -24,6 +24,7 @@ layout: default
     {% for post in site.publications reversed %}
       <a href="{{ post.permalink }}" class="publication-link">
         <div class="publication-item" style="background: linear-gradient(135deg, #d3d3d3, #f0f0f0); color: #222;">
+          <!--<div class="publication-item">-->
           <h2>{{ post.title }} ({{ post.date | slice: 0, 4 }}) </h2>
           <p><strong>Venue:</strong> {{ post.venue }} | <strong>Status:</strong> {{ post.status | default: "Published" }}</p>
             <!--| <strong>Year:</strong> {{ post.date | slice: 0, 4 }}</p>-->
