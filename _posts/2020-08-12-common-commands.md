@@ -63,6 +63,7 @@ tags:
 |`find . -not -name "file_name"`|Find files not matching the filename|
 |find . -name "file_name" &#124; xargs -I % rm %|Find and delete files matching the filename|
 |`find . -name "file_name" -exec rm -i {} \;`|Find and delete files matching the filename|
+|`find . -type d -name "input_features" -print | tee /dev/tty | xargs -P 16 -I {} rm -rf "{}"`| Find and delete directories matching the directory name or filename in parallel with specified number of cores
 |`find . -name "file_name" -exec grep "Hello" -i {} \;`|Find and search "Hello" in files matching the filename|
 |`find -E . -regex ".*/file_name[0-9].sh"`|Find files matching the regular expression (this syntax works only in osx)|
 |`find -E . -not -regex ".*/file_name[0-9].sh"`|Find files not matching the regular expression (this syntax works only in osx)|

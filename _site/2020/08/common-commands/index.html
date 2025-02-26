@@ -116,7 +116,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740593048">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1740595026">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -636,6 +636,10 @@
     <tr>
       <td><code class="language-plaintext highlighter-rouge">find . -name "file_name" -exec rm -i {} \;</code></td>
       <td>Find and delete files matching the filename</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">find . -type d -name "input_features" -print | tee /dev/tty | xargs -P 16 -I {} rm -rf "{}"</code></td>
+      <td>Find and delete directories matching the directory name or filename in parallel with specified number of cores</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">find . -name "file_name" -exec grep "Hello" -i {} \;</code></td>
