@@ -41,7 +41,8 @@ layout: default
           {% endif %}
           {% if page.collection == 'publications' %}
             <p><strong>Venue:</strong> {{ page.venue }} </p>
-            <p><strong>Status:</strong> {% if page.published %} Published {% else %} Submitted {% endif %}</p>
+            <p><strong>Status:</strong> {{ page.status | default: "Published" }} </p>
+            <!--<p><strong>Status:</strong> {% if page.published %} Published {% else %} Submitted {% endif %}</p>-->
           {% endif %}
           <!--<p><strong>Venue:</strong> {{ page.venue }} </p>-->
           <!--<p> <strong>Status:</strong> {% if page.published %} Published {% else %} Submitted {% endif %}</p>-->

@@ -1,3 +1,12 @@
+- date: "April 15-16, 2023"
+  year: 2025
+  content: "Presented a poster on **\"ChemScraper: Pipeline for Parsing Raster and Vector Molecule Diagrams from PDFs\"** at the Molecule Maker Lab Institute **(MMLI) Symposium 2025 at University of Illinois Urbana-Champaign (UIUC).**"
+- date: "April 4, 2025"
+  year: 2025
+  content: "Our [paper](https://shahayush.com/publications/2025-02-18-reaction-search) on **\"Multimodal Search in Chemical Documents and Reactions\"** accepted for publication at Proceedings of the 48th International ACM **SIGIR** Conference on Research and Development in Information Retrieval, in [SIGIR ’25](https://sigir2025.dei.unipd.it/index.html), Padua, Italy. The system is available online at [ReactionMiner](https://reactionminer-demo.platform.moleculemaker.org/reaction-miner)."
+- date: "March 27, 2025"
+  year: 2025
+  content: "A step-by-step video tutorial on the AlphaSynthesis tool, **ChemScraper**, is available on [YouTube](https://www.youtube.com/watch?v=9SiJCPm20dk&ab_channel=MoleculeMakerLabInstitute)."
 - date: "Feb 18, 2025"
   year: 2025
   content: "Submitted our [paper](https://shahayush.com/publications/2025-02-18-reaction-search) on the **\"Multimodal Search in Chemical Documents and Reactions\"** for publication at Proceedings of the 48th International ACM **SIGIR** Conference on Research and Development in Information Retrieval, in [SIGIR ’25](https://sigir2025.dei.unipd.it/index.html), Padua, Italy. The system is available online at [ReactionMiner](https://reactionminer-demo.platform.moleculemaker.org/reaction-miner)."

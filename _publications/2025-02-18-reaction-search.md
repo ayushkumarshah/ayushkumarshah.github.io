@@ -10,7 +10,7 @@ citation: 'A. K. Shah, A. Dey, L. Luo, B. M. Amador,  P. Philippy, M. Zhong, S. 
 code: 'https://gitlab.com/dprl/reactionminer_search'
 demo: 'https://reactionminer-demo.platform.moleculemaker.org/reaction-miner'
 video: '/files/rxn-tutorial.mp4'
-status: 'Submitted'
+status: 'Accepted'
 bibtex: |
     @misc{shahMultimodalSearchChemical2025,
       title = {Multimodal {{Search}} in {{Chemical Documents}} and {{Reactions}}},
