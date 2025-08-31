@@ -1,3 +1,9 @@
+- date: "July 21, 2025"
+  year: 2025
+  content: "Started as Research Scientist at [**Meta**](https://www.meta.com/about/?srsltid=AfmBOopiuVBnEUaV4evB6ufbcyI5GpXuEasBSQn5swTxhwAGuu7wUV9i), working on the Media Foundation Video team (AI)."
+- date: "June 27, 2025"
+  year: 2025
+  content: "Successfully defended and passed my Ph.D. dissertation on **\"[Parsing of Math Formulas and Chemical Diagrams using Graph-Based Representation and Attention Models](https://repository.rit.edu/theses/12254/)\"**."
 - date: "May 23, 2025"
   year: 2025
   content: "Featured in the April-May [2025 MMLI Spotlights (Student Spotlight)](https://moleculemaker.org/people/researcher-spotlights/april-may-2025-mmli-spotlight/#:~:text=AYUSH%20KUMAR%20SHAH-,Ayush%20Kumar%20Shah,-is%20a%20current). News published on the [DPRL’s recent highlights](https://moleculemaker.org/news/news-from-our-dr-zanibbis-lab-over-at-rit/): Dr. Zanibbi received RIT’s highest research award and gave an [invited talk](https://pirsa.org/25040072) at the Perimeter Institute for Theoretical Physics, which featured AI scientists including 2024 Nobel Laureate, Geoffrey Hinton. <br>Likewise, DPRL students achieved major milestones including top internships and industry placements—demonstrating the lab’s growing impact through MMLI collaborations."
@@ -10,75 +16,75 @@
 - date: "March 27, 2025"
   year: 2025
   content: "A step-by-step video tutorial on the AlphaSynthesis tool, **ChemScraper**, is available on [YouTube](https://www.youtube.com/watch?v=9SiJCPm20dk&ab_channel=MoleculeMakerLabInstitute). ChemScraper is a fast and accurate molecule diagram parser using characters and graphics extracted from PDF files and raster images."
-- date: "Feb 18, 2025"
+- date: "February 18, 2025"
   year: 2025
   content: "Submitted our [paper](https://shahayush.com/publications/2025-02-18-reaction-search) on the **\"Multimodal Search in Chemical Documents and Reactions\"** for publication at Proceedings of the 48th International ACM **SIGIR** Conference on Research and Development in Information Retrieval, in [SIGIR ’25](https://sigir2025.dei.unipd.it/index.html), Padua, Italy. The system is available online at [ReactionMiner](https://reactionminer-demo.platform.moleculemaker.org/reaction-miner)."
-- date: "Dec 19, 2024"
+- date: "December 19, 2024"
   year: 2024
   content: "Successfully defended and passed my Ph.D. dissertation proposal on **\"Parsing of Math Formulas and Chemical Diagrams using Graph-Based Representation and Attention Models\"**."
-- date: "Sept 3, 2024"
+- date: "September 3, 2024"
   year: 2024
   content: "Gave an oral presentation on **\"ChemScraper: Leveraging PDF Graphics Instructions for Molecular Diagram Parsing\"** at the 18th International Conference on Document Analysis and Recognition, [ICDAR 2024](https://icdar2024.net/), Athens, Greece."
 - date: "May 2024"
   year: 2024
   content: "A revised paper on [ChemScraper](https://shahayush.com/publications/2023-11-18-chemscraper) has been published at the **18th International Conference on Document Analysis and Recognition, [ICDAR 2024](https://icdar2024.net/), Athens, Greece -- Journal Track**. The paper describes (1) a fast and accurate technique for parsing born-digital (vector) PDF images, and (2) its use to create training data for a new approach to visual parsing of molecule diagrams in raster images (i.e., pixel-based such as from PNGs). [Code](https://gitlab.com/dprl/graphics-extraction/) is available and the system is online at [ChemScraper](https://chemscraper.platform.moleculemaker.org/configuration)."
-- date: "Nov 14, 2023"
+- date: "November 14, 2023"
   year: 2023
   content: "A paper describing ChemScraper parser for molecular diagrams in PDF drawing instructions ('born-digital') is available on arXiv [here](https://arxiv.org/abs/2311.12161). The system can also generate annotated training data for visual parsers that recognize raster images (i.e., pixel-based, such as PNG). A link to associated code is provided in a [footnote](https://gitlab.com/dprl/graphics-extraction/-/tree/icdar2024) in the paper."
-- date: "Sept 12, 2023"
+- date: "September 12, 2023"
   year: 2023
   content: "Co-presented a poster on **\"ChemScraper: Extracting Molecule Diagrams from PDF Vector and Raster Images with CDXML and SMILES Output\"** at the Molecule Maker Lab Institute **(MMLI) All-Institute Retreat at University of Illinois Urbana-Champaign (UIUC).**"
-- date: "Aug 22-23, 2023"
+- date: "August 22-23, 2023"
   year: 2023
   content: "Gave a poster presentation talk at Poster session 1 and doctoral consortium at the 17th International Conference on Document Analysis and Recognition, [ICDAR 2023](https://icdar2023.org/), San José, California."
 - date: "June 28, 2023"
   year: 2023
   content: "Co-presented a poster on \"ChemScraper: Extracting Molecule Diagrams from PDF Vector Images with Page-Level CDXML (ChemDraw) and SMILES Output\" at the **NSF Annual Review Meeting at University of Illinois Urbana-Champaign (UIUC)**."
-- date: "Apr 17, 2023"
+- date: "April 17, 2023"
   year: 2023
   content: "Gave a **Research Idea Ring (RIR) talk** on **\"Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas\"** at RIT."
-- date: "Apr 2023"
+- date: "April 2023"
   year: 2023
   content: "Our [paper](https://shahayush.com/publications/2023-04-30-lgap) on the **\"Line-of-sight with Graph Attention Parser (LGAP) for Math Formulas\"** has been accepted for publication at the 17th International Conference on Document Analysis and Recognition, [ICDAR 2023](https://icdar2023.org/), San José, California."
-- date: "Sept 27-28, 2022"
+- date: "September 27-28, 2022"
   year: 2022
   content: "Co-presented a poster on **\"Reconstructing the Structure of Molecular Diagrams in PDF Documents using a CNN-Attention-Based Parsing Model\"** at the Molecule Maker Lab Institute **(MMLI) All-Institute Retreat at University of Illinois Urbana-Champaign (UIUC).**"
-- date: "Sep 5, 2022"
+- date: "Sepember 5, 2022"
   year: 2022
   content: "Gave a guest lecture on **“Bayesian Decision Theory”** for RIT’s undergraduate course - Intro to Machine Learning (40 students)."
-- date: "Aug 28, 2022"
+- date: "August 28, 2022"
   year: 2022
   content: "Successfully completed **Applied Scientist Intern** at Amazon (Alexa AI). Started as **Graduate Teaching Assistant (GTA)** for the undergraduate course CSCI-335 Machine Learning."
 - date: "May 23, 2022"
   year: 2022
   content: "Started as **Applied Scientist Intern** at Amazon (Alexa AI). Worked on the Alexa Perceptual Technologies - Speaker Understanding team to improve speaker identification in Alexa devices."
-- date: "Apr 7, 2022"
+- date: "April 7, 2022"
   year: 2022
   content: "Gave a **Research Idea Ring (RIR) talk** on “A Fast and Interpretable Context-aware Parser for Isolated Formulas and Chemical Diagrams” at RIT."
-- date: "Sept 9, 2021"
+- date: "September 9, 2021"
   year: 2021
   content: "Gave a poster presentation talk on the MathSeer extraction pipeline at the 16th International Conference on Document Analysis and Recognition, [ICDAR 2021](https://icdar2021.org/), Lausanne, Switzerland virtually."
-- date: "Sept, 2021"
+- date: "September, 2021"
   year: 2021
   content: "MathSeer extraction pipeline released. This tool extracts formula locations and content in PDF documents. The pipeline is available from [GitLab](https://gitlab.com/dprl/MathSeer-extraction-pipeline), and includes improved versions of SymbolScraper, ScanSSD (now, ScanSSD-XYc), and QD-GGA. The pipeline was prepared by **Ayush K. Shah**, Abhisek Dey, Matt Langsenkamp, and Prof. Zanibbi."
 - date: "May 2021"
   year: 2021
   content: 'Successfully defended and passed my **Ph.D. Research Potential Assessment (RPA)** on **"Recognition of Mathematical Formulas"**'
-- date: "Apr 2021"
+- date: "April 2021"
   year: 2021
   content: "Our [paper](https://shahayush.com/publications/2021-09-01-mathseer-pipeline) on the **\"MathSeer formula extraction and evaluation pipeline\"** has been accepted for publication at the 16th International Conference on Document Analysis and Recognition, [ICDAR 2021](https://icdar2021.org/), Lausanne, Switzerland."
-- date: "Aug 2020"
+- date: "August 2020"
   year: 2020
   content: "Joined Rochester Institute of Technology (RIT) for Ph.D. in Computing and Information Sciences. Started as **Graduate Research Assistant (GRA)** at the [Document and Pattern Recognition Lab (DPRL)](https://www.cs.rit.edu/~dprl/) under [Prof. Richard Zanibbi](https://www.cs.rit.edu/~rlaz/)."
-- date: "Jan 2020"
+- date: "January 2020"
   year: 2020
   content: "Promoted to **Machine Learning Engineer Level 1** at Fusemachines Nepal."
-- date: "Aug 2019"
+- date: "August 2019"
   year: 2019
   content: "Promoted to **Machine Learning Engineer Associate** at Fusemachines Nepal."
-- date: "Aug 2019"
+- date: "August 2019"
   year: 2019
   content: "Graduated from Kathmandu University as a **Computer Engineer**."
-- date: "Jun 2019"
+- date: "June 2019"
   year: 2019
   content: "Started working as a **Machine Learning Engineer Trainee** at Fusemachines Nepal."

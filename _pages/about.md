@@ -9,16 +9,20 @@ redirect_from:
 layout: about
 ---
 
-🔍 I’m a fifth-year Computer Science Ph.D. candidate at Rochester Institute of Technology (RIT),
+🔍 I am a Research Scientist at Meta, working on the Media Foundation Video team
+(AI), where I focus on AI-driven video processing, enhancement, and quality
+optimization across Meta’s Family of Apps (FoA), including facebook, 
+messenger, instagram, whatsapp.
+
+I completed my Ph.D. at Rochester Institute of Technology (RIT),
  conducting research at the
 [Document and Pattern Recognition Lab (DPRL)](https://www.cs.rit.edu/~dprl/index.html),
 under the mentorship of [Dr. Richard Zanibbi](https://www.cs.rit.edu/~rlaz/).
-
-💡 My work centers around designing fast, efficient, and interpretable parsers
+My work centered around designing fast, efficient, and interpretable parsers
 for recognizing mathematical formulas and chemical diagrams from documents across 
 multiple formats, including PDFs, typeset images, and handwritten strokes.
 Through graph attention-based techniques in a multi-task learning framework, I
-aim to enhance contextual information, while preserving a natural and
+enhanced contextual information, while preserving a natural and
 interpretable graph representation.
 
 💻 **Recent Projects:**
