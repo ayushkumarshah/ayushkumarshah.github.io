@@ -44,5 +44,9 @@ computer vision, speaker understanding, large language models, multi-modal deep
 learning, natural language processing.
 
 <div class="resume-container">
-  <a href="/files/Resume_AyushKumarShah_current.pdf" class="btn btn-resume" target="_blank">Download Resume</a>
+  <a href="/files/CV_AyushKumarShah_current.pdf" class="btn btn-resume" target="_blank">Download CV</a>
 </div>
+<!---->
+<!-- <div class="resume-container"> -->
+<!--   <a href="/files/Resume_AyushKumarShah_current.pdf" class="btn btn-resume" target="_blank">Download CV</a> -->
+<!-- </div> -->

@@ -100,9 +100,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Ayush Kumar Shah"
+  name             : "Ayush Kumar Shah, PhD"
   avatar           : "profile.jpeg"
-  bio              : "Computer Science Ph.D. Candidate"
+  bio              : "Research Scientist at Meta"
   location         : "Rochester, New York"
   employer         :
   # pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
