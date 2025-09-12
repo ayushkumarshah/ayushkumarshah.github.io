@@ -113,7 +113,7 @@
 
 <!-- For all browsers -->
 <!--<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">-->
-<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1756685220">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/main.css?v=1757650963">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -438,17 +438,21 @@
         <div class="publication-item" style="background: linear-gradient(135deg, #d3d3d3, #f0f0f0); color: #222;">
           <!--<div class="publication-item">-->
           <h2>Multimodal Search in Chemical Documents and Reactions (2025) </h2>
-          <p><strong>Venue:</strong> International ACM SIGIR Conference on Research and Development in Information | <strong>Status:</strong> Accepted</p>
+          <p><strong>Venue:</strong> International ACM SIGIR Conference on Research and Development in Information | <strong>Status:</strong> Published</p>
             <!--| <strong>Year:</strong> 2025</p>-->
-          <!--<p><strong>Status:</strong> Accepted</p>-->
+          <!--<p><strong>Status:</strong> Published</p>-->
           <p>This paper introduces a multimodal search tool for retrieving chemical reactions, molecular structures, and associated text from scientific literature, linking visual and textual representations of chemical information.</p>
       </a>
 
           <div class="publication-links">
             
+              <a href="https://dl.acm.org/doi/10.1145/3726302.3730152" class="btn btn-paper" target="_blank">Publisher PDF</a>
+            
             
               <a href="https://arxiv.org/abs/2502.16865" class="btn btn-pdf" target="_blank">Preprint PDF</a>
             
+            
+              <a href="/files/reaction-search-poster.pdf" class="btn btn-poster" target="_blank">View Poster</a>
             
             
               <a href="/files/rxn-tutorial.mp4" class="btn btn-video" target="_blank">Watch Video</a>
@@ -462,7 +466,7 @@
             <a href="/publications/2025-02-18-reaction-search" class="btn btn-info">More Info</a>
           </div>
 
-          <p><strong>Recommended Citation:</strong> A. K. Shah, A. Dey, L. Luo, B. M. Amador,  P. Philippy, M. Zhong, S. Ouyang, D. M. Friday, D. Bianchi, N. Jackson, R. Zanibbi, and J. Han, "Multimodal Search in Chemical Documents and Reactions," Feb. 24, 2025, arXiv: arXiv:2502.16865. doi: 10.48550/arXiv.2502.16865.</p>
+          <p><strong>Recommended Citation:</strong> A. K. Shah, A. Dey, L. Luo, B. M. Amador,  P. Philippy, M. Zhong, S. Ouyang, D. M. Friday, D. Bianchi, N. Jackson, R. Zanibbi, and J. Han, "Multimodal Search in Chemical Documents and Reactions", in Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval, in SIGIR ’25. New York, NY, USA: Association for Computing Machinery, July 2025, pp. 4030–4034. doi: 10.1145/3726302.3730152.</p>
 
         
         <div class="bibtex-wrapper">
@@ -474,19 +478,22 @@
                 <textarea id="bibtex-20250218 00:00:00 0500-multimodal-search-in-chemical-documents-and-reactions"
                           class="bibtex-textarea"
                           readonly
-                          style="display: none;">@misc{shahMultimodalSearchChemical2025,
-  title = {Multimodal {{Search}} in {{Chemical Documents}} and {{Reactions}}},
+                          style="display: none;">@inproceedings{shahMultimodalSearchChemical2025,
   author = {Shah, Ayush Kumar and Dey, Abhisek and Luo, Leo and Amador, Bryan and Philippy, Patrick and Zhong, Ming and Ouyang, Siru and Friday, David Mark and Bianchi, David and Jackson, Nick and Zanibbi, Richard and Han, Jiawei},
+  title = {Multimodal Search in Chemical Documents and Reactions},
   year = {2025},
-  month = feb,
-  number = {arXiv:2502.16865},
-  eprint = {2502.16865},
-  primaryclass = {cs},
-  publisher = {arXiv},
-  doi = {10.48550/arXiv.2502.16865},
-  urldate = {2025-02-25},
-  archiveprefix = {arXiv},
-  keywords = {Computer Science - Information Retrieval},
+  isbn = {9798400715921},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3726302.3730152},
+  doi = {10.1145/3726302.3730152},
+  abstract = {We present a multimodal search tool for retrieval of chemical reactions, molecular structures, and associated text from scientific literature. Queries may combine molecular diagrams, textual descriptions, and reaction data, allowing users to connect different chemical information representations. Indexing includes chemical diagram extraction and parsing, extraction of reaction data from text in tabular form, and cross-modal linking of diagrams with their mentions in text. We describe the system's architecture and retrieval features, along with expert assessments of the system. Our demo highlights the workflow and search components. Online demo: https://www.cs.rit.edu/~dprl/reactionminer-demo-landing},
+  booktitle = {Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  pages = {4030–4034},
+  numpages = {5},
+  keywords = {chemical diagrams, multi-modal search, reactions},
+  location = {Padua, Italy},
+  series = {SIGIR '25}
 }
 </textarea>
                 <button class="btn btn-bibtex-copy copy-btn"
