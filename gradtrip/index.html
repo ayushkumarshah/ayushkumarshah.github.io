@@ -1668,12 +1668,11 @@ function renderWeatherTab() {
           ];
           card.style.background = gradients[idx % gradients.length];
           var primaryTemp = w.current != null ? w.current : w.high;
-          var primaryLabel = w.current != null ? 'Now ' : 'High ';
           setHTML(card,
             '<div class="wc-badge">Live</div>' +
             '<div class="wc-city">' + wc.city + '</div>' +
             '<div class="wc-icon">' + emoji + '</div>' +
-            '<div class="wc-temp">' + primaryLabel + primaryTemp + '\u00B0C <span style="font-size:.6em;opacity:.5">(' + cToF(primaryTemp) + '\u00B0F)</span></div>' +
+            '<div class="wc-temp">' + primaryTemp + '\u00B0C <span style="font-size:.6em;opacity:.5">(' + cToF(primaryTemp) + '\u00B0F)</span></div>' +
             '<div class="wc-desc">' + desc + '</div>' +
             '<div class="wc-range">Low ' + Math.round(w.low) + '\u00B0C \u2022 High ' + Math.round(w.high) + '\u00B0C <span style="opacity:.5">(' + cToF(w.low) + '\u2013' + cToF(w.high) + '\u00B0F)</span></div>'
           );
