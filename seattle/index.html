@@ -25,14 +25,16 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;padding-bottom:calc(var(--nav-h)+24px);min-height:100dvh;overflow-x:hidden}
 
-/* ── BANNER ── */
-.banner{background:linear-gradient(135deg,#0D1E2C 0%,#1C3550 50%,#1B7A72 100%);color:#fff;padding:12px 20px;text-align:center;font-size:13px;position:sticky;top:0;z-index:100}
-.banner .pulse{display:inline-block;width:7px;height:7px;background:#FFC0CB;border-radius:50%;margin-right:8px;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
-.banner .dt{font-size:11px;opacity:.7;margin-top:2px}
-.banner strong{font-family:var(--serif);font-style:italic}
+/* -- BANNER -- */
+.banner{background:linear-gradient(135deg,#0D1E2C 0%,#1C3550 50%,#1B7A72 100%);color:#fff;padding:14px 20px;text-align:center;font-size:14px;position:sticky;top:0;z-index:100}
+.banner .pulse{display:inline-block;width:8px;height:8px;background:#FFC0CB;border-radius:50%;margin-right:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.banner .dt{font-weight:300;opacity:.8;font-size:12px;margin-top:2px}
+.banner .countdown-label{font-size:12px;opacity:.8;margin-top:6px}
+.banner .countdown-nums{font-family:var(--serif);font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:1px;margin-top:4px}
+.banner .status-line{margin-top:4px}
 
-/* ── NAV ── */
+/* -- NAV -- */
 .nav{display:flex;gap:0;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:99;overflow-x:auto;scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
 .nav button{flex:1;min-width:max-content;padding:14px 14px 12px;border:none;background:none;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;border-bottom:2.5px solid transparent;transition:all .2s;white-space:nowrap}
@@ -40,15 +42,15 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .nav button:hover:not(.active){color:var(--rose);background:var(--rose-light)}
 .nav .ni{display:block;font-size:17px;margin-bottom:2px}
 
-/* ── TABS ── */
+/* -- TABS -- */
 .tab{display:none;padding:16px;max-width:820px;margin:0 auto;animation:fadeIn .3s ease}
 .tab.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── CARDS ── */
+/* -- CARDS -- */
 .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);padding:20px;margin-bottom:16px}
 
-/* ── HERO ── */
+/* -- HERO -- */
 .hero{
   background:linear-gradient(160deg,#0D1E2C 0%,#1C3550 45%,#1B7A72 80%,#24968C 100%);
   border-radius:var(--radius);padding:36px 24px 28px;color:#fff;margin-bottom:20px;
@@ -71,13 +73,64 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 /* Seattle skyline SVG */
 .skyline-svg{width:100%;height:80px}
 
-/* ── STATS ── */
+/* -- STATS -- */
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
 .stat{background:var(--card);border-radius:var(--radius);padding:16px 12px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow)}
 .stat .n{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--teal)}
 .stat .l{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
 
-/* ── PHASES OVERVIEW ── */
+/* -- TIMELINE V2 -- */
+.timeline-v2{position:relative;padding-left:52px}
+.timeline-v2::before{content:'';position:absolute;left:18px;top:4px;bottom:4px;width:2.5px;background:linear-gradient(to bottom,var(--border),var(--teal-light),var(--rose-light),var(--border))}
+.tl2-item{position:relative;padding-bottom:24px}
+.tl2-item:last-child{padding-bottom:0}
+.tl2-dot{position:absolute;left:-42px;top:-2px;width:40px;height:40px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--border),0 2px 6px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:20px}
+.tl2-dot.blue{background:#3A6EA5;box-shadow:0 0 0 2px #3A6EA530,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.green{background:#4A7C59;box-shadow:0 0 0 2px #4A7C5930,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.purple{background:#6B4C8A;box-shadow:0 0 0 2px #6B4C8A30,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.gold-dot{background:#B08040;box-shadow:0 0 0 2px #B0804030,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.teal-dot{background:#1B7A72;box-shadow:0 0 0 2px #1B7A7230,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.rose-dot{background:#B85C6E;box-shadow:0 0 0 2px #B85C6E30,0 2px 4px rgba(0,0,0,.1)}
+.tl2-content{padding-left:6px}
+
+/* ── FOCUS CARD (Next Up) ── */
+.focus-card{
+  background:linear-gradient(135deg,#fff8ef 0%,#ffffff 55%,#E3F4F2 100%);
+  border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);margin-bottom:16px;
+}
+.focus-kicker{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.focus-title{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.2}
+.focus-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.focus-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700}
+.focus-pill.date{background:var(--rose-light);color:var(--rose-dark)}
+.focus-pill.loc{background:var(--teal-light);color:var(--teal)}
+.focus-note{font-size:13px;color:var(--text2);margin-top:10px;line-height:1.55}
+.focus-acts{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.focus-act{display:flex;align-items:center;gap:8px;font-size:12px;padding:6px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--border)}
+.focus-act-time{font-weight:700;color:var(--teal);min-width:65px;text-align:right;flex-shrink:0}
+.focus-act-title{color:var(--text);font-weight:600}
+.tl2-date{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px}
+.tl2-title{font-family:var(--serif);font-size:15px;font-weight:600;margin-top:1px}
+.tl2-sub{font-size:12px;color:var(--text2);margin-top:1px}
+.tl2-badge{display:inline-block;font-size:10px;font-weight:700;padding:1px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.tl2-badge.booked{background:#E6F5E6;color:#2D7A6B}
+.tl2-badge.pending{background:var(--gold-light);color:var(--gold)}
+
+/* -- ROUTE CARD -- */
+.route-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);padding:20px;margin-bottom:16px}
+.route-step{display:flex;gap:12px;position:relative;padding-bottom:16px;padding-left:8px}
+.route-step:last-child{padding-bottom:0}
+.route-step::before{content:'';position:absolute;left:23px;top:38px;bottom:0;width:2.5px;background:var(--teal-light)}
+.route-step:last-child::before{display:none}
+.route-marker{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--teal-light);border:2.5px solid var(--teal)}
+.route-marker.start{background:var(--teal);color:#fff}
+.route-marker.end{background:var(--rose);color:#fff;border-color:var(--rose)}
+.route-info{flex:1}
+.route-city{font-weight:700;font-size:14px}
+.route-desc{font-size:12px;color:var(--text2);margin-top:1px}
+.route-drive{display:inline-block;font-size:10px;font-weight:700;color:var(--teal);background:var(--teal-light);padding:1px 8px;border-radius:10px;margin-top:4px}
+
+/* -- PHASES OVERVIEW -- */
 .phases{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
 .phase-row{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:12px;border:1px solid var(--border);background:var(--card)}
 .phase-icon{font-size:24px;flex-shrink:0;margin-top:2px}
@@ -87,12 +140,13 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .phase-dates.business{background:var(--teal-light);color:var(--teal)}
 .phase-desc{font-size:12px;color:var(--text2);margin-top:5px;line-height:1.5}
 
-/* ── SCHEDULE ── */
+/* -- SCHEDULE -- */
 .phase-tabs{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
 .phase-tabs::-webkit-scrollbar{display:none}
 .ptab{padding:7px 16px;border-radius:999px;border:1.5px solid var(--border);background:var(--card);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s;font-family:var(--sans);color:var(--text2)}
 .ptab.active.personal{background:var(--rose);border-color:var(--rose);color:#fff}
 .ptab.active.business{background:var(--teal);border-color:var(--teal);color:#fff}
+.ptab.active.post{background:var(--slate);border-color:var(--slate);color:#fff}
 
 .day-strip-wrap{overflow:hidden;margin-bottom:4px}
 .day-strip{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none}
@@ -100,21 +154,34 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .day-chip{min-width:58px;padding:10px 6px;border-radius:10px;text-align:center;cursor:pointer;border:1.5px solid var(--border);background:var(--card);transition:all .2s;flex-shrink:0}
 .day-chip.personal.active{background:var(--rose);border-color:var(--rose);color:#fff}
 .day-chip.business.active{background:var(--teal);border-color:var(--teal);color:#fff}
+.day-chip.post.active{background:var(--slate);border-color:var(--slate);color:#fff}
 .day-chip.today{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold-light)}
 .day-chip.past{opacity:.45}
 .dc-day{font-size:9px;font-weight:700;text-transform:uppercase;color:var(--text2);letter-spacing:.3px}
-.day-chip.personal.active .dc-day,.day-chip.business.active .dc-day{color:rgba(255,255,255,.85)}
+.day-chip.personal.active .dc-day,.day-chip.business.active .dc-day,.day-chip.post.active .dc-day{color:rgba(255,255,255,.85)}
 .dc-n{font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.2}
 .dc-mo{font-size:8px;color:var(--text2);text-transform:uppercase}
 
 .day-detail{animation:fadeIn .25s ease}
 .day-hdr{margin-bottom:14px}
+.day-context{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.day-breadcrumb{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--text2)}
+.day-breadcrumb .phase-name{color:var(--teal)}
 .day-phase-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:700;margin-bottom:8px}
 .day-phase-tag.personal{background:var(--rose-light);color:var(--rose-dark)}
 .day-phase-tag.business{background:var(--teal-light);color:var(--teal)}
+.day-phase-tag.post{background:var(--slate-light);color:var(--slate)}
 .day-title{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.2}
 .day-loc{font-size:13px;color:var(--teal);font-weight:600;margin-top:2px}
 .day-hotel{font-size:12px;color:var(--text2);margin-top:4px}
+.day-header-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.day-link{
+  display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;border:1.5px solid var(--border);
+  background:var(--card);color:var(--text2);font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;
+  font-family:var(--sans);cursor:pointer;
+}
+.day-link:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-light)}
+.day-link.copied{border-color:var(--teal);color:var(--teal);background:var(--teal-light)}
 
 /* Activity timeline */
 .acts{border-radius:12px;border:1px solid var(--border);background:var(--card);overflow:hidden;margin-bottom:14px}
@@ -131,18 +198,26 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .badge.hotel{background:var(--slate-light);color:var(--slate)}
 .badge.car{background:#F5E6FF;color:#7B3FA0}
 .badge.romantic{background:var(--rose-light);color:var(--rose-dark)}
+.badge.simran{background:#FFF0E6;color:#C75B39}
+.badge.amtrak{background:var(--slate-light);color:var(--slate)}
 .act-title{font-weight:700;font-size:13px;margin-bottom:2px}
 .act-loc{font-size:11px;color:var(--teal);margin-bottom:3px}
 .act-det{font-size:11px;color:var(--text2);line-height:1.5}
 .act-note{font-size:10px;color:var(--rose);font-weight:700;margin-top:3px}
 
-/* ── FLIGHT CARDS ── */
+/* Weather bar */
+.weather-bar{display:flex;align-items:center;gap:12px;background:var(--teal-light);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px}
+.weather-bar .temp{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--teal)}
+.weather-bar .desc{color:var(--text2);font-size:12px}
+
+/* -- FLIGHT CARDS -- */
 .flight-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);margin-bottom:14px;position:relative;overflow:hidden}
 .flight-card::before,.flight-card::after{content:'';position:absolute;width:18px;height:18px;background:var(--bg);border-radius:50%;z-index:2;top:50%;transform:translateY(-50%)}
 .flight-card::before{left:-9px}
 .flight-card::after{right:-9px}
 .fh{padding:10px 20px;color:#fff;font-size:11px;font-weight:700;display:flex;justify-content:space-between;align-items:center;letter-spacing:.4px;text-transform:uppercase}
 .fh.as{background:linear-gradient(135deg,#00457C,#002D52)}
+.fh.dl{background:linear-gradient(135deg,#003366,#001A33)}
 .fb{padding:18px 22px}
 .fstatus{font-size:9px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff}
 .fstatus.ok{background:#4ADE8030;color:#4ADE80}
@@ -160,7 +235,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .fmeta dt{color:var(--text2);font-size:9px;text-transform:uppercase;letter-spacing:.3px}
 .fmeta dd{font-weight:600;margin-bottom:4px}
 
-/* ── RENTAL CAR CARDS ── */
+/* -- RENTAL CAR CARDS -- */
 .car-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:18px 20px;margin-bottom:14px}
 .car-top{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
 .car-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
@@ -175,7 +250,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .car-grid dd{font-weight:600;margin-bottom:3px}
 .car-note{font-size:11px;color:var(--text2);line-height:1.5}
 
-/* ── STAYS ── */
+/* -- STAYS -- */
 .stay-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:20px;margin-bottom:14px;position:relative;overflow:hidden}
 .stay-top{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
 .stay-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
@@ -191,7 +266,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .amenity{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:999px;font-size:10px;font-weight:600;background:var(--bg);border:1px solid var(--border)}
 .stay-note{font-size:11px;color:var(--text2);line-height:1.5;margin-top:10px}
 
-/* ── EXPLORE ── */
+/* -- EXPLORE -- */
 .explore-section-hdr{font-family:var(--serif);font-size:18px;font-weight:700;margin:20px 0 10px;display:flex;align-items:center;gap:8px}
 .explore-section-hdr::after{content:'';flex:1;height:1px;background:var(--border)}
 .exp-card{background:var(--card);border-radius:12px;border:1px solid var(--border);padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
@@ -208,7 +283,26 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .exp-tag.gf{background:var(--gold-light);color:var(--gold)}
 .exp-tip{font-size:10px;color:var(--rose);font-weight:600;margin-top:4px}
 
-/* ── CHECKLIST ── */
+/* -- WEATHER TAB -- */
+.weather-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:20px}
+.weather-card{
+  border-radius:var(--radius);padding:20px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#0D1E2C 0%,#1C3550 100%);
+  min-height:160px;display:flex;flex-direction:column;justify-content:space-between;
+}
+.weather-card .wc-city{font-family:var(--serif);font-size:18px;font-weight:700}
+.weather-card .wc-icon{font-size:40px;margin:8px 0}
+.weather-card .wc-temp{font-family:var(--serif);font-size:28px;font-weight:700}
+.weather-card .wc-desc{font-size:13px;opacity:.84;margin-top:3px}
+.weather-card .wc-range{font-size:13px;opacity:.72;margin-top:5px}
+.weather-card .wc-badge{position:absolute;top:12px;right:12px;font-size:9px;padding:2px 8px;border-radius:10px;background:rgba(255,255,255,.15);font-weight:600}
+.pack-card{background:var(--teal-light);border:1px solid var(--teal);border-radius:var(--radius);padding:20px}
+.pack-card h3{font-family:var(--serif);font-size:16px;color:var(--teal);margin-bottom:10px}
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pack-item{font-size:12px;color:var(--text2);padding:4px 0;display:flex;align-items:center;gap:6px}
+.weather-loading{font-size:12px;color:var(--text3);font-style:italic}
+
+/* -- CHECKLIST -- */
 .chk-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
 .chk-item:last-child{border-bottom:none}
 .chk-item:hover{background:var(--rose-light);border-radius:8px;margin:0 -8px;padding:12px 8px}
@@ -228,7 +322,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .prog-bar{height:8px;border-radius:4px;background:var(--border);overflow:hidden}
 .prog-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--teal),var(--rose));transition:width .4s ease}
 
-/* ── BUDGET ── */
+/* -- BUDGET -- */
 .budget-section{margin-bottom:20px}
 .budget-section-hdr{font-family:var(--serif);font-size:15px;font-weight:700;padding:8px 0;border-bottom:2px solid var(--border);margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .bitem{margin-bottom:14px}
@@ -247,46 +341,66 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .btotal-amt{font-family:var(--serif);font-size:28px;font-weight:700;margin-top:4px}
 .btotal-sub{font-size:11px;opacity:.7;margin-top:4px}
 
-/* ── GF SECTION ── */
+/* -- GF SECTION -- */
 .gf-day{background:var(--card);border-radius:12px;border:1px solid var(--border);margin-bottom:10px;overflow:hidden}
 .gf-day-hdr{padding:12px 16px;background:linear-gradient(90deg,var(--rose-light),var(--card));display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border)}
 .gf-day-label{font-weight:700;font-size:13px}
 .gf-day-body{padding:12px 16px;font-size:12px;color:var(--text2);line-height:1.6}
 .gf-day-transit{font-size:11px;color:var(--slate);background:var(--slate-light);padding:6px 10px;border-radius:6px;margin-top:8px}
 
-/* ── RESPONSIVE ── */
+/* Accommodation summary */
+.accom-card{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);margin-bottom:8px}
+.accom-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.accom-name{font-weight:700;font-size:13px}
+.accom-det{font-size:11px;color:var(--text2);margin-top:2px}
+.accom-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:auto;flex-shrink:0}
+.accom-badge.booked{background:#E6F5E6;color:#2D7A6B}
+.accom-badge.tbd{background:var(--gold-light);color:var(--gold)}
+
+/* Key reminders */
+.reminder-card{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);margin-bottom:8px}
+.reminder-icon{font-size:18px;flex-shrink:0}
+.reminder-text{font-size:12px;color:var(--text2);line-height:1.5}
+.reminder-text strong{color:var(--text)}
+
+/* -- RESPONSIVE -- */
 @media(max-width:600px){
   .stats-row{grid-template-columns:repeat(3,1fr)}
   .hero h1{font-size:22px}
   .froute{gap:4px}
   .fcode{font-size:22px}
+  .weather-grid{grid-template-columns:1fr}
+  .pack-grid{grid-template-columns:1fr}
+  .day-header-top{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
 <body>
 
 <div class="banner">
-  <span class="pulse"></span>
-  <strong id="banner-txt">Seattle, here we come ♡</strong>
   <div class="dt" id="banner-dt"></div>
+  <div class="countdown-label" id="countdown-label"></div>
+  <div class="countdown-nums" id="countdown-nums"></div>
+  <div class="status-line" id="status-line"></div>
 </div>
 
-<nav class="nav">
-  <button class="active" onclick="switchTab('overview',this)"><span class="ni">🏙</span>Overview</button>
-  <button onclick="switchTab('schedule',this)"><span class="ni">📅</span>Schedule</button>
-  <button onclick="switchTab('flights',this)"><span class="ni">✈️</span>Flights & Cars</button>
-  <button onclick="switchTab('stays',this)"><span class="ni">🏨</span>Stays</button>
-  <button onclick="switchTab('explore',this)"><span class="ni">🗺️</span>Explore</button>
-  <button onclick="switchTab('checklist',this)"><span class="ni">✅</span>Checklist</button>
-  <button onclick="switchTab('budget',this)"><span class="ni">💰</span>Budget</button>
+<nav class="nav" id="topNav">
+  <button data-tab="overview" class="active"><span class="ni">🏙</span>Overview</button>
+  <button data-tab="schedule"><span class="ni">📅</span>Schedule</button>
+  <button data-tab="flights"><span class="ni">✈️</span>Flights & Cars</button>
+  <button data-tab="stays"><span class="ni">🏨</span>Stays</button>
+  <button data-tab="explore"><span class="ni">🗺️</span>Explore</button>
+  <button data-tab="weather"><span class="ni">🌤️</span>Weather</button>
+  <button data-tab="checklist"><span class="ni">✅</span>Checklist</button>
+  <button data-tab="budget"><span class="ni">💰</span>Budget</button>
 </nav>
 
-<!-- ═══════════════════════════════════ OVERVIEW ═══════════════════════════ -->
+<!-- ============================== OVERVIEW ============================== -->
 <section id="tab-overview" class="tab active">
   <div class="hero">
     <div class="hero-heart">♡</div>
     <div class="hero-stars"></div>
-    <div class="hero-kicker">✈ April 10 – 19, 2026 &nbsp;·&nbsp; 10 Days</div>
+    <div class="hero-kicker">✈ April 9 – 20, 2026 &nbsp;·&nbsp; 12 Days</div>
     <h1>Seattle &amp; the<br><em>Pacific Northwest</em></h1>
     <p class="hero-sub">Business trip turned adventure — mountains, city lights, and a partner to share it all with.</p>
     <div class="hero-pills">
@@ -297,52 +411,55 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       <span class="hero-pill">♡ Together</span>
     </div>
     <svg class="skyline-svg hero-skyline" viewBox="0 0 800 80" fill="white" preserveAspectRatio="xMidYMax meet">
-      <!-- Seattle skyline silhouette -->
       <rect x="0" y="70" width="800" height="10"/>
-      <!-- Space Needle -->
       <polygon points="305,10 312,50 320,50 318,70 302,70 300,50 308,50" fill="white"/>
       <rect x="308" y="50" width="4" height="20"/>
-      <!-- Buildings -->
-      <rect x="10" y="50" width="40" height="20"/>
-      <rect x="55" y="42" width="30" height="28"/>
-      <rect x="90" y="55" width="25" height="15"/>
-      <rect x="120" y="38" width="35" height="32"/>
-      <rect x="160" y="46" width="28" height="24"/>
-      <rect x="195" y="35" width="45" height="35"/>
-      <rect x="245" y="45" width="25" height="25"/>
-      <rect x="275" y="55" width="22" height="15"/>
-      <rect x="340" y="40" width="30" height="30"/>
-      <rect x="378" y="30" width="50" height="40"/>
-      <rect x="434" y="44" width="32" height="26"/>
-      <rect x="472" y="52" width="20" height="18"/>
-      <rect x="498" y="36" width="40" height="34"/>
-      <rect x="544" y="48" width="28" height="22"/>
-      <rect x="578" y="42" width="35" height="28"/>
-      <rect x="620" y="55" width="22" height="15"/>
-      <rect x="648" y="38" width="44" height="32"/>
-      <rect x="698" y="50" width="30" height="20"/>
-      <rect x="734" y="44" width="26" height="26"/>
-      <rect x="765" y="56" width="35" height="14"/>
-      <!-- Mt Rainier in background -->
+      <rect x="10" y="50" width="40" height="20"/><rect x="55" y="42" width="30" height="28"/>
+      <rect x="90" y="55" width="25" height="15"/><rect x="120" y="38" width="35" height="32"/>
+      <rect x="160" y="46" width="28" height="24"/><rect x="195" y="35" width="45" height="35"/>
+      <rect x="245" y="45" width="25" height="25"/><rect x="275" y="55" width="22" height="15"/>
+      <rect x="340" y="40" width="30" height="30"/><rect x="378" y="30" width="50" height="40"/>
+      <rect x="434" y="44" width="32" height="26"/><rect x="472" y="52" width="20" height="18"/>
+      <rect x="498" y="36" width="40" height="34"/><rect x="544" y="48" width="28" height="22"/>
+      <rect x="578" y="42" width="35" height="28"/><rect x="620" y="55" width="22" height="15"/>
+      <rect x="648" y="38" width="44" height="32"/><rect x="698" y="50" width="30" height="20"/>
+      <rect x="734" y="44" width="26" height="26"/><rect x="765" y="56" width="35" height="14"/>
       <polygon points="600,0 680,50 520,50" opacity="0.6"/>
     </svg>
   </div>
 
   <div class="stats-row">
-    <div class="stat"><div class="n">10</div><div class="l">Days</div></div>
-    <div class="stat"><div class="n" style="color:var(--rose)">3</div><div class="l">Personal Days</div></div>
+    <div class="stat"><div class="n">12</div><div class="l">Days</div></div>
+    <div class="stat"><div class="n" style="color:var(--rose)">5</div><div class="l">Personal Days</div></div>
     <div class="stat"><div class="n">5</div><div class="l">Work Days</div></div>
   </div>
 
+  <div id="focusCard"></div>
+
+  <!-- Key Dates Timeline -->
+  <div class="card">
+    <div style="font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:14px">📍 Key Dates Timeline</div>
+    <div class="timeline-v2" id="overviewTimeline"></div>
+  </div>
+
+  <!-- Trip Phases -->
   <div class="card" style="margin-bottom:16px">
     <div style="font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--text2);margin-bottom:12px">Trip Phases</div>
     <div class="phases">
+      <div class="phase-row">
+        <div class="phase-icon">🚂</div>
+        <div>
+          <div class="phase-head">Pre-Trip — Simran's Travel to Boston</div>
+          <span class="phase-dates personal">Apr 9 (Thu)</span>
+          <div class="phase-desc">Simran takes Amtrak from West Haven, CT to Boston. Arrives ~10 PM, stays at friend's house overnight before early morning flight.</div>
+        </div>
+      </div>
       <div class="phase-row">
         <div class="phase-icon">🌸</div>
         <div>
           <div class="phase-head">Personal Phase 1 — Arrival Weekend</div>
           <span class="phase-dates personal">Apr 10 (Fri) – Apr 12 (Sun)</span>
-          <div class="phase-desc">Arrive SEA, explore Seattle Friday evening. Full-day Mt. Rainier trip Saturday. Sunday morning before transitioning to business hotel. Staying at <strong>Redmond Inn</strong>.</div>
+          <div class="phase-desc">Ayush arrives SEA from SJC, Simran from BOS. Explore Seattle Friday evening. Full-day Mt. Rainier trip Saturday. Sunday transition to business hotel. Staying at <strong>Redmond Inn</strong>.</div>
         </div>
       </div>
       <div class="phase-row">
@@ -350,7 +467,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
         <div>
           <div class="phase-head">Business Phase — Meta Team Meetings</div>
           <span class="phase-dates business">Apr 12 (Sun) – Apr 18 (Sat)</span>
-          <div class="phase-desc">Office 9–5 Mon–Fri (VSR/UVQ/OEP). Free evenings together — Space Needle, Kerry Park, Amazon Spheres, and more. GF explores the city solo by day. Staying at <strong>Hyatt Regency Bellevue</strong>.</div>
+          <div class="phase-desc">Office 9-5 Mon-Fri (VSR/UVQ/OEP). Free evenings together — Space Needle, Kerry Park, Amazon Spheres. Simran explores the city solo by day. Staying at <strong>Hyatt Regency Bellevue</strong>.</div>
         </div>
       </div>
       <div class="phase-row">
@@ -358,14 +475,115 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
         <div>
           <div class="phase-head">Personal Phase 2 — Leavenworth & Farewell</div>
           <span class="phase-dates personal">Apr 17 (Fri eve) – Apr 19 (Sun)</span>
-          <div class="phase-desc">Drive to Bavarian Leavenworth Friday evening, overnight stay. Return Saturday, return rental car by 5 PM. Last night at <strong>Redmond Inn</strong>. Easy Sunday morning, fly home 3:59 PM.</div>
+          <div class="phase-desc">Drive to Bavarian Leavenworth Friday evening, overnight stay. Return Saturday, return rental car by 5 PM. Last night at <strong>Redmond Inn</strong>. Sunday: Ayush flies SJC (3:59 PM), Simran flies BOS (3:40 PM).</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-icon">🚂</div>
+        <div>
+          <div class="phase-head">Post-Trip — Simran's Return to West Haven</div>
+          <span class="phase-dates personal">Apr 20 (Mon)</span>
+          <div class="phase-desc">Simran arrives BOS 11:59 PM Apr 19, stays at friend's house. Returns via Amtrak to West Haven on Apr 20 (time TBD, tickets not booked yet).</div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Road Trip Routes -->
+  <div class="card">
+    <div style="font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:14px">🚗 Road Trip Routes</div>
+
+    <div style="font-size:13px;font-weight:700;margin-bottom:10px;color:var(--teal)">Mt. Rainier Day Trip (Sat Apr 11)</div>
+    <div class="route-card" style="margin-bottom:18px">
+      <div class="route-step">
+        <div class="route-marker start">🏨</div>
+        <div class="route-info"><div class="route-city">Redmond Inn</div><div class="route-desc">Depart 7:00 AM</div><div class="route-drive">94 mi via SR-167 S &middot; ~2 hrs</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker">🌋</div>
+        <div class="route-info"><div class="route-city">Mt. Rainier — Paradise</div><div class="route-desc">Skyline Trail, Narada Falls, Reflection Lakes</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker end">🏨</div>
+        <div class="route-info"><div class="route-city">Redmond Inn</div><div class="route-desc">Return ~4:30-5 PM &middot; Dinner in Bellevue</div></div>
+      </div>
+    </div>
+
+    <div style="font-size:13px;font-weight:700;margin-bottom:10px;color:var(--rose)">Leavenworth Overnight (Fri Apr 17 eve - Sat Apr 18)</div>
+    <div class="route-card">
+      <div class="route-step">
+        <div class="route-marker start">💼</div>
+        <div class="route-info"><div class="route-city">Bellevue / Meta Office</div><div class="route-desc">Depart 5:00 PM after last work day</div><div class="route-drive">115 mi via US-2 E &middot; ~2.5 hrs</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker">🏘</div>
+        <div class="route-info"><div class="route-city">Leavenworth</div><div class="route-desc">Arrive ~7:30 PM. Bavarian village, Front Street, wine bars</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker">💦</div>
+        <div class="route-info"><div class="route-city">Snoqualmie Falls (optional stop)</div><div class="route-desc">268-ft waterfall, ~30 min detour on way back</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker end">🏨</div>
+        <div class="route-info"><div class="route-city">Redmond Inn</div><div class="route-desc">Return ~12:30 PM Sat. Return car by 5 PM.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accommodation Summary -->
+  <div class="card">
+    <div style="font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:14px">🏨 Accommodation Summary</div>
+    <div class="accom-card">
+      <div class="accom-icon">🏨</div>
+      <div style="flex:1"><div class="accom-name">Redmond Inn</div><div class="accom-det">Apr 10-12 (2 nights) &middot; $150.08 &middot; Free breakfast</div></div>
+      <span class="accom-badge booked">Booked</span>
+    </div>
+    <div class="accom-card">
+      <div class="accom-icon">🏙</div>
+      <div style="flex:1"><div class="accom-name">Hyatt Regency Bellevue</div><div class="accom-det">Apr 12-18 (6 nights) &middot; Office-covered &middot; Lake View</div></div>
+      <span class="accom-badge booked">Office</span>
+    </div>
+    <div class="accom-card">
+      <div class="accom-icon">🏘</div>
+      <div style="flex:1"><div class="accom-name">Leavenworth Hotel</div><div class="accom-det">Apr 17 (1 night) &middot; Budget: $120-200</div></div>
+      <span class="accom-badge tbd">Needs Booking</span>
+    </div>
+    <div class="accom-card">
+      <div class="accom-icon">🏨</div>
+      <div style="flex:1"><div class="accom-name">Redmond Inn</div><div class="accom-det">Apr 18-19 (1 night) &middot; $86.97 &middot; King Room</div></div>
+      <span class="accom-badge booked">Booked</span>
+    </div>
+  </div>
+
+  <!-- Key Reminders -->
+  <div class="card">
+    <div style="font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:14px">⚠ Key Reminders</div>
+    <div class="reminder-card">
+      <div class="reminder-icon">🏘</div>
+      <div class="reminder-text"><strong>Book Leavenworth hotel ASAP</strong> — Popular destination, Apr 17 night. Check Airbnb/hotels.com. Budget $120-200.</div>
+    </div>
+    <div class="reminder-card">
+      <div class="reminder-icon">🚂</div>
+      <div class="reminder-text"><strong>Book Simran's Amtrak tickets</strong> — West Haven to Boston (Apr 9) and Boston to West Haven (Apr 20). ~$50-80 round trip.</div>
+    </div>
+    <div class="reminder-card">
+      <div class="reminder-icon">🌿</div>
+      <div class="reminder-text"><strong>Contact Krishna dai</strong> for Amazon Spheres guest pass — Plan for Wed Apr 15 evening.</div>
+    </div>
+    <div class="reminder-card">
+      <div class="reminder-icon">🚀</div>
+      <div class="reminder-text"><strong>Book Space Needle tickets</strong> — spaceneedle.com, $35-40/pp, sunset slot ~7:30 PM for Tue Apr 14.</div>
+    </div>
+    <div class="reminder-card">
+      <div class="reminder-icon">🍜</div>
+      <div class="reminder-text"><strong>Reserve Din Tai Fung</strong> on Tock — Lincoln Square South, Bellevue. Reserve for a weeknight dinner.</div>
+    </div>
+  </div>
+
+  <!-- Flights at a Glance -->
   <div class="card">
     <div style="font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:14px">✈ Flights at a Glance</div>
+    <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:10px">AYUSH — Alaska Airlines</div>
     <div style="display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
       <div style="font-size:22px">↗</div>
       <div style="flex:1">
@@ -374,7 +592,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       </div>
       <div style="font-size:11px;font-weight:700;color:var(--teal);background:var(--teal-light);padding:3px 9px;border-radius:999px">✓ ILTFTW</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;padding:10px 0">
+    <div style="display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
       <div style="font-size:22px">↙</div>
       <div style="flex:1">
         <div style="font-weight:700;font-size:13px">Seattle → San Jose</div>
@@ -382,24 +600,38 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       </div>
       <div style="font-size:11px;font-weight:700;color:var(--teal);background:var(--teal-light);padding:3px 9px;border-radius:999px">✓ ILTFTW</div>
     </div>
+    <div style="font-size:11px;font-weight:700;color:var(--text2);margin:14px 0 10px">SIMRAN — Delta Airlines</div>
+    <div style="display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
+      <div style="font-size:22px">↗</div>
+      <div style="flex:1">
+        <div style="font-weight:700;font-size:13px">Boston → Seattle</div>
+        <div style="font-size:11px;color:var(--text2)">Delta DL0384 &nbsp;·&nbsp; Fri Apr 10 &nbsp;·&nbsp; 7:10 AM → 10:37 AM</div>
+      </div>
+      <div style="font-size:11px;font-weight:700;color:#003366;background:#E6EEF5;padding:3px 9px;border-radius:999px">✓ HMWDZF</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;padding:10px 0">
+      <div style="font-size:22px">↙</div>
+      <div style="flex:1">
+        <div style="font-weight:700;font-size:13px">Seattle → Boston</div>
+        <div style="font-size:11px;color:var(--text2)">Delta DL0474 &nbsp;·&nbsp; Sun Apr 19 &nbsp;·&nbsp; 3:40 PM → 11:59 PM</div>
+      </div>
+      <div style="font-size:11px;font-weight:700;color:#003366;background:#E6EEF5;padding:3px 9px;border-radius:999px">✓ HMWDZF</div>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ SCHEDULE ═══════════════════════════ -->
+<!-- ============================== SCHEDULE ============================== -->
 <section id="tab-schedule" class="tab">
-  <div class="phase-tabs" id="ptabs">
-    <button class="ptab personal active" onclick="switchPhase('p1',this)">🌸 Personal 1 (Apr 10–12)</button>
-    <button class="ptab business" onclick="switchPhase('biz',this)">💼 Business (Apr 13–17)</button>
-    <button class="ptab personal" onclick="switchPhase('p2',this)">🏔 Personal 2 (Apr 17–19)</button>
-  </div>
-  <div id="day-strip-area"></div>
+  <div class="phase-tabs" id="ptabs"></div>
+  <div class="day-strip-wrap"><div class="day-strip" id="dayStrip"></div></div>
   <div id="day-content"></div>
 </section>
 
-<!-- ══════════════════════════════ FLIGHTS & CARS ══════════════════════════ -->
+<!-- ============================== FLIGHTS & CARS ============================== -->
 <section id="tab-flights" class="tab">
+  <!-- Ayush - Alaska Airlines -->
   <div class="card" style="margin-bottom:8px;padding:14px 16px">
-    <div style="font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:2px">Alaska Airlines Round-Trip</div>
+    <div style="font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:2px">Alaska Airlines Round-Trip — Ayush</div>
     <div style="font-size:11px;color:var(--text2)">Confirmation: <strong>ILTFTW</strong> &nbsp;·&nbsp; Ticket: 0277429614298 &nbsp;·&nbsp; Booked via CWT / Meta Travel</div>
     <a href="https://drive.google.com/file/d/1eu38Z5eYzW1kRKmqpSO0BTgTPV4xkBPQ/view?usp=sharing" target="_blank" style="display:inline-block;margin-top:8px;font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--teal-light);color:var(--teal);text-decoration:none">📄 View Itinerary PDF</a>
   </div>
@@ -411,20 +643,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
     </div>
     <div class="fb">
       <div class="froute">
-        <div class="fcity">
-          <div class="fcode">SJC</div>
-          <div class="fname">San Jose</div>
-          <div class="ftime">8:00 AM</div>
-        </div>
-        <div class="farrow">
-          <div class="farrow-line"><div class="farrow-plane">✈</div></div>
-          <div class="farrow-dur">2h 20m · Nonstop</div>
-        </div>
-        <div class="fcity">
-          <div class="fcode">SEA</div>
-          <div class="fname">Seattle</div>
-          <div class="ftime">10:20 AM</div>
-        </div>
+        <div class="fcity"><div class="fcode">SJC</div><div class="fname">San Jose</div><div class="ftime">8:00 AM</div></div>
+        <div class="farrow"><div class="farrow-line"><div class="farrow-plane">✈</div></div><div class="farrow-dur">2h 20m · Nonstop</div></div>
+        <div class="fcity"><div class="fcode">SEA</div><div class="fname">Seattle</div><div class="ftime">10:20 AM</div></div>
       </div>
       <dl class="fmeta">
         <dt>Date</dt><dd>Fri, Apr 10</dd>
@@ -444,20 +665,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
     </div>
     <div class="fb">
       <div class="froute">
-        <div class="fcity">
-          <div class="fcode">SEA</div>
-          <div class="fname">Seattle</div>
-          <div class="ftime">3:59 PM</div>
-        </div>
-        <div class="farrow">
-          <div class="farrow-line"><div class="farrow-plane">✈</div></div>
-          <div class="farrow-dur">2h 12m · Nonstop</div>
-        </div>
-        <div class="fcity">
-          <div class="fcode">SJC</div>
-          <div class="fname">San Jose</div>
-          <div class="ftime">6:11 PM</div>
-        </div>
+        <div class="fcity"><div class="fcode">SEA</div><div class="fname">Seattle</div><div class="ftime">3:59 PM</div></div>
+        <div class="farrow"><div class="farrow-line"><div class="farrow-plane">✈</div></div><div class="farrow-dur">2h 12m · Nonstop</div></div>
+        <div class="fcity"><div class="fcode">SJC</div><div class="fname">San Jose</div><div class="ftime">6:11 PM</div></div>
       </div>
       <dl class="fmeta">
         <dt>Date</dt><dd>Sun, Apr 19</dd>
@@ -466,6 +676,57 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
         <dt>Terminal</dt><dd>SJC Terminal B</dd>
         <dt>Cabin</dt><dd>Economy (K)</dd>
         <dt>Check-in</dt><dd>Online 24h before</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- Simran - Delta Airlines -->
+  <div class="card" style="margin-bottom:8px;padding:14px 16px;margin-top:24px">
+    <div style="font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:2px">Delta Airlines Round-Trip — Simran</div>
+    <div style="font-size:11px;color:var(--text2)">Confirmation: <strong>HMWDZF</strong> &nbsp;·&nbsp; eTicket: #0067429979753 &nbsp;·&nbsp; Passenger: Simran Adhikari &nbsp;·&nbsp; Delta Main Basic (E)</div>
+    <a href="https://drive.google.com/file/d/1X40dp9NiqQQZVeXlRa5NYTzZXE_pqjh9/view?usp=drive_link" target="_blank" style="display:inline-block;margin-top:8px;font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;background:#E6EEF5;color:#003366;text-decoration:none">📄 View Itinerary PDF</a>
+  </div>
+
+  <div class="flight-card">
+    <div class="fh dl">
+      <span>Delta Air Lines · DL 0384</span>
+      <span class="fstatus ok">✓ Confirmed</span>
+    </div>
+    <div class="fb">
+      <div class="froute">
+        <div class="fcity"><div class="fcode">BOS</div><div class="fname">Boston</div><div class="ftime">7:10 AM</div></div>
+        <div class="farrow"><div class="farrow-line"><div class="farrow-plane">✈</div></div><div class="farrow-dur">6h 27m · Nonstop</div></div>
+        <div class="fcity"><div class="fcode">SEA</div><div class="fname">Seattle</div><div class="ftime">10:37 AM</div></div>
+      </div>
+      <dl class="fmeta">
+        <dt>Date</dt><dd>Fri, Apr 10</dd>
+        <dt>Terminal</dt><dd>BOS Terminal A (A14)</dd>
+        <dt>Aircraft</dt><dd>Airbus A321neo</dd>
+        <dt>Arrives</dt><dd>SEA (Gate A12)</dd>
+        <dt>Cabin</dt><dd>Main Basic (E)</dd>
+        <dt>Conf</dt><dd>HMWDZF</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="flight-card">
+    <div class="fh dl">
+      <span>Delta Air Lines · DL 0474</span>
+      <span class="fstatus ok">✓ Confirmed</span>
+    </div>
+    <div class="fb">
+      <div class="froute">
+        <div class="fcity"><div class="fcode">SEA</div><div class="fname">Seattle</div><div class="ftime">3:40 PM</div></div>
+        <div class="farrow"><div class="farrow-line"><div class="farrow-plane">✈</div></div><div class="farrow-dur">5h 19m · Nonstop</div></div>
+        <div class="fcity"><div class="fcode">BOS</div><div class="fname">Boston</div><div class="ftime">11:59 PM</div></div>
+      </div>
+      <dl class="fmeta">
+        <dt>Date</dt><dd>Sun, Apr 19</dd>
+        <dt>Terminal</dt><dd>SEA TBD</dd>
+        <dt>Aircraft</dt><dd>Airbus A321neo</dd>
+        <dt>Arrives</dt><dd>BOS Terminal A</dd>
+        <dt>Cabin</dt><dd>Main Basic (E)</dd>
+        <dt>Conf</dt><dd>HMWDZF</dd>
       </dl>
     </div>
   </div>
@@ -511,10 +772,11 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       <dt>Total</dt><dd>$289.05</dd>
     </dl>
     <div class="car-note">Same location: 2299 140th Ave NE Ste B, Bellevue WA 98005. Return by 5 PM sharp on Apr 18.</div>
+    <a href="https://drive.google.com/file/d/1eu38Z5eYzW1kRKmqpSO0BTgTPV4xkBPQ/view?usp=sharing" target="_blank" style="display:inline-block;margin-top:8px;font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--teal-light);color:var(--teal);text-decoration:none">📄 View Itinerary PDF</a>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ STAYS ══════════════════════════════ -->
+<!-- ============================== STAYS ============================== -->
 <section id="tab-stays" class="tab">
   <div class="stay-card">
     <div class="stay-top">
@@ -571,6 +833,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       <span class="amenity">🛎 Concierge</span>
     </div>
     <div class="stay-note">Must cancel by 12 PM Apr 12 if needed. Non-smoking. Right in the heart of downtown Bellevue — walkable to Lincoln Square, Bellevue Square, and Meydenbauer Bay Park (great sunset spot ♡).</div>
+    <a href="https://drive.google.com/file/d/1eu38Z5eYzW1kRKmqpSO0BTgTPV4xkBPQ/view?usp=sharing" target="_blank" style="display:inline-block;margin-top:8px;font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--teal-light);color:var(--teal);text-decoration:none">📄 View Itinerary PDF</a>
   </div>
 
   <div class="stay-card">
@@ -596,7 +859,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       <span class="amenity">🅿 Free Parking</span>
       <span class="amenity">🏊 Pool</span>
     </div>
-    <div class="stay-note">✅ Fully refundable if canceled before Apr 16, 11:59 PM. King Room for two — a cozy last night before flying home. Shuttle service Mon–Fri only.</div>
+    <div class="stay-note">✅ Fully refundable if canceled before Apr 16, 11:59 PM. King Room for two — a cozy last night before flying home. Shuttle service Mon-Fri only.</div>
     <a href="https://drive.google.com/file/d/1EbeIxXRelqA1zYW3Qbht7WM8cHc-RTUE/view?usp=drive_link" target="_blank" style="display:inline-block;margin-top:8px;font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--teal-light);color:var(--teal);text-decoration:none">📄 View Booking Confirmation</a>
   </div>
 
@@ -606,149 +869,104 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
     <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
       <a href="https://www.hotels.com/search.do?q-destination=Leavenworth%2C+WA" target="_blank" style="font-size:11px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--rose-light);color:var(--rose-dark);text-decoration:none">Hotels.com</a>
       <a href="https://www.airbnb.com/s/Leavenworth--WA" target="_blank" style="font-size:11px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--teal-light);color:var(--teal);text-decoration:none">Airbnb</a>
-      <span style="font-size:11px;color:var(--text2);align-self:center">Budget: $120–200/night</span>
+      <span style="font-size:11px;color:var(--text2);align-self:center">Budget: $120-200/night</span>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ EXPLORE ════════════════════════════ -->
+<!-- ============================== EXPLORE ============================== -->
 <section id="tab-explore" class="tab">
   <div class="explore-section-hdr">🏔 Weekend Day Trips</div>
-
   <div class="exp-card">
     <div class="exp-emoji">🌋</div>
     <div>
       <div class="exp-name">Mt. Rainier National Park — Paradise Area</div>
       <div class="exp-meta">~2 hrs from Bellevue (94 mi via SR-167 S) &nbsp;·&nbsp; Sat Apr 11 (recommended full day)</div>
-      <div class="exp-tags">
-        <span class="exp-tag must">Must-Go</span>
-        <span class="exp-tag romantic">Romantic</span>
-        <span class="exp-tag day-trip">Day Trip</span>
-      </div>
+      <div class="exp-tags"><span class="exp-tag must">Must-Go</span><span class="exp-tag romantic">Romantic</span><span class="exp-tag day-trip">Day Trip</span></div>
       <div style="font-size:11px;color:var(--text2);margin-top:6px;line-height:1.5">Paradise Visitor Center, Skyline Trail (5 mi loop, moderate — stunning summit views), Reflection Lakes (mirror the mountain on calm days), Narada Falls (168 ft, 10-min stop). NPS entry: $35/car. Bring layers — snow in April!</div>
       <div class="exp-tip">💡 Leave by 7 AM for best parking and light. Pack a picnic.</div>
     </div>
   </div>
-
   <div class="exp-card">
     <div class="exp-emoji">💎</div>
     <div>
       <div class="exp-name">Diablo Lake — North Cascades NP</div>
-      <div class="exp-meta">~3–3.5 hrs from Bellevue via SR-20 &nbsp;·&nbsp; Sat Apr 11 (alternative, early start)</div>
-      <div class="exp-tags">
-        <span class="exp-tag must">Must-Go</span>
-        <span class="exp-tag day-trip">Day Trip</span>
-        <span class="exp-tag free">Free Entry</span>
-      </div>
+      <div class="exp-meta">~3-3.5 hrs from Bellevue via SR-20 &nbsp;·&nbsp; Sat Apr 11 (alternative, early start)</div>
+      <div class="exp-tags"><span class="exp-tag must">Must-Go</span><span class="exp-tag day-trip">Day Trip</span><span class="exp-tag free">Free Entry</span></div>
       <div style="font-size:11px;color:var(--text2);margin-top:6px;line-height:1.5">Surreal turquoise glacier-fed lake. Diablo Lake Overlook pull-off, Washington Pass Overlook nearby. Longer drive but the color is unreal. Requires 5:30 AM departure for comfortable day.</div>
       <div class="exp-tip">⚠ Check SR-20 road opening at wsdot.wa.gov — may still be closed in early April.</div>
     </div>
   </div>
-
   <div class="exp-card">
     <div class="exp-emoji">🏘</div>
     <div>
       <div class="exp-name">Leavenworth — Bavarian Village in the Cascades</div>
       <div class="exp-meta">~2.5 hrs via US-2 E (115 mi) &nbsp;·&nbsp; Apr 17 Fri eve + Apr 18 Sat morning</div>
-      <div class="exp-tags">
-        <span class="exp-tag must">Must-Go</span>
-        <span class="exp-tag romantic">Romantic ♡</span>
-        <span class="exp-tag day-trip">Overnight</span>
-      </div>
+      <div class="exp-tags"><span class="exp-tag must">Must-Go</span><span class="exp-tag romantic">Romantic ♡</span><span class="exp-tag day-trip">Overnight</span></div>
       <div style="font-size:11px;color:var(--text2);margin-top:6px;line-height:1.5">Charming Bavarian-themed town on the eastern slopes of the Cascades. Front Street walk, Icicle Creek Trail (1.3 mi easy loop on Blackbird Island), Icicle Ridge Winery, German food & wine bars. Magical at night when lit up.</div>
       <div class="exp-tip">♡ Most romantic spot on this trip. Highly recommend staying the night!</div>
     </div>
   </div>
-
   <div class="exp-card">
     <div class="exp-emoji">💦</div>
     <div>
       <div class="exp-name">Snoqualmie Falls</div>
       <div class="exp-meta">~30 min from Bellevue &nbsp;·&nbsp; Easy add-on Sat Apr 18 on way back from Leavenworth</div>
-      <div class="exp-tags">
-        <span class="exp-tag day-trip">Quick Stop</span>
-        <span class="exp-tag romantic">Romantic</span>
-      </div>
+      <div class="exp-tags"><span class="exp-tag day-trip">Quick Stop</span><span class="exp-tag romantic">Romantic</span></div>
       <div style="font-size:11px;color:var(--text2);margin-top:6px;line-height:1.5">268-ft waterfall in a stunning gorge. 5-min walk for upper viewpoint. 30-min hike to the base. Salish Lodge restaurant above the falls if you want a splurge brunch ($40/pp).</div>
     </div>
   </div>
 
   <div class="explore-section-hdr">🌆 Seattle Evening Spots</div>
-
   <div class="exp-card">
     <div class="exp-emoji">🌄</div>
     <div>
       <div class="exp-name">Kerry Park — Iconic Skyline View</div>
       <div class="exp-meta">~25 min from Hyatt · W Highland Dr, Seattle · Free</div>
-      <div class="exp-tags">
-        <span class="exp-tag must">Must-Go</span>
-        <span class="exp-tag romantic">Romantic ♡</span>
-        <span class="exp-tag free">Free</span>
-        <span class="exp-tag evening">Evening</span>
-      </div>
-      <div style="font-size:11px;color:var(--text2);margin-top:6px">Best viewpoint in Seattle. Space Needle + Mt. Rainier behind the skyline on clear evenings. Go at sunset (~7:30–8 PM in April). Park on street.</div>
+      <div class="exp-tags"><span class="exp-tag must">Must-Go</span><span class="exp-tag romantic">Romantic ♡</span><span class="exp-tag free">Free</span><span class="exp-tag evening">Evening</span></div>
+      <div style="font-size:11px;color:var(--text2);margin-top:6px">Best viewpoint in Seattle. Space Needle + Mt. Rainier behind the skyline on clear evenings. Go at sunset (~7:30-8 PM in April). Park on street.</div>
     </div>
   </div>
-
   <div class="exp-card">
     <div class="exp-emoji">🚀</div>
     <div>
       <div class="exp-name">Space Needle — Observation Deck</div>
-      <div class="exp-meta">~25 min from Hyatt · Seattle Center · $35–40/pp</div>
-      <div class="exp-tags">
-        <span class="exp-tag must">Must-Go</span>
-        <span class="exp-tag romantic">Romantic ♡</span>
-        <span class="exp-tag evening">Evening</span>
-      </div>
-      <div style="font-size:11px;color:var(--text2);margin-top:6px">360° views from 520 ft. Pair with Chihuly Garden of Glass next door (stunning art at night). Plan for Tue Apr 14 evening.</div>
+      <div class="exp-meta">~25 min from Hyatt · Seattle Center · $35-40/pp</div>
+      <div class="exp-tags"><span class="exp-tag must">Must-Go</span><span class="exp-tag romantic">Romantic ♡</span><span class="exp-tag evening">Evening</span></div>
+      <div style="font-size:11px;color:var(--text2);margin-top:6px">360 views from 520 ft. Pair with Chihuly Garden of Glass next door (stunning art at night). Plan for Tue Apr 14 evening.</div>
       <div class="exp-tip">💡 Book online at spaceneedle.com for a sunset slot. Only worth it on clear evenings — check forecast!</div>
     </div>
   </div>
-
   <div class="exp-card">
     <div class="exp-emoji">🌿</div>
     <div>
       <div class="exp-name">Amazon Spheres</div>
       <div class="exp-meta">~25 min · 2111 7th Ave, Seattle · Free with employee guest pass</div>
-      <div class="exp-tags">
-        <span class="exp-tag must">Must-Go</span>
-        <span class="exp-tag evening">Evening</span>
-      </div>
+      <div class="exp-tags"><span class="exp-tag must">Must-Go</span><span class="exp-tag evening">Evening</span></div>
       <div style="font-size:11px;color:var(--text2);margin-top:6px">Iconic glass domes filled with 40,000+ plants. Interior requires Amazon employee guest pass. Plan for Wed Apr 15 evening. Exterior is always free to photograph.</div>
       <div class="exp-tip">⚠ Contact Krishna dai for guest access — reach out before the trip!</div>
     </div>
   </div>
-
   <div class="exp-card">
     <div class="exp-emoji">⛵</div>
     <div>
       <div class="exp-name">Meydenbauer Bay Park — Sunset on the Water</div>
       <div class="exp-meta">~10 min walk from Hyatt · Bellevue · Free</div>
-      <div class="exp-tags">
-        <span class="exp-tag romantic">Romantic ♡</span>
-        <span class="exp-tag free">Free</span>
-        <span class="exp-tag evening">Evening</span>
-      </div>
+      <div class="exp-tags"><span class="exp-tag romantic">Romantic ♡</span><span class="exp-tag free">Free</span><span class="exp-tag evening">Evening</span></div>
       <div style="font-size:11px;color:var(--text2);margin-top:6px">Beautiful waterfront park on Lake Washington. Dock, sunset views, marina. Perfect for a quiet evening walk — just 5 min from the Hyatt. A local gem ♡</div>
     </div>
   </div>
-
   <div class="exp-card">
     <div class="exp-emoji">⛽</div>
     <div>
       <div class="exp-name">Gas Works Park + Lake Union</div>
       <div class="exp-meta">~25 min · Seattle · Free</div>
-      <div class="exp-tags">
-        <span class="exp-tag romantic">Romantic</span>
-        <span class="exp-tag free">Free</span>
-        <span class="exp-tag evening">Evening</span>
-      </div>
+      <div class="exp-tags"><span class="exp-tag romantic">Romantic</span><span class="exp-tag free">Free</span><span class="exp-tag evening">Evening</span></div>
       <div style="font-size:11px;color:var(--text2);margin-top:6px">Industrial-turned-park on Lake Union with panoramic Seattle skyline views. Seattle's most unique park. Great for the Thu Apr 16 evening.</div>
     </div>
   </div>
 
-  <div class="explore-section-hdr">☀ GF Daytime (No Car, Mon–Fri)</div>
-
+  <div class="explore-section-hdr">☀ Simran Daytime (No Car, Mon-Fri)</div>
   <div class="gf-day">
     <div class="gf-day-hdr"><span>📚</span><div class="gf-day-label">Mon Apr 13 — University of Washington Campus</div></div>
     <div class="gf-day-body">
@@ -756,7 +974,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       <div class="gf-day-transit">🚌 550 Express (Bellevue TC → Westlake) then Link Light Rail to UW Station. ~45 min total.</div>
     </div>
   </div>
-
   <div class="gf-day">
     <div class="gf-day-hdr"><span>🐟</span><div class="gf-day-label">Tue Apr 14 — Pike Place Market + Waterfront</div></div>
     <div class="gf-day-body">
@@ -764,7 +981,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       <div class="gf-day-transit">🚌 550 Express to Westlake, walk 10 min. ~50 min from Hyatt.</div>
     </div>
   </div>
-
   <div class="gf-day">
     <div class="gf-day-hdr"><span>🌸</span><div class="gf-day-label">Wed Apr 15 — Bellevue Local Day</div></div>
     <div class="gf-day-body">
@@ -772,7 +988,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       <div class="gf-day-transit">🚶 All walkable from Hyatt or short Uber. No transit needed!</div>
     </div>
   </div>
-
   <div class="gf-day">
     <div class="gf-day-hdr"><span>💻</span><div class="gf-day-label">Thu Apr 16 — Microsoft Visitor Center + Marymoor Park</div></div>
     <div class="gf-day-body">
@@ -780,7 +995,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       <div class="gf-day-transit">🚌 Metro 245 bus to Redmond (~20 min). Or short Uber.</div>
     </div>
   </div>
-
   <div class="gf-day">
     <div class="gf-day-hdr"><span>🏭</span><div class="gf-day-label">Fri Apr 17 — South Lake Union + MOHAI</div></div>
     <div class="gf-day-body">
@@ -794,7 +1008,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
     <div class="exp-emoji">🥟</div>
     <div>
       <div class="exp-name">Din Tai Fung — Bellevue (Lincoln Square South)</div>
-      <div class="exp-meta">700 Bellevue Way NE &nbsp;·&nbsp; Taiwanese dim sum &nbsp;·&nbsp; $40–60/pp</div>
+      <div class="exp-meta">700 Bellevue Way NE &nbsp;·&nbsp; Taiwanese dim sum &nbsp;·&nbsp; $40-60/pp</div>
       <div class="exp-tags"><span class="exp-tag must">Must-Eat</span><span class="exp-tag romantic">Date Night</span></div>
       <div style="font-size:11px;color:var(--text2);margin-top:5px">Legendary xiaolongbao (soup dumplings). Reserve on Tock or arrive early weekdays to avoid a wait.</div>
     </div>
@@ -803,7 +1017,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
     <div class="exp-emoji">🌊</div>
     <div>
       <div class="exp-name">The Walrus and the Carpenter — Ballard</div>
-      <div class="exp-meta">4743 Ballard Ave NW &nbsp;·&nbsp; Oyster bar &nbsp;·&nbsp; $50–70/pp</div>
+      <div class="exp-meta">4743 Ballard Ave NW &nbsp;·&nbsp; Oyster bar &nbsp;·&nbsp; $50-70/pp</div>
       <div class="exp-tags"><span class="exp-tag romantic">Romantic ♡</span><span class="exp-tag evening">Evening</span></div>
       <div style="font-size:11px;color:var(--text2);margin-top:5px">Seattle's most romantic oyster bar. No reservations — arrive at 5 PM when it opens. Thu Apr 16 evening is perfect with Gas Works Park nearby.</div>
     </div>
@@ -812,14 +1026,21 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
     <div class="exp-emoji">🍝</div>
     <div>
       <div class="exp-name">The Pink Door — Pike Place</div>
-      <div class="exp-meta">1919 Post Alley &nbsp;·&nbsp; Italian &nbsp;·&nbsp; $50–70/pp</div>
+      <div class="exp-meta">1919 Post Alley &nbsp;·&nbsp; Italian &nbsp;·&nbsp; $50-70/pp</div>
       <div class="exp-tags"><span class="exp-tag romantic">Romantic ♡</span></div>
       <div style="font-size:11px;color:var(--text2);margin-top:5px">Hidden gem in Post Alley. No sign on the door. Live music, Italian food, candlelit. Great for a Friday arrival dinner.</div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ CHECKLIST ══════════════════════════ -->
+<!-- ============================== WEATHER ============================== -->
+<section id="tab-weather" class="tab">
+  <h2 style="font-family:var(--serif);margin-bottom:16px">Weather Forecast</h2>
+  <div class="weather-grid" id="weatherGrid"></div>
+  <div id="packCard"></div>
+</section>
+
+<!-- ============================== CHECKLIST ============================== -->
 <section id="tab-checklist" class="tab">
   <div class="prog-wrap">
     <div class="prog-lbl"><span>Booking Progress</span><span id="prog-pct">0%</span></div>
@@ -828,361 +1049,964 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
   <div class="card" id="checklist-container"></div>
 </section>
 
-<!-- ═══════════════════════════════════ BUDGET ════════════════════════════ -->
+<!-- ============================== BUDGET ============================== -->
 <section id="tab-budget" class="tab">
-  <div class="budget-section">
-    <div class="budget-section-hdr" style="color:var(--teal)">💼 Office Covered</div>
-    <div id="budget-office"></div>
+  <div class="btotal" style="margin-bottom:20px">
+    <div class="btotal-lbl">Personal Out-of-Pocket Total</div>
+    <div class="btotal-amt" id="budget-total">—</div>
+    <div class="btotal-sub">Excludes all office-covered items · Leavenworth hotel TBD</div>
   </div>
   <div class="budget-section">
     <div class="budget-section-hdr" style="color:var(--rose-dark)">🌸 Personal Expense</div>
     <div id="budget-personal"></div>
   </div>
-  <div class="btotal">
-    <div class="btotal-lbl">Personal Out-of-Pocket Total</div>
-    <div class="btotal-amt" id="budget-total">—</div>
-    <div class="btotal-sub">Excludes all office-covered items · Leavenworth hotel TBD</div>
+  <div class="budget-section">
+    <div class="budget-section-hdr" style="color:var(--teal)">💼 Office Covered</div>
+    <div id="budget-office"></div>
   </div>
-
   <div class="card" style="margin-top:16px;background:var(--teal-light);border-color:var(--teal)">
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--teal);margin-bottom:8px">Office Covers</div>
     <div style="font-size:12px;color:var(--text);line-height:1.7">
       ✓ Flights SJC↔SEA ($636.44)<br>
       ✓ Hyatt Regency Bellevue, 6 nights ($1,800)<br>
       ✓ Enterprise rental car Apr 12–18 ($289.05)<br>
-      ✓ ~$100/day food allowance during work days<br>
-      <strong>Office Total: ~$3,225</strong>
+      ✓ ~$100/day food allowance × 7 days ($700) — covers weekdays + Sun/Sat business days<br>
+      <strong>Office Total: ~$3,425</strong>
     </div>
   </div>
 </section>
 
 <script>
-// ── TABS ──────────────────────────────────────────────────────────────────────
-function switchTab(id, btn) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-  btn.classList.add('active');
+// ── SAFE DOM HELPERS ────────────────────────────────────────────────
+function setHTML(el, html) {
+  if (typeof el === 'string') el = document.getElementById(el);
+  if (el) el.innerHTML = html;
+}
+function cToF(c) { return Math.round(c * 9 / 5 + 32); }
+
+// ── WEATHER DATA & API ──────────────────────────────────────────────
+var WEATHER_CITIES = [
+  {city:'Seattle, WA', lat:47.61, lon:-122.33, avgLow:6, avgHigh:14, avgLowF:43, avgHighF:57},
+  {city:'Bellevue, WA', lat:47.61, lon:-122.20, avgLow:5, avgHigh:14, avgLowF:41, avgHighF:57},
+  {city:'Redmond, WA', lat:47.67, lon:-122.12, avgLow:4, avgHigh:14, avgLowF:39, avgHighF:57},
+  {city:'Mt. Rainier (Paradise)', lat:46.79, lon:-121.74, avgLow:-3, avgHigh:5, avgLowF:27, avgHighF:41},
+  {city:'Leavenworth, WA', lat:47.60, lon:-120.66, avgLow:0, avgHigh:14, avgLowF:32, avgHighF:57},
+];
+
+var COORDS = {
+  'Seattle':{lat:47.61,lon:-122.33},'Bellevue':{lat:47.61,lon:-122.20},
+  'Redmond':{lat:47.67,lon:-122.12},'Rainier':{lat:46.79,lon:-121.74},
+  'Paradise':{lat:46.79,lon:-121.74},'Leavenworth':{lat:47.60,lon:-120.66},
+  'Snoqualmie':{lat:47.53,lon:-121.84},'Ballard':{lat:47.67,lon:-122.38},
+  'Fremont':{lat:47.65,lon:-122.35},'San Jose':{lat:37.34,lon:-121.89},
+  'Boston':{lat:42.36,lon:-71.06},'West Haven':{lat:41.27,lon:-72.95},
+};
+
+var weatherCache = {};
+var WMO_CODES = {
+  0:'\u2600\uFE0F Clear',1:'\u{1F324}\uFE0F Mostly Clear',2:'\u26C5 Partly Cloudy',3:'\u2601\uFE0F Overcast',
+  45:'\u{1F32B}\uFE0F Foggy',48:'\u{1F32B}\uFE0F Fog',51:'\u{1F326}\uFE0F Light Drizzle',53:'\u{1F326}\uFE0F Drizzle',55:'\u{1F327}\uFE0F Heavy Drizzle',
+  61:'\u{1F327}\uFE0F Light Rain',63:'\u{1F327}\uFE0F Rain',65:'\u{1F327}\uFE0F Heavy Rain',71:'\u{1F328}\uFE0F Light Snow',73:'\u{1F328}\uFE0F Snow',
+  75:'\u{1F328}\uFE0F Heavy Snow',80:'\u{1F327}\uFE0F Showers',81:'\u{1F327}\uFE0F Heavy Showers',82:'\u26C8\uFE0F Violent Showers',
+  95:'\u26C8\uFE0F Thunderstorm',96:'\u26C8\uFE0F Hail Storm',99:'\u26C8\uFE0F Severe Storm'
+};
+
+function isForecastDateInRange(dateStr) {
+  var target = new Date(dateStr + 'T00:00:00');
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  var diffDays = Math.round((target - today) / 86400000);
+  return diffDays >= 0 && diffDays <= 15;
 }
 
-// ── BANNER / COUNTDOWN ───────────────────────────────────────────────────────
-const TRIP_START = new Date('2026-04-10T08:00:00');
-const TRIP_END   = new Date('2026-04-19T15:59:00');
+function fetchWeather(lat, lon, dateStr) {
+  if (!isForecastDateInRange(dateStr)) return Promise.resolve(null);
+  var key = lat + ',' + lon + ',' + dateStr;
+  if (weatherCache[key]) return Promise.resolve(weatherCache[key]);
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_probability_max&start_date=' + dateStr + '&end_date=' + dateStr + '&temperature_unit=celsius';
+  return fetch(url).then(function(r) {
+    if (!r.ok) return null;
+    return r.json();
+  }).then(function(d) {
+    if (!d || !d.daily || !d.daily.time || d.daily.time.length === 0) return null;
+    var result = {
+      high: Math.round(d.daily.temperature_2m_max[0]),
+      low: Math.round(d.daily.temperature_2m_min[0]),
+      code: d.daily.weathercode[0],
+      precip: d.daily.precipitation_probability_max ? d.daily.precipitation_probability_max[0] : null,
+      desc: WMO_CODES[d.daily.weathercode[0]] || 'Weather data'
+    };
+    weatherCache[key] = result;
+    return result;
+  }).catch(function() { return null; });
+}
+
+function fetchWeatherSimple(lat, lon) {
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&daily=temperature_2m_max,temperature_2m_min,weathercode&current=temperature_2m&temperature_unit=celsius&timezone=America%2FLos_Angeles&forecast_days=1';
+  return fetch(url).then(function(r) {
+    if (!r.ok) return null;
+    return r.json();
+  }).then(function(d) {
+    if (!d || !d.daily || !d.daily.time || d.daily.time.length === 0) return null;
+    return {
+      current: d.current && typeof d.current.temperature_2m === 'number' ? Math.round(d.current.temperature_2m) : null,
+      high: Math.round(d.daily.temperature_2m_max[0]),
+      low: Math.round(d.daily.temperature_2m_min[0]),
+      code: d.daily.weathercode[0],
+      desc: WMO_CODES[d.daily.weathercode[0]] || 'Weather data'
+    };
+  }).catch(function() { return null; });
+}
+
+function fetchHistoricalSameDateAverage(lat, lon, dateStr, yearsBack) {
+  yearsBack = yearsBack || 5;
+  var key = 'histavg:' + lat + ',' + lon + ',' + dateStr + ',' + yearsBack;
+  if (weatherCache[key]) return Promise.resolve(weatherCache[key]);
+  var monthDay = dateStr.slice(5);
+  var targetYear = parseInt(dateStr.slice(0, 4), 10);
+  var requests = [];
+  for (var i = 1; i <= yearsBack; i++) {
+    var y = targetYear - i;
+    if (monthDay === '02-29' && (y % 4 !== 0 || (y % 100 === 0 && y % 400 !== 0))) continue;
+    var histDate = y + '-' + monthDay;
+    var url = 'https://archive-api.open-meteo.com/v1/archive?latitude=' + lat + '&longitude=' + lon + '&start_date=' + histDate + '&end_date=' + histDate + '&daily=temperature_2m_max,temperature_2m_min&temperature_unit=celsius&timezone=auto';
+    requests.push(
+      fetch(url).then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(d) {
+          if (!d || !d.daily || !d.daily.time || !d.daily.time.length) return null;
+          return { high: d.daily.temperature_2m_max[0], low: d.daily.temperature_2m_min[0] };
+        }).catch(function() { return null; })
+    );
+  }
+  return Promise.all(requests).then(function(results) {
+    var valid = results.filter(Boolean);
+    if (!valid.length) return null;
+    var sumHigh = 0, sumLow = 0;
+    for (var j = 0; j < valid.length; j++) { sumHigh += valid[j].high; sumLow += valid[j].low; }
+    var result = {
+      avgHigh: Math.round(sumHigh / valid.length),
+      avgLow: Math.round(sumLow / valid.length),
+      avgMean: Math.round((sumHigh + sumLow) / (valid.length * 2)),
+      sampleSize: valid.length
+    };
+    weatherCache[key] = result;
+    return result;
+  }).catch(function() { return null; });
+}
+
+function getLocationCoords(locStr) {
+  var keys = Object.keys(COORDS);
+  for (var i = 0; i < keys.length; i++) {
+    if (locStr.toLowerCase().indexOf(keys[i].toLowerCase()) !== -1) return COORDS[keys[i]];
+  }
+  return null;
+}
+
+function getWeatherCityMeta(locStr) {
+  var lower = (locStr || '').toLowerCase();
+  for (var i = 0; i < WEATHER_CITIES.length; i++) {
+    var cityName = WEATHER_CITIES[i].city.split(',')[0].toLowerCase();
+    if (lower.indexOf(cityName) !== -1) return WEATHER_CITIES[i];
+  }
+  return null;
+}
+
+// ── BANNER / COUNTDOWN ──────────────────────────────────────────────
+var TRIP_START = new Date('2026-04-10T08:00:00');
+var TRIP_END   = new Date('2026-04-19T15:59:00');
+function pad2(n) { return n < 10 ? '0' + n : '' + n; }
 
 function updateBanner() {
-  const now = new Date();
-  const bannerTxt = document.getElementById('banner-txt');
-  const bannerDt  = document.getElementById('banner-dt');
+  var now = new Date();
+  var dtEl = document.getElementById('banner-dt');
+  var labelEl = document.getElementById('countdown-label');
+  var numsEl = document.getElementById('countdown-nums');
+  var statusEl = document.getElementById('status-line');
 
-  // date/time
-  bannerDt.textContent = now.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})
-    + ' · ' + now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+  dtEl.textContent = now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'})
+    + ' \u2022 ' + now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
 
   if (now < TRIP_START) {
-    const diff = TRIP_START - now;
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    bannerTxt.innerHTML = `✈ Seattle in <strong>${d}d ${h}h ${m}m</strong> ♡`;
+    var diff = TRIP_START - now;
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    labelEl.textContent = '\u2708\uFE0F Seattle trip begins';
+    numsEl.textContent = d + 'd : ' + pad2(h) + 'h : ' + pad2(m) + 'm : ' + pad2(s) + 's';
+    setHTML(statusEl, '<span class="pulse"></span> SJC \u2192 SEA \u00B7 BOS \u2192 SEA \u2661');
   } else if (now <= TRIP_END) {
-    bannerTxt.innerHTML = `<strong>You're in Seattle right now! ♡</strong>`;
+    var dayNum = Math.floor((now - TRIP_START) / 86400000) + 1;
+    labelEl.textContent = '';
+    numsEl.textContent = '';
+    setHTML(statusEl, '<span class="pulse"></span> <strong style="font-size:20px">Day ' + dayNum + ' in Seattle! \u2661</strong>');
   } else {
-    bannerTxt.innerHTML = `<strong>Seattle memories ♡</strong> What a trip!`;
+    labelEl.textContent = '';
+    numsEl.textContent = '';
+    statusEl.textContent = '\u2661 Seattle memories \u2014 what a trip!';
   }
 }
 updateBanner();
-setInterval(updateBanner, 30000);
+setInterval(updateBanner, 1000);
 
-// ── SCHEDULE DATA ─────────────────────────────────────────────────────────────
-const phases = {
-  p1: {
-    label:'Personal Phase 1',
-    type:'personal',
+// ── NEXT UP FOCUS CARD ─────────────────────────────────────────────
+function getNearestScheduleDay() {
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+  var best = null;
+  for (var i = 0; i < PHASES.length; i++) {
+    for (var j = 0; j < PHASES[i].days.length; j++) {
+      var day = PHASES[i].days[j];
+      var dt = new Date(day.date + 'T00:00:00');
+      dt.setHours(0, 0, 0, 0);
+      var diffDays = Math.round((dt - now) / 86400000);
+      var score = diffDays < 0 ? Math.abs(diffDays) + 1000 : diffDays;
+      if (!best || score < best.score) {
+        best = {phase: PHASES[i], day: day, diffDays: diffDays, score: score};
+      }
+      if (diffDays === 0) return {phase: PHASES[i], day: day, diffDays: diffDays, score: score};
+    }
+  }
+  return best;
+}
+
+function renderFocusCard() {
+  var next = getNearestScheduleDay();
+  if (!next) return;
+  var phase = next.phase;
+  var day = next.day;
+  var label = next.diffDays === 0 ? 'Today on the trip' : next.diffDays > 0 ? (next.diffDays === 1 ? 'Next up tomorrow' : 'Next up in ' + next.diffDays + ' days') : (Math.abs(next.diffDays) === 1 ? 'Most recent trip day' : 'Most recent scheduled day');
+  var dateLabel = new Date(day.date + 'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+
+  var html = '<div class="focus-card">';
+  html += '<div class="focus-kicker">' + label + '</div>';
+  html += '<div class="focus-title">' + day.title + '</div>';
+  html += '<div class="focus-meta">';
+  html += '<span class="focus-pill date">' + dateLabel + ' \u2022 ' + phase.label + '</span>';
+  html += '<span class="focus-pill loc">\u{1F4CD} ' + day.loc + '</span>';
+  html += '</div>';
+  if (day.hotel) html += '<div class="focus-note">\u{1F3E8} ' + day.hotel + '</div>';
+
+  // Show first 3 activities as preview
+  if (day.acts && day.acts.length) {
+    html += '<div class="focus-acts">';
+    var max = Math.min(day.acts.length, 3);
+    for (var i = 0; i < max; i++) {
+      var a = day.acts[i];
+      html += '<div class="focus-act"><span class="focus-act-time">' + a.t + '</span><span class="focus-act-title">' + a.title + '</span></div>';
+    }
+    if (day.acts.length > 3) {
+      html += '<div style="font-size:11px;color:var(--text3);text-align:center;padding:2px 0">+ ' + (day.acts.length - 3) + ' more activities \u2192 Schedule tab</div>';
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+  setHTML('focusCard', html);
+}
+
+// ── OVERVIEW TIMELINE ───────────────────────────────────────────────
+function renderOverviewTimeline() {
+  var milestones = [
+    {date:'2026-04-09',title:'Simran: Amtrak West Haven \u2192 Boston',sub:'~7 PM depart, arrive ~10 PM. Stay at friend\'s house.',icon:'\u{1F682}',dot:'rose-dot',badge:'TBD',badgeCls:'pending'},
+    {date:'2026-04-10',title:'Ayush: SJC \u2192 SEA (AS1406)',sub:'8:00 AM \u2192 10:20 AM \u00B7 Alaska Airlines',icon:'\u2708',dot:'blue',badge:'ILTFTW',badgeCls:'booked'},
+    {date:'2026-04-10',title:'Simran: BOS \u2192 SEA (DL0384)',sub:'7:10 AM \u2192 10:37 AM \u00B7 Delta Airlines',icon:'\u2708',dot:'blue',badge:'HMWDZF',badgeCls:'booked'},
+    {date:'2026-04-10',title:'Pick Up Personal Rental Car',sub:'Enterprise Bellevue 11:00 AM \u00B7 Costco booking',icon:'\u{1F697}',dot:'green',badge:null},
+    {date:'2026-04-11',title:'Mt. Rainier Day Trip',sub:'Paradise \u00B7 Skyline Trail \u00B7 Narada Falls',icon:'\u{1F3D4}',dot:'teal-dot',badge:null},
+    {date:'2026-04-12',title:'Swap Cars + Check In Hyatt',sub:'Return personal car, pick up business car, Hyatt Regency',icon:'\u{1F3E8}',dot:'green',badge:null},
+    {date:'2026-04-13',title:'Office Week Begins',sub:'Meta Seattle \u00B7 VSR/UVQ/OEP \u00B7 Kerry Park evening',icon:'\u{1F4BC}',dot:'teal-dot',badge:null},
+    {date:'2026-04-14',title:'Space Needle Sunset',sub:'After office \u00B7 Book tickets online',icon:'\u{1F680}',dot:'rose-dot',badge:null},
+    {date:'2026-04-17',title:'Last Office Day + Leavenworth Drive',sub:'5 PM departure \u00B7 2.5 hrs \u00B7 Bavarian village overnight',icon:'\u{1F3D8}',dot:'gold-dot',badge:'Hotel TBD',badgeCls:'pending'},
+    {date:'2026-04-18',title:'Return from Leavenworth',sub:'Snoqualmie Falls stop \u00B7 Return car by 5 PM \u00B7 Redmond Inn',icon:'\u{1F697}',dot:'green',badge:null},
+    {date:'2026-04-19',title:'Ayush: SEA \u2192 SJC (AS0521)',sub:'3:59 PM \u2192 6:11 PM \u00B7 Alaska Airlines',icon:'\u2708',dot:'blue',badge:'ILTFTW',badgeCls:'booked'},
+    {date:'2026-04-19',title:'Simran: SEA \u2192 BOS (DL0474)',sub:'3:40 PM \u2192 11:59 PM \u00B7 Delta Airlines',icon:'\u2708',dot:'blue',badge:'HMWDZF',badgeCls:'booked'},
+    {date:'2026-04-20',title:'Simran: Amtrak Boston \u2192 West Haven',sub:'Time TBD \u00B7 Tickets not booked yet',icon:'\u{1F682}',dot:'rose-dot',badge:'TBD',badgeCls:'pending'},
+  ];
+  var html = '';
+  for (var i = 0; i < milestones.length; i++) {
+    var m = milestones[i];
+    var dateLabel = new Date(m.date + 'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    html += '<div class="tl2-item">';
+    html += '<div class="tl2-dot ' + m.dot + '">' + m.icon + '</div>';
+    html += '<div class="tl2-content">';
+    html += '<div class="tl2-date">' + dateLabel + '</div>';
+    html += '<div class="tl2-title">' + m.title;
+    if (m.badge) html += ' <span class="tl2-badge ' + (m.badgeCls||'') + '">' + m.badge + '</span>';
+    html += '</div>';
+    html += '<div class="tl2-sub">' + m.sub + '</div>';
+    html += '</div></div>';
+  }
+  setHTML('overviewTimeline', html);
+}
+
+// ── SCHEDULE DATA ───────────────────────────────────────────────────
+var PHASES = [
+  {
+    id:'pre', name:'Pre-Trip', type:'personal', dateRange:'Apr 9',
     days: [
-      {date:'Apr 10', day:'Fri', month:'Apr', title:'Arrival Day', loc:'San Jose → Seattle → Redmond',
+      {date:'2026-04-09', dayOfWeek:'Thu', title:'Simran\'s Pre-Departure', loc:'West Haven, CT \u2192 Boston, MA',
+       hotel:'Friend\'s house in Boston',
+       acts:[
+         {t:'Daytime', badge:'simran', title:'Simran packs and prepares in West Haven', loc:'West Haven, CT', det:'Final packing for Seattle trip.'},
+         {t:'~7:00 PM', badge:'amtrak', title:'Amtrak: West Haven \u2192 Boston', loc:'West Haven Station \u2192 South Station, Boston', det:'~3 hour ride. Tickets not yet booked \u2014 need to book ASAP!'},
+         {t:'~10:00 PM', badge:'hotel', title:'Arrive Boston \u2014 stay at friend\'s house', loc:'Boston, MA', det:'Overnight before early morning Delta flight. Set alarm for 4:30 AM!'},
+       ]},
+    ]
+  },
+  {
+    id:'p1', name:'Personal Phase 1', type:'personal', dateRange:'Apr 10\u201312',
+    days: [
+      {date:'2026-04-10', dayOfWeek:'Fri', title:'Arrival Day', loc:'San Jose/Boston \u2192 Seattle \u2192 Redmond',
        hotel:'Redmond Inn (Check-in after 3 PM)',
        acts:[
-         {t:'8:00 AM', badge:'flight', title:'Depart SJC → SEA (Alaska AS1406)', loc:'SJC Terminal B', det:'Seat 15C · 2h 20m nonstop · Conf: ILTFTW'},
-         {t:'10:20 AM', badge:'car', title:'Arrive SEA + pick up Costco rental car', loc:'Seattle-Tacoma Intl', det:'Enterprise at Bellevue 140th Ave NE · Costco Conf: C487837485 · Toyota Corolla'},
-         {t:'~11:30 AM', badge:'hotel', title:'Check in / drop bags at Redmond Inn', loc:'17601 Redmond Way, Redmond', det:'Conf: 987320458 · Free breakfast, parking, pool. Check-in after 3 PM — drop bags early.'},
-         {t:'12:00–5 PM', badge:'work', title:'Work remotely (settle in)', loc:'Hotel / nearby café', det:'Light work day. Just arrived — get set up and oriented.'},
-         {t:'~6:00 PM', badge:'explore', title:'Drive to Seattle (30 min)', loc:'Seattle', det:'Pike Place Market area — market wraps up ~6 PM but the waterfront and Post Alley are beautiful.'},
-         {t:'7:30 PM', badge:'meal', title:'Dinner near Pike Place', loc:'Post Alley / 1st Ave, Seattle', det:'The Pink Door (Italian, romantic, hidden in Post Alley) or Matt\'s in the Market · Budget: $50–70'},
-         {t:'9:00 PM', badge:'romantic', title:'Evening stroll — Seattle Waterfront', loc:'Seattle Waterfront', det:'Beautiful at night. Elliott Bay views, fairy lights, sea air ♡ Light evening — you\'ll be tired from travel.'},
+         {t:'7:10 AM', badge:'simran', title:'Simran departs BOS \u2192 SEA (Delta DL0384)', loc:'BOS Terminal A (Gate A14)', det:'6h 27m nonstop \u00B7 Airbus A321neo \u00B7 Conf: HMWDZF \u00B7 eTicket: #0067429979753'},
+         {t:'8:00 AM', badge:'flight', title:'Ayush departs SJC \u2192 SEA (Alaska AS1406)', loc:'SJC Terminal B', det:'Seat 15C \u00B7 2h 20m nonstop \u00B7 Conf: ILTFTW'},
+         {t:'10:20 AM', badge:'flight', title:'Ayush arrives SEA', loc:'Seattle-Tacoma Intl', det:''},
+         {t:'10:37 AM', badge:'simran', title:'Simran arrives SEA', loc:'Seattle-Tacoma Intl (Gate A12)', det:'Both arrive within 17 min of each other! Meet at baggage claim.'},
+         {t:'~11:00 AM', badge:'car', title:'Pick up Costco rental car', loc:'Enterprise at Bellevue 140th Ave NE', det:'Costco Conf: C487837485 \u00B7 Toyota Corolla'},
+         {t:'~11:30 AM', badge:'hotel', title:'Check in / drop bags at Redmond Inn', loc:'17601 Redmond Way, Redmond', det:'Conf: 987320458 \u00B7 Free breakfast, parking, pool. Check-in after 3 PM \u2014 drop bags early.'},
+         {t:'12:00\u20135 PM', badge:'work', title:'Work remotely (settle in)', loc:'Hotel / nearby caf\u00E9', det:'Light work day. Just arrived \u2014 get set up and oriented.'},
+         {t:'~6:00 PM', badge:'explore', title:'Drive to Seattle (30 min)', loc:'Seattle', det:'Pike Place Market area \u2014 market wraps up ~6 PM but the waterfront and Post Alley are beautiful.'},
+         {t:'7:30 PM', badge:'meal', title:'Dinner near Pike Place', loc:'Post Alley / 1st Ave, Seattle', det:'The Pink Door (Italian, romantic, hidden in Post Alley) or Matt\'s in the Market \u00B7 Budget: $50\u201370'},
+         {t:'9:00 PM', badge:'romantic', title:'Evening stroll \u2014 Seattle Waterfront', loc:'Seattle Waterfront', det:'Beautiful at night. Elliott Bay views, fairy lights, sea air \u2661 Light evening \u2014 you\'ll be tired from travel.'},
        ]},
-      {date:'Apr 11', day:'Sat', month:'Apr', title:'Mt. Rainier Day Trip ♡', loc:'Mount Rainier National Park',
+      {date:'2026-04-11', dayOfWeek:'Sat', title:'Mt. Rainier Day Trip \u2661', loc:'Mount Rainier National Park',
        hotel:'Redmond Inn',
        acts:[
          {t:'6:30 AM', badge:'meal', title:'Early breakfast at hotel (free)', loc:'Redmond Inn', det:'Free breakfast included! Pack snacks and water for the hike.'},
-         {t:'7:00 AM', badge:'drive', title:'Drive to Mt. Rainier National Park', loc:'SR-167 S → SR-410 E → Paradise', det:'~2 hrs to Paradise Visitor Center. 94 miles. Bring layers — snow and cold likely in April!'},
-         {t:'9:00 AM', badge:'explore', title:'Arrive Paradise — Visitor Center', loc:'Henry M. Jackson Visitor Center', det:'NPS entry: $35/car. Most iconic spot. Glaciers, wildflowers (if early thaw), and the summit looming overhead.'},
-         {t:'9:30 AM', badge:'explore', title:'Skyline Trail hike (or Deadhorse Creek)', loc:'Paradise, Mt. Rainier NP', det:'Skyline Trail: 5 mi loop, moderate. Best summit views. Deadhorse Creek: 2 mi easy, great for a shorter option. Reflection Lakes is a 3 mi detour from Paradise — mirror views on calm days ♡'},
+         {t:'7:00 AM', badge:'drive', title:'Drive to Mt. Rainier National Park', loc:'SR-167 S \u2192 SR-410 E \u2192 Paradise', det:'~2 hrs to Paradise Visitor Center. 94 miles. Bring layers \u2014 snow and cold likely in April!'},
+         {t:'9:00 AM', badge:'explore', title:'Arrive Paradise \u2014 Visitor Center', loc:'Henry M. Jackson Visitor Center', det:'NPS entry: $35/car. Most iconic spot. Glaciers, wildflowers (if early thaw), and the summit looming overhead.'},
+         {t:'9:30 AM', badge:'explore', title:'Skyline Trail hike (or Deadhorse Creek)', loc:'Paradise, Mt. Rainier NP', det:'Skyline Trail: 5 mi loop, moderate. Best summit views. Deadhorse Creek: 2 mi easy, great for a shorter option. Reflection Lakes is a 3 mi detour from Paradise \u2014 mirror views on calm days \u2661'},
          {t:'2:00 PM', badge:'explore', title:'Narada Falls stop (10 min)', loc:'Narada Falls pullout, Paradise Rd E', det:'168-ft waterfall. Gorgeous. Short walk from parking.'},
-         {t:'2:30 PM', badge:'drive', title:'Drive back to Redmond (~2 hrs)', loc:'SR-410 W → I-405 N', det:'Back by ~4:30–5 PM'},
-         {t:'6:00 PM', badge:'meal', title:'Dinner in Bellevue', loc:'Bellevue', det:'Din Tai Fung (Lincoln Square — soup dumplings, must try!) or Facing East (Taiwanese). Budget: $60–80 ♡'},
+         {t:'2:30 PM', badge:'drive', title:'Drive back to Redmond (~2 hrs)', loc:'SR-410 W \u2192 I-405 N', det:'Back by ~4:30\u20135 PM'},
+         {t:'6:00 PM', badge:'meal', title:'Dinner in Bellevue', loc:'Bellevue', det:'Din Tai Fung (Lincoln Square \u2014 soup dumplings, must try!) or Facing East (Taiwanese). Budget: $60\u201380 \u2661'},
        ]},
-      {date:'Apr 12', day:'Sun', month:'Apr', title:'Transition Day', loc:'Redmond → Bellevue (Hyatt)',
+      {date:'2026-04-12', dayOfWeek:'Sun', title:'Transition Day', loc:'Redmond \u2192 Bellevue (Hyatt)',
        hotel:'Check in: Hyatt Regency Bellevue',
        acts:[
          {t:'7:30 AM', badge:'meal', title:'Hotel breakfast (free)', loc:'Redmond Inn', det:'Pack up after breakfast. Check out by noon.'},
-         {t:'8:45 AM', badge:'car', title:'Drive to Enterprise — return personal car', loc:'2299 140th Ave NE Ste B, Bellevue', det:'Return Costco car by 9:00 AM. Same location for personal and business car pick-up!'},
-         {t:'9:00 AM', badge:'car', title:'Pick up business car (Meta/Enterprise)', loc:'Same Enterprise location, Bellevue', det:'Conf: 2095306771COUNT · Rate Code Z5MFR6 · Intermediate car, A/C auto. Seamless swap!'},
-         {t:'~10:00 AM', badge:'hotel', title:'Check in — Hyatt Regency Bellevue', loc:'900 Bellevue Way NE, Bellevue', det:'Conf: 150174RA018842 · High Floor Lake View · $300/night office-covered. Settle in!'},
-         {t:'Afternoon', badge:'explore', title:'Explore Bellevue + unwind', loc:'Bellevue Downtown / Meydenbauer Bay', det:'Bellevue Downtown Park walk, Lincoln Square browse, or Meydenbauer Bay Park for a waterfront stroll ♡'},
-         {t:'Evening', badge:'meal', title:'Dinner — first night at Hyatt', loc:'Bellevue', det:'Din Tai Fung if not done Sat, or Seastar Restaurant for a special first-night dinner. Budget: $60–80'},
+         {t:'8:45 AM', badge:'car', title:'Drive to Enterprise \u2014 return personal car', loc:'2299 140th Ave NE Ste B, Bellevue', det:'Return Costco car by 9:00 AM. Same location for personal and business car pick-up!'},
+         {t:'9:00 AM', badge:'car', title:'Pick up business car (Meta/Enterprise)', loc:'Same Enterprise location, Bellevue', det:'Conf: 2095306771COUNT \u00B7 Rate Code Z5MFR6 \u00B7 Intermediate car, A/C auto. Seamless swap!'},
+         {t:'~10:00 AM', badge:'hotel', title:'Check in \u2014 Hyatt Regency Bellevue', loc:'900 Bellevue Way NE, Bellevue', det:'Conf: 150174RA018842 \u00B7 High Floor Lake View \u00B7 $300/night office-covered. Settle in!'},
+         {t:'Afternoon', badge:'explore', title:'Explore Bellevue + unwind', loc:'Bellevue Downtown / Meydenbauer Bay', det:'Bellevue Downtown Park walk, Lincoln Square browse, or Meydenbauer Bay Park for a waterfront stroll \u2661'},
+         {t:'Evening', badge:'meal', title:'Dinner \u2014 first night at Hyatt', loc:'Bellevue', det:'Din Tai Fung if not done Sat, or Seastar Restaurant for a special first-night dinner. Budget: $60\u201380'},
        ]},
     ]
   },
-  biz: {
-    label:'Business Phase',
-    type:'business',
+  {
+    id:'biz', name:'Business Phase', type:'business', dateRange:'Apr 13\u201317',
     days: [
-      {date:'Apr 13', day:'Mon', month:'Apr', title:'Office Day 1 + Kerry Park', loc:'Meta Office + Seattle Evening',
+      {date:'2026-04-13', dayOfWeek:'Mon', title:'Office Day 1 + Kerry Park', loc:'Meta Office + Seattle Evening',
        hotel:'Hyatt Regency Bellevue',
        acts:[
-         {t:'9:00 AM', badge:'work', title:'Meta office — Day 1 (VSR/UVQ/OEP)', loc:'Meta Seattle', det:'Team meetings and planning. GF: UW campus via 550 Express bus ♡'},
+         {t:'9:00 AM', badge:'work', title:'Meta office \u2014 Day 1 (VSR/UVQ/OEP)', loc:'Meta Seattle', det:'Team meetings and planning.'},
+         {t:'9:30 AM', badge:'simran', title:'Simran: UW Campus Day', loc:'University of Washington', det:'Red Square, Suzzallo Library (Gothic reading room), Burke Museum, UW Botanic Gardens, "The Ave" for lunch.'},
+         {t:'', badge:'simran', title:'\u{1F68C} Transit: 550 Express + Link Light Rail to UW Station', loc:'~45 min total from Bellevue', det:''},
          {t:'5:00 PM', badge:'explore', title:'Drive to Kerry Park (25 min)', loc:'W Highland Dr, Seattle (Queen Anne Hill)', det:'Best viewpoint in Seattle. Space Needle framed against the skyline, Mt. Rainier visible on clear days. Arrive before sunset (~7:30 PM in April).'},
-         {t:'~7:30 PM', badge:'romantic', title:'Sunset at Kerry Park ♡', loc:'Kerry Park, Seattle', det:'Free. Bring a blanket. Most romantic view in the city.'},
-         {t:'After sunset', badge:'meal', title:'Dinner — Capitol Hill', loc:'Capitol Hill, Seattle', det:'Altura (Italian, upscale — reserve ahead), Poppy (Pacific NW), or Revel Fremont (Korean fusion). Budget: $60–90'},
+         {t:'~7:30 PM', badge:'romantic', title:'Sunset at Kerry Park \u2661', loc:'Kerry Park, Seattle', det:'Free. Bring a blanket. Most romantic view in the city.'},
+         {t:'After sunset', badge:'meal', title:'Dinner \u2014 Capitol Hill', loc:'Capitol Hill, Seattle', det:'Altura (Italian, upscale \u2014 reserve ahead), Poppy (Pacific NW), or Revel Fremont (Korean fusion). Budget: $60\u201390'},
        ]},
-      {date:'Apr 14', day:'Tue', month:'Apr', title:'Office Day 2 + Space Needle', loc:'Meta Office + Seattle Center',
+      {date:'2026-04-14', dayOfWeek:'Tue', title:'Office Day 2 + Space Needle', loc:'Meta Office + Seattle Center',
        hotel:'Hyatt Regency Bellevue',
        acts:[
-         {t:'9:00 AM', badge:'work', title:'Meta office — Day 2', loc:'Meta Seattle', det:'GF: Pike Place Market + Seattle Waterfront via 550 bus. Original Starbucks, Gum Wall, waterfront walk ♡'},
-         {t:'~5:30 PM', badge:'explore', title:'Drive to Space Needle (25 min)', loc:'400 Broad St, Seattle Center', det:'Book sunset slot online at spaceneedle.com ($35–40/pp). Best if clear evening — check forecast!'},
-         {t:'~7:00 PM', badge:'romantic', title:'Space Needle sunset ♡', loc:'Space Needle, Seattle Center', det:'360° views from 520 ft. The revolving glass floor is wild. Pair with Chihuly Garden of Glass next door for stunning glass art at night.'},
-         {t:'After', badge:'meal', title:'Dinner near Seattle Center', loc:'Seattle Center area', det:'Armory food court (diverse, casual) or nearby restaurants. Budget: $50–70'},
+         {t:'9:00 AM', badge:'work', title:'Meta office \u2014 Day 2', loc:'Meta Seattle', det:''},
+         {t:'9:30 AM', badge:'simran', title:'Simran: Pike Place Market + Waterfront', loc:'Pike Place Market, Seattle', det:'Original Starbucks, Rachel the Pig, Gum Wall, Seattle Waterfront walk, Olympic Sculpture Park (free).'},
+         {t:'', badge:'simran', title:'\u{1F68C} Transit: 550 Express to Westlake, walk 10 min', loc:'~50 min from Hyatt', det:''},
+         {t:'~5:30 PM', badge:'explore', title:'Drive to Space Needle (25 min)', loc:'400 Broad St, Seattle Center', det:'Book sunset slot online at spaceneedle.com ($35\u201340/pp). Best if clear evening \u2014 check forecast!'},
+         {t:'~7:00 PM', badge:'romantic', title:'Space Needle sunset \u2661', loc:'Space Needle, Seattle Center', det:'360\u00B0 views from 520 ft. The revolving glass floor is wild. Pair with Chihuly Garden of Glass next door for stunning glass art at night.'},
+         {t:'After', badge:'meal', title:'Dinner near Seattle Center', loc:'Seattle Center area', det:'Armory food court (diverse, casual) or nearby restaurants. Budget: $50\u201370'},
        ]},
-      {date:'Apr 15', day:'Wed', month:'Apr', title:'Office Day 3 + Amazon Spheres', loc:'Meta Office + SLU',
+      {date:'2026-04-15', dayOfWeek:'Wed', title:'Office Day 3 + Amazon Spheres', loc:'Meta Office + SLU',
        hotel:'Hyatt Regency Bellevue',
        acts:[
-         {t:'9:00 AM', badge:'work', title:'Meta office — Day 3', loc:'Meta Seattle', det:'GF: Bellevue Botanical Garden (free, rhododendrons!) + Lincoln Square shopping ♡'},
+         {t:'9:00 AM', badge:'work', title:'Meta office \u2014 Day 3', loc:'Meta Seattle', det:''},
+         {t:'9:30 AM', badge:'simran', title:'Simran: Bellevue Local Day', loc:'Bellevue', det:'Bellevue Botanical Garden (free, rhododendrons!), Downtown Park, Lincoln Square shopping, Bellevue Arts Museum.'},
+         {t:'', badge:'simran', title:'\u{1F6B6} All walkable from Hyatt or short Uber', loc:'No transit needed', det:''},
          {t:'~5:30 PM', badge:'explore', title:'Amazon Spheres + South Lake Union', loc:'2111 7th Ave, Seattle', det:'Interior via Krishna dai\'s guest pass (contact him before!). Exterior always free. 40,000+ plants in glass domes. Doppler campus selfie spot.'},
          {t:'~7:00 PM', badge:'explore', title:'Fremont neighborhood walk', loc:'Fremont, Seattle', det:'Fremont Troll sculpture, Fremont Sunday Market area, quirky shops. Fun neighborhood vibe.'},
-         {t:'Evening', badge:'meal', title:'Dinner in Fremont', loc:'Fremont, Seattle', det:'Revel (Korean fusion, excellent), The Whale Wins, or Paseo (Cuban sandwiches, legendary). Budget: $50–70'},
+         {t:'Evening', badge:'meal', title:'Dinner in Fremont', loc:'Fremont, Seattle', det:'Revel (Korean fusion, excellent), The Whale Wins, or Paseo (Cuban sandwiches, legendary). Budget: $50\u201370'},
        ]},
-      {date:'Apr 16', day:'Thu', month:'Apr', title:'Office Day 4 + Gas Works Park', loc:'Meta Office + Seattle',
+      {date:'2026-04-16', dayOfWeek:'Thu', title:'Office Day 4 + Gas Works Park', loc:'Meta Office + Seattle',
        hotel:'Hyatt Regency Bellevue',
        acts:[
-         {t:'9:00 AM', badge:'work', title:'Meta office — Day 4', loc:'Meta Seattle', det:'GF: Microsoft Visitor Center Redmond (book slot online) + Marymoor Park ♡'},
-         {t:'~5:30 PM', badge:'explore', title:'Gas Works Park — Lake Union panorama', loc:'2101 N Northlake Way, Seattle', det:'Unique industrial park turned greenspace. Panoramic Seattle skyline from the hill. Best at dusk.'},
+         {t:'9:00 AM', badge:'work', title:'Meta office \u2014 Day 4', loc:'Meta Seattle', det:''},
+         {t:'9:30 AM', badge:'simran', title:'Simran: Microsoft Visitor Center + Marymoor Park', loc:'Redmond', det:'Microsoft Experience Center (free, book slot online), Redmond Town Center walk, Marymoor Park by Sammamish River.'},
+         {t:'', badge:'simran', title:'\u{1F68C} Transit: Metro 245 bus to Redmond (~20 min)', loc:'Or short Uber', det:''},
+         {t:'~5:30 PM', badge:'explore', title:'Gas Works Park \u2014 Lake Union panorama', loc:'2101 N Northlake Way, Seattle', det:'Unique industrial park turned greenspace. Panoramic Seattle skyline from the hill. Best at dusk.'},
          {t:'~7:00 PM', badge:'romantic', title:'Ballard neighborhood + dinner', loc:'Ballard Ave NW, Seattle', det:''},
-         {t:'~7:30 PM', badge:'meal', title:'The Walrus and the Carpenter — oysters ♡', loc:'4743 Ballard Ave NW', det:'Seattle\'s most romantic oyster bar. No reservations — arrive 5–5:30 PM when it opens to avoid wait. Or Stoneburner at Ballard Inn (wood-fired, excellent). Budget: $60–90'},
+         {t:'~7:30 PM', badge:'meal', title:'The Walrus and the Carpenter \u2014 oysters \u2661', loc:'4743 Ballard Ave NW', det:'Seattle\'s most romantic oyster bar. No reservations \u2014 arrive 5\u20135:30 PM when it opens to avoid wait. Or Stoneburner at Ballard Inn (wood-fired, excellent). Budget: $60\u201390'},
        ]},
-      {date:'Apr 17', day:'Fri', month:'Apr', title:'Last Office Day + Leavenworth Drive ♡', loc:'Meta Office → Leavenworth',
+      {date:'2026-04-17', dayOfWeek:'Fri', title:'Last Office Day + Leavenworth Drive \u2661', loc:'Meta Office \u2192 Leavenworth',
        hotel:'Leavenworth (book ASAP!)',
        acts:[
-         {t:'9:00 AM', badge:'work', title:'Meta office — Day 5 (last!)', loc:'Meta Seattle', det:'GF: South Lake Union + MOHAI museum ($20) + Center for Wooden Boats ♡'},
-         {t:'5:00 PM', badge:'explore', title:'🎉 Last day of work! Head to Leavenworth', loc:'Bellevue → US-2 E → Leavenworth', det:'~2.5 hrs, 115 miles via US-2 East. Drive through the Cascades as dusk falls. Magical!'},
-         {t:'~7:30 PM', badge:'hotel', title:'Arrive Leavenworth — check in', loc:'Leavenworth, WA', det:'Bavarian village in the heart of the Cascades. Book hotel ASAP — Icicle Inn, Posthotel, or Airbnb.'},
-         {t:'Evening', badge:'romantic', title:'Evening stroll on Front Street ♡', loc:'Front Street, Leavenworth', det:'Bavarian streetscape lit up at night. Wine bars, Christmas decorations year-round, cozy atmosphere. Perfect romantic evening ♡'},
-         {t:'~9:00 PM', badge:'meal', title:'Dinner in Leavenworth', loc:'Front Street, Leavenworth', det:'Andreas Keller (German food, great atmosphere in a cave-like dining room), Watershed Café, or Visconti\'s. Budget: $50–70'},
+         {t:'9:00 AM', badge:'work', title:'Meta office \u2014 Day 5 (last!)', loc:'Meta Seattle', det:''},
+         {t:'9:30 AM', badge:'simran', title:'Simran: South Lake Union + MOHAI', loc:'South Lake Union, Seattle', det:'Museum of History & Industry / MOHAI ($20), Center for Wooden Boats (rowboat rental on Lake Union), SLU waterfront.'},
+         {t:'', badge:'simran', title:'\u{1F68C} Transit: 550 Bus \u2192 Westlake \u2192 Route 8 to SLU', loc:'~55 min total', det:''},
+         {t:'5:00 PM', badge:'explore', title:'\u{1F389} Last day of work! Head to Leavenworth', loc:'Bellevue \u2192 US-2 E \u2192 Leavenworth', det:'~2.5 hrs, 115 miles via US-2 East. Drive through the Cascades as dusk falls. Magical!'},
+         {t:'~7:30 PM', badge:'hotel', title:'Arrive Leavenworth \u2014 check in', loc:'Leavenworth, WA', det:'Bavarian village in the heart of the Cascades. Book hotel ASAP \u2014 Icicle Inn, Posthotel, or Airbnb.'},
+         {t:'Evening', badge:'romantic', title:'Evening stroll on Front Street \u2661', loc:'Front Street, Leavenworth', det:'Bavarian streetscape lit up at night. Wine bars, Christmas decorations year-round, cozy atmosphere. Perfect romantic evening \u2661'},
+         {t:'~9:00 PM', badge:'meal', title:'Dinner in Leavenworth', loc:'Front Street, Leavenworth', det:'Andreas Keller (German food, great atmosphere in a cave-like dining room), Watershed Caf\u00E9, or Visconti\'s. Budget: $50\u201370'},
        ]},
     ]
   },
-  p2: {
-    label:'Personal Phase 2',
-    type:'personal',
+  {
+    id:'p2', name:'Personal Phase 2', type:'personal', dateRange:'Apr 18\u201319',
     days: [
-      {date:'Apr 18', day:'Sat', month:'Apr', title:'Leavenworth Morning + Return', loc:'Leavenworth → Bellevue',
+      {date:'2026-04-18', dayOfWeek:'Sat', title:'Leavenworth Morning + Return', loc:'Leavenworth \u2192 Bellevue',
        hotel:'Redmond Inn (Check-in after 3 PM)',
        acts:[
-         {t:'Morning', badge:'explore', title:'Morning in Leavenworth ♡', loc:'Leavenworth, WA', det:'Blackbird Island Loop (1.3 mi easy, Icicle Creek — stunning). Or stroll Front Street for a coffee and bakery pastry. Icicle Ridge Winery opens 11 AM.'},
-         {t:'10:00 AM', badge:'drive', title:'Depart Leavenworth → Bellevue (~2.5 hrs)', loc:'US-2 W → I-405 S', det:'Back in Bellevue ~12:30 PM'},
-         {t:'1:00 PM', badge:'explore', title:'Optional: Snoqualmie Falls stop', loc:'Snoqualmie Falls, Snoqualmie WA', det:'On the way back from Leavenworth via US-2 → Snoqualmie. 268-ft waterfall, 5-min walk to upper view. ~30 min detour.'},
+         {t:'Morning', badge:'explore', title:'Morning in Leavenworth \u2661', loc:'Leavenworth, WA', det:'Blackbird Island Loop (1.3 mi easy, Icicle Creek \u2014 stunning). Or stroll Front Street for a coffee and bakery pastry. Icicle Ridge Winery opens 11 AM.'},
+         {t:'10:00 AM', badge:'drive', title:'Depart Leavenworth \u2192 Bellevue (~2.5 hrs)', loc:'US-2 W \u2192 I-405 S', det:'Back in Bellevue ~12:30 PM'},
+         {t:'1:00 PM', badge:'explore', title:'Optional: Snoqualmie Falls stop', loc:'Snoqualmie Falls, Snoqualmie WA', det:'On the way back from Leavenworth via US-2 \u2192 Snoqualmie. 268-ft waterfall, 5-min walk to upper view. ~30 min detour.'},
          {t:'4:45 PM', badge:'car', title:'Return business car to Enterprise', loc:'2299 140th Ave NE Ste B, Bellevue', det:'Return by 5:00 PM sharp. Fill gas if needed. Trip odo check.'},
-         {t:'~5:30 PM', badge:'hotel', title:'Check in — Redmond Inn (last night ♡)', loc:'17601 Redmond Way, Redmond WA', det:'Conf: 988390562 · King Room for two · Free breakfast tomorrow · Cancellable before Apr 16'},
-         {t:'Evening', badge:'meal', title:'Farewell dinner in Redmond/Bellevue', loc:'Redmond or Bellevue', det:'Din Tai Fung if you haven\'t been yet, or Matador Redmond for a relaxed last dinner. Pack tonight! Budget: $60–80 ♡'},
+         {t:'~5:30 PM', badge:'hotel', title:'Check in \u2014 Redmond Inn (last night \u2661)', loc:'17601 Redmond Way, Redmond WA', det:'Conf: 988390562 \u00B7 King Room for two \u00B7 Free breakfast tomorrow \u00B7 Cancellable before Apr 16'},
+         {t:'Evening', badge:'meal', title:'Farewell dinner in Redmond/Bellevue', loc:'Redmond or Bellevue', det:'Din Tai Fung if you haven\'t been yet, or Matador Redmond for a relaxed last dinner. Pack tonight! Budget: $60\u201380 \u2661'},
        ]},
-      {date:'Apr 19', day:'Sun', month:'Apr', title:'Departure Day', loc:'Redmond → SEA → San Jose',
+      {date:'2026-04-19', dayOfWeek:'Sun', title:'Departure Day', loc:'Redmond \u2192 SEA \u2192 San Jose / Boston',
        hotel:'Fly home',
        acts:[
-         {t:'Morning', badge:'meal', title:'Free hotel breakfast (last one!) ♡', loc:'Redmond Inn', det:'Free breakfast included. Check out by 12 PM. Pack everything!'},
-         {t:'9:00–11:30 AM', badge:'explore', title:'Light morning explore (no car)', loc:'Redmond Town Center or Bellevue via Uber', det:'Last Seattle coffee. Crossroads Bellevue for a fun international food hall brunch. Or just relax at the hotel pool.'},
-         {t:'12:00 PM', badge:'drive', title:'Grab lunch + Uber to SEA airport', loc:'Redmond → SEA (~40 min)', det:'Uber/Lyft: ~$45–55, ~40 min to SEA. Book in advance. Leave by 1:00 PM at latest!'},
-         {t:'~1:30 PM', badge:'flight', title:'Arrive SEA — check in & security', loc:'Seattle-Tacoma Intl Airport', det:'2+ hrs before departure. Alaska Airlines check-in: ILTFTW. Seat 11C confirmed.'},
-         {t:'3:59 PM', badge:'flight', title:'Depart SEA → SJC (Alaska AS0521) ✈', loc:'Seattle-Tacoma Intl Airport', det:'Seat 11C · 2h 12m nonstop · Arrives SJC 6:11 PM. Safe travels! ♡'},
-         {t:'6:11 PM', badge:'explore', title:'Arrive San Jose 🏠', loc:'SJC Terminal B', det:'Home sweet home. What a trip! ♡'},
+         {t:'Morning', badge:'meal', title:'Free hotel breakfast (last one!) \u2661', loc:'Redmond Inn', det:'Free breakfast included. Check out by 12 PM. Pack everything!'},
+         {t:'9:00\u201311:30 AM', badge:'explore', title:'Light morning explore (no car)', loc:'Redmond Town Center or Bellevue via Uber', det:'Last Seattle coffee. Crossroads Bellevue for a fun international food hall brunch. Or just relax at the hotel pool.'},
+         {t:'12:00 PM', badge:'drive', title:'Grab lunch + Uber to SEA airport', loc:'Redmond \u2192 SEA (~40 min)', det:'Uber/Lyft: ~$45\u201355, ~40 min to SEA. Book in advance. Leave by 1:00 PM at latest!'},
+         {t:'~1:30 PM', badge:'flight', title:'Arrive SEA \u2014 check in & security', loc:'Seattle-Tacoma Intl Airport', det:'2+ hrs before departure. Both check in for respective flights.'},
+         {t:'3:40 PM', badge:'simran', title:'Simran departs SEA \u2192 BOS (Delta DL0474)', loc:'Seattle-Tacoma Intl Airport', det:'5h 19m nonstop \u00B7 Airbus A321neo \u00B7 Conf: HMWDZF \u00B7 Arrives 11:59 PM BOS'},
+         {t:'3:59 PM', badge:'flight', title:'Ayush departs SEA \u2192 SJC (Alaska AS0521) \u2708', loc:'Seattle-Tacoma Intl Airport', det:'Seat 11C \u00B7 2h 12m nonstop \u00B7 Arrives SJC 6:11 PM. Safe travels! \u2661'},
+         {t:'6:11 PM', badge:'explore', title:'Ayush arrives San Jose \u{1F3E0}', loc:'SJC Terminal B', det:'Home sweet home. What a trip! \u2661'},
+         {t:'11:59 PM', badge:'simran', title:'Simran arrives BOS', loc:'BOS Terminal A', det:'Stay at friend\'s house in Boston overnight. Amtrak to West Haven tomorrow.'},
        ]},
     ]
+  },
+  {
+    id:'post', name:'Post-Trip', type:'post', dateRange:'Apr 20',
+    days: [
+      {date:'2026-04-20', dayOfWeek:'Mon', title:'Simran Returns Home', loc:'Boston, MA \u2192 West Haven, CT',
+       hotel:'Home',
+       acts:[
+         {t:'Morning', badge:'simran', title:'Simran wakes up at friend\'s house in Boston', loc:'Boston, MA', det:'Arrived 11:59 PM the night before. Rest up.'},
+         {t:'TBD', badge:'amtrak', title:'Amtrak: Boston \u2192 West Haven', loc:'South Station \u2192 West Haven Station', det:'Time TBD \u2014 tickets not booked yet. ~3 hour ride. Need to book!'},
+         {t:'TBD', badge:'simran', title:'Arrive West Haven \u2014 home sweet home', loc:'West Haven, CT', det:'End of the trip for Simran. What an adventure! \u2661'},
+       ]},
+    ]
+  },
+];
+
+var currentPhase = 'p1';
+var currentDayIdx = 0;
+
+function getCurrentPhaseData() {
+  for (var i = 0; i < PHASES.length; i++) {
+    if (PHASES[i].id === currentPhase) return PHASES[i];
   }
-};
+  return PHASES[0];
+}
 
-let currentPhase = 'p1';
-let currentDayIdx = 0;
+function selectClosestScheduleDay() {
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+  var best = null;
+  for (var i = 0; i < PHASES.length; i++) {
+    for (var j = 0; j < PHASES[i].days.length; j++) {
+      var dayDate = new Date(PHASES[i].days[j].date + 'T00:00:00');
+      dayDate.setHours(0, 0, 0, 0);
+      var diffDays = Math.round((dayDate - now) / 86400000);
+      var score = diffDays < 0 ? Math.abs(diffDays) + 1000 : diffDays;
+      if (!best || score < best.score) {
+        best = { phaseId: PHASES[i].id, dayIdx: j, score: score };
+      }
+      if (diffDays === 0) {
+        currentPhase = PHASES[i].id;
+        currentDayIdx = j;
+        return;
+      }
+    }
+  }
+  if (best) {
+    currentPhase = best.phaseId;
+    currentDayIdx = best.dayIdx;
+  }
+}
 
-function switchPhase(phase, btn) {
-  currentPhase = phase;
-  currentDayIdx = 0;
-  document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderDayStrip();
-  renderDayContent();
+function autoSelectDay() {
+  var now = new Date();
+  var phase = getCurrentPhaseData();
+  if (!phase) return;
+  var todayIdx = -1;
+  for (var j = 0; j < phase.days.length; j++) {
+    if (new Date(phase.days[j].date + 'T00:00:00').toDateString() === now.toDateString()) { todayIdx = j; break; }
+  }
+  currentDayIdx = todayIdx >= 0 ? todayIdx : 0;
+}
+
+function buildScheduleHash(phaseId, dateStr) {
+  return '#schedule/' + phaseId + '/' + dateStr;
+}
+
+function updateScheduleHash() {
+  var phase = getCurrentPhaseData();
+  if (!phase) return;
+  var day = phase.days[currentDayIdx];
+  if (!day) return;
+  history.replaceState(null, '', buildScheduleHash(phase.id, day.date));
+}
+
+function renderPhaseTabs() {
+  var html = '';
+  for (var i = 0; i < PHASES.length; i++) {
+    var p = PHASES[i];
+    var cls = 'ptab ' + p.type + (p.id === currentPhase ? ' active' : '');
+    html += '<button class="' + cls + '" data-phase="' + p.id + '">' + p.name + '<br><span style="font-size:10px;font-weight:400;opacity:.7">' + p.dateRange + '</span></button>';
+  }
+  setHTML('ptabs', html);
 }
 
 function renderDayStrip() {
-  const ph = phases[currentPhase];
-  const now = new Date();
-  let html = '<div class="day-strip">';
-  ph.days.forEach((d, i) => {
-    const chipDate = new Date('2026-' + d.date.replace('Apr ','04-').replace('Apr','04-'));
-    const isToday = chipDate.toDateString() === now.toDateString();
-    const isPast  = chipDate < now && !isToday;
-    const isActive = i === currentDayIdx;
-    let cls = 'day-chip ' + ph.type;
-    if (isActive) cls += ' active';
-    if (isToday)  cls += ' today';
-    if (isPast && !isActive)   cls += ' past';
-    html += `<div class="${cls}" onclick="selectDay(${i})">
-      <div class="dc-day">${d.day}</div>
-      <div class="dc-n">${d.date.replace('Apr ','')}</div>
-      <div class="dc-mo">Apr</div>
-    </div>`;
-  });
-  html += '</div>';
-  document.getElementById('day-strip-area').innerHTML = html;
+  var phase = getCurrentPhaseData();
+  if (!phase) return;
+  var now = new Date();
+  var html = '';
+  for (var j = 0; j < phase.days.length; j++) {
+    var d = phase.days[j];
+    var dt = new Date(d.date + 'T00:00:00');
+    var isToday = dt.toDateString() === now.toDateString();
+    var isPast = dt < now && !isToday;
+    var classes = [phase.type];
+    if (j === currentDayIdx) classes.push('active');
+    if (isToday) classes.push('today');
+    if (isPast) classes.push('past');
+    var dayNum = d.date.split('-')[2];
+    html += '<button type="button" class="day-chip ' + classes.join(' ') + '" data-idx="' + j + '" data-date="' + d.date + '"><div class="dc-day">' + d.dayOfWeek + '</div><div class="dc-n">' + parseInt(dayNum) + '</div><div class="dc-mo">Apr</div></button>';
+  }
+  setHTML('dayStrip', html);
+  // scroll active into view
+  setTimeout(function() {
+    var strip = document.getElementById('dayStrip');
+    if (!strip) return;
+    var active = strip.querySelector('.day-chip.active');
+    if (active) active.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+  }, 50);
 }
 
-function selectDay(idx) {
-  currentDayIdx = idx;
-  renderDayStrip();
-  renderDayContent();
+function getRelativeLabel(dateStr) {
+  var now = new Date();
+  now.setHours(0,0,0,0);
+  var dt = new Date(dateStr + 'T00:00:00');
+  dt.setHours(0,0,0,0);
+  var diff = Math.round((dt - now) / 86400000);
+  if (diff === 0) return 'Today';
+  if (diff === 1) return 'Tomorrow';
+  if (diff === -1) return 'Yesterday';
+  if (diff > 1) return 'Coming up in ' + diff + ' days';
+  return Math.abs(diff) + ' days ago';
 }
 
 function renderDayContent() {
-  const ph = phases[currentPhase];
-  const d  = ph.days[currentDayIdx];
-  const now = new Date();
-  const chipDate = new Date('2026-' + d.date.replace('Apr ','04-'));
-  const isToday = chipDate.toDateString() === now.toDateString();
+  var phase = getCurrentPhaseData();
+  if (!phase) return;
+  var d = phase.days[currentDayIdx];
+  if (!d) return;
+  var now = new Date();
+  var chipDate = new Date(d.date + 'T00:00:00');
+  var isToday = chipDate.toDateString() === now.toDateString();
+  var relLabel = getRelativeLabel(d.date);
+  var dateFormatted = new Date(d.date + 'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
 
-  const tagCls = ph.type;
-  const tagLbl = ph.type === 'personal' ? '🌸 Personal' : '💼 Business';
+  var tagCls = phase.type;
+  var tagLbl = phase.type === 'personal' ? '\u{1F338} Personal' : (phase.type === 'business' ? '\u{1F4BC} Business' : '\u{1F682} Post-Trip');
 
-  let acts = d.acts.map(a => `
-    <div class="act">
-      <div class="act-t">${a.t}</div>
-      <div class="act-b">
-        <span class="badge ${a.badge}">${a.badge}</span>
-        <div class="act-title">${a.title}</div>
-        ${a.loc ? `<div class="act-loc">📍 ${a.loc}</div>`:''}
-        ${a.det ? `<div class="act-det">${a.det}</div>`:''}
-      </div>
-    </div>`).join('');
+  // Breadcrumb
+  var breadcrumb = '<span class="day-breadcrumb"><span class="phase-name">' + phase.name + '</span> \u203A ' + dateFormatted + '</span>';
 
-  document.getElementById('day-content').innerHTML = `
-    <div class="day-detail">
-      <div class="day-hdr">
-        <span class="day-phase-tag ${tagCls}">${tagLbl}</span>
-        ${isToday ? `<span class="day-phase-tag" style="background:var(--gold-light);color:var(--gold);margin-left:6px">⭐ Today</span>` : ''}
-        <div class="day-title">${d.date} — ${d.title}</div>
-        <div class="day-loc">📍 ${d.loc}</div>
-        <div class="day-hotel" style="margin-top:4px;font-size:11px;color:var(--text2)">🏨 ${d.hotel}</div>
-      </div>
-      <div class="acts">${acts}</div>
-    </div>`;
+  // Build schedule link for copy
+  var scheduleLink = location.origin + location.pathname + buildScheduleHash(phase.id, d.date);
+
+  // Relative timing pill
+  var relPill = '';
+  if (isToday) {
+    relPill = '<span class="day-phase-tag" style="background:var(--gold-light);color:var(--gold);margin-left:6px">\u2B50 Today</span>';
+  } else {
+    relPill = '<span class="day-phase-tag" style="background:var(--bg);color:var(--text2);margin-left:6px">' + relLabel + '</span>';
+  }
+
+  var acts = d.acts.map(function(a) {
+    return '<div class="act">' +
+      '<div class="act-t">' + a.t + '</div>' +
+      '<div class="act-b">' +
+        '<span class="badge ' + a.badge + '">' + a.badge + '</span>' +
+        '<div class="act-title">' + a.title + '</div>' +
+        (a.loc ? '<div class="act-loc">\u{1F4CD} ' + a.loc + '</div>' : '') +
+        (a.det ? '<div class="act-det">' + a.det + '</div>' : '') +
+      '</div></div>';
+  }).join('');
+
+  setHTML('day-content',
+    '<div class="day-detail">' +
+      '<div class="day-hdr">' +
+        '<div class="day-context">' + breadcrumb + '</div>' +
+        '<div class="day-header-top">' +
+          '<div>' +
+            '<span class="day-phase-tag ' + tagCls + '">' + tagLbl + '</span>' + relPill +
+            '<div class="day-title">' + dateFormatted + ' \u2014 ' + d.title + '</div>' +
+            '<div class="day-loc">\u{1F4CD} ' + d.loc + '</div>' +
+            '<div class="day-hotel" style="margin-top:4px;font-size:11px;color:var(--text2)">\u{1F3E8} ' + d.hotel + '</div>' +
+          '</div>' +
+          '<button class="day-link" data-copy-schedule-link="' + scheduleLink + '">Copy Day Link</button>' +
+        '</div>' +
+      '</div>' +
+      '<div id="weatherBar"><div class="weather-bar"><span style="font-size:16px">\u{1F324}\uFE0F</span><span class="weather-loading">Checking forecast...</span></div></div>' +
+      '<div class="acts">' + acts + '</div>' +
+    '</div>'
+  );
+
+  // Fetch weather for day
+  loadDayWeather(d);
 }
 
-// Initial render
-renderDayStrip();
-renderDayContent();
+function loadDayWeather(d) {
+  var wb = document.getElementById('weatherBar');
+  if (!wb) return;
+  var coords = getLocationCoords(d.loc);
+  if (!coords) coords = {lat:47.61, lon:-122.33}; // default Seattle
 
-// ── CHECKLIST ─────────────────────────────────────────────────────────────────
-const checklistData = [
-  {title:'Flight SJC → SEA (Alaska AS1406)', det:'Apr 10 · 8:00 AM → 10:20 AM · Seat 15C · Conf: ILTFTW · Ticket: 0277429614298', status:'booked', badge:'✓ Booked'},
-  {title:'Flight SEA → SJC (Alaska AS0521)', det:'Apr 19 · 3:59 PM → 6:11 PM · Seat 11C · Conf: ILTFTW', status:'booked', badge:'✓ Booked'},
-  {title:'Redmond Inn — Apr 10–12', det:'17601 Redmond Way · Conf: 987320458 · $150.08 · Non-refundable · Free breakfast', status:'booked', badge:'✓ Booked'},
-  {title:'Redmond Inn — Apr 18–19', det:'Same hotel · Conf: 988390562 · $86.97 · Refundable before Apr 16 · King Room ♡', status:'booked', badge:'✓ Booked'},
-  {title:'Hyatt Regency Bellevue — Apr 12–18', det:'900 Bellevue Way NE · Conf: 150174RA018842 · Office-covered · Lake View room', status:'booked', badge:'✓ Office'},
-  {title:'Personal rental car (Costco/Enterprise)', det:'Apr 10 11 AM – Apr 12 9 AM · Costco Conf: C487837485 · Toyota Corolla · $89.27 due at agency', status:'booked', badge:'✓ Booked'},
-  {title:'Business rental car (Meta/Enterprise)', det:'Apr 12 9 AM – Apr 18 5 PM · Conf: 2095306771COUNT · Office-covered', status:'booked', badge:'✓ Office'},
-  {title:'📌 Contact Krishna dai for Amazon Spheres access', det:'Amazon employee guest pass needed for interior. Plan Wed Apr 15 evening. Reach out ASAP!', status:'action', badge:'Action Needed'},
-  {title:'📌 Book Space Needle tickets online', det:'spaceneedle.com · $35–40/pp · Book sunset slot ~7:30 PM · Plan Tue Apr 14 evening', status:'action', badge:'Book Online'},
-  {title:'📌 Book Leavenworth hotel — Apr 17 night', det:'Bavarian village overnight stay · Budget $120–200 · Check Airbnb / hotels.com · Book ASAP — popular!', status:'action', badge:'Needs Booking'},
-  {title:'📌 Reserve Din Tai Fung', det:'Lincoln Square South, 700 Bellevue Way NE · Reserve on Tock for weeknight dinner', status:'action', badge:'Reserve'},
-  {title:'📌 Book Microsoft Visitor Center slot for GF', det:'microsoft.com/experience-center · Free · Thu Apr 16 daytime', status:'action', badge:'Book Free Slot'},
+  fetchWeather(coords.lat, coords.lon, d.date).then(function(w) {
+    if (w) {
+      var emoji = w.desc.split(' ')[0];
+      var desc = w.desc.split(' ').slice(1).join(' ');
+      var precipStr = w.precip != null ? ' \u00B7 ' + w.precip + '% precip' : '';
+      setHTML(wb, '<div class="weather-bar"><span style="font-size:24px">' + emoji + '</span><div><div class="temp">High ' + Math.round(w.high) + '\u00B0C <span style="font-size:.75em;opacity:.6">(' + cToF(w.high) + '\u00B0F)</span> \u2022 Low ' + Math.round(w.low) + '\u00B0C <span style="font-size:.75em;opacity:.6">(' + cToF(w.low) + '\u00B0F)</span></div><div class="desc">Live forecast \u2022 ' + desc + precipStr + '</div></div></div>');
+    } else {
+      // Try historical
+      var avgMeta = getWeatherCityMeta(d.loc);
+      fetchHistoricalSameDateAverage(coords.lat, coords.lon, d.date, 5).then(function(hist) {
+        if (hist) {
+          setHTML(wb, '<div class="weather-bar"><span style="font-size:24px">\u{1F324}\uFE0F</span><div><div class="temp">Avg temp ' + hist.avgMean + '\u00B0C <span style="font-size:.75em;opacity:.6">(' + cToF(hist.avgMean) + '\u00B0F)</span></div><div class="desc">Forecast available closer to trip \u2022 same-date historical average (' + hist.sampleSize + ' yr)' + (avgMeta ? ' for ' + avgMeta.city : '') + '</div></div></div>');
+        } else if (avgMeta) {
+          var avgC = Math.round((avgMeta.avgHigh + avgMeta.avgLow) / 2);
+          var avgF = Math.round((avgMeta.avgHighF + avgMeta.avgLowF) / 2);
+          setHTML(wb, '<div class="weather-bar"><span style="font-size:24px">\u{1F324}\uFE0F</span><div><div class="temp">Avg temp ' + avgC + '\u00B0C <span style="font-size:.75em;opacity:.6">(' + avgF + '\u00B0F)</span></div><div class="desc">Forecast available closer to trip \u2022 seasonal average for ' + avgMeta.city + '</div></div></div>');
+        } else {
+          setHTML(wb, '<div class="weather-bar"><span style="font-size:16px">\u{1F324}\uFE0F</span><span class="weather-loading">Forecast not available for this date yet.</span></div>');
+        }
+      });
+    }
+  });
+}
+
+// ── WEATHER TAB ─────────────────────────────────────────────────────
+function renderWeatherTab() {
+  var grid = document.getElementById('weatherGrid');
+  var html = '';
+  for (var i = 0; i < WEATHER_CITIES.length; i++) {
+    var wc = WEATHER_CITIES[i];
+    var avgC = Math.round((wc.avgHigh + wc.avgLow) / 2);
+    var avgF = Math.round((wc.avgHighF + wc.avgLowF) / 2);
+    html += '<div class="weather-card" id="wcard-' + i + '">';
+    html += '<div class="wc-badge">Historical average</div>';
+    html += '<div class="wc-city">' + wc.city + '</div>';
+    html += '<div class="wc-icon">\u{1F324}\uFE0F</div>';
+    html += '<div class="wc-temp">Avg ' + avgC + '\u00B0C <span style="font-size:.6em;opacity:.5">(' + avgF + '\u00B0F)</span></div>';
+    html += '<div class="wc-desc">Seasonal planning baseline</div>';
+    html += '<div class="wc-range">Typical high ' + wc.avgHigh + '\u00B0C \u2022 low ' + wc.avgLow + '\u00B0C <span style="opacity:.5">(' + wc.avgLowF + '\u2013' + wc.avgHighF + '\u00B0F)</span></div>';
+    html += '</div>';
+  }
+  setHTML(grid, html);
+
+  // Fetch live data
+  var gradients = [
+    'linear-gradient(135deg,#0D1E2C,#1B7A72)',
+    'linear-gradient(135deg,#0D1E2C,#24968C)',
+    'linear-gradient(135deg,#0D1E2C,#3A5A8A)',
+    'linear-gradient(135deg,#0D1E2C,#8C3E50)',
+    'linear-gradient(135deg,#0D1E2C,#B08040)',
+  ];
+  for (var i = 0; i < WEATHER_CITIES.length; i++) {
+    (function(idx) {
+      var wc = WEATHER_CITIES[idx];
+      fetchWeatherSimple(wc.lat, wc.lon).then(function(w) {
+        var card = document.getElementById('wcard-' + idx);
+        if (!card || !w) return;
+        var emoji = w.desc.split(' ')[0];
+        var desc = w.desc.split(' ').slice(1).join(' ');
+        card.style.background = gradients[idx % gradients.length];
+        var primaryTemp = w.current != null ? w.current : w.high;
+        setHTML(card,
+          '<div class="wc-badge">Live</div>' +
+          '<div class="wc-city">' + wc.city + '</div>' +
+          '<div class="wc-icon">' + emoji + '</div>' +
+          '<div class="wc-temp">' + primaryTemp + '\u00B0C <span style="font-size:.6em;opacity:.5">(' + cToF(primaryTemp) + '\u00B0F)</span></div>' +
+          '<div class="wc-desc">' + desc + '</div>' +
+          '<div class="wc-range">Low ' + Math.round(w.low) + '\u00B0C \u2022 High ' + Math.round(w.high) + '\u00B0C <span style="opacity:.5">(' + cToF(w.low) + '\u2013' + cToF(w.high) + '\u00B0F)</span></div>'
+        );
+      });
+    })(i);
+  }
+
+  // Packing suggestions
+  setHTML('packCard',
+    '<div class="pack-card"><h3>\u{1F9F3} What to Pack for Seattle in April</h3><div class="pack-grid">' +
+    '<div class="pack-item">\u{1F9E5} Layered jacket (mornings 4-6\u00B0C)</div>' +
+    '<div class="pack-item">\u2602\uFE0F Rain jacket \u2014 Seattle rain is real!</div>' +
+    '<div class="pack-item">\u{1F455} Layers (cool mornings, mild afternoons)</div>' +
+    '<div class="pack-item">\u{1F45F} Waterproof hiking shoes (Mt. Rainier)</div>' +
+    '<div class="pack-item">\u{1F576}\uFE0F Sunglasses + sunscreen</div>' +
+    '<div class="pack-item">\u{1F9E3} Warm hat/gloves (Mt. Rainier has snow)</div>' +
+    '<div class="pack-item">\u{1F4F1} Portable charger</div>' +
+    '<div class="pack-item">\u{1F4F7} Camera (skyline views!)</div>' +
+    '</div></div>'
+  );
+}
+
+// ── TAB SWITCHING with hash-based deep links ────────────────────────
+function switchToTab(tabName) {
+  var tabEl = document.getElementById('tab-' + tabName);
+  if (!tabEl) return false;
+  var buttons = document.querySelectorAll('.nav button');
+  for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+  var matchBtn = document.querySelector('.nav button[data-tab="' + tabName + '"]');
+  if (matchBtn) matchBtn.classList.add('active');
+  var tabs = document.querySelectorAll('.tab');
+  for (var j = 0; j < tabs.length; j++) tabs[j].classList.remove('active');
+  tabEl.classList.add('active');
+  return true;
+}
+
+document.getElementById('topNav').addEventListener('click', function(e) {
+  var btn = e.target.closest('button');
+  if (!btn) return;
+  var tab = btn.getAttribute('data-tab');
+  switchToTab(tab);
+  if (tab === 'schedule') {
+    selectClosestScheduleDay();
+    renderPhaseTabs();
+    renderDayStrip();
+    renderDayContent();
+    updateScheduleHash();
+    return;
+  }
+  if (tab === 'weather') {
+    renderWeatherTab();
+  }
+  history.replaceState(null, '', '#' + tab);
+});
+
+// Handle hash on load and back/forward navigation
+function handleHash() {
+  var rawHash = location.hash.replace(/^#/, '');
+  if (!rawHash) return;
+  var parts = rawHash.split('/');
+  var tab = parts[0];
+  if (tab !== 'schedule') {
+    switchToTab(tab);
+    if (tab === 'weather') renderWeatherTab();
+    return;
+  }
+  switchToTab('schedule');
+  var phaseId = parts[1] ? decodeURIComponent(parts[1]) : null;
+  var dayDate = parts[2] ? decodeURIComponent(parts[2]) : null;
+  if (!phaseId && !dayDate) {
+    selectClosestScheduleDay();
+    renderPhaseTabs();
+    renderDayStrip();
+    renderDayContent();
+    updateScheduleHash();
+    return;
+  }
+  var phase = null;
+  if (phaseId) {
+    for (var i = 0; i < PHASES.length; i++) {
+      if (PHASES[i].id === phaseId) { phase = PHASES[i]; break; }
+    }
+  }
+  if (!phase) phase = getCurrentPhaseData() || PHASES[0];
+  currentPhase = phase.id;
+  if (dayDate) {
+    var matchedIdx = -1;
+    for (var j = 0; j < phase.days.length; j++) {
+      if (phase.days[j].date === dayDate) { matchedIdx = j; break; }
+    }
+    if (matchedIdx >= 0) currentDayIdx = matchedIdx;
+    else autoSelectDay();
+  } else {
+    autoSelectDay();
+  }
+  renderPhaseTabs();
+  renderDayStrip();
+  renderDayContent();
+}
+window.addEventListener('hashchange', handleHash);
+
+function copyTextToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text);
+  }
+  return new Promise(function(resolve, reject) {
+    var input = document.createElement('input');
+    input.value = text;
+    input.style.position = 'fixed';
+    input.style.opacity = '0';
+    document.body.appendChild(input);
+    input.focus();
+    input.select();
+    try { document.execCommand('copy'); document.body.removeChild(input); resolve(); }
+    catch (err) { document.body.removeChild(input); reject(err); }
+  });
+}
+
+// Event delegation for interactions
+document.addEventListener('click', function(e) {
+  // Phase tab click
+  var phaseBtn = e.target.closest('.ptab');
+  if (phaseBtn) {
+    currentPhase = phaseBtn.getAttribute('data-phase');
+    currentDayIdx = 0;
+    autoSelectDay();
+    renderPhaseTabs();
+    renderDayStrip();
+    renderDayContent();
+    updateScheduleHash();
+    return;
+  }
+  // Day chip click
+  var dayChip = e.target.closest('.day-chip');
+  if (dayChip) {
+    currentDayIdx = parseInt(dayChip.getAttribute('data-idx'));
+    renderDayStrip();
+    renderDayContent();
+    updateScheduleHash();
+    return;
+  }
+  // Copy day link
+  var copyBtn = e.target.closest('[data-copy-schedule-link]');
+  if (copyBtn) {
+    var linkToCopy = copyBtn.getAttribute('data-copy-schedule-link');
+    copyTextToClipboard(linkToCopy).then(function() {
+      copyBtn.textContent = 'Copied!';
+      copyBtn.classList.add('copied');
+      setTimeout(function() { copyBtn.textContent = 'Copy Day Link'; copyBtn.classList.remove('copied'); }, 1800);
+    }).catch(function() {
+      copyBtn.textContent = 'Copy Failed';
+      setTimeout(function() { copyBtn.textContent = 'Copy Day Link'; }, 1800);
+    });
+    return;
+  }
+  // Checklist toggle
+  var chkItem = e.target.closest('.chk-item');
+  if (chkItem) {
+    var idx = parseInt(chkItem.getAttribute('data-idx'));
+    if (!isNaN(idx)) {
+      if (doneSet.has(idx)) doneSet.delete(idx);
+      else doneSet.add(idx);
+      renderChecklist();
+    }
+    return;
+  }
+});
+
+// ── CHECKLIST ────────────────────────────────────────────────────────
+var checklistData = [
+  {title:'Ayush: Flight SJC \u2192 SEA (Alaska AS1406)', det:'Apr 10 \u00B7 8:00 AM \u2192 10:20 AM \u00B7 Seat 15C \u00B7 Conf: ILTFTW \u00B7 Ticket: 0277429614298', status:'booked', badge:'\u2713 Booked'},
+  {title:'Ayush: Flight SEA \u2192 SJC (Alaska AS0521)', det:'Apr 19 \u00B7 3:59 PM \u2192 6:11 PM \u00B7 Seat 11C \u00B7 Conf: ILTFTW', status:'booked', badge:'\u2713 Booked'},
+  {title:'Simran: Flight BOS \u2192 SEA (Delta DL0384)', det:'Apr 10 \u00B7 7:10 AM \u2192 10:37 AM \u00B7 Conf: HMWDZF \u00B7 eTicket: #0067429979753', status:'booked', badge:'\u2713 Booked'},
+  {title:'Simran: Flight SEA \u2192 BOS (Delta DL0474)', det:'Apr 19 \u00B7 3:40 PM \u2192 11:59 PM \u00B7 Conf: HMWDZF', status:'booked', badge:'\u2713 Booked'},
+  {title:'Redmond Inn \u2014 Apr 10\u201312', det:'17601 Redmond Way \u00B7 Conf: 987320458 \u00B7 $150.08 \u00B7 Non-refundable \u00B7 Free breakfast', status:'booked', badge:'\u2713 Booked'},
+  {title:'Redmond Inn \u2014 Apr 18\u201319', det:'Same hotel \u00B7 Conf: 988390562 \u00B7 $86.97 \u00B7 Refundable before Apr 16 \u00B7 King Room \u2661', status:'booked', badge:'\u2713 Booked'},
+  {title:'Hyatt Regency Bellevue \u2014 Apr 12\u201318', det:'900 Bellevue Way NE \u00B7 Conf: 150174RA018842 \u00B7 Office-covered \u00B7 Lake View room', status:'booked', badge:'\u2713 Office'},
+  {title:'Personal rental car (Costco/Enterprise)', det:'Apr 10 11 AM \u2013 Apr 12 9 AM \u00B7 Costco Conf: C487837485 \u00B7 Toyota Corolla \u00B7 $89.27 due at agency', status:'booked', badge:'\u2713 Booked'},
+  {title:'Business rental car (Meta/Enterprise)', det:'Apr 12 9 AM \u2013 Apr 18 5 PM \u00B7 Conf: 2095306771COUNT \u00B7 Office-covered', status:'booked', badge:'\u2713 Office'},
+  {title:'\u{1F4CC} Simran: Amtrak West Haven \u2192 Boston (Apr 9)', det:'~7 PM departure. ~3 hr ride. Tickets not yet booked!', status:'action', badge:'Needs Booking'},
+  {title:'\u{1F4CC} Simran: Amtrak Boston \u2192 West Haven (Apr 20)', det:'Time TBD. Tickets not yet booked!', status:'action', badge:'Needs Booking'},
+  {title:'\u{1F4CC} Contact Krishna dai for Amazon Spheres access', det:'Amazon employee guest pass needed for interior. Plan Wed Apr 15 evening. Reach out ASAP!', status:'action', badge:'Action Needed'},
+  {title:'\u{1F4CC} Book Space Needle tickets online', det:'spaceneedle.com \u00B7 $35\u201340/pp \u00B7 Book sunset slot ~7:30 PM \u00B7 Plan Tue Apr 14 evening', status:'action', badge:'Book Online'},
+  {title:'\u{1F4CC} Book Leavenworth hotel \u2014 Apr 17 night', det:'Bavarian village overnight stay \u00B7 Budget $120\u2013200 \u00B7 Check Airbnb / hotels.com \u00B7 Book ASAP \u2014 popular!', status:'action', badge:'Needs Booking'},
+  {title:'\u{1F4CC} Reserve Din Tai Fung', det:'Lincoln Square South, 700 Bellevue Way NE \u00B7 Reserve on Tock for weeknight dinner', status:'action', badge:'Reserve'},
+  {title:'\u{1F4CC} Book Microsoft Visitor Center slot for Simran', det:'microsoft.com/experience-center \u00B7 Free \u00B7 Thu Apr 16 daytime', status:'action', badge:'Book Free Slot'},
   {title:'Alaska check-in online', det:'Check in 24 hrs before both flights. Print/save boarding passes. FF: AS-320119833', status:'needed', badge:'Do 24h Before'},
-  {title:'Arrange Uber Apr 19 — Redmond Inn → SEA', det:'~40 min · ~$45–55 · Schedule night before to be safe. No rental car that day.', status:'needed', badge:'Book Before'},
+  {title:'Delta check-in online (Simran)', det:'Check in 24 hrs before both Delta flights. Conf: HMWDZF', status:'needed', badge:'Do 24h Before'},
+  {title:'Arrange Uber Apr 19 \u2014 Redmond Inn \u2192 SEA', det:'~40 min \u00B7 ~$45\u201355 \u00B7 Schedule night before to be safe. No rental car that day.', status:'needed', badge:'Book Before'},
   {title:'Buy/check NPS pass for Mt. Rainier', det:'$35/car at gate OR America the Beautiful Annual Pass ($80). Annual pass worth it for multiple visits.', status:'needed', badge:'Decide'},
-  {title:'Check SR-20 road status (Diablo Lake option)', det:'wsdot.wa.gov/travel/roads — North Cascades Hwy opens mid-April. Check if doing Diablo Lake on Apr 11.', status:'needed', badge:'Check'},
+  {title:'Check SR-20 road status (Diablo Lake option)', det:'wsdot.wa.gov/travel/roads \u2014 North Cascades Hwy opens mid-April. Check if doing Diablo Lake on Apr 11.', status:'needed', badge:'Check'},
 ];
 
-let doneSet = new Set();
+var doneSet = new Set();
 function renderChecklist() {
-  const container = document.getElementById('checklist-container');
-  const done = doneSet.size;
-  const total = checklistData.length;
+  var container = document.getElementById('checklist-container');
+  var done = doneSet.size;
+  var total = checklistData.length;
   document.getElementById('prog-pct').textContent = Math.round(done/total*100) + '%';
   document.getElementById('prog-fill').style.width = (done/total*100) + '%';
 
-  container.innerHTML = checklistData.map((item, i) => {
-    const isDone = doneSet.has(i);
-    const boxCls = isDone ? 'done' : (item.status === 'booked' ? 'done' : item.status === 'action' ? 'action' : 'pending');
-    const boxIcon = isDone ? '✓' : (item.status === 'booked' ? '✓' : item.status === 'action' ? '!' : '○');
-    return `<div class="chk-item ${isDone ? 'is-done' : ''}" onclick="toggleCheck(${i})">
-      <div class="chk-box ${boxCls}">${boxIcon}</div>
-      <div>
-        <div class="chk-title">${item.title}</div>
-        <div class="chk-det">${item.det}</div>
-        <span class="chk-badge ${item.status === 'booked' ? 'booked' : item.status === 'action' ? 'action' : 'needed'}">${item.badge}</span>
-      </div>
-    </div>`;
+  container.innerHTML = checklistData.map(function(item, i) {
+    var isDone = doneSet.has(i);
+    var boxCls = isDone ? 'done' : (item.status === 'booked' ? 'done' : item.status === 'action' ? 'action' : 'pending');
+    var boxIcon = isDone ? '\u2713' : (item.status === 'booked' ? '\u2713' : item.status === 'action' ? '!' : '\u25CB');
+    return '<div class="chk-item ' + (isDone ? 'is-done' : '') + '" data-idx="' + i + '">' +
+      '<div class="chk-box ' + boxCls + '">' + boxIcon + '</div>' +
+      '<div>' +
+        '<div class="chk-title">' + item.title + '</div>' +
+        '<div class="chk-det">' + item.det + '</div>' +
+        '<span class="chk-badge ' + (item.status === 'booked' ? 'booked' : item.status === 'action' ? 'action' : 'needed') + '">' + item.badge + '</span>' +
+      '</div></div>';
   }).join('');
 
   // Pre-tick booked items
-  checklistData.forEach((item, i) => {
+  checklistData.forEach(function(item, i) {
     if (item.status === 'booked' && !doneSet.has(i)) doneSet.add(i);
   });
 }
 
-function toggleCheck(i) {
-  if (doneSet.has(i)) doneSet.delete(i);
-  else doneSet.add(i);
-  renderChecklist();
-}
-
 renderChecklist();
 
-// ── BUDGET ────────────────────────────────────────────────────────────────────
-const officeItems = [
-  {name:'Alaska Airlines Flights SJC↔SEA', amt:636.44, note:'RT ticket 0277429614298 · Conf ILTFTW'},
-  {name:'Hyatt Regency Bellevue (6 nights)', amt:1800, note:'$300/night × 6 · Apr 12–18'},
-  {name:'Enterprise rental car — business', amt:289.05, note:'Apr 12–18 · Conf 2095306771COUNT'},
-  {name:'Food allowance during work days (~$100/day)', amt:500, note:'~$100 × 5 weekdays'},
+// ── BUDGET ───────────────────────────────────────────────────────────
+var officeItems = [
+  {name:'Alaska Airlines Flights SJC\u2194SEA', amt:636.44, note:'RT ticket 0277429614298 \u00B7 Conf ILTFTW'},
+  {name:'Hyatt Regency Bellevue (6 nights)', amt:1800, note:'$300/night \u00D7 6 \u00B7 Apr 12\u201318'},
+  {name:'Enterprise rental car \u2014 business', amt:289.05, note:'Apr 12\u201318 \u00B7 Conf 2095306771COUNT'},
+  {name:'Food allowance (~$100/day \u00D7 7 days)', amt:700, note:'~$100/day \u00D7 5 weekdays + Sun Apr 12 + Sat Apr 18 (business days). Covers Ayush lunch + both dinners'},
 ];
 
-const personalItems = [
-  {name:'Redmond Inn — Apr 10–12 (2 nights)', amt:150.08, note:'Priceline 987320458 · Paid · Non-refundable'},
-  {name:'Redmond Inn — Apr 18–19 (1 night)', amt:86.97, note:'Priceline 988390562 · Paid · Refundable before Apr 16'},
-  {name:'Costco/Enterprise rental car (personal)', amt:89.27, note:'Apr 10–12 · C487837485 · Due at agency'},
-  {name:'Leavenworth hotel (1 night, Apr 17) ⚠ TBD', amt:160, note:'Estimate: $120–200 · Still needs booking!'},
+var personalItems = [
+  {name:'Redmond Inn \u2014 Apr 10\u201312 (2 nights)', amt:150.08, note:'Priceline 987320458 \u00B7 Paid \u00B7 Non-refundable'},
+  {name:'Redmond Inn \u2014 Apr 18\u201319 (1 night)', amt:86.97, note:'Priceline 988390562 \u00B7 Paid \u00B7 Refundable before Apr 16'},
+  {name:'Costco/Enterprise rental car (personal)', amt:89.27, note:'Apr 10\u201312 \u00B7 C487837485 \u00B7 Due at agency'},
+  {name:'Leavenworth hotel (1 night, Apr 17) \u26A0 TBD', amt:160, note:'Estimate: $120\u2013200 \u00B7 Still needs booking!'},
   {name:'Mt. Rainier NPS entry', amt:35, note:'$35/car at gate (or $80 America the Beautiful annual pass)'},
-  {name:'Space Needle (2 pax)', amt:75, note:'~$35–40/pp · Book at spaceneedle.com'},
+  {name:'Space Needle (2 pax)', amt:75, note:'~$35\u201340/pp \u00B7 Book at spaceneedle.com'},
   {name:'Activities & museums', amt:60, note:'Amazon Spheres (free w/ guest pass), BAM, misc'},
-  {name:'Food — personal days & evenings (8 × $85)', amt:680, note:'Dinners out, lunches on day trips, weekend food'},
-  {name:'Uber / transport (airport runs + misc)', amt:120, note:'SEA airport ×2 (~$100) + misc Ubers'},
+  {name:'Food \u2014 personal meals', amt:355, note:'Fri+Sat dinners ($140), Sat Mt. Rainier lunch ($20), Simran weekday lunches (5\u00D7$15=$75), Leavenworth dinner ($60), Sat farewell dinner ($60). Hotel breakfast free; office covers weekday dinners.'},
+  {name:'Uber / transport (airport runs + misc)', amt:120, note:'SEA airport \u00D72 (~$100) + misc Ubers'},
   {name:'Shopping / souvenirs', amt:100, note:'Pike Place, REI, Leavenworth'},
+  {name:'Simran\'s Amtrak tickets (round trip estimate)', amt:65, note:'West Haven \u2194 Boston \u00B7 ~$50\u201380 estimated'},
 ];
 
-const maxBudget = 1800;
+var maxBudget = 1800;
 function renderBudgetSection(items, containerId, type) {
-  const el = document.getElementById(containerId);
-  el.innerHTML = items.map(item => `
-    <div class="bitem">
-      <div class="bitem-top">
-        <span class="bitem-name">${item.name}</span>
-        <span class="bitem-amt ${type}">$${item.amt.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2})}</span>
-      </div>
-      <div class="bbar"><div class="bbar-fill ${type}" style="width:${Math.min(100,item.amt/maxBudget*100)}%"></div></div>
-      <div class="bitem-note">${item.note}</div>
-    </div>`).join('');
+  var el = document.getElementById(containerId);
+  el.innerHTML = items.map(function(item) {
+    return '<div class="bitem">' +
+      '<div class="bitem-top">' +
+        '<span class="bitem-name">' + item.name + '</span>' +
+        '<span class="bitem-amt ' + type + '">$' + item.amt.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2}) + '</span>' +
+      '</div>' +
+      '<div class="bbar"><div class="bbar-fill ' + type + '" style="width:' + Math.min(100,item.amt/maxBudget*100) + '%"></div></div>' +
+      '<div class="bitem-note">' + item.note + '</div></div>';
+  }).join('');
 }
 
 renderBudgetSection(officeItems, 'budget-office', 'office');
 renderBudgetSection(personalItems, 'budget-personal', 'personal');
 
-const personalTotal = personalItems.reduce((s,i) => s+i.amt, 0);
+var personalTotal = personalItems.reduce(function(s,i) { return s+i.amt; }, 0);
 document.getElementById('budget-total').textContent = '$' + personalTotal.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});
+
+// ── INITIAL RENDER ──────────────────────────────────────────────────
+renderFocusCard();
+renderOverviewTimeline();
+renderWeatherTab();
+
+// Handle initial hash or default to overview
+if (location.hash) {
+  handleHash();
+} else {
+  // Default view is overview, already active
+}
 </script>
 </body>
 </html>
