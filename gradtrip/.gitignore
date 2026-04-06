@@ -1,0 +1,8 @@
+.DS_Store
+.vercel
+.playwright-cli/
+*-latest.png
+desktop-*.png
+mobile-*.png
+plans/
+docs/*Invitation*Letter*.pdf

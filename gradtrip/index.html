@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shah Family Graduation Trip 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F7F3ED;--card:#FFFFFF;--text:#2C2C3A;--text2:#6B6B7B;--text3:#9A9AAA;
+  --amber:#C17817;--amber-light:#FEF3E2;--amber-dark:#9A5F0F;
+  --teal:#2D7A6B;--teal-light:#E6F5F0;
+  --brown:#8B5E3C;--border:#E8E0D4;--shadow:0 2px 12px rgba(44,44,58,.07);
+  --radius:12px;--serif:'Literata',Georgia,serif;--sans:'Nunito Sans',system-ui,sans-serif;
+  --nav-h:56px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;padding-bottom:calc(var(--nav-h) + 24px);min-height:100dvh;overflow-x:hidden}
+
+/* Status Banner */
+.status-banner{
+  background:linear-gradient(135deg,#2C2C3A 0%,#3D3D52 100%);
+  color:#fff;padding:14px 20px;text-align:center;font-size:14px;
+  position:sticky;top:0;z-index:100;
+}
+.status-banner .pulse{display:inline-block;width:8px;height:8px;background:#4ADE80;border-radius:50%;margin-right:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.status-banner .date-time{font-weight:300;opacity:.8;font-size:12px;margin-top:2px}
+.countdown-nums{font-family:var(--serif);font-variant-numeric:tabular-nums}
+
+/* Top Nav */
+.top-nav{
+  display:flex;gap:0;background:var(--card);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:99;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.top-nav::-webkit-scrollbar{display:none}
+.top-nav button{
+  flex:1;min-width:max-content;padding:14px 16px;border:none;background:none;
+  font-family:var(--sans);font-size:13px;font-weight:600;color:var(--text2);
+  cursor:pointer;border-bottom:2.5px solid transparent;transition:all .2s;white-space:nowrap;
+}
+.top-nav button.active{color:var(--amber);border-bottom-color:var(--amber)}
+.top-nav button:hover{color:var(--amber);background:var(--amber-light)}
+.top-nav .nav-icon{display:block;font-size:18px;margin-bottom:2px}
+
+/* Sections */
+.tab-content{display:none;padding:16px;max-width:800px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-content.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* Cards */
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);padding:20px;margin-bottom:16px}
+.card-header{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:12px;color:var(--text)}
+.card-sub{font-size:13px;color:var(--text2);margin-bottom:8px}
+
+/* Overview */
+.hero{
+  background:linear-gradient(135deg,#2C2C3A 0%,#4A3F2F 50%,#2D7A6B 100%);
+  border-radius:var(--radius);padding:32px 24px;color:#fff;margin-bottom:20px;
+  position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero h1{font-family:var(--serif);font-size:30px;font-weight:700;margin-bottom:10px;position:relative;line-height:1.15;max-width:480px}
+.hero p{opacity:.88;font-size:14px;position:relative}
+.hero .grad-cap{font-size:48px;position:absolute;top:20px;right:20px;opacity:.3}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;position:relative;margin-bottom:14px}
+.hero-route{max-width:560px;font-size:15px;line-height:1.55}
+.hero-subline{max-width:520px;margin-top:8px;font-size:12px;opacity:.72}
+.hero-pills{display:flex;gap:10px;flex-wrap:wrap;position:relative;margin-top:18px}
+.hero-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);font-size:11px;font-weight:700}
+.overview-top-grid{display:grid;grid-template-columns:minmax(320px,1fr) minmax(0,1.2fr);gap:16px;align-items:start;margin-bottom:16px}
+.overview-panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 16px 4px;box-shadow:var(--shadow)}
+.overview-panel-title{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--text2);margin-bottom:12px}
+
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat-card{background:var(--card);border-radius:var(--radius);padding:16px;text-align:center;border:1px solid var(--border)}
+.stat-card .num{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--amber)}
+.stat-card .label{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+
+.travelers{display:flex;flex-wrap:wrap;gap:10px}
+.traveler{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:40px;padding:8px 16px 8px 10px;font-size:13px;font-weight:600}
+.traveler .avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+.focus-card{
+  background:linear-gradient(135deg,#fff8ef 0%,#ffffff 55%,#eef8f5 100%);
+  border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)
+}
+.focus-kicker{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+.focus-title{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.2}
+.focus-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.focus-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700}
+.focus-pill.date{background:var(--amber-light);color:var(--amber-dark)}
+.focus-pill.loc{background:var(--teal-light);color:var(--teal)}
+.focus-note{font-size:13px;color:var(--text2);margin-top:10px;line-height:1.55}
+.glance-card{background:linear-gradient(135deg,#fff 0%,#f6f9fb 100%);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+.glance-kicker{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.glance-title{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.2}
+.glance-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.glance-item{padding:12px;border-radius:12px;background:var(--bg);border:1px solid var(--border)}
+.glance-item-label{font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text2);margin-bottom:4px}
+.glance-item-value{font-size:13px;font-weight:700;color:var(--text)}
+.glance-note{font-size:12px;color:var(--text2);margin-top:12px;line-height:1.55}
+
+/* Enhanced Timeline with colored dots */
+.timeline-v2{position:relative;padding-left:52px}
+.timeline-v2::before{content:'';position:absolute;left:18px;top:4px;bottom:4px;width:2.5px;background:linear-gradient(to bottom,var(--border),var(--amber-light),var(--teal-light),var(--border))}
+.tl2-item{position:relative;padding-bottom:24px}
+.tl2-item:last-child{padding-bottom:0}
+.tl2-dot{position:absolute;left:-42px;top:-2px;width:40px;height:40px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--border),0 2px 6px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:20px}
+.tl2-dot.blue{background:#3A6EA5;box-shadow:0 0 0 2px #3A6EA530,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.green{background:#4A7C59;box-shadow:0 0 0 2px #4A7C5930,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.purple{background:#6B4C8A;box-shadow:0 0 0 2px #6B4C8A30,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.gold{background:#C17817;box-shadow:0 0 0 2px #C1781730,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.teal-dot{background:#2D7A6B;box-shadow:0 0 0 2px #2D7A6B30,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.pink{background:#C7578A;box-shadow:0 0 0 2px #C7578A30,0 2px 4px rgba(0,0,0,.1)}
+.tl2-dot.amber-dot{background:#C17817;box-shadow:0 0 0 2px #C1781730,0 2px 4px rgba(0,0,0,.1)}
+.tl2-content{padding-left:6px}
+.tl2-date{font-size:11px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.5px}
+.tl2-title{font-family:var(--serif);font-size:15px;font-weight:600;margin-top:1px}
+.tl2-sub{font-size:12px;color:var(--text2);margin-top:1px}
+.tl2-badge{display:inline-block;font-size:10px;font-weight:700;padding:1px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.tl2-badge.booked{background:#E6F5E6;color:#2D7A6B}
+.tl2-badge.pending{background:var(--amber-light);color:var(--amber-dark)}
+
+/* Road Trip Route */
+.route-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);padding:20px;margin-bottom:16px}
+.route-step{display:flex;gap:12px;position:relative;padding-bottom:16px;padding-left:8px}
+.route-step:last-child{padding-bottom:0}
+.route-step::before{content:'';position:absolute;left:23px;top:38px;bottom:0;width:2.5px;background:var(--teal-light)}
+.route-step:last-child::before{display:none}
+.route-marker{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;margin-top:0;background:var(--teal-light);border:2.5px solid var(--teal)}
+.route-marker.start{background:var(--teal);color:#fff}
+.route-marker.end{background:#3A6EA5;color:#fff;border-color:#3A6EA5}
+.route-info{flex:1}
+.route-city{font-weight:700;font-size:14px}
+.route-desc{font-size:12px;color:var(--text2);margin-top:1px}
+.route-drive{display:inline-block;font-size:10px;font-weight:700;color:var(--teal);background:var(--teal-light);padding:1px 8px;border-radius:10px;margin-top:4px}
+
+/* Schedule Tab */
+.phase-tabs{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.phase-tabs::-webkit-scrollbar{display:none}
+.phase-tab{
+  padding:8px 16px;border-radius:20px;border:1.5px solid var(--border);background:var(--card);
+  font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s;font-family:var(--sans);color:var(--text2);
+}
+.phase-tab.active{background:var(--amber);border-color:var(--amber);color:#fff}
+
+.day-strip-shell{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.day-strip-nav{
+  width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border);background:var(--card);
+  color:var(--text);font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;flex-shrink:0;transition:all .2s;
+}
+.day-strip-nav:hover{border-color:var(--amber);color:var(--amber);background:var(--amber-light)}
+.day-strip-nav:disabled{opacity:.35;cursor:not-allowed;color:var(--text3);background:var(--card)}
+.day-strip-shell.compact .day-strip-nav{display:none}
+.day-strip-wrap{flex:1;min-width:0;overflow:hidden}
+.day-strip{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.day-strip::-webkit-scrollbar{display:none}
+.day-chip{
+  min-width:60px;padding:10px 8px;border-radius:10px;text-align:center;cursor:pointer;
+  border:1.5px solid var(--border);background:var(--card);transition:all .2s;flex-shrink:0;
+}
+.day-chip.active{background:var(--amber);border-color:var(--amber);color:#fff}
+.day-chip.active .day-chip-day{color:#fff}
+.day-chip.active .day-chip-date{color:rgba(255,255,255,.85)}
+.day-chip.today{border-color:var(--teal);box-shadow:0 0 0 2px var(--teal-light)}
+.day-chip.past{opacity:.5}
+.day-chip-day{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text2);letter-spacing:.3px}
+.day-chip-date{font-family:var(--serif);font-size:18px;font-weight:700;line-height:1.2}
+.day-chip-month{font-size:9px;color:var(--text2);text-transform:uppercase}
+
+.day-detail{animation:fadeIn .25s ease}
+.day-header{margin-bottom:16px}
+.day-context{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.day-breadcrumb{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--text2)}
+.day-breadcrumb .phase-name{color:var(--amber)}
+.day-pill{
+  display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;
+  background:var(--amber-light);color:var(--amber-dark);font-size:11px;font-weight:700;
+}
+.day-pill.today-pill{background:var(--teal-light);color:var(--teal)}
+.day-header-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.day-header h2{font-family:var(--serif);font-size:22px;font-weight:700}
+.day-header .day-location{font-size:13px;color:var(--teal);font-weight:600;margin-top:2px}
+.day-header .day-hotel{font-size:12px;color:var(--text2);margin-top:4px;display:flex;align-items:center;gap:4px}
+.day-link{
+  display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;border:1.5px solid var(--border);
+  background:var(--card);color:var(--text2);font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;
+  font-family:var(--sans);cursor:pointer;
+}
+.day-link:hover{border-color:var(--amber);color:var(--amber);background:var(--amber-light)}
+.day-link.copied{border-color:var(--teal);color:var(--teal);background:var(--teal-light)}
+
+.weather-bar{display:flex;align-items:center;gap:12px;background:var(--amber-light);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px}
+.weather-bar .temp{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--amber)}
+.weather-bar .desc{color:var(--text2);font-size:12px}
+
+/* Activity cards */
+.activity{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border)}
+.activity:last-child{border-bottom:none}
+.act-time{min-width:70px;font-size:12px;font-weight:700;color:var(--text2);padding-top:2px;text-align:right}
+.act-body{flex:1}
+.act-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px}
+.act-badge.flight{background:#E8F0FE;color:#3A6EA5}
+.act-badge.drive{background:#E6F5E6;color:#4A7C59}
+.act-badge.event{background:#F3E8FF;color:#6B4C8A}
+.act-badge.activity{background:var(--amber-light);color:var(--amber-dark)}
+.act-badge.meal{background:#FFF0E6;color:#C75B39}
+.act-badge.rest{background:var(--teal-light);color:var(--teal)}
+.act-badge.checkin{background:#E6F5F0;color:#2D7A6B}
+.act-title{font-weight:700;font-size:14px;margin-bottom:2px}
+.act-location{font-size:12px;color:var(--teal);margin-bottom:4px}
+.act-details{font-size:12px;color:var(--text2);line-height:1.5}
+.act-action{font-size:11px;color:var(--amber);font-weight:700;margin-top:4px}
+
+/* ─── ENHANCED FLIGHT CARDS ─── */
+.flight-card{
+  background:var(--card);border-radius:var(--radius);border:1px solid var(--border);
+  margin-bottom:14px;position:relative;overflow:hidden;
+}
+.flight-card::before,.flight-card::after{
+  content:'';position:absolute;width:20px;height:20px;background:var(--bg);
+  border-radius:50%;z-index:2;top:50%;transform:translateY(-50%);
+}
+.flight-card::before{left:-10px}
+.flight-card::after{right:-10px}
+.flight-header-strip{
+  padding:10px 20px;color:#fff;font-size:12px;font-weight:700;
+  display:flex;justify-content:space-between;align-items:center;
+  letter-spacing:.5px;text-transform:uppercase;
+}
+.flight-card.sq .flight-header-strip{background:linear-gradient(135deg,#F5A623,#D4891A)}
+.flight-card.wn .flight-header-strip{background:linear-gradient(135deg,#304CB2,#1A2F80)}
+.flight-card.dl .flight-header-strip{background:linear-gradient(135deg,#003366,#001A33)}
+.flight-card.b6 .flight-header-strip{background:linear-gradient(135deg,#003876,#001F44)}
+.flight-body{padding:20px 24px}
+.flight-status{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff}
+.flight-status.planned{background:var(--amber-light);color:var(--amber-dark)}
+.flight-route{display:flex;align-items:center;gap:8px;margin-bottom:16px;justify-content:center}
+.flight-city{text-align:center;min-width:80px}
+.flight-code{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--text)}
+.flight-name{font-size:10px;color:var(--text2);margin-top:2px}
+.flight-time{font-size:13px;font-weight:600;color:var(--text2);margin-top:4px}
+.flight-arrow{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--text3);min-width:60px}
+.flight-arrow-line{width:100%;display:flex;align-items:center;position:relative}
+.flight-arrow-line::before{content:'';flex:1;height:0;border-top:2px dashed var(--border)}
+.flight-arrow-plane{font-size:20px;color:var(--amber);position:relative;z-index:1}
+.flight-arrow-dur{font-size:10px;color:var(--text3);font-weight:600}
+.flight-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12px;border-top:1px dashed var(--border);padding-top:14px;margin-top:4px}
+.flight-meta dt{color:var(--text2);font-size:10px;text-transform:uppercase;letter-spacing:.3px}
+.flight-meta dd{font-weight:600;margin-bottom:6px}
+.flight-note{margin-top:10px;font-size:11px;color:var(--text2);border-top:1px solid var(--border);padding-top:8px}
+.flight-group{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 18px 6px;margin-bottom:16px;box-shadow:var(--shadow)}
+.flight-group-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.flight-group-title{font-family:var(--serif);font-size:18px;font-weight:700}
+.flight-group-sub{font-size:12px;color:var(--text2);margin-top:4px}
+.flight-group-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.flight-group-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700}
+.flight-group-badge.route{background:var(--amber-light);color:var(--amber-dark)}
+.flight-group-badge.conf{background:#E8F0FE;color:#3A6EA5}
+.flight-group-badge.trip{background:var(--teal-light);color:var(--teal)}
+
+/* ─── STAYS TAB ─── */
+.stay-card{
+  background:var(--card);border-radius:var(--radius);border:1px solid var(--border);
+  padding:20px;margin-bottom:14px;position:relative;overflow:hidden;
+}
+.stay-card-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.stay-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;background:var(--amber-light)}
+.stay-name{font-family:var(--serif);font-weight:700;font-size:16px}
+.stay-status{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto;white-space:nowrap}
+.stay-status.booked{background:#E6F5E6;color:#2D7A6B}
+.stay-status.pending{background:var(--amber-light);color:var(--amber-dark)}
+.stay-status.arranged{background:#E8F0FE;color:#3A6EA5}
+.stay-status.family{background:#F3E8FF;color:#6B4C8A}
+.stay-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;margin-bottom:10px}
+.stay-grid dt{color:var(--text2);font-size:10px;text-transform:uppercase;letter-spacing:.3px}
+.stay-grid dd{font-weight:600;margin-bottom:4px}
+.stay-details{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:10px}
+.stay-actions{display:flex;gap:8px}
+
+/* ─── CHECKLIST (interactive) ─── */
+.checklist-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;user-select:none;transition:background .15s}
+.checklist-item:hover{background:var(--amber-light);border-radius:8px;margin:0 -8px;padding:12px 8px}
+.check-icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px;transition:all .2s}
+.check-icon.done{background:#E6F5E6;color:#2D7A6B}
+.check-icon.pending{background:var(--amber-light);color:var(--amber)}
+.check-info{flex:1}
+.check-title{font-weight:600;font-size:14px;transition:all .2s}
+.checklist-item.is-done .check-title{text-decoration:line-through;opacity:.6}
+.check-detail{font-size:12px;color:var(--text2);margin-top:2px}
+.check-status-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-top:4px;display:inline-block}
+.check-status-badge.booked{background:#E6F5E6;color:#2D7A6B}
+.check-status-badge.needed{background:var(--amber-light);color:var(--amber-dark)}
+
+/* Progress bar */
+.progress-wrap{margin-bottom:16px}
+.progress-label{font-size:13px;font-weight:600;margin-bottom:6px;display:flex;justify-content:space-between}
+.progress-bar{height:8px;border-radius:4px;background:var(--border);overflow:hidden}
+.progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--teal),var(--amber));transition:width .4s ease}
+
+/* ─── BUDGET TAB ─── */
+.budget-item{margin-bottom:18px}
+.budget-item-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.budget-item-name{font-weight:600;font-size:14px}
+.budget-item-range{font-family:var(--serif);font-weight:700;font-size:14px;color:var(--amber)}
+.budget-bar{height:10px;border-radius:5px;background:var(--border);overflow:hidden;margin-bottom:2px;position:relative}
+.budget-bar-fill{height:100%;border-radius:5px;transition:width .4s ease}
+.budget-bar-fill.amber-fill{background:linear-gradient(90deg,var(--amber-light),var(--amber))}
+.budget-bar-fill.teal-fill{background:linear-gradient(90deg,var(--teal-light),var(--teal))}
+.budget-item-note{font-size:11px;color:var(--text2)}
+.budget-item-flags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.budget-flag{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.2px}
+.budget-flag.committed{background:var(--teal-light);color:var(--teal)}
+.budget-flag.variable{background:var(--amber-light);color:var(--amber-dark)}
+.budget-total{background:linear-gradient(135deg,#2C2C3A,#3D3D52);color:#fff;border-radius:var(--radius);padding:20px;text-align:center;margin-top:20px}
+.budget-total .total-label{font-size:12px;text-transform:uppercase;letter-spacing:1px;opacity:.7}
+.budget-total .total-amount{font-family:var(--serif);font-size:28px;font-weight:700;margin-top:4px}
+.budget-split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;text-align:left}
+.budget-split-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px}
+.budget-split-label{font-size:11px;text-transform:uppercase;letter-spacing:.8px;opacity:.72}
+.budget-split-amount{font-family:var(--serif);font-size:22px;font-weight:700;margin-top:4px}
+.budget-split-note{font-size:11px;opacity:.8;margin-top:4px;line-height:1.4}
+.budget-breakdown-bar{height:24px;border-radius:12px;background:var(--border);overflow:hidden;margin-bottom:6px;display:flex}
+.budget-cat-bar{height:100%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 6px}
+.tips-card{background:var(--teal-light);border:1px solid var(--teal);border-radius:var(--radius);padding:16px;margin-top:16px}
+.tips-card h3{font-family:var(--serif);font-size:16px;color:var(--teal);margin-bottom:8px}
+.tips-card li{font-size:12px;color:var(--text2);margin-bottom:4px;list-style:none;padding-left:16px;position:relative}
+.tips-card li::before{content:'\1F4A1';position:absolute;left:0;font-size:10px}
+
+/* ─── WEATHER TAB ─── */
+.weather-note{font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6}
+.weather-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.weather-legend-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700}
+.weather-legend-pill.live{background:#E8F0FE;color:#3A6EA5}
+.weather-legend-pill.avg{background:var(--amber-light);color:var(--amber-dark)}
+.weather-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:20px}
+.weather-card{
+  border-radius:var(--radius);padding:20px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#2C2C3A 0%,#3D3D52 100%);
+  min-height:160px;display:flex;flex-direction:column;justify-content:space-between;
+}
+.weather-card .wc-city{font-family:var(--serif);font-size:18px;font-weight:700}
+.weather-card .wc-icon{font-size:40px;margin:8px 0}
+.weather-card .wc-temp{font-family:var(--serif);font-size:28px;font-weight:700}
+.weather-card .wc-desc{font-size:13px;opacity:.84;margin-top:3px}
+.weather-card .wc-range{font-size:13px;opacity:.72;margin-top:5px}
+.weather-card .wc-badge{position:absolute;top:12px;right:12px;font-size:9px;padding:2px 8px;border-radius:10px;background:rgba(255,255,255,.15);font-weight:600}
+.pack-card{background:var(--amber-light);border:1px solid var(--amber);border-radius:var(--radius);padding:20px}
+.pack-card h3{font-family:var(--serif);font-size:16px;color:var(--amber-dark);margin-bottom:10px}
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pack-item{font-size:12px;color:var(--text2);padding:4px 0;display:flex;align-items:center;gap:6px}
+
+/* Tickets Tab (enhanced) */
+.ticket-card{
+  background:var(--card);border-radius:var(--radius);border:1px solid var(--border);
+  padding:20px;margin-bottom:14px;display:flex;align-items:center;gap:16px;
+  position:relative;overflow:hidden;
+}
+.ticket-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px}
+.ticket-card.sq::before{background:#F5A623}
+.ticket-card.wn::before{background:#304CB2}
+.ticket-card.dl::before{background:#003366}
+.ticket-card.stay-ticket::before{background:var(--teal)}
+.ticket-card.car-rental::before{background:#E87722}
+.ticket-icon.car-rental{background:#FFF3E8;color:#E87722}
+.ticket-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.ticket-icon.sq{background:#FFF8E7;color:#F5A623}
+.ticket-icon.wn{background:#E8ECF8;color:#304CB2}
+.ticket-icon.dl{background:#E6EEF5;color:#003366}
+.ticket-icon.stay-icon{background:var(--teal-light);color:var(--teal)}
+.ticket-info{flex:1}
+.ticket-name{font-weight:700;font-size:14px}
+.ticket-desc{font-size:12px;color:var(--text2);margin-top:2px}
+.ticket-actions{display:flex;gap:8px}
+.btn{padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;font-family:var(--sans);cursor:pointer;border:none;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-primary{background:var(--amber);color:#fff}
+.btn-primary:hover{background:var(--amber-dark)}
+.btn-outline{background:none;border:1.5px solid var(--border);color:var(--text2)}
+.btn-outline:hover{border-color:var(--amber);color:var(--amber)}
+.btn-disabled,.btn-disabled:hover{background:#F4EFE7;border:1.5px solid var(--border);color:var(--text3);cursor:not-allowed}
+
+/* Weather loading */
+.weather-loading{font-size:12px;color:var(--text3);font-style:italic}
+
+/* Responsive */
+@media(max-width:600px){
+  .overview-top-grid{grid-template-columns:1fr}
+  .overview-panel{padding:14px 14px 2px}
+  .stats-row{grid-template-columns:repeat(3,1fr);gap:8px}
+  .stat-card{padding:12px 8px}
+  .stat-card .num{font-size:20px}
+  .hero h1{font-size:22px}
+  .hero .grad-cap{font-size:36px;top:12px;right:12px}
+  .hero-route{font-size:14px}
+  .hero-pills{gap:8px}
+  .hero-pill{padding:6px 10px}
+  .glance-grid{grid-template-columns:1fr}
+  .flight-code{font-size:20px}
+  .flight-meta{grid-template-columns:1fr}
+  .ticket-card{flex-direction:column;text-align:center}
+  .ticket-actions{justify-content:center}
+  .tab-content{padding:12px}
+  .top-nav button{padding:10px 12px;font-size:11px}
+  .top-nav .nav-icon{font-size:16px}
+  .weather-grid{grid-template-columns:1fr}
+  .stay-grid{grid-template-columns:1fr}
+  .pack-grid{grid-template-columns:1fr}
+  .budget-total .total-amount{font-size:22px}
+  .budget-split{grid-template-columns:1fr}
+  .day-strip-shell{gap:6px}
+  .day-strip-nav{width:32px;height:32px}
+  .day-header-top{flex-direction:column;align-items:flex-start}
+  .flight-group-head{flex-direction:column}
+  .flight-group-badges{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<div class="status-banner" id="statusBanner">
+  <div class="date-time" id="dateTimeText"></div>
+  <div id="countdownLabel" style="font-size:12px;opacity:.8;margin-top:6px"></div>
+  <div id="countdownNums" style="font-family:var(--serif);font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:1px;margin-top:4px"></div>
+  <div id="statusText" style="margin-top:4px"></div>
+</div>
+
+<nav class="top-nav" id="topNav">
+  <button data-tab="overview" class="active"><span class="nav-icon">&#x1F4CB;</span>Overview</button>
+  <button data-tab="schedule"><span class="nav-icon">&#x1F4C5;</span>Schedule</button>
+  <button data-tab="flights"><span class="nav-icon">&#x2708;&#xFE0F;</span>Flights</button>
+  <button data-tab="stays"><span class="nav-icon">&#x1F3E8;</span>Stays</button>
+  <button data-tab="checklist"><span class="nav-icon">&#x2705;</span>Checklist</button>
+  <button data-tab="budget"><span class="nav-icon">&#x1F4B0;</span>Budget</button>
+  <button data-tab="weather"><span class="nav-icon">&#x1F324;&#xFE0F;</span>Weather</button>
+  <button data-tab="tickets"><span class="nav-icon">&#x1F3AB;</span>Tickets</button>
+  <button data-tab="info"><span class="nav-icon">&#x1F4CC;</span>Info</button>
+</nav>
+
+<!-- OVERVIEW TAB -->
+<section class="tab-content active" id="tab-overview">
+  <div class="hero">
+    <div class="hero-kicker">Graduation Season 2026</div>
+    <div class="grad-cap">&#x1F393;</div>
+    <h1>Shah Family Graduation Trip</h1>
+    <p class="hero-route">May 5 &ndash; Jun 19, 2026 &nbsp;&bull;&nbsp; Boston &rarr; Rochester &rarr; NYC &rarr; DC &rarr; Boston &rarr; San Jose</p>
+    <p class="hero-subline">PhD Hooding at RIT, Astha's Tufts graduation, and a family East Coast road trip stitched together into one plan.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">&#x1F393; 2 graduations</span>
+      <span class="hero-pill">&#x1F697; East Coast road trip core</span>
+      <span class="hero-pill">&#x2708;&#xFE0F; Family arrivals and split returns</span>
+    </div>
+  </div>
+  <div class="overview-top-grid">
+    <div id="overviewFocusCard"></div>
+    <div class="overview-panel">
+      <div class="overview-panel-title">Travel Party</div>
+      <div class="travelers" id="travelersRow"></div>
+    </div>
+  </div>
+  <div class="stats-row" style="margin-bottom:20px">
+    <div class="stat-card"><div class="num">15</div><div class="label">Main Trip Days</div></div>
+    <div class="stat-card"><div class="num">10+</div><div class="label">Cities</div></div>
+    <div class="stat-card"><div class="num">12</div><div class="label">Flights</div></div>
+  </div>
+  <div class="card">
+    <div class="card-header">Key Dates</div>
+    <div class="timeline-v2" id="overviewTimeline"></div>
+  </div>
+  <div class="card" id="roadTripCard">
+    <div class="card-header">Road Trip Route</div>
+    <div id="roadTripRoute"></div>
+  </div>
+  <div class="card">
+    <div class="card-header">Accommodation Summary</div>
+    <div id="accomSummary" style="font-size:13px;line-height:2"></div>
+  </div>
+  <div class="card">
+    <div class="card-header">Key Reminders</div>
+    <div style="font-size:13px;line-height:1.8">
+      <div>&#x1F4CC; Check in online <strong>24 hrs before</strong> each flight</div>
+      <div>&#x1F4CC; Pack <strong>modest attire</strong> for BAPS Temple visit</div>
+      <div>&#x1F4CC; Niagara Falls visit is <strong>US side only</strong> &mdash; no passport needed</div>
+      <div>&#x1F4CC; Book <strong>Amtrak early</strong> for best Boston &harr; DC prices</div>
+      <div>&#x1F4CC; Make <strong>restaurant reservation</strong> for May 8 celebration dinner</div>
+      <div>&#x1F4CC; Reserve <strong>BAPS Temple</strong> visit at baps.org</div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE TAB -->
+<section class="tab-content" id="tab-schedule">
+  <div id="phaseTabs" class="phase-tabs"></div>
+  <div class="day-strip-shell">
+    <button id="dayStripPrev" class="day-strip-nav" type="button" aria-label="Scroll days left" data-day-scroll="-1">&#x2039;</button>
+    <div class="day-strip-wrap">
+      <div id="dayStrip" class="day-strip"></div>
+    </div>
+    <button id="dayStripNext" class="day-strip-nav" type="button" aria-label="Scroll days right" data-day-scroll="1">&#x203A;</button>
+  </div>
+  <div id="dayDetail"></div>
+</section>
+
+<!-- FLIGHTS TAB -->
+<section class="tab-content" id="tab-flights">
+  <h2 style="font-family:var(--serif);margin-bottom:16px">All Flights</h2>
+  <div id="flightsContainer"></div>
+</section>
+
+<!-- STAYS TAB -->
+<section class="tab-content" id="tab-stays">
+  <h2 style="font-family:var(--serif);margin-bottom:16px">Accommodation &amp; Stays</h2>
+  <p style="font-size:13px;color:var(--text2);margin-bottom:20px">All lodging for the trip &mdash; hotels, Airbnbs, and family stays.</p>
+  <div id="staysContainer"></div>
+</section>
+
+<!-- CHECKLIST TAB -->
+<section class="tab-content" id="tab-checklist">
+  <h2 style="font-family:var(--serif);margin-bottom:16px">Booking Checklist</h2>
+  <div class="progress-wrap" id="checklistProgress"></div>
+  <div id="checklistSummary" class="card-sub" style="margin-bottom:16px"></div>
+  <div id="checklistContainer"></div>
+</section>
+
+<!-- BUDGET TAB -->
+<section class="tab-content" id="tab-budget">
+  <h2 style="font-family:var(--serif);margin-bottom:16px">Trip Budget</h2>
+  <p style="font-size:13px;color:var(--text2);margin-bottom:20px">Estimated costs for the entire trip. Ranges account for booking timing and choices.</p>
+  <div id="budgetTotalContainer"></div>
+  <div class="card" style="margin-top:20px">
+    <div class="card-header">Spend Breakdown by Category</div>
+    <div id="budgetBreakdownContainer"></div>
+  </div>
+  <div id="budgetItemsContainer"></div>
+  <div id="budgetTipsContainer"></div>
+</section>
+
+<!-- WEATHER TAB -->
+<section class="tab-content" id="tab-weather">
+  <h2 style="font-family:var(--serif);margin-bottom:16px">Weather Forecast</h2>
+          <div class="weather-grid" id="weatherGrid"></div>
+  <div id="packCard"></div>
+</section>
+
+<!-- TICKETS TAB -->
+<section class="tab-content" id="tab-tickets">
+  <h2 style="font-family:var(--serif);margin-bottom:16px">Ticket Documents</h2>
+  <p style="font-size:13px;color:var(--text2);margin-bottom:20px">View or download ticket PDFs for each flight and stay.</p>
+  <div id="ticketsContainer"></div>
+</section>
+
+<!-- INFO TAB -->
+<section class="tab-content" id="tab-info">
+  <h2 style="font-family:var(--serif);margin-bottom:16px">Important Info</h2>
+  <div id="infoPrivateLinks"></div>
+</section>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────
+var TRAVELERS = [
+  {name:'Ayush',emoji:'\u{1F468}\u200D\u{1F393}',color:'#3A6EA5'},
+  {name:'Ram (Dad)',emoji:'\u{1F468}',color:'#2D7A6B'},
+  {name:'Pratibha (Mom)',emoji:'\u{1F469}',color:'#C17817'},
+  {name:'Astha (Sister)',emoji:'\u{1F469}\u200D\u{1F393}',color:'#6B4C8A'},
+];
+
+var COORDS = {
+  'Kathmandu':{lat:27.72,lon:85.32},'Singapore':{lat:1.35,lon:103.82},
+  'San Francisco':{lat:37.77,lon:-122.42},'Austin':{lat:30.27,lon:-97.74},
+  'Boston':{lat:42.36,lon:-71.06},'Rochester':{lat:43.16,lon:-77.61},
+  'Niagara Falls':{lat:43.09,lon:-79.08},'NYC':{lat:40.71,lon:-74.01},
+  'Robbinsville':{lat:40.22,lon:-74.59},'Washington DC':{lat:38.91,lon:-77.04},
+  'West Haven':{lat:41.27,lon:-72.95},'Fall River':{lat:41.70,lon:-71.16},
+};
+
+var PRIVATE_INFO_LINKS = {
+  contactSheet: 'https://docs.google.com/document/d/1ETJX645G_5jwPTTE-WDjvxZ3MOsOXvY9l0SRGz0p90Y/edit?usp=sharing',
+  invitationLetter: 'https://drive.google.com/file/d/1VJ3BvP9IFcvctwdVXFeY0tKeNLorjFJo/view',
+  immigrationPacket: ''
+};
+
+var PHASES = [
+  {
+    id:'pre',name:'Pre-Trip',subtitle:"Parents' Travel & Austin Wedding",dateRange:'Apr 22 \u2013 May 3',
+    days:[
+      {date:'2026-04-22',label:'Apr 22',dayOfWeek:'Wed',title:'Depart Nepal',loc:'Kathmandu \u2192 Singapore',hotel:null,
+        activities:[
+          {time:'11:00 PM',title:'Depart KTM \u2192 Singapore (SQ 441)',type:'flight',location:'KTM Tribhuvan Airport, Terminal I',details:'Singapore Airlines | Booking Ref: DPSOSL | 7h 20m flight | Economy | 2-piece baggage each',action:'Check in by 9:00 PM KTM'}
+        ]},
+      {date:'2026-04-23',label:'Apr 23',dayOfWeek:'Thu',title:'Arrive San Francisco',loc:'Singapore \u2192 SFO',hotel:null,
+        activities:[
+          {time:'9:15 AM',title:'Depart Singapore \u2192 SFO (SQ 032)',type:'flight',location:'Changi Airport Terminal 3',details:'~15h 25m flight | Crosses International Date Line \u2014 arrives same day'},
+          {time:'9:40 AM',title:'Arrive San Francisco (SFO)',type:'flight',location:'SFO International Terminal I',details:'Ram & Pratibha arrive SFO ~11 days before main trip',action:'Arrange pickup from SFO'}
+        ]},
+      {date:'2026-04-24',label:'Apr 24',dayOfWeek:'Fri',title:'Fly to Austin',loc:'SFO \u2192 Austin',hotel:'Wedding accommodation (pre-booked by uncle)',
+        activities:[
+          {time:'11:25 AM',title:'Fly SFO \u2192 Austin (WN #0358)',type:'flight',location:'SFO Airport',details:'Southwest Airlines | Conf: B9X9O6 | Arrives 4:55 PM | Paid $196.80 | Basic fare (1 carry-on + 1 personal)',action:'Check in online 24 hrs before'},
+          {time:'Evening',title:'Arrive Austin \u2014 Wedding Events',type:'event',location:'Austin, TX',details:"Dip uncle's daughter's wedding. 4 nights in Austin."}
+        ]},
+      {date:'2026-04-28',label:'Apr 28',dayOfWeek:'Tue',title:'Return to SFO',loc:'Austin \u2192 SFO',hotel:null,
+        activities:[
+          {time:'3:02 PM',title:'Fly Austin \u2192 SFO (DL 1077)',type:'flight',location:'Austin AUS',details:'Delta Airlines | Conf: HBMBJX | Arrives 4:51 PM | Nonstop | Airbus A319 | Paid $156.80',action:'Check in online 24 hrs before'},
+          {time:'4:51 PM',title:'Arrive SFO \u2014 Rest before family trip',type:'rest',location:'San Francisco, CA',details:'~7 days at home before all fly SFO\u2192BOS on May 5',action:'Confirm all packing, docs, visas'}
+        ]},
+    ]
+  },
+  {
+    id:'main',name:'Main Trip',subtitle:'Graduation Trip: SFO \u2192 BOS \u2192 Rochester \u2192 NYC \u2192 DC \u2192 BOS \u2192 SFO / SJC',dateRange:'May 5 \u2013 19',
+    days:[
+      {date:'2026-05-05',label:'May 5',dayOfWeek:'Tue',title:'Departure Day \u2014 SFO to Boston',loc:'San Francisco \u2192 Boston',hotel:'Overnight flight',
+        activities:[
+          {time:'10:30 PM',title:'Depart SFO \u2192 BOS (Delta DL 1655)',type:'flight',location:'SFO Terminal 1',details:'Delta Airlines | Conf: JJ4PBK | 5h 55m | Airbus A321neo | Nonstop | Arrives 7:25 AM May 6 BOS Terminal A | Ayush + Ram + Pratibha',action:'Check in online 24 hrs before. Pack carry-on for overnight.'}
+        ]},
+      {date:'2026-05-06',label:'May 6',dayOfWeek:'Wed',title:'Boston \u2192 Rochester',loc:'Boston \u2192 Rochester, NY',hotel:'Airbnb: 157 Vassar St, Rochester, NY 14607 (Conf: HMT995PXZS, $435.57/2 nights)',
+        activities:[
+          {time:'7:25 AM',title:'Arrive Boston Logan (BOS)',type:'flight',location:'Boston, MA',details:'Clear baggage, freshen up'},
+          {time:'8:00 AM',title:'Pick up rental car (Sixt)',type:'drive',location:'Boston/Westin Seaport, 425 Summer Street, Boston',details:'Sixt Reservation #9732486014 | VW Taos (Compact) or similar | 13 days, unlimited miles | Prepaid $554.76 + $200 security deposit at pickup'},
+          {time:'9:00 AM',title:'Drive to Tufts \u2014 Pick up Astha',type:'drive',location:'Medford, MA (~20 min)',details:'She should be packed and ready',action:'Coordinate with Astha for pickup time'},
+          {time:'9:30 AM',title:'Breakfast near Tufts',type:'meal',location:'Somerville, MA',details:'Quick breakfast \u2014 Diner or Dunkin'},
+          {time:'10:00 AM',title:'Drive Boston \u2192 Rochester, NY',type:'drive',location:'I-90 W / I-490',details:'392 miles, ~6 hrs. 1 rest stop around Syracuse. Lunch on the road.'},
+          {time:'3:00 PM',title:'PhD Hooding Rehearsal (likely miss)',type:'event',location:'NTID \u2014 Panara Theater, RIT',details:'Rehearsal at 3:00 PM \u2014 will likely miss due to late arrival from Boston. Contact RIT for alternate arrangements if needed.',action:'Email RIT about missing rehearsal'},
+          {time:'4:00 PM',title:'Check in to Airbnb',type:'checkin',location:'157 Vassar Street, Rochester, NY 14607',details:'Booked: HMT995PXZS (May 6\u20138, $435.57, 2 nights)'},
+          {time:'4:30 PM',title:'Explore Rochester / Rest',type:'activity',location:'Rochester, NY',details:'Grocery run, light dinner. Catch up with old friends.',action:'Reach out to Rochester friends'}
+        ]},
+      {date:'2026-05-07',label:'May 7',dayOfWeek:'Thu',title:'Day Trip + Grad Reception',loc:'Rochester / Niagara Falls / Letchworth',hotel:'Airbnb: 157 Vassar St, Rochester (same)',
+        activities:[
+          {time:'8:00 AM',title:'OPTION A: Day trip to Niagara Falls',type:'activity',location:'Niagara Falls, NY (~1.5 hrs each way)',details:'Maid of the Mist, Cave of the Winds (US side). Leave ~8 AM, 4\u20135 hrs at Falls. Return by 3 PM.'},
+          {time:'8:00 AM',title:'OPTION B: Letchworth State Park',type:'activity',location:'Letchworth, NY (~1 hr each way)',details:'"Grand Canyon of the East." 3 waterfalls, gorge views. Half-day \u2014 leave 8 AM, back by 1 PM.'},
+          {time:'4:00 PM',title:'Graduate Student Commencement Reception',type:'event',location:'Crossroads, RIT',details:'Graduate student celebration reception. Arrive 15 min early. Done by 6:30 PM.',action:'Plan dinner with friends'},
+          {time:'6:30 PM',title:'Dinner with friends / soccer',type:'meal',location:'Rochester area',details:'Late dinner/hangout with friends, or soccer earlier in the day.',action:'Organize soccer game'}
+        ]},
+      {date:'2026-05-08',label:'May 8',dayOfWeek:'Fri',title:'\u{1F393} Doctoral Hooding + GCCIS Reception',loc:'RIT, Rochester',hotel:'Sleepy Bear Inn, Spencerport (Conf: 495WA47R, $179.16)',
+        activities:[
+          {time:'Morning',title:'Check out Airbnb \u2014 Free morning',type:'activity',location:'Rochester area',details:'Check out of Vassar St Airbnb. Keep luggage in car. Hooding not until 1:30 PM.',action:'Confirm ceremony time, venue, guest tickets'},
+          {time:'1:30 PM',title:'Doctoral Hooding Ceremony \u{1F393}',type:'event',location:'NTID \u2014 Panara Theater, RIT',details:'Main hooding ceremony! Dress formal. Arrive 30 min early. Done by 3:00 PM.'},
+          {time:'3:00 PM',title:"GCCIS Ph.D. Graduates' Reception",type:'event',location:'082-ENT-1130 McGowan Commons, RIT',details:'GCCIS department-specific PhD celebration. Right after hooding. Done by 4:30 PM.'},
+          {time:'5:00 PM',title:'Check in to Sleepy Bear Inn',type:'checkin',location:'4670 W Ridge Road, Spencerport, NY 14559',details:'Conf: 495WA47R, $179.16. Keyless entry \u2013 code sent via text after digital check-in. Drop luggage, freshen up before dinner.'},
+          {time:'Evening',title:'Celebration Dinner \u{1F393}\u{1F942}',type:'meal',location:'Rochester \u2014 Nice restaurant',details:'Celebrate the big day! Book ahead for 4+ people.',action:'Make restaurant reservation'}
+        ]},
+      {date:'2026-05-09',label:'May 9',dayOfWeek:'Sat',title:'Commencement + Depart to NJ',loc:'Rochester \u2192 Robbinsville, NJ \u2192 Jamaica, Queens',hotel:'La Quinta Inn & Suites, Jamaica NYC (Conf: 92674EE011670, $326.07, 2 nights)',
+        activities:[
+          {time:'9:00 AM',title:'Golisano Commencement Ceremony I',type:'event',location:'Gordon Field House, RIT',details:'CS & Cybersecurity commencement. Arrive 30 min early. Done by 12:30 PM.'},
+          {time:'~1:00 PM',title:'Check out Rochester \u2014 Depart for NJ',type:'drive',location:'Rochester, NY',details:'Pack car, check out. Grab lunch on the road.'},
+          {time:'1:00 PM',title:'Drive Rochester \u2192 Robbinsville, NJ',type:'drive',location:'I-390 S / I-81 S / I-78 E',details:'~310 miles, ~5\u20135.5 hrs. Optional stop at Watkins Glen (30 min detour).'},
+          {time:'6:30 PM',title:'Visit BAPS Akshardham Temple',type:'activity',location:'Robbinsville, NJ',details:'Open until 7:30 PM. ~1 hr visit if arriving 6:30 PM. Dress modestly.',action:'Reserve temple visit online at baps.org'},
+          {time:'8:00 PM',title:'Drive to Jamaica, Queens + Check in',type:'rest',location:'La Quinta Inn, 92-16 147th Place, Jamaica, NY (~1 hr from Robbinsville)',details:'Conf: 92674EE011670, $326.07. 2 Queen Beds. Check-in after 3 PM. Free WiFi + hot breakfast. 2-night stay (May 9\u201311).'}
+        ]},
+      {date:'2026-05-10',label:'May 10',dayOfWeek:'Sun',title:'NYC Sightseeing + Uncle Visit',loc:'New York City',hotel:'La Quinta Inn, Jamaica NYC (night 2 of 2)',
+        activities:[
+          {time:'All day',title:'NYC sightseeing + Visit Ajit uncle',type:'activity',location:'New York City',details:'Times Square, Central Park, Statue of Liberty, etc. Quality time with Ajit uncle (lives nearby in Queens).',action:'Coordinate with Ajit uncle'},
+          {time:'Evening',title:'Stay at La Quinta Inn overnight',type:'rest',location:'Jamaica, Queens, NYC',details:'Second night at La Quinta Inn. Check-out before 11 AM tomorrow. Astha takes bus/train to Boston tomorrow morning.'}
+        ]},
+      {date:'2026-05-11',label:'May 11',dayOfWeek:'Mon',title:'NYC \u2192 Washington DC',loc:'New York City \u2192 Washington DC',hotel:'DC hotel near National Mall (need to book)',
+        activities:[
+          {time:'Morning',title:'Astha takes bus/train NYC \u2192 Boston',type:'drive',location:'Penn Station / Port Authority',details:'Astha heads to Tufts independently. Amtrak or bus ~4.5 hrs.',action:'Book Astha bus/train ticket NYC\u2192BOS'},
+          {time:'9:00 AM',title:'Drive NYC \u2192 Washington DC',type:'drive',location:'I-95 S / NJ Turnpike',details:'~230 miles, ~4 hrs. Ayush + Ram + Pratibha.',action:'Leave NYC by 9 AM to maximize DC time'},
+          {time:'1:00 PM',title:'Check in to DC hotel + Lunch',type:'checkin',location:'Near National Mall',details:'Drop bags, grab lunch near the Mall.',action:'Book DC hotel for 1 night'},
+          {time:'2:00 PM',title:'National Mall Walking Tour',type:'activity',location:'National Mall, Washington DC',details:'Washington Monument (timed entry, book ahead) \u2192 WWII Memorial \u2192 Lincoln Memorial \u2192 Reflecting Pool. ~2.5 hrs walking.',action:'Reserve Washington Monument timed entry tickets (free, nps.gov)'},
+          {time:'4:30 PM',title:'Capitol Building + Library of Congress',type:'activity',location:'Capitol Hill, Washington DC',details:'Capitol Visitor Center (free tours, book at visitthecapitol.gov). Library of Congress main reading room \u2014 stunning architecture. ~1.5 hrs.',action:'Book Capitol tour online'},
+          {time:'6:30 PM',title:'Georgetown Waterfront Dinner',type:'meal',location:'Georgetown, Washington DC',details:'Walk along the Potomac. Plenty of restaurant options \u2014 Ethiopian food on U St is also nearby and popular.',action:'Consider Old Ebbitt Grill (near White House) or Georgetown waterfront'},
+          {time:'8:00 PM',title:'Monuments at Night',type:'activity',location:'National Mall, Washington DC',details:'Lincoln Memorial, MLK Memorial, and Jefferson Memorial are beautifully lit at night. Less crowded, great for photos. ~1 hr stroll.'}
+        ]},
+      {date:'2026-05-12',label:'May 12',dayOfWeek:'Tue',title:'DC Morning + Drive to Fall River',loc:'Washington DC \u2192 Fall River, MA',hotel:"Sunita aunty's house, Fall River",
+        activities:[
+          {time:'8:30 AM',title:'Smithsonian National Air & Space Museum',type:'activity',location:'600 Independence Ave SW, Washington DC',details:'Recently renovated! Wright Flyer, Apollo 11, space shuttle. Opens 10 AM \u2014 arrive early for short lines. Free admission. ~2 hrs.',action:'Check opening hours (usually 10 AM)'},
+          {time:'10:30 AM',title:'Smithsonian National Museum of Natural History',type:'activity',location:'10th St & Constitution Ave NW',details:'Hope Diamond, dinosaur hall, ocean hall. Free admission. ~1.5 hrs.'},
+          {time:'12:00 PM',title:'Lunch near the Mall',type:'meal',location:'Washington DC',details:'Quick lunch \u2014 food trucks on the Mall or sit-down near Penn Quarter.'},
+          {time:'1:00 PM',title:'White House Photo Op + Quick Walk',type:'activity',location:'1600 Pennsylvania Ave NW',details:'Walk past the White House (North Lawn view from Pennsylvania Ave). Photo stop. ~20 min.'},
+          {time:'1:30 PM',title:'Drive DC \u2192 Fall River, MA',type:'drive',location:'I-95 N',details:'~370 miles, ~7 hrs. Arrive Fall River ~8:30 PM. Dinner stop on the way or at arrival.',action:'Plan a rest stop around NJ/CT'},
+          {time:'8:30 PM',title:"Arrive Fall River \u2014 Sunita aunty's",type:'rest',location:'Fall River, MA',details:"Settle in at Sunita aunty's. Dinner and rest after long drive.",action:'Coordinate with Sunita aunty for arrival'}
+        ]},
+      {date:'2026-05-13',label:'May 13',dayOfWeek:'Wed',title:'Explore Boston \u2014 Day 1',loc:'Boston, MA',hotel:"Sunita aunty's house, Fall River",
+        activities:[
+          {time:'8:30 AM',title:'Drive Fall River \u2192 Boston',type:'drive',location:'I-195 E / MA-24 N (~1 hr)',details:'Early start to maximize Boston time.'},
+          {time:'10:00 AM',title:'Freedom Trail',type:'activity',location:'Boston Common to Faneuil Hall',details:'2.5-mile walk through 16 historic sites: Boston Common, State House, Old North Church, Paul Revere House. ~2.5 hrs for highlights.',action:'Download NPS Freedom Trail app for self-guided tour'},
+          {time:'12:30 PM',title:'Lunch at Faneuil Hall / Quincy Market',type:'meal',location:'Faneuil Hall Marketplace, Boston',details:'Historic marketplace with tons of food options \u2014 clam chowder, lobster rolls, etc.'},
+          {time:'1:30 PM',title:'Harvard & MIT Campus Walk',type:'activity',location:'Cambridge, MA (~15 min drive)',details:'Walk Harvard Yard, see the John Harvard statue, stroll through MIT campus along the Charles River. ~2 hrs.'},
+          {time:'4:00 PM',title:'Boston Harbor / Seaport',type:'activity',location:'Seaport District, Boston',details:'Walk along the harbor, visit the ICA (Institute of Contemporary Art) \u2014 free Thu evenings. Or just enjoy the waterfront.'},
+          {time:'6:00 PM',title:'Dinner in Boston',type:'meal',location:'Boston / North End',details:"Boston's North End for Italian food, or Chinatown for Asian cuisine."},
+          {time:'8:00 PM',title:'Return to Fall River',type:'drive',location:'I-93 S / MA-24 S (~1 hr)',details:'Head back to Fall River for the night.'}
+        ]},
+      {date:'2026-05-14',label:'May 14',dayOfWeek:'Thu',title:'Explore Boston Day 2 + Ayush to West Haven',loc:'Boston \u2192 West Haven',hotel:"Sunita aunty's (parents), West Haven hotel (Ayush)",
+        activities:[
+          {time:'9:00 AM',title:'Drive to Boston together',type:'drive',location:'Fall River \u2192 Boston (~1 hr)',details:'One more day exploring as a family before Ayush heads to conference.'},
+          {time:'10:00 AM',title:'Boston Public Garden + Beacon Hill',type:'activity',location:'Boston Public Garden / Beacon Hill',details:'Swan Boats (seasonal), walk through the Garden, stroll the charming brick streets of Beacon Hill. ~1.5 hrs.'},
+          {time:'11:30 AM',title:'Newbury Street Shopping',type:'activity',location:'Back Bay, Boston',details:'Browse shops, cafes, and galleries on Boston\'s most famous street. ~1 hr.'},
+          {time:'12:30 PM',title:'Lunch together',type:'meal',location:'Back Bay / South End, Boston',details:'Last family lunch before Ayush departs for conference.'},
+          {time:'2:00 PM',title:'Drop parents at Fall River',type:'drive',location:'Fall River, MA (~1 hr)',details:"Parents stay at Sunita aunty's. Astha can plan activities with parents + aunty for Fri/Sat."},
+          {time:'3:00 PM',title:'Ayush drives to West Haven, CT',type:'drive',location:'I-195 W / I-95 S (~2.5 hrs)',details:'~130 miles. Arrive by ~5:30 PM. Check in to hotel.',action:'Book 2-night hotel in West Haven/New Haven (Thu + Fri nights)'},
+          {time:'6:00 PM',title:'Check in + Dinner in New Haven',type:'meal',location:'New Haven, CT',details:"Frank Pepe's or Sally's for famous New Haven pizza. Settle in for conference."}
+        ]},
+      {date:'2026-05-15',label:'May 15',dayOfWeek:'Fri',title:'Work Conference Day 1',loc:'West Haven, CT',hotel:'West Haven / New Haven hotel (night 2 of 2)',
+        activities:[
+          {time:'8:00 AM',title:'Conference Day 1',type:'event',location:'West Haven, CT',details:'Full day of conference sessions and networking. University of New Haven Conference Center.',action:'Confirm work conference schedule and venue'},
+          {time:'Evening',title:'Dinner with colleagues',type:'meal',location:'New Haven, CT',details:'Dinner with colleagues after day 1.'},
+          {time:'',title:'\u{1F468}\u200D\u{1F469}\u200D\u{1F467} Parents & Astha \u2014 Free day',type:'rest',location:'Fall River / Boston area',details:"Parents + Astha explore with Sunita aunty. Options: Newport, RI (~30 min from Fall River), Plymouth, or local area.",action:'Astha to plan activities with parents + Sunita aunty'}
+        ]},
+      {date:'2026-05-16',label:'May 16',dayOfWeek:'Sat',title:'Conference Day 2 + Return',loc:'West Haven \u2192 Fall River',hotel:null,
+        activities:[
+          {time:'8:00 AM',title:'Conference Day 2',type:'event',location:'West Haven, CT',details:'Second day of conference sessions.'},
+          {time:'',title:'\u{1F468}\u200D\u{1F469}\u200D\u{1F467} Parents & Astha \u2014 Free day',type:'rest',location:'Fall River / Boston area',details:"Another free day with Sunita aunty. Options: whale watching from Fall River, local shopping, or rest."},
+          {time:'5:00 PM',title:'Drive West Haven \u2192 Fall River',type:'drive',location:'I-95 N / I-195 E (~2.5 hrs)',details:'Conference wraps up. Head back to Fall River by evening.'},
+          {time:'7:30 PM',title:'Dinner with family at Fall River',type:'meal',location:'Fall River, MA',details:"Reunite with family at Sunita aunty's. Prep for Astha's graduation tomorrow."}
+        ]},
+      {date:'2026-05-17',label:'May 17',dayOfWeek:'Sun',title:"\u{1F393} Astha's Graduation (Tufts)",loc:'Tufts University, Medford',hotel:null,
+        activities:[
+          {time:'Until 5:00 PM',title:"Astha's graduation at Tufts \u{1F393}",type:'event',location:'Tufts University, Medford, MA',details:"Attend Astha's graduation ceremony and celebrations. Whole family present!",action:"Confirm Astha's graduation timing"},
+          {time:'After 5:00 PM',title:'Visit Sunita aunty (optional)',type:'activity',location:'Fall River, MA (~1 hr)',details:'Evening visit / say goodbye. Or head back to Boston for early flight.'}
+        ]},
+      {date:'2026-05-18',label:'May 18',dayOfWeek:'Mon',title:'Departure Day \u2014 BOS to SFO',loc:'Boston \u2192 San Francisco',hotel:null,
+        activities:[
+          {time:'6:00 PM',title:'Return rental car (Sixt)',type:'drive',location:'Boston/Westin Seaport, 425 Summer Street, Boston',details:'Sixt Reservation #9732486014 | Return by 6:00 PM. Allow time for car return before 8:59 PM flight.'},
+          {time:'8:59 PM',title:'Depart BOS \u2192 SFO (Delta DL 2919)',type:'flight',location:'BOS Terminal A',details:'Delta Airlines | Conf: JJ4PBK | 6h 33m | Airbus A321neo | Nonstop | Arrives 12:32 AM+1 SFO Terminal 1 | Ayush + Ram + Pratibha'},
+          {time:'12:32 AM',title:'Arrive SFO (May 19)',type:'rest',location:'San Francisco',details:'Ayush, Ram, and Pratibha arrive SFO. Astha departs BOS for San Jose later on May 19.',action:'Astha Southwest booking confirmed: A2EVYM'}
+        ]},
+      {date:'2026-05-19',label:'May 19',dayOfWeek:'Tue',title:'Trip wrap-up + Astha flies to San Jose',loc:'Boston \u2192 Austin \u2192 San Jose',hotel:null,
+        activities:[
+          {time:'2:30 PM',title:'Depart BOS \u2192 AUS (Southwest WN 3857)',type:'flight',location:'Boston Logan',details:'Southwest Airlines | Conf: A2EVYM | Ticket 5262147805835 | Basic fare | Astha'},
+          {time:'6:05 PM',title:'Arrive Austin (AUS)',type:'flight',location:'Austin, TX',details:'Short connection before the next Southwest leg.'},
+          {time:'7:20 PM',title:'Depart AUS \u2192 SJC (Southwest WN 3156)',type:'flight',location:'Austin, TX',details:'Same confirmation A2EVYM | Same-day connection to California'},
+          {time:'9:05 PM',title:'Arrive San Jose (SJC)',type:'rest',location:'San Jose, CA',details:'Astha reaches California. Total ticket cost: $284.40.',action:'Check in online 24 hrs before departure'}
+        ]}
+    ]
+  },
+  {
+    id:'post',name:'Post-Trip',subtitle:"Astha's Return + Parents Return to Nepal",dateRange:'Jun 17 \u2013 19',
+    days:[
+      {date:'2026-06-17',label:'Jun 17',dayOfWeek:'Wed',title:'Astha returns to Boston + Parents depart for Nepal',loc:'San Jose / San Diego / SFO \u2192 Boston / Singapore',hotel:null,
+        activities:[
+          {time:'11:15 AM',title:'Depart SJC \u2192 SAN (Southwest WN 0765)',type:'flight',location:'San Jose, CA',details:'Astha return itinerary begins | Conf: A2EVYM'},
+          {time:'11:30 AM',title:'Depart SFO \u2192 Singapore (SQ 031)',type:'flight',location:'SFO Terminal I',details:'Singapore Airlines | Booking Ref: DPSOSL | ~16h 40m flight | Economy'},
+          {time:'12:40 PM',title:'Arrive San Diego (SAN)',type:'flight',location:'San Diego, CA',details:'Layover before final leg to Boston'},
+          {time:'2:35 PM',title:'Depart SAN \u2192 BOS (Southwest WN 4930)',type:'flight',location:'San Diego, CA',details:'Astha final leg home | Same confirmation A2EVYM'},
+          {time:'11:00 PM',title:'Arrive Boston Logan (BOS)',type:'rest',location:'Boston, MA',details:'Astha returns to Boston the same night.'}
+        ]},
+      {date:'2026-06-18',label:'Jun 18',dayOfWeek:'Thu',title:'Singapore Layover',loc:'Singapore',hotel:'Consider Changi transit hotel',
+        activities:[
+          {time:'7:10 PM',title:'Arrive Singapore',type:'flight',location:'Changi Airport Terminal 0',details:'~23h 45m layover until next flight',action:'Check Singapore transit visa / consider transit hotel'}
+        ]},
+      {date:'2026-06-19',label:'Jun 19',dayOfWeek:'Fri',title:'Arrive Home \u2014 Nepal',loc:'Singapore \u2192 Kathmandu',hotel:null,
+        activities:[
+          {time:'6:55 PM',title:'Depart Singapore \u2192 Kathmandu (SQ 442)',type:'flight',location:'Changi Airport Terminal 2',details:'~4h 50m flight | Singapore Airlines | Economy'},
+          {time:'9:45 PM',title:'Arrive Kathmandu (KTM)',type:'rest',location:'Tribhuvan Airport, Terminal I',details:'Ram & Pratibha arrive home. Trip complete!'}
+        ]}
+    ]
+  }
+];
+
+var FLIGHTS = [
+  {airline:'Singapore Airlines',flight:'SQ 441',from:'KTM',fromName:'Kathmandu',to:'SIN',toName:'Singapore',date:'Apr 22, 2026',dep:'23:00',arr:'+1 06:20',dur:'7h 20m',conf:'DPSOSL',pax:'Ram & Pratibha',tickets:'618-2470345931, 618-2470345932',cls:'sq'},
+  {airline:'Singapore Airlines',flight:'SQ 032',from:'SIN',fromName:'Singapore',to:'SFO',toName:'San Francisco',date:'Apr 23, 2026',dep:'09:15',arr:'09:40*',dur:'~15h 25m',conf:'DPSOSL',pax:'Ram & Pratibha',tickets:'618-2470345931, 618-2470345932',cls:'sq',note:'*Crosses Date Line \u2014 same day arrival'},
+  {airline:'Southwest Airlines',flight:'WN #0358',from:'SFO',fromName:'San Francisco',to:'AUS',toName:'Austin',date:'Apr 24, 2026',dep:'11:25 AM',arr:'4:55 PM',dur:'3h 30m',conf:'B9X9O6',pax:'Ram & Pratibha',tickets:'5262130927350, 5262130927351',cls:'wn',note:'Paid $196.80 | Basic (1 carry-on + 1 personal)'},
+  {airline:'Delta Air Lines',flight:'DL 1077',from:'AUS',fromName:'Austin',to:'SFO',toName:'San Francisco',date:'Apr 28, 2026',dep:'3:02 PM',arr:'4:51 PM',dur:'3h 49m',conf:'HBMBJX',pax:'Ram & Pratibha',tickets:'0067365705380, 0067365705381',cls:'dl',note:'Paid $156.80 | Airbus A319 | Nonstop'},
+  {airline:'Delta Air Lines',flight:'DL 1655',from:'SFO',fromName:'San Francisco',to:'BOS',toName:'Boston',date:'May 5, 2026',dep:'10:30 PM',arr:'+1 7:25 AM',dur:'5h 55m',conf:'JJ4PBK',pax:'Ayush + Ram + Pratibha',tickets:'Delta Main Basic (E)',cls:'dl',note:'Airbus A321neo | Nonstop | Terminal 1 \u2192 Terminal A'},
+  {airline:'Delta Air Lines',flight:'DL 2919',from:'BOS',fromName:'Boston',to:'SFO',toName:'San Francisco',date:'May 18, 2026',dep:'8:59 PM',arr:'+1 12:32 AM',dur:'6h 33m',conf:'JJ4PBK',pax:'Ayush + Ram + Pratibha',tickets:'Delta Main Basic (E)',cls:'dl',note:'Airbus A321neo | Nonstop | Terminal A \u2192 Terminal 1'},
+  {airline:'Southwest Airlines',flight:'WN 3857',from:'BOS',fromName:'Boston Logan',to:'AUS',toName:'Austin',date:'May 19, 2026',dep:'2:30 PM',arr:'6:05 PM',dur:'3h 35m',conf:'A2EVYM',pax:'Astha',tickets:'5262147805835',cls:'wn',note:'Leg 1 of Astha itinerary | Basic fare | Paid $284.40 total'},
+  {airline:'Southwest Airlines',flight:'WN 3156',from:'AUS',fromName:'Austin',to:'SJC',toName:'San Jose',date:'May 19, 2026',dep:'7:20 PM',arr:'9:05 PM',dur:'1h 45m',conf:'A2EVYM',pax:'Astha',tickets:'5262147805835',cls:'wn',note:'Leg 2 of Astha itinerary | Same-day connection in Austin'},
+  {airline:'Southwest Airlines',flight:'WN 0765',from:'SJC',fromName:'San Jose',to:'SAN',toName:'San Diego',date:'Jun 17, 2026',dep:'11:15 AM',arr:'12:40 PM',dur:'1h 25m',conf:'A2EVYM',pax:'Astha',tickets:'5262147805835',cls:'wn',note:'Return itinerary begins | Basic fare'},
+  {airline:'Southwest Airlines',flight:'WN 4930',from:'SAN',fromName:'San Diego',to:'BOS',toName:'Boston Logan',date:'Jun 17, 2026',dep:'2:35 PM',arr:'11:00 PM',dur:'5h 25m',conf:'A2EVYM',pax:'Astha',tickets:'5262147805835',cls:'wn',note:'Final leg | Same-day connection from San Jose via San Diego'},
+  {airline:'Singapore Airlines',flight:'SQ 031',from:'SFO',fromName:'San Francisco',to:'SIN',toName:'Singapore',date:'Jun 17, 2026',dep:'11:30 AM',arr:'+1 7:10 PM',dur:'~16h 40m',conf:'DPSOSL',pax:'Ram & Pratibha',tickets:'618-2470345931, 618-2470345932',cls:'sq'},
+  {airline:'Singapore Airlines',flight:'SQ 442',from:'SIN',fromName:'Singapore',to:'KTM',toName:'Kathmandu',date:'Jun 19, 2026',dep:'6:55 PM',arr:'9:45 PM',dur:'~4h 50m',conf:'DPSOSL',pax:'Ram & Pratibha',tickets:'618-2470345931, 618-2470345932',cls:'sq'},
+];
+
+var STAYS = [
+  {name:'Austin wedding stay', dates:'Apr 24\u201328', location:'Austin, TX', nights:'4 nights', status:'Arranged', details:'2 nights prebooked for wedding event, other nights at Dip uncle\'s house.', address:null, conf:null, bookedBy:null, pdf:null},
+  {name:'Rochester Airbnb', dates:'May 6\u20138', location:'157 Vassar St, Rochester, NY 14607', nights:'2 nights', status:'Booked', details:'Confirmation HMT995PXZS, $435.57 for 2 nights.', address:'157 Vassar Street, Rochester, NY 14607', conf:'HMT995PXZS', bookedBy:'Hotels.com', pdf:null},
+  {name:'Rochester Hotel (Sleepy Bear Inn)', dates:'May 8\u20139', location:'Spencerport (Rochester area), NY', nights:'1 night', status:'Booked', details:'Confirmation #495WA47R, total $179.16. Premium \u2013 Double room, 4 guests. Keyless entry \u2013 code sent after digital check-in. Check-in 3:00 PM.', address:'4670 W Ridge Road, Spencerport, NY 14559', conf:'495WA47R', bookedBy:'Direct (sleepybearinn.com)', pdf:'stays/Rochester-hotel-may8-9.pdf'},
+  {name:'La Quinta Inn & Suites by Wyndham Jamaica NYC/JFK AirTrain', dates:'May 9\u201311', location:'Jamaica, Queens, NY', nights:'2 nights', status:'Booked', details:'Confirmation #92674EE011670, total $326.07. 2 Queen Beds, Standard Room, Non-Smoking. Free WiFi + hot breakfast. Check-in after 3 PM, check-out before 11 AM.', address:'92-16 147th Place, Jamaica, New York 11435', conf:'92674EE011670', bookedBy:'Wyndham', pdf:'stays/NYC-may9-11.pdf'},
+  {name:'Washington, DC hotel', dates:'May 11', location:'Near National Mall / Metro', nights:'1 night', status:'Pending', details:'One night for DC sightseeing. Drive to Fall River next day.', address:null, conf:null, bookedBy:null, pdf:null},
+  {name:'Sunita aunty\'s house', dates:'May 12\u201318', location:'Fall River, MA', nights:'~6 nights', status:'Family stay', details:'Base for Boston exploration, conference, and graduation. Parents stay here while Ayush is at conference.', address:null, conf:null, bookedBy:null, pdf:null},
+  {name:'West Haven / New Haven hotel', dates:'May 14\u201315', location:'West Haven, CT', nights:'2 nights', status:'Pending', details:'Thu + Fri nights for work conference (Ayush only).', address:null, conf:null, bookedBy:null, pdf:null},
+];
+
+var CHECKLIST = [
+  {item:'Delta flights \u2014 Ayush + Ram + Pratibha',cat:'Flights',detail:'Round-trip SFO\u2192BOS May 5 (DL 1655); BOS\u2192SFO May 18 (DL 2919). Conf: JJ4PBK.',status:'booked'},
+  {item:'Astha Southwest flights',cat:'Flights',detail:'BOS\u2192AUS\u2192SJC on May 19; SJC\u2192SAN\u2192BOS on Jun 17. Conf: A2EVYM. Ticket: 5262147805835. Paid $284.40.',status:'booked'},
+  {item:'Rental car \u2014 Sixt (Boston)',cat:'Car Rental',detail:'Sixt Reservation #9732486014. VW Taos (Compact). Pickup: May 6, 8 AM. Return: May 18, 6 PM. Boston/Westin Seaport, 425 Summer St. Prepaid $554.76.',status:'booked'},
+  {item:'Rochester Airbnb (May 6\u20138)',cat:'Accommodation',detail:'157 Vassar Street, Rochester, NY 14607. Conf: HMT995PXZS. $435.57/2 nights.',status:'booked'},
+  {item:'Rochester hotel (May 8\u20139, 1 night)',cat:'Accommodation',detail:'Sleepy Bear Inn, 4670 W Ridge Road, Spencerport. Conf: 495WA47R. $179.16. Booked direct.',status:'booked'},
+  {item:'NYC hotel \u2014 La Quinta Inn Jamaica/JFK (2 nights)',cat:'Accommodation',detail:'May 9\u201311. Conf: 92674EE011670. $326.07. 2 Queen Beds.',status:'booked'},
+  {item:'DC hotel (1 night)',cat:'Accommodation',detail:'May 11. Near National Mall.',status:'pending'},
+  {item:'Astha bus/train NYC \u2192 Boston',cat:'Transportation',detail:'May 11. Amtrak or bus from NYC to Boston/Tufts.',status:'pending'},
+  {item:'Reserve BAPS Temple visit',cat:'Activities',detail:'baps.org \u2014 free but reservation required weekends. Open 9 AM\u20137:30 PM.',status:'pending'},
+  {item:'Confirm RIT grad events schedule',cat:'Graduation',detail:'May 6, 7 event times. May 8 hooding time/venue/guest tickets.',status:'pending'},
+  {item:'Confirm work conference details',cat:'Work',detail:'May 15 \u2014 West Haven, CT. Session times, venue, registration.',status:'pending'},
+  {item:"Confirm Astha's Tufts graduation",cat:'Graduation',detail:'May 17 \u2014 time, venue.',status:'pending'},
+  {item:'Coordinate with Ajit uncle (NYC)',cat:'Family',detail:'Visit dates \u2014 likely May 9\u201310.',status:'pending'},
+  {item:'Coordinate with Sunita aunty',cat:'Family',detail:'Stay dates \u2014 likely May 11 and/or May 17 night.',status:'pending'},
+  {item:'Reach out to Rochester friends',cat:'Social',detail:'Dinner, soccer \u2014 likely May 5, 6, or 7 evening.',status:'pending'},
+  {item:'Book Niagara Falls activities',cat:'Activities',detail:'Maid of the Mist, Cave of the Winds (US side) \u2014 book ahead.',status:'pending'},
+  {item:'Restaurant reservation (May 8)',cat:'Dining',detail:'Celebration dinner after hooding. 4+ people.',status:'pending'},
+  {item:'West Haven hotel (2 nights)',cat:'Accommodation',detail:'May 14\u201315 for work conference (Ayush only).',status:'pending'},
+  {item:'Confirm Sunita aunty stay (May 12\u201318)',cat:'Family',detail:"Ram & Pratibha base at Sunita aunty's. Ayush joins except conference nights.",status:'pending'},
+  {item:'Washington Monument timed entry',cat:'Activities',detail:'Free timed tickets at nps.gov. May 11 afternoon.',status:'pending'},
+  {item:'Capitol Building tour',cat:'Activities',detail:'Free tours at visitthecapitol.gov. May 11 afternoon.',status:'pending'},
+  {item:'Parents Nepal\u2192SFO (Singapore Airlines)',cat:'Flights',detail:'KTM\u2192SIN SQ441 Apr 22 | SIN\u2192SFO SQ032 Apr 23. Ref: DPSOSL',status:'booked'},
+  {item:'Parents SFO\u2192Austin (Southwest)',cat:'Flights',detail:'WN #0358 Apr 24. Conf: B9X9O6. Paid $196.80',status:'booked'},
+  {item:'Parents Austin\u2192SFO (Delta)',cat:'Flights',detail:'DL1077 Apr 28. Conf: HBMBJX. Paid $156.80.',status:'booked'},
+  {item:'Parents SFO\u2192Nepal return',cat:'Flights',detail:'SQ031 Jun 17 + SQ442 Jun 19. Ref: DPSOSL',status:'booked'},
+  {item:'Austin accommodation (4 nights)',cat:'Accommodation',detail:"Apr 24\u201328. 2 nights wedding hotel + 2 nights Dip uncle's house.",status:'booked'},
+];
+
+var BUDGET = [
+  {item:'Delta flights SFO\u2194BOS (RT, 3 ppl)',low:1476,high:1476,note:'DL 1655 + DL 2919 | $492/pp \u00D7 3 (Ayush + Ram + Pratibha)',cat:'flights'},
+  {item:'Astha Southwest flights',low:284,high:284,note:'BOS\u2192AUS\u2192SJC (May 19) + SJC\u2192SAN\u2192BOS (Jun 17) | Conf A2EVYM | Paid $284.40',cat:'flights'},
+  {item:'Rental car (13 days, Sixt VW Taos)',low:555,high:555,note:'May 6\u201318: Sixt #9732486014, $554.76 prepaid (+$200 deposit)',cat:'car'},
+  {item:'Gas (~3,000 miles)',low:300,high:450,note:'~28 MPG, $3.50\u2013$4.00/gal',cat:'car'},
+  {item:'Tolls',low:50,high:100,note:'E-ZPass recommended',cat:'car'},
+  {item:'Rochester Airbnb (2 nights)',low:436,high:436,note:'May 6\u20138: $435.57 confirmed',cat:'hotels'},
+  {item:'Rochester hotel (1 night)',low:179,high:179,note:'May 8\u20139: Sleepy Bear Inn, $179.16 confirmed (direct booking)',cat:'hotels'},
+  {item:'West Haven hotel (2 nights)',low:160,high:360,note:'May 14\u201315, work conference (Ayush)',cat:'hotels'},
+  {item:'NYC La Quinta Inn Jamaica/JFK (2 nights)',low:326,high:326,note:'May 9\u201311: La Quinta Inn & Suites, $326.07 confirmed',cat:'hotels'},
+  {item:'DC hotel (1 night)',low:100,high:200,note:'May 11, near National Mall',cat:'hotels'},
+  {item:'Food & dining (13 days, 4 ppl)',low:650,high:1300,note:'$50\u2013100/day',cat:'food'},
+  {item:'Activities',low:100,high:300,note:'Many DC museums free',cat:'activities'},
+  {item:'Miscellaneous',low:100,high:200,note:'Parking, tips, souvenirs',cat:'activities'},
+  {item:'Parents SFO\u2194Austin flights',low:354,high:354,note:'SW $196.80 + Delta $156.80 = $353.60 total',cat:'flights'},
+];
+
+var BUDGET_CATEGORIES = [
+  {name:'Flights',low:2114,high:2114,color:'#3A6EA5'},
+  {name:'Car + Gas + Tolls',low:905,high:1105,color:'#4A7C59'},
+  {name:'Hotels / Lodging',low:1201,high:1501,color:'var(--amber)'},
+  {name:'Food & Dining',low:650,high:1300,color:'#C75B39'},
+  {name:'Activities + Misc',low:200,high:500,color:'#6B4C8A'},
+];
+
+var TICKETS = [
+  {name:'Nepal \u2192 USA (Singapore Airlines)',desc:'KTM \u2192 SIN \u2192 SFO | Ram & Pratibha | Apr 22\u201323',file:'tickets/Nepal-USA-Ticket-Singapore-airlines.pdf',cls:'sq'},
+  {name:'SFO \u2192 Austin (Southwest)',desc:'WN #0358 | Ram & Pratibha | Apr 24',file:'tickets/SFO-Austin-southwest.pdf',cls:'wn'},
+  {name:'Austin \u2192 SFO (Delta)',desc:'DL 1077 | Ram & Pratibha | Apr 28',file:'tickets/Austin-SFO-Delta.pdf',cls:'dl'},
+  {name:'SFO \u2194 BOS Round Trip (Delta)',desc:'DL 1655 + DL 2919 | Ayush + Ram + Pratibha | May 5\u201318',file:'tickets/SFO-BOS-Delta-May5-18.pdf',cls:'dl'},
+  {name:'Astha Southwest Itinerary',desc:'BOS \u2192 AUS \u2192 SJC | May 19, then SJC \u2192 SAN \u2192 BOS | Jun 17 | Conf A2EVYM',file:'tickets/astha-BOS_SJC.pdf',cls:'wn'},
+  {name:'Rental Car \u2014 Sixt (Boston)',desc:'VW Taos | Res #9732486014 | May 6\u201318 | Westin Seaport, 425 Summer St',file:'tickets/sixt-car-Booking_confirmation_9732486014.pdf',cls:'car-rental'},
+];
+
+var WEATHER_CITIES = [
+  {city:'Santa Clara, CA',lat:37.35,lon:-121.95,avgLow:11,avgHigh:22,avgLowF:52,avgHighF:72},
+  {city:'Boston, MA',lat:42.36,lon:-71.06,avgLow:11,avgHigh:18,avgLowF:52,avgHighF:65},
+  {city:'Rochester, NY',lat:43.16,lon:-77.61,avgLow:9,avgHigh:17,avgLowF:49,avgHighF:63},
+  {city:'Niagara Falls, NY',lat:43.09,lon:-79.08,avgLow:9,avgHigh:17,avgLowF:48,avgHighF:62},
+  {city:'New York City, NY',lat:40.71,lon:-74.01,avgLow:13,avgHigh:22,avgLowF:55,avgHighF:72},
+  {city:'Robbinsville, NJ',lat:40.22,lon:-74.59,avgLow:12,avgHigh:22,avgLowF:54,avgHighF:71},
+  {city:'Fall River, MA',lat:41.70,lon:-71.16,avgLow:11,avgHigh:18,avgLowF:51,avgHighF:64},
+  {city:'Washington, DC',lat:38.91,lon:-77.04,avgLow:14,avgHigh:24,avgLowF:58,avgHighF:76},
+  {city:'West Haven, CT',lat:41.27,lon:-72.95,avgLow:11,avgHigh:19,avgLowF:52,avgHighF:66},
+];
+
+// ─── WEATHER ─────────────────────────────────────────────────────────
+var weatherCache = {};
+var WMO_CODES = {
+  0:'\u2600\uFE0F Clear',1:'\u{1F324}\uFE0F Mostly Clear',2:'\u26C5 Partly Cloudy',3:'\u2601\uFE0F Overcast',
+  45:'\u{1F32B}\uFE0F Foggy',48:'\u{1F32B}\uFE0F Fog',51:'\u{1F326}\uFE0F Light Drizzle',53:'\u{1F326}\uFE0F Drizzle',55:'\u{1F327}\uFE0F Heavy Drizzle',
+  61:'\u{1F327}\uFE0F Light Rain',63:'\u{1F327}\uFE0F Rain',65:'\u{1F327}\uFE0F Heavy Rain',71:'\u{1F328}\uFE0F Light Snow',73:'\u{1F328}\uFE0F Snow',
+  75:'\u{1F328}\uFE0F Heavy Snow',80:'\u{1F327}\uFE0F Showers',81:'\u{1F327}\uFE0F Heavy Showers',82:'\u26C8\uFE0F Violent Showers',
+  95:'\u26C8\uFE0F Thunderstorm',96:'\u26C8\uFE0F Hail Storm',99:'\u26C8\uFE0F Severe Storm'
+};
+
+function fetchWeather(lat, lon, dateStr) {
+  if (!isForecastDateInRange(dateStr)) return Promise.resolve(null);
+  var key = lat + ',' + lon + ',' + dateStr;
+  if (weatherCache[key]) return Promise.resolve(weatherCache[key]);
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_probability_max&start_date=' + dateStr + '&end_date=' + dateStr + '&temperature_unit=celsius';
+  return fetch(url).then(function(r) {
+    if (!r.ok) return null;
+    return r.json();
+  }).then(function(d) {
+    if (!d || !d.daily || !d.daily.time || d.daily.time.length === 0) return null;
+    var result = {
+      high: Math.round(d.daily.temperature_2m_max[0]),
+      low: Math.round(d.daily.temperature_2m_min[0]),
+      code: d.daily.weathercode[0],
+      precip: d.daily.precipitation_probability_max ? d.daily.precipitation_probability_max[0] : null,
+      desc: WMO_CODES[d.daily.weathercode[0]] || 'Weather data'
+    };
+    weatherCache[key] = result;
+    return result;
+  }).catch(function() { return null; });
+}
+
+function fetchWeatherSimple(lat, lon) {
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&daily=temperature_2m_max,temperature_2m_min,weathercode&current=temperature_2m&temperature_unit=celsius&timezone=America%2FNew_York&forecast_days=1';
+  return fetch(url).then(function(r) {
+    if (!r.ok) return null;
+    return r.json();
+  }).then(function(d) {
+    if (!d || !d.daily || !d.daily.time || d.daily.time.length === 0) return null;
+    return {
+      current: d.current && typeof d.current.temperature_2m === 'number' ? Math.round(d.current.temperature_2m) : null,
+      high: Math.round(d.daily.temperature_2m_max[0]),
+      low: Math.round(d.daily.temperature_2m_min[0]),
+      code: d.daily.weathercode[0],
+      desc: WMO_CODES[d.daily.weathercode[0]] || 'Weather data'
+    };
+  }).catch(function() { return null; });
+}
+
+function fetchHistoricalSameDateAverage(lat, lon, dateStr, yearsBack) {
+  yearsBack = yearsBack || 5;
+  var key = 'histavg:' + lat + ',' + lon + ',' + dateStr + ',' + yearsBack;
+  if (weatherCache[key]) return Promise.resolve(weatherCache[key]);
+  var monthDay = dateStr.slice(5);
+  var targetYear = parseInt(dateStr.slice(0, 4), 10);
+  var requests = [];
+  for (var i = 1; i <= yearsBack; i++) {
+    var y = targetYear - i;
+    if (monthDay === '02-29' && (y % 4 !== 0 || (y % 100 === 0 && y % 400 !== 0))) continue;
+    var histDate = y + '-' + monthDay;
+    var url = 'https://archive-api.open-meteo.com/v1/archive?latitude=' + lat + '&longitude=' + lon + '&start_date=' + histDate + '&end_date=' + histDate + '&daily=temperature_2m_max,temperature_2m_min&temperature_unit=celsius&timezone=auto';
+    requests.push(
+      fetch(url).then(function(r) {
+        if (!r.ok) return null;
+        return r.json();
+      }).then(function(d) {
+        if (!d || !d.daily || !d.daily.time || !d.daily.time.length) return null;
+        return {
+          high: d.daily.temperature_2m_max[0],
+          low: d.daily.temperature_2m_min[0]
+        };
+      }).catch(function() { return null; })
+    );
+  }
+  return Promise.all(requests).then(function(results) {
+    var valid = results.filter(Boolean);
+    if (!valid.length) return null;
+    var sumHigh = 0, sumLow = 0;
+    for (var j = 0; j < valid.length; j++) {
+      sumHigh += valid[j].high;
+      sumLow += valid[j].low;
+    }
+    var result = {
+      avgHigh: Math.round(sumHigh / valid.length),
+      avgLow: Math.round(sumLow / valid.length),
+      avgMean: Math.round((sumHigh + sumLow) / (valid.length * 2)),
+      sampleSize: valid.length
+    };
+    weatherCache[key] = result;
+    return result;
+  }).catch(function() { return null; });
+}
+
+function isForecastDateInRange(dateStr) {
+  var target = new Date(dateStr + 'T00:00:00');
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  var diffDays = Math.round((target - today) / 86400000);
+  return diffDays >= 0 && diffDays <= 15;
+}
+
+function getWeatherCityMeta(locStr) {
+  var lower = (locStr || '').toLowerCase();
+  for (var i = 0; i < WEATHER_CITIES.length; i++) {
+    var cityName = WEATHER_CITIES[i].city.split(',')[0].toLowerCase();
+    if (lower.indexOf(cityName) !== -1) return WEATHER_CITIES[i];
+  }
+  return null;
+}
+
+function getLocationCoords(locStr) {
+  var keys = Object.keys(COORDS);
+  for (var i = 0; i < keys.length; i++) {
+    if (locStr.toLowerCase().indexOf(keys[i].toLowerCase()) !== -1) return COORDS[keys[i]];
+  }
+  return null;
+}
+
+// ─── SAFE DOM HELPERS ────────────────────────────────────────────────
+function setHTML(el, html) {
+  if (typeof el === 'string') el = document.getElementById(el);
+  if (el) el.innerHTML = html;
+}
+
+// ─── COUNTDOWN / STATUS BANNER ──────────────────────────────────────
+function pad2(n) { return n < 10 ? '0' + n : '' + n; }
+function cToF(c) { return Math.round(c * 9 / 5 + 32); }
+function tempStr(c) { return Math.round(c) + '\u00B0C <span style="font-size:.7em;opacity:.6">(' + cToF(c) + '\u00B0F)</span>'; }
+function updateStatus() {
+  var now = new Date();
+  var nepalDep = new Date('2026-04-22T17:15:00Z'); // 23:00 NPT = 17:15 UTC
+  var tripStart = new Date('2026-05-05T22:30:00-07:00');
+  var tripEnd = new Date('2026-05-18T23:59:00-07:00');
+  var dtEl = document.getElementById('dateTimeText');
+  var labelEl = document.getElementById('countdownLabel');
+  var numsEl = document.getElementById('countdownNums');
+  var statusEl = document.getElementById('statusText');
+
+  dtEl.textContent = now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'}) + ' \u2022 ' + now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+
+  if (now < nepalDep) {
+    var diff = nepalDep - now;
+    var days = Math.floor(diff / 86400000);
+    var hrs = Math.floor((diff % 86400000) / 3600000);
+    var mins = Math.floor((diff % 3600000) / 60000);
+    var secs = Math.floor((diff % 60000) / 1000);
+    labelEl.textContent = '\u2708\uFE0F First departure from Kathmandu';
+    numsEl.textContent = days + 'd : ' + pad2(hrs) + 'h : ' + pad2(mins) + 'm : ' + pad2(secs) + 's';
+    setHTML(statusEl, '<span class="pulse"></span> Nepal \u2192 Singapore \u2192 San Francisco');
+  } else if (now < tripStart) {
+    var diff = tripStart - now;
+    var days = Math.floor(diff / 86400000);
+    var hrs = Math.floor((diff % 86400000) / 3600000);
+    var mins = Math.floor((diff % 3600000) / 60000);
+    var secs = Math.floor((diff % 60000) / 1000);
+    labelEl.textContent = '\u{1F393} Family trip begins';
+    numsEl.textContent = days + 'd : ' + pad2(hrs) + 'h : ' + pad2(mins) + 'm : ' + pad2(secs) + 's';
+    setHTML(statusEl, '<span class="pulse"></span> Parents en route! Delta SFO \u2192 BOS departure countdown');
+  } else if (now <= tripEnd) {
+    var dayNum = Math.floor((now - tripStart) / 86400000) + 1;
+    labelEl.textContent = '';
+    numsEl.textContent = '';
+    setHTML(statusEl, '<span class="pulse"></span> <strong style="font-size:20px">Day ' + dayNum + ' of your trip!</strong>');
+  } else {
+    labelEl.textContent = '';
+    numsEl.textContent = '';
+    statusEl.textContent = '\u2705 Trip completed! What an adventure!';
+  }
+}
+
+// ─── RENDER OVERVIEW TIMELINE (v2 with colored dots) ────────────────
+function renderTimeline() {
+  var now = new Date();
+  var milestones = [
+    {date:'2026-04-22',title:'Parents Depart Nepal',sub:'KTM \u2192 SIN \u2192 SFO',icon:'\u2708',dot:'blue',badge:null},
+    {date:'2026-04-24',title:'Austin Wedding Trip',sub:'SFO \u2192 Austin (4 nights)',icon:'\u{1F46A}',dot:'pink',badge:null},
+    {date:'2026-05-05',title:'Depart SFO \u2192 BOS',sub:'Delta DL 1655 \u00B7 10:30 PM \u00B7 Overnight flight',icon:'\u2708',dot:'blue',badge:'$492 RT',badgeCls:'booked'},
+    {date:'2026-05-06',title:'Boston \u2192 Rochester',sub:'Pick up Astha \u00B7 Drive ~6 hrs \u00B7 Check in to Airbnb',icon:'\u{1F697}',dot:'green',badge:'HMT995PXZS \u2713',badgeCls:'booked'},
+    {date:'2026-05-07',title:'Day Trip + Grad Reception',sub:'Niagara/Letchworth \u00B7 4 PM Reception \u00B7 Crossroads, RIT',icon:'\u{1F393}',dot:'purple',badge:null},
+    {date:'2026-05-08',title:'\u{1F389} Doctoral Hooding + GCCIS Reception',sub:'1:30 PM Hooding \u00B7 3:00 PM GCCIS Reception \u00B7 Celebration dinner \u{1F37D}\uFE0F',icon:'\u2B50',dot:'gold',badge:null},
+    {date:'2026-05-09',title:'BAPS Akshardham + NYC',sub:'Commencement 9AM \u00B7 Drive NJ \u00B7 Temple 6:30\u20137:30PM \u00B7 NYC',icon:'\u{1F6D5}',dot:'amber-dot',badge:null},
+    {date:'2026-05-10',title:'NYC Sightseeing',sub:'Times Square \u00B7 Central Park \u00B7 Uncle visit',icon:'\u{1F5FD}',dot:'teal-dot',badge:null},
+    {date:'2026-05-11',title:'Washington DC',sub:'NYC \u2192 DC \u00B7 National Mall \u00B7 Monuments at Night',icon:'\u{1F3DB}\uFE0F',dot:'teal-dot',badge:null},
+    {date:'2026-05-12',title:'DC + Drive to Fall River',sub:'Smithsonian \u00B7 White House \u00B7 Drive to Fall River',icon:'\u{1F697}',dot:'green',badge:null},
+    {date:'2026-05-13',title:'Explore Boston Day 1',sub:'Freedom Trail \u00B7 Harvard/MIT \u00B7 Harbor',icon:'\u{1F3DB}\uFE0F',dot:'teal-dot',badge:null},
+    {date:'2026-05-15',title:'Work Conference',sub:'West Haven, CT (2 nights)',icon:'\u{1F4BC}',dot:'amber-dot',badge:null},
+    {date:'2026-05-17',title:"\u{1F393} Astha's Graduation",sub:'Tufts University',icon:'\u{1F393}',dot:'purple',badge:null},
+    {date:'2026-05-18',title:'Return Home',sub:'BOS \u2192 SFO \u00B7 Delta DL 2919 \u00B7 8:59 PM',icon:'\u2708',dot:'blue',badge:null},
+    {date:'2026-05-19',title:'Astha Flies to San Jose',sub:'BOS \u2192 AUS \u2192 SJC \u00B7 Southwest \u00B7 A2EVYM',icon:'\u2708',dot:'blue',badge:'$284.40',badgeCls:'booked'},
+    {date:'2026-06-17',title:'Astha Returns to Boston',sub:'SJC \u2192 SAN \u2192 BOS \u00B7 Southwest',icon:'\u2708',dot:'blue',badge:null},
+    {date:'2026-06-17',title:'Parents Return to Nepal',sub:'SFO \u2192 SIN \u2192 KTM',icon:'\u2708',dot:'blue',badge:null},
+  ];
+  var html = '';
+  for (var i = 0; i < milestones.length; i++) {
+    var m = milestones[i];
+    var d = new Date(m.date + 'T00:00:00');
+    var dateLabel = new Date(m.date + 'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    html += '<div class="tl2-item">';
+    html += '<div class="tl2-dot ' + m.dot + '">' + m.icon + '</div>';
+    html += '<div class="tl2-content">';
+    html += '<div class="tl2-date">' + dateLabel + '</div>';
+    html += '<div class="tl2-title">' + m.title;
+    if (m.badge) html += ' <span class="tl2-badge ' + (m.badgeCls||'') + '">' + m.badge + '</span>';
+    html += '</div>';
+    html += '<div class="tl2-sub">' + m.sub + '</div>';
+    html += '</div></div>';
+  }
+  setHTML('overviewTimeline', html);
+}
+
+// ─── ROAD TRIP ROUTE ────────────────────────────────────────────────
+function renderRoadTrip() {
+  var steps = [
+    {marker:'start',icon:'\u{1F4CD}',city:'Boston, MA',desc:'Pick up Astha at Tufts (May 5)',drive:null},
+    {marker:'',icon:'\u27A1\uFE0F',city:'Rochester, NY',desc:'RIT Graduation (May 6\u20139)',drive:'~6 hrs'},
+    {marker:'',icon:'\u27A1\uFE0F',city:'Robbinsville, NJ',desc:'BAPS Temple (May 9)',drive:'~5.5 hrs'},
+    {marker:'',icon:'\u27A1\uFE0F',city:'New York City',desc:'Uncle visit + sightseeing (May 9\u201310)',drive:'~1 hr'},
+    {marker:'',icon:'\u27A1\uFE0F',city:'Washington, DC',desc:'Monuments + Smithsonian (May 11\u201312)',drive:'~4 hrs'},
+    {marker:'',icon:'\u27A1\uFE0F',city:'Fall River, MA',desc:"Sunita aunty's house, family base (starts May 12)",drive:'~6 hrs'},
+    {marker:'',icon:'\u27A1\uFE0F',city:'Boston, MA',desc:'Freedom Trail, Harbor, Public Garden, and Tufts-area days (May 13\u201314)',drive:'~1 hr'},
+    {marker:'',icon:'\u27A1\uFE0F',city:'West Haven, CT',desc:'Ayush work conference overnight trip (May 14\u201316)',drive:'~2.5 hrs'},
+    {marker:'',icon:'\u27A1\uFE0F',city:'Fall River, MA',desc:'Rejoin family after conference (May 16 night)',drive:'~2.5 hrs'},
+    {marker:'end',icon:'\u{1F4CD}',city:'Medford / Boston, MA',desc:"Astha's Tufts graduation and BOS departure (May 17\u201318)",drive:'~1 hr'},
+  ];
+  var html = '';
+  for (var i = 0; i < steps.length; i++) {
+    var s = steps[i];
+    var markerIcon = s.marker === 'start' ? '\u{1F4CD}' : s.marker === 'end' ? s.icon : '\u2192';
+    html += '<div class="route-step">';
+    html += '<div class="route-marker ' + s.marker + '">' + markerIcon + '</div>';
+    html += '<div class="route-info"><div class="route-city">' + s.city + '</div>';
+    html += '<div class="route-desc">' + s.desc + '</div>';
+    if (s.drive) html += '<span class="route-drive">\u{1F697} ' + s.drive + '</span>';
+    html += '</div></div>';
+  }
+  setHTML('roadTripRoute', html);
+}
+
+// ─── ACCOMMODATION SUMMARY ──────────────────────────────────────────
+function renderAccomSummary() {
+  var lines = [
+    {dates:'May 6\u20138',desc:'Airbnb, 157 Vassar St, Rochester ($435.57)',booked:true},
+    {dates:'May 8\u20139',desc:'Sleepy Bear Inn, Spencerport (Rochester area)',booked:true},
+    {dates:'May 9\u201311',desc:'La Quinta Inn, Jamaica NYC ($326.07)',booked:true},
+    {dates:'May 11',desc:'DC hotel near National Mall',booked:false},
+    {dates:'May 12\u201318',desc:'Sunita aunty\'s, Fall River (base)',booked:null},
+    {dates:'May 14\u201315',desc:'West Haven hotel (2 nights, Ayush)',booked:false},
+  ];
+  var html = '';
+  for (var i = 0; i < lines.length; i++) {
+    var l = lines[i];
+    html += '<div><strong>' + l.dates + '</strong> \u2014 ' + l.desc;
+    if (l.booked === true) html += ' <span style="color:var(--teal);font-size:11px;font-weight:700">BOOKED</span>';
+    else if (l.booked === false) html += ' <span style="color:var(--amber);font-size:11px;font-weight:700">NEED TO BOOK</span>';
+    html += '</div>';
+  }
+  setHTML('accomSummary', html);
+}
+
+// ─── RENDER TRAVELERS ────────────────────────────────────────────────
+function renderTravelers() {
+  var html = '';
+  for (var i = 0; i < TRAVELERS.length; i++) {
+    var t = TRAVELERS[i];
+    html += '<div class="traveler"><span class="avatar" style="background:' + t.color + '20;color:' + t.color + '">' + t.emoji + '</span>' + t.name + '</div>';
+  }
+  setHTML('travelersRow', html);
+}
+
+function privateLinkButtons(primaryUrl, primaryLabel, secondaryUrl, secondaryLabel) {
+  var html = '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+  if (primaryUrl) html += '<a href="' + primaryUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary">' + primaryLabel + '</a>';
+  else html += '<span class="btn btn-disabled">' + primaryLabel + '</span>';
+  if (secondaryLabel) {
+    if (secondaryUrl) html += '<a href="' + secondaryUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-outline">' + secondaryLabel + '</a>';
+    else html += '<span class="btn btn-disabled">' + secondaryLabel + '</span>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function renderInfoLinks() {
+  var html = '';
+  html += '<div class="card">';
+  html += '<div class="card-header">&#x1F4DE; Contact Sheet</div>';
+  html += '<div style="font-size:13px;color:var(--text2);margin-bottom:12px">Phone number, address, and family contact details.</div>';
+  html += privateLinkButtons(PRIVATE_INFO_LINKS.contactSheet, 'Open Private Contact Sheet');
+  html += '</div>';
+
+  html += '<div class="card">';
+  html += '<div class="card-header">&#x1F393; Graduation Invitation Letter</div>';
+  html += '<div style="font-size:13px;color:var(--text2);margin-bottom:12px">Host the invitation letter PDF privately and share it only with the intended family members.</div>';
+  html += privateLinkButtons(PRIVATE_INFO_LINKS.invitationLetter, 'Open Private Letter');
+  html += '</div>';
+
+  html += '<div class="card">';
+  html += '<div class="card-header">&#x1F6C2; Immigration Tips</div>';
+  html += '<div style="font-size:13px;line-height:1.8">';
+  html += '<div>&#x1F4CC; Carry a <strong>printed copy</strong> of the invitation letter</div>';
+  html += '<div>&#x1F4CC; Have Ayush&rsquo;s <strong>phone number</strong> and <strong>US address</strong> ready for immigration forms</div>';
+  html += '<div>&#x1F4CC; Carry a <strong>printed copy</strong> of the return flights (SQ 031 + SQ 442, Jun 17&ndash;19)</div>';
+  html += '<div>&#x1F4CC; Singapore Airlines booking ref: <strong>DPSOSL</strong></div>';
+  html += '</div>';
+  html += '</div>';
+
+  setHTML('infoPrivateLinks', html);
+}
+
+function getNearestScheduledDay() {
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+  var best = null;
+  for (var i = 0; i < PHASES.length; i++) {
+    for (var j = 0; j < PHASES[i].days.length; j++) {
+      var day = PHASES[i].days[j];
+      var dt = new Date(day.date + 'T00:00:00');
+      dt.setHours(0, 0, 0, 0);
+      var diffDays = Math.round((dt - now) / 86400000);
+      var score = diffDays < 0 ? Math.abs(diffDays) + 1000 : diffDays;
+      if (!best || score < best.score) {
+        best = {phase: PHASES[i], day: day, diffDays: diffDays, score: score};
+      }
+      if (diffDays === 0) return {phase: PHASES[i], day: day, diffDays: diffDays, score: score};
+    }
+  }
+  return best;
+}
+
+function renderOverviewFocus() {
+  var next = getNearestScheduledDay();
+  if (!next) return;
+  var phase = next.phase;
+  var day = next.day;
+  var label = next.diffDays === 0 ? 'Today on the trip' : next.diffDays > 0 ? (next.diffDays === 1 ? 'Next up tomorrow' : 'Next up in ' + next.diffDays + ' days') : (Math.abs(next.diffDays) === 1 ? 'Most recent trip day' : 'Most recent scheduled day');
+  var note = day.activities && day.activities.length ? day.activities[0].title : day.loc;
+  setHTML('overviewFocusCard',
+    '<div class="focus-card">' +
+      '<div class="focus-kicker">' + label + '</div>' +
+      '<div class="focus-title">' + day.title + '</div>' +
+      '<div class="focus-meta">' +
+        '<span class="focus-pill date">' + day.label + ' \u2022 ' + phase.name + '</span>' +
+        '<span class="focus-pill loc">\u{1F4CD} ' + day.loc + '</span>' +
+      '</div>' +
+      '<div class="focus-note">' + note + '</div>' +
+    '</div>'
+  );
+}
+
+// ─── SCHEDULE TAB ────────────────────────────────────────────────────
+var currentPhase = 'main';
+var currentDayIdx = 0;
+
+function getCurrentPhaseData() {
+  for (var i = 0; i < PHASES.length; i++) {
+    if (PHASES[i].id === currentPhase) return PHASES[i];
+  }
+  return null;
+}
+
+function buildScheduleHash(phaseId, dayDate) {
+  return '#schedule/' + encodeURIComponent(phaseId) + '/' + encodeURIComponent(dayDate);
+}
+
+function buildScheduleUrl(phaseId, dayDate) {
+  return location.origin + location.pathname + buildScheduleHash(phaseId, dayDate);
+}
+
+function selectClosestScheduleDay() {
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+  var best = null;
+  for (var i = 0; i < PHASES.length; i++) {
+    for (var j = 0; j < PHASES[i].days.length; j++) {
+      var dayDate = new Date(PHASES[i].days[j].date + 'T00:00:00');
+      dayDate.setHours(0, 0, 0, 0);
+      var diffDays = Math.round((dayDate - now) / 86400000);
+      var score = diffDays < 0 ? Math.abs(diffDays) + 1000 : diffDays;
+      if (!best || score < best.score) {
+        best = { phaseId: PHASES[i].id, dayIdx: j, score: score };
+      }
+      if (diffDays === 0) {
+        currentPhase = PHASES[i].id;
+        currentDayIdx = j;
+        return;
+      }
+    }
+  }
+  if (best) {
+    currentPhase = best.phaseId;
+    currentDayIdx = best.dayIdx;
+  }
+}
+
+function updateScheduleHash() {
+  var phase = getCurrentPhaseData();
+  if (!phase) return;
+  var day = phase.days[currentDayIdx];
+  if (!day) return;
+  history.replaceState(null, '', buildScheduleHash(phase.id, day.date));
+}
+
+function scrollDayStripToActive(behavior) {
+  var strip = document.getElementById('dayStrip');
+  if (!strip) return;
+  var active = strip.querySelector('.day-chip.active');
+  if (active) active.scrollIntoView({behavior:behavior || 'smooth', block:'nearest', inline:'center'});
+}
+
+function updateDayStripNav() {
+  var strip = document.getElementById('dayStrip');
+  var shell = document.querySelector('.day-strip-shell');
+  var prevBtn = document.getElementById('dayStripPrev');
+  var nextBtn = document.getElementById('dayStripNext');
+  if (!strip || !prevBtn || !nextBtn || !shell) return;
+  var showNav = currentPhase === 'main';
+  shell.classList.toggle('compact', !showNav);
+  if (!showNav) {
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
+    return;
+  }
+  var maxScroll = Math.max(0, strip.scrollWidth - strip.clientWidth);
+  prevBtn.disabled = strip.scrollLeft <= 4;
+  nextBtn.disabled = strip.scrollLeft >= maxScroll - 4;
+}
+
+function renderPhaseTabs() {
+  var html = '';
+  for (var i = 0; i < PHASES.length; i++) {
+    var p = PHASES[i];
+    html += '<button class="phase-tab ' + (p.id === currentPhase ? 'active' : '') + '" data-phase="' + p.id + '">' + p.name + '<br><span style="font-size:10px;font-weight:400;opacity:.7">' + p.dateRange + '</span></button>';
+  }
+  setHTML('phaseTabs', html);
+}
+
+function autoSelectDay() {
+  var now = new Date();
+  var phase = getCurrentPhaseData();
+  if (!phase) return;
+  var todayIdx = -1;
+  for (var j = 0; j < phase.days.length; j++) {
+    if (new Date(phase.days[j].date + 'T00:00:00').toDateString() === now.toDateString()) { todayIdx = j; break; }
+  }
+  currentDayIdx = todayIdx >= 0 ? todayIdx : 0;
+}
+
+function renderDayStrip() {
+  var phase = getCurrentPhaseData();
+  if (!phase) return;
+  var now = new Date();
+  var strip = document.getElementById('dayStrip');
+  var html = '';
+  for (var j = 0; j < phase.days.length; j++) {
+    var d = phase.days[j];
+    var dt = new Date(d.date + 'T00:00:00');
+    var isToday = dt.toDateString() === now.toDateString();
+    var isPast = dt < now && !isToday;
+    var classes = [];
+    if (j === currentDayIdx) classes.push('active');
+    if (isToday) classes.push('today');
+    if (isPast) classes.push('past');
+    var parts = d.label.split(' ');
+    html += '<button type="button" class="day-chip ' + classes.join(' ') + '" data-idx="' + j + '" data-date="' + d.date + '"><div class="day-chip-day">' + d.dayOfWeek + '</div><div class="day-chip-date">' + parts[1] + '</div><div class="day-chip-month">' + parts[0] + '</div></button>';
+  }
+  setHTML(strip, html);
+  setTimeout(function() {
+    scrollDayStripToActive('smooth');
+    updateDayStripNav();
+  }, 100);
+}
+
+function renderDayDetail() {
+  var phase = getCurrentPhaseData();
+  if (!phase) return;
+  var day = phase.days[currentDayIdx];
+  if (!day) return;
+  var dayLink = buildScheduleUrl(phase.id, day.date);
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  var selectedDate = new Date(day.date + 'T00:00:00');
+  selectedDate.setHours(0, 0, 0, 0);
+  var diffDays = Math.round((selectedDate - today) / 86400000);
+  var timingLabel = diffDays === 0 ? 'Today in the itinerary' : diffDays > 0 ? (diffDays === 1 ? 'Next up: tomorrow' : 'Coming up in ' + diffDays + ' days') : (Math.abs(diffDays) === 1 ? 'Occurred yesterday' : Math.abs(diffDays) + ' days ago');
+
+  var html = '<div class="day-detail"><div class="day-header"><div class="day-context"><div class="day-breadcrumb"><span class="phase-name">' + phase.name + '</span><span>\u203A</span><span>' + day.label + '</span></div><span class="day-pill">' + timingLabel + '</span>';
+  if (diffDays === 0) html += '<span class="day-pill today-pill">Selected for today</span>';
+  html += '</div><div class="day-header-top"><div><h2>' + day.title + '</h2><div class="day-location">\u{1F4CD} ' + day.loc + '</div>';
+  if (day.hotel) html += '<div class="day-hotel">\u{1F3E8} ' + day.hotel + '</div>';
+  html += '</div><button type="button" class="day-link" data-copy-schedule-link="' + dayLink + '" title="Copy direct link to this day">Copy Day Link</button></div>';
+  // Minimal weather link
+  html += '<div id="weatherBar"><div class="weather-bar"><span style="font-size:16px">\u{1F324}\uFE0F</span><span class="weather-loading">Checking whether live forecast is available for this date...</span></div></div>';
+  html += '<div class="card" style="padding:0 16px">';
+  for (var j = 0; j < day.activities.length; j++) {
+    var a = day.activities[j];
+    html += '<div class="activity"><div class="act-time">' + a.time + '</div><div class="act-body">';
+    html += '<span class="act-badge ' + a.type + '">' + a.type + '</span>';
+    html += '<div class="act-title">' + a.title + '</div>';
+    if (a.location) html += '<div class="act-location">\u{1F4CD} ' + a.location + '</div>';
+    if (a.details) html += '<div class="act-details">' + a.details + '</div>';
+    if (a.action) html += '<div class="act-action">\u26A1 ' + a.action + '</div>';
+    html += '</div></div>';
+  }
+  html += '</div></div>';
+  setHTML('dayDetail', html);
+
+  // Try to fetch live weather for this day's location
+  var coords = getLocationCoords(day.loc);
+  var avgMeta = getWeatherCityMeta(day.loc);
+  if (coords) {
+    fetchWeather(coords.lat, coords.lon, day.date).then(function(w) {
+      var wb = document.getElementById('weatherBar');
+      if (!wb) return;
+      if (w) {
+        var emoji = w.desc.split(' ')[0];
+        var desc = w.desc.split(' ').slice(1).join(' ');
+        var precipStr = w.precip != null ? ' \u2022 ' + w.precip + '% rain' : '';
+        setHTML(wb, '<div class="weather-bar"><span style="font-size:24px">' + emoji + '</span><div><div class="temp">High ' + Math.round(w.high) + '\u00B0C <span style="font-size:.75em;opacity:.6">(' + cToF(w.high) + '\u00B0F)</span> \u2022 Low ' + Math.round(w.low) + '\u00B0C <span style="font-size:.75em;opacity:.6">(' + cToF(w.low) + '\u00B0F)</span></div><div class="desc">Live forecast \u2022 ' + desc + precipStr + '</div></div></div>');
+      } else {
+        fetchHistoricalSameDateAverage(coords.lat, coords.lon, day.date, 5).then(function(hist) {
+          var weatherBar = document.getElementById('weatherBar');
+          if (!weatherBar) return;
+          if (hist) {
+            setHTML(weatherBar, '<div class="weather-bar"><span style="font-size:24px">\u{1F324}\uFE0F</span><div><div class="temp">Avg temp ' + hist.avgMean + '\u00B0C <span style="font-size:.75em;opacity:.6">(' + cToF(hist.avgMean) + '\u00B0F)</span></div><div class="desc">Forecast available closer to trip date \u2022 same-date historical average from the past ' + hist.sampleSize + ' years' + (avgMeta ? ' for ' + avgMeta.city : '') + '</div></div></div>');
+          } else if (avgMeta) {
+            var avgC = Math.round((avgMeta.avgHigh + avgMeta.avgLow) / 2);
+            var avgF = Math.round((avgMeta.avgHighF + avgMeta.avgLowF) / 2);
+            setHTML(weatherBar, '<div class="weather-bar"><span style="font-size:24px">\u{1F324}\uFE0F</span><div><div class="temp">Avg temp ' + avgC + '\u00B0C <span style="font-size:.75em;opacity:.6">(' + avgF + '\u00B0F)</span></div><div class="desc">Forecast available closer to trip date \u2022 fallback seasonal average for ' + avgMeta.city + '</div></div></div>');
+          } else {
+            setHTML(weatherBar, '<div class="weather-bar"><span style="font-size:16px">\u{1F324}\uFE0F</span><span class="weather-loading">Forecast not available for this date yet, and no historical fallback matched this location.</span></div>');
+          }
+        });
+      }
+    });
+  } else {
+    setHTML('weatherBar', '');
+  }
+}
+
+// ─── FLIGHTS TAB (enhanced boarding-pass style) ─────────────────────
+function formatMoneyRange(low, high) {
+  return low === high ? '$' + low.toLocaleString() : '$' + low.toLocaleString() + ' \u2013 $' + high.toLocaleString();
+}
+
+function groupFlights() {
+  var groups = [];
+  for (var i = 0; i < FLIGHTS.length; i++) {
+    var f = FLIGHTS[i];
+    var key = [f.airline, f.conf, f.pax].join('|');
+    var last = groups.length ? groups[groups.length - 1] : null;
+    if (!last || last.key !== key) {
+      groups.push({
+        key: key,
+        airline: f.airline,
+        conf: f.conf,
+        pax: f.pax,
+        cls: f.cls,
+        flights: [f]
+      });
+    } else {
+      last.flights.push(f);
+    }
+  }
+  return groups;
+}
+
+function renderFlights() {
+  var html = '';
+  var groups = groupFlights();
+  for (var i = 0; i < groups.length; i++) {
+    var g = groups[i];
+    var first = g.flights[0];
+    var last = g.flights[g.flights.length - 1];
+    html += '<div class="flight-group">';
+    html += '<div class="flight-group-head">';
+    html += '<div><div class="flight-group-title">' + g.airline + '</div><div class="flight-group-sub">' + g.pax + ' \u2022 ' + g.flights.length + ' segment' + (g.flights.length > 1 ? 's' : '') + '</div></div>';
+    html += '<div class="flight-group-badges"><span class="flight-group-badge route">' + first.from + ' \u2192 ' + last.to + '</span><span class="flight-group-badge conf">Conf: ' + g.conf + '</span>';
+    if (g.flights.length > 1) html += '<span class="flight-group-badge trip">Grouped itinerary</span>';
+    html += '</div></div>';
+    for (var j = 0; j < g.flights.length; j++) {
+      var f = g.flights[j];
+      html += '<div class="flight-card ' + f.cls + '">';
+      var fStatus = f.status || 'Confirmed';
+      var fStatusCls = fStatus === 'Planned' ? 'flight-status planned' : 'flight-status';
+      html += '<div class="flight-header-strip"><span>' + f.airline + ' \u2022 ' + f.flight + '</span><span class="' + fStatusCls + '">' + fStatus + '</span></div>';
+      html += '<div class="flight-body">';
+      html += '<div class="flight-route">';
+      html += '<div class="flight-city"><div class="flight-code">' + f.from + '</div><div class="flight-name">' + f.fromName + '</div><div class="flight-time">' + f.dep + '</div></div>';
+      html += '<div class="flight-arrow"><div class="flight-arrow-line"><span class="flight-arrow-plane">\u2708\uFE0F</span></div><div class="flight-arrow-dur">' + f.dur + '</div></div>';
+      html += '<div class="flight-city"><div class="flight-code">' + f.to + '</div><div class="flight-name">' + f.toName + '</div><div class="flight-time">' + f.arr + '</div></div>';
+      html += '</div>';
+      html += '<div class="flight-meta">';
+      html += '<div><dt>Date</dt><dd>' + f.date + '</dd></div>';
+      html += '<div><dt>Confirmation</dt><dd>' + f.conf + '</dd></div>';
+      html += '<div><dt>Passengers</dt><dd>' + f.pax + '</dd></div>';
+      html += '</div>';
+      if (f.note) html += '<div class="flight-note">' + f.note + '</div>';
+      html += '</div></div>';
+    }
+    html += '</div>';
+  }
+  setHTML('flightsContainer', html);
+}
+
+// ─── STAYS TAB ──────────────────────────────────────────────────────
+function renderStays() {
+  var html = '';
+  for (var i = 0; i < STAYS.length; i++) {
+    var s = STAYS[i];
+    var statusCls = 'pending';
+    if (s.status === 'Booked') statusCls = 'booked';
+    else if (s.status === 'Arranged') statusCls = 'arranged';
+    else if (s.status === 'Family stay') statusCls = 'family';
+
+    html += '<div class="stay-card">';
+    html += '<div class="stay-card-top">';
+    html += '<div class="stay-icon">\u{1F3E8}</div>';
+    html += '<div><div class="stay-name">' + s.name + '</div><div style="font-size:12px;color:var(--text2)">' + s.dates + ' \u2022 ' + s.nights + '</div></div>';
+    html += '<span class="stay-status ' + statusCls + '">' + s.status.toUpperCase() + '</span>';
+    html += '</div>';
+
+    html += '<div class="stay-grid">';
+    html += '<div><dt>Location</dt><dd>' + s.location + '</dd></div>';
+    if (s.address) html += '<div><dt>Address</dt><dd>' + s.address + '</dd></div>';
+    if (s.conf) html += '<div><dt>Confirmation</dt><dd>' + s.conf + '</dd></div>';
+    if (s.bookedBy) html += '<div><dt>Booked via</dt><dd>' + s.bookedBy + '</dd></div>';
+    html += '</div>';
+
+    html += '<div class="stay-details">' + s.details + '</div>';
+
+    if (s.pdf) {
+      html += '<div class="stay-actions">';
+      html += '<a href="' + s.pdf + '" target="_blank" class="btn btn-primary">View</a>';
+      html += '<a href="' + s.pdf + '" download class="btn btn-outline">Download</a>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+  setHTML('staysContainer', html);
+}
+
+// ─── CHECKLIST TAB (interactive with localStorage) ──────────────────
+function getChecklistState() {
+  var defaultState = {};
+  for (var i = 0; i < CHECKLIST.length; i++) {
+    defaultState[i] = CHECKLIST[i].status === 'booked';
+  }
+  try {
+    var saved = localStorage.getItem('gradtrip-checklist');
+    if (saved) {
+      var parsed = JSON.parse(saved);
+      for (var j = 0; j < CHECKLIST.length; j++) {
+        if (typeof parsed[j] === 'boolean') defaultState[j] = parsed[j];
+      }
+    }
+  } catch(e) {}
+  return defaultState;
+}
+
+function saveChecklistState(state) {
+  try { localStorage.setItem('gradtrip-checklist', JSON.stringify(state)); } catch(e) {}
+}
+
+function renderChecklist() {
+  var state = getChecklistState();
+  var total = CHECKLIST.length;
+  var done = 0;
+  for (var k in state) { if (state[k]) done++; }
+
+  // Progress bar
+  var pct = total > 0 ? Math.round((done / total) * 100) : 0;
+  setHTML('checklistProgress',
+    '<div class="progress-label"><span>' + done + ' / ' + total + ' completed</span><span>' + pct + '%</span></div>' +
+    '<div class="progress-bar"><div class="progress-fill" style="width:' + pct + '%"></div></div>'
+  );
+
+  var booked = [];
+  var pending = [];
+  for (var i = 0; i < CHECKLIST.length; i++) {
+    if (CHECKLIST[i].status === 'booked') booked.push({idx:i, data:CHECKLIST[i]});
+    else pending.push({idx:i, data:CHECKLIST[i]});
+  }
+  document.getElementById('checklistSummary').textContent = booked.length + ' booked \u2022 ' + pending.length + ' pending';
+
+  var html = '<div class="card" style="padding:4px 16px">';
+  html += '<div style="font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;padding:12px 0 4px">Booked \u2713</div>';
+  for (var j = 0; j < booked.length; j++) {
+    var b = booked[j];
+    var checked = state[b.idx];
+    html += '<div class="checklist-item' + (checked ? ' is-done' : '') + '" data-check-idx="' + b.idx + '">';
+    html += '<div class="check-icon ' + (checked ? 'done' : 'pending') + '">' + (checked ? '\u2713' : '\u25CB') + '</div>';
+    html += '<div class="check-info"><div class="check-title">' + b.data.item + '</div><div class="check-detail">' + b.data.detail + '</div><span class="check-status-badge booked">BOOKED</span></div></div>';
+  }
+  html += '<div style="font-size:11px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.5px;padding:16px 0 4px">Pending</div>';
+  for (var m = 0; m < pending.length; m++) {
+    var p = pending[m];
+    var checked = state[p.idx];
+    html += '<div class="checklist-item' + (checked ? ' is-done' : '') + '" data-check-idx="' + p.idx + '">';
+    html += '<div class="check-icon ' + (checked ? 'done' : 'pending') + '">' + (checked ? '\u2713' : '\u25CB') + '</div>';
+    html += '<div class="check-info"><div class="check-title">' + p.data.item + '</div><div class="check-detail">' + p.data.detail + '</div><span class="check-status-badge needed">' + p.data.cat + '</span></div></div>';
+  }
+  html += '</div>';
+  setHTML('checklistContainer', html);
+}
+
+// ─── BUDGET TAB ─────────────────────────────────────────────────────
+function renderBudget() {
+  var maxHigh = 0;
+  var totalLow = 0, totalHigh = 0;
+  var committedLow = 0, committedHigh = 0;
+  var variableLow = 0, variableHigh = 0;
+  for (var i = 0; i < BUDGET.length; i++) {
+    if (BUDGET[i].high > maxHigh) maxHigh = BUDGET[i].high;
+    totalLow += BUDGET[i].low;
+    totalHigh += BUDGET[i].high;
+    if (BUDGET[i].low === BUDGET[i].high) {
+      committedLow += BUDGET[i].low;
+      committedHigh += BUDGET[i].high;
+    } else {
+      variableLow += BUDGET[i].low;
+      variableHigh += BUDGET[i].high;
+    }
+  }
+
+  var html = '';
+  for (var i = 0; i < BUDGET.length; i++) {
+    var b = BUDGET[i];
+    var pct = maxHigh > 0 ? Math.round((b.high / maxHigh) * 100) : 0;
+    var fillCls = i % 2 === 0 ? 'amber-fill' : 'teal-fill';
+    html += '<div class="budget-item">';
+    var rangeStr = formatMoneyRange(b.low, b.high);
+    html += '<div class="budget-item-header"><span class="budget-item-name">' + b.item + '</span><span class="budget-item-range">' + rangeStr + '</span></div>';
+    html += '<div class="budget-bar"><div class="budget-bar-fill ' + fillCls + '" style="width:' + pct + '%"></div></div>';
+    html += '<div class="budget-item-note">' + b.note + '</div>';
+    html += '<div class="budget-item-flags"><span class="budget-flag ' + (b.low === b.high ? 'committed' : 'variable') + '">' + (b.low === b.high ? 'Booked / committed' : 'Still variable') + '</span></div>';
+    html += '</div>';
+  }
+  setHTML('budgetItemsContainer', html);
+
+  // Total
+  setHTML('budgetTotalContainer',
+    '<div class="budget-total"><div class="total-label">Estimated Total</div><div class="total-amount">' + formatMoneyRange(totalLow, totalHigh) + '</div>' +
+    '<div class="budget-split">' +
+    '<div class="budget-split-card"><div class="budget-split-label">Booked Spend</div><div class="budget-split-amount">' + formatMoneyRange(committedLow, committedHigh) + '</div><div class="budget-split-note">Flights, hotels, and other fixed costs already locked in.</div></div>' +
+    '<div class="budget-split-card"><div class="budget-split-label">Remaining Estimate</div><div class="budget-split-amount">' + formatMoneyRange(variableLow, variableHigh) + '</div><div class="budget-split-note">Gas, tolls, food, activities, and any lodging still not finalized.</div></div>' +
+    '</div></div>'
+  );
+
+  // Breakdown
+  var catTotalHigh = 0;
+  for (var c = 0; c < BUDGET_CATEGORIES.length; c++) catTotalHigh += BUDGET_CATEGORIES[c].high;
+  var breakHtml = '<div class="budget-breakdown-bar">';
+  for (var c = 0; c < BUDGET_CATEGORIES.length; c++) {
+    var cat = BUDGET_CATEGORIES[c];
+    var pct = Math.round((cat.high / catTotalHigh) * 100);
+    breakHtml += '<div class="budget-cat-bar" style="width:' + pct + '%;background:' + cat.color + '">' + (pct >= 10 ? cat.name.split(' ')[0] : '') + '</div>';
+  }
+  breakHtml += '</div>';
+  for (var c = 0; c < BUDGET_CATEGORIES.length; c++) {
+    var cat = BUDGET_CATEGORIES[c];
+    breakHtml += '<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border)">';
+    breakHtml += '<div style="display:flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:3px;background:' + cat.color + ';display:inline-block"></span>' + cat.name + '</div>';
+    breakHtml += '<span style="font-weight:700">' + formatMoneyRange(cat.low, cat.high) + '</span>';
+    breakHtml += '</div>';
+  }
+  setHTML('budgetBreakdownContainer', breakHtml);
+
+  // Tips
+  setHTML('budgetTipsContainer',
+    '<div class="tips-card"><h3>Money-Saving Tips</h3><ul>' +
+    '<li>Delta SFO\u2194BOS booked at $492 round-trip \u2014 great deal!</li>' +
+    '<li>Astha\'s Southwest itinerary is now locked at $284.40 total \u2014 well below the original budget range</li>' +
+    '<li>Use E-ZPass for toll discounts along I-90 and I-95 corridors</li>' +
+    '<li>DC museums (Smithsonian, Capitol tour) are all free \u2014 book timed entries online</li>' +
+    '<li>DC museums (Smithsonians) are all free admission</li>' +
+    '<li>Cook some meals at the Rochester Airbnb to save on dining</li>' +
+    '<li>Book rental car at least 3\u20134 weeks ahead for best rates</li>' +
+    '</ul></div>'
+  );
+}
+
+// ─── WEATHER TAB ────────────────────────────────────────────────────
+function renderWeatherTab() {
+  var grid = document.getElementById('weatherGrid');
+  var html = '';
+  for (var i = 0; i < WEATHER_CITIES.length; i++) {
+    var wc = WEATHER_CITIES[i];
+    var avgC = Math.round((wc.avgHigh + wc.avgLow) / 2);
+    var avgF = Math.round((wc.avgHighF + wc.avgLowF) / 2);
+    html += '<div class="weather-card" id="wcard-' + i + '">';
+    html += '<div class="wc-badge">Historical average</div>';
+    html += '<div class="wc-city">' + wc.city + '</div>';
+    html += '<div class="wc-icon">\u{1F324}\uFE0F</div>';
+    html += '<div class="wc-temp">Avg ' + avgC + '\u00B0C <span style="font-size:.6em;opacity:.5">(' + avgF + '\u00B0F)</span></div>';
+    html += '<div class="wc-desc">Seasonal planning baseline</div>';
+    html += '<div class="wc-range">Typical high ' + wc.avgHigh + '\u00B0C \u2022 low ' + wc.avgLow + '\u00B0C <span style="opacity:.5">(' + wc.avgLowF + '\u2013' + wc.avgHighF + '\u00B0F)</span></div>';
+    html += '</div>';
+  }
+  setHTML(grid, html);
+
+  // Fetch live data
+  for (var i = 0; i < WEATHER_CITIES.length; i++) {
+    (function(idx) {
+      var wc = WEATHER_CITIES[idx];
+      fetchWeatherSimple(wc.lat, wc.lon).then(function(w) {
+        var card = document.getElementById('wcard-' + idx);
+        if (!card) return;
+        if (w) {
+          var emoji = w.desc.split(' ')[0];
+          var desc = w.desc.split(' ').slice(1).join(' ');
+          var gradients = [
+            'linear-gradient(135deg,#2C2C3A,#3A6EA5)',
+            'linear-gradient(135deg,#2C2C3A,#4A7C59)',
+            'linear-gradient(135deg,#2C2C3A,#6B4C8A)',
+            'linear-gradient(135deg,#2C2C3A,#C17817)',
+            'linear-gradient(135deg,#2C2C3A,#C75B39)',
+          ];
+          card.style.background = gradients[idx % gradients.length];
+          var primaryTemp = w.current != null ? w.current : w.high;
+          var primaryLabel = w.current != null ? 'Now ' : 'High ';
+          setHTML(card,
+            '<div class="wc-badge">Live</div>' +
+            '<div class="wc-city">' + wc.city + '</div>' +
+            '<div class="wc-icon">' + emoji + '</div>' +
+            '<div class="wc-temp">' + primaryLabel + primaryTemp + '\u00B0C <span style="font-size:.6em;opacity:.5">(' + cToF(primaryTemp) + '\u00B0F)</span></div>' +
+            '<div class="wc-desc">' + desc + '</div>' +
+            '<div class="wc-range">Low ' + Math.round(w.low) + '\u00B0C \u2022 High ' + Math.round(w.high) + '\u00B0C <span style="opacity:.5">(' + cToF(w.low) + '\u2013' + cToF(w.high) + '\u00B0F)</span></div>'
+          );
+        }
+      });
+    })(i);
+  }
+
+  // Pack card
+  setHTML('packCard',
+    '<div class="pack-card"><h3>\u{1F9F3} What to Pack</h3><div class="pack-grid">' +
+    '<div class="pack-item">\u{1F9E5} Light jacket (evenings 9\u201313\u00B0C)</div>' +
+    '<div class="pack-item">\u2602\uFE0F Rain jacket / umbrella</div>' +
+    '<div class="pack-item">\u{1F455} Layers (mornings cool, afternoons warm)</div>' +
+    '<div class="pack-item">\u{1F45F} Comfortable walking shoes</div>' +
+    '<div class="pack-item">\u{1F576}\uFE0F Sunglasses + sunscreen</div>' +
+    '<div class="pack-item">\u{1F454} Formal attire (hooding ceremony)</div>' +
+    '<div class="pack-item">\u{1F9E3} Light scarf (temple visit)</div>' +
+    '<div class="pack-item">\u{1F4F1} Portable charger</div>' +
+    '</div></div>'
+  );
+}
+
+// ─── TICKETS TAB ─────────────────────────────────────────────────────
+function renderTickets() {
+  var html = '';
+  for (var i = 0; i < TICKETS.length; i++) {
+    var t = TICKETS[i];
+    var icon = t.cls === 'car-rental' ? '\u{1F697}' : '\u2708\uFE0F';
+    html += '<div class="ticket-card ' + t.cls + '"><div class="ticket-icon ' + t.cls + '">' + icon + '</div><div class="ticket-info"><div class="ticket-name">' + t.name + '</div><div class="ticket-desc">' + t.desc + '</div></div>';
+    html += '<div class="ticket-actions"><a href="' + t.file + '" target="_blank" class="btn btn-primary">View</a><a href="' + t.file + '" download class="btn btn-outline">Download</a></div></div>';
+  }
+  setHTML('ticketsContainer', html);
+}
+
+// ─── TAB SWITCHING with hash-based deep links ───────────────────────
+function switchToTab(tabName) {
+  var tabEl = document.getElementById('tab-' + tabName);
+  if (!tabEl) return false;
+  var buttons = document.querySelectorAll('.top-nav button');
+  for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+  var matchBtn = document.querySelector('.top-nav button[data-tab="' + tabName + '"]');
+  if (matchBtn) matchBtn.classList.add('active');
+  var tabs = document.querySelectorAll('.tab-content');
+  for (var j = 0; j < tabs.length; j++) tabs[j].classList.remove('active');
+  tabEl.classList.add('active');
+  return true;
+}
+
+document.getElementById('topNav').addEventListener('click', function(e) {
+  var btn = e.target.closest('button');
+  if (!btn) return;
+  var tab = btn.getAttribute('data-tab');
+  switchToTab(tab);
+  if (tab === 'schedule') {
+    selectClosestScheduleDay();
+    renderPhaseTabs();
+    renderDayStrip();
+    renderDayDetail();
+    updateScheduleHash();
+    return;
+  }
+  // Update URL hash without scrolling
+  history.replaceState(null, '', '#' + tab);
+});
+
+// Handle hash on load and back/forward navigation
+function handleHash() {
+  var rawHash = location.hash.replace(/^#/, '');
+  if (!rawHash) return;
+  var parts = rawHash.split('/');
+  var tab = parts[0];
+  if (tab !== 'schedule') {
+    switchToTab(tab);
+    return;
+  }
+  switchToTab('schedule');
+  var phaseId = parts[1] ? decodeURIComponent(parts[1]) : null;
+  var dayDate = parts[2] ? decodeURIComponent(parts[2]) : null;
+  if (!phaseId && !dayDate) {
+    selectClosestScheduleDay();
+    renderPhaseTabs();
+    renderDayStrip();
+    renderDayDetail();
+    updateScheduleHash();
+    return;
+  }
+  var phase = null;
+  if (phaseId) {
+    for (var i = 0; i < PHASES.length; i++) {
+      if (PHASES[i].id === phaseId) { phase = PHASES[i]; break; }
+    }
+  }
+  if (!phase) phase = getCurrentPhaseData() || PHASES[0];
+  currentPhase = phase.id;
+  if (dayDate) {
+    var matchedIdx = -1;
+    for (var j = 0; j < phase.days.length; j++) {
+      if (phase.days[j].date === dayDate) { matchedIdx = j; break; }
+    }
+    if (matchedIdx >= 0) currentDayIdx = matchedIdx;
+    else autoSelectDay();
+  } else {
+    autoSelectDay();
+  }
+  renderPhaseTabs();
+  renderDayStrip();
+  renderDayDetail();
+}
+window.addEventListener('hashchange', handleHash);
+
+function copyTextToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text);
+  }
+  return new Promise(function(resolve, reject) {
+    var input = document.createElement('input');
+    input.value = text;
+    input.style.position = 'fixed';
+    input.style.opacity = '0';
+    document.body.appendChild(input);
+    input.focus();
+    input.select();
+    try {
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      resolve();
+    } catch (err) {
+      document.body.removeChild(input);
+      reject(err);
+    }
+  });
+}
+
+// Phase & day & checklist interactions (delegated)
+document.addEventListener('click', function(e) {
+  var phaseBtn = e.target.closest('.phase-tab');
+  if (phaseBtn) {
+    currentPhase = phaseBtn.getAttribute('data-phase');
+    currentDayIdx = 0;
+    autoSelectDay();
+    renderPhaseTabs();
+    renderDayStrip();
+    renderDayDetail();
+    updateScheduleHash();
+    return;
+  }
+  var dayChip = e.target.closest('.day-chip');
+  if (dayChip) {
+    currentDayIdx = parseInt(dayChip.getAttribute('data-idx'));
+    renderDayStrip();
+    renderDayDetail();
+    updateScheduleHash();
+    return;
+  }
+  var copyDayLinkBtn = e.target.closest('[data-copy-schedule-link]');
+  if (copyDayLinkBtn) {
+    var linkToCopy = copyDayLinkBtn.getAttribute('data-copy-schedule-link');
+    copyTextToClipboard(linkToCopy).then(function() {
+      copyDayLinkBtn.textContent = 'Copied to Clipboard';
+      copyDayLinkBtn.classList.add('copied');
+      setTimeout(function() {
+        copyDayLinkBtn.textContent = 'Copy Day Link';
+        copyDayLinkBtn.classList.remove('copied');
+      }, 1800);
+    }).catch(function() {
+      copyDayLinkBtn.textContent = 'Copy Failed';
+      setTimeout(function() {
+        copyDayLinkBtn.textContent = 'Copy Day Link';
+      }, 1800);
+    });
+    return;
+  }
+  var dayScrollBtn = e.target.closest('[data-day-scroll]');
+  if (dayScrollBtn) {
+    var strip = document.getElementById('dayStrip');
+    if (!strip) return;
+    var dir = parseInt(dayScrollBtn.getAttribute('data-day-scroll'), 10) || 0;
+    strip.scrollBy({left: dir * Math.max(220, Math.floor(strip.clientWidth * 0.75)), behavior:'smooth'});
+    return;
+  }
+  // Checklist toggle
+  var checkItem = e.target.closest('.checklist-item[data-check-idx]');
+  if (checkItem) {
+    var idx = parseInt(checkItem.getAttribute('data-check-idx'));
+    var state = getChecklistState();
+    state[idx] = !state[idx];
+    saveChecklistState(state);
+    renderChecklist();
+    return;
+  }
+});
+
+// ─── INIT ────────────────────────────────────────────────────────────
+updateStatus();
+setInterval(updateStatus, 1000);
+renderTravelers();
+renderInfoLinks();
+renderOverviewFocus();
+renderTimeline();
+renderRoadTrip();
+renderAccomSummary();
+autoSelectDay();
+renderPhaseTabs();
+renderDayStrip();
+renderDayDetail();
+renderFlights();
+renderStays();
+renderChecklist();
+renderBudget();
+renderWeatherTab();
+renderTickets();
+document.getElementById('dayStrip').addEventListener('scroll', updateDayStripNav, {passive:true});
+window.addEventListener('resize', updateDayStripNav);
+// Open tab from URL hash (e.g. #flights, #stays, #budget)
+handleHash();
+</script>
+</body>
+</html>
