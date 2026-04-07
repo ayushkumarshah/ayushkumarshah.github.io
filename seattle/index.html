@@ -450,8 +450,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
         <div class="phase-icon">🚂</div>
         <div>
           <div class="phase-head">Pre-Trip — Simran's Travel to Boston</div>
-          <span class="phase-dates personal">Apr 9 (Thu)</span>
-          <div class="phase-desc">Simran takes Amtrak from West Haven, CT to Boston. Arrives ~10 PM, stays at friend's house overnight before early morning flight.</div>
+          <span class="phase-dates personal">Apr 9 (Thu) – Apr 10 (Fri early AM)</span>
+          <div class="phase-desc">Simran takes Amtrak from New Haven to Boston (9:42 PM → 12:15 AM). Silver Line to BOS airport, waits overnight, security opens ~3-4 AM. Flight at 7:10 AM.</div>
         </div>
       </div>
       <div class="phase-row">
@@ -481,9 +481,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
       <div class="phase-row">
         <div class="phase-icon">🚂</div>
         <div>
-          <div class="phase-head">Post-Trip — Simran's Return to West Haven</div>
+          <div class="phase-head">Post-Trip — Simran's Return to New Haven</div>
           <span class="phase-dates personal">Apr 20 (Mon)</span>
-          <div class="phase-desc">Simran arrives BOS 11:59 PM Apr 19, stays at friend's house. Returns via Amtrak to West Haven on Apr 20 (time TBD, tickets not booked yet).</div>
+          <div class="phase-desc">Simran arrives BOS 11:59 PM Apr 19. Waits at airport overnight, then takes Amtrak from South Station back to New Haven (time TBD, return ticket not booked yet).</div>
         </div>
       </div>
     </div>
@@ -564,7 +564,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
     </div>
     <div class="reminder-card">
       <div class="reminder-icon">🚂</div>
-      <div class="reminder-text"><strong>Book Simran's Amtrak tickets</strong> — West Haven to Boston (Apr 9) and Boston to West Haven (Apr 20). ~$50-80 round trip.</div>
+      <div class="reminder-text"><strong>Book Simran's return Amtrak ticket</strong> — Boston South Station to New Haven (Apr 20). Outbound booked (Res# D83D59).</div>
     </div>
     <div class="reminder-card">
       <div class="reminder-icon">🌿</div>
@@ -729,6 +729,47 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
         <dt>Conf</dt><dd>HMWDZF</dd>
       </dl>
     </div>
+  </div>
+
+  <div style="font-family:var(--serif);font-size:18px;font-weight:700;margin:20px 0 12px">🚂 Amtrak — Simran</div>
+
+  <div class="car-card">
+    <div class="car-top">
+      <div class="car-icon" style="background:var(--slate-light)">🚂</div>
+      <div style="flex:1">
+        <div class="car-name">Amtrak NHV → BOS (Outbound)</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:2px">Train 178 · Northeast Regional · 1 Coach Seat</div>
+      </div>
+      <div class="car-badge" style="background:#E6F5E6;color:#2D7A6B">✓ Booked</div>
+    </div>
+    <dl class="car-grid">
+      <dt>Departs</dt><dd>Apr 9, 9:42 PM</dd>
+      <dt>Arrives</dt><dd>Apr 10, 12:15 AM</dd>
+      <dt>From</dt><dd>New Haven Union Station</dd>
+      <dt>To</dt><dd>Boston South Station</dd>
+      <dt>Res #</dt><dd>D83D59</dd>
+      <dt>Rewards #</dt><dd>9067028598</dd>
+    </dl>
+    <div class="car-note">⚠ Arrive at station 30 min before departure (by 9:12 PM). Take Silver Line (free) from South Station to BOS Airport immediately upon arrival. Last train ~1 AM.</div>
+    <a href="https://drive.google.com/file/d/1Dx8j-GQa7aLTSVkKZBhD1kol6xZA6038/view?usp=drive_link" target="_blank" style="display:inline-block;margin-top:8px;font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--slate-light);color:var(--slate);text-decoration:none">📄 View Amtrak eTicket</a>
+  </div>
+
+  <div class="car-card">
+    <div class="car-top">
+      <div class="car-icon" style="background:var(--slate-light)">🚂</div>
+      <div style="flex:1">
+        <div class="car-name">Amtrak BOS → NHV (Return)</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:2px">Apr 20 · Northeast Regional</div>
+      </div>
+      <div class="car-badge" style="background:var(--gold-light);color:var(--gold)">⚠ Not Booked</div>
+    </div>
+    <dl class="car-grid">
+      <dt>Departs</dt><dd>TBD</dd>
+      <dt>Arrives</dt><dd>TBD</dd>
+      <dt>From</dt><dd>Boston South Station</dd>
+      <dt>To</dt><dd>New Haven Union Station</dd>
+    </dl>
+    <div class="car-note">⚠ Return ticket not booked yet! Simran arrives BOS 11:59 PM Apr 19, waits at airport overnight, then takes Silver Line to South Station for morning Amtrak.</div>
   </div>
 
   <div style="font-family:var(--serif);font-size:18px;font-weight:700;margin:20px 0 12px">🚗 Rental Cars</div>
@@ -1099,7 +1140,7 @@ var COORDS = {
   'Paradise':{lat:46.79,lon:-121.74},'Leavenworth':{lat:47.60,lon:-120.66},
   'Snoqualmie':{lat:47.53,lon:-121.84},'Ballard':{lat:47.67,lon:-122.38},
   'Fremont':{lat:47.65,lon:-122.35},'San Jose':{lat:37.34,lon:-121.89},
-  'Boston':{lat:42.36,lon:-71.06},'West Haven':{lat:41.27,lon:-72.95},
+  'Boston':{lat:42.36,lon:-71.06},'New Haven':{lat:41.31,lon:-72.92},'West Haven':{lat:41.27,lon:-72.95},
 };
 
 var weatherCache = {};
@@ -1307,7 +1348,7 @@ function renderFocusCard() {
 // ── OVERVIEW TIMELINE ───────────────────────────────────────────────
 function renderOverviewTimeline() {
   var milestones = [
-    {date:'2026-04-09',title:'Simran: Amtrak West Haven \u2192 Boston',sub:'~7 PM depart, arrive ~10 PM. Stay at friend\'s house.',icon:'\u{1F682}',dot:'rose-dot',badge:'TBD',badgeCls:'pending'},
+    {date:'2026-04-09',title:'Simran: Amtrak New Haven \u2192 Boston',sub:'Train 178 \u00B7 9:42 PM \u2192 12:15 AM \u00B7 Silver Line to BOS, overnight at airport',icon:'\u{1F682}',dot:'rose-dot',badge:'D83D59',badgeCls:'booked'},
     {date:'2026-04-10',title:'Ayush: SJC \u2192 SEA (AS1406)',sub:'8:00 AM \u2192 10:20 AM \u00B7 Alaska Airlines',icon:'\u2708',dot:'blue',badge:'ILTFTW',badgeCls:'booked'},
     {date:'2026-04-10',title:'Simran: BOS \u2192 SEA (DL0384)',sub:'7:10 AM \u2192 10:37 AM \u00B7 Delta Airlines',icon:'\u2708',dot:'blue',badge:'HMWDZF',badgeCls:'booked'},
     {date:'2026-04-10',title:'Pick Up Personal Rental Car',sub:'Enterprise Bellevue 11:00 AM \u00B7 Costco booking',icon:'\u{1F697}',dot:'green',badge:null},
@@ -1319,7 +1360,7 @@ function renderOverviewTimeline() {
     {date:'2026-04-18',title:'Return from Leavenworth',sub:'Snoqualmie Falls stop \u00B7 Return car by 5 PM \u00B7 Redmond Inn',icon:'\u{1F697}',dot:'green',badge:null},
     {date:'2026-04-19',title:'Ayush: SEA \u2192 SJC (AS0521)',sub:'3:59 PM \u2192 6:11 PM \u00B7 Alaska Airlines',icon:'\u2708',dot:'blue',badge:'ILTFTW',badgeCls:'booked'},
     {date:'2026-04-19',title:'Simran: SEA \u2192 BOS (DL0474)',sub:'3:40 PM \u2192 11:59 PM \u00B7 Delta Airlines',icon:'\u2708',dot:'blue',badge:'HMWDZF',badgeCls:'booked'},
-    {date:'2026-04-20',title:'Simran: Amtrak Boston \u2192 West Haven',sub:'Time TBD \u00B7 Tickets not booked yet',icon:'\u{1F682}',dot:'rose-dot',badge:'TBD',badgeCls:'pending'},
+    {date:'2026-04-20',title:'Simran: Amtrak Boston \u2192 New Haven',sub:'Time TBD \u00B7 Return ticket not booked yet',icon:'\u{1F682}',dot:'rose-dot',badge:'TBD',badgeCls:'pending'},
   ];
   var html = '';
   for (var i = 0; i < milestones.length; i++) {
@@ -1341,14 +1382,17 @@ function renderOverviewTimeline() {
 // ── SCHEDULE DATA ───────────────────────────────────────────────────
 var PHASES = [
   {
-    id:'pre', name:'Pre-Trip', type:'personal', dateRange:'Apr 9',
+    id:'pre', name:'Pre-Trip', type:'personal', dateRange:'Apr 9\u201310',
     days: [
-      {date:'2026-04-09', dayOfWeek:'Thu', title:'Simran\'s Pre-Departure', loc:'West Haven, CT \u2192 Boston, MA',
-       hotel:'Friend\'s house in Boston',
+      {date:'2026-04-09', dayOfWeek:'Thu', title:'Simran\'s Pre-Departure', loc:'New Haven, CT \u2192 Boston \u2192 BOS Airport',
+       hotel:'Overnight at BOS Airport',
        acts:[
-         {t:'Daytime', badge:'simran', title:'Simran packs and prepares in West Haven', loc:'West Haven, CT', det:'Final packing for Seattle trip.'},
-         {t:'~7:00 PM', badge:'amtrak', title:'Amtrak: West Haven \u2192 Boston', loc:'West Haven Station \u2192 South Station, Boston', det:'~3 hour ride. Tickets not yet booked \u2014 need to book ASAP!'},
-         {t:'~10:00 PM', badge:'hotel', title:'Arrive Boston \u2014 stay at friend\'s house', loc:'Boston, MA', det:'Overnight before early morning Delta flight. Set alarm for 4:30 AM!'},
+         {t:'Daytime', badge:'simran', title:'Simran packs and prepares', loc:'West Haven, CT', det:'Final packing for Seattle trip.'},
+         {t:'9:12 PM', badge:'simran', title:'Arrive New Haven Union Station', loc:'New Haven Union Station', det:'Arrive 30 min before departure. Amtrak Res# D83D59.'},
+         {t:'9:42 PM', badge:'amtrak', title:'Amtrak Train 178: New Haven \u2192 Boston', loc:'New Haven Union Station \u2192 South Station, Boston', det:'Northeast Regional \u00B7 Res# D83D59 \u00B7 1 Coach Seat \u00B7 Arrives 12:15 AM (Fri, Apr 10)'},
+         {t:'12:15 AM', badge:'amtrak', title:'Arrive Boston South Station', loc:'South Station, Boston', det:'Take Silver Line (free) from South Station to BOS Airport. Last train ~1:00 AM \u2014 go immediately!'},
+         {t:'~12:45 AM', badge:'simran', title:'Arrive BOS Airport \u2014 wait overnight', loc:'Boston Logan Airport (BOS)', det:'Wait in terminal until security opens. TSA pre-check/security opens ~3\u20134 AM. Rest in terminal seating area.'},
+         {t:'~3:30 AM', badge:'flight', title:'Go through security when it opens', loc:'BOS Terminal A', det:'Security opens around 3\u20134 AM. Gate A14 for Delta DL0384. Flight boards ~6:40 AM.'},
        ]},
     ]
   },
@@ -1471,19 +1515,20 @@ var PHASES = [
          {t:'3:40 PM', badge:'simran', title:'Simran departs SEA \u2192 BOS (Delta DL0474)', loc:'Seattle-Tacoma Intl Airport', det:'5h 19m nonstop \u00B7 Airbus A321neo \u00B7 Conf: HMWDZF \u00B7 Arrives 11:59 PM BOS'},
          {t:'3:59 PM', badge:'flight', title:'Ayush departs SEA \u2192 SJC (Alaska AS0521) \u2708', loc:'Seattle-Tacoma Intl Airport', det:'Seat 11C \u00B7 2h 12m nonstop \u00B7 Arrives SJC 6:11 PM. Safe travels! \u2661'},
          {t:'6:11 PM', badge:'explore', title:'Ayush arrives San Jose \u{1F3E0}', loc:'SJC Terminal B', det:'Home sweet home. What a trip! \u2661'},
-         {t:'11:59 PM', badge:'simran', title:'Simran arrives BOS', loc:'BOS Terminal A', det:'Stay at friend\'s house in Boston overnight. Amtrak to West Haven tomorrow.'},
+         {t:'11:59 PM', badge:'simran', title:'Simran arrives BOS', loc:'BOS Terminal A', det:'Wait at airport overnight. Take Amtrak from South Station to New Haven next morning (return ticket TBD).'},
        ]},
     ]
   },
   {
     id:'post', name:'Post-Trip', type:'post', dateRange:'Apr 20',
     days: [
-      {date:'2026-04-20', dayOfWeek:'Mon', title:'Simran Returns Home', loc:'Boston, MA \u2192 West Haven, CT',
+      {date:'2026-04-20', dayOfWeek:'Mon', title:'Simran Returns Home', loc:'Boston \u2192 New Haven, CT',
        hotel:'Home',
        acts:[
-         {t:'Morning', badge:'simran', title:'Simran wakes up at friend\'s house in Boston', loc:'Boston, MA', det:'Arrived 11:59 PM the night before. Rest up.'},
-         {t:'TBD', badge:'amtrak', title:'Amtrak: Boston \u2192 West Haven', loc:'South Station \u2192 West Haven Station', det:'Time TBD \u2014 tickets not booked yet. ~3 hour ride. Need to book!'},
-         {t:'TBD', badge:'simran', title:'Arrive West Haven \u2014 home sweet home', loc:'West Haven, CT', det:'End of the trip for Simran. What an adventure! \u2661'},
+         {t:'Early AM', badge:'simran', title:'Simran waits at BOS Airport overnight', loc:'Boston Logan Airport (BOS)', det:'Arrived 11:59 PM the night before. Rest in terminal seating area.'},
+         {t:'Morning', badge:'simran', title:'Take Silver Line to South Station', loc:'BOS Airport \u2192 South Station', det:'Free Silver Line from airport to South Station. ~20 min ride.'},
+         {t:'TBD', badge:'amtrak', title:'Amtrak: Boston \u2192 New Haven', loc:'South Station \u2192 New Haven Union Station', det:'Return ticket not booked yet \u2014 need to book! ~2.5 hour ride.'},
+         {t:'TBD', badge:'simran', title:'Arrive New Haven \u2014 home sweet home', loc:'New Haven / West Haven, CT', det:'End of the trip for Simran. What an adventure! \u2661'},
        ]},
     ]
   },
@@ -1911,8 +1956,8 @@ var checklistData = [
   {title:'Hyatt Regency Bellevue \u2014 Apr 12\u201318', det:'900 Bellevue Way NE \u00B7 Conf: 150174RA018842 \u00B7 Office-covered \u00B7 Lake View room', status:'booked', badge:'\u2713 Office'},
   {title:'Personal rental car (Costco/Enterprise)', det:'Apr 10 11 AM \u2013 Apr 12 9 AM \u00B7 Costco Conf: C487837485 \u00B7 Toyota Corolla \u00B7 $89.27 due at agency', status:'booked', badge:'\u2713 Booked'},
   {title:'Business rental car (Meta/Enterprise)', det:'Apr 12 9 AM \u2013 Apr 18 5 PM \u00B7 Conf: 2095306771COUNT \u00B7 Office-covered', status:'booked', badge:'\u2713 Office'},
-  {title:'\u{1F4CC} Simran: Amtrak West Haven \u2192 Boston (Apr 9)', det:'~7 PM departure. ~3 hr ride. Tickets not yet booked!', status:'action', badge:'Needs Booking'},
-  {title:'\u{1F4CC} Simran: Amtrak Boston \u2192 West Haven (Apr 20)', det:'Time TBD. Tickets not yet booked!', status:'action', badge:'Needs Booking'},
+  {title:'Simran: Amtrak New Haven \u2192 Boston (Apr 9)', det:'Train 178 \u00B7 9:42 PM \u2192 12:15 AM \u00B7 Res# D83D59 \u00B7 NE Regional \u00B7 1 Coach Seat', status:'booked', badge:'\u2713 Booked'},
+  {title:'\u{1F4CC} Simran: Amtrak Boston \u2192 New Haven (Apr 20)', det:'Return ticket. Time TBD. Not yet booked!', status:'action', badge:'Needs Booking'},
   {title:'\u{1F4CC} Contact Krishna dai for Amazon Spheres access', det:'Amazon employee guest pass needed for interior. Plan Wed Apr 15 evening. Reach out ASAP!', status:'action', badge:'Action Needed'},
   {title:'\u{1F4CC} Book Space Needle tickets online', det:'spaceneedle.com \u00B7 $35\u201340/pp \u00B7 Book sunset slot ~7:30 PM \u00B7 Plan Tue Apr 14 evening', status:'action', badge:'Book Online'},
   {title:'\u{1F4CC} Book Leavenworth hotel \u2014 Apr 17 night', det:'Bavarian village overnight stay \u00B7 Budget $120\u2013200 \u00B7 Check Airbnb / hotels.com \u00B7 Book ASAP \u2014 popular!', status:'action', badge:'Needs Booking'},
