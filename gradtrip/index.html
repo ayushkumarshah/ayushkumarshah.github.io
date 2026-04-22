@@ -580,6 +580,9 @@ var COORDS = {
 var PRIVATE_INFO_LINKS = {
   contactSheet: 'https://docs.google.com/document/d/1ETJX645G_5jwPTTE-WDjvxZ3MOsOXvY9l0SRGz0p90Y/edit?usp=sharing',
   invitationLetter: 'https://drive.google.com/file/d/1VJ3BvP9IFcvctwdVXFeY0tKeNLorjFJo/view',
+  employmentLetter: 'https://drive.google.com/file/d/15gkdMyp_e5pCzK4Oe2VOkklHZrfT6QRw/view?usp=drive_link',
+  offerLetter: 'https://drive.google.com/file/d/1BUyUPn_5elKcLtPiM8masiQIWsxc2iNk/view?usp=drive_link',
+  recentPayslips: 'https://drive.google.com/file/d/14PaNiUO7w9N5MOi9bITv8LKhuUS4WHZH/view?usp=drive_link',
   immigrationPacket: ''
 };
 
@@ -1143,6 +1146,16 @@ function renderInfoLinks() {
   html += '<div class="card-header">&#x1F393; Graduation Invitation Letter</div>';
   html += '<div style="font-size:13px;color:var(--text2);margin-bottom:12px">Host the invitation letter PDF privately and share it only with the intended family members.</div>';
   html += privateLinkButtons(PRIVATE_INFO_LINKS.invitationLetter, 'Open Private Letter');
+  html += '</div>';
+
+  html += '<div class="card">';
+  html += '<div class="card-header">&#x1F4BC; Ayush&rsquo;s Employment Documents</div>';
+  html += '<div style="font-size:13px;color:var(--text2);margin-bottom:12px">Proof of US employment &mdash; useful for visa interviews and immigration at entry.</div>';
+  html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+  html += '<a href="' + PRIVATE_INFO_LINKS.employmentLetter + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Employment Verification Letter</a>';
+  html += '<a href="' + PRIVATE_INFO_LINKS.offerLetter + '" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Offer Letter</a>';
+  html += '<a href="' + PRIVATE_INFO_LINKS.recentPayslips + '" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Recent 4 Payslips</a>';
+  html += '</div>';
   html += '</div>';
 
   html += '<div class="card">';
