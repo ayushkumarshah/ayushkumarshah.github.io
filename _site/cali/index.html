@@ -3,930 +3,862 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>California Long Weekend</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<title>California Long Weekend &mdash; Memorial Day 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0f1724;
-  --navy2:#1a2538;
-  --navy3:#243044;
-  --blue:#3b82f6;
-  --blue-light:#eff6ff;
-  --text:#0f1724;
-  --muted:#64748b;
-  --border:#e2e8f0;
-  --bg:#f8fafc;
-  --white:#ffffff;
-  --rust:#e05c2a;
-  --sage:#3d7a5c;
-  --gold:#d4920a;
-  --red:#dc2626;
+  --bg:#F7F3ED;--card:#FFFFFF;--text:#2C2C3A;--text2:#6B6B7B;--text3:#9A9AAA;
+  --amber:#C17817;--amber-light:#FEF3E2;--amber-dark:#9A5F0F;
+  --teal:#2D7A6B;--teal-light:#E6F5F0;
+  --brown:#8B5E3C;--border:#E8E0D4;--shadow:0 2px 12px rgba(44,44,58,.07);
+  --radius:12px;--serif:'Literata',Georgia,serif;--sans:'Nunito Sans',system-ui,sans-serif;
+  --nav-h:56px;
+  --rust:#C75B39;--rust-light:#FFEFE5;
+  --blue:#3A6EA5;--blue-light:#E8F0FE;
+  --purple:#6B4C8A;--purple-light:#F3E8FF;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100dvh;overflow-x:hidden}
 
-/* NAV */
-.topnav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  background:var(--navy);
-  display:flex;align-items:center;gap:0;
-  padding:0 1rem;
-  height:52px;
-  overflow-x:auto;
+/* Status Banner */
+.status-banner{
+  background:linear-gradient(135deg,#2C2C3A 0%,#3D3D52 100%);
+  color:#fff;padding:14px 20px;text-align:center;font-size:14px;
+}
+.status-banner .pulse{display:inline-block;width:8px;height:8px;background:#4ADE80;border-radius:50%;margin-right:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.status-banner .label{font-weight:300;opacity:.85;font-size:12px}
+.status-banner .headline{font-family:var(--serif);font-size:18px;font-weight:600;margin-top:2px}
+
+/* Top Nav */
+.top-nav{
+  display:flex;gap:0;background:var(--card);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:99;overflow-x:auto;-webkit-overflow-scrolling:touch;
   scrollbar-width:none;
 }
-.topnav::-webkit-scrollbar{display:none}
-.nav-brand{
-  font-family:'Fraunces',serif;font-size:15px;font-weight:600;
-  color:#fff;white-space:nowrap;margin-right:1.5rem;
-  text-decoration:none;flex-shrink:0;
+.top-nav::-webkit-scrollbar{display:none}
+.top-nav button{
+  flex:1;min-width:max-content;padding:14px 16px;border:none;background:none;
+  font-family:var(--sans);font-size:13px;font-weight:600;color:var(--text2);
+  cursor:pointer;border-bottom:2.5px solid transparent;transition:all .2s;white-space:nowrap;
 }
-.nav-links{display:flex;gap:0;flex-shrink:0}
-.nav-link{
-  display:flex;align-items:center;gap:5px;
-  padding:0 14px;height:52px;
-  color:rgba(255,255,255,0.6);font-size:12px;font-weight:500;
-  text-decoration:none;white-space:nowrap;
-  border-bottom:2px solid transparent;
-  transition:all 0.15s;
-}
-.nav-link:hover,.nav-link.active{color:#fff;border-bottom-color:var(--blue)}
+.top-nav button.active{color:var(--amber);border-bottom-color:var(--amber)}
+.top-nav button:hover{color:var(--amber);background:var(--amber-light)}
+.top-nav .nav-icon{display:block;font-size:18px;margin-bottom:2px}
 
-/* HERO */
+/* Tabs */
+.tab-content{display:none;padding:16px;max-width:800px;margin:0 auto;animation:fadeIn .3s ease}
+.tab-content.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* Cards */
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);padding:20px;margin-bottom:16px}
+.card-header{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:12px;color:var(--text)}
+.card-sub{font-size:13px;color:var(--text2);margin-bottom:8px}
+
+/* Hero */
 .hero{
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#1e3a5f 100%);
-  padding:100px 2rem 3rem;
-  color:#fff;
+  background:linear-gradient(135deg,#2C2C3A 0%,#3A4A5F 50%,#2D7A6B 100%);
+  border-radius:var(--radius);padding:32px 24px;color:#fff;margin-bottom:20px;
   position:relative;overflow:hidden;
 }
-.hero::after{
-  content:'';position:absolute;
-  bottom:-2px;left:0;right:0;height:40px;
-  background:var(--bg);
-  clip-path:ellipse(55% 100% at 50% 100%);
-}
-.hero-inner{max-width:860px;margin:0 auto}
-.hero-label{
-  display:inline-block;
-  background:rgba(59,130,246,0.2);border:1px solid rgba(59,130,246,0.4);
-  color:#93c5fd;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
-  padding:4px 12px;border-radius:20px;margin-bottom:1.2rem;
-}
-.hero-title{
-  font-family:'Fraunces',serif;font-size:clamp(2.4rem,6vw,3.8rem);
-  font-weight:300;line-height:1.1;margin-bottom:0.8rem;
-  color:#fff;
-}
-.hero-title em{font-style:italic;color:#93c5fd}
-.hero-sub{
-  color:rgba(255,255,255,0.6);font-size:14px;
-  margin-bottom:2rem;max-width:560px;line-height:1.7;
-}
-.hero-stats{
-  display:flex;gap:0;flex-wrap:wrap;
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:12px;overflow:hidden;
-  margin-bottom:1.5rem;
-  background:rgba(255,255,255,0.05);
-}
-.stat{
-  flex:1;min-width:120px;
-  padding:1.1rem 1.2rem;
-  border-right:1px solid rgba(255,255,255,0.1);
-}
-.stat:last-child{border-right:none}
-.stat-val{font-size:1.6rem;font-weight:600;color:#fff;line-height:1}
-.stat-label{font-size:11px;color:rgba(255,255,255,0.45);margin-top:4px;text-transform:uppercase;letter-spacing:0.05em}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero h1{font-family:var(--serif);font-size:30px;font-weight:700;margin-bottom:10px;position:relative;line-height:1.15;max-width:480px}
+.hero p{opacity:.88;font-size:14px;position:relative}
+.hero .palm{font-size:48px;position:absolute;top:20px;right:20px;opacity:.3}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;position:relative;margin-bottom:14px}
+.hero-route{max-width:560px;font-size:15px;line-height:1.55}
+.hero-subline{max-width:520px;margin-top:8px;font-size:12px;opacity:.72}
+.hero-pills{display:flex;gap:10px;flex-wrap:wrap;position:relative;margin-top:18px}
+.hero-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);font-size:11px;font-weight:700}
 
-/* REMINDERS BANNER */
-.reminders-bar{
-  background:var(--navy2);
-  padding:0.7rem 2rem;
-  display:flex;align-items:center;gap:1.5rem;
-  overflow-x:auto;scrollbar-width:none;
-}
-.reminders-bar::-webkit-scrollbar{display:none}
-.reminder-item{
-  display:flex;align-items:center;gap:6px;
-  white-space:nowrap;font-size:12px;color:rgba(255,255,255,0.7);
-  flex-shrink:0;
-}
-.reminder-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0}
+/* Stats */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.stat-card{background:var(--card);border-radius:var(--radius);padding:16px;text-align:center;border:1px solid var(--border)}
+.stat-card .num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--amber)}
+.stat-card .label{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
 
-/* MAIN */
-.main{max-width:860px;margin:0 auto;padding:2.5rem 2rem 4rem}
-
-/* SECTION HEADERS */
-.section-head{
-  display:flex;align-items:center;gap:10px;
-  margin-bottom:1.5rem;margin-top:0.5rem;
-  padding-bottom:0.75rem;
-  border-bottom:2px solid var(--border);
-}
-.section-head h2{font-size:1.1rem;font-weight:600;color:var(--text)}
-.section-emoji{font-size:1.2rem}
-.section-sub{font-size:12px;color:var(--muted);margin-left:auto}
-
-/* TRAFFIC ALERT */
-.traffic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:2.5rem}
+/* Traffic alert cards (overview) */
+.traffic-grid{display:grid;grid-template-columns:1fr;gap:12px}
 .traffic-card{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:10px;padding:1rem 1.2rem;
-  border-left:4px solid;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:16px 18px;border-left:4px solid var(--amber);
+  box-shadow:var(--shadow);
 }
 .traffic-card.day1{border-left-color:var(--rust)}
-.traffic-card.day2{border-left-color:var(--gold)}
-.traffic-card.day3{border-left-color:var(--red)}
-.traffic-day{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px}
+.traffic-card.day2{border-left-color:var(--teal)}
+.traffic-card.day3{border-left-color:var(--blue)}
+.traffic-day{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;margin-bottom:6px}
 .traffic-card.day1 .traffic-day{color:var(--rust)}
-.traffic-card.day2 .traffic-day{color:var(--gold)}
-.traffic-card.day3 .traffic-day{color:var(--red)}
-.traffic-text{font-size:12px;color:var(--muted);line-height:1.6}
-.traffic-text strong{color:var(--text);font-weight:500}
+.traffic-card.day2 .traffic-day{color:var(--teal)}
+.traffic-card.day3 .traffic-day{color:var(--blue)}
+.traffic-text{font-size:13px;color:var(--text2);line-height:1.65}
+.traffic-text strong{color:var(--text);font-weight:600}
 
-/* DAY CARDS */
-.day-block{margin-bottom:2.5rem}
-.day-header-card{
-  border-radius:12px 12px 0 0;
-  padding:1.2rem 1.4rem;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:0.5rem;
+/* Reminders list */
+.reminders{font-size:13px;line-height:1.85}
+.reminders div{display:flex;gap:8px;align-items:flex-start}
+.reminders .rem-icon{color:var(--amber);flex-shrink:0}
+
+/* Day chips (schedule) */
+.day-strip{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-bottom:16px}
+.day-strip::-webkit-scrollbar{display:none}
+.day-chip{
+  min-width:120px;padding:12px 14px;border-radius:10px;text-align:left;cursor:pointer;
+  border:1.5px solid var(--border);background:var(--card);transition:all .2s;flex-shrink:0;
+  font-family:var(--sans);
 }
-.day-header-card.d1{background:linear-gradient(135deg,#7c2d12,#c2410c)}
-.day-header-card.d2{background:linear-gradient(135deg,#14532d,#15803d)}
-.day-header-card.d3{background:linear-gradient(135deg,#1e3a5f,#1d4ed8)}
-.day-title-wrap{}
-.day-badge{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:3px}
-.day-name{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:300;color:#fff;line-height:1.1}
-.day-route{font-size:11px;color:rgba(255,255,255,0.55);margin-top:3px}
-.day-meta-pills{display:flex;gap:6px;flex-wrap:wrap}
+.day-chip.active{background:var(--amber);border-color:var(--amber);color:#fff}
+.day-chip.active .day-chip-day,.day-chip.active .day-chip-loc{color:#fff}
+.day-chip.active .day-chip-date{color:rgba(255,255,255,.9)}
+.day-chip-day{font-size:10px;font-weight:800;text-transform:uppercase;color:var(--text2);letter-spacing:.5px}
+.day-chip-date{font-family:var(--serif);font-size:16px;font-weight:700;line-height:1.1;margin-top:2px}
+.day-chip-loc{font-size:11px;color:var(--text2);margin-top:3px;font-weight:600}
+
+.day-detail{animation:fadeIn .25s ease}
+.day-detail{display:none}
+.day-detail.active{display:block}
+
+.day-header{margin-bottom:16px}
+.day-header h2{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--text)}
+.day-header .day-route{font-size:12px;color:var(--text2);margin-top:4px;line-height:1.55}
+.day-meta-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 .day-pill{
-  background:rgba(255,255,255,0.15);
-  color:#fff;font-size:11px;padding:3px 10px;border-radius:20px;
-  white-space:nowrap;
+  display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;
+  background:var(--amber-light);color:var(--amber-dark);font-size:11px;font-weight:700;
 }
+.day-pill.teal{background:var(--teal-light);color:var(--teal)}
+.day-pill.blue{background:var(--blue-light);color:var(--blue)}
 
-/* STOPS */
-.stops-wrap{
-  background:var(--white);
-  border:1px solid var(--border);border-top:none;
-  border-radius:0 0 12px 12px;
-  overflow:hidden;
-}
-.stop-row{
-  display:grid;grid-template-columns:52px 1fr;
-  border-bottom:1px solid var(--border);
-}
-.stop-row:last-child{border-bottom:none}
-.stop-left{
-  background:var(--bg);
-  display:flex;flex-direction:column;align-items:center;
-  justify-content:flex-start;
-  padding:1rem 0 1rem;
-  border-right:1px solid var(--border);
-  position:relative;
-}
-.stop-left::after{
-  content:'';position:absolute;
-  top:46px;bottom:-1px;left:50%;
-  width:1px;background:var(--border);
-  transform:translateX(-50%);
-}
-.stop-row:last-child .stop-left::after{display:none}
-.stop-icon{
-  width:32px;height:32px;border-radius:50%;
-  background:var(--white);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:15px;position:relative;z-index:1;
-  flex-shrink:0;
-}
-.stop-time-vert{
-  font-size:9px;color:var(--muted);margin-top:6px;
-  letter-spacing:0.05em;text-align:center;line-height:1.3;
-  font-weight:500;
-}
-.stop-right{padding:1rem 1.2rem}
-.stop-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
-.stop-desc{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:8px}
-.stop-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
-.tag{
-  font-size:10px;font-weight:500;padding:2px 8px;border-radius:4px;
-}
-.tag-free{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0}
-.tag-paid{background:#fefce8;color:#a16207;border:1px solid #fde68a}
-.tag-food{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa}
-.tag-iconic{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
-.tag-nature{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0}
-.tag-warn{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}
+/* Activity cards */
+.activity{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border)}
+.activity:last-child{border-bottom:none}
+.act-time{min-width:70px;font-size:12px;font-weight:700;color:var(--text2);padding-top:2px;text-align:right}
+.act-body{flex:1}
+.act-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px}
+.act-badge.drive{background:#E6F5E6;color:#4A7C59}
+.act-badge.walk{background:var(--teal-light);color:var(--teal)}
+.act-badge.activity{background:var(--amber-light);color:var(--amber-dark)}
+.act-badge.meal{background:var(--rust-light);color:var(--rust)}
+.act-badge.iconic{background:var(--blue-light);color:var(--blue)}
+.act-badge.optional{background:var(--purple-light);color:var(--purple)}
+.act-title{font-weight:700;font-size:14px;margin-bottom:2px}
+.act-location{font-size:12px;color:var(--teal);margin-bottom:4px;font-weight:600}
+.act-details{font-size:12px;color:var(--text2);line-height:1.55}
+.act-action{font-size:11px;color:var(--amber);font-weight:700;margin-top:6px;line-height:1.5}
+.act-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.act-tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px}
+.act-tag.free{background:#E6F5E6;color:#2D7A6B}
+.act-tag.paid{background:var(--amber-light);color:var(--amber-dark)}
+.act-tag.warn{background:#FEE2E2;color:#B91C1C}
 
-/* TRANSPORT BOX */
-.transport{
-  display:flex;align-items:flex-start;gap:8px;
-  background:var(--bg);border:1px solid var(--border);
-  border-radius:8px;padding:8px 10px;
-  font-size:11px;color:var(--muted);line-height:1.6;
-  margin-top:6px;
-}
-.transport-icon{flex-shrink:0;font-size:14px;margin-top:1px}
-.transport strong{color:var(--text);font-weight:500;display:block}
-
-/* TIP BOX */
+/* Tip / warning box */
 .tip-box{
-  background:#fffbeb;border:1px solid #fde68a;border-left:4px solid var(--gold);
-  border-radius:0 8px 8px 0;padding:10px 14px;
-  font-size:12px;color:#78350f;line-height:1.65;
+  background:var(--amber-light);border:1px solid var(--amber);border-left:3px solid var(--amber-dark);
+  border-radius:8px;padding:10px 14px;font-size:12px;color:var(--amber-dark);line-height:1.6;
   margin-top:8px;
 }
-.tip-box strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;color:#92400e}
+.tip-box strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;color:var(--amber-dark)}
 
-/* COST SECTION */
-.budget-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:1rem}
-.budget-card{
-  background:var(--white);border:1px solid var(--border);border-radius:10px;
-  padding:1rem 1.2rem;
-}
-.budget-day{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:4px}
-.budget-amount{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:300;color:var(--text);line-height:1}
-.budget-breakdown{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.8;border-top:1px solid var(--border);padding-top:8px}
-.budget-total{
-  background:var(--navy);color:#fff;
-  border-radius:10px;padding:1rem 1.2rem;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.budget-total-label{font-size:13px;color:rgba(255,255,255,0.6)}
-.budget-total-val{font-family:'Fraunces',serif;font-size:2rem;font-weight:300;color:#fff}
+/* Budget */
+.budget-total{background:linear-gradient(135deg,#2C2C3A,#3D3D52);color:#fff;border-radius:var(--radius);padding:20px;text-align:center;margin-bottom:20px}
+.budget-total .total-label{font-size:12px;text-transform:uppercase;letter-spacing:1px;opacity:.7}
+.budget-total .total-amount{font-family:var(--serif);font-size:28px;font-weight:700;margin-top:4px}
+.budget-total .total-note{font-size:12px;opacity:.7;margin-top:6px}
 
-/* CHECKLIST */
-.checklist-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
-.check-item{
-  display:flex;align-items:flex-start;gap:8px;
-  background:var(--white);border:1px solid var(--border);
-  border-radius:8px;padding:10px 12px;
-  font-size:12px;color:var(--muted);line-height:1.5;
-}
-.check-icon{font-size:14px;flex-shrink:0;margin-top:1px}
+.budget-day-card{margin-bottom:18px}
+.budget-day-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;gap:12px}
+.budget-day-name{font-weight:700;font-size:14px;font-family:var(--sans)}
+.budget-day-range{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--amber)}
+.budget-bar{height:10px;border-radius:5px;background:var(--border);overflow:hidden;margin-bottom:8px}
+.budget-bar-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--amber-light),var(--amber));transition:width .4s ease}
+.budget-breakdown{font-size:12px;color:var(--text2);line-height:1.85;border-top:1px dashed var(--border);padding-top:8px;margin-top:6px}
 
-/* INFO CARDS */
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.info-card{
-  background:var(--white);border:1px solid var(--border);border-radius:10px;
-  padding:1rem 1.2rem;
-}
-.info-card h4{font-size:12px;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px}
-.info-card p,.info-card li{font-size:12px;color:var(--muted);line-height:1.65}
-.info-card ul{padding-left:1rem}
+/* Checklist (interactive) */
+.progress-wrap{margin-bottom:16px}
+.progress-label{font-size:13px;font-weight:600;margin-bottom:6px;display:flex;justify-content:space-between}
+.progress-bar{height:8px;border-radius:4px;background:var(--border);overflow:hidden}
+.progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--teal),var(--amber));transition:width .4s ease}
 
-.section-spacer{height:2.5rem}
+.checklist-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;user-select:none;transition:background .15s}
+.checklist-item:hover{background:var(--amber-light);border-radius:8px;margin:0 -8px;padding:12px 8px}
+.checklist-item:last-child{border-bottom:none}
+.check-icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px;transition:all .2s;background:var(--amber-light);color:var(--amber)}
+.checklist-item.is-done .check-icon{background:#E6F5E6;color:#2D7A6B}
+.check-info{flex:1}
+.check-title{font-weight:600;font-size:14px;transition:all .2s}
+.checklist-item.is-done .check-title{text-decoration:line-through;opacity:.55}
+.check-detail{font-size:12px;color:var(--text2);margin-top:2px;line-height:1.55}
 
+/* Info tab */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+.info-card h3{font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.info-card ul{padding-left:1rem;font-size:12.5px;color:var(--text2);line-height:1.85}
+.info-card p{font-size:12.5px;color:var(--text2);line-height:1.7}
+.info-card strong{color:var(--text);font-weight:600}
+
+/* Footer */
 footer{
-  background:var(--navy);color:rgba(255,255,255,0.4);
-  text-align:center;padding:1.5rem;font-size:11px;letter-spacing:0.05em;
+  background:var(--card);border-top:1px solid var(--border);
+  text-align:center;padding:24px 16px;color:var(--text3);font-size:11px;letter-spacing:.5px;margin-top:32px;
 }
 
 @media(max-width:600px){
-  .hero{padding:80px 1rem 2.5rem}
-  .main{padding:1.5rem 1rem 3rem}
-  .stat{min-width:90px;padding:0.9rem}
-  .stat-val{font-size:1.3rem}
-  .reminders-bar{padding:0.7rem 1rem}
-  .stop-row{grid-template-columns:44px 1fr}
+  .hero h1{font-size:22px}
+  .hero .palm{font-size:36px;top:12px;right:12px}
+  .stats-row{grid-template-columns:repeat(2,1fr);gap:8px}
+  .stat-card .num{font-size:18px}
+  .tab-content{padding:12px}
+  .top-nav button{padding:10px 12px;font-size:11px}
+  .top-nav .nav-icon{font-size:16px}
+  .day-chip{min-width:110px}
+  .day-header h2{font-size:20px}
+  .activity{flex-direction:column;gap:4px}
+  .act-time{text-align:left;padding-top:0;min-width:0}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="topnav">
-  <a class="nav-brand" href="#top">🌴 CA Long Weekend</a>
-  <div class="nav-links">
-    <a class="nav-link active" href="#overview">📋 Overview</a>
-    <a class="nav-link" href="#traffic">🚗 Traffic</a>
-    <a class="nav-link" href="#schedule">📅 Schedule</a>
-    <a class="nav-link" href="#budget">💰 Budget</a>
-    <a class="nav-link" href="#checklist">✅ Checklist</a>
-    <a class="nav-link" href="#info">📌 Info</a>
-  </div>
+<!-- STATUS BANNER -->
+<div class="status-banner">
+  <div class="label">Memorial Day Weekend &nbsp;&middot;&nbsp; May 23&ndash;25, 2026</div>
+  <div class="headline"><span class="pulse"></span>3 day trips &nbsp;&middot;&nbsp; one home base</div>
+</div>
+
+<!-- TOP NAV -->
+<nav class="top-nav" id="topNav">
+  <button data-tab="overview" class="active"><span class="nav-icon">&#x1F4CB;</span>Overview</button>
+  <button data-tab="schedule"><span class="nav-icon">&#x1F4C5;</span>Schedule</button>
+  <button data-tab="budget"><span class="nav-icon">&#x1F4B0;</span>Budget</button>
+  <button data-tab="checklist"><span class="nav-icon">&#x2705;</span>Checklist</button>
+  <button data-tab="info"><span class="nav-icon">&#x1F4CC;</span>Info</button>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-inner">
-    <div class="hero-label">Memorial Day Weekend · May 23–25, 2026</div>
-    <h1 class="hero-title">California<br><em>Long Weekend</em></h1>
-    <p class="hero-sub">Three day trips from Santa Clara — Big Sur, Redwoods, and San Francisco. Home base every night. No packing and unpacking.</p>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-val">3</div><div class="stat-label">Day Trips</div></div>
-      <div class="stat"><div class="stat-val">4</div><div class="stat-label">People</div></div>
-      <div class="stat"><div class="stat-val">1</div><div class="stat-label">Car</div></div>
-      <div class="stat"><div class="stat-val">~$900</div><div class="stat-label">Est. Total</div></div>
+<!-- OVERVIEW TAB -->
+<section class="tab-content active" id="tab-overview">
+  <div class="hero">
+    <div class="hero-kicker">Memorial Day &middot; May 23 &ndash; 25, 2026</div>
+    <div class="palm">&#x1F334;</div>
+    <h1>California Long Weekend</h1>
+    <p class="hero-route">Big Sur &rarr; Redwoods &rarr; San Francisco. Three day trips from Santa Clara, one home base every night.</p>
+    <p class="hero-subline">No packing and unpacking &mdash; sleep in your own bed, wake up early, chase coastal California for three days straight.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">&#x1F30A; Big Sur</span>
+      <span class="hero-pill">&#x1F332; Redwoods &amp; Seals</span>
+      <span class="hero-pill">&#x1F309; SF &amp; Sausalito</span>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card"><div class="num">3</div><div class="label">Day Trips</div></div>
+    <div class="stat-card"><div class="num">4</div><div class="label">People</div></div>
+    <div class="stat-card"><div class="num">1</div><div class="label">Car</div></div>
+    <div class="stat-card"><div class="num">~$900</div><div class="label">Est. Total</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">At a Glance</div>
+    <div class="traffic-grid">
+      <div class="traffic-card day1">
+        <div class="traffic-day">Day 1 &middot; Sat May 23 &middot; Big Sur</div>
+        <div class="traffic-text">Monterey, 17-Mile Drive, Carmel, Point Lobos, Garrapata, Bixby, McWay Falls.<br><strong>Leave 8am &middot; Return ~7:30pm &middot; ~280 mi round trip</strong></div>
+      </div>
+      <div class="traffic-card day2">
+        <div class="traffic-day">Day 2 &middot; Sun May 24 &middot; Redwoods</div>
+        <div class="traffic-text">Henry Cowell ancient redwoods, A&ntilde;o Nuevo elephant seals, Santa Cruz lunch.<br><strong>Leave 7:30am &middot; Return ~5pm &middot; ~180 mi round trip</strong></div>
+      </div>
+      <div class="traffic-card day3">
+        <div class="traffic-day">Day 3 &middot; Mon May 25 (Memorial Day) &middot; San Francisco</div>
+        <div class="traffic-text">Tartine, Dolores Park, Painted Ladies, Sutro Baths, Golden Gate, Sausalito, Ferry Building, Ghirardelli.<br><strong>Leave 7am &middot; Return by 6pm &middot; ~120 mi round trip</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Memorial Day Traffic Guide</div>
+    <p class="card-sub">It's one of the busiest weekends of the year &mdash; timing each day matters.</p>
+    <div class="traffic-grid">
+      <div class="traffic-card day1">
+        <div class="traffic-day">Day 1 &middot; Saturday</div>
+        <div class="traffic-text"><strong>101 South at 8am &mdash; clear.</strong> Heading south early is your biggest advantage. <strong>Biggest risk:</strong> northbound 101 after 5pm. Leave McWay Falls by 5:30pm or you'll sit in holiday return traffic.</div>
+      </div>
+      <div class="traffic-card day2">
+        <div class="traffic-day">Day 2 &middot; Sunday &middot; Worst day for Hwy 17</div>
+        <div class="traffic-text"><strong>Hwy 17 to Santa Cruz backs up by 9am on summer Sundays.</strong> Leave Santa Clara by 7:30am to get ahead. <strong>Head home by 4pm</strong> to avoid the Sunday evening crawl.</div>
+      </div>
+      <div class="traffic-card day3">
+        <div class="traffic-day">Day 3 &middot; Monday (Memorial Day)</div>
+        <div class="traffic-text"><strong>Morning into SF is surprisingly okay.</strong> Golden Gate Bridge parking is nearly impossible &mdash; use Presidio lots. <strong>Critical: leave SF by 3:30pm</strong> &mdash; every minute after 4pm adds 20 min to your drive home.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Key Reminders</div>
+    <div class="reminders">
+      <div><span class="rem-icon">&#x1F4CC;</span><span>Book <strong>Mission Ranch Carmel</strong> for Day 1 lunch &mdash; fills fast on holiday weekends</span></div>
+      <div><span class="rem-icon">&#x1F4CC;</span><span><strong>Point Lobos parking fills by noon</strong> on Saturdays &mdash; arrive before 1pm</span></div>
+      <div><span class="rem-icon">&#x1F4CC;</span><span>Yosemite-style timed entry <strong>NOT required</strong> for Big Sur or Point Lobos in May 2026</span></div>
+      <div><span class="rem-icon">&#x1F4CC;</span><span>Day 3 (Memorial Day): <strong>leave SF by 3:30pm sharp</strong> to beat return traffic</span></div>
+      <div><span class="rem-icon">&#x1F4CC;</span><span>Bring layers &mdash; coastal temps run <strong>15&deg;F cooler</strong> than Santa Clara</span></div>
+      <div><span class="rem-icon">&#x1F4CC;</span><span>Download <strong>Google Maps offline</strong> for Big Sur &mdash; cell service is spotty on Hwy 1</span></div>
     </div>
   </div>
 </section>
 
-<!-- REMINDERS BAR -->
-<div class="reminders-bar">
-  <div class="reminder-item"><div class="reminder-dot"></div>Book Mission Ranch Carmel for Day 1 lunch — fills fast on holiday weekends</div>
-  <div class="reminder-item"><div class="reminder-dot"></div>Point Lobos parking fills by noon on Saturdays — arrive before 1pm</div>
-  <div class="reminder-item"><div class="reminder-dot"></div>Yosemite-style timed entry NOT required for Big Sur or Point Lobos in May 2026</div>
-  <div class="reminder-item"><div class="reminder-dot"></div>Day 3 (Memorial Day): leave SF by 3:30pm sharp to beat return traffic</div>
-  <div class="reminder-item"><div class="reminder-dot"></div>Bring layers — coastal temps run 15°F cooler than Santa Clara</div>
-  <div class="reminder-item"><div class="reminder-dot"></div>Download Google Maps offline for Big Sur — cell service is spotty on Hwy 1</div>
-</div>
-
-<!-- MAIN -->
-<main class="main">
-
-  <!-- OVERVIEW -->
-  <section id="overview">
-    <div class="section-spacer"></div>
-    <div class="section-head">
-      <span class="section-emoji">📋</span>
-      <h2>Overview</h2>
-      <span class="section-sub">All days start and end in Santa Clara</span>
+<!-- SCHEDULE TAB -->
+<section class="tab-content" id="tab-schedule">
+  <div class="day-strip">
+    <div class="day-chip active" data-day="1">
+      <div class="day-chip-day">Sat May 23</div>
+      <div class="day-chip-date">Day 1</div>
+      <div class="day-chip-loc">Big Sur</div>
     </div>
-    <div class="traffic-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
-      <div class="traffic-card day1">
-        <div class="traffic-day">Day 1 — Sat May 23</div>
-        <div class="traffic-text">🌊 Big Sur via Monterey, 17-Mile Drive & Carmel<br><strong>Leave 8am · Return ~7:30pm · ~280 mi round trip</strong></div>
-      </div>
-      <div class="traffic-card day2" style="border-left-color:var(--sage)">
-        <div class="traffic-day" style="color:var(--sage)">Day 2 — Sun May 24</div>
-        <div class="traffic-text">🌲 Redwoods, Año Nuevo & Santa Cruz<br><strong>Leave 7:30am · Return ~5pm · ~180 mi round trip</strong></div>
-      </div>
-      <div class="traffic-card day3">
-        <div class="traffic-day">Day 3 — Mon May 25 (Memorial Day)</div>
-        <div class="traffic-text">🌉 San Francisco & Sausalito<br><strong>Leave 7am · Return by 6pm · ~120 mi round trip</strong></div>
-      </div>
+    <div class="day-chip" data-day="2">
+      <div class="day-chip-day">Sun May 24</div>
+      <div class="day-chip-date">Day 2</div>
+      <div class="day-chip-loc">Redwoods</div>
     </div>
-  </section>
-
-  <!-- TRAFFIC -->
-  <section id="traffic">
-    <div class="section-spacer"></div>
-    <div class="section-head">
-      <span class="section-emoji">🚗</span>
-      <h2>Memorial Day Traffic Guide</h2>
-      <span class="section-sub">Plan ahead — it's one of the busiest weekends of the year</span>
+    <div class="day-chip" data-day="3">
+      <div class="day-chip-day">Mon May 25</div>
+      <div class="day-chip-date">Day 3</div>
+      <div class="day-chip-loc">San Francisco</div>
     </div>
-    <div class="traffic-grid">
-      <div class="traffic-card day1">
-        <div class="traffic-day">Day 1 · Saturday May 23</div>
-        <div class="traffic-text">
-          <strong>101 South at 8am — clear.</strong> Heading south early is your biggest advantage. Hwy 1 through Big Sur gets congested going south by midday — you'll hit it at the right time. <strong>Biggest risk: northbound 101 after 5pm.</strong> Try to leave Big Sur by 5:30pm or you'll sit in Memorial Weekend return traffic. McWay Falls is your last stop — time it right.
-        </div>
-      </div>
-      <div class="traffic-card day2" style="border-left-color:var(--gold)">
-        <div class="traffic-day" style="color:var(--gold)">Day 2 · Sunday May 24 ⚠️ Worst day</div>
-        <div class="traffic-text">
-          <strong>Hwy 17 to Santa Cruz backs up by 9am on summer Sundays.</strong> Leave Santa Clara by 7:30am to get ahead of it. Henry Cowell parking lot fills by 10am on busy weekends — arrive before 9am. Año Nuevo gets busy by early afternoon. <strong>Head home by 4pm</strong> to avoid the Sunday evening 17 crawl.
-        </div>
-      </div>
-      <div class="traffic-card day3">
-        <div class="traffic-day">Day 3 · Monday May 25 (Memorial Day)</div>
-        <div class="traffic-text">
-          <strong>Morning into SF is surprisingly okay</strong> — many people leave Sunday night. Golden Gate Bridge parking is nearly impossible — use the Presidio lots and walk. <strong>Critical: leave SF by 3:30pm.</strong> Memorial Day afternoon on 101 is brutal. Every extra minute after 4pm adds 20 min to your drive home.
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
-  <!-- SCHEDULE -->
-  <section id="schedule">
-    <div class="section-spacer"></div>
-    <div class="section-head">
-      <span class="section-emoji">📅</span>
-      <h2>Day-by-Day Schedule</h2>
-    </div>
-
-    <!-- DAY 1 -->
-    <div class="day-block">
-      <div class="day-header-card d1">
-        <div class="day-title-wrap">
-          <div class="day-badge">Day 1 · Saturday May 23</div>
-          <div class="day-name">Big Sur</div>
-          <div class="day-route">Santa Clara → Monterey → 17-Mile Drive → Carmel → Point Lobos → Big Sur → home</div>
-        </div>
-        <div class="day-meta-pills">
-          <span class="day-pill">🕗 Leave 8am</span>
-          <span class="day-pill">🏠 Return ~7:30pm</span>
-          <span class="day-pill">~280 mi</span>
-        </div>
-      </div>
-      <div class="stops-wrap">
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🚗</div>
-            <div class="stop-time-vert">8:00am<br>Depart</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Leave Santa Clara</div>
-            <div class="stop-desc">Breakfast at home. Hit the road by 8am sharp. Take Hwy 101 South — smooth sailing at this hour.</div>
-            <div class="transport"><span class="transport-icon">🛣️</span><div><strong>Route</strong>Hwy 101 S all the way to Salinas, then Hwy 68 W toward Monterey. ~1 hr 45 min to Monterey with no stops.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🦞</div>
-            <div class="stop-time-vert">9:45am<br>Monterey</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Cannery Row — Coastal Walk</div>
-            <div class="stop-desc">Stretch your legs with a 30-min walk along the Monterey waterfront. Cannery Row is scenic, historic, and much more local than SF's wharf. Watch the sea otters floating in the kelp just offshore — no aquarium needed.</div>
-            <div class="stop-tags">
-              <span class="tag tag-free">Free</span>
-              <span class="tag tag-nature">Wildlife</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Parking</strong>Park anywhere along Cannery Row — metered street parking or the Cannery Row Garage at 75 Prescott Ave. Easy 30-min stop. Stay on the waterfront path.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">⛳</div>
-            <div class="stop-time-vert">10:30am<br>17-Mile Dr</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">17-Mile Drive — Pebble Beach</div>
-            <div class="stop-desc">Enter at the Pacific Grove Gate and drive south. 20+ named stops — Lone Cypress (the most photographed tree in North America), Bird Rock covered in pelicans and seals, Pebble Beach Golf Course, and dramatic rocky coves. Allow 1.5 hrs.</div>
-            <div class="stop-tags">
-              <span class="tag tag-paid">$12 / car toll</span>
-              <span class="tag tag-iconic">Iconic</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving</strong>From Cannery Row head west on Ocean View Blvd to Pacific Grove Gate (on Sunset Dr). Exit at the Carmel Gate on the south end — this drops you right into Carmel village. ~10 min from Monterey to gate.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🏘️</div>
-            <div class="stop-time-vert">12:00pm<br>Carmel</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Carmel-by-the-Sea — Lunch</div>
-            <div class="stop-desc">Exit 17-Mile Drive straight into Carmel. Lunch at Mission Ranch — a historic meadow-view property owned by Clint Eastwood. Stunning setting with views to the ocean. Book in advance! Alternatively walk Ocean Ave for casual spots.</div>
-            <div class="stop-tags">
-              <span class="tag tag-food">Mission Ranch ~$25–40pp</span>
-              <span class="tag tag-iconic">Book ahead</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Parking</strong>Mission Ranch is at 26270 Dolores St, Carmel. Free parking on site. Ocean Ave has a public lot at 3rd Ave. After lunch, head south on Hwy 1 — Point Lobos is 2 miles south of Carmel.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🦭</div>
-            <div class="stop-time-vert">1:30pm<br>Point Lobos</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Point Lobos State Natural Reserve</div>
-            <div class="stop-desc">Sea otters in kelp forests. Harbor seals on the rocks. Turquoise coves. One of the most biodiverse marine areas on the planet. Walk the Sea Lion Point or Cypress Grove Trail — both under 1 mile, both jaw-dropping.</div>
-            <div class="stop-tags">
-              <span class="tag tag-paid">$15 / car</span>
-              <span class="tag tag-nature">Nature</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving</strong>Head south on Hwy 1 from Carmel, ~2 miles. Entrance on the right (west side). Pay at the gate. <strong>Parking fills by noon on holiday Saturdays</strong> — if lot is full, roadside parking is allowed just outside on Hwy 1 shoulder.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🌸</div>
-            <div class="stop-time-vert">3:00pm<br>Garrapata</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Garrapata Trail, Beach & Calla Lily Valley</div>
-            <div class="stop-desc">Free and spectacular. Late May means wildflowers on the coastal bluffs and Calla Lilies blooming in the hidden canyon. One of the most dramatic cliff-edge trails on the entire California coast. The beach below is wild and pristine.</div>
-            <div class="stop-tags">
-              <span class="tag tag-free">Free entry</span>
-              <span class="tag tag-nature">Wildflowers in May</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving</strong>Continue south on Hwy 1 ~7 miles from Point Lobos. No signage — look for Gates 18 & 19 (pull-outs on the shoulder). Park on the shoulder. GPS: 36.4585° N, 121.9275° W is a good approximation.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🌉</div>
-            <div class="stop-time-vert">4:15pm<br>Bixby</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Bixby Creek Bridge — Photo Stop</div>
-            <div class="stop-desc">The most photographed bridge in California. Quick 5–10 min stop for photos — you'll take 50. The pull-out on the north side gives the iconic shot looking south.</div>
-            <div class="stop-tags">
-              <span class="tag tag-free">Free</span>
-              <span class="tag tag-iconic">5-min stop</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving</strong>~8 miles south of Garrapata on Hwy 1. Pull-out is on the right (north side) just before you cross the bridge heading south. Slow down — it's easy to miss. Don't stop ON the bridge.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">💧</div>
-            <div class="stop-time-vert">4:45pm<br>McWay Falls</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">McWay Falls — Julia Pfeiffer Burns State Park</div>
-            <div class="stop-desc">The crown jewel of the day. An 80-ft waterfall dropping directly onto a turquoise beach cove that you can't reach — making it somehow more magical. The overlook trail is only 0.7 miles round trip. Utterly surreal.</div>
-            <div class="stop-tags">
-              <span class="tag tag-paid">$10 / car</span>
-              <span class="tag tag-iconic">Unmissable</span>
-            </div>
-            <div class="tip-box"><strong>⚠️ Timing</strong>Allow 45 min here then head back north. Leave by 5:30pm to beat holiday traffic on 101 home. The park stays open until sunset but you need to drive.</div>
-            <div class="transport" style="margin-top:8px"><span class="transport-icon">🚗</span><div><strong>Driving</strong>~12 miles south of Bixby Bridge on Hwy 1. Well-signed. Park in the day-use lot east of highway. Cross the pedestrian tunnel under Hwy 1 to reach the falls trail. To go home: drive back north on Hwy 1 → Hwy 68 E → Hwy 101 N to Santa Clara. ~2 hrs home.</div></div>
-          </div>
-        </div>
-
+  <!-- DAY 1 -->
+  <div class="day-detail active" data-day-detail="1">
+    <div class="day-header">
+      <h2>Big Sur Coast</h2>
+      <div class="day-route">Santa Clara &rarr; Monterey &rarr; 17-Mile Drive &rarr; Carmel &rarr; Point Lobos &rarr; Garrapata &rarr; Bixby Bridge &rarr; McWay Falls &rarr; home</div>
+      <div class="day-meta-row">
+        <span class="day-pill">&#x1F552; Leave 8am</span>
+        <span class="day-pill teal">&#x1F3E0; Return ~7:30pm</span>
+        <span class="day-pill blue">~280 mi</span>
       </div>
     </div>
 
-    <!-- DAY 2 -->
-    <div class="day-block">
-      <div class="day-header-card d2">
-        <div class="day-title-wrap">
-          <div class="day-badge">Day 2 · Sunday May 24</div>
-          <div class="day-name">Redwoods & Año Nuevo</div>
-          <div class="day-route">Santa Clara → Henry Cowell Redwoods → Año Nuevo Seals → Santa Cruz → home</div>
-        </div>
-        <div class="day-meta-pills">
-          <span class="day-pill">🕖 Leave 7:30am</span>
-          <span class="day-pill">🏠 Return ~5pm</span>
-          <span class="day-pill">~180 mi</span>
+    <div class="card">
+      <div class="activity">
+        <div class="act-time">8:00 AM</div>
+        <div class="act-body">
+          <span class="act-badge drive">Depart</span>
+          <div class="act-title">Leave Santa Clara</div>
+          <div class="act-location">Hwy 101 S</div>
+          <div class="act-details">Breakfast at home, hit the road by 8am sharp. Take Hwy 101 South to Salinas, then Hwy 68 W to Monterey. ~1 hr 45 min with no stops.</div>
         </div>
       </div>
-      <div class="stops-wrap">
 
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🚗</div>
-            <div class="stop-time-vert">7:30am<br>Depart</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Leave Santa Clara — Beat Hwy 17</div>
-            <div class="stop-desc">Leave by 7:30am. Hwy 17 to Santa Cruz starts backing up by 9am on summer Sundays — getting ahead of it saves 45+ minutes.</div>
-            <div class="transport"><span class="transport-icon">🛣️</span><div><strong>Route</strong>Take Hwy 17 South over the Santa Cruz Mountains. Once you drop into Santa Cruz, take Hwy 9 N toward Felton for Henry Cowell. ~50 min total.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🌲</div>
-            <div class="stop-time-vert">8:45am<br>Santa Cruz Mtns</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Henry Cowell Redwoods State Park</div>
-            <div class="stop-desc">Ancient coastal redwoods — some over 1,500 years old and 285 feet tall. The Redwood Grove Loop is only 0.8 miles but feels like walking into a cathedral. Completely flat, all ages, deeply peaceful. One of the best things you'll do all weekend.</div>
-            <div class="stop-tags">
-              <span class="tag tag-paid">$10 / car</span>
-              <span class="tag tag-nature">Ancient trees</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Parking</strong>Entrance at 101 N. Big Trees Park Rd, Felton CA. Large parking lot inside. <strong>Arrives before 9am — lot fills by 10am on holiday weekends.</strong> Allow 1–1.5 hrs here.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🦭</div>
-            <div class="stop-time-vert">10:30am<br>Año Nuevo</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Año Nuevo State Park — Elephant Seals</div>
-            <div class="stop-desc">Massive elephant seals — bulls weigh up to 2 tons — lolling on the beach. Late May means juveniles and young adults are on shore. A 3-mile round trip walk to the colony along the bluffs. One of the most unusual wildlife experiences in California.</div>
-            <div class="stop-tags">
-              <span class="tag tag-paid">$10 / car</span>
-              <span class="tag tag-nature">Wildlife</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving</strong>From Felton take Hwy 9 S back to Santa Cruz, then Hwy 1 N for ~27 miles. Well-signed off the highway. ~45 min from Henry Cowell. In May, self-guided walks are fine — no guided tour reservation needed (required Jan–Mar only).</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🌮</div>
-            <div class="stop-time-vert">1:00pm<br>Santa Cruz</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Santa Cruz — Lunch on Pacific Ave</div>
-            <div class="stop-desc">Head back south to Santa Cruz for lunch. Pacific Ave has great casual spots — great fish tacos, burgers, and beach food. Walk down to the wharf if you like, or just soak up the beach-town energy before heading home.</div>
-            <div class="stop-tags">
-              <span class="tag tag-food">~$15–25pp</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving</strong>From Año Nuevo, head south on Hwy 1 ~27 miles back to Santa Cruz. ~35 min. Park in the downtown structure on Cedar St or Locust St. <strong>Head home by 4pm via Hwy 17 N</strong> to beat Sunday evening traffic.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🏠</div>
-            <div class="stop-time-vert">4:00pm<br>Head home</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Back to Santa Clara</div>
-            <div class="stop-desc">Leave Santa Cruz by 4pm. Hwy 17 North fills up fast on Sunday evenings — every 30 min you wait after 4pm adds 20 min to your drive.</div>
-            <div class="transport"><span class="transport-icon">🛣️</span><div><strong>Route</strong>Hwy 17 N from Santa Cruz over the mountains. Merge onto I-880 or Hwy 101 N into Santa Clara. ~50 min if you leave by 4pm. Could be 1.5 hrs if you leave at 5:30pm.</div></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- DAY 3 -->
-    <div class="day-block">
-      <div class="day-header-card d3">
-        <div class="day-title-wrap">
-          <div class="day-badge">Day 3 · Monday May 25 — Memorial Day</div>
-          <div class="day-name">San Francisco</div>
-          <div class="day-route">Santa Clara → Mission → Alamo Sq → Sutro Baths → Golden Gate → Sausalito → Ferry Building → Ghirardelli → Chinatown (optional) → home</div>
-        </div>
-        <div class="day-meta-pills">
-          <span class="day-pill">🕖 Leave 7am</span>
-          <span class="day-pill">🏠 Return by 6pm</span>
-          <span class="day-pill">~120 mi</span>
+      <div class="activity">
+        <div class="act-time">9:45 AM</div>
+        <div class="act-body">
+          <span class="act-badge activity">Stop</span>
+          <div class="act-title">Cannery Row &mdash; Monterey Waterfront Walk</div>
+          <div class="act-location">Cannery Row, Monterey</div>
+          <div class="act-details">Stretch your legs with a 30-min walk along the waterfront. Scenic, historic, and much more local than SF's wharf. Watch the sea otters floating in the kelp just offshore &mdash; no aquarium needed.</div>
+          <div class="act-tags"><span class="act-tag free">Free</span><span class="act-tag free">Wildlife</span></div>
+          <div class="act-action">&#x1F17F;&#xFE0F; Park along Cannery Row (metered street) or Cannery Row Garage at 75 Prescott Ave.</div>
         </div>
       </div>
-      <div class="stops-wrap">
 
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🥐</div>
-            <div class="stop-time-vert">8:00am<br>The Mission</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Tartine Bakery — Breakfast</div>
-            <div class="stop-desc">One of the most famous bakeries in America. The morning bun — orange zest, cinnamon, flaky pastry — is legendary. This is the first neighborhood you enter coming from the south on 280, so zero detour. Arrive right at 8am to beat the line.</div>
-            <div class="stop-tags">
-              <span class="tag tag-food">~$10–15pp</span>
-              <span class="tag tag-iconic">Iconic</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving + Parking</strong>Take I-280 N into SF (more scenic, less traffic than 101). Exit Cesar Chavez St W, right on Guerrero St. Tartine at 600 Guerrero St. Street parking on Guerrero or nearby side streets — free before 9am on most blocks.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🌳</div>
-            <div class="stop-time-vert">8:45am<br>Mission</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Mission Dolores Park</div>
-            <div class="stop-desc">Two-minute walk from Tartine. Eat your pastries on the hilltop with the downtown skyline spread out in front of you. On a clear May morning this is one of the best views in the city. Catches it before the crowds arrive.</div>
-            <div class="stop-tags"><span class="tag tag-free">Free · 2-min walk from Tartine</span></div>
-            <div class="transport"><span class="transport-icon">🚶</span><div><strong>Walking</strong>Walk south 2 min on Guerrero St. Enter at the 20th St entrance for the best hilltop view. Leave the car parked on Guerrero.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🏠</div>
-            <div class="stop-time-vert">9:20am<br>Alamo Sq</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">The Painted Ladies — Alamo Square</div>
-            <div class="stop-desc">The iconic Victorian row houses from the Full House opening credits, with the downtown skyline behind them. Take the photo from the top of Alamo Square Park hill — NOT from the street in front. Way better angle. 15-min stop.</div>
-            <div class="stop-tags">
-              <span class="tag tag-free">Free</span>
-              <span class="tag tag-iconic">Quick photo stop</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving</strong>~10 min from Dolores Park. North on Guerrero → left on 17th → right on Scott St to Alamo Square. Park on Steiner St facing the houses or in the neighborhood. Leave the car and walk into the park.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🌊</div>
-            <div class="stop-time-vert">10:00am<br>Lands End</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Sutro Baths & Lands End</div>
-            <div class="stop-desc">Victorian-era ruins of a massive public swimming complex — now meeting the open Pacific Ocean. Walk down into the ruins, explore the sea caves, watch the waves crash through the rock arches. One of SF's most dramatic and underrated spots.</div>
-            <div class="stop-tags">
-              <span class="tag tag-free">Free · Open 24hrs</span>
-              <span class="tag tag-nature">Dramatic views</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving</strong>~20 min from Alamo Square. Head west on Fulton St through the Richmond, right on 48th Ave, follow signs to Lands End. Park in the Lands End Lookout lot (free, fills fast — good at 10am). Take the coastal approach drive through the Richmond for atmosphere.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🌉</div>
-            <div class="stop-time-vert">11:15am<br>Presidio</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Golden Gate Bridge</div>
-            <div class="stop-desc">Walk across (1.7 miles each way) or walk to the south tower overlook. Drive the approach through the Presidio from Sutro Baths for the best coastal angle. Every view is photo-worthy.</div>
-            <div class="stop-tags">
-              <span class="tag tag-free">Free on foot</span>
-              <span class="tag tag-iconic">Unmissable</span>
-            </div>
-            <div class="tip-box"><strong>⚠️ Parking Strategy — Memorial Day</strong>The SE lot at the bridge has only 26 spaces and will be full. Use the Presidio lots on Lincoln Blvd (free) and walk ~10 min to the bridge. Or drop passengers at the bridge, driver parks in the Presidio and walks back to meet the group.</div>
-            <div class="transport" style="margin-top:8px"><span class="transport-icon">🚗</span><div><strong>Driving</strong>From Sutro Baths head north on Point Lobos Ave → El Camino Del Mar through the Presidio (gorgeous coastal road). Follow bridge signs. Presidio lots on Lincoln Blvd are your best bet for parking.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🍽️</div>
-            <div class="stop-time-vert">12:30pm<br>Sausalito</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Barrel House Tavern — Lunch in Sausalito</div>
-            <div class="stop-desc">Cross the Golden Gate into Marin County. Lunch on the Sausalito waterfront with sweeping bay views — sea lions, sailboats, the SF skyline across the water. Shrimp risotto and steak sandwich are standouts. Sit outside on the deck.</div>
-            <div class="stop-tags">
-              <span class="tag tag-food">~$25–40pp</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving</strong>Cross the Golden Gate heading north on Hwy 101. Take Alexander Ave exit immediately after bridge, loop back under freeway toward Sausalito. Barrel House Tavern at 660 Bridgeway. Paid parking on Bridgeway or Caledonia St garage.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🛒</div>
-            <div class="stop-time-vert">2:15pm<br>Embarcadero</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Ferry Building Marketplace</div>
-            <div class="stop-desc">Cross back over the bridge and swing east to the waterfront. Artisan cheese, local oysters, Dandelion Chocolate, Blue Bottle Coffee. Browse the stalls and grab snacks for the drive home. Beautiful promenade along the bay.</div>
-            <div class="stop-tags">
-              <span class="tag tag-free">Free to browse</span>
-              <span class="tag tag-food">Snacks & coffee</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚗</span><div><strong>Driving</strong>From Sausalito, Hwy 101 S back over the bridge → follow signs to downtown SF Embarcadero. Ferry Building at 1 Ferry Building on the waterfront. Park in Embarcadero Center garage (paid, ~$4/hr).</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🍫</div>
-            <div class="stop-time-vert">3:00pm<br>Wharf</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Ghirardelli — Hot Fudge Sundae</div>
-            <div class="stop-desc">A 15-min walk north along the waterfront from Ferry Building to Ghirardelli Square. End the entire weekend with a legendary hot fudge sundae looking out at the bay. You've fully earned it.</div>
-            <div class="stop-tags">
-              <span class="tag tag-food">~$12–15pp</span>
-            </div>
-            <div class="tip-box"><strong>⚠️ Leave by 3:30pm — Critical on Memorial Day</strong>Every minute after 4pm on Memorial Day afternoon adds significant time to your drive home on 101. The sundae is worth it — just don't linger.</div>
-            <div class="transport" style="margin-top:8px"><span class="transport-icon">🚶 + 🚗</span><div><strong>Walk + Drive</strong>Walk 15 min north along Embarcadero to Ghirardelli (900 North Point St). Then pick up car from Ferry Building garage. Home via I-280 S or Hwy 101 S. ~1 hr if you leave by 3:30pm.</div></div>
-          </div>
-        </div>
-
-        <div class="stop-row">
-          <div class="stop-left">
-            <div class="stop-icon">🚡</div>
-            <div class="stop-time-vert">Optional<br>+1 hr</div>
-          </div>
-          <div class="stop-right">
-            <div class="stop-name">Cable Car to Chinatown — Optional</div>
-            <div class="stop-desc">If energy allows — board at Hyde & Beach St next to Ghirardelli. $8/person. Hang off the outside on the hills. Drops you in Chinatown for a final wander, dim sum, and souvenir shopping. Adds ~1 hr — only if you can leave by 3:30pm total.</div>
-            <div class="stop-tags">
-              <span class="tag tag-paid">$8pp</span>
-              <span class="tag tag-iconic">Classic SF</span>
-              <span class="tag tag-warn">Skip if tight on time</span>
-            </div>
-            <div class="transport"><span class="transport-icon">🚡</span><div><strong>Cable Car</strong>Board at Hyde & Beach Streets at Ghirardelli. $8/person — buy at booth or online. Ask conductor for Chinatown/Grant Ave stop. Uber/Lyft back to your car at Embarcadero garage.</div></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- BUDGET -->
-  <section id="budget">
-    <div class="section-spacer"></div>
-    <div class="section-head">
-      <span class="section-emoji">💰</span>
-      <h2>Budget Estimate</h2>
-      <span class="section-sub">For 4 people total</span>
-    </div>
-    <div class="budget-grid">
-      <div class="budget-card">
-        <div class="budget-day">Day 1 · Big Sur</div>
-        <div class="budget-amount">$260–$440</div>
-        <div class="budget-breakdown">
-          Gas ~280 mi round trip — ~$42<br>
-          17-Mile Drive toll — $12/car<br>
-          Point Lobos — $15/car<br>
-          McWay Falls — $10/car<br>
-          Lunch Mission Ranch — $25–40pp<br>
-          Snacks / extras — ~$20
+      <div class="activity">
+        <div class="act-time">10:30 AM</div>
+        <div class="act-body">
+          <span class="act-badge iconic">Iconic</span>
+          <div class="act-title">17-Mile Drive &mdash; Pebble Beach</div>
+          <div class="act-location">Pacific Grove Gate &rarr; Carmel Gate</div>
+          <div class="act-details">Enter at the Pacific Grove Gate and drive south. 20+ named stops &mdash; Lone Cypress (most photographed tree in North America), Bird Rock covered in pelicans and seals, Pebble Beach Golf Course, dramatic rocky coves. Exit at the Carmel Gate to drop straight into the village. Allow 1.5 hrs.</div>
+          <div class="act-tags"><span class="act-tag paid">$12 / car toll</span></div>
         </div>
       </div>
-      <div class="budget-card">
-        <div class="budget-day">Day 2 · Redwoods</div>
-        <div class="budget-amount">$140–$220</div>
-        <div class="budget-breakdown">
-          Gas ~180 mi round trip — ~$27<br>
-          Henry Cowell — $10/car<br>
-          Año Nuevo — $10/car<br>
-          Lunch Santa Cruz — $15–25pp<br>
-          Snacks / extras — ~$15
+
+      <div class="activity">
+        <div class="act-time">12:00 PM</div>
+        <div class="act-body">
+          <span class="act-badge meal">Lunch</span>
+          <div class="act-title">Mission Ranch &mdash; Carmel-by-the-Sea</div>
+          <div class="act-location">26270 Dolores St, Carmel</div>
+          <div class="act-details">Historic meadow-view property owned by Clint Eastwood. Stunning setting with views to the ocean. Book in advance! Alternatively walk Ocean Ave for casual spots. Free parking on site.</div>
+          <div class="act-tags"><span class="act-tag paid">~$25&ndash;40pp</span><span class="act-tag warn">Book ahead</span></div>
         </div>
       </div>
-      <div class="budget-card">
-        <div class="budget-day">Day 3 · San Francisco</div>
-        <div class="budget-amount">$220–$360</div>
-        <div class="budget-breakdown">
-          Gas ~120 mi round trip — ~$18<br>
-          Parking SF (Embarcadero garage) — ~$20<br>
-          Tartine breakfast — $10–15pp<br>
-          Lunch Sausalito — $25–40pp<br>
-          Ghirardelli sundaes — $12–15pp<br>
-          Cable car (optional) — $8pp
+
+      <div class="activity">
+        <div class="act-time">1:30 PM</div>
+        <div class="act-body">
+          <span class="act-badge activity">Nature</span>
+          <div class="act-title">Point Lobos State Natural Reserve</div>
+          <div class="act-location">2 miles south of Carmel on Hwy 1</div>
+          <div class="act-details">Sea otters in kelp forests, harbor seals on the rocks, turquoise coves. One of the most biodiverse marine areas on the planet. Walk Sea Lion Point or Cypress Grove Trail &mdash; both under 1 mile, both jaw-dropping.</div>
+          <div class="act-tags"><span class="act-tag paid">$15 / car</span></div>
+          <div class="tip-box"><strong>&#x26A0;&#xFE0F; Parking</strong>Lot fills by noon on holiday Saturdays. If full, roadside parking is allowed on the Hwy 1 shoulder just outside.</div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">3:00 PM</div>
+        <div class="act-body">
+          <span class="act-badge activity">Hidden gem</span>
+          <div class="act-title">Garrapata Trail, Beach &amp; Calla Lily Valley</div>
+          <div class="act-location">Hwy 1, ~7 mi south of Point Lobos (Gates 18 &amp; 19)</div>
+          <div class="act-details">Free and spectacular. Late May means wildflowers on the coastal bluffs and Calla Lilies blooming in the hidden canyon. One of the most dramatic cliff-edge trails on the entire California coast. The beach below is wild and pristine.</div>
+          <div class="act-tags"><span class="act-tag free">Free entry</span><span class="act-tag free">Wildflowers</span></div>
+          <div class="act-action">&#x1F4CD; No signage &mdash; look for shoulder pull-outs. GPS: 36.4585&deg; N, 121.9275&deg; W.</div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">4:15 PM</div>
+        <div class="act-body">
+          <span class="act-badge iconic">Photo stop</span>
+          <div class="act-title">Bixby Creek Bridge</div>
+          <div class="act-location">Hwy 1, ~8 mi south of Garrapata</div>
+          <div class="act-details">The most photographed bridge in California. Quick 5&ndash;10 min stop &mdash; you'll take 50 photos. Pull-out on the right (north side) just before crossing the bridge heading south. Don't stop ON the bridge.</div>
+          <div class="act-tags"><span class="act-tag free">Free</span></div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">4:45 PM</div>
+        <div class="act-body">
+          <span class="act-badge iconic">Crown jewel</span>
+          <div class="act-title">McWay Falls &mdash; Julia Pfeiffer Burns State Park</div>
+          <div class="act-location">Hwy 1, ~12 mi south of Bixby Bridge</div>
+          <div class="act-details">An 80-ft waterfall dropping directly onto a turquoise beach cove you can't reach &mdash; making it somehow more magical. The overlook trail is only 0.7 miles round trip. Utterly surreal.</div>
+          <div class="act-tags"><span class="act-tag paid">$10 / car</span></div>
+          <div class="tip-box"><strong>&#x26A0;&#xFE0F; Leave by 5:30pm</strong>Allow 45 min here then head back north. Drive: Hwy 1 N &rarr; Hwy 68 E &rarr; Hwy 101 N to Santa Clara. ~2 hrs home.</div>
         </div>
       </div>
     </div>
-    <div class="budget-total">
-      <div>
-        <div class="budget-total-label">Total weekend estimate · 4 people</div>
-      </div>
-      <div class="budget-total-val">$620 – $1,020</div>
-    </div>
-  </section>
+  </div>
 
-  <!-- CHECKLIST -->
-  <section id="checklist">
-    <div class="section-spacer"></div>
-    <div class="section-head">
-      <span class="section-emoji">✅</span>
-      <h2>Before You Go — Checklist</h2>
+  <!-- DAY 2 -->
+  <div class="day-detail" data-day-detail="2">
+    <div class="day-header">
+      <h2>Redwoods &amp; Elephant Seals</h2>
+      <div class="day-route">Santa Clara &rarr; Henry Cowell Redwoods &rarr; A&ntilde;o Nuevo &rarr; Santa Cruz &rarr; home</div>
+      <div class="day-meta-row">
+        <span class="day-pill">&#x1F552; Leave 7:30am</span>
+        <span class="day-pill teal">&#x1F3E0; Return ~5pm</span>
+        <span class="day-pill blue">~180 mi</span>
+      </div>
     </div>
-    <div class="checklist-grid">
-      <div class="check-item"><span class="check-icon">📞</span>Book Mission Ranch, Carmel for Day 1 lunch — fills fast on holiday weekends</div>
-      <div class="check-item"><span class="check-icon">📱</span>Download Google Maps offline for Big Sur — cell service is spotty on Hwy 1 south of Carmel</div>
-      <div class="check-item"><span class="check-icon">🧥</span>Pack layers for everyone — coastal temps run 15°F cooler than Santa Clara, and windy</div>
-      <div class="check-item"><span class="check-icon">👟</span>Wear comfortable walking shoes all 3 days — lots of trail walking especially Day 1</div>
-      <div class="check-item"><span class="check-icon">🔋</span>Bring a portable power bank — long days away from outlets</div>
-      <div class="check-item"><span class="check-icon">💵</span>Bring cash for park gates — some don't take cards (Point Lobos, Año Nuevo)</div>
-      <div class="check-item"><span class="check-icon">🎫</span>Optional: pre-buy Ghirardelli sundaes online to skip the line on Memorial Day</div>
-      <div class="check-item"><span class="check-icon">🌊</span>Check Hwy 1 / Big Sur road conditions before Day 1 at dot.ca.gov — landslides can close it</div>
-      <div class="check-item"><span class="check-icon">⛽</span>Fill up gas in Santa Clara before each day — Big Sur has almost no gas stations</div>
-      <div class="check-item"><span class="check-icon">🧴</span>Sunscreen even on cloudy days — coastal UV is high even when it feels cool</div>
-      <div class="check-item"><span class="check-icon">🅿️</span>Day 3: drop passengers at each SF stop, driver parks — saves huge amounts of time</div>
-      <div class="check-item"><span class="check-icon">📸</span>Bixby Creek north overlook: slow down on Hwy 1 heading south — easy to drive past</div>
-    </div>
-  </section>
 
-  <!-- INFO -->
-  <section id="info">
-    <div class="section-spacer"></div>
-    <div class="section-head">
-      <span class="section-emoji">📌</span>
-      <h2>Important Info</h2>
-    </div>
-    <div class="info-grid">
-      <div class="info-card">
-        <h4>🅿️ Parking Tips</h4>
-        <ul>
-          <li>Big Sur: shoulder parking is legal outside park lots when full</li>
-          <li>Garrapata: park on Hwy 1 shoulder — no official lot</li>
-          <li>SF Golden Gate: Presidio lots on Lincoln Blvd (free)</li>
-          <li>SF Ferry Building: Embarcadero Center garage ~$4/hr</li>
-          <li>Sausalito: Caledonia St garage or Bridgeway metered</li>
-        </ul>
+    <div class="card">
+      <div class="activity">
+        <div class="act-time">7:30 AM</div>
+        <div class="act-body">
+          <span class="act-badge drive">Depart</span>
+          <div class="act-title">Leave Santa Clara &mdash; Beat Hwy 17</div>
+          <div class="act-location">Hwy 17 S over the mountains</div>
+          <div class="act-details">Hwy 17 to Santa Cruz starts backing up by 9am on summer Sundays &mdash; getting ahead saves 45+ min. Hwy 17 S &rarr; Hwy 9 N to Felton. ~50 min total.</div>
+        </div>
       </div>
-      <div class="info-card">
-        <h4>📞 Key Numbers & Links</h4>
-        <ul>
-          <li>Hwy 1 conditions: dot.ca.gov</li>
-          <li>Point Lobos: (831) 624-4909</li>
-          <li>Mission Ranch Carmel: (831) 624-6436</li>
-          <li>Barrel House Tavern: (415) 729-9593</li>
-          <li>Año Nuevo: (650) 879-2025</li>
-          <li>Henry Cowell: (831) 335-4598</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h4>🌤️ Weather to Expect</h4>
-        <p>Late May on the California coast:<br>
-        Santa Clara: 75–85°F sunny<br>
-        Big Sur coast: 55–65°F, often foggy mornings clearing by noon<br>
-        Santa Cruz: 60–70°F<br>
-        San Francisco: 55–65°F, typically foggy morning, clear afternoon<br><br>
-        Pack a fleece or light jacket for everyone. Wind is the surprise factor on the coast.</p>
-      </div>
-      <div class="info-card">
-        <h4>🍽️ Food Summary</h4>
-        <ul>
-          <li><strong>Day 1:</strong> Lunch at Mission Ranch, Carmel (book ahead)</li>
-          <li><strong>Day 2:</strong> Casual lunch on Pacific Ave, Santa Cruz</li>
-          <li><strong>Day 3:</strong> Tartine breakfast + Barrel House Tavern lunch + Ghirardelli sundaes</li>
-          <li>All other meals at home in Santa Clara</li>
-          <li>Bring snacks and water for Day 1 — Big Sur has very limited food options</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
-</main>
+      <div class="activity">
+        <div class="act-time">8:45 AM</div>
+        <div class="act-body">
+          <span class="act-badge activity">Nature</span>
+          <div class="act-title">Henry Cowell Redwoods State Park</div>
+          <div class="act-location">101 N. Big Trees Park Rd, Felton</div>
+          <div class="act-details">Ancient coastal redwoods &mdash; some over 1,500 years old and 285 feet tall. The Redwood Grove Loop is only 0.8 miles but feels like walking into a cathedral. Completely flat, all ages, deeply peaceful. One of the best things you'll do all weekend.</div>
+          <div class="act-tags"><span class="act-tag paid">$10 / car</span><span class="act-tag free">Ancient trees</span></div>
+          <div class="tip-box"><strong>&#x26A0;&#xFE0F; Arrive before 9am</strong>Lot fills by 10am on holiday weekends. Allow 1&ndash;1.5 hrs here.</div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">10:30 AM</div>
+        <div class="act-body">
+          <span class="act-badge activity">Wildlife</span>
+          <div class="act-title">A&ntilde;o Nuevo State Park &mdash; Elephant Seals</div>
+          <div class="act-location">Hwy 1, ~27 mi north of Santa Cruz</div>
+          <div class="act-details">Massive elephant seals &mdash; bulls weigh up to 2 tons &mdash; lolling on the beach. Late May means juveniles and young adults are on shore. A 3-mile round trip walk to the colony along the bluffs. One of the most unusual wildlife experiences in California.</div>
+          <div class="act-tags"><span class="act-tag paid">$10 / car</span></div>
+          <div class="act-action">&#x2705; In May, self-guided walks are fine &mdash; no guided tour reservation needed (required Jan&ndash;Mar only).</div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">1:00 PM</div>
+        <div class="act-body">
+          <span class="act-badge meal">Lunch</span>
+          <div class="act-title">Santa Cruz &mdash; Pacific Ave</div>
+          <div class="act-location">Downtown Santa Cruz</div>
+          <div class="act-details">Head back south to Santa Cruz for lunch. Pacific Ave has great casual spots &mdash; fish tacos, burgers, beach food. Walk down to the wharf if you like, or just soak up the beach-town energy before heading home.</div>
+          <div class="act-tags"><span class="act-tag paid">~$15&ndash;25pp</span></div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">4:00 PM</div>
+        <div class="act-body">
+          <span class="act-badge drive">Head home</span>
+          <div class="act-title">Back to Santa Clara</div>
+          <div class="act-location">Hwy 17 N</div>
+          <div class="act-details">Leave Santa Cruz by 4pm. Hwy 17 North fills up fast on Sunday evenings &mdash; every 30 min you wait after 4pm adds 20 min to your drive. ~50 min if you leave by 4pm; could be 1.5 hrs if you leave at 5:30pm.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-detail" data-day-detail="3">
+    <div class="day-header">
+      <h2>San Francisco Memorial Day</h2>
+      <div class="day-route">Santa Clara &rarr; Mission &rarr; Alamo Sq &rarr; Sutro Baths &rarr; Golden Gate &rarr; Sausalito &rarr; Ferry Building &rarr; Ghirardelli &rarr; (Chinatown opt) &rarr; home</div>
+      <div class="day-meta-row">
+        <span class="day-pill">&#x1F552; Leave 7am</span>
+        <span class="day-pill teal">&#x1F3E0; Return by 6pm</span>
+        <span class="day-pill blue">~120 mi</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="activity">
+        <div class="act-time">8:00 AM</div>
+        <div class="act-body">
+          <span class="act-badge meal">Breakfast</span>
+          <div class="act-title">Tartine Bakery &mdash; The Mission</div>
+          <div class="act-location">600 Guerrero St, San Francisco</div>
+          <div class="act-details">One of the most famous bakeries in America. The morning bun &mdash; orange zest, cinnamon, flaky pastry &mdash; is legendary. First neighborhood you enter coming from the south on I-280, so zero detour. Arrive right at 8am to beat the line.</div>
+          <div class="act-tags"><span class="act-tag paid">~$10&ndash;15pp</span></div>
+          <div class="act-action">&#x1F17F;&#xFE0F; Street parking on Guerrero is free before 9am on most blocks.</div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">8:45 AM</div>
+        <div class="act-body">
+          <span class="act-badge walk">Walk</span>
+          <div class="act-title">Mission Dolores Park</div>
+          <div class="act-location">2-min walk south on Guerrero</div>
+          <div class="act-details">Eat your pastries on the hilltop with the downtown skyline spread in front of you. On a clear May morning this is one of the best views in the city. Enter at the 20th St entrance for the best hilltop view.</div>
+          <div class="act-tags"><span class="act-tag free">Free</span></div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">9:20 AM</div>
+        <div class="act-body">
+          <span class="act-badge iconic">Photo stop</span>
+          <div class="act-title">The Painted Ladies &mdash; Alamo Square</div>
+          <div class="act-location">Steiner St &amp; Hayes St</div>
+          <div class="act-details">The iconic Victorian row houses from the Full House opening credits, with the downtown skyline behind them. Take the photo from the top of Alamo Square Park hill &mdash; NOT from the street in front. Way better angle. 15-min stop.</div>
+          <div class="act-tags"><span class="act-tag free">Free</span></div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">10:00 AM</div>
+        <div class="act-body">
+          <span class="act-badge activity">Dramatic views</span>
+          <div class="act-title">Sutro Baths &amp; Lands End</div>
+          <div class="act-location">Lands End Lookout lot, Richmond District</div>
+          <div class="act-details">Victorian-era ruins of a massive public swimming complex &mdash; now meeting the open Pacific. Walk down into the ruins, explore the sea caves, watch the waves crash through the rock arches. One of SF's most dramatic and underrated spots.</div>
+          <div class="act-tags"><span class="act-tag free">Free &middot; 24hrs</span></div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">11:15 AM</div>
+        <div class="act-body">
+          <span class="act-badge iconic">Unmissable</span>
+          <div class="act-title">Golden Gate Bridge</div>
+          <div class="act-location">Presidio side &mdash; Lincoln Blvd lots</div>
+          <div class="act-details">Walk across (1.7 miles each way) or walk to the south tower overlook. Drive the approach through the Presidio from Sutro Baths for the best coastal angle. Every view is photo-worthy.</div>
+          <div class="act-tags"><span class="act-tag free">Free on foot</span></div>
+          <div class="tip-box"><strong>&#x26A0;&#xFE0F; Memorial Day parking</strong>The SE lot has only 26 spaces and will be full. Use Presidio lots on Lincoln Blvd (free) and walk ~10 min, or drop passengers at the bridge and have the driver park and walk back.</div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">12:30 PM</div>
+        <div class="act-body">
+          <span class="act-badge meal">Lunch</span>
+          <div class="act-title">Barrel House Tavern &mdash; Sausalito</div>
+          <div class="act-location">660 Bridgeway, Sausalito</div>
+          <div class="act-details">Cross the Golden Gate into Marin County. Lunch on the Sausalito waterfront with sweeping bay views &mdash; sea lions, sailboats, SF skyline across the water. Shrimp risotto and steak sandwich are standouts. Sit outside on the deck.</div>
+          <div class="act-tags"><span class="act-tag paid">~$25&ndash;40pp</span></div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">2:15 PM</div>
+        <div class="act-body">
+          <span class="act-badge activity">Browse</span>
+          <div class="act-title">Ferry Building Marketplace</div>
+          <div class="act-location">1 Ferry Building, Embarcadero</div>
+          <div class="act-details">Cross back over the bridge and swing east to the waterfront. Artisan cheese, local oysters, Dandelion Chocolate, Blue Bottle Coffee. Browse the stalls and grab snacks for the drive home. Beautiful promenade along the bay.</div>
+          <div class="act-tags"><span class="act-tag free">Free to browse</span></div>
+          <div class="act-action">&#x1F17F;&#xFE0F; Embarcadero Center garage (paid, ~$4/hr)</div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">3:00 PM</div>
+        <div class="act-body">
+          <span class="act-badge meal">Treat</span>
+          <div class="act-title">Ghirardelli &mdash; Hot Fudge Sundae</div>
+          <div class="act-location">900 North Point St, Ghirardelli Square</div>
+          <div class="act-details">A 15-min walk north along the waterfront from Ferry Building. End the entire weekend with a legendary hot fudge sundae looking out at the bay. You've fully earned it.</div>
+          <div class="act-tags"><span class="act-tag paid">~$12&ndash;15pp</span></div>
+          <div class="tip-box"><strong>&#x26A0;&#xFE0F; Leave by 3:30pm &mdash; critical on Memorial Day</strong>Every minute after 4pm on Memorial Day afternoon adds significant time to your drive home on 101. The sundae is worth it &mdash; just don't linger.</div>
+        </div>
+      </div>
+
+      <div class="activity">
+        <div class="act-time">Optional</div>
+        <div class="act-body">
+          <span class="act-badge optional">+1 hr</span>
+          <div class="act-title">Cable Car to Chinatown</div>
+          <div class="act-location">Board at Hyde &amp; Beach next to Ghirardelli</div>
+          <div class="act-details">If energy allows &mdash; board at Hyde &amp; Beach St next to Ghirardelli. Hang off the outside on the hills. Drops you in Chinatown for a final wander, dim sum, and souvenir shopping. Adds ~1 hr &mdash; only if you can leave by 3:30pm total.</div>
+          <div class="act-tags"><span class="act-tag paid">$8pp</span><span class="act-tag warn">Skip if tight on time</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET TAB -->
+<section class="tab-content" id="tab-budget">
+  <div class="budget-total">
+    <div class="total-label">Total weekend estimate</div>
+    <div class="total-amount">$620 &ndash; $1,020</div>
+    <div class="total-note">4 people &middot; 3 days &middot; gas + park fees + meals</div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">By Day</div>
+
+    <div class="budget-day-card">
+      <div class="budget-day-header">
+        <div class="budget-day-name">Day 1 &middot; Big Sur</div>
+        <div class="budget-day-range">$260 &ndash; $440</div>
+      </div>
+      <div class="budget-bar"><div class="budget-bar-fill" style="width:43%"></div></div>
+      <div class="budget-breakdown">
+        Gas (~280 mi round trip) &mdash; ~$42<br>
+        17-Mile Drive toll &mdash; $12 / car<br>
+        Point Lobos &mdash; $15 / car<br>
+        McWay Falls / Julia Pfeiffer Burns &mdash; $10 / car<br>
+        Lunch Mission Ranch &mdash; $25&ndash;40pp<br>
+        Snacks / extras &mdash; ~$20
+      </div>
+    </div>
+
+    <div class="budget-day-card">
+      <div class="budget-day-header">
+        <div class="budget-day-name">Day 2 &middot; Redwoods</div>
+        <div class="budget-day-range">$140 &ndash; $220</div>
+      </div>
+      <div class="budget-bar"><div class="budget-bar-fill" style="width:22%"></div></div>
+      <div class="budget-breakdown">
+        Gas (~180 mi round trip) &mdash; ~$27<br>
+        Henry Cowell &mdash; $10 / car<br>
+        A&ntilde;o Nuevo &mdash; $10 / car<br>
+        Lunch Santa Cruz &mdash; $15&ndash;25pp<br>
+        Snacks / extras &mdash; ~$15
+      </div>
+    </div>
+
+    <div class="budget-day-card">
+      <div class="budget-day-header">
+        <div class="budget-day-name">Day 3 &middot; San Francisco</div>
+        <div class="budget-day-range">$220 &ndash; $360</div>
+      </div>
+      <div class="budget-bar"><div class="budget-bar-fill" style="width:35%"></div></div>
+      <div class="budget-breakdown">
+        Gas (~120 mi round trip) &mdash; ~$18<br>
+        Parking SF (Embarcadero garage) &mdash; ~$20<br>
+        Tartine breakfast &mdash; $10&ndash;15pp<br>
+        Lunch Sausalito &mdash; $25&ndash;40pp<br>
+        Ghirardelli sundaes &mdash; $12&ndash;15pp<br>
+        Cable car (optional) &mdash; $8pp
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST TAB -->
+<section class="tab-content" id="tab-checklist">
+  <div class="card">
+    <div class="card-header">Before You Go</div>
+    <p class="card-sub">Tap items to mark them done. Progress saves to this browser.</p>
+    <div class="progress-wrap">
+      <div class="progress-label"><span id="progressText">0 of 12 done</span><span id="progressPct">0%</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    </div>
+    <div id="checklistContainer">
+      <div class="checklist-item" data-key="ck-mission-ranch"><div class="check-icon">&#x1F4DE;</div><div class="check-info"><div class="check-title">Book Mission Ranch, Carmel for Day 1 lunch</div><div class="check-detail">Fills fast on holiday weekends. Call (831) 624-6436.</div></div></div>
+      <div class="checklist-item" data-key="ck-offline-maps"><div class="check-icon">&#x1F4F1;</div><div class="check-info"><div class="check-title">Download Google Maps offline for Big Sur</div><div class="check-detail">Cell service is spotty on Hwy 1 south of Carmel.</div></div></div>
+      <div class="checklist-item" data-key="ck-layers"><div class="check-icon">&#x1F9E5;</div><div class="check-info"><div class="check-title">Pack layers for everyone</div><div class="check-detail">Coastal temps run 15&deg;F cooler than Santa Clara, and windy.</div></div></div>
+      <div class="checklist-item" data-key="ck-shoes"><div class="check-icon">&#x1F45F;</div><div class="check-info"><div class="check-title">Comfortable walking shoes all 3 days</div><div class="check-detail">Lots of trail walking, especially Day 1.</div></div></div>
+      <div class="checklist-item" data-key="ck-power"><div class="check-icon">&#x1F50B;</div><div class="check-info"><div class="check-title">Bring a portable power bank</div><div class="check-detail">Long days away from outlets.</div></div></div>
+      <div class="checklist-item" data-key="ck-cash"><div class="check-icon">&#x1F4B5;</div><div class="check-info"><div class="check-title">Bring cash for park gates</div><div class="check-detail">Some don't take cards (Point Lobos, A&ntilde;o Nuevo).</div></div></div>
+      <div class="checklist-item" data-key="ck-ghirardelli"><div class="check-icon">&#x1F36B;</div><div class="check-info"><div class="check-title">Pre-buy Ghirardelli sundaes (optional)</div><div class="check-detail">Skip the line on Memorial Day.</div></div></div>
+      <div class="checklist-item" data-key="ck-hwy1"><div class="check-icon">&#x1F30A;</div><div class="check-info"><div class="check-title">Check Hwy 1 / Big Sur road conditions</div><div class="check-detail">dot.ca.gov &mdash; landslides can close it.</div></div></div>
+      <div class="checklist-item" data-key="ck-gas"><div class="check-icon">&#x26FD;</div><div class="check-info"><div class="check-title">Fill up gas in Santa Clara before each day</div><div class="check-detail">Big Sur has almost no gas stations.</div></div></div>
+      <div class="checklist-item" data-key="ck-sunscreen"><div class="check-icon">&#x1F9F4;</div><div class="check-info"><div class="check-title">Sunscreen even on cloudy days</div><div class="check-detail">Coastal UV is high even when it feels cool.</div></div></div>
+      <div class="checklist-item" data-key="ck-passengers"><div class="check-icon">&#x1F17F;&#xFE0F;</div><div class="check-info"><div class="check-title">Day 3: drop passengers, driver parks</div><div class="check-detail">Saves huge amounts of time at SF stops.</div></div></div>
+      <div class="checklist-item" data-key="ck-bixby"><div class="check-icon">&#x1F4F8;</div><div class="check-info"><div class="check-title">Bixby Creek north overlook</div><div class="check-detail">Slow down on Hwy 1 heading south &mdash; easy to drive past.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO TAB -->
+<section class="tab-content" id="tab-info">
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>&#x1F17F;&#xFE0F; Parking Tips</h3>
+      <ul>
+        <li>Big Sur: shoulder parking is legal outside park lots when full</li>
+        <li>Garrapata: park on Hwy 1 shoulder &mdash; no official lot</li>
+        <li>SF Golden Gate: Presidio lots on Lincoln Blvd (free)</li>
+        <li>SF Ferry Building: Embarcadero Center garage ~$4/hr</li>
+        <li>Sausalito: Caledonia St garage or Bridgeway metered</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>&#x1F4DE; Key Numbers &amp; Links</h3>
+      <ul>
+        <li>Hwy 1 conditions &mdash; <strong>dot.ca.gov</strong></li>
+        <li>Point Lobos &mdash; (831) 624-4909</li>
+        <li>Mission Ranch Carmel &mdash; (831) 624-6436</li>
+        <li>Barrel House Tavern &mdash; (415) 729-9593</li>
+        <li>A&ntilde;o Nuevo &mdash; (650) 879-2025</li>
+        <li>Henry Cowell &mdash; (831) 335-4598</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>&#x1F324;&#xFE0F; Weather to Expect</h3>
+      <p>Late May on the California coast:<br><br>
+      <strong>Santa Clara:</strong> 75&ndash;85&deg;F, sunny<br>
+      <strong>Big Sur coast:</strong> 55&ndash;65&deg;F, often foggy mornings clearing by noon<br>
+      <strong>Santa Cruz:</strong> 60&ndash;70&deg;F<br>
+      <strong>San Francisco:</strong> 55&ndash;65&deg;F, typically foggy morning, clear afternoon<br><br>
+      Pack a fleece or light jacket for everyone. Wind is the surprise factor on the coast.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>&#x1F37D;&#xFE0F; Food Plan</h3>
+      <ul>
+        <li><strong>Day 1:</strong> Lunch at Mission Ranch, Carmel (book ahead)</li>
+        <li><strong>Day 2:</strong> Casual lunch on Pacific Ave, Santa Cruz</li>
+        <li><strong>Day 3:</strong> Tartine breakfast + Barrel House lunch + Ghirardelli sundaes</li>
+        <li>All other meals at home in Santa Clara</li>
+        <li>Bring snacks and water for Day 1 &mdash; Big Sur has very limited food</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <footer>
-  California Long Weekend &nbsp;·&nbsp; May 23–25, 2026 &nbsp;·&nbsp; Group of 4 &nbsp;·&nbsp; Santa Clara, CA
+  California Long Weekend &nbsp;&middot;&nbsp; May 23&ndash;25, 2026 &nbsp;&middot;&nbsp; Group of 4 &nbsp;&middot;&nbsp; Santa Clara, CA
 </footer>
 
+<script>
+// ─── TAB SWITCHING with hash-based deep links ────────────────────────
+function switchToTab(tabName) {
+  var tabEl = document.getElementById('tab-' + tabName);
+  if (!tabEl) return false;
+  var buttons = document.querySelectorAll('#topNav button');
+  for (var i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+  var matchBtn = document.querySelector('#topNav button[data-tab="' + tabName + '"]');
+  if (matchBtn) matchBtn.classList.add('active');
+  var tabs = document.querySelectorAll('.tab-content');
+  for (var j = 0; j < tabs.length; j++) tabs[j].classList.remove('active');
+  tabEl.classList.add('active');
+  window.scrollTo({top:0,behavior:'auto'});
+  return true;
+}
+
+document.getElementById('topNav').addEventListener('click', function(e) {
+  var btn = e.target.closest('button');
+  if (!btn) return;
+  var tab = btn.getAttribute('data-tab');
+  switchToTab(tab);
+  history.replaceState(null, '', '#' + tab);
+});
+
+function handleHash() {
+  var rawHash = location.hash.replace(/^#/, '');
+  if (!rawHash) return;
+  switchToTab(rawHash);
+}
+handleHash();
+window.addEventListener('hashchange', handleHash);
+
+// ─── DAY CHIPS (schedule) ─────────────────────────────────────────────
+var dayChips = document.querySelectorAll('.day-chip');
+var dayDetails = document.querySelectorAll('.day-detail');
+dayChips.forEach(function(chip) {
+  chip.addEventListener('click', function() {
+    var day = chip.getAttribute('data-day');
+    dayChips.forEach(function(c) { c.classList.remove('active'); });
+    chip.classList.add('active');
+    dayDetails.forEach(function(d) { d.classList.remove('active'); });
+    var match = document.querySelector('.day-detail[data-day-detail="' + day + '"]');
+    if (match) match.classList.add('active');
+  });
+});
+
+// ─── CHECKLIST (persisted) ────────────────────────────────────────────
+var CHECK_STORAGE_KEY = 'cali2026Checklist';
+var checkItems = document.querySelectorAll('.checklist-item');
+
+function loadCheckState() {
+  try {
+    var raw = localStorage.getItem(CHECK_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch(e) { return {}; }
+}
+function saveCheckState(state) {
+  try { localStorage.setItem(CHECK_STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+function updateProgress() {
+  var total = checkItems.length;
+  var done = document.querySelectorAll('.checklist-item.is-done').length;
+  var pct = total === 0 ? 0 : Math.round((done / total) * 100);
+  document.getElementById('progressText').textContent = done + ' of ' + total + ' done';
+  document.getElementById('progressPct').textContent = pct + '%';
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+var state = loadCheckState();
+checkItems.forEach(function(item) {
+  var key = item.getAttribute('data-key');
+  if (state[key]) {
+    item.classList.add('is-done');
+    var icon = item.querySelector('.check-icon');
+    if (icon) icon.textContent = '✓';
+  }
+  item.addEventListener('click', function() {
+    var isDone = item.classList.toggle('is-done');
+    var icon = item.querySelector('.check-icon');
+    if (icon) {
+      if (isDone) {
+        icon.setAttribute('data-original', icon.textContent);
+        icon.textContent = '✓';
+      } else {
+        var orig = icon.getAttribute('data-original');
+        if (orig) icon.textContent = orig;
+      }
+    }
+    state[key] = isDone;
+    saveCheckState(state);
+    updateProgress();
+  });
+});
+updateProgress();
+</script>
 </body>
 </html>
