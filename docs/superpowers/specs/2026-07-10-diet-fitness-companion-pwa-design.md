@@ -73,11 +73,15 @@ APP      PWA (static site, free hosting)  +  iPhone Calendar subscribes to .ics
      (`daytype:person:time:activitySlug`) so check-offs attach reliably even as
      rows shift.
 
-3. **PWA (static site, free hosting on GitHub Pages or Vercel)**
+3. **PWA (static site, hosted as a subfolder of the existing site)**
+   - Lives at **`shahayush.com/health/`** — a static subfolder of the current
+     Jekyll / GitHub Pages site (same pattern as the `gradtrip` / `seattle` /
+     `cali` micro-sites). Inherits the site's HTTPS (via CloudFlare).
    - Fetches the JSON, renders the four tabs, caches for offline use, and is
      installable to the home screen (manifest + service worker).
    - Determines "today's day-type" from the current weekday and shows the right
      schedule; highlights the current/next item by wall-clock time (local TZ).
+   - See **Hosting & deployment** for the subfolder constraints.
 
 4. **iPhone Calendar subscription**
    - Each user adds the `.ics` URL once (Settings → Calendar → Add Subscribed
@@ -123,6 +127,30 @@ APP      PWA (static site, free hosting)  +  iPhone Calendar subscribes to .ics
 - **Reminders:** entirely on the calendar layer; failure there is a normal iOS
   Calendar subscription issue, independent of the app.
 
+## Hosting & deployment
+
+The app is hosted as a **single `/health/` subfolder** of the existing Jekyll /
+GitHub Pages site (`shahayush.com/health/`). Everything discussed lives under
+that one path. Implications baked into the build:
+
+- **Base path = `/health/`.** All asset URLs, the service-worker registration
+  scope, and the manifest `start_url` / `scope` are prefixed with `/health/`.
+- **No server-side routing.** GitHub Pages has no SPA fallback, so the four tabs
+  are **in-page state** (no distinct URLs to deep-link/refresh into). Optional:
+  hash routes (`#food`) if shareable tab links are ever wanted. This avoids 404s
+  on refresh entirely.
+- **`noindex`.** A `robots`/`noindex` meta tag keeps the app off search engines,
+  and it is not linked from the portfolio. (The access token ships in client JS
+  regardless of host, so this reduces discoverability, not a real access barrier
+  — acceptable for low-sensitivity personal data.)
+- **Jekyll pass-through.** The built app files are committed into the repo and
+  must be served untouched by Jekyll (same as the existing micro-site folders).
+  Deploying the app therefore means rebuilding/pushing the site.
+- **Backend is unaffected.** The Apps Script API, `.ics` feed, and calendar
+  subscription are cross-origin to Google's servers regardless of where the
+  front-end lives; subfolder hosting changes nothing about them (including CORS,
+  which must be handled the same way in either hosting model).
+
 ## Security / privacy
 
 - Data is personal but low-sensitivity. The Apps Script endpoints are reachable by
@@ -155,12 +183,9 @@ APP      PWA (static site, free hosting)  +  iPhone Calendar subscribes to .ics
 
 ## Open implementation decisions (for the planning phase)
 
-- **Where the PWA lives:** a standalone repo, or a subdirectory of the existing
-  GitHub Pages site (like the `gradtrip` / `seattle` / `cali` micro-sites).
-  Recommendation: standalone, since it deploys and versions independently of the
-  portfolio.
 - **Front-end stack:** plain HTML/CSS/JS + a light framework vs. a small build
-  (e.g. Vite). To be chosen in the plan; keep it minimal.
+  (e.g. Vite). To be chosen in the plan; keep it minimal, and note it must emit a
+  `/health/`-based build with the service worker and manifest scoped accordingly.
 - **Check-off granularity:** every timeline row checkable vs. a curated daily-goal
   set (walk, gym, water, protein, sleep). Lean toward checkable timeline rows with
   a small daily-goals summary; finalize during implementation.
