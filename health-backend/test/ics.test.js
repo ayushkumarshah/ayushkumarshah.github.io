@@ -37,4 +37,36 @@ describe("buildIcs", () => {
     expect(ics).toContain("SUMMARY:Lunch at Office");   // ayush
     expect(ics).not.toContain("SUMMARY:Lunch (Self)");  // simran
   });
+
+  it("rolls DTEND to the next day when +15min crosses midnight", () => {
+    const synthetic = {
+      schedule: {
+        office: { ayush: [] },
+        wfh: { ayush: [] },
+        saturday: { ayush: [] },
+        sunday: {
+          ayush: [
+            {
+              id: "sunday:ayush:23:50:late-snack",
+              person: "ayush",
+              dayType: "sunday",
+              time: "23:50",
+              timeLabel: "11:50 PM",
+              minutes: 23 * 60 + 50,
+              activity: "Late Snack",
+              details: "Casein shake",
+              notes: "Before bed",
+              kind: "meal",
+              together: false,
+              calories: null,
+              protein: null
+            }
+          ]
+        }
+      }
+    };
+    const rolled = buildIcs(synthetic, "ayush", { calname: "X" });
+    expect(rolled).toContain("DTSTART:20240107T235000");
+    expect(rolled).toContain("DTEND:20240108T000500");
+  });
 });

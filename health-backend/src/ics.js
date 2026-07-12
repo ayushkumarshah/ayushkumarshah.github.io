@@ -10,19 +10,18 @@ function escapeIcs(str) {
     .replace(/;/g, "\\;");
 }
 
-function addMinutes(hhmm, add) {
-  const [h, m] = hhmm.split(":").map(n => parseInt(n, 10));
-  let total = h * 60 + m + add;
-  total = ((total % 1440) + 1440) % 1440;
-  const hh = String(Math.floor(total / 60)).padStart(2, "0");
-  const mm = String(total % 60).padStart(2, "0");
-  return hh + mm + "00";
+function icsDateTime(refDate, hhmm, addMin) {
+  const y = +refDate.slice(0, 4), mo = +refDate.slice(4, 6), d = +refDate.slice(6, 8);
+  const parts = hhmm.split(":");
+  const h = +parts[0], mi = +parts[1];
+  const dt = new Date(Date.UTC(y, mo - 1, d, h, mi + (addMin || 0)));
+  const p = n => String(n).padStart(2, "0");
+  return String(dt.getUTCFullYear()) + p(dt.getUTCMonth() + 1) + p(dt.getUTCDate()) +
+    "T" + p(dt.getUTCHours()) + p(dt.getUTCMinutes()) + "00";
 }
 
 function eventBlock(ev) {
   const refDate = DAY_REFDATE[ev.dayType];
-  const start = ev.time.replace(":", "") + "00";
-  const end = addMinutes(ev.time, 15);
   const descParts = [];
   if (ev.details) descParts.push(ev.details);
   if (ev.notes) descParts.push(ev.notes);
@@ -30,8 +29,8 @@ function eventBlock(ev) {
   const lines = [
     "BEGIN:VEVENT",
     "UID:" + ev.id + "@health.shahayush.com",
-    "DTSTART:" + refDate + "T" + start,
-    "DTEND:" + refDate + "T" + end,
+    "DTSTART:" + icsDateTime(refDate, ev.time, 0),
+    "DTEND:" + icsDateTime(refDate, ev.time, 15),
     "RRULE:FREQ=WEEKLY;BYDAY=" + DAY_BYDAY[ev.dayType],
     "SUMMARY:" + escapeIcs(ev.activity)
   ];
