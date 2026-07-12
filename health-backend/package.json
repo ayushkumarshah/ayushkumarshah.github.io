@@ -1,0 +1,15 @@
+{
+  "name": "health-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Apps Script backend for the /health diet & fitness companion",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.0",
+    "@google/clasp": "^2.4.2"
+  }
+}

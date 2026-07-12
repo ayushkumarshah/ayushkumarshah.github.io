@@ -162,6 +162,7 @@ exclude:
   - assets/js/vendor
   - config
   - gulpfile.js
+  - health-backend
   - log
   - node_modules
   - package.json
