@@ -103,7 +103,40 @@ function parseSchedule(values) {
     }
     i = r - 1;
   }
-  return { schedule: schedule, gym: [], principles: [] };
+  return { schedule: schedule, gym: parseGym(rows), principles: parsePrinciples(rows) };
+}
+
+function parseGym(rows) {
+  const out = [];
+  for (let i = 0; i < rows.length; i++) {
+    if (!/^WEEKLY GYM SCHEDULE/i.test(String(rows[i][0]))) continue;
+    for (let r = i + 2; r < rows.length; r++) {
+      const day = String(rows[r][0] == null ? "" : rows[r][0]).trim();
+      if (day === "") break;
+      out.push({
+        day: day,
+        focusAyush: String(rows[r][1] || "").trim(),
+        focusSimran: String(rows[r][2] || "").trim(),
+        type: String(rows[r][3] || "").trim()
+      });
+    }
+    break;
+  }
+  return out;
+}
+
+function parsePrinciples(rows) {
+  const out = [];
+  for (let i = 0; i < rows.length; i++) {
+    if (!/^KEY NOTES/i.test(String(rows[i][5]))) continue;
+    for (let r = i + 2; r < rows.length; r++) {
+      const topic = String(rows[r][5] == null ? "" : rows[r][5]).trim();
+      if (topic === "") break;
+      out.push({ topic: topic, guideline: String(rows[r][6] || "").trim() });
+    }
+    break;
+  }
+  return out;
 }
 
 if (typeof module !== "undefined" && module.exports) {
