@@ -19,6 +19,7 @@ function logSheet_() {
   if (!sh) {
     sh = ss.insertSheet(LOG_TAB);
     sh.appendRow(LOG_HEADER);
+    sh.getRange("A:B").setNumberFormat("@");
     sh.hideSheet();
   }
   return sh;

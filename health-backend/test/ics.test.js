@@ -30,7 +30,9 @@ describe("buildIcs", () => {
     expect(ics).toContain("RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE"); // office
     expect(ics).toContain("DTSTART:20240107T080000");          // sunday breakfast, Sun ref date
     expect(ics).toContain("RRULE:FREQ=WEEKLY;BYDAY=SU");       // sunday
-    expect(ics).not.toContain("Z\r\n"); // no UTC 'Z' suffix on DTSTART/DTEND
+    expect(ics).not.toMatch(/DTSTART:[^\r\n]*Z/); // no UTC 'Z' suffix on DTSTART
+    expect(ics).not.toMatch(/DTEND:[^\r\n]*Z/); // no UTC 'Z' suffix on DTEND
+    expect(ics).toContain("DTSTAMP:"); // DTSTAMP is legitimately UTC
   });
 
   it("only includes the requested person's events", () => {

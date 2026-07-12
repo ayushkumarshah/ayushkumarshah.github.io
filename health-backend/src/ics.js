@@ -1,6 +1,7 @@
 const DAY_BYDAY = { office: "MO,TU,WE", wfh: "TH,FR", saturday: "SA", sunday: "SU" };
 const DAY_REFDATE = { office: "20240101", wfh: "20240104", saturday: "20240106", sunday: "20240107" };
 const DAY_ORDER = ["office", "wfh", "saturday", "sunday"];
+const DTSTAMP = "20240101T000000Z";
 
 function escapeIcs(str) {
   return String(str)
@@ -29,6 +30,7 @@ function eventBlock(ev) {
   const lines = [
     "BEGIN:VEVENT",
     "UID:" + ev.id + "@health.shahayush.com",
+    "DTSTAMP:" + DTSTAMP,
     "DTSTART:" + icsDateTime(refDate, ev.time, 0),
     "DTEND:" + icsDateTime(refDate, ev.time, 15),
     "RRULE:FREQ=WEEKLY;BYDAY=" + DAY_BYDAY[ev.dayType],

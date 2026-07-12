@@ -1,5 +1,13 @@
 const LOG_HEADER = ["timestamp", "date", "person", "itemId", "itemLabel", "done"];
 
+function normalizeDate(v) {
+  if (v instanceof Date) {
+    const p = n => String(n).padStart(2, "0");
+    return v.getUTCFullYear() + "-" + p(v.getUTCMonth() + 1) + "-" + p(v.getUTCDate());
+  }
+  return String(v);
+}
+
 function parseLogRows(values) {
   const rows = values || [];
   const out = [];
@@ -7,7 +15,7 @@ function parseLogRows(values) {
     const r = rows[i];
     if (!r || String(r[3] == null ? "" : r[3]).trim() === "") continue;
     out.push({
-      timestamp: r[0], date: String(r[1]), person: String(r[2]),
+      timestamp: r[0], date: normalizeDate(r[1]), person: String(r[2]),
       itemId: String(r[3]), itemLabel: String(r[4] == null ? "" : r[4]),
       done: r[5] === true || String(r[5]).toLowerCase() === "true"
     });
