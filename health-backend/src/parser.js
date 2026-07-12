@@ -39,6 +39,73 @@ function classifyKind(activity) {
   return "other";
 }
 
+const DAY_TYPE_FROM_HEADER = [
+  { re: /office/i, key: "office" },
+  { re: /wfh/i, key: "wfh" },
+  { re: /saturday/i, key: "saturday" },
+  { re: /sunday/i, key: "sunday" }
+];
+
+function emptySchedule() {
+  const blank = () => ({ ayush: [], simran: [] });
+  return { office: blank(), wfh: blank(), saturday: blank(), sunday: blank() };
+}
+
+function dayTypeFromHeader(text) {
+  const m = String(text).match(/^AYUSH\s*[—-]\s*(.+)$/i);
+  if (!m) return null;
+  const rest = m[1];
+  for (const d of DAY_TYPE_FROM_HEADER) if (d.re.test(rest)) return d.key;
+  return null;
+}
+
+function buildEvent(person, dayType, timeCell, activity, details, notes) {
+  const t = parseTime(timeCell);
+  if (!t) return null;
+  const macros = extractMacros(details);
+  return {
+    id: `${dayType}:${person}:${t.time}:${slugify(activity)}`,
+    person: person,
+    dayType: dayType,
+    time: t.time,
+    timeLabel: t.label,
+    minutes: t.minutes,
+    activity: String(activity).trim(),
+    details: String(details).trim(),
+    notes: String(notes).trim(),
+    kind: classifyKind(activity),
+    together: /together/i.test(String(activity)),
+    calories: macros.calories,
+    protein: macros.protein
+  };
+}
+
+function isBlankRow(row) {
+  return row.every(c => String(c == null ? "" : c).trim() === "");
+}
+
+function parseSchedule(values) {
+  const schedule = emptySchedule();
+  const rows = values || [];
+  for (let i = 0; i < rows.length; i++) {
+    const dayType = dayTypeFromHeader(rows[i][0]);
+    if (!dayType) continue;
+    // rows[i] = section header, rows[i+1] = column header, data starts at i+2
+    let r = i + 2;
+    for (; r < rows.length; r++) {
+      const row = rows[r];
+      if (isBlankRow(row)) break;
+      if (dayTypeFromHeader(row[0])) break; // next section with no blank between
+      const a = buildEvent("ayush", dayType, row[0], row[1], row[2], row[3]);
+      if (a) schedule[dayType].ayush.push(a);
+      const s = buildEvent("simran", dayType, row[5], row[6], row[7], row[8]);
+      if (s) schedule[dayType].simran.push(s);
+    }
+    i = r - 1;
+  }
+  return { schedule: schedule, gym: [], principles: [] };
+}
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { slugify, parseTime, extractMacros, classifyKind };
+  module.exports = { slugify, parseTime, extractMacros, classifyKind, parseSchedule };
 }
