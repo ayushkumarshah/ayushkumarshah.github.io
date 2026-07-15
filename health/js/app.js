@@ -79,10 +79,95 @@
     else panel.appendChild(renderNowCard(state.person));
   }
 
-  // Placeholder renderers filled in Task 7.
-  function renderFood() { document.getElementById("tab-food").innerHTML = '<div class="card">Food (Task 7)</div>'; }
-  function renderGym() { document.getElementById("tab-gym").innerHTML = '<div class="card">Gym (Task 7)</div>'; }
-  function renderRules() { document.getElementById("tab-rules").innerHTML = '<div class="card">Rules (Task 7)</div>'; }
+  var foodMode = "today";
+  function renderFood() {
+    var panel = document.getElementById("tab-food");
+    panel.innerHTML = "";
+    var seg = el("div", "seg");
+    seg.innerHTML = '<button data-mode="today" class="' + (foodMode === "today" ? "on" : "") + '">Today</button>' +
+      '<button data-mode="prep" class="' + (foodMode === "prep" ? "on" : "") + '">Meal prep</button>';
+    seg.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) { foodMode = b.dataset.mode; renderFood(); } });
+    panel.appendChild(seg);
+
+    if (foodMode === "today") {
+      var person = state.person === "both" ? "ayush" : state.person;
+      var meals = eventsFor(person).filter(function (e) { return e.kind === "meal"; });
+      var pt = proteinTotal(meals), ct = calorieTotal(meals), target = PROTEIN_TARGET[person] || 150;
+      var tot = el("div", "card");
+      tot.innerHTML = '<div class="lbl">' + esc(CONFIG.PERSON_LABELS[person]) + ' · protein ' + pt + ' / ' + target + ' g</div>' +
+        '<div class="prog"><div style="width:' + Math.min(100, Math.round(pt / target * 100)) + '%"></div></div>' +
+        '<div class="count">~' + ct + ' kcal today</div>';
+      panel.appendChild(tot);
+      var list = el("div", "card");
+      meals.forEach(function (m) {
+        list.appendChild(el("div", "item",
+          '<div class="t">' + esc(m.timeLabel) + '</div><div class="col"><div class="a">' + esc(m.activity) + '</div>' +
+          '<div class="det">' + esc(m.details) + '</div>' +
+          (m.calories ? '<div class="count" style="color:var(--ok)">' + m.calories + ' kcal' + (m.protein ? ' · ' + m.protein + 'g protein' : '') + '</div>' : '') +
+          '</div>'));
+      });
+      panel.appendChild(list);
+    } else {
+      var person2 = state.person === "both" ? "ayush" : state.person;
+      var rollup = mealPrepRollup(officeEvents(person2), OFFICE_DAY_COUNT); // office template, regardless of today
+      var cook = el("div", "card");
+      cook.innerHTML = '<h2>🍳 Batch cook (office week ×' + OFFICE_DAY_COUNT + ')</h2>';
+      rollup.forEach(function (r) {
+        cook.appendChild(el("div", "item", '<div class="col"><div class="a">' + esc(r.activity) + '</div><div class="det">' + esc(r.details) + '</div></div><div class="t">×' + r.count + '</div>'));
+      });
+      panel.appendChild(cook);
+      var groc = el("div", "card");
+      groc.innerHTML = '<h2>🛒 Grocery list</h2>';
+      groceryList(state.schedule).forEach(function (g) {
+        groc.appendChild(el("div", "item", '<div class="col"><div class="a">☐ ' + esc(g) + '</div></div>'));
+      });
+      panel.appendChild(groc);
+    }
+  }
+  function officeEvents(person) {
+    return (state.schedule.office && state.schedule.office[person]) || [];
+  }
+
+  function renderGym() {
+    var panel = document.getElementById("tab-gym");
+    panel.innerHTML = "";
+    var today = ({ 1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday", 0: "Sunday" })[new Date().getDay()];
+    var todays = state.gym.filter(function (g) { return g.day === today; });
+    if (todays.length) {
+      var t = el("div", "card now you");
+      t.innerHTML = '<div class="lbl">Today · ' + esc(today) + '</div><div class="act" style="font-size:15px">' +
+        esc(todays[0].focusAyush) + '</div><div class="det">Simran: ' + esc(todays[0].focusSimran) + ' · ' + esc(todays[0].type) + '</div>';
+      panel.appendChild(t);
+    }
+    var wk = el("div", "card");
+    wk.innerHTML = '<h2>Weekly split</h2>';
+    state.gym.forEach(function (g) {
+      wk.appendChild(el("div", "item", '<div class="t">' + esc(g.day) + '</div><div class="col"><div class="a">' +
+        esc(g.focusAyush) + '</div><div class="det">Simran: ' + esc(g.focusSimran) + '</div></div>'));
+    });
+    panel.appendChild(wk);
+  }
+
+  function renderRules() {
+    var panel = document.getElementById("tab-rules");
+    panel.innerHTML = "";
+    var sub = el("div", "card");
+    sub.innerHTML = '<h2>🔔 Reminders</h2><div class="det">Add once per phone: Settings → Calendar → Add Subscribed Calendar.</div>';
+    ["ayush", "simran"].forEach(function (p) {
+      var link = CONFIG.EXEC_URL + "?token=" + encodeURIComponent(CONFIG.API_TOKEN) + "&format=ics&person=" + p;
+      var a = el("a", "item");
+      a.href = link; a.textContent = "📅 Subscribe: " + CONFIG.PERSON_LABELS[p];
+      a.style.display = "block"; a.style.color = "var(--accent)"; a.style.textDecoration = "none";
+      sub.appendChild(a);
+    });
+    panel.appendChild(sub);
+    var pr = el("div", "card");
+    pr.innerHTML = '<h2>Principles</h2>';
+    state.principles.forEach(function (x) {
+      pr.appendChild(el("div", "item", '<div class="col"><div class="a">' + esc(x.topic) + '</div><div class="det">' + esc(x.guideline) + '</div></div>'));
+    });
+    panel.appendChild(pr);
+  }
 
   function renderActiveTab() {
     ({ home: renderHome, food: renderFood, gym: renderGym, rules: renderRules })[state.tab]();
