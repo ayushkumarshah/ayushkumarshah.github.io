@@ -6,6 +6,20 @@ function slugify(str) {
 }
 
 function parseTime(str) {
+  // Google Sheets returns time-typed cells as Date objects (epoch 1899-12-30).
+  // Read them in local time (Apps Script uses the script timezone).
+  if (str instanceof Date) {
+    const h = str.getHours();
+    const mi = str.getMinutes();
+    const pad = n => String(n).padStart(2, "0");
+    let h12 = h % 12;
+    if (h12 === 0) h12 = 12;
+    return {
+      time: pad(h) + ":" + pad(mi),
+      label: h12 + ":" + pad(mi) + " " + (h < 12 ? "AM" : "PM"),
+      minutes: h * 60 + mi
+    };
+  }
   const m = String(str).trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
   if (!m) return null;
   let hour = parseInt(m[1], 10);

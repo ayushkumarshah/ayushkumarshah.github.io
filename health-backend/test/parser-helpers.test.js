@@ -16,6 +16,12 @@ describe("parseTime", () => {
   it("parses PM", () => {
     expect(parseTime("1:00 PM")).toEqual({ time: "13:00", label: "1:00 PM", minutes: 780 });
   });
+  it("parses a Date-typed cell (Sheets time value) in local time", () => {
+    // Local constructor => getHours()/getMinutes() are deterministic regardless of test TZ.
+    expect(parseTime(new Date(1899, 11, 30, 6, 30, 0))).toEqual({ time: "06:30", label: "6:30 AM", minutes: 390 });
+    expect(parseTime(new Date(1899, 11, 30, 13, 0, 0))).toEqual({ time: "13:00", label: "1:00 PM", minutes: 780 });
+    expect(parseTime(new Date(1899, 11, 30, 0, 5, 0))).toEqual({ time: "00:05", label: "12:05 AM", minutes: 5 });
+  });
   it("parses 12 AM/PM correctly", () => {
     expect(parseTime("12:00 AM").time).toBe("00:00");
     expect(parseTime("12:30 PM").time).toBe("12:30");

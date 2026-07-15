@@ -1,20 +1,28 @@
 // Thin Apps Script wrappers. Runs ONLY inside Apps Script (uses SpreadsheetApp,
 // PropertiesService). The pure functions come from parser.gs, ics.gs, log.gs.
 
-var SCHEDULE_TAB = "Schedule"; // rename to the actual schedule tab name if different
+// The real diet/fitness spreadsheet (read by ID so this works whether or not the
+// script is bound to it). This is the id from the sheet's URL.
+var SPREADSHEET_ID = "1QGtGxh2Ly8TcSPC2Mf8eqD58zd7ICxpasEYyvftz22A";
+var SCHEDULE_TAB = "Daily Routine"; // the timetable tab in the "Fitness Plan" sheet
 var LOG_TAB = "Log";
+
+function dietSS_() {
+  return SpreadsheetApp.openById(SPREADSHEET_ID);
+}
 
 function scriptToken_() {
   return PropertiesService.getScriptProperties().getProperty("API_TOKEN");
 }
 
 function scheduleValues_() {
-  var sh = SpreadsheetApp.getActive().getSheetByName(SCHEDULE_TAB);
+  var sh = dietSS_().getSheetByName(SCHEDULE_TAB);
+  if (!sh) throw new Error("No tab named '" + SCHEDULE_TAB + "' — run verifyBackend to see tab names.");
   return sh.getDataRange().getValues();
 }
 
 function logSheet_() {
-  var ss = SpreadsheetApp.getActive();
+  var ss = dietSS_();
   var sh = ss.getSheetByName(LOG_TAB);
   if (!sh) {
     sh = ss.insertSheet(LOG_TAB);
@@ -77,4 +85,31 @@ function doPost(e) {
     payload.done === true
   ]);
   return jsonOut_({ ok: true });
+}
+
+// Run this in the Apps Script editor (Run → verifyBackend) then View → Execution log.
+// It confirms the script reads your diet sheet and parses it, and lists tab names.
+function verifyBackend() {
+  var ss = dietSS_();
+  Logger.log("Spreadsheet: " + ss.getName());
+  Logger.log("Tabs: " + ss.getSheets().map(function (s) { return s.getName(); }).join(" | "));
+  Logger.log("SCHEDULE_TAB is set to: '" + SCHEDULE_TAB + "'");
+  Logger.log("API_TOKEN set: " + (scriptToken_() ? "yes" : "NO — set it in Script Properties"));
+  var sh = ss.getSheetByName(SCHEDULE_TAB);
+  if (!sh) { Logger.log("!! No tab named '" + SCHEDULE_TAB + "'. Set SCHEDULE_TAB to one of the tabs above."); return; }
+  var vals = sh.getDataRange().getValues();
+  var parsed = parseSchedule(vals);
+  Logger.log("rows read: " + vals.length);
+  Logger.log("ayush office events: " + (parsed.schedule.office.ayush || []).length +
+    " | simran office events: " + (parsed.schedule.office.simran || []).length);
+  Logger.log("gym rows: " + parsed.gym.length + " | principles: " + parsed.principles.length);
+  Logger.log("ics sample length: " + buildIcs(parsed, "ayush", { calname: "x" }).length);
+  // --- diagnostics ---
+  var headers = vals.filter(function (r) { return /AYUSH/i.test(String(r[0])); }).map(function (r) { return JSON.stringify(String(r[0])); });
+  Logger.log("DIAG col0 cells containing AYUSH: " + headers.join(", "));
+  for (var i = 0; i < Math.min(vals.length, 8); i++) {
+    Logger.log("DIAG row " + i + ": " + vals[i].slice(0, 4).map(function (c) {
+      return (c instanceof Date ? "Date" : typeof c) + "(" + c + ")";
+    }).join(" | "));
+  }
 }
