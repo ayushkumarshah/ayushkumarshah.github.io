@@ -42,6 +42,7 @@ describe("fetchSchedule", () => {
 
 describe("postCheckoff", () => {
   it("posts text/plain with the token merged in", async () => {
+    setSession({ token: "tok", person: "ayush" });
     let captured = null;
     global.fetch = async (url, opts) => { captured = { url, opts }; return { ok: true, json: async () => ({ ok: true }) }; };
     await postCheckoff({ date: "2026-07-12", person: "ayush", itemId: "x", itemLabel: "L", done: true });
@@ -93,5 +94,16 @@ describe("fetchSchedule uses the session token", () => {
     global.fetch = async (u) => { url = u; return { ok: true, json: async () => ({ schedule: {} }) }; };
     await fetchSchedule();
     expect(url).toContain("token=SESS");
+  });
+});
+
+describe("sessionToken_ has no CONFIG fallback", () => {
+  it("sends an empty token when no session", async () => {
+    for (const k in store) delete store[k];   // no session
+    let url = null;
+    global.fetch = async (u) => { url = u; return { ok: true, json: async () => ({ schedule: {} }) }; };
+    await fetchSchedule();
+    expect(url.endsWith("token=")).toBe(true);
+    expect(url).not.toContain("token=tok");
   });
 });

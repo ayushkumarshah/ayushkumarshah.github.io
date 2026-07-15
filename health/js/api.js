@@ -16,7 +16,7 @@ function getSession() {
 function setSession(s) { try { localStorage.setItem(SESSION_KEY, JSON.stringify(s)); } catch (e) {} }
 function clearSession() { try { localStorage.removeItem(SESSION_KEY); } catch (e) {} }
 
-function sessionToken_() { var s = getSession(); if (s && s.token) return s.token; return CONFIG.API_TOKEN || ""; }
+function sessionToken_() { var s = getSession(); return s && s.token ? s.token : ""; }
 
 function login(username, password) {
   return fetch(CONFIG.EXEC_URL, {
