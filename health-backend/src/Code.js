@@ -104,12 +104,4 @@ function verifyBackend() {
     " | simran office events: " + (parsed.schedule.office.simran || []).length);
   Logger.log("gym rows: " + parsed.gym.length + " | principles: " + parsed.principles.length);
   Logger.log("ics sample length: " + buildIcs(parsed, "ayush", { calname: "x" }).length);
-  // --- diagnostics ---
-  var headers = vals.filter(function (r) { return /AYUSH/i.test(String(r[0])); }).map(function (r) { return JSON.stringify(String(r[0])); });
-  Logger.log("DIAG col0 cells containing AYUSH: " + headers.join(", "));
-  for (var i = 0; i < Math.min(vals.length, 8); i++) {
-    Logger.log("DIAG row " + i + ": " + vals[i].slice(0, 4).map(function (c) {
-      return (c instanceof Date ? "Date" : typeof c) + "(" + c + ")";
-    }).join(" | "));
-  }
 }
