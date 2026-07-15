@@ -24,6 +24,36 @@ function calorieTotal(events) {
   return (events || []).reduce(function (s, e) { return s + (e.calories || 0); }, 0);
 }
 
+function renameStr_(s, map) {
+  var out = String(s == null ? "" : s);
+  for (var k in map) { if (Object.prototype.hasOwnProperty.call(map, k)) out = out.split(k).join(map[k]); }
+  return out;
+}
+
+function applyRename(data, map) {
+  if (!data || !map) return data;
+  var DAYS = ["office", "wfh", "saturday", "sunday"];
+  for (var d = 0; d < DAYS.length; d++) {
+    var block = data.schedule[DAYS[d]];
+    ["ayush", "simran"].forEach(function (p) {
+      (block[p] || []).forEach(function (e) {
+        e.activity = renameStr_(e.activity, map);
+        e.details = renameStr_(e.details, map);
+        e.notes = renameStr_(e.notes, map);
+      });
+    });
+  }
+  (data.gym || []).forEach(function (g) {
+    g.focusAyush = renameStr_(g.focusAyush, map);
+    g.focusSimran = renameStr_(g.focusSimran, map);
+  });
+  (data.principles || []).forEach(function (x) {
+    x.topic = renameStr_(x.topic, map);
+    x.guideline = renameStr_(x.guideline, map);
+  });
+  return data;
+}
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { WEEKDAY_DAYTYPE, dayTypeForWeekday, nowNext, PROTEIN_TARGET, proteinTotal, calorieTotal };
+  module.exports = { WEEKDAY_DAYTYPE, dayTypeForWeekday, nowNext, PROTEIN_TARGET, proteinTotal, calorieTotal, applyRename };
 }
