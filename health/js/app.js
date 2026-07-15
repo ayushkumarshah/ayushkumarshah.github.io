@@ -200,6 +200,15 @@
     document.getElementById("personSwitch").addEventListener("click", function (e) {
       var b = e.target.closest("button[data-person]"); if (b) setPerson(b.dataset.person);
     });
+    document.getElementById("tab-home").addEventListener("click", function (e) {
+      var btn = e.target.closest(".check"); if (!btn) return;
+      var id = btn.dataset.id, label = btn.dataset.label, person = btn.dataset.person;
+      var nowOn = !state.log[id];
+      if (nowOn) state.log[id] = true; else delete state.log[id];
+      renderHome();
+      postCheckoff({ date: todayISO(), person: person, itemId: id, itemLabel: label, done: nowOn })
+        .then(function (r) { if (!r || r.ok !== true) showBanner("Check-off didn't sync (saved locally)"); });
+    });
     document.getElementById("dayLabel").textContent = dayName();
   }
 
