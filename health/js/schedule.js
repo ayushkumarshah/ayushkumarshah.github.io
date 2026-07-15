@@ -14,6 +14,16 @@ function nowNext(events, nowMinutes) {
   return { current: current, next: next };
 }
 
+var PROTEIN_TARGET = { ayush: 150, simran: 120 };
+
+function proteinTotal(events) {
+  return (events || []).reduce(function (s, e) { return s + (e.protein || 0); }, 0);
+}
+
+function calorieTotal(events) {
+  return (events || []).reduce(function (s, e) { return s + (e.calories || 0); }, 0);
+}
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { WEEKDAY_DAYTYPE, dayTypeForWeekday, nowNext };
+  module.exports = { WEEKDAY_DAYTYPE, dayTypeForWeekday, nowNext, PROTEIN_TARGET, proteinTotal, calorieTotal };
 }

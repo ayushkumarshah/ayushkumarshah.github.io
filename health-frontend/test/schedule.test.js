@@ -33,3 +33,26 @@ describe("nowNext", () => {
     expect(nowNext([], 500)).toEqual({ current: null, next: null });
   });
 });
+
+const { proteinTotal, calorieTotal, PROTEIN_TARGET } = require("../../health/js/schedule.js");
+
+describe("macro totals", () => {
+  const events = [
+    { protein: 34, calories: 740 },
+    { protein: null, calories: 225 },
+    { protein: 47, calories: null }
+  ];
+  it("sums protein treating null as 0", () => {
+    expect(proteinTotal(events)).toBe(81);
+  });
+  it("sums calories treating null as 0", () => {
+    expect(calorieTotal(events)).toBe(965);
+  });
+  it("exposes protein targets", () => {
+    expect(PROTEIN_TARGET).toEqual({ ayush: 150, simran: 120 });
+  });
+  it("handles empty", () => {
+    expect(proteinTotal([])).toBe(0);
+    expect(calorieTotal([])).toBe(0);
+  });
+});
