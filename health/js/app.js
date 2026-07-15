@@ -235,4 +235,8 @@
   window.HealthApp = { state: state, renderActiveTab: renderActiveTab, todayISO: todayISO, esc: esc, el: el, eventsFor: eventsFor, showBanner: showBanner };
 
   document.addEventListener("DOMContentLoaded", boot);
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js"); });
+  }
 })();
