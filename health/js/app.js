@@ -83,6 +83,7 @@
   function renderFood() {
     var panel = document.getElementById("tab-food");
     panel.innerHTML = "";
+    if (!state.schedule) { panel.appendChild(el("div", "card", "Loading…")); return; }
     var seg = el("div", "seg");
     seg.innerHTML = '<button data-mode="today" class="' + (foodMode === "today" ? "on" : "") + '">Today</button>' +
       '<button data-mode="prep" class="' + (foodMode === "prep" ? "on" : "") + '">Meal prep</button>';
@@ -131,6 +132,7 @@
   function renderGym() {
     var panel = document.getElementById("tab-gym");
     panel.innerHTML = "";
+    if (!state.schedule) { panel.appendChild(el("div", "card", "Loading…")); return; }
     var today = ({ 1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday", 0: "Sunday" })[new Date().getDay()];
     var todays = state.gym.filter(function (g) { return g.day === today; });
     if (todays.length) {
@@ -151,6 +153,7 @@
   function renderRules() {
     var panel = document.getElementById("tab-rules");
     panel.innerHTML = "";
+    if (!state.schedule) { panel.appendChild(el("div", "card", "Loading…")); return; }
     var sub = el("div", "card");
     sub.innerHTML = '<h2>🔔 Reminders</h2><div class="det">Add once per phone: Settings → Calendar → Add Subscribed Calendar.</div>';
     ["ayush", "simran"].forEach(function (p) {
