@@ -207,7 +207,7 @@
       if (nowOn) state.log[id] = true; else delete state.log[id];
       renderHome();
       postCheckoff({ date: todayISO(), person: person, itemId: id, itemLabel: label, done: nowOn })
-        .then(function (r) { if (!r || r.ok !== true) showBanner("Check-off didn't sync (saved locally)"); });
+        .then(function (r) { if (!r || r.ok !== true) showBanner("Check-off didn't sync — try again when online"); });
     });
     document.getElementById("dayLabel").textContent = dayName();
   }
@@ -225,7 +225,8 @@
       state.schedule = res.data.schedule; state.gym = res.data.gym || []; state.principles = res.data.principles || [];
       if (res.stale) showBanner("Showing saved copy (offline)");
       return fetchLog(todayISO()).then(function (rows) {
-        rows.forEach(function (r) { if (r.done) state.log[r.itemId] = true; });
+        // Log is append-only; rows arrive in chronological order → last write wins.
+        rows.forEach(function (r) { if (r.done) state.log[r.itemId] = true; else delete state.log[r.itemId]; });
         renderActiveTab();
       });
     });

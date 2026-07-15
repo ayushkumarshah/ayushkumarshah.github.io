@@ -21,7 +21,7 @@ self.addEventListener("fetch", function (e) {
   e.respondWith(
     caches.match(req).then(function (cached) {
       var network = fetch(req).then(function (res) {
-        if (res && res.ok) { var copy = res.clone(); caches.open(CACHE).then(function (c) { c.put(req, copy); }); }
+        if (res && res.ok) { var copy = res.clone(); caches.open(CACHE).then(function (c) { c.put(req, copy); }).catch(function () {}); }
         return res;
       }).catch(function () { return cached; });
       return cached || network;
