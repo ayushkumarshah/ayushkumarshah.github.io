@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0e1116">
+  <title>Health</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div id="dayLabel" class="day-label">—</div>
+    <div class="person-switch" id="personSwitch">
+      <button data-person="ayush" class="on">You</button>
+      <button data-person="simran">Simran</button>
+      <button data-person="both">Both</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="tab-home" class="panel on"></section>
+    <section id="tab-food" class="panel"></section>
+    <section id="tab-gym" class="panel"></section>
+    <section id="tab-rules" class="panel"></section>
+  </main>
+
+  <nav class="tabbar" id="tabbar">
+    <button data-tab="home" class="on"><span>🏠</span>Home</button>
+    <button data-tab="food"><span>🍽️</span>Food</button>
+    <button data-tab="gym"><span>🏋️</span>Gym</button>
+    <button data-tab="rules"><span>📋</span>Rules</button>
+  </nav>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <script src="config.js"></script>
+  <script src="js/schedule.js"></script>
+  <script src="js/mealprep.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
