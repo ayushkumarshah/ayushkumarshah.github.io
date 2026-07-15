@@ -12,13 +12,25 @@
 4. Deploy → Manage deployments → Edit → **New version** → Deploy.
 
 ## Verify (curl)
+Do NOT pass `-X POST`: Apps Script `/exec` 302-redirects to `googleusercontent.com`,
+and `-X POST` forces curl to re-POST on that redirect → Google's Drive "unable to
+open the file" HTML page. `--data` already makes the first request a POST; let curl
+follow the redirect as a GET.
 ```bash
-curl -sL -X POST "<EXEC_URL>" -H "Content-Type: text/plain" \
+curl -sL "<EXEC_URL>" -H "Content-Type: text/plain" \
   --data '{"action":"login","username":"ayush","password":"<pw>"}'   # {"ok":true,"token":...}
-curl -sL -X POST "<EXEC_URL>" -H "Content-Type: text/plain" \
+curl -sL "<EXEC_URL>" -H "Content-Type: text/plain" \
   --data '{"action":"login","username":"ayush","password":"nope"}'   # {"ok":false,"error":"invalid"}
-curl -sL "<EXEC_URL>?token=<OLD_TOKEN>"    # {"error":"unauthorized"} after rotation
+curl -sL "<EXEC_URL>?token=<TOKEN_FROM_LOGIN>"   # schedule JSON (token authorizes GET reads)
+curl -sL "<EXEC_URL>?token=<OLD_TOKEN>"          # {"error":"unauthorized"} after rotation
 ```
+
+If curl returns Google's Drive "unable to open the file" page (not JSON), the request
+never reached the script. Check, in order: (1) you didn't pass `-X POST`; (2) the
+`/exec` URL matches the active deployment (Deploy → Manage deployments); (3) Who has
+access = **Anyone**; (4) the project is owned by a personal @gmail, not a locked-down
+Workspace account. A logged-out browser hitting `<EXEC_URL>` should return
+`{"error":"unauthorized"}` — that confirms anonymous access works.
 
 ## Change a password
 Re-run `setUser("<username>", "<new-password>")` in the editor. No redeploy needed.
