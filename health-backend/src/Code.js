@@ -15,6 +15,22 @@ function scriptToken_() {
   return PropertiesService.getScriptProperties().getProperty("API_TOKEN");
 }
 
+// Server-side only (Code.gs is never served to the browser).
+var SALT = "health-app-auth-v1::";
+
+function hashPassword_(pw) {
+  var bytes = Utilities.computeDigest(
+    Utilities.DigestAlgorithm.SHA_256, SALT + String(pw), Utilities.Charset.UTF_8);
+  return bytes.map(function (b) { return ("0" + (b & 0xff).toString(16)).slice(-2); }).join("");
+}
+
+// Run once per person in the editor: setUser("ayush", "their-password")
+function setUser(username, password) {
+  PropertiesService.getScriptProperties()
+    .setProperty("USER_" + String(username).toLowerCase(), hashPassword_(password));
+  Logger.log("Password set for " + username);
+}
+
 function scheduleValues_() {
   var sh = dietSS_().getSheetByName(SCHEDULE_TAB);
   if (!sh) throw new Error("No tab named '" + SCHEDULE_TAB + "' — run verifyBackend to see tab names.");
@@ -71,8 +87,22 @@ function doPost(e) {
   try {
     payload = JSON.parse((e && e.postData && e.postData.contents) || "{}");
   } catch (err) {
-    return jsonOut_({ error: "bad_json" });
+    return jsonOut_({ ok: false, error: "bad_json" });
   }
+
+  if (payload.action === "login") {
+    var uname = String(payload.username || "").toLowerCase();
+    var acct = accountFor(uname);
+    if (acct) {
+      var stored = PropertiesService.getScriptProperties().getProperty("USER_" + uname);
+      if (stored && stored === hashPassword_(String(payload.password || ""))) {
+        return jsonOut_(buildLoginResponse(acct, scriptToken_()));
+      }
+    }
+    return jsonOut_({ ok: false, error: "invalid" });
+  }
+
+  // Check-off (token required)
   if (!isAuthorized(payload.token, scriptToken_())) {
     return jsonOut_({ error: "unauthorized" });
   }
