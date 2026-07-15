@@ -2,9 +2,8 @@
   var state = {
     schedule: null, gym: [], principles: [],
     dayType: dayTypeForWeekday(new Date().getDay()),
-    me: null, person: "ayush", tab: "home", log: {} // me = this device's owner; log: { itemId: true }
+    me: null, person: "ayush", tab: "home", log: {}, rename: {} // me = this device's owner; log: { itemId: true }
   };
-  var NAMES = { ayush: "Ayush", simran: "Simran" };
 
   function nowMinutes() { var d = new Date(); return d.getHours() * 60 + d.getMinutes(); }
   function eventsFor(person) {
@@ -158,7 +157,7 @@
     var sub = el("div", "card");
     sub.innerHTML = '<h2>🔔 Reminders</h2><div class="det">Add once per phone: Settings → Calendar → Add Subscribed Calendar.</div>';
     ["ayush", "simran"].forEach(function (p) {
-      var link = CONFIG.EXEC_URL + "?token=" + encodeURIComponent(CONFIG.API_TOKEN) + "&format=ics&person=" + p;
+      var link = CONFIG.EXEC_URL + "?token=" + encodeURIComponent((getSession() && getSession().token) || "") + "&format=ics&person=" + p;
       var a = el("a", "item");
       a.href = link; a.textContent = "📅 Subscribe: " + CONFIG.PERSON_LABELS[p];
       a.style.display = "block"; a.style.color = "var(--accent)"; a.style.textDecoration = "none";
@@ -172,9 +171,9 @@
     });
     panel.appendChild(pr);
     var who = el("div", "card");
-    who.innerHTML = '<div class="det">This phone is <b>' + esc(NAMES[state.me] || "—") + '</b>. ' +
-      '<a href="#" id="switchUser" style="color:var(--accent)">Not you? Switch</a></div>';
-    who.querySelector("#switchUser").addEventListener("click", function (e) { e.preventDefault(); forgetIdentity(); });
+    who.innerHTML = '<div class="det">Signed in as <b>' + esc(state.name || "—") + '</b>. ' +
+      '<a href="#" id="logout" style="color:var(--accent)">Log out</a></div>';
+    who.querySelector("#logout").addEventListener("click", function (e) { e.preventDefault(); logout(); });
     panel.appendChild(who);
   }
 
@@ -194,40 +193,51 @@
     renderActiveTab();
   }
 
-  // Per-device identity: "You" = the person who owns this phone.
-  function applyIdentity(me) {
-    var other = me === "ayush" ? "simran" : "ayush";
-    state.me = me;
-    state.person = me;
+  // Identity comes from the login session. "You" = the logged-in person.
+  function applySession(session) {
+    state.me = session.person;
+    state.person = session.person;
+    state.name = session.name || "";
+    state.rename = session.rename || {};
+    var people = session.people || {};
+    var other = session.person === "ayush" ? "simran" : "ayush";
     CONFIG.PERSON_LABELS = {};
-    CONFIG.PERSON_LABELS[me] = "You";
-    CONFIG.PERSON_LABELS[other] = NAMES[other];
+    CONFIG.PERSON_LABELS[session.person] = "You";
+    CONFIG.PERSON_LABELS[other] = people[other] || other;
     document.getElementById("personSwitch").innerHTML =
-      '<button data-person="' + me + '" class="on">You</button>' +
-      '<button data-person="' + other + '">' + NAMES[other] + '</button>' +
+      '<button data-person="' + session.person + '" class="on">You</button>' +
+      '<button data-person="' + other + '">' + esc(people[other] || other) + '</button>' +
       '<button data-person="both">Both</button>';
   }
 
-  function forgetIdentity() {
-    try { localStorage.removeItem("health.me"); } catch (e) {}
-    location.reload();
-  }
+  function logout() { clearSession(); location.reload(); }
 
-  function ensureIdentity(cb) {
-    var stored = null;
-    try { stored = localStorage.getItem("health.me"); } catch (e) {}
-    if (stored === "ayush" || stored === "simran") { applyIdentity(stored); cb(); return; }
+  function renderLogin() {
     var ov = el("div", "overlay");
-    ov.innerHTML = '<div class="picker"><h2>Who’s using this phone?</h2>' +
-      '<button data-me="ayush">I’m Ayush</button>' +
-      '<button data-me="simran">I’m Simran</button></div>';
-    ov.addEventListener("click", function (e) {
-      var b = e.target.closest("button[data-me]"); if (!b) return;
-      try { localStorage.setItem("health.me", b.dataset.me); } catch (e2) {}
-      if (ov.parentNode) ov.parentNode.removeChild(ov);
-      applyIdentity(b.dataset.me); cb();
-    });
+    ov.innerHTML = '<div class="picker"><h2>Sign in</h2>' +
+      '<input id="lgUser" placeholder="Username" autocapitalize="none" autocomplete="username">' +
+      '<input id="lgPass" type="password" placeholder="Password" autocomplete="current-password">' +
+      '<div class="err" id="lgErr"></div>' +
+      '<button id="lgGo">Log in</button></div>';
     document.body.appendChild(ov);
+    function submit() {
+      var u = ov.querySelector("#lgUser").value.trim();
+      var p = ov.querySelector("#lgPass").value;
+      ov.querySelector("#lgErr").textContent = "";
+      login(u, p).then(function (r) {
+        if (r && r.ok) {
+          setSession(r);
+          if (ov.parentNode) ov.parentNode.removeChild(ov);
+          applySession(r); loadData();
+        } else if (r && r.error === "network") {
+          ov.querySelector("#lgErr").textContent = "Can’t reach server — check connection";
+        } else {
+          ov.querySelector("#lgErr").textContent = "Invalid username or password";
+        }
+      });
+    }
+    ov.querySelector("#lgGo").addEventListener("click", submit);
+    ov.querySelector("#lgPass").addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); });
   }
 
   function todayISO() {
@@ -262,16 +272,19 @@
 
   function boot() {
     wire();
-    ensureIdentity(loadData);
+    var session = getSession();
+    if (session && session.token) { applySession(session); loadData(); }
+    else renderLogin();
   }
 
   function loadData() {
     fetchSchedule().then(function (res) {
-      if (!res.data) { showBanner("No data — check config / connection"); return; }
+      if (res.data && res.data.error === "unauthorized") { clearSession(); location.reload(); return; }
+      if (!res.data || !res.data.schedule) { showBanner("No data — check connection"); return; }
+      applyRename(res.data, state.rename || {});
       state.schedule = res.data.schedule; state.gym = res.data.gym || []; state.principles = res.data.principles || [];
       if (res.stale) showBanner("Showing saved copy (offline)");
       return fetchLog(todayISO()).then(function (rows) {
-        // Log is append-only; rows arrive in chronological order → last write wins.
         rows.forEach(function (r) { if (r.done) state.log[r.itemId] = true; else delete state.log[r.itemId]; });
         renderActiveTab();
       });

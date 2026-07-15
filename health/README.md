@@ -6,11 +6,10 @@ A build-free PWA served at `shahayush.com/health/`. Reads the Apps Script backen
 ## Configure
 Edit `config.js` and set:
 - `EXEC_URL` — the Apps Script web-app `…/exec` URL
-- `API_TOKEN` — the same value as the backend `API_TOKEN` Script Property
 
-`config.js` is committed so GitHub Pages can serve it. The token is public in the
-served JS by design — use a dedicated, rotatable token; the backend only exposes
-personal schedule data and an append-only check-off log.
+`config.js` is committed so GitHub Pages can serve it — it holds no secrets. Access
+is gated by a login screen; the backend issues a per-session token after a
+username/password check, and the app stores it in `localStorage` (see `js/api.js`).
 
 ## Run locally
 ```bash
