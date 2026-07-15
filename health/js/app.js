@@ -2,8 +2,9 @@
   var state = {
     schedule: null, gym: [], principles: [],
     dayType: dayTypeForWeekday(new Date().getDay()),
-    person: "ayush", tab: "home", log: {} // log: { itemId: true }
+    me: null, person: "ayush", tab: "home", log: {} // me = this device's owner; log: { itemId: true }
   };
+  var NAMES = { ayush: "Ayush", simran: "Simran" };
 
   function nowMinutes() { var d = new Date(); return d.getHours() * 60 + d.getMinutes(); }
   function eventsFor(person) {
@@ -170,6 +171,11 @@
       pr.appendChild(el("div", "item", '<div class="col"><div class="a">' + esc(x.topic) + '</div><div class="det">' + esc(x.guideline) + '</div></div>'));
     });
     panel.appendChild(pr);
+    var who = el("div", "card");
+    who.innerHTML = '<div class="det">This phone is <b>' + esc(NAMES[state.me] || "—") + '</b>. ' +
+      '<a href="#" id="switchUser" style="color:var(--accent)">Not you? Switch</a></div>';
+    who.querySelector("#switchUser").addEventListener("click", function (e) { e.preventDefault(); forgetIdentity(); });
+    panel.appendChild(who);
   }
 
   function renderActiveTab() {
@@ -186,6 +192,42 @@
     state.person = person;
     document.querySelectorAll("#personSwitch button").forEach(function (b) { b.classList.toggle("on", b.dataset.person === person); });
     renderActiveTab();
+  }
+
+  // Per-device identity: "You" = the person who owns this phone.
+  function applyIdentity(me) {
+    var other = me === "ayush" ? "simran" : "ayush";
+    state.me = me;
+    state.person = me;
+    CONFIG.PERSON_LABELS = {};
+    CONFIG.PERSON_LABELS[me] = "You";
+    CONFIG.PERSON_LABELS[other] = NAMES[other];
+    document.getElementById("personSwitch").innerHTML =
+      '<button data-person="' + me + '" class="on">You</button>' +
+      '<button data-person="' + other + '">' + NAMES[other] + '</button>' +
+      '<button data-person="both">Both</button>';
+  }
+
+  function forgetIdentity() {
+    try { localStorage.removeItem("health.me"); } catch (e) {}
+    location.reload();
+  }
+
+  function ensureIdentity(cb) {
+    var stored = null;
+    try { stored = localStorage.getItem("health.me"); } catch (e) {}
+    if (stored === "ayush" || stored === "simran") { applyIdentity(stored); cb(); return; }
+    var ov = el("div", "overlay");
+    ov.innerHTML = '<div class="picker"><h2>Who’s using this phone?</h2>' +
+      '<button data-me="ayush">I’m Ayush</button>' +
+      '<button data-me="simran">I’m Simran</button></div>';
+    ov.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-me]"); if (!b) return;
+      try { localStorage.setItem("health.me", b.dataset.me); } catch (e2) {}
+      if (ov.parentNode) ov.parentNode.removeChild(ov);
+      applyIdentity(b.dataset.me); cb();
+    });
+    document.body.appendChild(ov);
   }
 
   function todayISO() {
@@ -220,6 +262,10 @@
 
   function boot() {
     wire();
+    ensureIdentity(loadData);
+  }
+
+  function loadData() {
     fetchSchedule().then(function (res) {
       if (!res.data) { showBanner("No data — check config / connection"); return; }
       state.schedule = res.data.schedule; state.gym = res.data.gym || []; state.principles = res.data.principles || [];

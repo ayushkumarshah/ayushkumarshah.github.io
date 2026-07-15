@@ -45,3 +45,8 @@ main { padding:14px; }
   padding:8px 12px; border-radius:10px; text-align:center; }
 h2 { font-size:15px; margin:4px 0 10px; }
 button { cursor:pointer; font-family:inherit; }
+.overlay { position:fixed; inset:0; z-index:20; background:rgba(0,0,0,.55); display:flex; align-items:center; justify-content:center; padding:24px; }
+.picker { background:var(--card); border-radius:16px; padding:22px; width:100%; max-width:320px; text-align:center; }
+.picker h2 { font-size:17px; margin:0 0 16px; }
+.picker button { display:block; width:100%; margin:8px 0; padding:14px; border:none; border-radius:12px; background:var(--accent); color:#fff; font-size:15px; font-weight:600; }
+.picker button:last-child { background:var(--accent2); }
