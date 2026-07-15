@@ -32,7 +32,7 @@ function fetchSchedule() {
   var url = CONFIG.EXEC_URL + "?token=" + encodeURIComponent(sessionToken_());
   return fetch(url)
     .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
-    .then(function (data) { cacheSet(SCHEDULE_CACHE_KEY, data); return { data: data, stale: false }; })
+    .then(function (data) { if (data && data.schedule) cacheSet(SCHEDULE_CACHE_KEY, data); return { data: data, stale: false }; })
     .catch(function () { return { data: cacheGet(SCHEDULE_CACHE_KEY), stale: true }; });
 }
 
