@@ -138,14 +138,14 @@
     if (todays.length) {
       var t = el("div", "card now you");
       t.innerHTML = '<div class="lbl">Today · ' + esc(today) + '</div><div class="act" style="font-size:15px">' +
-        esc(todays[0].focusAyush) + '</div><div class="det">Simran: ' + esc(todays[0].focusSimran) + ' · ' + esc(todays[0].type) + '</div>';
+        esc(todays[0].focusAyush) + '</div><div class="det">' + esc((CONFIG.PERSON_LABELS && CONFIG.PERSON_LABELS.simran) || "") + ': ' + esc(todays[0].focusSimran) + ' · ' + esc(todays[0].type) + '</div>';
       panel.appendChild(t);
     }
     var wk = el("div", "card");
     wk.innerHTML = '<h2>Weekly split</h2>';
     state.gym.forEach(function (g) {
       wk.appendChild(el("div", "item", '<div class="t">' + esc(g.day) + '</div><div class="col"><div class="a">' +
-        esc(g.focusAyush) + '</div><div class="det">Simran: ' + esc(g.focusSimran) + '</div></div>'));
+        esc(g.focusAyush) + '</div><div class="det">' + esc((CONFIG.PERSON_LABELS && CONFIG.PERSON_LABELS.simran) || "") + ': ' + esc(g.focusSimran) + '</div></div>'));
     });
     panel.appendChild(wk);
   }
