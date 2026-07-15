@@ -51,3 +51,47 @@ describe("postCheckoff", () => {
     expect(body).toEqual({ token: "tok", date: "2026-07-12", person: "ayush", itemId: "x", itemLabel: "L", done: true });
   });
 });
+
+const { getSession, setSession, clearSession, login } = require("../../health/js/api.js");
+
+describe("session", () => {
+  beforeEach(() => { for (const k in store) delete store[k]; });
+  it("round-trips and clears", () => {
+    expect(getSession()).toBeNull();
+    setSession({ token: "T", person: "ayush" });
+    expect(getSession()).toEqual({ token: "T", person: "ayush" });
+    clearSession();
+    expect(getSession()).toBeNull();
+  });
+  it("returns null on corrupt session", () => {
+    store["health.session"] = "{bad";
+    expect(getSession()).toBeNull();
+  });
+});
+
+describe("login", () => {
+  it("posts text/plain with action:login and returns the parsed result", async () => {
+    let captured = null;
+    global.fetch = async (url, opts) => { captured = { url, opts }; return { ok: true, json: async () => ({ ok: true, token: "T", person: "simran" }) }; };
+    const r = await login("saanu", "pw");
+    expect(captured.url).toBe("https://exec.test/x");
+    expect(captured.opts.headers["Content-Type"]).toBe("text/plain");
+    expect(JSON.parse(captured.opts.body)).toEqual({ action: "login", username: "saanu", password: "pw" });
+    expect(r.token).toBe("T");
+  });
+  it("returns {ok:false} when the network fails", async () => {
+    global.fetch = async () => { throw new Error("offline"); };
+    expect(await login("x", "y")).toEqual({ ok: false, error: "network" });
+  });
+});
+
+describe("fetchSchedule uses the session token", () => {
+  beforeEach(() => { for (const k in store) delete store[k]; });
+  it("sends the session token, not CONFIG", async () => {
+    setSession({ token: "SESS" });
+    let url = null;
+    global.fetch = async (u) => { url = u; return { ok: true, json: async () => ({ schedule: {} }) }; };
+    await fetchSchedule();
+    expect(url).toContain("token=SESS");
+  });
+});
