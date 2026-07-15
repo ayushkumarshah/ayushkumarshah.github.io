@@ -21,3 +21,4 @@ gradtrip/tickets/
 .superpowers/
 
 health-backend/node_modules/
+health-frontend/node_modules/
