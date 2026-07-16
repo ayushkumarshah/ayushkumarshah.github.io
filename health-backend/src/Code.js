@@ -53,6 +53,44 @@ function readLog_() {
   return parseLogRows(logSheet_().getDataRange().getValues());
 }
 
+// Per-date office/wfh overrides (shared across devices). Sheet: date | dayType.
+var OVERRIDES_TAB = "Overrides";
+
+function overridesSheet_() {
+  var ss = dietSS_();
+  var sh = ss.getSheetByName(OVERRIDES_TAB);
+  if (!sh) {
+    sh = ss.insertSheet(OVERRIDES_TAB);
+    sh.appendRow(["date", "dayType"]);
+    sh.getRange("A:A").setNumberFormat("@"); // keep dates as text
+    sh.hideSheet();
+  }
+  return sh;
+}
+
+function readOverrides_() {
+  var vals = overridesSheet_().getDataRange().getValues();
+  var map = {};
+  for (var i = 1; i < vals.length; i++) {
+    var d = String(vals[i][0] == null ? "" : vals[i][0]).trim();
+    var t = String(vals[i][1] == null ? "" : vals[i][1]).trim();
+    if (d && t) map[d] = t;
+  }
+  return map;
+}
+
+function setOverride_(date, dayType) {
+  var sh = overridesSheet_();
+  var vals = sh.getDataRange().getValues();
+  for (var i = 1; i < vals.length; i++) {
+    if (String(vals[i][0]).trim() === String(date)) {
+      sh.getRange(i + 1, 2).setValue(dayType);
+      return;
+    }
+  }
+  sh.appendRow([String(date), String(dayType)]);
+}
+
 function jsonOut_(obj, callback) {
   var body = JSON.stringify(obj);
   if (callback) {
@@ -79,7 +117,9 @@ function doGet(e) {
   if (p.action === "log") {
     return jsonOut_({ rows: filterLogByDate(readLog_(), p.date) }, cb);
   }
-  return jsonOut_(parseSchedule(scheduleValues_()), cb);
+  var out = parseSchedule(scheduleValues_());
+  out.overrides = readOverrides_();
+  return jsonOut_(out, cb);
 }
 
 function doPost(e) {
@@ -100,6 +140,17 @@ function doPost(e) {
       }
     }
     return jsonOut_({ ok: false, error: "invalid" });
+  }
+
+  if (payload.action === "setDayType") {
+    if (!isAuthorized(payload.token, scriptToken_())) {
+      return jsonOut_({ error: "unauthorized" });
+    }
+    if (["office", "wfh"].indexOf(String(payload.dayType)) < 0) {
+      return jsonOut_({ ok: false, error: "bad_type" });
+    }
+    setOverride_(String(payload.date || ""), String(payload.dayType));
+    return jsonOut_({ ok: true });
   }
 
   // Check-off (token required)

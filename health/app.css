@@ -7,6 +7,20 @@ body { padding-bottom:70px; }
 .topbar { position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 14px calc(10px + env(safe-area-inset-top));
   display:flex; align-items:center; justify-content:space-between; gap:10px; border-bottom:1px solid var(--line); }
 .day-label { font-size:13px; color:var(--muted); font-weight:600; }
+.brand { font-size:15px; font-weight:700; color:var(--fg); }
+.datebar { display:flex; align-items:center; gap:8px; background:var(--bg); padding:8px 14px; border-bottom:1px solid var(--line); }
+.datebar .nav { width:34px; height:34px; border:none; border-radius:9px; background:var(--card); color:var(--fg); font-size:18px; line-height:1; }
+.dcenter { flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; min-width:0; }
+.ddate { font-size:13px; font-weight:600; color:var(--fg); }
+.dtype { display:flex; gap:4px; }
+.dtype .pill { border:none; background:var(--card); color:var(--muted); font-size:11px; padding:4px 10px; border-radius:999px; }
+.dtype .pill.on { background:var(--accent); color:#fff; font-weight:600; }
+.dtype-static { font-size:11px; color:var(--muted); }
+.today-reset { border:none; background:var(--card); color:var(--accent); font-size:11px; padding:6px 10px; border-radius:9px; font-weight:600; }
+.confirmbar { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:10px 14px 0; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px; font-size:13px; }
+.confirmbar span { flex:1; min-width:120px; }
+.confirmbar .cbtn { border:none; border-radius:9px; padding:8px 12px; font-size:12px; font-weight:600; background:var(--accent); color:#fff; }
+.confirmbar .cbtn.alt { background:var(--accent2); }
 .person-switch { display:flex; gap:4px; }
 .person-switch button { border:none; background:var(--card); color:var(--muted); font-size:12px; padding:6px 10px; border-radius:8px; }
 .person-switch button.on { background:var(--accent); color:#fff; font-weight:600; }

@@ -1,9 +1,22 @@
 (function () {
   var state = {
-    schedule: null, gym: [], principles: [],
+    schedule: null, gym: [], principles: [], overrides: {},
+    date: todayISO(),
     dayType: dayTypeForWeekday(new Date().getDay()),
     me: null, person: "ayush", tab: "home", log: {}, rename: {} // me = this device's owner; log: { itemId: true }
   };
+
+  function weekdayOf(iso) { return new Date(iso + "T00:00").getDay(); }
+  function isToday(iso) { return iso === todayISO(); }
+  function resolveDayType(iso) {
+    return (state.overrides && state.overrides[iso]) || dayTypeForWeekday(weekdayOf(iso));
+  }
+  function shiftISO(iso, deltaDays) {
+    var d = new Date(iso + "T00:00");
+    d.setDate(d.getDate() + deltaDays);
+    var p = function (n) { return String(n).padStart(2, "0"); };
+    return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+  }
 
   function nowMinutes() { var d = new Date(); return d.getHours() * 60 + d.getMinutes(); }
   function eventsFor(person) {
@@ -24,21 +37,23 @@
 
   function renderPersonColumn(person) {
     var events = eventsFor(person);
-    var nn = nowNext(events, nowMinutes());
     var cls = person === "simran" ? "her" : "you";
     var wrap = el("div");
-    var now = el("div", "card now " + cls);
-    if (nn.current) {
-      now.innerHTML = '<div class="lbl">Now · ' + esc(dayName()) + '</div>' +
-        '<div class="act">' + esc(nn.current.activity) + '</div>' +
-        '<div class="det">' + esc(nn.current.details) + '</div>' +
-        (nn.next ? '<div class="count">Next ' + esc(nn.next.timeLabel) + ' · ' + esc(nn.next.activity) + '</div>' : '');
-    } else {
-      now.innerHTML = '<div class="lbl">' + esc(dayName()) + '</div><div class="act">Not started yet</div>' +
-        (nn.next ? '<div class="count">First: ' + esc(nn.next.timeLabel) + ' · ' + esc(nn.next.activity) + '</div>' : '');
+    if (isToday(state.date)) {
+      var nn = nowNext(events, nowMinutes());
+      var now = el("div", "card now " + cls);
+      if (nn.current) {
+        now.innerHTML = '<div class="lbl">Now · ' + esc(dayName()) + '</div>' +
+          '<div class="act">' + esc(nn.current.activity) + '</div>' +
+          '<div class="det">' + esc(nn.current.details) + '</div>' +
+          (nn.next ? '<div class="count">Next ' + esc(nn.next.timeLabel) + ' · ' + esc(nn.next.activity) + '</div>' : '');
+      } else {
+        now.innerHTML = '<div class="lbl">' + esc(dayName()) + '</div><div class="act">Not started yet</div>' +
+          (nn.next ? '<div class="count">First: ' + esc(nn.next.timeLabel) + ' · ' + esc(nn.next.activity) + '</div>' : '');
+      }
+      wrap.appendChild(now);
     }
-    wrap.appendChild(now);
-    // Today's checkable timeline
+    // Checkable timeline for the selected day
     var list = el("div", "card");
     events.forEach(function (e) {
       var done = !!state.log[e.id];
@@ -265,10 +280,9 @@
       var nowOn = !state.log[id];
       if (nowOn) state.log[id] = true; else delete state.log[id];
       renderHome();
-      postCheckoff({ date: todayISO(), person: person, itemId: id, itemLabel: label, done: nowOn })
+      postCheckoff({ date: state.date, person: person, itemId: id, itemLabel: label, done: nowOn })
         .then(function (r) { if (!r || r.ok !== true) showBanner("Check-off didn't sync — try again when online"); });
     });
-    document.getElementById("dayLabel").textContent = dayName();
   }
 
   function showBanner(msg) {
@@ -290,12 +304,106 @@
       if (!res.data || !res.data.schedule) { showBanner("No data — check connection"); return; }
       applyRename(res.data, state.rename || {});
       state.schedule = res.data.schedule; state.gym = res.data.gym || []; state.principles = res.data.principles || [];
+      state.overrides = res.data.overrides || {};
+      state.dayType = resolveDayType(state.date);
       if (res.stale) showBanner("Showing saved copy (offline)");
-      return fetchLog(todayISO()).then(function (rows) {
-        rows.forEach(function (r) { if (r.done) state.log[r.itemId] = true; else delete state.log[r.itemId]; });
-        renderActiveTab();
-      });
+      renderDateBar();
+      maybeConfirmToday();
+      return loadLogForDate();
     });
+  }
+
+  function loadLogForDate() {
+    state.log = {};
+    return fetchLog(state.date).then(function (rows) {
+      rows.forEach(function (r) { if (r.done) state.log[r.itemId] = true; else delete state.log[r.itemId]; });
+      renderActiveTab();
+    });
+  }
+
+  function goToDate(iso) {
+    state.date = iso;
+    state.dayType = resolveDayType(iso);
+    renderDateBar();
+    loadLogForDate();
+  }
+
+  // Inline override / confirm answer for the currently-viewed date.
+  function setDayTypeForDate(type) {
+    state.overrides[state.date] = type;
+    state.dayType = type;
+    renderDateBar();
+    renderActiveTab();
+    setDayType(state.date, type).then(function (r) {
+      if (!r || r.ok !== true) showBanner("Day type didn't sync — try again when online");
+    });
+  }
+
+  function maybeConfirmToday() {
+    var iso = todayISO();
+    if (state.date !== iso) return;
+    var def = dayTypeForWeekday(weekdayOf(iso));
+    if (def !== "office" && def !== "wfh") return; // weekend: unambiguous
+    if (state.overrides[iso]) return;              // already decided
+    showConfirmBar(def);
+  }
+
+  function showConfirmBar(def) {
+    var old = document.getElementById("confirmBar");
+    if (old && old.parentNode) old.parentNode.removeChild(old);
+    var other = def === "office" ? "wfh" : "office";
+    var bar = el("div", "confirmbar"); bar.id = "confirmBar";
+    bar.appendChild(el("span", null, "Today looks like " + (def === "office" ? "an Office" : "a WFH") + " day."));
+    var yes = el("button", "cbtn", def === "office" ? "Yes, Office" : "Yes, WFH");
+    var no = el("button", "cbtn alt", other === "office" ? "It’s Office" : "It’s WFH");
+    yes.addEventListener("click", function () { confirmToday(def, bar); });
+    no.addEventListener("click", function () { confirmToday(other, bar); });
+    bar.appendChild(yes); bar.appendChild(no);
+    var anchor = document.getElementById("dateBar");
+    if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(bar, anchor.nextSibling);
+    else document.body.appendChild(bar);
+  }
+
+  function confirmToday(type, bar) {
+    if (bar && bar.parentNode) bar.parentNode.removeChild(bar);
+    setDayTypeForDate(type);
+  }
+
+  function fmtDate(iso) {
+    var d = new Date(iso + "T00:00");
+    var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    var mons = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var label = days[d.getDay()] + " " + mons[d.getMonth()] + " " + d.getDate();
+    return isToday(iso) ? "Today · " + label : label;
+  }
+
+  function renderDateBar() {
+    var bar = document.getElementById("dateBar");
+    if (!bar) return;
+    bar.innerHTML = "";
+    var prev = el("button", "nav", "‹");
+    var next = el("button", "nav", "›");
+    prev.addEventListener("click", function () { goToDate(shiftISO(state.date, -1)); });
+    next.addEventListener("click", function () { goToDate(shiftISO(state.date, 1)); });
+    var center = el("div", "dcenter");
+    center.appendChild(el("div", "ddate", esc(fmtDate(state.date))));
+    var typeWrap = el("div", "dtype");
+    if (state.dayType === "office" || state.dayType === "wfh") {
+      ["office", "wfh"].forEach(function (t) {
+        var b = el("button", "pill" + (state.dayType === t ? " on" : ""), t === "office" ? "Office" : "WFH");
+        b.addEventListener("click", function () { setDayTypeForDate(t); });
+        typeWrap.appendChild(b);
+      });
+    } else {
+      typeWrap.appendChild(el("span", "dtype-static", esc(dayName())));
+    }
+    center.appendChild(typeWrap);
+    bar.appendChild(prev); bar.appendChild(center); bar.appendChild(next);
+    if (!isToday(state.date)) {
+      var today = el("button", "today-reset", "Today");
+      today.addEventListener("click", function () { goToDate(todayISO()); });
+      bar.appendChild(today);
+    }
   }
 
   // expose for Task 7 & 8 to extend

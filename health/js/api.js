@@ -56,6 +56,16 @@ function postCheckoff(payload) {
     .catch(function () { return { ok: false }; });
 }
 
+function setDayType(date, dayType) {
+  return fetch(CONFIG.EXEC_URL, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain" },
+    body: JSON.stringify({ action: "setDayType", token: sessionToken_(), date: date, dayType: dayType })
+  })
+    .then(function (r) { return r.json(); })
+    .catch(function () { return { ok: false }; });
+}
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { cacheGet, cacheSet, fetchSchedule, fetchLog, postCheckoff, getSession, setSession, clearSession, login };
+  module.exports = { cacheGet, cacheSet, fetchSchedule, fetchLog, postCheckoff, setDayType, getSession, setSession, clearSession, login };
 }
