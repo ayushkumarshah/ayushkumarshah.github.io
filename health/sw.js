@@ -1,4 +1,4 @@
-var CACHE = "health-v3";
+var CACHE = "health-v4";
 var SHELL = [
   "./", "./index.html", "./app.css",
   "./config.js", "./js/schedule.js", "./js/mealprep.js", "./js/api.js", "./js/app.js",

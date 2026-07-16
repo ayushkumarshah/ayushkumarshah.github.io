@@ -24,6 +24,14 @@ main { padding:14px; }
 .count { font-size:11px; margin-top:6px; opacity:.9; }
 .row { display:flex; gap:8px; }
 .col { flex:1; min-width:0; }
+.col-head { font-size:12px; font-weight:700; color:var(--fg); margin:2px 0 6px; }
+/* Both view: tighten cards/items so two full columns fit a phone */
+.row .card { padding:10px; }
+.row .act { font-size:14px; }
+.row .item { padding:7px 0; gap:6px; }
+.row .item .t { width:auto; font-size:10px; }
+.row .item .a { font-size:12px; }
+.row .check { width:26px; height:26px; }
 .item { display:flex; align-items:flex-start; gap:8px; padding:8px 0; border-bottom:1px solid var(--line); }
 .item:last-child { border-bottom:none; }
 .item .t { font-size:11px; color:var(--muted); width:64px; flex-shrink:0; }

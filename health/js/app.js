@@ -22,7 +22,7 @@
   }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[c]; }); }
 
-  function renderNowCard(person) {
+  function renderPersonColumn(person) {
     var events = eventsFor(person);
     var nn = nowNext(events, nowMinutes());
     var cls = person === "simran" ? "her" : "you";
@@ -54,32 +54,60 @@
     return wrap;
   }
 
-  function renderBoth() {
+  function bothColumns(render) {
     var row = el("div", "row");
     ["ayush", "simran"].forEach(function (p) {
-      var events = eventsFor(p);
-      var nn = nowNext(events, nowMinutes());
       var col = el("div", "col");
-      col.appendChild(el("div", "lbl", CONFIG.PERSON_LABELS[p]));
-      var c = el("div", "card now " + (p === "simran" ? "her" : "you"));
-      c.innerHTML = '<div class="lbl">Now</div><div class="act" style="font-size:14px">' +
-        esc(nn.current ? nn.current.activity : "—") + '</div>' +
-        (nn.next ? '<div class="count">Next: ' + esc(nn.next.activity) + '</div>' : '');
-      col.appendChild(c);
+      col.appendChild(el("div", "col-head", CONFIG.PERSON_LABELS[p]));
+      col.appendChild(render(p));
       row.appendChild(col);
     });
     return row;
   }
+
+  function renderBoth() { return bothColumns(renderPersonColumn); }
 
   function renderHome() {
     var panel = document.getElementById("tab-home");
     panel.innerHTML = "";
     if (!state.schedule) { panel.appendChild(el("div", "card", "Loading…")); return; }
     if (state.person === "both") panel.appendChild(renderBoth());
-    else panel.appendChild(renderNowCard(state.person));
+    else panel.appendChild(renderPersonColumn(state.person));
   }
 
   var foodMode = "today";
+
+  function renderFoodTodayColumn(person) {
+    var wrap = el("div");
+    var meals = eventsFor(person).filter(function (e) { return e.kind === "meal"; });
+    var pt = proteinTotal(meals), ct = calorieTotal(meals), target = PROTEIN_TARGET[person] || 150;
+    var tot = el("div", "card");
+    tot.innerHTML = '<div class="lbl">' + esc(CONFIG.PERSON_LABELS[person]) + ' · protein ' + pt + ' / ' + target + ' g</div>' +
+      '<div class="prog"><div style="width:' + Math.min(100, Math.round(pt / target * 100)) + '%"></div></div>' +
+      '<div class="count">~' + ct + ' kcal today</div>';
+    wrap.appendChild(tot);
+    var list = el("div", "card");
+    meals.forEach(function (m) {
+      list.appendChild(el("div", "item",
+        '<div class="t">' + esc(m.timeLabel) + '</div><div class="col"><div class="a">' + esc(m.activity) + '</div>' +
+        '<div class="det">' + esc(m.details) + '</div>' +
+        (m.calories ? '<div class="count" style="color:var(--ok)">' + m.calories + ' kcal' + (m.protein ? ' · ' + m.protein + 'g protein' : '') + '</div>' : '') +
+        '</div>'));
+    });
+    wrap.appendChild(list);
+    return wrap;
+  }
+
+  function renderCookColumn(person) {
+    var rollup = mealPrepRollup(officeEvents(person), OFFICE_DAY_COUNT); // office template, regardless of today
+    var cook = el("div", "card");
+    cook.innerHTML = '<h2>🍳 Batch cook (office week ×' + OFFICE_DAY_COUNT + ')</h2>';
+    rollup.forEach(function (r) {
+      cook.appendChild(el("div", "item", '<div class="col"><div class="a">' + esc(r.activity) + '</div><div class="det">' + esc(r.details) + '</div></div><div class="t">×' + r.count + '</div>'));
+    });
+    return cook;
+  }
+
   function renderFood() {
     var panel = document.getElementById("tab-food");
     panel.innerHTML = "";
@@ -91,32 +119,11 @@
     panel.appendChild(seg);
 
     if (foodMode === "today") {
-      var person = state.person === "both" ? "ayush" : state.person;
-      var meals = eventsFor(person).filter(function (e) { return e.kind === "meal"; });
-      var pt = proteinTotal(meals), ct = calorieTotal(meals), target = PROTEIN_TARGET[person] || 150;
-      var tot = el("div", "card");
-      tot.innerHTML = '<div class="lbl">' + esc(CONFIG.PERSON_LABELS[person]) + ' · protein ' + pt + ' / ' + target + ' g</div>' +
-        '<div class="prog"><div style="width:' + Math.min(100, Math.round(pt / target * 100)) + '%"></div></div>' +
-        '<div class="count">~' + ct + ' kcal today</div>';
-      panel.appendChild(tot);
-      var list = el("div", "card");
-      meals.forEach(function (m) {
-        list.appendChild(el("div", "item",
-          '<div class="t">' + esc(m.timeLabel) + '</div><div class="col"><div class="a">' + esc(m.activity) + '</div>' +
-          '<div class="det">' + esc(m.details) + '</div>' +
-          (m.calories ? '<div class="count" style="color:var(--ok)">' + m.calories + ' kcal' + (m.protein ? ' · ' + m.protein + 'g protein' : '') + '</div>' : '') +
-          '</div>'));
-      });
-      panel.appendChild(list);
+      if (state.person === "both") panel.appendChild(bothColumns(renderFoodTodayColumn));
+      else panel.appendChild(renderFoodTodayColumn(state.person));
     } else {
-      var person2 = state.person === "both" ? "ayush" : state.person;
-      var rollup = mealPrepRollup(officeEvents(person2), OFFICE_DAY_COUNT); // office template, regardless of today
-      var cook = el("div", "card");
-      cook.innerHTML = '<h2>🍳 Batch cook (office week ×' + OFFICE_DAY_COUNT + ')</h2>';
-      rollup.forEach(function (r) {
-        cook.appendChild(el("div", "item", '<div class="col"><div class="a">' + esc(r.activity) + '</div><div class="det">' + esc(r.details) + '</div></div><div class="t">×' + r.count + '</div>'));
-      });
-      panel.appendChild(cook);
+      if (state.person === "both") panel.appendChild(bothColumns(renderCookColumn));
+      else panel.appendChild(renderCookColumn(state.person));
       var groc = el("div", "card");
       groc.innerHTML = '<h2>🛒 Grocery list</h2>';
       groceryList(state.schedule).forEach(function (g) {
