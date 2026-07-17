@@ -123,7 +123,7 @@ function parseSchedule(values) {
 function parseGym(rows) {
   const out = [];
   for (let i = 0; i < rows.length; i++) {
-    if (!/^WEEKLY GYM SCHEDULE/i.test(String(rows[i][0]))) continue;
+    if (!/^WEEKLY GYM/i.test(String(rows[i][0]))) continue;
     for (let r = i + 2; r < rows.length; r++) {
       const day = String(rows[r][0] == null ? "" : rows[r][0]).trim();
       if (day === "") break;
