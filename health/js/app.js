@@ -151,25 +151,38 @@
     return (state.schedule.office && state.schedule.office[person]) || [];
   }
 
+  var WEEKDAY_NAME = { 0: "Sunday", 1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday" };
+  function gymFocus(day, person) { return person === "simran" ? day.focusSimran : day.focusAyush; }
+
+  function renderGymColumn(person) {
+    var wrap = el("div");
+    var dayName = WEEKDAY_NAME[weekdayOf(state.date)];
+    var todays = state.gym.filter(function (g) { return g.day === dayName; });
+    if (todays.length) {
+      var g = todays[0];
+      var t = el("div", "card now " + (person === "simran" ? "her" : "you"));
+      t.innerHTML = '<div class="lbl">' + (isToday(state.date) ? "Today" : esc(dayName)) + ' · ' + esc(g.type) + '</div>' +
+        '<div class="act" style="font-size:15px">' + esc(gymFocus(g, person) || "Rest") + '</div>';
+      wrap.appendChild(t);
+    }
+    var wk = el("div", "card");
+    wk.innerHTML = '<h2>Weekly plan</h2>';
+    state.gym.forEach(function (g2) {
+      var cur = g2.day === dayName;
+      wk.appendChild(el("div", "item" + (cur ? " cur" : ""),
+        '<div class="t">' + esc(g2.day) + '</div><div class="col"><div class="a">' + esc(gymFocus(g2, person) || "—") + '</div>' +
+        (g2.type ? '<div class="det">' + esc(g2.type) + '</div>' : '') + '</div>'));
+    });
+    wrap.appendChild(wk);
+    return wrap;
+  }
+
   function renderGym() {
     var panel = document.getElementById("tab-gym");
     panel.innerHTML = "";
     if (!state.schedule) { panel.appendChild(el("div", "card", "Loading…")); return; }
-    var today = ({ 1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday", 0: "Sunday" })[new Date().getDay()];
-    var todays = state.gym.filter(function (g) { return g.day === today; });
-    if (todays.length) {
-      var t = el("div", "card now you");
-      t.innerHTML = '<div class="lbl">Today · ' + esc(today) + '</div><div class="act" style="font-size:15px">' +
-        esc(todays[0].focusAyush) + '</div><div class="det">' + esc((CONFIG.PERSON_LABELS && CONFIG.PERSON_LABELS.simran) || "") + ': ' + esc(todays[0].focusSimran) + ' · ' + esc(todays[0].type) + '</div>';
-      panel.appendChild(t);
-    }
-    var wk = el("div", "card");
-    wk.innerHTML = '<h2>Weekly split</h2>';
-    state.gym.forEach(function (g) {
-      wk.appendChild(el("div", "item", '<div class="t">' + esc(g.day) + '</div><div class="col"><div class="a">' +
-        esc(g.focusAyush) + '</div><div class="det">' + esc((CONFIG.PERSON_LABELS && CONFIG.PERSON_LABELS.simran) || "") + ': ' + esc(g.focusSimran) + '</div></div>'));
-    });
-    panel.appendChild(wk);
+    if (state.person === "both") panel.appendChild(bothColumns(renderGymColumn));
+    else panel.appendChild(renderGymColumn(state.person));
   }
 
   function renderRules() {

@@ -74,3 +74,5 @@ button { cursor:pointer; font-family:inherit; }
 .picker button:last-child { background:var(--accent2); }
 .picker input { display:block; width:100%; margin:8px 0; padding:12px; border:1px solid var(--line); border-radius:10px; background:var(--bg); color:var(--fg); font-size:15px; }
 .picker .err { color:#f87171; font-size:12px; min-height:16px; margin-top:4px; }
+
+.item.cur { background:color-mix(in srgb, var(--accent) 12%, transparent); border-radius:8px; margin:0 -6px; padding-left:6px; padding-right:6px; }
