@@ -98,6 +98,133 @@ function isBlankRow(row) {
   return row.every(c => String(c == null ? "" : c).trim() === "");
 }
 
+function cell(row, idx) {
+  return String(row[idx] == null ? "" : row[idx]).trim();
+}
+
+function findSectionStart(rows, re) {
+  for (let i = 0; i < (rows || []).length; i++) {
+    const row = rows[i] || [];
+    for (let j = 0; j < row.length; j++) {
+      if (re.test(String(row[j] == null ? "" : row[j]))) return i;
+    }
+  }
+  return -1;
+}
+
+function firstNonBlankCell(row) {
+  for (let i = 0; i < (row || []).length; i++) {
+    const value = String(row[i] == null ? "" : row[i]).trim();
+    if (value) return value;
+  }
+  return "";
+}
+
+function findSectionStartInFirstCell(rows, re) {
+  for (let i = 0; i < (rows || []).length; i++) {
+    if (re.test(firstNonBlankCell(rows[i] || []))) return i;
+  }
+  return -1;
+}
+
+function dayFromCircuitLabel(label) {
+  const s = String(label || "").trim();
+  const dayMap = {
+    mon: "Monday",
+    tue: "Tuesday",
+    wed: "Wednesday",
+    thu: "Thursday",
+    fri: "Friday",
+    sat: "Saturday",
+    sun: "Sunday"
+  };
+  const paren = s.match(/\((mon|tue|wed|thu|fri|sat|sun)\)/i);
+  if (paren) return dayMap[paren[1].toLowerCase()];
+  const full = s.match(/\b(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b/i);
+  if (full) return full[1][0].toUpperCase() + full[1].slice(1).toLowerCase();
+  return "";
+}
+
+function focusFromCircuitLabel(label) {
+  return String(label || "").replace(/\s*\([^)]*\)\s*$/, "").trim();
+}
+
+function pushByDay(byDay, day, exercise) {
+  if (!day) return;
+  if (!byDay[day]) byDay[day] = [];
+  byDay[day].push(exercise);
+}
+
+function parseDetailedAyushGym(rows) {
+  const start = findSectionStart(rows, /AYUSH.*DETAILED.*GYM/i);
+  if (start < 0) return {};
+  const byDay = {};
+  for (let r = start + 2; r < rows.length; r++) {
+    if (isBlankRow(rows[r])) break;
+    const day = cell(rows[r], 0);
+    const exercise = cell(rows[r], 2);
+    if (!day || !exercise) break;
+    pushByDay(byDay, day, {
+      day: day,
+      focus: cell(rows[r], 1),
+      exercise: exercise,
+      sets: cell(rows[r], 3),
+      reps: cell(rows[r], 4),
+      targetRpe: cell(rows[r], 5),
+      targetMuscleGroup: cell(rows[r], 6),
+      progressionRule: cell(rows[r], 7),
+      importantNotes: cell(rows[r], 8)
+    });
+  }
+  return byDay;
+}
+
+function parseDetailedSimranGym(rows) {
+  const start = findSectionStart(rows, /SAANU.*DETAILED.*TONING/i);
+  if (start < 0) return {};
+  const byDay = {};
+  for (let r = start + 2; r < rows.length; r++) {
+    if (isBlankRow(rows[r])) break;
+    const circuitDay = cell(rows[r], 0);
+    const exercise = cell(rows[r], 1);
+    if (!circuitDay || !exercise) break;
+    const day = dayFromCircuitLabel(circuitDay);
+    pushByDay(byDay, day, {
+      day: day,
+      circuitDay: circuitDay,
+      focus: focusFromCircuitLabel(circuitDay),
+      exercise: exercise,
+      sets: cell(rows[r], 2),
+      reps: cell(rows[r], 3),
+      targetMuscle: cell(rows[r], 4),
+      notes: cell(rows[r], 5)
+    });
+  }
+  return byDay;
+}
+
+function detectRoutineSections(rows) {
+  const sectionDefs = [
+    { key: "weeklyGym", re: /^WEEKLY GYM/i, firstCell: true },
+    { key: "ayushDetailedGym", re: /AYUSH.*DETAILED.*GYM/i, firstCell: true },
+    { key: "simranDetailedGym", re: /SAANU.*DETAILED.*TONING/i, firstCell: true },
+    { key: "keyNotes", re: /^KEY NOTES/i },
+    { key: "kneeRehab", re: /DAILY KNEE REHAB/i, firstCell: true },
+    { key: "yoga", re: /DAILY YOGA/i, firstCell: true }
+  ];
+  const found = {};
+  for (let i = 0; i < sectionDefs.length; i++) {
+    const def = sectionDefs[i];
+    const start = def.firstCell ? findSectionStartInFirstCell(rows, def.re) : findSectionStart(rows, def.re);
+    found[def.key] = {
+      row: start < 0 ? -1 : start + 1,
+      header: start < 0 ? "" : (rows[start] || []).map(c => String(c == null ? "" : c).trim()).filter(Boolean).join(" | "),
+      columns: start < 0 ? [] : (rows[start + 1] || []).map(c => String(c == null ? "" : c).trim()).filter(Boolean)
+    };
+  }
+  return found;
+}
+
 function parseSchedule(values) {
   const schedule = emptySchedule();
   const rows = values || [];
@@ -122,17 +249,22 @@ function parseSchedule(values) {
 
 function parseGym(rows) {
   const out = [];
+  const ayushByDay = parseDetailedAyushGym(rows);
+  const simranByDay = parseDetailedSimranGym(rows);
   for (let i = 0; i < rows.length; i++) {
     if (!/^WEEKLY GYM/i.test(String(rows[i][0]))) continue;
     for (let r = i + 2; r < rows.length; r++) {
       const day = String(rows[r][0] == null ? "" : rows[r][0]).trim();
       if (day === "") break;
-      out.push({
+      const row = {
         day: day,
         focusAyush: String(rows[r][1] || "").trim(),
         focusSimran: String(rows[r][2] || "").trim(),
         type: String(rows[r][3] || "").trim()
-      });
+      };
+      if (ayushByDay[day]) row.ayushExercises = ayushByDay[day];
+      if (simranByDay[day]) row.simranExercises = simranByDay[day];
+      out.push(row);
     }
     break;
   }
@@ -154,5 +286,14 @@ function parsePrinciples(rows) {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { slugify, parseTime, extractMacros, classifyKind, parseSchedule };
+  module.exports = {
+    slugify,
+    parseTime,
+    extractMacros,
+    classifyKind,
+    parseSchedule,
+    parseDetailedAyushGym,
+    parseDetailedSimranGym,
+    detectRoutineSections
+  };
 }

@@ -153,6 +153,36 @@
 
   var WEEKDAY_NAME = { 0: "Sunday", 1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday" };
   function gymFocus(day, person) { return person === "simran" ? day.focusSimran : day.focusAyush; }
+  function gymExercises(day, person) { return (person === "simran" ? day.simranExercises : day.ayushExercises) || []; }
+  function exerciseMeta(parts) {
+    return parts.filter(Boolean).map(esc).join(" · ");
+  }
+  function tutorialUrl(name, context) {
+    return "https://www.youtube.com/results?search_query=" +
+      encodeURIComponent([name, context || "exercise", "form tutorial"].filter(Boolean).join(" "));
+  }
+  function tutorialItem(html, name, context) {
+    var a = el("a", "item exercise-detail", html);
+    a.href = tutorialUrl(name, context);
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.title = "Open tutorial";
+    return a;
+  }
+  function renderGymExercise(ex, person) {
+    var left = '<div class="col"><div class="a">' + esc(ex.exercise) + '</div>';
+    var meta = person === "simran"
+      ? exerciseMeta([ex.targetMuscle, ex.notes])
+      : exerciseMeta([ex.targetMuscleGroup, ex.progressionRule, ex.importantNotes]);
+    if (meta) left += '<div class="det">' + meta + '</div>';
+    left += '</div>';
+    var rx = exerciseMeta([
+      ex.sets ? ex.sets + " sets" : "",
+      ex.reps ? ex.reps + " reps" : "",
+      ex.targetRpe ? "RPE " + ex.targetRpe : ""
+    ]);
+    return tutorialItem(left + '<div class="t">' + (rx || "—") + '</div>', ex.exercise, "gym exercise");
+  }
 
   function renderGymColumn(person) {
     var wrap = el("div");
@@ -164,6 +194,14 @@
       t.innerHTML = '<div class="lbl">' + (isToday(state.date) ? "Today" : esc(dayName)) + ' · ' + esc(g.type) + '</div>' +
         '<div class="act" style="font-size:15px">' + esc(gymFocus(g, person) || "Rest") + '</div>';
       wrap.appendChild(t);
+      var exercises = gymExercises(g, person);
+      var detail = el("div", "card");
+      detail.innerHTML = '<h2>' + esc(dayName) + ' exercises</h2>';
+      if (!exercises.length) {
+        detail.appendChild(el("div", "det", g.type === "Strength" ? "No detailed exercises found for this day." : "No strength exercises scheduled."));
+      }
+      exercises.forEach(function (ex) { detail.appendChild(renderGymExercise(ex, person)); });
+      wrap.appendChild(detail);
     }
     var wk = el("div", "card");
     wk.innerHTML = '<h2>Weekly plan</h2>';
@@ -194,9 +232,9 @@
       c.innerHTML = '<h2>🧘 Daily Yoga · back-safe</h2>';
       if (!yoga.length) c.appendChild(el("div", "det", "No yoga data in the sheet."));
       yoga.forEach(function (y) {
-        c.appendChild(el("div", "item", '<div class="col"><div class="a">' + esc(y.pose) + '</div>' +
-          '<div class="det">' + esc(y.purpose) + (y.caution ? ' · ⚠️ ' + esc(y.caution) : '') + '</div></div>' +
-          '<div class="t">' + esc(y.duration) + '</div>'));
+        c.appendChild(tutorialItem('<div class="col"><div class="a">' + esc(y.pose) + '</div>' +
+          '<div class="det">' + exerciseMeta([y.purpose, y.caution ? "Caution: " + y.caution : ""]) + '</div></div>' +
+          '<div class="t">' + esc(y.duration) + '</div>', y.pose, "yoga pose"));
       });
       wrap.appendChild(c);
     } else {
@@ -205,9 +243,9 @@
       c2.innerHTML = '<h2>🦵 Daily Knee Rehab</h2>';
       if (!knee.length) c2.appendChild(el("div", "det", "No knee-rehab data in the sheet."));
       knee.forEach(function (k) {
-        c2.appendChild(el("div", "item", '<div class="col"><div class="a">' + esc(k.exercise) + '</div>' +
-          '<div class="det">' + esc(k.purpose) + (k.equipment ? ' · ' + esc(k.equipment) : '') + '</div></div>' +
-          '<div class="t">' + esc(k.setsReps) + '</div>'));
+        c2.appendChild(tutorialItem('<div class="col"><div class="a">' + esc(k.exercise) + '</div>' +
+          '<div class="det">' + exerciseMeta([k.purpose, k.equipment ? "Equipment: " + k.equipment : ""]) + '</div></div>' +
+          '<div class="t">' + esc(k.setsReps) + '</div>', k.exercise, "knee rehab exercise"));
       });
       wrap.appendChild(c2);
     }

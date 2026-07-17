@@ -46,7 +46,22 @@ function applyRename(data, map) {
   (data.gym || []).forEach(function (g) {
     g.focusAyush = renameStr_(g.focusAyush, map);
     g.focusSimran = renameStr_(g.focusSimran, map);
+    ["ayushExercises", "simranExercises"].forEach(function (key) {
+      (g[key] || []).forEach(function (e) {
+        ["focus", "exercise", "targetMuscleGroup", "targetMuscle", "progressionRule", "importantNotes", "notes"].forEach(function (field) {
+          e[field] = renameStr_(e[field], map);
+        });
+      });
+    });
   });
+  if (data.exercises) {
+    (((data.exercises.ayush || {}).kneeRehab) || []).forEach(function (e) {
+      ["exercise", "equipment", "purpose"].forEach(function (field) { e[field] = renameStr_(e[field], map); });
+    });
+    (((data.exercises.simran || {}).yoga) || []).forEach(function (e) {
+      ["pose", "purpose", "caution"].forEach(function (field) { e[field] = renameStr_(e[field], map); });
+    });
+  }
   (data.principles || []).forEach(function (x) {
     x.topic = renameStr_(x.topic, map);
     x.guideline = renameStr_(x.guideline, map);

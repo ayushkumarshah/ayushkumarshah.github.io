@@ -76,3 +76,9 @@ button { cursor:pointer; font-family:inherit; }
 .picker .err { color:#f87171; font-size:12px; min-height:16px; margin-top:4px; }
 
 .item.cur { background:color-mix(in srgb, var(--accent) 12%, transparent); border-radius:8px; margin:0 -6px; padding-left:6px; padding-right:6px; }
+.exercise-detail .t { width:86px; text-align:right; line-height:1.35; }
+.exercise-detail .det { margin-top:2px; }
+a.exercise-detail { color:inherit; text-decoration:none; border-radius:8px; margin:0 -6px; padding-left:6px; padding-right:6px; }
+a.exercise-detail:hover { background:color-mix(in srgb, var(--accent) 8%, transparent); }
+.row .exercise-detail { flex-direction:column; }
+.row .exercise-detail .t { width:auto; text-align:left; color:var(--accent); font-weight:600; }

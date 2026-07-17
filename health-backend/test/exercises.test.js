@@ -22,6 +22,20 @@ describe("parseKneeRehab", () => {
   it("returns [] when the section is absent", () => {
     expect(parseKneeRehab([["nothing here"]])).toEqual([]);
   });
+  it("does not mistake schedule notes for the real section header", () => {
+    const values = [
+      ["8:05 AM", "Knee Exercises", "20-25 min routine", "DAILY knee rehab (do every day)"],
+      ["8:30 AM", "Shower", "~15 min", ""],
+      ["", "", "", ""],
+      ["DAILY KNEE REHAB ROUTINE (5-6 days/week)", "", "", "", ""],
+      ["#", "Exercise", "Sets x Reps", "Equipment", "Purpose / Notes"],
+      ["1", "Squats (band above knees)", "2 x 15", "Mini band", "Quads + glute activation"],
+      ["", "", "", "", ""]
+    ];
+    expect(parseKneeRehab(values)).toEqual([
+      { n: "1", exercise: "Squats (band above knees)", setsReps: "2 x 15", equipment: "Mini band", purpose: "Quads + glute activation" }
+    ]);
+  });
 });
 
 describe("parseYoga", () => {

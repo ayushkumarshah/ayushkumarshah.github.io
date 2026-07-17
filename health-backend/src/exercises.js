@@ -4,9 +4,12 @@
 function findSectionStart_(values, re) {
   for (var i = 0; i < (values || []).length; i++) {
     var row = values[i] || [];
+    var first = "";
     for (var j = 0; j < row.length; j++) {
-      if (re.test(String(row[j] == null ? "" : row[j]))) return i;
+      first = String(row[j] == null ? "" : row[j]).trim();
+      if (first) break;
     }
+    if (re.test(first)) return i;
   }
   return -1;
 }

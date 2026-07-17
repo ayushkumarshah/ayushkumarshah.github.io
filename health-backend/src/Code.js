@@ -6,9 +6,6 @@
 var SPREADSHEET_ID = "1QGtGxh2Ly8TcSPC2Mf8eqD58zd7ICxpasEYyvftz22A";
 var SCHEDULE_TAB = "Daily Routine"; // the timetable tab in the "Fitness Plan" sheet
 var LOG_TAB = "Log";
-// Exercise detail tabs (set to the exact tab names; see verifyBackend log).
-var EXERCISE_TAB_AYUSH = "Ayush - Exercise";
-var EXERCISE_TAB_SAANU = "Simran - Exercise & Yoga";
 
 function dietSS_() {
   return SpreadsheetApp.openById(SPREADSHEET_ID);
@@ -56,16 +53,11 @@ function readLog_() {
   return parseLogRows(logSheet_().getDataRange().getValues());
 }
 
-// Values of an optional tab; [] if the tab doesn't exist (degrade gracefully).
-function tabValues_(name) {
-  var sh = dietSS_().getSheetByName(name);
-  return sh ? sh.getDataRange().getValues() : [];
-}
-
 function readExercises_() {
+  var vals = scheduleValues_();
   return {
-    ayush: { kneeRehab: parseKneeRehab(tabValues_(EXERCISE_TAB_AYUSH)) },
-    simran: { yoga: parseYoga(tabValues_(EXERCISE_TAB_SAANU)) }
+    ayush: { kneeRehab: parseKneeRehab(vals) },
+    simran: { yoga: parseYoga(vals) }
   };
 }
 
@@ -197,14 +189,23 @@ function verifyBackend() {
   if (!sh) { Logger.log("!! No tab named '" + SCHEDULE_TAB + "'. Set SCHEDULE_TAB to one of the tabs above."); return; }
   var vals = sh.getDataRange().getValues();
   var parsed = parseSchedule(vals);
+  var sections = detectRoutineSections(vals);
   Logger.log("rows read: " + vals.length);
+  Object.keys(sections).forEach(function (key) {
+    var section = sections[key];
+    Logger.log("section " + key + ": row " + section.row + " | header: " + section.header +
+      " | columns: " + section.columns.join(" | "));
+  });
   Logger.log("ayush office events: " + (parsed.schedule.office.ayush || []).length +
     " | simran office events: " + (parsed.schedule.office.simran || []).length);
   Logger.log("gym rows: " + parsed.gym.length + " | principles: " + parsed.principles.length);
   Logger.log("ics sample length: " + buildIcs(parsed, "ayush", { calname: "x" }).length);
   var ex = readExercises_();
-  Logger.log("EXERCISE tabs: ayush='" + EXERCISE_TAB_AYUSH + "' (" + (ss.getSheetByName(EXERCISE_TAB_AYUSH) ? "found" : "NOT FOUND") + "), " +
-    "saanu='" + EXERCISE_TAB_SAANU + "' (" + (ss.getSheetByName(EXERCISE_TAB_SAANU) ? "found" : "NOT FOUND") + ")");
-  Logger.log("knee-rehab rows: " + ex.ayush.kneeRehab.length + " | yoga poses: " + ex.simran.yoga.length +
-    "  (both should be > 0; if 0, fix EXERCISE_TAB_* to match the tab names above)");
+  Logger.log("Daily Routine detail rows: ayush Monday gym exercises: " +
+    (((parsed.gym.find(function (g) { return g.day === "Monday"; }) || {}).ayushExercises || []).length) +
+    " | saanu Monday circuit exercises: " +
+    (((parsed.gym.find(function (g) { return g.day === "Monday"; }) || {}).simranExercises || []).length));
+  Logger.log("Daily Routine moves rows: knee-rehab rows: " + ex.ayush.kneeRehab.length +
+    " | yoga poses: " + ex.simran.yoga.length +
+    "  (both should be > 0; if 0, check the Daily Routine section headers)");
 }
