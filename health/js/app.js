@@ -1,6 +1,6 @@
 (function () {
   var state = {
-    schedule: null, gym: [], principles: [], overrides: {},
+    schedule: null, gym: [], principles: [], exercises: {}, overrides: {},
     date: todayISO(),
     dayType: dayTypeForWeekday(new Date().getDay()),
     me: null, person: "ayush", tab: "home", log: {}, rename: {} // me = this device's owner; log: { itemId: true }
@@ -185,6 +185,43 @@
     else panel.appendChild(renderGymColumn(state.person));
   }
 
+  function renderExercisesColumn(person) {
+    var wrap = el("div");
+    var ex = (state.exercises && state.exercises[person]) || {};
+    if (person === "simran") {
+      var yoga = ex.yoga || [];
+      var c = el("div", "card");
+      c.innerHTML = '<h2>🧘 Daily Yoga · back-safe</h2>';
+      if (!yoga.length) c.appendChild(el("div", "det", "No yoga data in the sheet."));
+      yoga.forEach(function (y) {
+        c.appendChild(el("div", "item", '<div class="col"><div class="a">' + esc(y.pose) + '</div>' +
+          '<div class="det">' + esc(y.purpose) + (y.caution ? ' · ⚠️ ' + esc(y.caution) : '') + '</div></div>' +
+          '<div class="t">' + esc(y.duration) + '</div>'));
+      });
+      wrap.appendChild(c);
+    } else {
+      var knee = ex.kneeRehab || [];
+      var c2 = el("div", "card");
+      c2.innerHTML = '<h2>🦵 Daily Knee Rehab</h2>';
+      if (!knee.length) c2.appendChild(el("div", "det", "No knee-rehab data in the sheet."));
+      knee.forEach(function (k) {
+        c2.appendChild(el("div", "item", '<div class="col"><div class="a">' + esc(k.exercise) + '</div>' +
+          '<div class="det">' + esc(k.purpose) + (k.equipment ? ' · ' + esc(k.equipment) : '') + '</div></div>' +
+          '<div class="t">' + esc(k.setsReps) + '</div>'));
+      });
+      wrap.appendChild(c2);
+    }
+    return wrap;
+  }
+
+  function renderExercises() {
+    var panel = document.getElementById("tab-exercises");
+    panel.innerHTML = "";
+    if (!state.schedule) { panel.appendChild(el("div", "card", "Loading…")); return; }
+    if (state.person === "both") panel.appendChild(bothColumns(renderExercisesColumn));
+    else panel.appendChild(renderExercisesColumn(state.person));
+  }
+
   function renderRules() {
     var panel = document.getElementById("tab-rules");
     panel.innerHTML = "";
@@ -213,7 +250,7 @@
   }
 
   function renderActiveTab() {
-    ({ home: renderHome, food: renderFood, gym: renderGym, rules: renderRules })[state.tab]();
+    ({ home: renderHome, food: renderFood, gym: renderGym, exercises: renderExercises, rules: renderRules })[state.tab]();
   }
 
   function setTab(tab) {
@@ -317,6 +354,7 @@
       if (!res.data || !res.data.schedule) { showBanner("No data — check connection"); return; }
       applyRename(res.data, state.rename || {});
       state.schedule = res.data.schedule; state.gym = res.data.gym || []; state.principles = res.data.principles || [];
+      state.exercises = res.data.exercises || {};
       state.overrides = res.data.overrides || {};
       state.dayType = resolveDayType(state.date);
       if (res.stale) showBanner("Showing saved copy (offline)");
