@@ -22,3 +22,7 @@ gradtrip/tickets/
 
 health-backend/node_modules/
 health-frontend/node_modules/
+
+# Birthday vault — build artifact, re-encrypted in full on every rebuild.
+# Pages builds Jekyll from source, so the _site copy is dead weight.
+_site/bday2026/vault/

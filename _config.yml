@@ -161,6 +161,7 @@ exclude:
   - assets/js/plugins
   - assets/js/vendor
   - config
+  - birthday-backend
   - gulpfile.js
   - health-backend
   - health-frontend
@@ -214,6 +215,11 @@ collections:
 
 # Defaults
 defaults:
+  # bday2026 - private page: keep out of the public sitemap
+  - scope:
+      path: "bday2026"
+    values:
+      sitemap: false
   # _posts
   - scope:
       path: ""

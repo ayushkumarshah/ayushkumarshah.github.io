@@ -1,0 +1,16 @@
+{
+  "name": "birthday-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Apps Script authentication and choice backend for the private birthday site",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "vitest run --globals"
+  },
+  "devDependencies": {
+    "@google/clasp": "^3.3.0",
+    "vitest": "^3.2.7"
+  }
+}
