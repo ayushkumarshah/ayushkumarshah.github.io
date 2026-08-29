@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#f6e8e7">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://*.googleusercontent.com; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <title>A little secret</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23f2c955'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='38'%3E%E2%9C%BF%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <section class="gate" id="gate" aria-labelledby="gateTitle">
+    <div class="gate-flower flower-a" aria-hidden="true">✿</div>
+    <div class="gate-flower flower-b" aria-hidden="true">✿</div>
+    <form class="gate-card" id="loginForm">
+      <p class="eyebrow">A private little world</p>
+      <h1 id="gateTitle">Made for one person.</h1>
+      <p class="gate-copy">If this found the right heart, you already know the word.</p>
+      <label for="password">Our secret</label>
+      <input name="username" autocomplete="username" value="private" hidden>
+      <div class="password-row">
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button type="submit">Open</button>
+      </div>
+      <p class="gate-message" id="gateMessage" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+  <div id="privateRoot"></div>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

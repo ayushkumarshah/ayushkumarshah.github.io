@@ -1,0 +1,1264 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Health Companion — 2-Person Login + “Saanu” Rename Implementation Plan - Ayush Kumar Shah</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Ayush Kumar Shah">
+<meta property="og:title" content="Health Companion — 2-Person Login + “Saanu” Rename Implementation Plan">
+
+
+  <link rel="canonical" href="https://shahayush.com/docs/superpowers/plans/2026-07-15-health-auth-and-rename/">
+  <meta property="og:url" content="https://shahayush.com/docs/superpowers/plans/2026-07-15-health-auth-and-rename/">
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="https://shahayush.com/images/profile.jpeg">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://shahayush.com",
+      "logo": "https://shahayush.com/images/profile.jpeg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Ayush Kumar Shah",
+      "url" : "https://shahayush.com",
+      "sameAs" : ["https://github.com/ayushkumarshah","https://www.facebook.com/ayushkumarshah","https://www.linkedin.com/in/ayush7"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="qgX-LJLtkvIk5WkHJP5FSa31RN98a1WhAjPK8w8JPxE" />
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://shahayush.com/feed.xml" type="application/atom+xml" rel="alternate" title="Ayush Kumar Shah Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H6F3H1HTZV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H6F3H1HTZV');
+</script>
+
+
+<!-- For all browsers -->
+<!--<link rel="stylesheet" href="https://shahayush.com/assets/css/main.css">-->
+<link rel="stylesheet" href="https://shahayush.com/assets/css/main.css?v=1788036186">
+
+<meta http-equiv="cleartype" content="on">
+
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://shahayush.com/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://shahayush.com/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://shahayush.com/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://shahayush.com/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://shahayush.com/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://shahayush.com/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://shahayush.com/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://shahayush.com/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://shahayush.com/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://shahayush.com/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://shahayush.com/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="https://shahayush.com/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://shahayush.com/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="https://shahayush.com/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="https://shahayush.com/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://shahayush.com/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://shahayush.com/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://shahayush.com/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="https://shahayush.com/">Ayush Kumar Shah</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/projects/">Projects</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/research/">Research</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/cv/">CV</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/teaching/">Teaching</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/year-archive/">Blog Posts</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/certificates/">Certificates</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <style>
+  .archive {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+    border-radius: 10px;
+  }
+  .publication-link {
+    text-decoration: none !important; color: inherit; border: none;
+    color: inherit;
+  }
+  .publication-item {
+    padding: 20px;
+    <!--background: #ffffff;-->
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+  }
+  .publication-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .publication-links {
+      display: flex;
+      flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+      gap: 10px;
+      margin-top: 10px;
+      justify-content: center; /* Centers the buttons when wrapped */
+  }
+
+  .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      text-decoration: none !important;
+      border-radius: 5px;
+      font-weight: bold;
+      color: white;
+      transition: background 0.3s ease, transform 0.2s ease;
+      min-width: 120px; /* Prevents buttons from shrinking too much */
+      text-align: center; /* Ensures text is centered */
+  }
+
+  .btn:hover {
+      transform: scale(1.05);
+  }
+
+  /* Responsive Design: Stack buttons for very small screens */
+  @media (max-width: 480px) {
+      .publication-links {
+          flex-direction: column;
+          align-items: center; /* Center align buttons in column view */
+      }
+  }
+    .btn-paper { background-color: #3498db; }
+    .btn-pdf { background-color: #555555; }
+    .btn-poster { background-color: #9b59b6; }
+    .btn-video { background-color: #e74c3c; }
+    .btn-code { background-color: #fc6d26; }
+    .btn-demo { background-color: #2ecc71; }
+    .btn-info { background-color: #34495e; }
+    .publication-separator {
+      height: 3px;
+      background: linear-gradient(to right, #3498db, #fc6d26);
+      margin: 15px 0;
+    }
+
+/* ✅ Wrapper to ensure proper centering */
+.bibtex-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    width: 100%; /* Ensures full width */
+}
+
+/* ✅ Centering container */
+.bibtex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content */
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Ensures it doesn’t stretch too much */
+    text-align: center;
+}
+
+/* ✅ BibTeX Textarea */
+.bibtex-textarea {
+    width: 100%;
+    height: 400px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    resize: vertical;
+    border-radius: 5px;
+    display: none;
+    overflow-y: auto;
+}
+
+/* ✅ BibTeX Buttons */
+.btn-bibtex, .btn-bibtex-copy {
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 0.9rem;
+    text-align: center;
+    width: auto;
+    min-width: 100px;
+}
+
+/* ✅ Button Hover */
+.btn-bibtex:hover, .btn-bibtex-copy:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 600px) {
+    .bibtex-container {
+        max-width: 90%;
+    }
+
+    .bibtex-textarea {
+        height: 300px;
+        font-size: 0.8rem;
+    }
+
+    .btn-bibtex, .btn-bibtex-copy {
+        font-size: 0.8rem;
+        min-width: 120px;
+    }
+}
+
+</style>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <div class="author__avatar">
+    
+    	<img src="https://shahayush.com/images/profile.jpeg" class="author__avatar" alt="Ayush Kumar Shah, PhD">
+    
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">Ayush Kumar Shah, PhD</h3>
+    <p class="author__bio">Research Scientist at Meta</p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Menlo Park, California</li>
+      
+      
+      
+      
+        <li><a href="mailto:ayush.kumar.shah@gmail.com"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+      
+      
+       
+      
+      
+      
+      
+        <li><a href="https://www.linkedin.com/in/ayush7"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+      
+      
+      
+      
+      
+      
+        <li><a href="https://gitlab.com/ayushkumarshah"><i class="fab fa-fw fa-gitlab" aria-hidden="true"></i> GitLab</a></li>
+      
+      
+        <li><a href="https://github.com/ayushkumarshah"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="https://scholar.google.com/citations?hl=en&authuser=1&user=SD3Nv10AAAAJ"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
+      
+      
+      
+        <li><a href="http://orcid.org/0000-0001-6158-7632"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
+      
+      
+      
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <meta itemprop="headline" content="Health Companion — 2-Person Login + “Saanu” Rename Implementation Plan">
+    
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 class="page__title" itemprop="headline">Health Companion — 2-Person Login + “Saanu” Rename Implementation Plan
+ ()</h1>
+          
+          
+          <!--<p><strong>Venue:</strong>  </p>-->
+          <!--<p> <strong>Status:</strong>  Submitted </p>-->
+
+          
+
+          <div class="publication-links">
+            
+            
+            
+            
+            
+            
+          </div>
+          
+      </div>
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <h1 id="health-companion--2-person-login--saanu-rename-implementation-plan">Health Companion — 2-Person Login + “Saanu” Rename Implementation Plan</h1>
+
+<blockquote>
+  <p><strong>For agentic workers:</strong> REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (<code class="language-plaintext highlighter-rouge">- [ ]</code>) syntax for tracking.</p>
+</blockquote>
+
+<p><strong>Goal:</strong> Make the live <code class="language-plaintext highlighter-rouge">/health</code> app private to two users via real backend auth (Apps Script validates hashed credentials and issues the token), replace the per-device “who am I?” picker with login-derived identity, remove all names/token from the public files, and display “Simran” as “Saanu”.</p>
+
+<p><strong>Architecture:</strong> A new pure <code class="language-plaintext highlighter-rouge">auth.js</code> module (dual-runtime, unit-tested) holds the username→person/name mapping and the login-response builder; thin Apps Script wrappers in <code class="language-plaintext highlighter-rouge">Code.js</code> do the SHA-256 hash check and expose a <code class="language-plaintext highlighter-rouge">doPost action:"login"</code>. The front-end <code class="language-plaintext highlighter-rouge">config.js</code> loses the token and names; <code class="language-plaintext highlighter-rouge">api.js</code> gains a login call + a localStorage session that supplies the token; <code class="language-plaintext highlighter-rouge">app.js</code> shows a generic login screen, applies the session as identity, and runs a pure <code class="language-plaintext highlighter-rouge">applyRename</code> pass over fetched data.</p>
+
+<p><strong>Tech Stack:</strong> Google Apps Script (V8), vanilla JS PWA, vitest (dev-only) in <code class="language-plaintext highlighter-rouge">health-backend/</code> and <code class="language-plaintext highlighter-rouge">health-frontend/</code>.</p>
+
+<h2 id="global-constraints">Global Constraints</h2>
+
+<p>Apply to <strong>every</strong> task. Copy values verbatim.</p>
+
+<ul>
+  <li><strong>Two accounts (usernames lowercase):</strong> <code class="language-plaintext highlighter-rouge">ayush</code> → <code class="language-plaintext highlighter-rouge">{ person:"ayush", name:"Ayush" }</code>; <code class="language-plaintext highlighter-rouge">saanu</code> → <code class="language-plaintext highlighter-rouge">{ person:"simran", name:"Saanu" }</code>. The <strong>data person keys stay <code class="language-plaintext highlighter-rouge">ayush</code>/<code class="language-plaintext highlighter-rouge">simran</code></strong> (the sheet is untouched); <code class="language-plaintext highlighter-rouge">saanu</code> maps to person <code class="language-plaintext highlighter-rouge">simran</code>.</li>
+  <li><strong>Display maps:</strong> <code class="language-plaintext highlighter-rouge">PEOPLE = { ayush:"Ayush", simran:"Saanu" }</code>; <code class="language-plaintext highlighter-rouge">RENAME = { "Simran":"Saanu" }</code>.</li>
+  <li><strong>Login response shape (exact):</strong> <code class="language-plaintext highlighter-rouge">{ ok:true, token, person, name, people:PEOPLE, rename:RENAME }</code>. Failure: <code class="language-plaintext highlighter-rouge">{ ok:false, error:"invalid" }</code> — the <strong>same</strong> for unknown user and bad password (no enumeration).</li>
+  <li><strong>Password hashing:</strong> hex <strong>SHA-256</strong> of <code class="language-plaintext highlighter-rouge">SALT + password</code>, <code class="language-plaintext highlighter-rouge">SALT</code> a fixed constant in <code class="language-plaintext highlighter-rouge">Code.js</code> (server-side only). Stored as Script Property <code class="language-plaintext highlighter-rouge">USER_&lt;username&gt;</code>. Never plaintext, never sent to the client.</li>
+  <li><strong>No secrets/names in public files:</strong> <code class="language-plaintext highlighter-rouge">config.js</code> holds only <code class="language-plaintext highlighter-rouge">EXEC_URL</code>. No token, no <code class="language-plaintext highlighter-rouge">PERSON_LABELS</code>, no hardcoded person names anywhere under <code class="language-plaintext highlighter-rouge">health/</code> static files — names arrive via the authed login response.</li>
+  <li><strong>Session:</strong> localStorage key <code class="language-plaintext highlighter-rouge">"health.session"</code> = the login response JSON. Data/ics/log endpoints are unchanged and still require the <code class="language-plaintext highlighter-rouge">token</code> (now sourced from the session).</li>
+  <li><strong>CORS:</strong> POST (login and check-off) uses <code class="language-plaintext highlighter-rouge">Content-Type: text/plain</code>. GET stays token-in-query.</li>
+  <li><strong>Dual-runtime pure modules:</strong> end with <code class="language-plaintext highlighter-rouge">if (typeof module !== "undefined" &amp;&amp; module.exports) { module.exports = { … }; }</code>; no ESM. Tests use vitest globals (never <code class="language-plaintext highlighter-rouge">require("vitest")</code>).</li>
+  <li><strong>Path stays <code class="language-plaintext highlighter-rouge">/health</code>.</strong> Bump the service-worker cache to <code class="language-plaintext highlighter-rouge">health-v3</code>.</li>
+  <li><strong>Rollout:</strong> rotate <code class="language-plaintext highlighter-rouge">API_TOKEN</code> (the old one is public in git history) and run <code class="language-plaintext highlighter-rouge">setUser</code> for both accounts.</li>
+</ul>
+
+<h3 id="file-map">File map</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">health-backend/src/auth.js</code> — <strong>new</strong> pure: <code class="language-plaintext highlighter-rouge">ACCOUNTS</code>, <code class="language-plaintext highlighter-rouge">PEOPLE</code>, <code class="language-plaintext highlighter-rouge">RENAME</code>, <code class="language-plaintext highlighter-rouge">accountFor</code>, <code class="language-plaintext highlighter-rouge">buildLoginResponse</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">health-backend/src/Code.js</code> — <strong>modify</strong>: <code class="language-plaintext highlighter-rouge">SALT</code>, <code class="language-plaintext highlighter-rouge">hashPassword_</code>, <code class="language-plaintext highlighter-rouge">setUser</code>, <code class="language-plaintext highlighter-rouge">doPost</code> login branch.</li>
+  <li><code class="language-plaintext highlighter-rouge">health-backend/test/auth.test.js</code> — <strong>new</strong>.</li>
+  <li><code class="language-plaintext highlighter-rouge">health/js/schedule.js</code> — <strong>modify</strong>: add pure <code class="language-plaintext highlighter-rouge">applyRename</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">health/js/api.js</code> — <strong>modify</strong>: session helpers + <code class="language-plaintext highlighter-rouge">login</code> + token-from-session.</li>
+  <li><code class="language-plaintext highlighter-rouge">health/js/app.js</code> — <strong>modify</strong>: login screen, session-as-identity, remove picker, logout, rename wiring.</li>
+  <li><code class="language-plaintext highlighter-rouge">health/config.js</code> — <strong>modify</strong>: <code class="language-plaintext highlighter-rouge">EXEC_URL</code> only.</li>
+  <li><code class="language-plaintext highlighter-rouge">health/app.css</code> — <strong>modify</strong>: login form styles.</li>
+  <li><code class="language-plaintext highlighter-rouge">health/sw.js</code> — <strong>modify</strong>: cache <code class="language-plaintext highlighter-rouge">health-v3</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">health-frontend/test/rename.test.js</code> — <strong>new</strong>; <code class="language-plaintext highlighter-rouge">health-frontend/test/api.test.js</code> — <strong>modify</strong>.</li>
+  <li><code class="language-plaintext highlighter-rouge">health-backend/AUTH.md</code> — <strong>new</strong>: setup/rotate runbook.</li>
+</ul>
+
+<hr />
+
+<h3 id="task-1-backend-auth-module-pure">Task 1: Backend auth module (pure)</h3>
+
+<p><strong>Files:</strong></p>
+<ul>
+  <li>Create: <code class="language-plaintext highlighter-rouge">health-backend/src/auth.js</code></li>
+  <li>Create: <code class="language-plaintext highlighter-rouge">health-backend/test/auth.test.js</code></li>
+</ul>
+
+<p><strong>Interfaces:</strong></p>
+<ul class="task-list">
+  <li>Consumes: nothing.</li>
+  <li>
+    <p>Produces (exported): <code class="language-plaintext highlighter-rouge">ACCOUNTS</code>, <code class="language-plaintext highlighter-rouge">PEOPLE</code>, <code class="language-plaintext highlighter-rouge">RENAME</code>, <code class="language-plaintext highlighter-rouge">accountFor(username) -&gt; {person,name}|null</code>, <code class="language-plaintext highlighter-rouge">buildLoginResponse(account, token) -&gt; {ok,token,person,name,people,rename}</code>.</p>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 1: Write the failing test</strong></li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">health-backend/test/auth.test.js</code>:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">accountFor</span><span class="p">,</span> <span class="nx">buildLoginResponse</span><span class="p">,</span> <span class="nx">PEOPLE</span><span class="p">,</span> <span class="nx">RENAME</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">../src/auth</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">"</span><span class="s2">accountFor</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">maps usernames to person + name (case-insensitive)</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">accountFor</span><span class="p">(</span><span class="dl">"</span><span class="s2">ayush</span><span class="dl">"</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span> <span class="na">person</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ayush</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ayush</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">accountFor</span><span class="p">(</span><span class="dl">"</span><span class="s2">saanu</span><span class="dl">"</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span> <span class="na">person</span><span class="p">:</span> <span class="dl">"</span><span class="s2">simran</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">accountFor</span><span class="p">(</span><span class="dl">"</span><span class="s2">SAANU</span><span class="dl">"</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span> <span class="na">person</span><span class="p">:</span> <span class="dl">"</span><span class="s2">simran</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span> <span class="p">});</span>
+  <span class="p">});</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">returns null for unknown users</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">accountFor</span><span class="p">(</span><span class="dl">"</span><span class="s2">bob</span><span class="dl">"</span><span class="p">)).</span><span class="nx">toBeNull</span><span class="p">();</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">accountFor</span><span class="p">(</span><span class="dl">""</span><span class="p">)).</span><span class="nx">toBeNull</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">"</span><span class="s2">buildLoginResponse</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">returns the exact success shape</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">acct</span> <span class="o">=</span> <span class="nx">accountFor</span><span class="p">(</span><span class="dl">"</span><span class="s2">saanu</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">buildLoginResponse</span><span class="p">(</span><span class="nx">acct</span><span class="p">,</span> <span class="dl">"</span><span class="s2">TOK</span><span class="dl">"</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span>
+      <span class="na">ok</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">token</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TOK</span><span class="dl">"</span><span class="p">,</span> <span class="na">person</span><span class="p">:</span> <span class="dl">"</span><span class="s2">simran</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">people</span><span class="p">:</span> <span class="p">{</span> <span class="na">ayush</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ayush</span><span class="dl">"</span><span class="p">,</span> <span class="na">simran</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span> <span class="p">},</span>
+      <span class="na">rename</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Simran</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span> <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">exposes the shared maps</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">PEOPLE</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">({</span> <span class="na">ayush</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ayush</span><span class="dl">"</span><span class="p">,</span> <span class="na">simran</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">RENAME</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">({</span> <span class="dl">"</span><span class="s2">Simran</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span> <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 2: Run to verify failure</strong></li>
+</ul>
+
+<p>Run: <code class="language-plaintext highlighter-rouge">cd health-backend &amp;&amp; npx vitest run test/auth.test.js</code>
+Expected: FAIL — <code class="language-plaintext highlighter-rouge">Cannot find module '../src/auth'</code>.</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 3: Implement <code class="language-plaintext highlighter-rouge">health-backend/src/auth.js</code></strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">ACCOUNTS</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">ayush</span><span class="p">:</span> <span class="p">{</span> <span class="na">person</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ayush</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ayush</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="na">saanu</span><span class="p">:</span> <span class="p">{</span> <span class="na">person</span><span class="p">:</span> <span class="dl">"</span><span class="s2">simran</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span> <span class="p">}</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">PEOPLE</span> <span class="o">=</span> <span class="p">{</span> <span class="na">ayush</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ayush</span><span class="dl">"</span><span class="p">,</span> <span class="na">simran</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">RENAME</span> <span class="o">=</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Simran</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">accountFor</span><span class="p">(</span><span class="nx">username</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">username</span> <span class="o">==</span> <span class="kc">null</span> <span class="p">?</span> <span class="dl">""</span> <span class="p">:</span> <span class="nx">username</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">ACCOUNTS</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">?</span> <span class="nx">ACCOUNTS</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">buildLoginResponse</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">ok</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">token</span><span class="p">:</span> <span class="nx">token</span><span class="p">,</span> <span class="na">person</span><span class="p">:</span> <span class="nx">account</span><span class="p">.</span><span class="nx">person</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="nx">account</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+    <span class="na">people</span><span class="p">:</span> <span class="nx">PEOPLE</span><span class="p">,</span> <span class="na">rename</span><span class="p">:</span> <span class="nx">RENAME</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">module</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">undefined</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">ACCOUNTS</span><span class="p">,</span> <span class="nx">PEOPLE</span><span class="p">,</span> <span class="nx">RENAME</span><span class="p">,</span> <span class="nx">accountFor</span><span class="p">,</span> <span class="nx">buildLoginResponse</span> <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 4: Run to verify pass</strong></li>
+</ul>
+
+<p>Run: <code class="language-plaintext highlighter-rouge">cd health-backend &amp;&amp; npx vitest run test/auth.test.js</code>
+Expected: PASS.</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 5: Commit</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add health-backend/src/auth.js health-backend/test/auth.test.js
+git commit <span class="nt">-m</span> <span class="s2">"feat(health): add backend auth mapping module"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="task-2-backend-login-wiring-codejs">Task 2: Backend login wiring (<code class="language-plaintext highlighter-rouge">Code.js</code>)</h3>
+
+<p><strong>Files:</strong></p>
+<ul>
+  <li>Modify: <code class="language-plaintext highlighter-rouge">health-backend/src/Code.js</code></li>
+</ul>
+
+<p><strong>Interfaces:</strong></p>
+<ul class="task-list">
+  <li>Consumes: <code class="language-plaintext highlighter-rouge">accountFor</code>, <code class="language-plaintext highlighter-rouge">buildLoginResponse</code> (Apps Script globals from <code class="language-plaintext highlighter-rouge">auth.gs</code> after push); existing <code class="language-plaintext highlighter-rouge">scriptToken_</code>, <code class="language-plaintext highlighter-rouge">isAuthorized</code>, <code class="language-plaintext highlighter-rouge">jsonOut_</code>, <code class="language-plaintext highlighter-rouge">logSheet_</code>.</li>
+  <li>
+    <p>Produces: <code class="language-plaintext highlighter-rouge">doPost action:"login"</code> returning the login response; a <code class="language-plaintext highlighter-rouge">setUser(username,password)</code> editor helper; <code class="language-plaintext highlighter-rouge">hashPassword_</code>. Not unit-tested (Apps Script <code class="language-plaintext highlighter-rouge">Utilities</code>/<code class="language-plaintext highlighter-rouge">PropertiesService</code>); verified by curl + editor.</p>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 1: Add the salt + hashing + setUser near the top of <code class="language-plaintext highlighter-rouge">Code.js</code></strong></li>
+</ul>
+
+<p>Insert after the <code class="language-plaintext highlighter-rouge">scriptToken_</code> function:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Server-side only (Code.gs is never served to the browser).</span>
+<span class="kd">var</span> <span class="nx">SALT</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">health-app-auth-v1::</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">hashPassword_</span><span class="p">(</span><span class="nx">pw</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="nx">Utilities</span><span class="p">.</span><span class="nx">computeDigest</span><span class="p">(</span>
+    <span class="nx">Utilities</span><span class="p">.</span><span class="nx">DigestAlgorithm</span><span class="p">.</span><span class="nx">SHA_256</span><span class="p">,</span> <span class="nx">SALT</span> <span class="o">+</span> <span class="nb">String</span><span class="p">(</span><span class="nx">pw</span><span class="p">),</span> <span class="nx">Utilities</span><span class="p">.</span><span class="nx">Charset</span><span class="p">.</span><span class="nx">UTF_8</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="nx">b</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">)).</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span> <span class="p">}).</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Run once per person in the editor: setUser("ayush", "their-password")</span>
+<span class="kd">function</span> <span class="nx">setUser</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">PropertiesService</span><span class="p">.</span><span class="nx">getScriptProperties</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="dl">"</span><span class="s2">USER_</span><span class="dl">"</span> <span class="o">+</span> <span class="nb">String</span><span class="p">(</span><span class="nx">username</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">(),</span> <span class="nx">hashPassword_</span><span class="p">(</span><span class="nx">password</span><span class="p">));</span>
+  <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Password set for </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">username</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 2: Replace <code class="language-plaintext highlighter-rouge">doPost</code> to handle login before the token-gated check-off</strong></li>
+</ul>
+
+<p>Replace the entire existing <code class="language-plaintext highlighter-rouge">doPost</code> function with:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">doPost</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">payload</span><span class="p">;</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="nx">payload</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">((</span><span class="nx">e</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">postData</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">postData</span><span class="p">.</span><span class="nx">contents</span><span class="p">)</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">{}</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">jsonOut_</span><span class="p">({</span> <span class="na">ok</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">error</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bad_json</span><span class="dl">"</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">action</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">login</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">uname</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">username</span> <span class="o">||</span> <span class="dl">""</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">acct</span> <span class="o">=</span> <span class="nx">accountFor</span><span class="p">(</span><span class="nx">uname</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">acct</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">stored</span> <span class="o">=</span> <span class="nx">PropertiesService</span><span class="p">.</span><span class="nx">getScriptProperties</span><span class="p">().</span><span class="nx">getProperty</span><span class="p">(</span><span class="dl">"</span><span class="s2">USER_</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">uname</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">stored</span> <span class="o">&amp;&amp;</span> <span class="nx">stored</span> <span class="o">===</span> <span class="nx">hashPassword_</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">password</span> <span class="o">||</span> <span class="dl">""</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">jsonOut_</span><span class="p">(</span><span class="nx">buildLoginResponse</span><span class="p">(</span><span class="nx">acct</span><span class="p">,</span> <span class="nx">scriptToken_</span><span class="p">()));</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">jsonOut_</span><span class="p">({</span> <span class="na">ok</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">error</span><span class="p">:</span> <span class="dl">"</span><span class="s2">invalid</span><span class="dl">"</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Check-off (token required)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isAuthorized</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">token</span><span class="p">,</span> <span class="nx">scriptToken_</span><span class="p">()))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">jsonOut_</span><span class="p">({</span> <span class="na">error</span><span class="p">:</span> <span class="dl">"</span><span class="s2">unauthorized</span><span class="dl">"</span> <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">logSheet_</span><span class="p">().</span><span class="nx">appendRow</span><span class="p">([</span>
+    <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">(),</span>
+    <span class="nb">String</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">date</span> <span class="o">||</span> <span class="dl">""</span><span class="p">),</span>
+    <span class="nb">String</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">person</span> <span class="o">||</span> <span class="dl">""</span><span class="p">),</span>
+    <span class="nb">String</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">itemId</span> <span class="o">||</span> <span class="dl">""</span><span class="p">),</span>
+    <span class="nb">String</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">itemLabel</span> <span class="o">||</span> <span class="dl">""</span><span class="p">),</span>
+    <span class="nx">payload</span><span class="p">.</span><span class="nx">done</span> <span class="o">===</span> <span class="kc">true</span>
+  <span class="p">]);</span>
+  <span class="k">return</span> <span class="nx">jsonOut_</span><span class="p">({</span> <span class="na">ok</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 3: Confirm the pure suite is unaffected</strong></li>
+</ul>
+
+<p>Run: <code class="language-plaintext highlighter-rouge">cd health-backend &amp;&amp; npm test</code>
+Expected: all existing tests still pass (this task added no new pure tests; <code class="language-plaintext highlighter-rouge">auth.test.js</code> from Task 1 passes).</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 4: Deploy + manual verify (requires the user’s Google login)</strong></li>
+</ul>
+
+<p>Follow <code class="language-plaintext highlighter-rouge">health-backend/AUTH.md</code> (created in Task 6) — in short: <code class="language-plaintext highlighter-rouge">clasp push</code>, set fresh <code class="language-plaintext highlighter-rouge">API_TOKEN</code>, run <code class="language-plaintext highlighter-rouge">setUser("ayush",…)</code> + <code class="language-plaintext highlighter-rouge">setUser("saanu",…)</code>, create a <strong>new deployment version</strong>, then:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># valid login → returns token + names</span>
+curl <span class="nt">-sL</span> <span class="nt">-X</span> POST <span class="s2">"&lt;EXEC_URL&gt;"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: text/plain"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"action":"login","username":"saanu","password":"&lt;pw&gt;"}'</span>
+<span class="c"># expect: {"ok":true,"token":"...","person":"simran","name":"Saanu","people":{...},"rename":{"Simran":"Saanu"}}</span>
+curl <span class="nt">-sL</span> <span class="nt">-X</span> POST <span class="s2">"&lt;EXEC_URL&gt;"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: text/plain"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"action":"login","username":"saanu","password":"wrong"}'</span>
+<span class="c"># expect: {"ok":false,"error":"invalid"}</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 5: Commit</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add health-backend/src/Code.js
+git commit <span class="nt">-m</span> <span class="s2">"feat(health): add login endpoint issuing token after hashed-credential check"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="task-3-front-end-rename-pass-pure-in-schedulejs">Task 3: Front-end rename pass (pure, in <code class="language-plaintext highlighter-rouge">schedule.js</code>)</h3>
+
+<p><strong>Files:</strong></p>
+<ul>
+  <li>Modify: <code class="language-plaintext highlighter-rouge">health/js/schedule.js</code> (add <code class="language-plaintext highlighter-rouge">applyRename</code>; extend exports)</li>
+  <li>Create: <code class="language-plaintext highlighter-rouge">health-frontend/test/rename.test.js</code></li>
+</ul>
+
+<p><strong>Interfaces:</strong></p>
+<ul class="task-list">
+  <li>Consumes: nothing.</li>
+  <li>
+    <p>Produces: <code class="language-plaintext highlighter-rouge">applyRename(data, map) -&gt; data</code> — mutates and returns the ParseResult, replacing each <code class="language-plaintext highlighter-rouge">map</code> key with its value (exact, case-sensitive) in every event’s <code class="language-plaintext highlighter-rouge">activity/details/notes</code>, each gym row’s <code class="language-plaintext highlighter-rouge">focusAyush/focusSimran</code>, and each principle’s <code class="language-plaintext highlighter-rouge">topic/guideline</code>.</p>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 1: Write the failing test</strong></li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">health-frontend/test/rename.test.js</code>:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">applyRename</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">../../health/js/schedule.js</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">"</span><span class="s2">applyRename</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">rewrites map keys across events, gym, and principles</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">schedule</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">office</span><span class="p">:</span> <span class="p">{</span> <span class="na">ayush</span><span class="p">:</span> <span class="p">[{</span> <span class="na">activity</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Walk with Simran</span><span class="dl">"</span><span class="p">,</span> <span class="na">details</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span> <span class="na">notes</span><span class="p">:</span> <span class="dl">"</span><span class="s2">see Simran - Diet tab</span><span class="dl">"</span> <span class="p">}],</span>
+                  <span class="na">simran</span><span class="p">:</span> <span class="p">[{</span> <span class="na">activity</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Yoga</span><span class="dl">"</span><span class="p">,</span> <span class="na">details</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Simran routine</span><span class="dl">"</span><span class="p">,</span> <span class="na">notes</span><span class="p">:</span> <span class="dl">""</span> <span class="p">}]</span> <span class="p">},</span>
+        <span class="na">wfh</span><span class="p">:</span> <span class="p">{</span> <span class="na">ayush</span><span class="p">:</span> <span class="p">[],</span> <span class="na">simran</span><span class="p">:</span> <span class="p">[]</span> <span class="p">},</span> <span class="na">saturday</span><span class="p">:</span> <span class="p">{</span> <span class="na">ayush</span><span class="p">:</span> <span class="p">[],</span> <span class="na">simran</span><span class="p">:</span> <span class="p">[]</span> <span class="p">},</span> <span class="na">sunday</span><span class="p">:</span> <span class="p">{</span> <span class="na">ayush</span><span class="p">:</span> <span class="p">[],</span> <span class="na">simran</span><span class="p">:</span> <span class="p">[]</span> <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="na">gym</span><span class="p">:</span> <span class="p">[{</span> <span class="na">day</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Monday</span><span class="dl">"</span><span class="p">,</span> <span class="na">focusAyush</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lower</span><span class="dl">"</span><span class="p">,</span> <span class="na">focusSimran</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Simran lower</span><span class="dl">"</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Strength</span><span class="dl">"</span> <span class="p">}],</span>
+      <span class="na">principles</span><span class="p">:</span> <span class="p">[{</span> <span class="na">topic</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Together Time</span><span class="dl">"</span><span class="p">,</span> <span class="na">guideline</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Dinner with Simran</span><span class="dl">"</span> <span class="p">}]</span>
+    <span class="p">};</span>
+    <span class="kd">const</span> <span class="nx">out</span> <span class="o">=</span> <span class="nx">applyRename</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Simran</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Saanu</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">out</span><span class="p">.</span><span class="nx">schedule</span><span class="p">.</span><span class="nx">office</span><span class="p">.</span><span class="nx">ayush</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">activity</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">Walk with Saanu</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">out</span><span class="p">.</span><span class="nx">schedule</span><span class="p">.</span><span class="nx">office</span><span class="p">.</span><span class="nx">ayush</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">notes</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">see Saanu - Diet tab</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">out</span><span class="p">.</span><span class="nx">schedule</span><span class="p">.</span><span class="nx">office</span><span class="p">.</span><span class="nx">simran</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">details</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">Saanu routine</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">out</span><span class="p">.</span><span class="nx">gym</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">focusSimran</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">Saanu lower</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">out</span><span class="p">.</span><span class="nx">principles</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">guideline</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">Dinner with Saanu</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">is a no-op for an empty map</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span> <span class="na">schedule</span><span class="p">:</span> <span class="p">{</span> <span class="na">office</span><span class="p">:{</span><span class="na">ayush</span><span class="p">:[{</span><span class="na">activity</span><span class="p">:</span><span class="dl">"</span><span class="s2">X</span><span class="dl">"</span><span class="p">,</span><span class="na">details</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span><span class="na">notes</span><span class="p">:</span><span class="dl">""</span><span class="p">}],</span><span class="na">simran</span><span class="p">:[]},</span> <span class="na">wfh</span><span class="p">:{</span><span class="na">ayush</span><span class="p">:[],</span><span class="na">simran</span><span class="p">:[]},</span> <span class="na">saturday</span><span class="p">:{</span><span class="na">ayush</span><span class="p">:[],</span><span class="na">simran</span><span class="p">:[]},</span> <span class="na">sunday</span><span class="p">:{</span><span class="na">ayush</span><span class="p">:[],</span><span class="na">simran</span><span class="p">:[]}</span> <span class="p">},</span> <span class="na">gym</span><span class="p">:</span> <span class="p">[],</span> <span class="na">principles</span><span class="p">:</span> <span class="p">[]</span> <span class="p">};</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">applyRename</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{}).</span><span class="nx">schedule</span><span class="p">.</span><span class="nx">office</span><span class="p">.</span><span class="nx">ayush</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">activity</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">X</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 2: Run to verify failure</strong></li>
+</ul>
+
+<p>Run: <code class="language-plaintext highlighter-rouge">cd health-frontend &amp;&amp; npx vitest run test/rename.test.js</code>
+Expected: FAIL — <code class="language-plaintext highlighter-rouge">applyRename is not a function</code>.</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 3: Implement in <code class="language-plaintext highlighter-rouge">health/js/schedule.js</code></strong></li>
+</ul>
+
+<p>Add above the <code class="language-plaintext highlighter-rouge">module.exports</code> block:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">renameStr_</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">out</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">s</span> <span class="o">==</span> <span class="kc">null</span> <span class="p">?</span> <span class="dl">""</span> <span class="p">:</span> <span class="nx">s</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">k</span> <span class="k">in</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">map</span><span class="p">,</span> <span class="nx">k</span><span class="p">))</span> <span class="nx">out</span> <span class="o">=</span> <span class="nx">out</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="nx">k</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="nx">map</span><span class="p">[</span><span class="nx">k</span><span class="p">]);</span> <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">out</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">applyRename</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span> <span class="o">||</span> <span class="o">!</span><span class="nx">map</span><span class="p">)</span> <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">DAYS</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">office</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">wfh</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">saturday</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">sunday</span><span class="dl">"</span><span class="p">];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">d</span> <span class="o">&lt;</span> <span class="nx">DAYS</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">d</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">block</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">schedule</span><span class="p">[</span><span class="nx">DAYS</span><span class="p">[</span><span class="nx">d</span><span class="p">]];</span>
+    <span class="p">[</span><span class="dl">"</span><span class="s2">ayush</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">simran</span><span class="dl">"</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">(</span><span class="nx">block</span><span class="p">[</span><span class="nx">p</span><span class="p">]</span> <span class="o">||</span> <span class="p">[]).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">activity</span> <span class="o">=</span> <span class="nx">renameStr_</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">activity</span><span class="p">,</span> <span class="nx">map</span><span class="p">);</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">details</span> <span class="o">=</span> <span class="nx">renameStr_</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">details</span><span class="p">,</span> <span class="nx">map</span><span class="p">);</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">notes</span> <span class="o">=</span> <span class="nx">renameStr_</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">notes</span><span class="p">,</span> <span class="nx">map</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">gym</span> <span class="o">||</span> <span class="p">[]).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">g</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">g</span><span class="p">.</span><span class="nx">focusAyush</span> <span class="o">=</span> <span class="nx">renameStr_</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">focusAyush</span><span class="p">,</span> <span class="nx">map</span><span class="p">);</span>
+    <span class="nx">g</span><span class="p">.</span><span class="nx">focusSimran</span> <span class="o">=</span> <span class="nx">renameStr_</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">focusSimran</span><span class="p">,</span> <span class="nx">map</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">principles</span> <span class="o">||</span> <span class="p">[]).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">x</span><span class="p">.</span><span class="nx">topic</span> <span class="o">=</span> <span class="nx">renameStr_</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">topic</span><span class="p">,</span> <span class="nx">map</span><span class="p">);</span>
+    <span class="nx">x</span><span class="p">.</span><span class="nx">guideline</span> <span class="o">=</span> <span class="nx">renameStr_</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">guideline</span><span class="p">,</span> <span class="nx">map</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Update the export line to append <code class="language-plaintext highlighter-rouge">applyRename</code>:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">WEEKDAY_DAYTYPE</span><span class="p">,</span> <span class="nx">dayTypeForWeekday</span><span class="p">,</span> <span class="nx">nowNext</span><span class="p">,</span> <span class="nx">PROTEIN_TARGET</span><span class="p">,</span> <span class="nx">proteinTotal</span><span class="p">,</span> <span class="nx">calorieTotal</span><span class="p">,</span> <span class="nx">applyRename</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 4: Run to verify pass</strong></li>
+</ul>
+
+<p>Run: <code class="language-plaintext highlighter-rouge">cd health-frontend &amp;&amp; npx vitest run test/rename.test.js</code>
+Expected: PASS.</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 5: Commit</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add health/js/schedule.js health-frontend/test/rename.test.js
+git commit <span class="nt">-m</span> <span class="s2">"feat(health-fe): add applyRename data pass (Simran-&gt;Saanu)"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="task-4-front-end-session--login-in-apijs">Task 4: Front-end session + login in <code class="language-plaintext highlighter-rouge">api.js</code></h3>
+
+<p><strong>Files:</strong></p>
+<ul>
+  <li>Modify: <code class="language-plaintext highlighter-rouge">health/js/api.js</code></li>
+  <li>Modify: <code class="language-plaintext highlighter-rouge">health-frontend/test/api.test.js</code></li>
+</ul>
+
+<p><strong>Interfaces:</strong></p>
+<ul class="task-list">
+  <li>Consumes: <code class="language-plaintext highlighter-rouge">CONFIG.EXEC_URL</code>; <code class="language-plaintext highlighter-rouge">localStorage</code>.</li>
+  <li>
+    <p>Produces (exported, added to existing): <code class="language-plaintext highlighter-rouge">getSession()</code>, <code class="language-plaintext highlighter-rouge">setSession(s)</code>, <code class="language-plaintext highlighter-rouge">clearSession()</code>, <code class="language-plaintext highlighter-rouge">login(username,password) -&gt; Promise&lt;{ok,...}&gt;</code>. <code class="language-plaintext highlighter-rouge">fetchSchedule/fetchLog/postCheckoff</code> now read the token from <code class="language-plaintext highlighter-rouge">getSession()</code> (no <code class="language-plaintext highlighter-rouge">CONFIG.API_TOKEN</code>).</p>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 1: Add failing tests to <code class="language-plaintext highlighter-rouge">health-frontend/test/api.test.js</code></strong></li>
+</ul>
+
+<p>Append:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">getSession</span><span class="p">,</span> <span class="nx">setSession</span><span class="p">,</span> <span class="nx">clearSession</span><span class="p">,</span> <span class="nx">login</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">../../health/js/api.js</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">"</span><span class="s2">session</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">k</span> <span class="k">in</span> <span class="nx">store</span><span class="p">)</span> <span class="k">delete</span> <span class="nx">store</span><span class="p">[</span><span class="nx">k</span><span class="p">];</span> <span class="p">});</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">round-trips and clears</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">getSession</span><span class="p">()).</span><span class="nx">toBeNull</span><span class="p">();</span>
+    <span class="nx">setSession</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="dl">"</span><span class="s2">T</span><span class="dl">"</span><span class="p">,</span> <span class="na">person</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ayush</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">getSession</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="dl">"</span><span class="s2">T</span><span class="dl">"</span><span class="p">,</span> <span class="na">person</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ayush</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="nx">clearSession</span><span class="p">();</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">getSession</span><span class="p">()).</span><span class="nx">toBeNull</span><span class="p">();</span>
+  <span class="p">});</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">returns null on corrupt session</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">store</span><span class="p">[</span><span class="dl">"</span><span class="s2">health.session</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">{bad</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">getSession</span><span class="p">()).</span><span class="nx">toBeNull</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">"</span><span class="s2">login</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">posts text/plain with action:login and returns the parsed result</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">captured</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nb">global</span><span class="p">.</span><span class="nx">fetch</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">opts</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">captured</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">opts</span> <span class="p">};</span> <span class="k">return</span> <span class="p">{</span> <span class="na">ok</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">json</span><span class="p">:</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">ok</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">token</span><span class="p">:</span> <span class="dl">"</span><span class="s2">T</span><span class="dl">"</span><span class="p">,</span> <span class="na">person</span><span class="p">:</span> <span class="dl">"</span><span class="s2">simran</span><span class="dl">"</span> <span class="p">})</span> <span class="p">};</span> <span class="p">};</span>
+    <span class="kd">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">login</span><span class="p">(</span><span class="dl">"</span><span class="s2">saanu</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pw</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">captured</span><span class="p">.</span><span class="nx">url</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://exec.test/x</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">captured</span><span class="p">.</span><span class="nx">opts</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">]).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">captured</span><span class="p">.</span><span class="nx">opts</span><span class="p">.</span><span class="nx">body</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span> <span class="na">action</span><span class="p">:</span> <span class="dl">"</span><span class="s2">login</span><span class="dl">"</span><span class="p">,</span> <span class="na">username</span><span class="p">:</span> <span class="dl">"</span><span class="s2">saanu</span><span class="dl">"</span><span class="p">,</span> <span class="na">password</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pw</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">token</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">"</span><span class="s2">T</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">returns {ok:false} when the network fails</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">global</span><span class="p">.</span><span class="nx">fetch</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">offline</span><span class="dl">"</span><span class="p">);</span> <span class="p">};</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="k">await</span> <span class="nx">login</span><span class="p">(</span><span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">y</span><span class="dl">"</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span> <span class="na">ok</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">error</span><span class="p">:</span> <span class="dl">"</span><span class="s2">network</span><span class="dl">"</span> <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">"</span><span class="s2">fetchSchedule uses the session token</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">k</span> <span class="k">in</span> <span class="nx">store</span><span class="p">)</span> <span class="k">delete</span> <span class="nx">store</span><span class="p">[</span><span class="nx">k</span><span class="p">];</span> <span class="p">});</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">sends the session token, not CONFIG</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setSession</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SESS</span><span class="dl">"</span> <span class="p">});</span>
+    <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nb">global</span><span class="p">.</span><span class="nx">fetch</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">u</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">u</span><span class="p">;</span> <span class="k">return</span> <span class="p">{</span> <span class="na">ok</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">json</span><span class="p">:</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">schedule</span><span class="p">:</span> <span class="p">{}</span> <span class="p">})</span> <span class="p">};</span> <span class="p">};</span>
+    <span class="k">await</span> <span class="nx">fetchSchedule</span><span class="p">();</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">toContain</span><span class="p">(</span><span class="dl">"</span><span class="s2">token=SESS</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 2: Run to verify failure</strong></li>
+</ul>
+
+<p>Run: <code class="language-plaintext highlighter-rouge">cd health-frontend &amp;&amp; npx vitest run test/api.test.js</code>
+Expected: FAIL — <code class="language-plaintext highlighter-rouge">getSession is not a function</code> (and the token assertion fails).</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 3: Implement in <code class="language-plaintext highlighter-rouge">health/js/api.js</code></strong></li>
+</ul>
+
+<p>Add session + login helpers (above the existing fetch functions):</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">SESSION_KEY</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">health.session</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">getSession</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span> <span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">SESSION_KEY</span><span class="p">);</span> <span class="k">return</span> <span class="nx">raw</span> <span class="p">?</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">raw</span><span class="p">)</span> <span class="p">:</span> <span class="kc">null</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">setSession</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span> <span class="k">try</span> <span class="p">{</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">SESSION_KEY</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">s</span><span class="p">));</span> <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{}</span> <span class="p">}</span>
+<span class="kd">function</span> <span class="nx">clearSession</span><span class="p">()</span> <span class="p">{</span> <span class="k">try</span> <span class="p">{</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="nx">SESSION_KEY</span><span class="p">);</span> <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{}</span> <span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">sessionToken_</span><span class="p">()</span> <span class="p">{</span> <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">getSession</span><span class="p">();</span> <span class="k">return</span> <span class="nx">s</span> <span class="o">&amp;&amp;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">token</span> <span class="p">?</span> <span class="nx">s</span><span class="p">.</span><span class="nx">token</span> <span class="p">:</span> <span class="dl">""</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">login</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">EXEC_URL</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span> <span class="p">},</span>
+    <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="na">action</span><span class="p">:</span> <span class="dl">"</span><span class="s2">login</span><span class="dl">"</span><span class="p">,</span> <span class="na">username</span><span class="p">:</span> <span class="nx">username</span><span class="p">,</span> <span class="na">password</span><span class="p">:</span> <span class="nx">password</span> <span class="p">})</span>
+  <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span> <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="p">{</span> <span class="na">ok</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">error</span><span class="p">:</span> <span class="dl">"</span><span class="s2">network</span><span class="dl">"</span> <span class="p">};</span> <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then change the three fetch functions to use <code class="language-plaintext highlighter-rouge">sessionToken_()</code> in place of <code class="language-plaintext highlighter-rouge">CONFIG.API_TOKEN</code>:</p>
+<ul>
+  <li>In <code class="language-plaintext highlighter-rouge">fetchSchedule</code>: <code class="language-plaintext highlighter-rouge">var url = CONFIG.EXEC_URL + "?token=" + encodeURIComponent(sessionToken_());</code></li>
+  <li>In <code class="language-plaintext highlighter-rouge">fetchLog</code>: <code class="language-plaintext highlighter-rouge">var url = CONFIG.EXEC_URL + "?token=" + encodeURIComponent(sessionToken_()) + "&amp;action=log&amp;date=" + encodeURIComponent(date);</code></li>
+  <li>In <code class="language-plaintext highlighter-rouge">postCheckoff</code>: change the body merge from <code class="language-plaintext highlighter-rouge">Object.assign({ token: CONFIG.API_TOKEN }, payload)</code> to <code class="language-plaintext highlighter-rouge">Object.assign({ token: sessionToken_() }, payload)</code>.</li>
+</ul>
+
+<p>Update the export line to include the new functions:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">cacheGet</span><span class="p">,</span> <span class="nx">cacheSet</span><span class="p">,</span> <span class="nx">fetchSchedule</span><span class="p">,</span> <span class="nx">fetchLog</span><span class="p">,</span> <span class="nx">postCheckoff</span><span class="p">,</span> <span class="nx">getSession</span><span class="p">,</span> <span class="nx">setSession</span><span class="p">,</span> <span class="nx">clearSession</span><span class="p">,</span> <span class="nx">login</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 4: Run to verify pass</strong></li>
+</ul>
+
+<p>Run: <code class="language-plaintext highlighter-rouge">cd health-frontend &amp;&amp; npx vitest run test/api.test.js</code>
+Expected: PASS (existing api tests + the new session/login/token cases).</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 5: Full front-end suite</strong></li>
+</ul>
+
+<p>Run: <code class="language-plaintext highlighter-rouge">cd health-frontend &amp;&amp; npm test</code>
+Expected: all files pass (<code class="language-plaintext highlighter-rouge">smoke</code>, <code class="language-plaintext highlighter-rouge">schedule</code>, <code class="language-plaintext highlighter-rouge">mealprep</code>, <code class="language-plaintext highlighter-rouge">rename</code>, <code class="language-plaintext highlighter-rouge">api</code>).</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 6: Commit</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add health/js/api.js health-frontend/test/api.test.js
+git commit <span class="nt">-m</span> <span class="s2">"feat(health-fe): session storage + login call; token from session"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="task-5-wire-auth-into-the-app-configjs-appjs-appcss-swjs">Task 5: Wire auth into the app (<code class="language-plaintext highlighter-rouge">config.js</code>, <code class="language-plaintext highlighter-rouge">app.js</code>, <code class="language-plaintext highlighter-rouge">app.css</code>, <code class="language-plaintext highlighter-rouge">sw.js</code>)</h3>
+
+<p><strong>Files:</strong></p>
+<ul>
+  <li>Modify: <code class="language-plaintext highlighter-rouge">health/config.js</code>, <code class="language-plaintext highlighter-rouge">health/js/app.js</code>, <code class="language-plaintext highlighter-rouge">health/app.css</code>, <code class="language-plaintext highlighter-rouge">health/sw.js</code></li>
+</ul>
+
+<p><strong>Interfaces:</strong></p>
+<ul class="task-list">
+  <li>Consumes: <code class="language-plaintext highlighter-rouge">login</code>, <code class="language-plaintext highlighter-rouge">getSession</code>, <code class="language-plaintext highlighter-rouge">setSession</code>, <code class="language-plaintext highlighter-rouge">clearSession</code> (api.js); <code class="language-plaintext highlighter-rouge">applyRename</code> (schedule.js).</li>
+  <li>
+    <p>Produces: a login-gated app. Browser-only — verify with <code class="language-plaintext highlighter-rouge">node --check</code> + manual. Removes the per-device identity picker entirely.</p>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 1: Strip the token + names from <code class="language-plaintext highlighter-rouge">health/config.js</code></strong></li>
+</ul>
+
+<p>Replace the whole file with:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Only the backend URL is public. The token + names are issued by login.</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">EXEC_URL</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://script.google.com/macros/s/AKfycbxfTeey06yZCJ3I2xbj1YxkdOAqq6g49ZxCTvBAilNc349qWcpsNz6PQW3XnpoAJl2N/exec</span><span class="dl">"</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 2: Add login-form styles to <code class="language-plaintext highlighter-rouge">health/app.css</code></strong></li>
+</ul>
+
+<p>Append:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.picker</span> <span class="nt">input</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span><span class="nb">block</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span><span class="m">100%</span><span class="p">;</span> <span class="nl">margin</span><span class="p">:</span><span class="m">8px</span> <span class="m">0</span><span class="p">;</span> <span class="nl">padding</span><span class="p">:</span><span class="m">12px</span><span class="p">;</span> <span class="nl">border</span><span class="p">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--line</span><span class="p">);</span> <span class="nl">border-radius</span><span class="p">:</span><span class="m">10px</span><span class="p">;</span> <span class="nl">background</span><span class="p">:</span><span class="n">var</span><span class="p">(</span><span class="n">--bg</span><span class="p">);</span> <span class="nl">color</span><span class="p">:</span><span class="n">var</span><span class="p">(</span><span class="n">--fg</span><span class="p">);</span> <span class="nl">font-size</span><span class="p">:</span><span class="m">15px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.picker</span> <span class="nc">.err</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span><span class="m">#f87171</span><span class="p">;</span> <span class="nl">font-size</span><span class="p">:</span><span class="m">12px</span><span class="p">;</span> <span class="nl">min-height</span><span class="p">:</span><span class="m">16px</span><span class="p">;</span> <span class="nl">margin-top</span><span class="p">:</span><span class="m">4px</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 3: In <code class="language-plaintext highlighter-rouge">health/js/app.js</code>, remove the old identity picker and add session identity</strong></li>
+</ul>
+
+<p>Replace the identity block — the <code class="language-plaintext highlighter-rouge">NAMES</code> constant and the <code class="language-plaintext highlighter-rouge">applyIdentity</code> / <code class="language-plaintext highlighter-rouge">forgetIdentity</code> / <code class="language-plaintext highlighter-rouge">ensureIdentity</code> functions — with this session-based version. (Delete <code class="language-plaintext highlighter-rouge">var NAMES = {…};</code> and those three functions; keep <code class="language-plaintext highlighter-rouge">setPerson</code>.)</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Identity comes from the login session. "You" = the logged-in person.</span>
+  <span class="kd">function</span> <span class="nx">applySession</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">me</span> <span class="o">=</span> <span class="nx">session</span><span class="p">.</span><span class="nx">person</span><span class="p">;</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">person</span> <span class="o">=</span> <span class="nx">session</span><span class="p">.</span><span class="nx">person</span><span class="p">;</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">session</span><span class="p">.</span><span class="nx">name</span> <span class="o">||</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">rename</span> <span class="o">=</span> <span class="nx">session</span><span class="p">.</span><span class="nx">rename</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="kd">var</span> <span class="nx">people</span> <span class="o">=</span> <span class="nx">session</span><span class="p">.</span><span class="nx">people</span> <span class="o">||</span> <span class="p">{};</span>
+    <span class="kd">var</span> <span class="nx">other</span> <span class="o">=</span> <span class="nx">session</span><span class="p">.</span><span class="nx">person</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">ayush</span><span class="dl">"</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">simran</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">ayush</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">CONFIG</span><span class="p">.</span><span class="nx">PERSON_LABELS</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="nx">CONFIG</span><span class="p">.</span><span class="nx">PERSON_LABELS</span><span class="p">[</span><span class="nx">session</span><span class="p">.</span><span class="nx">person</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">You</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">CONFIG</span><span class="p">.</span><span class="nx">PERSON_LABELS</span><span class="p">[</span><span class="nx">other</span><span class="p">]</span> <span class="o">=</span> <span class="nx">people</span><span class="p">[</span><span class="nx">other</span><span class="p">]</span> <span class="o">||</span> <span class="nx">other</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">personSwitch</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
+      <span class="dl">'</span><span class="s1">&lt;button data-person="</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">session</span><span class="p">.</span><span class="nx">person</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">" class="on"&gt;You&lt;/button&gt;</span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">&lt;button data-person="</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">other</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">"&gt;</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">esc</span><span class="p">(</span><span class="nx">people</span><span class="p">[</span><span class="nx">other</span><span class="p">]</span> <span class="o">||</span> <span class="nx">other</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&lt;/button&gt;</span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">&lt;button data-person="both"&gt;Both&lt;/button&gt;</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">logout</span><span class="p">()</span> <span class="p">{</span> <span class="nx">clearSession</span><span class="p">();</span> <span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span> <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">renderLogin</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">ov</span> <span class="o">=</span> <span class="nx">el</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">overlay</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">ov</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;div class="picker"&gt;&lt;h2&gt;Sign in&lt;/h2&gt;</span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">&lt;input id="lgUser" placeholder="Username" autocapitalize="none" autocomplete="username"&gt;</span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">&lt;input id="lgPass" type="password" placeholder="Password" autocomplete="current-password"&gt;</span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">&lt;div class="err" id="lgErr"&gt;&lt;/div&gt;</span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">&lt;button id="lgGo"&gt;Log in&lt;/button&gt;&lt;/div&gt;</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">ov</span><span class="p">);</span>
+    <span class="kd">function</span> <span class="nx">submit</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">u</span> <span class="o">=</span> <span class="nx">ov</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#lgUser</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
+      <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">ov</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#lgPass</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+      <span class="nx">ov</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#lgErr</span><span class="dl">"</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+      <span class="nx">login</span><span class="p">(</span><span class="nx">u</span><span class="p">,</span> <span class="nx">p</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">r</span> <span class="o">&amp;&amp;</span> <span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">setSession</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">ov</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">)</span> <span class="nx">ov</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">ov</span><span class="p">);</span>
+          <span class="nx">applySession</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="nx">loadData</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">r</span> <span class="o">&amp;&amp;</span> <span class="nx">r</span><span class="p">.</span><span class="nx">error</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">network</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">ov</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#lgErr</span><span class="dl">"</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Can’t reach server — check connection</span><span class="dl">"</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">ov</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#lgErr</span><span class="dl">"</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Invalid username or password</span><span class="dl">"</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="nx">ov</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#lgGo</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">submit</span><span class="p">);</span>
+    <span class="nx">ov</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#lgPass</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">keydown</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Enter</span><span class="dl">"</span><span class="p">)</span> <span class="nx">submit</span><span class="p">();</span> <span class="p">});</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 4: Update <code class="language-plaintext highlighter-rouge">boot</code>/<code class="language-plaintext highlighter-rouge">loadData</code> to gate on the session and apply the rename</strong></li>
+</ul>
+
+<p>Replace the <code class="language-plaintext highlighter-rouge">boot</code> function with:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">boot</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">wire</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">session</span> <span class="o">=</span> <span class="nx">getSession</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">session</span> <span class="o">&amp;&amp;</span> <span class="nx">session</span><span class="p">.</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span> <span class="nx">applySession</span><span class="p">(</span><span class="nx">session</span><span class="p">);</span> <span class="nx">loadData</span><span class="p">();</span> <span class="p">}</span>
+    <span class="k">else</span> <span class="nx">renderLogin</span><span class="p">();</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>In <code class="language-plaintext highlighter-rouge">loadData</code>, (a) apply the rename after fetch and (b) drop the session on unauthorized. Replace the <code class="language-plaintext highlighter-rouge">fetchSchedule().then(...)</code> body’s success branch:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">loadData</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fetchSchedule</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">error</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">unauthorized</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span> <span class="nx">clearSession</span><span class="p">();</span> <span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span> <span class="o">||</span> <span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">schedule</span><span class="p">)</span> <span class="p">{</span> <span class="nx">showBanner</span><span class="p">(</span><span class="dl">"</span><span class="s2">No data — check connection</span><span class="dl">"</span><span class="p">);</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+      <span class="nx">applyRename</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span> <span class="nx">state</span><span class="p">.</span><span class="nx">rename</span> <span class="o">||</span> <span class="p">{});</span>
+      <span class="nx">state</span><span class="p">.</span><span class="nx">schedule</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">schedule</span><span class="p">;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">gym</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">gym</span> <span class="o">||</span> <span class="p">[];</span> <span class="nx">state</span><span class="p">.</span><span class="nx">principles</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">principles</span> <span class="o">||</span> <span class="p">[];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">stale</span><span class="p">)</span> <span class="nx">showBanner</span><span class="p">(</span><span class="dl">"</span><span class="s2">Showing saved copy (offline)</span><span class="dl">"</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">fetchLog</span><span class="p">(</span><span class="nx">todayISO</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">rows</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">rows</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">done</span><span class="p">)</span> <span class="nx">state</span><span class="p">.</span><span class="nx">log</span><span class="p">[</span><span class="nx">r</span><span class="p">.</span><span class="nx">itemId</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="k">else</span> <span class="k">delete</span> <span class="nx">state</span><span class="p">.</span><span class="nx">log</span><span class="p">[</span><span class="nx">r</span><span class="p">.</span><span class="nx">itemId</span><span class="p">];</span> <span class="p">});</span>
+        <span class="nx">renderActiveTab</span><span class="p">();</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Also add <code class="language-plaintext highlighter-rouge">rename: {}</code> to the initial <code class="language-plaintext highlighter-rouge">state</code> object (alongside <code class="language-plaintext highlighter-rouge">log: {}</code>).</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 5: Replace the “switch user” line in <code class="language-plaintext highlighter-rouge">renderRules</code> with a Log out button</strong></li>
+</ul>
+
+<p>In <code class="language-plaintext highlighter-rouge">renderRules</code>, replace the <code class="language-plaintext highlighter-rouge">who</code>/<code class="language-plaintext highlighter-rouge">switchUser</code> block with:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">var</span> <span class="nx">who</span> <span class="o">=</span> <span class="nx">el</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">card</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">who</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;div class="det"&gt;Signed in as &lt;b&gt;</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">esc</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">—</span><span class="dl">"</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&lt;/b&gt;. </span><span class="dl">'</span> <span class="o">+</span>
+      <span class="dl">'</span><span class="s1">&lt;a href="#" id="logout" style="color:var(--accent)"&gt;Log out&lt;/a&gt;&lt;/div&gt;</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">who</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#logout</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span> <span class="nx">logout</span><span class="p">();</span> <span class="p">});</span>
+    <span class="nx">panel</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">who</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 6: Bump the service-worker cache in <code class="language-plaintext highlighter-rouge">health/sw.js</code></strong></li>
+</ul>
+
+<p>Change <code class="language-plaintext highlighter-rouge">var CACHE = "health-v2";</code> to <code class="language-plaintext highlighter-rouge">var CACHE = "health-v3";</code>.</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 7: Syntax check + suite</strong></li>
+</ul>
+
+<p>Run:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>health <span class="o">&amp;&amp;</span> node <span class="nt">--check</span> js/app.js <span class="o">&amp;&amp;</span> node <span class="nt">--check</span> js/api.js <span class="o">&amp;&amp;</span> node <span class="nt">--check</span> js/schedule.js <span class="o">&amp;&amp;</span> node <span class="nt">--check</span> sw.js <span class="o">&amp;&amp;</span> <span class="nb">echo </span>ok
+<span class="nb">cd</span> ../health-frontend <span class="o">&amp;&amp;</span> npm <span class="nb">test</span>
+</code></pre></div></div>
+<p>Expected: <code class="language-plaintext highlighter-rouge">ok</code> and all front-end tests pass.</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 8: Manual browser verification (deferred to user / reviewer with a browser)</strong></li>
+</ul>
+
+<p>After the backend (Task 2) is deployed with users set: serve locally (<code class="language-plaintext highlighter-rouge">cd health &amp;&amp; python3 -m http.server 8080</code>), open <code class="language-plaintext highlighter-rouge">http://localhost:8080/</code>. Verify: a <strong>generic login form</strong> appears (view-source shows no names/token); wrong password → “Invalid…”; correct login → the right person’s app, “Saanu” shown throughout; <strong>Log out</strong> (Rules) → back to login.</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 9: Commit</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add health/config.js health/js/app.js health/app.css health/sw.js
+git commit <span class="nt">-m</span> <span class="s2">"feat(health-fe): login screen + session identity; remove device picker; wire rename"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="task-6-rollout-runbook">Task 6: Rollout runbook</h3>
+
+<p><strong>Files:</strong></p>
+<ul>
+  <li>Create: <code class="language-plaintext highlighter-rouge">health-backend/AUTH.md</code></li>
+</ul>
+
+<p><strong>Interfaces:</strong></p>
+<ul class="task-list">
+  <li>Consumes: the deployed backend.</li>
+  <li>
+    <p>Produces: the documented setup/rotate steps. No code; documentation.</p>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Step 1: Write <code class="language-plaintext highlighter-rouge">health-backend/AUTH.md</code></strong></li>
+</ul>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Health auth — setup &amp; rotation</span>
+
+<span class="gu">## One-time setup (Apps Script editor)</span>
+<span class="p">1.</span> <span class="sb">`cd health-backend &amp;&amp; npx clasp push --force`</span>  (pushes auth.gs + Code.gs)
+<span class="p">2.</span> Reload the editor tab. Set the passwords — run each once in the editor:
+<span class="p">   -</span> <span class="sb">`setUser("ayush", "&lt;ayush-password&gt;")`</span>
+<span class="p">   -</span> <span class="sb">`setUser("saanu", "&lt;saanu-password&gt;")`</span>
+   (View → Execution log shows "Password set for …".)
+<span class="p">3.</span> <span class="gs">**Rotate the API token**</span> (the old one is public in git history):
+   Project Settings → Script Properties → set <span class="sb">`API_TOKEN`</span> to a fresh value
+   (<span class="sb">`openssl rand -hex 16`</span>). No client change needed — login now issues it.
+<span class="p">4.</span> Deploy → Manage deployments → Edit → <span class="gs">**New version**</span> → Deploy.
+
+<span class="gu">## Verify (curl)</span>
+<span class="p">```</span><span class="nl">bash
+</span>curl <span class="nt">-sL</span> <span class="nt">-X</span> POST <span class="s2">"&lt;EXEC_URL&gt;"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: text/plain"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"action":"login","username":"ayush","password":"&lt;pw&gt;"}'</span>   <span class="c"># {"ok":true,"token":...}</span>
+curl <span class="nt">-sL</span> <span class="nt">-X</span> POST <span class="s2">"&lt;EXEC_URL&gt;"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: text/plain"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"action":"login","username":"ayush","password":"nope"}'</span>   <span class="c"># {"ok":false,"error":"invalid"}</span>
+curl <span class="nt">-sL</span> <span class="s2">"&lt;EXEC_URL&gt;?token=&lt;OLD_TOKEN&gt;"</span>    <span class="c"># {"error":"unauthorized"} after rotation</span>
+</code></pre></div></div>
+
+<h2 id="change-a-password">Change a password</h2>
+<p>Re-run <code class="language-plaintext highlighter-rouge">setUser("&lt;username&gt;", "&lt;new-password&gt;")</code> in the editor. No redeploy needed.</p>
+
+<h2 id="rotate-the-token-eg-lost-device">Rotate the token (e.g., lost device)</h2>
+<p>Set a new <code class="language-plaintext highlighter-rouge">API_TOKEN</code> Script Property. Everyone re-logs in (their stored session
+token becomes unauthorized → app returns them to the login screen).</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- [ ] **Step 2: Commit**
+
+```bash
+git add health-backend/AUTH.md
+git commit -m "docs(health): auth setup and rotation runbook"
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li><strong>Token rotation is mandatory</strong> in rollout — the old token sits in public git history.</li>
+  <li>The data person keys (<code class="language-plaintext highlighter-rouge">ayush</code>/<code class="language-plaintext highlighter-rouge">simran</code>) and the sheet are unchanged; only the <em>display</em> becomes “Saanu”.</li>
+  <li>The weight + exercise-history feature remains a separate, later spec.</li>
+</ul>
+
+      </section>
+    </div>
+  </article>
+</div>
+
+<script src="https://shahayush.com/assets/js/main.min.js"></script>
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'G-H6F3H1HTZV']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/ayushkumarshah"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="https://shahayush.com/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Ayush Kumar Shah. </div>
+
+      </footer>
+    </div>
+
+    <script src="https://shahayush.com/assets/js/main.min.js"></script>
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'G-H6F3H1HTZV']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    <script src="/assets/js/bibtex.js" defer></script>
+
+  </body>
+</html>
+

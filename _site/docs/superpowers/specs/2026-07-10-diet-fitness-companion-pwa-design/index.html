@@ -1,0 +1,774 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Diet &amp; Fitness Companion — Design Spec - Ayush Kumar Shah</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Ayush Kumar Shah">
+<meta property="og:title" content="Diet &amp; Fitness Companion — Design Spec">
+
+
+  <link rel="canonical" href="https://shahayush.com/docs/superpowers/specs/2026-07-10-diet-fitness-companion-pwa-design/">
+  <meta property="og:url" content="https://shahayush.com/docs/superpowers/specs/2026-07-10-diet-fitness-companion-pwa-design/">
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="https://shahayush.com/images/profile.jpeg">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://shahayush.com",
+      "logo": "https://shahayush.com/images/profile.jpeg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Ayush Kumar Shah",
+      "url" : "https://shahayush.com",
+      "sameAs" : ["https://github.com/ayushkumarshah","https://www.facebook.com/ayushkumarshah","https://www.linkedin.com/in/ayush7"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="qgX-LJLtkvIk5WkHJP5FSa31RN98a1WhAjPK8w8JPxE" />
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://shahayush.com/feed.xml" type="application/atom+xml" rel="alternate" title="Ayush Kumar Shah Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H6F3H1HTZV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H6F3H1HTZV');
+</script>
+
+
+<!-- For all browsers -->
+<!--<link rel="stylesheet" href="https://shahayush.com/assets/css/main.css">-->
+<link rel="stylesheet" href="https://shahayush.com/assets/css/main.css?v=1788036186">
+
+<meta http-equiv="cleartype" content="on">
+
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://shahayush.com/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://shahayush.com/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://shahayush.com/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://shahayush.com/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://shahayush.com/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://shahayush.com/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://shahayush.com/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://shahayush.com/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://shahayush.com/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://shahayush.com/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://shahayush.com/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="https://shahayush.com/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://shahayush.com/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="https://shahayush.com/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="https://shahayush.com/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://shahayush.com/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://shahayush.com/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://shahayush.com/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="https://shahayush.com/">Ayush Kumar Shah</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/projects/">Projects</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/research/">Research</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/cv/">CV</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/teaching/">Teaching</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/year-archive/">Blog Posts</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://shahayush.com/certificates/">Certificates</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <style>
+  .archive {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+    border-radius: 10px;
+  }
+  .publication-link {
+    text-decoration: none !important; color: inherit; border: none;
+    color: inherit;
+  }
+  .publication-item {
+    padding: 20px;
+    <!--background: #ffffff;-->
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+  }
+  .publication-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .publication-links {
+      display: flex;
+      flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+      gap: 10px;
+      margin-top: 10px;
+      justify-content: center; /* Centers the buttons when wrapped */
+  }
+
+  .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      text-decoration: none !important;
+      border-radius: 5px;
+      font-weight: bold;
+      color: white;
+      transition: background 0.3s ease, transform 0.2s ease;
+      min-width: 120px; /* Prevents buttons from shrinking too much */
+      text-align: center; /* Ensures text is centered */
+  }
+
+  .btn:hover {
+      transform: scale(1.05);
+  }
+
+  /* Responsive Design: Stack buttons for very small screens */
+  @media (max-width: 480px) {
+      .publication-links {
+          flex-direction: column;
+          align-items: center; /* Center align buttons in column view */
+      }
+  }
+    .btn-paper { background-color: #3498db; }
+    .btn-pdf { background-color: #555555; }
+    .btn-poster { background-color: #9b59b6; }
+    .btn-video { background-color: #e74c3c; }
+    .btn-code { background-color: #fc6d26; }
+    .btn-demo { background-color: #2ecc71; }
+    .btn-info { background-color: #34495e; }
+    .publication-separator {
+      height: 3px;
+      background: linear-gradient(to right, #3498db, #fc6d26);
+      margin: 15px 0;
+    }
+
+/* ✅ Wrapper to ensure proper centering */
+.bibtex-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontally centers */
+    width: 100%; /* Ensures full width */
+}
+
+/* ✅ Centering container */
+.bibtex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content */
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Ensures it doesn’t stretch too much */
+    text-align: center;
+}
+
+/* ✅ BibTeX Textarea */
+.bibtex-textarea {
+    width: 100%;
+    height: 400px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    resize: vertical;
+    border-radius: 5px;
+    display: none;
+    overflow-y: auto;
+}
+
+/* ✅ BibTeX Buttons */
+.btn-bibtex, .btn-bibtex-copy {
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 0.9rem;
+    text-align: center;
+    width: auto;
+    min-width: 100px;
+}
+
+/* ✅ Button Hover */
+.btn-bibtex:hover, .btn-bibtex-copy:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 600px) {
+    .bibtex-container {
+        max-width: 90%;
+    }
+
+    .bibtex-textarea {
+        height: 300px;
+        font-size: 0.8rem;
+    }
+
+    .btn-bibtex, .btn-bibtex-copy {
+        font-size: 0.8rem;
+        min-width: 120px;
+    }
+}
+
+</style>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <div class="author__avatar">
+    
+    	<img src="https://shahayush.com/images/profile.jpeg" class="author__avatar" alt="Ayush Kumar Shah, PhD">
+    
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">Ayush Kumar Shah, PhD</h3>
+    <p class="author__bio">Research Scientist at Meta</p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Menlo Park, California</li>
+      
+      
+      
+      
+        <li><a href="mailto:ayush.kumar.shah@gmail.com"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+      
+      
+       
+      
+      
+      
+      
+        <li><a href="https://www.linkedin.com/in/ayush7"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+      
+      
+      
+      
+      
+      
+        <li><a href="https://gitlab.com/ayushkumarshah"><i class="fab fa-fw fa-gitlab" aria-hidden="true"></i> GitLab</a></li>
+      
+      
+        <li><a href="https://github.com/ayushkumarshah"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="https://scholar.google.com/citations?hl=en&authuser=1&user=SD3Nv10AAAAJ"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
+      
+      
+      
+        <li><a href="http://orcid.org/0000-0001-6158-7632"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
+      
+      
+      
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <meta itemprop="headline" content="Diet &amp; Fitness Companion — Design Spec">
+    
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+            <h1 class="page__title" itemprop="headline">Diet &amp; Fitness Companion — Design Spec
+ ()</h1>
+          
+          
+          <!--<p><strong>Venue:</strong>  </p>-->
+          <!--<p> <strong>Status:</strong>  Submitted </p>-->
+
+          
+
+          <div class="publication-links">
+            
+            
+            
+            
+            
+            
+          </div>
+          
+      </div>
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <h1 id="diet--fitness-companion--design-spec">Diet &amp; Fitness Companion — Design Spec</h1>
+
+<p><strong>Date:</strong> 2026-07-10
+<strong>Status:</strong> Approved design, pending implementation plan
+<strong>Owners:</strong> Ayush + Simran (two users)</p>
+
+<h2 id="problem">Problem</h2>
+
+<p>Ayush and Simran keep a detailed diet, fitness, and daily-schedule plan in a
+Google Sheet. They want a fast, phone-friendly way to:</p>
+
+<ul>
+  <li>See <strong>what’s happening now and what’s next</strong> during the day.</li>
+  <li>Get <strong>reliable timed reminders</strong> (“gym now”, “eat breakfast”, “leave for office”).</li>
+  <li>Look at the <strong>diet schedule to prepare food</strong> and do <strong>weekly meal prep</strong>.</li>
+  <li><strong>Check off</strong> what they actually did each day, and see each other’s progress.</li>
+</ul>
+
+<p>The Sheet stays their source of truth; they will keep editing it directly.</p>
+
+<h2 id="verdict-pwa--calendar-subscription-not-a-native-app">Verdict: PWA + calendar subscription (not a native app)</h2>
+
+<p>A native iOS app was considered because reminders are a must-have and both users
+are on iPhone. It was rejected:</p>
+
+<ul>
+  <li><strong>Cost/maintenance:</strong> free-signed local builds expire every 7 days (requiring a
+Mac + both phones to re-sign), and the only way off that treadmill is a $99/yr
+Apple Developer account. Expo Go doesn’t rescue this — recent Expo versions
+removed notification support from Expo Go.</li>
+  <li><strong>Reminders don’t need an app.</strong> The schedule is fixed and repeats weekly, so
+reminders are delivered as a <strong>calendar subscription (<code class="language-plaintext highlighter-rouge">.ics</code>)</strong>. iOS Calendar
+then fires native, offline, reliable alerts with no push server — more reliable
+than a hand-rolled native notification setup, and zero maintenance.</li>
+</ul>
+
+<p>Chosen approach: an installable <strong>PWA</strong> for the rich experience + an
+auto-generated <strong><code class="language-plaintext highlighter-rouge">.ics</code> feed</strong> for reminders. Plays to the owner’s web skills,
+costs nothing, updates instantly for both phones from one URL.</p>
+
+<h2 id="architecture">Architecture</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SOURCE   Google Sheet — schedule tabs + a hidden "Log" tab   (edited normally)
+            |
+BACKEND  Google Apps Script  (bound to the sheet, deployed as a web app,
+            |                  runs as the owner so the sheet stays PRIVATE)
+            |   -&gt; JSON API      : parsed schedule for the app
+            |   -&gt; .ics feed      : weekly recurring events + alerts
+            |   -&gt; Log read/write : daily check-off sync
+            |
+APP      PWA (static site, free hosting)  +  iPhone Calendar subscribes to .ics
+</code></pre></div></div>
+
+<h3 id="components">Components</h3>
+
+<ol>
+  <li><strong>Google Sheet (source of truth)</strong>
+    <ul>
+      <li>Existing human-readable schedule tabs (Ayush + Simran side-by-side, four
+day-types: Office Mon/Tue/Wed, WFH Thu/Fri, Saturday, Sunday), the weekly
+gym split, the “Key Notes &amp; Principles” block, and the referenced
+<em>Simran – Diet</em> and <em>Simran – Exercise &amp; Yoga</em> tabs.</li>
+      <li>A new <strong>hidden “Log” tab</strong>: append-only rows of check-off events
+(<code class="language-plaintext highlighter-rouge">timestamp, date, person, itemId, itemLabel, done</code>).</li>
+    </ul>
+  </li>
+  <li><strong>Google Apps Script (only backend, free)</strong>
+    <ul>
+      <li>Deployed as a web app, “execute as me”, so the private sheet is readable
+without making it public or building OAuth.</li>
+      <li><code class="language-plaintext highlighter-rouge">doGet()</code> → <strong>JSON API</strong>: the parsed, normalized schedule (see Data Model).</li>
+      <li><code class="language-plaintext highlighter-rouge">doGet(format=ics)</code> → <strong><code class="language-plaintext highlighter-rouge">.ics</code> feed</strong>: one calendar per person (or a
+combined feed), weekly-recurring <code class="language-plaintext highlighter-rouge">VEVENT</code>s per timeline item, each with a
+<code class="language-plaintext highlighter-rouge">VALARM</code> at start time. Details/food go in the event description.</li>
+      <li><code class="language-plaintext highlighter-rouge">doGet(action=log&amp;date=…)</code> → returns the day’s check-off rows.</li>
+      <li><code class="language-plaintext highlighter-rouge">doPost()</code> → appends a check-off event to the Log tab.</li>
+      <li><strong>Parser</strong> (the core engineering): walks the sheet by its section headers
+(e.g. <code class="language-plaintext highlighter-rouge">AYUSH — OFFICE DAY (Mon/Tue/Wed)</code>), splits the Ayush/Simran columns,
+and emits normalized events. Assigns each event a <strong>stable ID</strong>
+(<code class="language-plaintext highlighter-rouge">daytype:person:time:activitySlug</code>) so check-offs attach reliably even as
+rows shift.</li>
+    </ul>
+  </li>
+  <li><strong>PWA (static site, hosted as a subfolder of the existing site)</strong>
+    <ul>
+      <li>Lives at <strong><code class="language-plaintext highlighter-rouge">shahayush.com/health/</code></strong> — a static subfolder of the current
+Jekyll / GitHub Pages site (same pattern as the <code class="language-plaintext highlighter-rouge">gradtrip</code> / <code class="language-plaintext highlighter-rouge">seattle</code> /
+<code class="language-plaintext highlighter-rouge">cali</code> micro-sites). Inherits the site’s HTTPS (via CloudFlare).</li>
+      <li>Fetches the JSON, renders the four tabs, caches for offline use, and is
+installable to the home screen (manifest + service worker).</li>
+      <li>Determines “today’s day-type” from the current weekday and shows the right
+schedule; highlights the current/next item by wall-clock time (local TZ).</li>
+      <li>See <strong>Hosting &amp; deployment</strong> for the subfolder constraints.</li>
+    </ul>
+  </li>
+  <li><strong>iPhone Calendar subscription</strong>
+    <ul>
+      <li>Each user adds the <code class="language-plaintext highlighter-rouge">.ics</code> URL once (Settings → Calendar → Add Subscribed
+Calendar). Native alerts thereafter; updates propagate when the feed changes.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="screens-four-tab-bottom-nav">Screens (four-tab bottom nav)</h2>
+
+<ul>
+  <li><strong>🏠 Home</strong> — person-focused <strong>Now + Next</strong>. A <code class="language-plaintext highlighter-rouge">You / Simran / Both</code> switcher;
+“Both” renders the two-column side-by-side view. Current item shows a countdown;
+up-next items follow. Today’s items are <strong>checkable</strong>; ticks sync via the Log
+tab, so the “Both” view reflects each other’s progress. Check-offs reset daily
+(keyed by date).</li>
+  <li><strong>🍽️ Food</strong> — two modes:
+    <ul>
+      <li><em>Today:</em> each meal with its detail from the Sheet + a running <strong>protein /
+calorie tally</strong> vs target (Ayush 150g, Simran 100–130g).</li>
+      <li><em>Meal prep:</em> the app scans the upcoming office days and <strong>aggregates</strong>
+repeated meals into a batch-cook list + a <strong>checkable grocery list</strong>.</li>
+    </ul>
+  </li>
+  <li><strong>🏋️ Gym</strong> — the weekly split and today’s workout, <strong>per person</strong> (pulls in
+Simran’s toning circuit and back-safe yoga from her tabs).</li>
+  <li><strong>📋 Rules</strong> — the principles block (protein targets, 3L hydration, cheat day,
+meal-prep rule, knee care) + a one-time <strong>“Subscribe to reminders”</strong> button
+exposing each person’s <code class="language-plaintext highlighter-rouge">.ics</code> link.</li>
+</ul>
+
+<h2 id="data-flow">Data flow</h2>
+
+<ol>
+  <li>User opens the PWA → it <code class="language-plaintext highlighter-rouge">GET</code>s the JSON API (served from cache first, then
+revalidated) and the day’s check-off log.</li>
+  <li>App computes day-type + current/next items and renders the active tab.</li>
+  <li>Ticking an item → <code class="language-plaintext highlighter-rouge">POST</code> to the Apps Script → appended to the Log tab → local
+state updates optimistically.</li>
+  <li>Reminders are independent: iPhone Calendar polls the subscribed <code class="language-plaintext highlighter-rouge">.ics</code> feed
+and fires alarms with no app involvement.</li>
+</ol>
+
+<h2 id="error-handling">Error handling</h2>
+
+<ul>
+  <li><strong>Backend unreachable / offline:</strong> PWA serves last-cached schedule and shows a
+“showing saved copy” banner. Check-offs queue locally and retry on reconnect.</li>
+  <li><strong>Parse failure (sheet layout drifted):</strong> the Apps Script validates expected
+section headers; on mismatch it returns a structured error the app surfaces as
+“couldn’t read the sheet — check the layout”, rather than rendering garbage.</li>
+  <li><strong>Check-off write fails:</strong> optimistic tick is kept locally and retried; a small
+indicator shows unsynced items.</li>
+  <li><strong>Reminders:</strong> entirely on the calendar layer; failure there is a normal iOS
+Calendar subscription issue, independent of the app.</li>
+</ul>
+
+<h2 id="hosting--deployment">Hosting &amp; deployment</h2>
+
+<p>The app is hosted as a <strong>single <code class="language-plaintext highlighter-rouge">/health/</code> subfolder</strong> of the existing Jekyll /
+GitHub Pages site (<code class="language-plaintext highlighter-rouge">shahayush.com/health/</code>). Everything discussed lives under
+that one path. Implications baked into the build:</p>
+
+<ul>
+  <li><strong>Base path = <code class="language-plaintext highlighter-rouge">/health/</code>.</strong> All asset URLs, the service-worker registration
+scope, and the manifest <code class="language-plaintext highlighter-rouge">start_url</code> / <code class="language-plaintext highlighter-rouge">scope</code> are prefixed with <code class="language-plaintext highlighter-rouge">/health/</code>.</li>
+  <li><strong>No server-side routing.</strong> GitHub Pages has no SPA fallback, so the four tabs
+are <strong>in-page state</strong> (no distinct URLs to deep-link/refresh into). Optional:
+hash routes (<code class="language-plaintext highlighter-rouge">#food</code>) if shareable tab links are ever wanted. This avoids 404s
+on refresh entirely.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">noindex</code>.</strong> A <code class="language-plaintext highlighter-rouge">robots</code>/<code class="language-plaintext highlighter-rouge">noindex</code> meta tag keeps the app off search engines,
+and it is not linked from the portfolio. (The access token ships in client JS
+regardless of host, so this reduces discoverability, not a real access barrier
+— acceptable for low-sensitivity personal data.)</li>
+  <li><strong>Jekyll pass-through.</strong> The built app files are committed into the repo and
+must be served untouched by Jekyll (same as the existing micro-site folders).
+Deploying the app therefore means rebuilding/pushing the site.</li>
+  <li><strong>Backend is unaffected.</strong> The Apps Script API, <code class="language-plaintext highlighter-rouge">.ics</code> feed, and calendar
+subscription are cross-origin to Google’s servers regardless of where the
+front-end lives; subfolder hosting changes nothing about them (including CORS,
+which must be handled the same way in either hosting model).</li>
+</ul>
+
+<h2 id="security--privacy">Security / privacy</h2>
+
+<ul>
+  <li>Data is personal but low-sensitivity. The Apps Script endpoints are reachable by
+anyone with the URL, so requests carry a <strong>shared secret token</strong>; requests
+without it are rejected. The token lives in the PWA config and the calendar URL.</li>
+  <li>The Google Sheet itself remains <strong>private</strong> (never shared publicly); only the
+Apps Script (running as the owner) reads it.</li>
+</ul>
+
+<h2 id="testing">Testing</h2>
+
+<ul>
+  <li><strong>Parser unit tests:</strong> feed representative sheet snapshots (each day-type, both
+people, the Simran tabs, edge cases like blank cells / cheat day) and assert the
+normalized events, including stable IDs.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">.ics</code> validation:</strong> assert one recurring VEVENT per timeline item with a
+correct start time, weekday recurrence, and VALARM; validate against an iCal
+parser.</li>
+  <li><strong>Day-type / now-next logic:</strong> given a mock clock, assert the correct day-type
+and the correct current/next item at various times.</li>
+  <li><strong>Meal-prep aggregation:</strong> assert repeated meals across office days roll up into
+the expected batch-cook and grocery lists.</li>
+  <li><strong>App smoke test:</strong> load with a fixture JSON, confirm each tab renders and
+check-off POSTs the right payload.</li>
+</ul>
+
+<h2 id="out-of-scope-yagni">Out of scope (YAGNI)</h2>
+
+<ul>
+  <li>Full history, charts, weight-trend tracking (a possible future project).</li>
+  <li>In-app editing of the schedule (the Sheet is the editor).</li>
+  <li>Native iOS/Android app.</li>
+  <li>Multi-user beyond Ayush + Simran; accounts/login (the shared token suffices).</li>
+</ul>
+
+<h2 id="open-implementation-decisions-for-the-planning-phase">Open implementation decisions (for the planning phase)</h2>
+
+<ul>
+  <li><strong>Front-end stack:</strong> plain HTML/CSS/JS + a light framework vs. a small build
+(e.g. Vite). To be chosen in the plan; keep it minimal, and note it must emit a
+<code class="language-plaintext highlighter-rouge">/health/</code>-based build with the service worker and manifest scoped accordingly.</li>
+  <li><strong>Check-off granularity:</strong> every timeline row checkable vs. a curated daily-goal
+set (walk, gym, water, protein, sleep). Lean toward checkable timeline rows with
+a small daily-goals summary; finalize during implementation.</li>
+</ul>
+
+      </section>
+    </div>
+  </article>
+</div>
+
+<script src="https://shahayush.com/assets/js/main.min.js"></script>
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'G-H6F3H1HTZV']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/ayushkumarshah"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="https://shahayush.com/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Ayush Kumar Shah. </div>
+
+      </footer>
+    </div>
+
+    <script src="https://shahayush.com/assets/js/main.min.js"></script>
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'G-H6F3H1HTZV']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    <script src="/assets/js/bibtex.js" defer></script>
+
+  </body>
+</html>
+
