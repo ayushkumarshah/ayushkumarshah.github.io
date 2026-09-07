@@ -6,8 +6,6 @@
   var loginForm = document.getElementById("loginForm");
   var gateMessage = document.getElementById("gateMessage");
   var privateRoot = document.getElementById("privateRoot");
-  var sessionToken = null;
-  var serverOffsetMs = 0;
   var objectUrls = [];
 
   function isPreview() {
@@ -33,22 +31,6 @@
       method: "POST",
       headers: { "Content-Type": "text/plain" },
       body: JSON.stringify({ action: "login", username: accountName(), password: password })
-    });
-  }
-
-  function fetchServerState(token) {
-    if (isPreview()) return Promise.resolve({ ok: true, serverTime: new Date().toISOString(), choice: null });
-    var separator = config.EXEC_URL.indexOf("?") >= 0 ? "&" : "?";
-    return fetchJson(config.EXEC_URL + separator + "token=" + encodeURIComponent(token), { cache: "no-store" });
-  }
-
-  function saveChoice(choice) {
-    if (isPreview()) return Promise.resolve({ ok: true, preview: true });
-    if (!sessionToken) return Promise.resolve({ ok: false, error: "unauthorized" });
-    return fetchJson(config.EXEC_URL, {
-      method: "POST",
-      headers: { "Content-Type": "text/plain" },
-      body: JSON.stringify({ action: "saveBirthdayChoice", token: sessionToken, choice: choice })
     });
   }
 
@@ -118,6 +100,19 @@
     });
   }
 
+  function makeCelebrationBurst(target) {
+    var burst = document.createElement("span");
+    burst.className = "party-burst";
+    ["♡", "✿", "★", "♡", "✦", "✿", "♡", "★"].forEach(function (symbol, index) {
+      var particle = document.createElement("i");
+      particle.className = "party-particle particle-" + index;
+      particle.textContent = symbol;
+      burst.appendChild(particle);
+    });
+    target.appendChild(burst);
+    window.setTimeout(function () { burst.remove(); }, 1200);
+  }
+
   function observeReveals() {
     var items = document.querySelectorAll(".reveal:not(.visible)");
     if (!("IntersectionObserver" in window)) {
@@ -136,90 +131,149 @@
   }
 
   function updateCountdowns() {
-    var now = Date.now() + serverOffsetMs;
     document.querySelectorAll("[data-unlock]").forEach(function (door) {
-      var remaining = new Date(door.dataset.unlock).getTime() - now;
       var label = door.querySelector(".countdown");
-      if (remaining <= 0) {
-        door.classList.add("unlocked");
-        label.textContent = "Open";
-        return;
-      }
-      var days = Math.floor(remaining / 86400000);
-      var hours = Math.floor((remaining % 86400000) / 3600000);
-      label.textContent = days > 0 ? days + "d " + hours + "h" : hours + "h";
+      var button = door.querySelector(".door-button");
+      door.classList.add("unlocked");
+      button.disabled = false;
+      label.textContent = "Open";
     });
   }
 
-  function markChoice(choice) {
-    document.querySelectorAll("[data-choice]").forEach(function (card) {
-      card.classList.toggle("selected", card.dataset.choice === choice);
-    });
-  }
+  function initializePrivatePage(payload) {
+    var chapterModal = document.getElementById("chapterModal");
+    var chapterContent = document.getElementById("chapterContent");
 
-  function initializePrivatePage(payload, initialChoice) {
-    var letterModal = document.getElementById("letterModal");
-    var confirmModal = document.getElementById("confirmModal");
-    var letterContent = document.getElementById("letterContent");
-
-    function renderLetter(choice) {
-      var invitation = payload.invitations[choice];
-      letterContent.innerHTML =
-        '<p class="eyebrow">' + escapeHtml(invitation.eyebrow) + '</p>' +
-        '<h2 class="letter-heading">' + escapeHtml(invitation.title) + '</h2>' +
-        '<p class="letter-body">' + escapeHtml(invitation.body) + '</p>' +
-        '<p class="letter-promise">' + escapeHtml(invitation.promise) + '</p>' +
-        '<button class="choose-button" type="button" data-choose="' + escapeHtml(choice) + '">' + escapeHtml(invitation.button) + '</button>';
-      letterModal.showModal();
+    function renderChapter(chapterId) {
+      var chapter = payload.chapters[chapterId];
+      if (!chapter) return;
+      var body = (chapter.body || []).map(function (paragraph) {
+        return '<p class="chapter-body">' + escapeHtml(paragraph) + '</p>';
+      }).join("");
+      var moments = (chapter.moments || []).map(function (moment) {
+        return '<li><time>' + escapeHtml(moment.time) + '</time><span>' + escapeHtml(moment.text) + '</span></li>';
+      }).join("");
+      chapterContent.innerHTML =
+        '<p class="eyebrow">' + escapeHtml(chapter.eyebrow) + '</p>' +
+        '<h2 class="chapter-heading" id="chapterTitle">' + escapeHtml(chapter.title) + '</h2>' +
+        body +
+        (moments ? '<ol class="chapter-moments">' + moments + '</ol>' : '') +
+        '<p class="chapter-promise">' + escapeHtml(chapter.promise) + '</p>';
+      chapterModal.classList.remove("photo-mode");
+      chapterModal.showModal();
       document.body.classList.add("modal-open");
     }
 
-    document.querySelectorAll("[data-open]").forEach(function (button) {
-      button.addEventListener("click", function () { renderLetter(button.dataset.open); });
-    });
-    letterContent.addEventListener("click", function (event) {
-      var button = event.target.closest("[data-choose]");
-      if (!button) return;
-      var choice = button.dataset.choose;
-      var invitation = payload.invitations[choice];
-      button.disabled = true;
-      saveChoice(choice).then(function (result) {
-        if (!result.ok) throw new Error(result.error || "Could not save choice");
-        markChoice(choice);
-        letterModal.close();
-        document.getElementById("confirmationTitle").textContent = invitation.confirmTitle;
-        document.getElementById("confirmationCopy").textContent = invitation.confirm;
-        confirmModal.showModal();
-      }).catch(function () {
-        button.disabled = false;
-        button.textContent = "Couldn’t save — try once more";
+    function renderPhoto(button) {
+      var source = button.querySelector("img");
+      var caption = button.querySelector("span");
+      var figure = document.createElement("figure");
+      var image = document.createElement("img");
+      var figcaption = document.createElement("figcaption");
+      figure.className = "lightbox-photo";
+      image.src = source.src;
+      image.alt = source.alt;
+      figcaption.textContent = caption ? caption.textContent : source.alt;
+      figure.appendChild(image);
+      figure.appendChild(figcaption);
+      chapterContent.replaceChildren(figure);
+      chapterModal.classList.add("photo-mode");
+      chapterModal.showModal();
+      document.body.classList.add("modal-open");
+    }
+
+    document.querySelectorAll("[data-open-chapter]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var door = button.closest(".door");
+        if (door && !door.classList.contains("unlocked")) return;
+        renderChapter(button.dataset.openChapter);
       });
     });
-    document.querySelector(".close-modal").addEventListener("click", function () { letterModal.close(); });
-    document.getElementById("changeChoice").addEventListener("click", function () { confirmModal.close(); });
-    [letterModal, confirmModal].forEach(function (modal) {
-      modal.addEventListener("close", function () { document.body.classList.remove("modal-open"); });
-      modal.addEventListener("click", function (event) { if (event.target === modal) modal.close(); });
+
+    var pickedFlowers = new Set();
+    var gardenNote = document.getElementById("gardenNote");
+    var gardenCount = document.getElementById("gardenCount");
+    var gardenComplete = document.getElementById("gardenComplete");
+    document.querySelectorAll("[data-garden-index]").forEach(function (flower) {
+      flower.addEventListener("click", function () {
+        var index = Number(flower.dataset.gardenIndex);
+        var memory = payload.garden && payload.garden[index];
+        if (!memory) return;
+        pickedFlowers.add(index);
+        flower.classList.add("picked");
+        flower.setAttribute("aria-pressed", "true");
+        document.getElementById("gardenDate").textContent = memory.date;
+        document.getElementById("gardenTitle").textContent = memory.title;
+        document.getElementById("gardenCopy").textContent = memory.copy;
+        gardenCount.textContent = String(pickedFlowers.size);
+        gardenComplete.hidden = pickedFlowers.size !== payload.garden.length;
+        gardenNote.classList.remove("note-arrived");
+        void gardenNote.offsetWidth;
+        gardenNote.classList.add("note-arrived");
+        makeCelebrationBurst(flower);
+      });
     });
-    if (initialChoice && payload.invitations[initialChoice]) markChoice(initialChoice);
+
+    var releasedBalloons = new Set();
+    var balloons = document.querySelectorAll(".balloon");
+    var balloonMessage = document.getElementById("balloonMessage");
+    balloons.forEach(function (balloon, index) {
+      balloon.addEventListener("click", function () {
+        if (balloon.classList.contains("released")) return;
+        releasedBalloons.add(index);
+        balloon.classList.add("released");
+        balloon.setAttribute("aria-pressed", "true");
+        makeCelebrationBurst(balloon);
+        var visibleBalloonCount = Array.from(balloons).filter(function (item) {
+          return window.getComputedStyle(item).display !== "none";
+        }).length;
+        if (balloonMessage && releasedBalloons.size >= visibleBalloonCount) {
+          window.setTimeout(function () {
+            balloonMessage.hidden = false;
+            balloonMessage.classList.add("message-arrived");
+          }, 700);
+        }
+      });
+    });
+
+    var giftBox = document.getElementById("giftBox");
+    var giftNote = document.getElementById("giftNote");
+    giftBox.addEventListener("click", function () {
+      var opened = giftBox.classList.toggle("opened");
+      giftBox.setAttribute("aria-expanded", String(opened));
+      giftNote.hidden = !opened;
+      if (opened) makeCelebrationBurst(giftBox);
+    });
+
+    document.querySelectorAll("[data-photo-open]").forEach(function (button) {
+      button.addEventListener("click", function () { renderPhoto(button); });
+    });
+    var diaryViewport = document.getElementById("diaryViewport");
+    document.querySelectorAll("[data-diary-direction]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        diaryViewport.scrollBy({ left: Number(button.dataset.diaryDirection) * Math.min(window.innerWidth * .75, 720), behavior: "smooth" });
+      });
+    });
+
+    chapterModal.querySelector(".close-modal").addEventListener("click", function () { chapterModal.close(); });
+    chapterModal.addEventListener("close", function () {
+      document.body.classList.remove("modal-open");
+      chapterModal.classList.remove("photo-mode");
+    });
+    chapterModal.addEventListener("click", function (event) { if (event.target === chapterModal) chapterModal.close(); });
     observeReveals();
     updateCountdowns();
     window.setInterval(updateCountdowns, 60000);
   }
 
-  function unlock(password, authResult) {
-    sessionToken = authResult.token || null;
-    return Promise.all([loadPrivatePayload(password), fetchServerState(sessionToken)]).then(function (results) {
-      var privateBundle = results[0];
-      var serverState = results[1];
-      if (!serverState.ok) throw new Error("The secure clock could not be verified");
-      serverOffsetMs = Date.parse(serverState.serverTime) - Date.now();
+  function unlock(password) {
+    return loadPrivatePayload(password).then(function (privateBundle) {
       privateRoot.innerHTML = privateBundle.payload.html;
       var experience = document.getElementById("experience");
       experience.hidden = false;
       gate.hidden = true;
       document.title = "A birthday world";
-      initializePrivatePage(privateBundle.payload, serverState.choice);
+      initializePrivatePage(privateBundle.payload);
       return loadPrivatePhotos(privateBundle.key, privateBundle.payload.media);
     });
   }
@@ -234,7 +288,7 @@
     login(password).then(function (result) {
       if (!result.ok) throw new Error(result.error || "invalid");
       gateMessage.textContent = "Opening your birthday world…";
-      return unlock(password, result);
+      return unlock(password);
     }).then(function () {
       passwordInput.value = "";
     }).catch(function (error) {
