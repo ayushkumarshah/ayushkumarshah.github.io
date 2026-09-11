@@ -14,9 +14,8 @@ tags:
     - macos
     - debugging
 author: Ayush Kumar Shah
+layout: longform
 ---
-
-{% include toc icon="list-ul" title="On This Page" %}
 
 I found my old Raspberry Pi 3 Model B (V1.2, 2015) in a drawer. The last time it ran was June 2021. I wanted two things from it: the files still sitting on its SD card, and a second life as something useful.
 
