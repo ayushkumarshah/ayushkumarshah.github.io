@@ -798,3 +798,269 @@ Query path: **client → Pi-hole (filter) → unbound (recursive) → authoritat
 7. **Know when to stop.** Network-wide DHCP was genuinely impossible on this gateway. Tailscale delivered more practical value than the thing I'd originally set out to build.
 
 An 11-year-old board, a $10 power supply, and a weekend. It now filters DNS for every device I own, anywhere in the world, and nothing about my browsing leaves the house.
+
+---
+
+# Update — twelve days later
+
+Everything above describes the setup as it stood on day one, running at home on my own broadband. Since then I added two more Tailscale features, and then moved the Pi onto a university network I don't administer — which broke it in an instructive way and taught me the single most useful command in this whole project.
+
+Appending rather than rewriting, because the mistakes are the point.
+
+> **Placeholders, as before.** `<PI_TS_IP>` is the Pi's Tailscale address and `<UNIVERSITY_IP>` its address on the institutional network. Home addresses (`192.168.1.x`) stay concrete, since they're the same on most home networks.
+
+## Part 10 — Exit nodes and subnet routes
+
+Two Tailscale features I'd skipped initially. Both need one prerequisite that fails silently if you forget it.
+
+### Enable IP forwarding first
+
+```bash
+printf 'net.ipv4.ip_forward = 1\nnet.ipv6.conf.all.forwarding = 1\n' \
+  | sudo tee /etc/sysctl.d/99-tailscale.conf
+sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
+```
+
+Without this, both features appear configured and simply don't route.
+
+### Advertise them
+
+```bash
+sudo tailscale set --advertise-exit-node --advertise-routes=192.168.1.254/32
+```
+
+`tailscale set` preserves your other settings, unlike `tailscale up`, which resets unmentioned flags to defaults. I learned that the hard way — an unrelated `tailscale up` silently reverted a client-side setting I'd changed minutes earlier.
+
+Then **approve them in the admin console** — Machines → your device → Edit route settings. Advertising alone does nothing; they stay dormant until approved. The device won't appear in `tailscale exit-node list` on other machines until you do.
+
+Verify what's actually advertised:
+
+```bash
+tailscale debug prefs | grep -A6 '"AdvertiseRoutes"'
+```
+
+Confusingly, the exit node shows up as `0.0.0.0/0` and `::/0` in that list — there's no separate flag. And `ExitNodeID` being empty is normal; that field means "am I *using* someone else's exit node", not "am I offering one".
+
+### What an exit node actually changes
+
+I'd assumed the DNS filtering I already had was most of the benefit. It isn't — they're different scopes.
+
+**DNS only (Tailscale without an exit node):**
+
+```
+phone → café WiFi → the internet directly
+          ↓
+       DNS queries only → Pi-hole
+```
+
+Ads are blocked, but the café's router still sees **which sites you connect to**. Domain names leak in the TLS handshake, and destination IPs are visible regardless. HTTPS hides content, not destinations.
+
+**With an exit node:**
+
+```
+phone → encrypted tunnel → your Pi → your home internet → the internet
+```
+
+The local network sees one encrypted connection and nothing else.
+
+| | DNS only | Exit node |
+|---|---|---|
+| Ad blocking | ✅ | ✅ |
+| Local network sees destinations | **yes** | no |
+| Apparent IP | the café's | **your home** |
+| Speed | unaffected | capped by home upload |
+
+That "apparent IP" row is more useful than it sounds — banks that flag unfamiliar addresses stop complaining, and anything on a home-IP allowlist keeps working.
+
+### The costs, which are real
+
+**Latency scales with distance from home.** Same city, 10–30 ms and unnoticeable. Across a continent, 200–400 ms and genuinely unpleasant. Every request detours to your house and back.
+
+**Captive portals break.** Hotel and café login pages need to intercept your traffic *before* you have internet. With the tunnel up, your traffic never reaches them, and it looks like the WiFi is broken. Turn the exit node off, log in, turn it back on.
+
+**You lose the local network.** No AirPlay to a hotel TV, no printing at an office.
+
+**It does not save mobile data.** I assumed routing through home broadband would spare my cellular allowance. It doesn't — the bytes still travel over cellular to *reach* home. WireGuard's headers mean you use about 4–6% *more*. What actually saves mobile data is the ad blocking, which works with the exit node off.
+
+So it's a toggle, not a setting: on for untrusted WiFi, off on cellular and at home.
+
+### Subnet routes: advertise a /32, not a /24
+
+A subnet route lets your Tailnet reach devices that can't run Tailscale themselves — a router admin page, a NAS, an IP camera.
+
+The obvious move is advertising your whole LAN:
+
+```bash
+--advertise-routes=192.168.1.0/24
+```
+
+Don't. `192.168.1.0/24` is the most common home range there is, so the moment you're on another network using it — a hotel, a friend's house — your device has two conflicting meanings for the same address and routing gets ambiguous.
+
+Advertise only what you need:
+
+```bash
+--advertise-routes=192.168.1.254/32
+```
+
+Almost everything else on a home network turns out not to be worth reaching remotely anyway. AirPlay, Chromecast, HomeKit and Sonos discovery all depend on **mDNS multicast, which doesn't cross subnet routing at all** — so an Apple TV gains nothing from it. What does work is anything reached by IP: web admin pages, SSH, file shares. In my case that was exactly one address, the router.
+
+## Part 11 — Moving the Pi to a network I don't control
+
+A faster connection became available — university Ethernet — so I moved the Pi. It vanished completely.
+
+### The mistake: a static IP is network-specific
+
+Part 5 has this:
+
+```bash
+sudo nmcli connection modify netplan-eth0 ipv4.method manual \
+  ipv4.addresses 192.168.1.218/24 ipv4.gateway 192.168.1.254
+```
+
+Correct at home. On a different network it's worse than useless — wrong subnet, and a gateway that doesn't exist. The Pi had no working network at all: no DHCP, no internet, no Tailscale. Invisible, with no way in except a keyboard and monitor.
+
+The fix, run at the Pi's keyboard:
+
+```bash
+sudo nmcli connection modify netplan-eth0 ipv4.method auto
+sudo nmcli connection modify netplan-eth0 ipv4.dns "127.0.0.1"
+sudo reboot
+```
+
+**The lesson: you don't need a static LAN IP when you have Tailscale.** The Tailscale address is bound to the *device*, not the network:
+
+```
+LAN address:        192.168.1.218 → <UNIVERSITY_IP>   (changed)
+Tailscale address:  <PI_TS_IP>    → <PI_TS_IP>        (unchanged)
+```
+
+Every reference I'd set up — the DNS nameserver in the admin console, my SSH shortcuts — pointed at the Tailscale address and needed no edit at all. Use DHCP for the LAN and the Tailscale IP for everything else, and moving the machine becomes a non-event.
+
+### MAC registration, and macOS hiding MACs
+
+Managed networks often require registering a device's MAC before the port works. On the Pi:
+
+```bash
+ip -br link show eth0
+ip -br link show wlan0
+```
+
+Raspberry Pi MACs never randomise and both begin with `b8:27:eb`, the Foundation's OUI. If WiFi was disabled earlier, `nmcli radio wifi on` brings `wlan0` back so you can read it.
+
+Getting the equivalent from a Mac is harder than it should be. **macOS 26 masks MAC addresses** — `ifconfig` returns `02:00:00:00:00:00` for every interface, even under `sudo`. The working command is:
+
+```bash
+networksetup -listallhardwareports
+```
+
+Two traps there. A USB Ethernet adapter's MAC belongs to **the adapter, not the computer**, so swapping docks means re-registering. And if **Private Wi-Fi Address** is enabled, macOS presents a different random MAC per network — register the hardware address and it won't match. Turn it off for that network first, in Wi-Fi → Details.
+
+### What to switch off on someone else's network
+
+**The exit node.** It makes your machine a VPN gateway routing outside traffic in and out through their connection. Most university acceptable-use policies prohibit exactly that, and the usual consequence is losing network access rather than a warning.
+
+**Stale subnet routes.** Mine still advertised the router address from my old home network — a route to nowhere that would misdirect traffic if I ever encountered that address elsewhere.
+
+```bash
+sudo tailscale set --advertise-exit-node=false --advertise-routes=
+```
+
+Note this runs on the Pi, not the client. `--advertise-*` configures what *that* device offers; `--accept-dns` and `--exit-node` are client-side choices.
+
+**The open resolver.** Part 7 sets `dns.listeningMode ALL` so Tailscale clients can reach Pi-hole. On a network you don't control, that means answering DNS for anyone who can reach you — and universities scan for open resolvers, because they get harvested for amplification attacks.
+
+A firewall is safer than changing the listening mode, which can stop Pi-hole answering on `127.0.0.1` and break the machine's own DNS:
+
+```bash
+sudo apt install -y ufw
+sudo ufw allow in on tailscale0    # your own devices
+sudo ufw allow in on lo            # Pi-hole ↔ unbound internally
+sudo ufw allow 22/tcp              # don't lock yourself out
+sudo ufw enable
+```
+
+`ufw` blocks incoming by default and leaves outgoing alone, so those three rules become the whole guest list. Run it at the keyboard — `ufw enable` takes effect instantly.
+
+### It connected directly, which I didn't expect
+
+I assumed client isolation would force everything through a relay. It didn't:
+
+```
+direct <UNIVERSITY_IP>:41641
+round-trip: 5–8 ms
+```
+
+Better than at home, where two separate networks in the same building had been relaying through a datacentre 60 km away at ~66 ms. Worth checking rather than assuming:
+
+```bash
+tailscale status | grep ' pi '
+```
+
+`direct` means peer-to-peer. `relay "xxx"` means it's detouring. The field only appears while a connection is active — an idle peer shows neither, so generate some traffic before reading it.
+
+## Part 12 — The command I wish I'd known on day one
+
+When the Pi was offline, every device that used it for DNS lost the internet. Not "no ad blocking" — no name resolution at all, so nothing loaded. Turning Tailscale on made it worse, because that's what applies the DNS override.
+
+The fix is one flag:
+
+```bash
+tailscale set --accept-dns=false
+```
+
+That tells **one device** to ignore the DNS configuration the coordination server pushes. You stay connected to your Tailnet, keep SSH and remote access, and fall back to the local network's DNS. You lose ad blocking until you turn it back on:
+
+```bash
+tailscale set --accept-dns=true
+```
+
+The distinction that makes it work is worth internalising:
+
+```
+admin console  →  "use <PI_TS_IP> for DNS"     (server-side, all devices)
+--accept-dns   →  "this device honours that"    (client-side, per device)
+```
+
+I'd been treating the admin console toggle as the only control, which meant my options were "everything filtered" or "nothing connected". It's per-device, and that changes it from a dependency into a preference.
+
+Check the current state with:
+
+```bash
+tailscale debug prefs | grep -i CorpDNS
+```
+
+`true` means it's using your Pi-hole.
+
+## Part 13 — Two smaller corrections
+
+**log2ram needs enabling *and* a reboot.** I'd installed it and assumed it was working. It wasn't — `systemctl is-active log2ram` said `inactive` and `/var/log` was still on the SD card. It only mounts tmpfs at boot:
+
+```bash
+sudo systemctl enable log2ram
+sudo sed -i 's/^SIZE=.*/SIZE=64M/' /etc/log2ram.conf
+sudo sed -i 's/^MAIL=.*/MAIL=false/' /etc/log2ram.conf
+sudo reboot
+findmnt -no FSTYPE,SIZE /var/log    # want: tmpfs 64M
+```
+
+The default 128 MB is a large slice of a 1 GB board; 64 MB is plenty. `MAIL=false` stops it trying to email a machine with no mail transport configured.
+
+**Passwordless sudo was never configured**, despite `sudo -n true` appearing to succeed. That was sudo's credential cache from a recent password entry, not a rule. `/etc/sudoers.d/` was empty of any NOPASSWD entry, because the cloud-init config had `sudo: null`. Worth checking in a *fresh* session before concluding anything about sudo behaviour.
+
+## Where it stands now
+
+| | |
+|---|---|
+| Location | University Ethernet, DHCP, no static IP |
+| Tailscale | Direct peer-to-peer, ~7 ms |
+| Pi-hole + unbound | Running, blocking verified |
+| Exit node / subnet routes | Off — not appropriate on a network I don't run |
+| Escape hatch | `--accept-dns=false`, per device |
+
+## What the move taught me
+
+1. **A static IP is a liability on any machine that might move.** Tailscale gives you a permanent address that doesn't care about the network. Use DHCP for the LAN and the Tailscale IP for everything else.
+2. **Know your escape hatch before you need it.** `--accept-dns=false` turns "my whole setup is down" into a ten-second fix. I spent an evening working around a problem that had a one-line answer.
+3. **Verify, don't assume, on someone else's network.** I expected client isolation and relaying; I got direct peer-to-peer at 7 ms. I also assumed the university blocked outbound port 53 — it doesn't. Both theories were wrong, and testing took a minute each.
+4. **`tailscale up` resets flags you didn't mention.** Use `tailscale set` to change one thing.
+5. **Turn off what doesn't belong.** An exit node on institutional infrastructure, a stale route to a network you've left, a DNS resolver answering strangers — none of these announce themselves as problems until they are.
