@@ -1064,3 +1064,175 @@ The default 128 MB is a large slice of a 1 GB board; 64 MB is plenty. `MAIL=fals
 3. **Verify, don't assume, on someone else's network.** I expected client isolation and relaying; I got direct peer-to-peer at 7 ms. I also assumed the university blocked outbound port 53 — it doesn't. Both theories were wrong, and testing took a minute each.
 4. **`tailscale up` resets flags you didn't mention.** Use `tailscale set` to change one thing.
 5. **Turn off what doesn't belong.** An exit node on institutional infrastructure, a stale route to a network you've left, a DNS resolver answering strangers — none of these announce themselves as problems until they are.
+
+---
+
+# Update — a month in
+
+Two more episodes worth recording. The first was a tidy win; the second cost an afternoon and had nothing whatsoever to do with the Pi, which is precisely why it's here.
+
+## Part 14 — Automatic WiFi failover when the cable is needed elsewhere
+
+One wall port, two things wanting it: the Pi, and a games console. The obvious fix — an Ethernet switch — didn't work, because the port only authorises one device (more on why in Part 15).
+
+So instead: let the Pi fall back to WiFi whenever the cable is unplugged. NetworkManager does this natively.
+
+```bash
+# the WiFi here was an open, MAC-registered network — no password
+sudo nmcli device wifi connect "<SSID>" ifname wlan0
+sudo nmcli connection modify "<SSID>" connection.autoconnect yes
+
+# route metrics decide which interface wins; lower is preferred
+sudo nmcli connection modify "Wired connection 1" ipv4.route-metric 100
+sudo nmcli connection modify "<SSID>"             ipv4.route-metric 600
+```
+
+Both interfaces stay **connected simultaneously**. The metric picks the winner, so when `eth0` loses carrier the traffic falls to `wlan0` with no scanning or reassociation delay. Verify with:
+
+```bash
+ip -4 route | grep default
+# default via <GW> dev eth0   ... metric 100
+# default via <GW> dev wlan0  ... metric 600
+```
+
+It worked first time, and better than expected: with the cable out, Tailscale stayed on a **direct** peer-to-peer connection over WiFi rather than falling back to a relay. The Pi's Tailscale address never changes, so SSH, Pi-hole and ad blocking carried straight through the switchover. Nothing downstream noticed.
+
+**Worth knowing it's fine to run the Pi on WiFi permanently.** A Pi 3 B's Ethernet is 100 Mbit/s and its WiFi is 2.4 GHz-only at perhaps 40–50 Mbps real throughput — but a DNS query is about 100 bytes. Bandwidth is irrelevant for this workload. The only genuine loss is reliability: WiFi drops, and a congested 2.4 GHz band in a residential building drops more. That matters because by this point the Pi is load-bearing for DNS on every device.
+
+## Part 15 — An afternoon lost to a MAC address
+
+The symptom: plugging in Ethernet on my Mac killed the internet. WiFi worked fine.
+
+My first instinct was Tailscale's DNS override — the Part 12 problem again. It wasn't. I then spent a long time on two more theories that were also wrong, so the sequence is worth laying out.
+
+### Wrong theory 1: stale macOS network services
+
+macOS creates a **new network service for every new interface name**. The adapter had enumerated as `en4`, `en5`, `en6`, `en7`, and now `en10`, leaving a pile of entries — and a dead one pointing at a nonexistent `en7` sat at **priority 1**:
+
+```
+(1) USB 10/100/1000 LAN     → Device: en7    ← dead
+(2) USB 10/100/1000 LAN 2   → Device: en10   ← live
+(4) Wi-Fi
+```
+
+That's a genuine problem worth fixing. macOS refuses to delete the last service on a hardware port, so disable it instead:
+
+```bash
+sudo networksetup -setnetworkserviceenabled "USB 10/100/1000 LAN" off
+```
+
+But it wasn't the cause.
+
+### Wrong theory 2: dual active interfaces
+
+With WiFi and Ethernet both up on different subnets, connections were erratic — ping fine, some hosts reachable, most not. Asymmetric routing seemed plausible.
+
+Also wrong. Ethernet **alone**, with WiFi off, failed too.
+
+### The technique that actually helped
+
+Service order determines which interface carries the default route, and a broken primary takes the whole machine offline. Putting WiFi first meant Ethernet could be plugged in without hijacking anything:
+
+```bash
+sudo networksetup -ordernetworkservices "Wi-Fi" "<rest of the services>"
+```
+
+That unlocked the real diagnostic — testing one interface in isolation while the other carries your working connection:
+
+```bash
+curl --interface en10 -s -o /dev/null -w "%{http_code}\n" http://example.com
+ping -b en10 1.1.1.1
+dig -b <THAT_IFACE_IP> github.com @<SOME_RESOLVER>
+```
+
+> If you take one thing from this section: **`--interface` and `-b` let you probe a broken path without giving up the working one.** Every earlier attempt either knocked me offline or had both interfaces interfering.
+
+### What it actually was
+
+Binding tests to the Ethernet interface produced a strange pattern:
+
+| Test | Result |
+|---|---|
+| DHCP | ✅ real address, not `169.254.x.x` |
+| `ping 1.1.1.1` | ✅ |
+| DNS via the campus resolver | ✅ |
+| `http://captive.apple.com` | ✅ HTTP 200 |
+| `1.1.1.1` | ✅ |
+| Everything else | ❌ instant failure |
+
+That selective pattern is a **walled garden**: a quarantine VLAN that permits DHCP, DNS, ICMP and a handful of whitelisted hosts — enough to reach a registration system — and blocks the rest.
+
+Apple's captive-check endpoint returning a clean 200 is what made it invisible. macOS concluded there was no captive portal, so it never showed the usual "sign in to network" sheet. The network was gating me without ever telling me.
+
+The DHCP lease time confirmed it:
+
+```bash
+ipconfig getpacket en10 | grep lease_time
+```
+
+| Lease | State |
+|---|---|
+| `0x16e3` = 98 min | quarantine |
+| `0x708` = 30 min | quarantine, shortened |
+| `0x1c20` = 2 hours | **production network** |
+
+Short leases are how a registration VLAN moves you out quickly once you're authorised. **Lease time is a genuinely useful diagnostic**, and I'd never thought to look at it before.
+
+The cause was simply that the adapter's MAC wasn't registered.
+
+### The MAC I'd been reading was the wrong one
+
+```bash
+ifconfig en10 | grep ether          # 02:00:00:00:00:00  ← macOS mask, useless
+networksetup -listallhardwareports  # a0:ce:c8:xx:xx:xx  ← the real address
+```
+
+**macOS 26 masks MAC addresses in `ifconfig`**, showing `02:00:00:00:00:00` for every interface, even under `sudo`. `networksetup` reports real values.
+
+And the address I *had* registered belonged to a different adapter entirely — an older hub presenting `00:00:00:00:xx:xx`. That's not a mask; it's a genuinely malformed address. Cheap USB-Ethernet dongles sometimes ship without a unique MAC programmed, which also means several identical dongles share one — hopeless for a system that identifies devices by MAC.
+
+Registering the correct address and forcing a fresh lease fixed it:
+
+```bash
+sudo ipconfig set en10 NONE && sleep 3 && sudo ipconfig set en10 DHCP
+```
+
+A link bounce isn't enough — that reuses the existing lease. You need to release it so the server reassigns you.
+
+## Part 16 — The MAC belongs to the hub, not the laptop
+
+The thing underneath all of it, and the part I'd half-misunderstood.
+
+Modern MacBooks have **no Ethernet hardware at all**. No socket, so no controller chip. When you attach a USB-C hub, you're not plugging into a port on your laptop — you're attaching a complete network adapter that happens to live in a box on the end of a cable.
+
+```
+Mac ──USB──> [ hub: Ethernet controller + its own MAC ] ──cable──> wall port
+                          ↑
+                 the MAC lives here
+```
+
+Visible in the hardware list:
+
+| Interface | Chip location | MAC follows |
+|---|---|---|
+| Wi-Fi (`en0`) | soldered to the logic board | the laptop |
+| Thunderbolt (`en1-3`) | logic board | the laptop |
+| Ethernet (`en10`) | **inside the hub** | **the hub** |
+
+Consequences worth internalising:
+
+- **The cable has no MAC.** It's passive copper; swap it freely.
+- **Different hub → different MAC → register again.** Each adapter is a separate device to the network.
+- **The same hub in a different computer keeps the same MAC.** Lend it out and your registered access goes with it.
+- Unplug the hub and the interface doesn't go "down" — it **ceases to exist**. `ifconfig` won't list it at all, which is a useful way to tell "adapter detached" from "cable unplugged".
+
+I'd assumed Ethernet worked like WiFi, where the radio is part of the machine. It doesn't, and that assumption is what made the registration failure so confusing.
+
+## What this round taught me
+
+1. **Probe the broken path without surrendering the working one.** `curl --interface`, `ping -b`, `dig -b`. This is the technique I'll reuse most.
+2. **Check DHCP lease time.** A short lease means a registration or quarantine VLAN. It's a one-line check that would have saved me hours.
+3. **`ifconfig` lies about MACs on recent macOS.** Use `networksetup -listallhardwareports`.
+4. **A clean 200 from `captive.apple.com` doesn't mean "no portal."** A walled garden that whitelists it will look exactly like an open network to the OS while blocking everything else.
+5. **Service order decides which interface can take you offline.** Put the reliable one first and a broken secondary becomes harmless.
+6. **Check the obvious identity first.** Three theories, an afternoon, and the answer was that the thing I'd registered wasn't the thing that was plugged in.
