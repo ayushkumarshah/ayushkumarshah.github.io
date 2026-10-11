@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vegas Trip ♡ October 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F6F3F8;--card:#FFFFFF;
+  --text:#22182E;--text2:#6B5D7A;--text3:#A99BB8;
+  --neon:#C2185B;--neon-light:#FCE4EE;--neon-dark:#8E1446;
+  --violet:#5B3A9A;--violet-light:#ECE6F7;
+  --desert:#C4622D;--desert-light:#FBEAE0;
+  --sky:#2F6FA8;--sky-light:#E4EEF8;
+  --gold:#B7862C;--gold-light:#FBF2DF;
+  --green:#2D7A5B;--green-light:#E3F3EA;
+  --border:#E4DCEB;--shadow:0 2px 16px rgba(34,24,46,.07);
+  --radius:14px;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --night:linear-gradient(135deg,#120A24 0%,#3A1757 50%,#8E1446 100%);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;padding-bottom:40px;min-height:100dvh;overflow-x:hidden}
+a{color:var(--neon)}
+
+/* -- BANNER -- */
+.banner{background:var(--night);color:#fff;padding:14px 20px;text-align:center;font-size:14px}
+.banner .pulse{display:inline-block;width:8px;height:8px;background:#FF8FB8;border-radius:50%;margin-right:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.banner .dt{font-weight:300;opacity:.8;font-size:12px;margin-top:2px}
+.banner .countdown-label{font-size:12px;opacity:.8;margin-top:6px}
+.banner .countdown-nums{font-family:var(--serif);font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:1px;margin-top:4px}
+.banner .status-line{margin-top:4px}
+
+/* -- NAV -- */
+.nav{display:flex;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:99;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav button{flex:1;min-width:max-content;padding:14px 14px 12px;border:none;background:none;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;border-bottom:2.5px solid transparent;transition:all .2s;white-space:nowrap}
+.nav button.active{color:var(--neon);border-bottom-color:var(--neon)}
+.nav button:hover:not(.active){color:var(--violet);background:var(--violet-light)}
+.nav .ni{display:block;font-size:17px;margin-bottom:2px}
+
+/* -- TABS -- */
+.tab{display:none;padding:16px;max-width:820px;margin:0 auto;animation:fadeIn .3s ease}
+.tab.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* -- CARDS -- */
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);padding:20px;margin-bottom:16px}
+.card-title{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:14px}
+.card-kicker{font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--text2);margin-bottom:12px}
+.pill-link{display:inline-block;margin-top:8px;margin-right:6px;font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--neon-light);color:var(--neon-dark);text-decoration:none}
+.pill-link.alt{background:var(--violet-light);color:var(--violet)}
+.pill-link.desert{background:var(--desert-light);color:var(--desert)}
+
+/* -- HERO -- */
+.hero{
+  background:linear-gradient(160deg,#120A24 0%,#3A1757 40%,#8E1446 75%,#C4622D 100%);
+  border-radius:var(--radius);padding:36px 24px 28px;color:#fff;margin-bottom:20px;
+  position:relative;overflow:hidden;
+}
+.hero-skyline{position:absolute;bottom:0;left:0;right:0;width:100%;height:90px;opacity:.16;pointer-events:none}
+.hero-stars{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-stars::before{content:'✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧';position:absolute;top:12px;right:16px;font-size:10px;opacity:.4;letter-spacing:4px}
+.hero-heart{position:absolute;top:18px;right:20px;font-size:40px;opacity:.18}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:14px;position:relative}
+.hero h1{font-family:var(--serif);font-size:28px;font-weight:700;line-height:1.15;max-width:420px;position:relative;margin-bottom:6px}
+.hero h1 em{font-style:italic;color:#FFB3CF}
+.hero-sub{font-size:13px;opacity:.85;max-width:460px;position:relative;margin-bottom:18px}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap;position:relative;margin-bottom:24px}
+.hero-pill{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);font-size:11px;font-weight:600}
+
+/* -- STATS -- */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.stat{background:var(--card);border-radius:var(--radius);padding:16px 12px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow)}
+.stat .n{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--neon)}
+.stat .l{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+
+/* -- TIMELINE -- */
+.timeline-v2{position:relative;padding-left:52px}
+.timeline-v2::before{content:'';position:absolute;left:18px;top:4px;bottom:4px;width:2.5px;background:linear-gradient(to bottom,var(--border),var(--neon-light),var(--desert-light),var(--border))}
+.tl2-item{position:relative;padding-bottom:24px}
+.tl2-item:last-child{padding-bottom:0}
+.tl2-dot{position:absolute;left:-42px;top:-2px;width:40px;height:40px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--border),0 2px 6px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:19px}
+.tl2-dot.neon{background:#C2185B}
+.tl2-dot.violet{background:#5B3A9A}
+.tl2-dot.desert{background:#C4622D}
+.tl2-dot.sky{background:#2F6FA8}
+.tl2-dot.gold{background:#B7862C}
+.tl2-content{padding-left:6px}
+.tl2-date{font-size:11px;font-weight:700;color:var(--neon);text-transform:uppercase;letter-spacing:.5px}
+.tl2-title{font-family:var(--serif);font-size:15px;font-weight:600;margin-top:1px}
+.tl2-sub{font-size:12px;color:var(--text2);margin-top:1px}
+.tl2-badge{display:inline-block;font-size:10px;font-weight:700;padding:1px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.tl2-badge.booked{background:var(--green-light);color:var(--green)}
+.tl2-badge.pending{background:var(--gold-light);color:var(--gold)}
+
+/* -- FOCUS CARD (Next Up) -- */
+.focus-card{background:linear-gradient(135deg,#FFF6EE 0%,#FFFFFF 55%,#FCE4EE 100%);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);margin-bottom:16px}
+.focus-kicker{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--neon);margin-bottom:8px}
+.focus-title{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.2}
+.focus-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.focus-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700}
+.focus-pill.date{background:var(--neon-light);color:var(--neon-dark)}
+.focus-pill.loc{background:var(--violet-light);color:var(--violet)}
+.focus-note{font-size:13px;color:var(--text2);margin-top:10px;line-height:1.55}
+.focus-acts{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.focus-act{display:flex;align-items:center;gap:8px;font-size:12px;padding:6px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--border)}
+.focus-act-time{font-weight:700;color:var(--neon);min-width:72px;text-align:right;flex-shrink:0}
+.focus-act-title{color:var(--text);font-weight:600}
+
+/* -- ROUTE CARD -- */
+.route-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:20px;margin-bottom:16px}
+.route-step{display:flex;gap:12px;position:relative;padding-bottom:16px;padding-left:8px}
+.route-step:last-child{padding-bottom:0}
+.route-step::before{content:'';position:absolute;left:23px;top:38px;bottom:0;width:2.5px;background:var(--neon-light)}
+.route-step:last-child::before{display:none}
+.route-marker{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--neon-light);border:2.5px solid var(--neon)}
+.route-marker.start{background:var(--violet);border-color:var(--violet)}
+.route-marker.end{background:var(--desert);border-color:var(--desert)}
+.route-info{flex:1}
+.route-city{font-weight:700;font-size:14px}
+.route-desc{font-size:12px;color:var(--text2);margin-top:1px}
+.route-drive{display:inline-block;font-size:10px;font-weight:700;color:var(--violet);background:var(--violet-light);padding:1px 8px;border-radius:10px;margin-top:4px}
+.route-label{font-size:13px;font-weight:700;margin-bottom:10px}
+
+/* -- PHASES OVERVIEW -- */
+.phases{display:flex;flex-direction:column;gap:10px}
+.phase-row{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:12px;border:1px solid var(--border);background:var(--card)}
+.phase-icon{font-size:24px;flex-shrink:0;margin-top:2px}
+.phase-head{font-weight:700;font-size:14px}
+.phase-dates{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;display:inline-block;margin-top:3px;background:var(--neon-light);color:var(--neon-dark)}
+.phase-dates.desert{background:var(--desert-light);color:var(--desert)}
+.phase-dates.violet{background:var(--violet-light);color:var(--violet)}
+.phase-desc{font-size:12px;color:var(--text2);margin-top:5px;line-height:1.5}
+
+/* -- SCHEDULE -- */
+.day-strip-wrap{overflow:hidden;margin-bottom:4px}
+.day-strip{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none}
+.day-strip::-webkit-scrollbar{display:none}
+.day-chip{min-width:96px;flex:1;padding:10px 8px;border-radius:10px;text-align:center;cursor:pointer;border:1.5px solid var(--border);background:var(--card);transition:all .2s;font-family:var(--sans);color:var(--text)}
+.day-chip.active{background:var(--neon);border-color:var(--neon);color:#fff}
+.day-chip.today{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold-light)}
+.day-chip.past{opacity:.45}
+.dc-day{font-size:9px;font-weight:700;text-transform:uppercase;color:var(--text2);letter-spacing:.3px}
+.day-chip.active .dc-day,.day-chip.active .dc-mo{color:rgba(255,255,255,.85)}
+.dc-n{font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.2}
+.dc-mo{font-size:9px;color:var(--text2);text-transform:uppercase}
+
+.day-detail{animation:fadeIn .25s ease}
+.day-hdr{margin-bottom:14px}
+.day-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:700;margin-bottom:8px;background:var(--neon-light);color:var(--neon-dark)}
+.day-title{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.2}
+.day-loc{font-size:13px;color:var(--neon);font-weight:600;margin-top:2px}
+.day-hotel{font-size:12px;color:var(--text2);margin-top:4px}
+.day-header-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.day-link{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;border:1.5px solid var(--border);background:var(--card);color:var(--text2);font-size:12px;font-weight:700;white-space:nowrap;flex-shrink:0;font-family:var(--sans);cursor:pointer}
+.day-link:hover,.day-link.copied{border-color:var(--neon);color:var(--neon);background:var(--neon-light)}
+
+/* Sunday plan picker */
+.plan-picker{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.plan-picker-lbl{font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text2);margin-bottom:8px}
+.plan-opts{display:flex;gap:8px;flex-wrap:wrap}
+.plan-opt{padding:7px 14px;border-radius:999px;border:1.5px solid var(--border);background:var(--card);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--sans);color:var(--text2);transition:all .2s}
+.plan-opt.active{background:var(--violet);border-color:var(--violet);color:#fff}
+.plan-desc{font-size:12px;color:var(--text2);margin-top:10px;line-height:1.5}
+
+/* Activity timeline */
+.acts{border-radius:12px;border:1px solid var(--border);background:var(--card);overflow:hidden;margin-bottom:14px}
+.act{display:flex;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border)}
+.act:last-child{border-bottom:none}
+.act-t{min-width:70px;font-size:11px;font-weight:700;color:var(--text2);padding-top:3px;text-align:right;flex-shrink:0}
+.act-b{flex:1;min-width:0}
+.badge{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;text-transform:uppercase;letter-spacing:.3px;margin-bottom:3px}
+.badge.drive{background:var(--violet-light);color:var(--violet)}
+.badge.explore{background:var(--neon-light);color:var(--neon-dark)}
+.badge.nature{background:var(--desert-light);color:var(--desert)}
+.badge.meal{background:#FFF0E6;color:#C75B39}
+.badge.hotel{background:var(--sky-light);color:var(--sky)}
+.badge.night{background:#2A1A44;color:#FFB3CF}
+.badge.show{background:var(--gold-light);color:var(--gold)}
+.badge.optional{background:var(--bg);color:var(--text2);border:1px solid var(--border)}
+.act-title{font-weight:700;font-size:13px;margin-bottom:2px}
+.act-loc{font-size:11px;color:var(--neon);margin-bottom:3px}
+.act-det{font-size:11px;color:var(--text2);line-height:1.5}
+.act-note{font-size:10px;color:var(--desert);font-weight:700;margin-top:3px}
+
+/* Weather bar */
+.weather-bar{display:flex;align-items:center;gap:12px;background:var(--desert-light);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px}
+.weather-bar .temp{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--desert)}
+.weather-bar .desc{color:var(--text2);font-size:12px}
+.weather-loading{font-size:12px;color:var(--text3);font-style:italic}
+
+/* -- DRIVE CARDS (ticket style) -- */
+.drive-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);margin-bottom:14px;position:relative;overflow:hidden}
+.drive-card::before,.drive-card::after{content:'';position:absolute;width:18px;height:18px;background:var(--bg);border-radius:50%;z-index:2;top:50%;transform:translateY(-50%)}
+.drive-card::before{left:-9px}
+.drive-card::after{right:-9px}
+.dh{padding:10px 20px;color:#fff;font-size:11px;font-weight:700;display:flex;justify-content:space-between;align-items:center;letter-spacing:.4px;text-transform:uppercase;background:var(--night)}
+.dh.home{background:linear-gradient(135deg,#120A24,#C4622D)}
+.dstatus{font-size:9px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.18);color:#fff}
+.db{padding:18px 22px}
+.droute{display:flex;align-items:center;gap:8px;margin-bottom:14px;justify-content:center}
+.dcity{text-align:center;min-width:76px}
+.dcode{font-family:var(--serif);font-size:24px;font-weight:700}
+.dname{font-size:10px;color:var(--text2);margin-top:2px}
+.dtime{font-size:12px;font-weight:600;color:var(--text2);margin-top:3px}
+.darrow{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--text3);min-width:60px}
+.darrow-line{width:100%;display:flex;align-items:center}
+.darrow-line::before{content:'';flex:1;height:0;border-top:2px dashed var(--border)}
+.darrow-car{font-size:18px}
+.darrow-dur{font-size:9px;color:var(--text3);font-weight:600;text-align:center}
+.dmeta{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;font-size:11px;border-top:1px dashed var(--border);padding-top:12px;margin-top:4px}
+.dmeta dt{color:var(--text2);font-size:9px;text-transform:uppercase;letter-spacing:.3px}
+.dmeta dd{font-weight:600;margin-bottom:4px}
+
+/* -- STAYS -- */
+.stay-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:20px;margin-bottom:14px}
+.stay-top{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+.stay-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;background:var(--neon-light)}
+.stay-name{font-family:var(--serif);font-size:17px;font-weight:700}
+.stay-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:auto;white-space:nowrap;background:var(--gold-light);color:var(--gold)}
+.stay-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px;font-size:11px;margin-bottom:10px}
+.stay-grid dt{color:var(--text2);font-size:9px;text-transform:uppercase;letter-spacing:.3px}
+.stay-grid dd{font-weight:600;margin-bottom:3px}
+.stay-amenities{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.amenity{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:999px;font-size:10px;font-weight:600;background:var(--bg);border:1px solid var(--border)}
+.stay-note{font-size:11px;color:var(--text2);line-height:1.5;margin-top:10px}
+.cmp-row{display:grid;grid-template-columns:1fr auto auto;gap:4px 14px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--border);font-size:12px}
+.cmp-row:last-child{border-bottom:none}
+.cmp-row.head{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text2);padding-top:0}
+.cmp-name{font-weight:700}
+.cmp-name small{display:block;font-weight:400;color:var(--text2);font-size:11px;margin-top:1px}
+.cmp-num{font-family:var(--serif);font-weight:700;text-align:right}
+.cmp-row.selected .cmp-name{color:var(--neon)}
+.sel-badge{display:inline-block;font-size:9px;font-weight:700;padding:1px 6px;border-radius:4px;background:var(--neon-light);color:var(--neon-dark);margin-left:6px;vertical-align:middle}
+
+/* -- EXPLORE -- */
+.explore-section-hdr{font-family:var(--serif);font-size:18px;font-weight:700;margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+.explore-section-hdr::after{content:'';flex:1;height:1px;background:var(--border)}
+.exp-card{background:var(--card);border-radius:12px;border:1px solid var(--border);padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+.exp-emoji{font-size:24px;flex-shrink:0;margin-top:2px}
+.exp-name{font-weight:700;font-size:13px;margin-bottom:2px}
+.exp-meta{font-size:11px;color:var(--text2);margin-bottom:4px}
+.exp-tags{display:flex;gap:5px;flex-wrap:wrap}
+.exp-tag{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px}
+.exp-tag.must{background:var(--neon-light);color:var(--neon-dark)}
+.exp-tag.free{background:var(--green-light);color:var(--green)}
+.exp-tag.night{background:#2A1A44;color:#FFB3CF}
+.exp-tag.paid{background:var(--gold-light);color:var(--gold)}
+.exp-tag.drive{background:var(--violet-light);color:var(--violet)}
+.exp-tag.veg{background:var(--green-light);color:var(--green)}
+.exp-body{font-size:11px;color:var(--text2);margin-top:6px;line-height:1.5}
+.exp-tip{font-size:10px;color:var(--desert);font-weight:600;margin-top:4px}
+
+/* -- WEATHER TAB -- */
+.weather-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:20px}
+.weather-card{border-radius:var(--radius);padding:20px;color:#fff;position:relative;overflow:hidden;background:var(--night);min-height:160px;display:flex;flex-direction:column;justify-content:space-between}
+.weather-card .wc-city{font-family:var(--serif);font-size:18px;font-weight:700}
+.weather-card .wc-icon{font-size:40px;margin:8px 0}
+.weather-card .wc-temp{font-family:var(--serif);font-size:28px;font-weight:700}
+.weather-card .wc-desc{font-size:13px;opacity:.84;margin-top:3px}
+.weather-card .wc-range{font-size:13px;opacity:.72;margin-top:5px}
+.weather-card .wc-badge{position:absolute;top:12px;right:12px;font-size:9px;padding:2px 8px;border-radius:10px;background:rgba(255,255,255,.15);font-weight:600}
+.pack-card{background:var(--desert-light);border:1px solid var(--desert);border-radius:var(--radius);padding:20px}
+.pack-card h3{font-family:var(--serif);font-size:16px;color:var(--desert);margin-bottom:10px}
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pack-item{font-size:12px;color:var(--text2);padding:4px 0;display:flex;align-items:center;gap:6px}
+
+/* -- CHECKLIST -- */
+.chk-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
+.chk-item:last-child{border-bottom:none}
+.chk-item:hover{background:var(--neon-light);border-radius:8px;margin:0 -8px;padding:12px 8px}
+.chk-box{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px;transition:all .2s}
+.chk-box.done{background:var(--green-light);color:var(--green)}
+.chk-box.pending{background:var(--violet-light);color:var(--violet)}
+.chk-box.action{background:var(--gold-light);color:var(--gold)}
+.chk-title{font-weight:600;font-size:13px}
+.chk-item.is-done .chk-title{text-decoration:line-through;opacity:.55}
+.chk-det{font-size:11px;color:var(--text2);margin-top:2px;line-height:1.45}
+.chk-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;margin-top:4px;display:inline-block}
+.chk-badge.done{background:var(--green-light);color:var(--green)}
+.chk-badge.needed{background:var(--violet-light);color:var(--violet)}
+.chk-badge.action{background:var(--neon-light);color:var(--neon-dark)}
+.prog-wrap{margin-bottom:16px}
+.prog-lbl{font-size:13px;font-weight:600;margin-bottom:6px;display:flex;justify-content:space-between}
+.prog-bar{height:8px;border-radius:4px;background:var(--border);overflow:hidden}
+.prog-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--violet),var(--neon),var(--desert));transition:width .4s ease}
+
+/* -- BUDGET -- */
+.budget-section{margin-bottom:20px}
+.budget-section-hdr{font-family:var(--serif);font-size:15px;font-weight:700;padding:8px 0;border-bottom:2px solid var(--border);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.bitem{margin-bottom:14px}
+.bitem-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:4px}
+.bitem-name{font-weight:600;font-size:13px;display:flex;align-items:center;gap:8px}
+.bitem-name input{accent-color:var(--neon);width:16px;height:16px;cursor:pointer}
+.bitem-amt{font-family:var(--serif);font-weight:700;font-size:14px;color:var(--neon-dark);white-space:nowrap}
+.bitem.off .bitem-amt,.bitem.off .bitem-name span{opacity:.45}
+.bbar{height:8px;border-radius:4px;background:var(--border);overflow:hidden;margin-bottom:3px;position:relative}
+.bbar-low{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--neon)}
+.bbar-high{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--neon-light)}
+.bbar.addon .bbar-low{background:var(--gold)}
+.bbar.addon .bbar-high{background:var(--gold-light)}
+.bitem-note{font-size:10px;color:var(--text2)}
+.btotal{background:var(--night);border-radius:12px;padding:16px 20px;color:#fff;margin-bottom:20px}
+.btotal-lbl{font-size:11px;opacity:.75;text-transform:uppercase;letter-spacing:.5px}
+.btotal-amt{font-family:var(--serif);font-size:28px;font-weight:700;margin-top:4px}
+.btotal-sub{font-size:11px;opacity:.7;margin-top:4px}
+
+/* Accommodation + reminders */
+.accom-card,.reminder-card{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);margin-bottom:8px}
+.accom-icon,.reminder-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.accom-name{font-weight:700;font-size:13px}
+.accom-det{font-size:11px;color:var(--text2);margin-top:2px}
+.accom-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:auto;flex-shrink:0;background:var(--gold-light);color:var(--gold)}
+.reminder-text{font-size:12px;color:var(--text2);line-height:1.5}
+.reminder-text strong{color:var(--text)}
+.top3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.top3-item{border-radius:12px;padding:14px;color:#fff;font-size:12px;font-weight:600;line-height:1.4}
+.top3-item .n{font-family:var(--serif);font-size:22px;font-weight:700;opacity:.7}
+
+/* -- RESPONSIVE -- */
+@media(max-width:600px){
+  .hero h1{font-size:23px}
+  .droute{gap:4px}
+  .dcode{font-size:20px}
+  .weather-grid{grid-template-columns:1fr}
+  .pack-grid{grid-template-columns:1fr}
+  .day-header-top{flex-direction:column;align-items:flex-start}
+  .top3{grid-template-columns:1fr}
+  .stat .n{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <div class="dt" id="banner-dt"></div>
+  <div class="countdown-label" id="countdown-label"></div>
+  <div class="countdown-nums" id="countdown-nums"></div>
+  <div class="status-line" id="status-line"></div>
+</div>
+
+<nav class="nav" id="topNav">
+  <button data-tab="overview" class="active"><span class="ni">🎰</span>Overview</button>
+  <button data-tab="schedule"><span class="ni">📅</span>Schedule</button>
+  <button data-tab="drive"><span class="ni">🚗</span>Drive &amp; Stay</button>
+  <button data-tab="explore"><span class="ni">🗺️</span>Explore &amp; Eat</button>
+  <button data-tab="weather"><span class="ni">🌤️</span>Weather</button>
+  <button data-tab="checklist"><span class="ni">✅</span>Checklist</button>
+  <button data-tab="budget"><span class="ni">💰</span>Budget</button>
+</nav>
+
+<!-- ============================== OVERVIEW ============================== -->
+<section id="tab-overview" class="tab active">
+  <div class="hero">
+    <div class="hero-heart">♡</div>
+    <div class="hero-stars"></div>
+    <div class="hero-kicker">🚗 October 24 – 26, 2026 &nbsp;·&nbsp; 2 Nights</div>
+    <h1>Desert Drives &amp;<br><em>Neon Nights</em></h1>
+    <p class="hero-sub">Irvine to Las Vegas road trip. Red rock canyons, the Strip on foot, downtown lights and good vegetarian food. Casinos optional.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">🏜 Red Rock Canyon</span>
+      <span class="hero-pill">⛲ Bellagio Fountains</span>
+      <span class="hero-pill">🌟 Fremont Street</span>
+      <span class="hero-pill">🍛 Veg Eats</span>
+      <span class="hero-pill">♡ Together</span>
+    </div>
+    <!-- Vegas skyline: Strat tower, pyramid, Eiffel, Sphere, High Roller -->
+    <svg class="hero-skyline" viewBox="0 0 800 90" fill="white" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <rect x="0" y="80" width="800" height="10"/>
+      <polygon points="20,80 80,30 140,80"/>
+      <rect x="150" y="50" width="30" height="30"/><rect x="185" y="40" width="24" height="40"/>
+      <polygon points="250,80 262,40 266,12 270,40 282,80"/>
+      <rect x="258" y="48" width="16" height="3"/>
+      <rect x="300" y="36" width="40" height="44"/><rect x="345" y="46" width="22" height="34"/>
+      <circle cx="410" cy="56" r="24"/>
+      <rect x="450" y="30" width="34" height="50"/><rect x="490" y="44" width="26" height="36"/>
+      <circle cx="575" cy="44" r="34" fill="none" stroke="white" stroke-width="3"/>
+      <line x1="575" y1="10" x2="575" y2="78" stroke="white" stroke-width="2"/>
+      <line x1="541" y1="44" x2="609" y2="44" stroke="white" stroke-width="2"/>
+      <line x1="551" y1="20" x2="599" y2="68" stroke="white" stroke-width="2"/>
+      <line x1="599" y1="20" x2="551" y2="68" stroke="white" stroke-width="2"/>
+      <polygon points="565,80 575,44 585,80"/>
+      <rect x="625" y="48" width="30" height="32"/><rect x="660" y="38" width="24" height="42"/>
+      <rect x="727" y="20" width="6" height="60"/>
+      <rect x="719" y="14" width="22" height="9" rx="3"/>
+      <polygon points="728,0 732,0 731,14 729,14"/>
+      <rect x="750" y="54" width="40" height="26"/>
+    </svg>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat"><div class="n">3</div><div class="l">Days</div></div>
+    <div class="stat"><div class="n" style="color:var(--desert)">~540</div><div class="l">Miles Round Trip</div></div>
+    <div class="stat"><div class="n" style="color:var(--violet)">70–75°</div><div class="l">October Days</div></div>
+  </div>
+
+  <div id="focusCard"></div>
+
+  <div class="card">
+    <div class="card-title">📍 Key Moments</div>
+    <div class="timeline-v2" id="overviewTimeline"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-kicker">Trip at a Glance</div>
+    <div class="phases">
+      <div class="phase-row">
+        <div class="phase-icon">🌆</div>
+        <div>
+          <div class="phase-head">Day 1: Drive in &amp; the Strip on foot</div>
+          <span class="phase-dates">Sat, Oct 24</span>
+          <div class="phase-desc">Leave Irvine at 7 AM. Stop at Seven Magic Mountains and the Welcome sign, check in at <strong>Horseshoe</strong> and park once. Then walk Bellagio, Paris and the Venetian, with the fountains after dark.</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-icon">🏜</div>
+        <div>
+          <div class="phase-head">Day 2: Desert + downtown</div>
+          <span class="phase-dates desert">Sun, Oct 25</span>
+          <div class="phase-desc">Red Rock Canyon in the morning, lunch at Lotus of Siam, then <strong>pick one</strong>: AREA15 / Omega Mart, a show, or Fremont Street + Neon Museum. Don't stack them all.</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-icon">🏠</div>
+        <div>
+          <div class="phase-head">Day 3: Early start, drive home</div>
+          <span class="phase-dates violet">Mon, Oct 26</span>
+          <div class="phase-desc">Quick breakfast, check out early and be on I-15 by 9 AM. Home around 1:30–3 PM, with a buffer before the <strong>5:30 PM class</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">✨ If You Only Do Three Things</div>
+    <div class="top3">
+      <div class="top3-item" style="background:linear-gradient(135deg,#8E1446,#C4622D)"><div class="n">1</div>Red Rock Canyon scenic loop in the morning</div>
+      <div class="top3-item" style="background:linear-gradient(135deg,#3A1757,#2F6FA8)"><div class="n">2</div>Bellagio fountains + Conservatory at dusk (free)</div>
+      <div class="top3-item" style="background:linear-gradient(135deg,#120A24,#5B3A9A)"><div class="n">3</div>Fremont Street + Neon Museum at night</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🚗 Road Trip Routes</div>
+
+    <div class="route-label" style="color:var(--violet)">Drive In (Sat Oct 24)</div>
+    <div class="route-card">
+      <div class="route-step">
+        <div class="route-marker start">🏠</div>
+        <div class="route-info"><div class="route-city">Irvine, CA</div><div class="route-desc">Depart 7:00 AM · fill gas first</div><div class="route-drive">I-15 N · ~270 mi · 4.5–6 hrs (Saturday traffic)</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker">⛽</div>
+        <div class="route-info"><div class="route-city">Barstow or Baker</div><div class="route-desc">Fuel, restroom, coffee</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker">🪨</div>
+        <div class="route-info"><div class="route-city">Seven Magic Mountains</div><div class="route-desc">Free 15-min photo stop just before the city</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker">🌟</div>
+        <div class="route-info"><div class="route-city">Welcome to Fabulous Las Vegas sign</div><div class="route-desc">South end of the Strip, easiest on arrival</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker end">🏨</div>
+        <div class="route-info"><div class="route-city">Horseshoe Las Vegas</div><div class="route-desc">Check in ~2:30–3 PM · park once, walk all evening</div></div>
+      </div>
+    </div>
+
+    <div class="route-label" style="color:var(--desert)">Desert + Downtown Loop (Sun Oct 25)</div>
+    <div class="route-card">
+      <div class="route-step">
+        <div class="route-marker start">🏨</div>
+        <div class="route-info"><div class="route-city">Horseshoe</div><div class="route-desc">Leave ~8:45 AM</div><div class="route-drive">~30–45 min west</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker">🏜</div>
+        <div class="route-info"><div class="route-city">Red Rock Canyon Scenic Drive</div><div class="route-desc">13-mile one-way loop · timed entry ~9:30–10 AM</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker">🍜</div>
+        <div class="route-info"><div class="route-city">Lotus of Siam</div><div class="route-desc">Lunch, ideally off-peak</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker">🎨</div>
+        <div class="route-info"><div class="route-city">AREA15 · or · hotel break</div><div class="route-desc">Pick one for the afternoon</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker end">🌟</div>
+        <div class="route-info"><div class="route-city">Fremont Street / Neon Museum</div><div class="route-desc">Downtown evening · paid garage · or a show instead</div></div>
+      </div>
+    </div>
+
+    <div class="route-label" style="color:var(--neon)">Drive Home (Mon Oct 26)</div>
+    <div class="route-card" style="margin-bottom:0">
+      <div class="route-step">
+        <div class="route-marker start">🏨</div>
+        <div class="route-info"><div class="route-city">Horseshoe</div><div class="route-desc">Check out early · on the road by 9 AM</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker">⛽</div>
+        <div class="route-info"><div class="route-city">Baker</div><div class="route-desc">Quick fuel / restroom stop</div></div>
+      </div>
+      <div class="route-step">
+        <div class="route-marker end">🏠</div>
+        <div class="route-info"><div class="route-city">Irvine, CA</div><div class="route-desc">Leave by 9 AM · arrive ~1:30–3 PM</div><div class="route-drive">I-15 S · 4.5–6 hrs · class at 5:30 PM</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⚠ Key Reminders</div>
+    <div class="reminder-card">
+      <div class="reminder-icon">🎫</div>
+      <div class="reminder-text"><strong>Reserve Red Rock timed entry</strong>: required 8 AM–5 PM, Oct–May. $20/vehicle + $2 fee on <a href="https://www.recreation.gov/timed-entry/10075177" target="_blank" rel="noopener">Recreation.gov</a>. Aim for 9:30–10 AM on Sunday.</div>
+    </div>
+    <div class="reminder-card">
+      <div class="reminder-icon">🎓</div>
+      <div class="reminder-text"><strong>Class Monday at 5:30 PM</strong>: leave Vegas by 9 AM so you're home by ~1:30–3 PM even with a slow drive. Pack Sunday night so Monday morning is just checkout. Monday-morning I-15 S is usually lighter than the Sunday-afternoon rush, but check live traffic.</div>
+    </div>
+    <div class="reminder-card">
+      <div class="reminder-icon">🌙</div>
+      <div class="reminder-text"><strong>Pick Sunday evening now</strong>: Fremont + Neon Museum, Mystère, or Sphere. Neon Museum night tours and good show seats sell out.</div>
+    </div>
+    <div class="reminder-card">
+      <div class="reminder-icon">🍜</div>
+      <div class="reminder-text"><strong>Thai ordering tip</strong>: ask for <em>no fish sauce, oyster sauce, shrimp paste or meat stock</em>. Many "vegetarian" Thai dishes use them by default.</div>
+    </div>
+    <div class="reminder-card">
+      <div class="reminder-icon">📶</div>
+      <div class="reminder-text"><strong>Download offline maps</strong>: much of Red Rock has no cell signal.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SCHEDULE ============================== -->
+<section id="tab-schedule" class="tab">
+  <div class="day-strip-wrap"><div class="day-strip" id="dayStrip"></div></div>
+  <div id="day-content"></div>
+</section>
+
+<!-- ============================== DRIVE & STAY ============================== -->
+<section id="tab-drive" class="tab">
+  <div class="card" style="margin-bottom:8px;padding:14px 16px">
+    <div style="font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:2px">Road Trip: Own Car</div>
+    <div style="font-size:11px;color:var(--text2)">Irvine ⇄ Las Vegas via I-15 · ~540 mi round trip · Both cities on Pacific Time</div>
+    <a class="pill-link alt" href="https://www.google.com/maps/dir/?api=1&origin=Irvine%2C+CA&destination=Horseshoe+Las+Vegas&travelmode=driving" target="_blank" rel="noopener">🗺 Irvine → Horseshoe</a>
+    <a class="pill-link alt" href="https://www.google.com/maps/dir/?api=1&origin=Horseshoe+Las+Vegas&destination=Irvine%2C+CA&travelmode=driving" target="_blank" rel="noopener">🗺 Horseshoe → Irvine</a>
+  </div>
+
+  <div class="drive-card">
+    <div class="dh"><span>Outbound · Saturday, Oct 24</span><span class="dstatus">Leave 7:00 AM</span></div>
+    <div class="db">
+      <div class="droute">
+        <div class="dcity"><div class="dcode">IRV</div><div class="dname">Irvine, CA</div><div class="dtime">7:00 AM</div></div>
+        <div class="darrow"><div class="darrow-line"><div class="darrow-car">🚗</div></div><div class="darrow-dur">4.5–6 hrs · I-15 N</div></div>
+        <div class="dcity"><div class="dcode">LAS</div><div class="dname">Las Vegas</div><div class="dtime">~12:30 PM</div></div>
+      </div>
+      <dl class="dmeta">
+        <dt>Stops</dt><dd>Barstow / Baker</dd>
+        <dt>Photo stop</dt><dd>Seven Magic Mountains</dd>
+        <dt>On arrival</dt><dd>Welcome sign</dd>
+        <dt>Before leaving</dt><dd>Fill gas · check I-15</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="drive-card">
+    <div class="dh home"><span>Return · Monday, Oct 26</span><span class="dstatus">Leave by 9 AM</span></div>
+    <div class="db">
+      <div class="droute">
+        <div class="dcity"><div class="dcode">LAS</div><div class="dname">Las Vegas</div><div class="dtime">~9:00 AM</div></div>
+        <div class="darrow"><div class="darrow-line"><div class="darrow-car">🚗</div></div><div class="darrow-dur">4.5–6 hrs · I-15 S</div></div>
+        <div class="dcity"><div class="dcode">IRV</div><div class="dname">Irvine, CA</div><div class="dtime">~1:30–3 PM</div></div>
+      </div>
+      <dl class="dmeta">
+        <dt>Stops</dt><dd>Baker (fuel) / Barstow (lunch)</dd>
+        <dt>Must be back</dt><dd>5:30 PM class</dd>
+        <dt>Eat first</dt><dd>Breakfast before leaving</dd>
+        <dt>Traffic</dt><dd>Weekday morning, check live</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div style="font-family:var(--serif);font-size:18px;font-weight:700;margin:22px 0 12px">🏨 Where You're Staying</div>
+
+  <div class="stay-card">
+    <div class="stay-top">
+      <div class="stay-icon">🐎</div>
+      <div style="flex:1">
+        <div class="stay-name">Horseshoe Las Vegas</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:2px">3645 Las Vegas Blvd S · Central Strip · 2 adults, 1 room</div>
+      </div>
+      <div class="stay-badge">Your Pick</div>
+    </div>
+    <dl class="stay-grid">
+      <dt>Check-in</dt><dd>Sat, Oct 24 (~afternoon)</dd>
+      <dt>Check-out</dt><dd>Mon, Oct 26, early (by ~8:45 AM)</dd>
+      <dt>2-night total</dt><dd>Re-check: was ~$132 for Oct 11–13; a Saturday night usually costs more</dd>
+      <dt>Rating</dt><dd>7.9 / 10 (Booking.com)</dd>
+      <dt>Deposit</dt><dd>~$150 refundable hold</dd>
+      <dt>Cancellation</dt><dd>First night charged if cancelled</dd>
+      <dt>Self-parking</dt><dd>~$20–25/day (not included)</dd>
+      <dt>Location</dt><dd>Across from Bellagio</dd>
+    </dl>
+    <div class="stay-amenities">
+      <span class="amenity">🚭 Smoke-free</span>
+      <span class="amenity">🚶 Walk to Bellagio, Paris, LINQ</span>
+      <span class="amenity">🅿 Self-park garage</span>
+      <span class="amenity">🏊 Pool</span>
+    </div>
+    <div class="stay-note"><strong>Room request at check-in:</strong> non-smoking, renovated/updated tower, away from the elevators. Photo quality varies by tower.</div>
+    <div class="stay-note"><strong>Parking:</strong> park on arrival and walk Saturday evening. Drive Sunday for Red Rock, off-Strip food and Fremont. Ask about in/out privileges and whether the car stays covered through Monday checkout. Booking.com totals usually include the resort fee, so don't count it twice.</div>
+    <div class="stay-note"><strong>Why 2 nights:</strong> one night leaves no room for Red Rock, AREA15 or Fremont. Sunday is usually the cheaper of the two nights.</div>
+    <a class="pill-link" href="https://www.booking.com/hotel/us/bally-s-las-vegas-casino.html?checkin=2026-10-24&checkout=2026-10-26&group_adults=2&no_rooms=1&group_children=0" target="_blank" rel="noopener">🛏 Book 2 nights (Booking.com)</a>
+    <a class="pill-link alt" href="https://www.caesars.com/horseshoe-las-vegas" target="_blank" rel="noopener">Book direct (Caesars)</a>
+    <a class="pill-link desert" href="https://www.google.com/maps/search/?api=1&query=Horseshoe+Las+Vegas" target="_blank" rel="noopener">📍 Map</a>
+  </div>
+
+  <div class="card">
+    <div class="card-kicker">Alternatives Compared (old dates Oct 11–13 · re-check for Oct 24–26)</div>
+    <div class="cmp-row head"><span>Hotel</span><span style="text-align:right">1 night</span><span style="text-align:right">2 nights</span></div>
+    <div class="cmp-row selected"><div class="cmp-name">Horseshoe <span class="sel-badge">Selected</span><small>7.9 · central, smoke-free, clean. Best value.</small></div><span class="cmp-num">~$66</span><span class="cmp-num">~$132</span></div>
+    <div class="cmp-row"><div class="cmp-name">Park MGM<small>8.4 · smoke-free, renovated, Eataly on-site. Nicest alternative.</small></div><span class="cmp-num">~$101</span><span class="cmp-num">~$238</span></div>
+    <div class="cmp-row"><div class="cmp-name">New York-New York<small>8.2 · fun theme, good location, solid reviews.</small></div><span class="cmp-num">~$75</span><span class="cmp-num">~$150</span></div>
+    <div class="cmp-row"><div class="cmp-name">Flamingo<small>7.8 · center Strip, wildlife habitat, classic Vegas.</small></div><span class="cmp-num">~$87</span><span class="cmp-num">~$189</span></div>
+    <div class="cmp-row"><div class="cmp-name">Luxor<small>7.4 · dated rooms, south Strip. Only if price is everything.</small></div><span class="cmp-num">~$61</span><span class="cmp-num">~$130</span></div>
+    <div class="stay-note">Skipped: LINQ (was $372 for the old dates). Superhost Airbnbs ($230–299 for 2 nights) only win if you need a kitchen.</div>
+  </div>
+</section>
+
+<!-- ============================== EXPLORE & EAT ============================== -->
+<section id="tab-explore" class="tab">
+  <div class="explore-section-hdr">🌆 The Strip (walkable from Horseshoe)</div>
+  <div class="exp-card">
+    <div class="exp-emoji">⛲</div>
+    <div>
+      <div class="exp-name">Bellagio Fountains + Conservatory</div>
+      <div class="exp-meta">Across the street · Free</div>
+      <div class="exp-tags"><span class="exp-tag must">Must-See</span><span class="exp-tag free">Free</span><span class="exp-tag night">Evening</span></div>
+      <div class="exp-body">Fountain shows every 15 min after 8 PM (every 30 min earlier). The Conservatory's Fall 2026 display, <em>"Casting Tranquility"</em>, runs through Nov 7. Have a look at the lobby's glass ceiling too.</div>
+      <div class="exp-tip">💡 Best at dusk. Grab a spot along the lake railing.</div>
+      <a class="pill-link alt" href="https://bellagio.mgmresorts.com/en/entertainment/fountains-of-bellagio.html" target="_blank" rel="noopener">Fountain schedule</a>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🗼</div>
+    <div>
+      <div class="exp-name">Paris Las Vegas + Flamingo Wildlife Habitat</div>
+      <div class="exp-meta">Next door to Horseshoe · Free</div>
+      <div class="exp-tags"><span class="exp-tag free">Free</span></div>
+      <div class="exp-body">Eiffel Tower replica photo stop, then real flamingos, koi and turtles in the Flamingo's garden habitat.</div>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🛶</div>
+    <div>
+      <div class="exp-name">The Venetian / Grand Canal Shoppes</div>
+      <div class="exp-meta">~20–25 min walk north · Free to wander</div>
+      <div class="exp-tags"><span class="exp-tag must">Must-See</span><span class="exp-tag free">Free</span></div>
+      <div class="exp-body">Indoor canals, bridges and painted skies. The gondola ride is an optional paid extra. Pair it with the Wynn's gardens if you have energy left.</div>
+      <div class="exp-tip">💡 Longer walk with pedestrian bridges. Take a ride if you're tired.</div>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🎡</div>
+    <div>
+      <div class="exp-name">High Roller (LINQ Promenade)</div>
+      <div class="exp-meta">~10 min walk · $22–51 per person</div>
+      <div class="exp-tags"><span class="exp-tag paid">Paid</span><span class="exp-tag night">Sunset</span></div>
+      <div class="exp-body">550-ft observation wheel, one 30-min rotation. Best at sunset (~5:50 PM in late October).</div>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🔮</div>
+    <div>
+      <div class="exp-name">Sphere: <em>The Wizard of Oz</em></div>
+      <div class="exp-meta">Behind the Venetian · ~$89–114 per person · Shows at 2, 5, 8 PM</div>
+      <div class="exp-tags"><span class="exp-tag paid">Splurge</span><span class="exp-tag night">Evening</span></div>
+      <div class="exp-body">Immersive 4D film on the giant interior screen. This is the non-casino splurge pick. Even from outside, the Sphere's exterior is a show after dark.</div>
+      <a class="pill-link alt" href="https://www.thesphere.com/shows/calendar" target="_blank" rel="noopener">Sphere calendar</a>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🎪</div>
+    <div>
+      <div class="exp-name">Mystère (Cirque du Soleil)</div>
+      <div class="exp-meta">Treasure Island · evening shows (check Sunday times) · roughly half the Sphere's price</div>
+      <div class="exp-tags"><span class="exp-tag paid">Show</span><span class="exp-tag night">Evening</span></div>
+      <div class="exp-body">Classic Cirque acrobatics. An early show leaves time for a late slice at Secret Pizza afterwards.</div>
+      <a class="pill-link alt" href="https://www.cirquedusoleil.com/mystere" target="_blank" rel="noopener">Mystère tickets</a>
+    </div>
+  </div>
+
+  <div class="explore-section-hdr">🏜 Beyond the Strip (car needed)</div>
+  <div class="exp-card">
+    <div class="exp-emoji">🏜</div>
+    <div>
+      <div class="exp-name">Red Rock Canyon National Conservation Area</div>
+      <div class="exp-meta">~30–45 min west · $20/vehicle + $2 reservation · Loop open 6 AM–7 PM in October</div>
+      <div class="exp-tags"><span class="exp-tag must">Must-Go</span><span class="exp-tag drive">Drive</span></div>
+      <div class="exp-body">13-mile one-way scenic drive past red and cream sandstone. Good short stops: Calico I &amp; II viewpoints, the Sandstone Quarry walk, and High Point Overlook. October light is ideal.</div>
+      <div class="exp-tip">⚠ Timed entry required 8 AM–5 PM. No cell signal in much of the park, so download maps first.</div>
+      <a class="pill-link desert" href="https://www.recreation.gov/timed-entry/10075177" target="_blank" rel="noopener">Reserve timed entry</a>
+      <a class="pill-link alt" href="https://www.redrockcanyonlv.org/fall-hours-programs-safety/" target="_blank" rel="noopener">Fall hours</a>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🛒</div>
+    <div>
+      <div class="exp-name">AREA15 / Meow Wolf's Omega Mart</div>
+      <div class="exp-meta">~10 min drive · Omega Mart ~$45 per person · AREA15 building free</div>
+      <div class="exp-tags"><span class="exp-tag paid">Paid</span><span class="exp-tag drive">Drive</span></div>
+      <div class="exp-body">A surreal "grocery store" that opens into hidden immersive art worlds. A favorite stop for people who don't gamble. Allow 2 hrs.</div>
+      <a class="pill-link alt" href="https://meowwolf.com/visit/las-vegas" target="_blank" rel="noopener">Omega Mart</a>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🌟</div>
+    <div>
+      <div class="exp-name">Fremont Street Experience</div>
+      <div class="exp-meta">Downtown · ~15 min drive or Deuce bus · Free</div>
+      <div class="exp-tags"><span class="exp-tag must">Must-See</span><span class="exp-tag free">Free</span><span class="exp-tag night">Night</span></div>
+      <div class="exp-body">Huge LED canopy light shows on the hour, street performers and old-Vegas casinos. Calmer earlier in the evening. Use a paid garage.</div>
+      <a class="pill-link alt" href="https://www.google.com/maps/dir/?api=1&origin=Horseshoe+Las+Vegas&destination=Fremont+Street+Experience&travelmode=driving" target="_blank" rel="noopener">Directions</a>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">💡</div>
+    <div>
+      <div class="exp-name">Neon Museum: Night Tour</div>
+      <div class="exp-meta">Near downtown · $28–35 per person · Reserve ahead</div>
+      <div class="exp-tags"><span class="exp-tag paid">Paid</span><span class="exp-tag night">Night</span></div>
+      <div class="exp-body">The "Neon Boneyard" of restored vintage Vegas signs, lit up after dark. Pairs well with Fremont.</div>
+      <div class="exp-tip">⚠ Evening slots sell out. If you're doing the 8 PM Sphere show, skip Fremont that night.</div>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🪨</div>
+    <div>
+      <div class="exp-name">Seven Magic Mountains</div>
+      <div class="exp-meta">Off I-15 south of the city · Free · 15 min</div>
+      <div class="exp-tags"><span class="exp-tag free">Free</span><span class="exp-tag drive">On the way</span></div>
+      <div class="exp-body">Seven towers of neon-painted boulders in the desert. A quick photo stop on the drive in.</div>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🍫</div>
+    <div>
+      <div class="exp-name">Ethel M Chocolate Factory</div>
+      <div class="exp-meta">Henderson · Free self-guided tour · ~1 hr</div>
+      <div class="exp-tags"><span class="exp-tag free">Free</span><span class="exp-tag drive">Optional</span></div>
+      <div class="exp-body">Factory windows, free samples and a large botanical cactus garden. In Henderson, so it only fits on Saturday or Sunday, not the tight Monday drive home.</div>
+    </div>
+  </div>
+
+  <div class="explore-section-hdr">🍛 Indian</div>
+  <div class="exp-card">
+    <div class="exp-emoji">🥘</div>
+    <div>
+      <div class="exp-name">Mint Indian Bistro</div>
+      <div class="exp-meta">Flamingo Rd, off-Strip · Best all-round veg/vegan pick</div>
+      <div class="exp-tags"><span class="exp-tag must">Top Pick</span><span class="exp-tag veg">Veg / Vegan</span></div>
+      <div class="exp-body">Dosa, paneer curries, malai kofta. The lunch thali is the best value. Locals' favorite.</div>
+      <a class="pill-link alt" href="https://www.mintbistro.com/locations/flamingo-las-vegas/" target="_blank" rel="noopener">Menu</a>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🍲</div>
+    <div>
+      <div class="exp-name">Marigold Fine Indian Cuisine</div>
+      <div class="exp-meta">Off-Strip · Chaat + Indo-Chinese</div>
+      <div class="exp-tags"><span class="exp-tag veg">Veg-friendly</span></div>
+      <div class="exp-body">Something different from the usual curries. Verify hours before driving over.</div>
+      <a class="pill-link alt" href="https://www.marigoldindianlv.com/menu" target="_blank" rel="noopener">Menu</a>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🍛</div>
+    <div>
+      <div class="exp-name">Tamba · India Palace · Saffron the Vegetarian Eatery</div>
+      <div class="exp-meta">Tamba is on-Strip near MGM · the others are solid backups</div>
+      <div class="exp-tags"><span class="exp-tag veg">Veg-friendly</span></div>
+      <div class="exp-body">Saffron is fully vegetarian. Tamba is the easy pick if you want to stay on the Strip for dinner.</div>
+    </div>
+  </div>
+
+  <div class="explore-section-hdr">🍜 Thai</div>
+  <div class="exp-card">
+    <div class="exp-emoji">🏆</div>
+    <div>
+      <div class="exp-name">Lotus of Siam</div>
+      <div class="exp-meta">The destination Thai meal of the trip · James Beard recognized</div>
+      <div class="exp-tags"><span class="exp-tag must">Must-Eat</span><span class="exp-tag veg">Strong veg options</span></div>
+      <div class="exp-body">Go off-peak to avoid the line. Ask for tofu versions of the house specialties.</div>
+      <div class="exp-tip">🙏 Ask for no fish sauce, oyster sauce, shrimp paste or meat stock.</div>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🍲</div>
+    <div>
+      <div class="exp-name">Komol · Le Thai · Sen Thai Noodle</div>
+      <div class="exp-meta">Komol has a huge veg menu · Le Thai is downtown on Fremont</div>
+      <div class="exp-tags"><span class="exp-tag veg">Veg-friendly</span></div>
+      <div class="exp-body">Le Thai is the natural dinner before Fremont Street. Sen Thai has good tofu and vegetable noodle dishes.</div>
+    </div>
+  </div>
+
+  <div class="explore-section-hdr">🍕 Pizza &amp; Plant-Based</div>
+  <div class="exp-card">
+    <div class="exp-emoji">🤫</div>
+    <div>
+      <div class="exp-name">Secret Pizza</div>
+      <div class="exp-meta">Cosmopolitan, 3rd floor · unmarked hallway · open late</div>
+      <div class="exp-tags"><span class="exp-tag night">Late-night</span><span class="exp-tag veg">Cheese / veg slices</span></div>
+      <div class="exp-body">One slice is a meal. Look for the hallway lined with record covers.</div>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🍕</div>
+    <div>
+      <div class="exp-name">Pizza Rock · Settebello · PizzaCake by Buddy V</div>
+      <div class="exp-meta">Pizza Rock is downtown · Settebello is Neapolitan · PizzaCake is at Harrah's</div>
+      <div class="exp-tags"><span class="exp-tag veg">Margherita / veg</span></div>
+      <div class="exp-body">Pizza Rock is convenient before Fremont. PizzaCake is a quick stop near the hotel.</div>
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-emoji">🌱</div>
+    <div>
+      <div class="exp-name">Crossroads Kitchen</div>
+      <div class="exp-meta">Resorts World · Upscale, fully vegan</div>
+      <div class="exp-tags"><span class="exp-tag paid">Splurge</span><span class="exp-tag veg">Vegan</span></div>
+      <div class="exp-body">The treat-night pick if you want one nice dinner out ♡</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== WEATHER ============================== -->
+<section id="tab-weather" class="tab">
+  <h2 style="font-family:var(--serif);margin-bottom:16px">Weather Forecast</h2>
+  <div class="weather-grid" id="weatherGrid"></div>
+  <div id="packCard"></div>
+</section>
+
+<!-- ============================== CHECKLIST ============================== -->
+<section id="tab-checklist" class="tab">
+  <div class="prog-wrap">
+    <div class="prog-lbl"><span>Prep Progress</span><span id="prog-pct">0%</span></div>
+    <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+  </div>
+  <div class="card" id="checklist-container"></div>
+  <div style="font-size:11px;color:var(--text3);text-align:center">Tap an item to tick it off. Saved on this device.</div>
+</section>
+
+<!-- ============================== BUDGET ============================== -->
+<section id="tab-budget" class="tab">
+  <div class="btotal">
+    <div class="btotal-lbl">Estimated Total for Two</div>
+    <div class="btotal-amt" id="budget-total">—</div>
+    <div class="btotal-sub" id="budget-sub">Base trip + the extras ticked below · Prices checked Oct 10, 2026</div>
+  </div>
+  <div class="budget-section">
+    <div class="budget-section-hdr" style="color:var(--neon-dark)">🚗 Base Trip</div>
+    <div id="budget-base"></div>
+  </div>
+  <div class="budget-section">
+    <div class="budget-section-hdr" style="color:var(--gold)">🎟 Optional Extras</div>
+    <div id="budget-addons"></div>
+  </div>
+  <div class="card" style="background:var(--violet-light);border-color:var(--violet)">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--violet);margin-bottom:8px">Budget Notes</div>
+    <div style="font-size:12px;color:var(--text);line-height:1.7">
+      • Omega Mart and a show are alternatives, not both. Changing the Sunday plan in the Schedule tab updates these ticks.<br>
+      • Hotel range is an estimate for the new dates (the old Sun–Mon rate was $132 incl. tax + resort fee). Update it once booked.<br>
+      • No gambling or shopping is included. If you play, set a small fixed amount and stop there.
+    </div>
+  </div>
+</section>
+
+<script>
+// ── SAFE DOM HELPERS ────────────────────────────────────────────────
+function setHTML(el, html) {
+  if (typeof el === 'string') el = document.getElementById(el);
+  if (el) el.innerHTML = html;
+}
+function cToF(c) { return Math.round(c * 9 / 5 + 32); }
+
+// localStorage can throw (private mode, blocked storage); treat failures as "no saved state".
+function loadState(key, fallback) {
+  try {
+    var raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch (err) { return fallback; }
+}
+function saveState(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch (err) { /* ignore */ }
+}
+
+// ── WEATHER DATA & API ──────────────────────────────────────────────
+var WEATHER_CITIES = [
+  {city:'Las Vegas Strip', lat:36.12, lon:-115.17, avgLow:15, avgHigh:27, avgLowF:59, avgHighF:80},
+  {city:'Red Rock Canyon', lat:36.14, lon:-115.43, avgLow:12, avgHigh:24, avgLowF:54, avgHighF:75},
+  {city:'Downtown / Fremont', lat:36.17, lon:-115.14, avgLow:15, avgHigh:27, avgLowF:59, avgHighF:80},
+  {city:'Baker, CA (I-15)', lat:35.27, lon:-116.07, avgLow:14, avgHigh:29, avgLowF:57, avgHighF:84},
+  {city:'Irvine, CA', lat:33.68, lon:-117.83, avgLow:14, avgHigh:25, avgLowF:57, avgHighF:77},
+];
+
+var COORDS = {
+  'Red Rock':{lat:36.14,lon:-115.43},'Fremont':{lat:36.17,lon:-115.14},
+  'Las Vegas':{lat:36.12,lon:-115.17},'Strip':{lat:36.12,lon:-115.17},
+  'Irvine':{lat:33.68,lon:-117.83},'Baker':{lat:35.27,lon:-116.07},
+};
+
+var weatherCache = {};
+var WMO_CODES = {
+  0:'☀️ Clear',1:'🌤️ Mostly Clear',2:'⛅ Partly Cloudy',3:'☁️ Overcast',
+  45:'🌫️ Foggy',48:'🌫️ Fog',51:'🌦️ Light Drizzle',53:'🌦️ Drizzle',55:'🌧️ Heavy Drizzle',
+  61:'🌧️ Light Rain',63:'🌧️ Rain',65:'🌧️ Heavy Rain',71:'🌨️ Light Snow',73:'🌨️ Snow',
+  75:'🌨️ Heavy Snow',80:'🌧️ Showers',81:'🌧️ Heavy Showers',82:'⛈️ Violent Showers',
+  95:'⛈️ Thunderstorm',96:'⛈️ Hail Storm',99:'⛈️ Severe Storm'
+};
+
+function isForecastDateInRange(dateStr) {
+  var target = new Date(dateStr + 'T00:00:00');
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  var diffDays = Math.round((target - today) / 86400000);
+  return diffDays >= 0 && diffDays <= 15;
+}
+
+function fetchWeather(lat, lon, dateStr) {
+  if (!isForecastDateInRange(dateStr)) return Promise.resolve(null);
+  var key = lat + ',' + lon + ',' + dateStr;
+  if (weatherCache[key]) return Promise.resolve(weatherCache[key]);
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_probability_max&start_date=' + dateStr + '&end_date=' + dateStr + '&temperature_unit=celsius&timezone=America%2FLos_Angeles';
+  return fetch(url).then(function(r) {
+    if (!r.ok) return null;
+    return r.json();
+  }).then(function(d) {
+    if (!d || !d.daily || !d.daily.time || d.daily.time.length === 0) return null;
+    var result = {
+      high: Math.round(d.daily.temperature_2m_max[0]),
+      low: Math.round(d.daily.temperature_2m_min[0]),
+      code: d.daily.weathercode[0],
+      precip: d.daily.precipitation_probability_max ? d.daily.precipitation_probability_max[0] : null,
+      desc: WMO_CODES[d.daily.weathercode[0]] || 'Weather data'
+    };
+    weatherCache[key] = result;
+    return result;
+  }).catch(function() { return null; });
+}
+
+function fetchWeatherSimple(lat, lon) {
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&daily=temperature_2m_max,temperature_2m_min,weathercode&current=temperature_2m&temperature_unit=celsius&timezone=America%2FLos_Angeles&forecast_days=1';
+  return fetch(url).then(function(r) {
+    if (!r.ok) return null;
+    return r.json();
+  }).then(function(d) {
+    if (!d || !d.daily || !d.daily.time || d.daily.time.length === 0) return null;
+    return {
+      current: d.current && typeof d.current.temperature_2m === 'number' ? Math.round(d.current.temperature_2m) : null,
+      high: Math.round(d.daily.temperature_2m_max[0]),
+      low: Math.round(d.daily.temperature_2m_min[0]),
+      code: d.daily.weathercode[0],
+      desc: WMO_CODES[d.daily.weathercode[0]] || 'Weather data'
+    };
+  }).catch(function() { return null; });
+}
+
+function getLocationCoords(locStr) {
+  var keys = Object.keys(COORDS);
+  for (var i = 0; i < keys.length; i++) {
+    if (locStr.toLowerCase().indexOf(keys[i].toLowerCase()) !== -1) return COORDS[keys[i]];
+  }
+  return null;
+}
+
+// ── BANNER / COUNTDOWN ──────────────────────────────────────────────
+var TRIP_START = new Date('2026-10-24T07:00:00');
+var TRIP_END   = new Date('2026-10-26T15:00:00');
+function pad2(n) { return n < 10 ? '0' + n : '' + n; }
+
+function updateBanner() {
+  var now = new Date();
+  var labelEl = document.getElementById('countdown-label');
+  var numsEl = document.getElementById('countdown-nums');
+  var statusEl = document.getElementById('status-line');
+
+  document.getElementById('banner-dt').textContent =
+    now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'})
+    + ' • ' + now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+
+  if (now < TRIP_START) {
+    var diff = TRIP_START - now;
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    labelEl.textContent = '🚗 Wheels up for Vegas in';
+    numsEl.textContent = d + 'd : ' + pad2(h) + 'h : ' + pad2(m) + 'm : ' + pad2(s) + 's';
+    setHTML(statusEl, '<span class="pulse"></span> Irvine → Las Vegas ♡');
+  } else if (now <= TRIP_END) {
+    var startDay = new Date(TRIP_START); startDay.setHours(0, 0, 0, 0);
+    var dayNum = Math.floor((now - startDay) / 86400000) + 1;
+    labelEl.textContent = '';
+    numsEl.textContent = '';
+    setHTML(statusEl, '<span class="pulse"></span> <strong style="font-size:20px">Day ' + dayNum + ' in Vegas! ♡</strong>');
+  } else {
+    labelEl.textContent = '';
+    numsEl.textContent = '';
+    statusEl.textContent = '♡ Vegas memories — what a trip!';
+  }
+}
+updateBanner();
+setInterval(updateBanner, 1000);
+
+// ── SCHEDULE DATA ───────────────────────────────────────────────────
+var SUNDAY_PLANS = {
+  balanced: {
+    label:'⚖️ Balanced', addons:['highroller','neon'],
+    desc:'Red Rock, lunch, rest, High Roller at sunset, then Fremont Street + Neon Museum. Cheapest option, no show needed.',
+  },
+  art: {
+    label:'🎨 Art', addons:['omega'],
+    desc:'Red Rock, lunch, Omega Mart / AREA15, rest, then Fremont. No paid show, to avoid overload.',
+  },
+  show: {
+    label:'🎪 Show Night', addons:['show'],
+    desc:'Red Rock, lunch, hotel break, early dinner, then Mystère or Sphere (check Sunday showtimes). Skip Fremont tonight.',
+  },
+  rain: {
+    label:'☔ Bad Weather', addons:['omega','highroller'],
+    desc:'Swap Red Rock for an indoor day: AREA15, the Venetian, Wynn, LINQ Promenade and the High Roller.',
+  },
+};
+
+var SUNDAY_MORNING = [
+  {t:'8:00 AM', badge:'meal', title:'Breakfast + grab the car', loc:'Horseshoe, Las Vegas Strip', det:'Fill water bottles, sunscreen, hats. Offline maps downloaded.'},
+  {t:'8:45 AM', badge:'drive', title:'Drive to Red Rock Canyon', loc:'Horseshoe → Red Rock Canyon (~30–45 min)', det:'Weekend crowds build by late morning, so don\'t miss your entry slot. <a href="https://www.google.com/maps/dir/?api=1&origin=Horseshoe+Las+Vegas&destination=Red+Rock+Canyon+Scenic+Drive&travelmode=driving" target="_blank" rel="noopener">Directions</a>'},
+  {t:'9:30 AM–12', badge:'nature', title:'Red Rock Canyon Scenic Drive 🏜', loc:'Red Rock Canyon NCA', det:'13-mile one-way loop: Calico viewpoints, Sandstone Quarry, High Point Overlook. Short walks only, no big hike needed.', note:'🎫 Timed entry required: show your Recreation.gov reservation'},
+  {t:'12:30 PM', badge:'meal', title:'Lunch: Lotus of Siam', loc:'Off-Strip, Las Vegas', det:'The destination Thai meal. Off-peak is better. Ask for no fish sauce, oyster sauce, shrimp paste or meat stock.'},
+];
+
+var SUNDAY_REST = {
+  balanced: [
+    {t:'2:00 PM', badge:'hotel', title:'Hotel break / pool', loc:'Horseshoe, Las Vegas Strip', det:'Recharge after the desert morning.'},
+    {t:'4:00 PM', badge:'explore', title:'Light shopping: Forum Shops or LINQ Promenade', loc:'Las Vegas Strip', det:'Walkable from Horseshoe.'},
+    {t:'~5:20 PM', badge:'explore', title:'High Roller at sunset 🎡', loc:'LINQ Promenade, Las Vegas Strip', det:'$22–51 pp · 30-min rotation · sunset ~5:50 PM.'},
+    {t:'7:00 PM', badge:'meal', title:'Dinner downtown: Le Thai or Pizza Rock', loc:'Fremont, downtown Las Vegas', det:'Drive downtown and park in a paid garage.'},
+    {t:'8:00 PM', badge:'night', title:'Fremont Street Experience 🌟', loc:'Fremont Street, downtown', det:'Free LED canopy shows on the hour, street performers, old Vegas.'},
+    {t:'9:00 PM', badge:'night', title:'Neon Museum night tour', loc:'Neon Museum, near Fremont', det:'$28–35 pp. Reserve ahead, because evening slots sell out.'},
+    {t:'10:30 PM', badge:'hotel', title:'Back to Horseshoe + pack', loc:'Las Vegas Strip', det:'Pack tonight so Monday morning is quick.'},
+  ],
+  art: [
+    {t:'1:30–3:30 PM', badge:'explore', title:'AREA15 / Omega Mart 🛒', loc:'AREA15, Las Vegas', det:'Meow Wolf immersive art. ~$45 pp for Omega Mart, and the rest of AREA15 is free to wander.'},
+    {t:'3:30 PM', badge:'hotel', title:'Hotel break / pool', loc:'Horseshoe, Las Vegas Strip', det:'Rest before the evening.'},
+    {t:'5:30 PM', badge:'meal', title:'Early dinner downtown: Le Thai or Pizza Rock', loc:'Fremont, downtown Las Vegas', det:''},
+    {t:'7:00 PM', badge:'night', title:'Fremont Street Experience 🌟', loc:'Fremont Street, downtown', det:'Free. Calmer earlier in the evening.'},
+    {t:'10:00 PM', badge:'hotel', title:'Back to Horseshoe + pack', loc:'Las Vegas Strip', det:'Pack tonight so Monday morning is quick.'},
+  ],
+  show: [
+    {t:'2:00 PM', badge:'hotel', title:'Hotel break / pool', loc:'Horseshoe, Las Vegas Strip', det:'Save energy for the show.'},
+    {t:'4:00 PM', badge:'explore', title:'Light stroll: Forum Shops / Caesars', loc:'Las Vegas Strip', det:''},
+    {t:'5:00 PM', badge:'meal', title:'Early dinner: Mint Indian Bistro or Tamba', loc:'Las Vegas Strip', det:'Leave time to get to the show.'},
+    {t:'Evening', badge:'show', title:'Mystère · or · Sphere Wizard of Oz', loc:'Treasure Island / Sphere, Las Vegas Strip', det:'Choose one, check Sunday showtimes and buy tickets ahead. Mystère is roughly half the Sphere\'s price.'},
+    {t:'Late', badge:'meal', title:'Optional: Secret Pizza 🍕', loc:'Cosmopolitan 3rd floor, Las Vegas Strip', det:'Unmarked spot, open late.'},
+  ],
+  rain: [
+    {t:'1:30–3:30 PM', badge:'explore', title:'AREA15 / Omega Mart', loc:'AREA15, Las Vegas', det:'Indoor immersive art.'},
+    {t:'4:00 PM', badge:'explore', title:'Venetian + Wynn walk', loc:'Las Vegas Strip', det:'Canals, Wynn atrium and gardens.'},
+    {t:'~5:20 PM', badge:'explore', title:'High Roller', loc:'LINQ Promenade, Las Vegas Strip', det:'Enclosed cabins, so it works in any weather.'},
+    {t:'7:00 PM', badge:'meal', title:'Dinner: Mint Indian Bistro or Komol', loc:'Las Vegas', det:''},
+    {t:'Late', badge:'meal', title:'Optional: Secret Pizza', loc:'Cosmopolitan 3rd floor, Las Vegas Strip', det:''},
+  ],
+};
+
+var DAYS = [
+  {date:'2026-10-24', dayOfWeek:'Sat', title:'Drive In + Strip Walk', loc:'Irvine → Las Vegas Strip',
+   hotel:'Horseshoe Las Vegas (check-in ~2:30–3 PM)',
+   acts:[
+     {t:'7:00 AM', badge:'drive', title:'Leave Irvine 🚗', loc:'Irvine, CA → I-15 N', det:'Fill gas before leaving. Allow 4.5–6 hrs for Saturday-morning traffic. <a href="https://www.google.com/maps/dir/?api=1&origin=Irvine%2C+CA&destination=Horseshoe+Las+Vegas&travelmode=driving" target="_blank" rel="noopener">Directions</a>'},
+     {t:'~9:30 AM', badge:'drive', title:'Fuel / coffee stop', loc:'Barstow or Baker, CA', det:'Depending on traffic and progress.'},
+     {t:'~12:00 PM', badge:'explore', title:'Seven Magic Mountains 🪨', loc:'Off I-15, south of Las Vegas', det:'Free 15-min photo stop just before the city.'},
+     {t:'~12:30 PM', badge:'explore', title:'Welcome to Fabulous Las Vegas sign', loc:'South end of the Las Vegas Strip', det:'Free classic photo. Easiest on arrival, with a short parking lot stop. Expect a small line.'},
+     {t:'1:00 PM', badge:'meal', title:'Lunch: Mint Indian Bistro', loc:'Flamingo Rd, Las Vegas', det:'Dosa, paneer, malai kofta. The lunch thali is the value play. Or grab something quick on the Strip.'},
+     {t:'~2:30 PM', badge:'hotel', title:'Check in at Horseshoe 🐎', loc:'3645 Las Vegas Blvd S, Strip', det:'Park once, because tonight is all walking. If the room isn\'t ready, leave bags with bell services. Ask for a renovated tower, non-smoking, away from the elevators.'},
+     {t:'3:30 PM', badge:'explore', title:'Bellagio Conservatory 🌸', loc:'Bellagio, Las Vegas Strip', det:'Free. Fall 2026 display "Casting Tranquility" runs through Nov 7. Have a look at the lobby too.'},
+     {t:'4:30 PM', badge:'explore', title:'Paris Eiffel Tower + Flamingo Wildlife Habitat', loc:'Paris / Flamingo, Las Vegas Strip', det:'Photo stops right next to Horseshoe. Free flamingos ♡'},
+     {t:'5:15 PM', badge:'explore', title:'The Venetian / Grand Canal Shoppes 🛶', loc:'Venetian, Las Vegas Strip', det:'Canals and bridges. The gondola is an optional paid extra. It\'s a longer walk, so take a ride if tired.'},
+     {t:'6:30 PM', badge:'meal', title:'Dinner: Tamba (on-Strip) or Mint', loc:'Las Vegas Strip', det:'Or casual pizza nearby. Keep it close if you\'re walking.'},
+     {t:'8:15 PM', badge:'night', title:'Bellagio Fountains after dark ⛲', loc:'Bellagio lake, Las Vegas Strip', det:'Every 15 min after 8 PM. Free.'},
+     {t:'9:00 PM', badge:'optional', title:'People-watch a casino floor · or · Sphere splurge', loc:'Bellagio / Caesars / Sphere, Las Vegas Strip', det:'Wander Bellagio or Caesars just to look around (set a small fixed limit or skip gambling entirely), or see The Wizard of Oz 4D film at Sphere (~$89–114 pp).'},
+     {t:'10:00 PM', badge:'hotel', title:'Back to the room', loc:'Horseshoe, Las Vegas Strip', det:'Rest up for the full day Sunday.'},
+   ]},
+  {date:'2026-10-25', dayOfWeek:'Sun', title:'Desert + Downtown', loc:'Red Rock Canyon + Las Vegas',
+   hotel:'Horseshoe Las Vegas',
+   variants:true},
+  {date:'2026-10-26', dayOfWeek:'Mon', title:'Early Start + Drive Home', loc:'Las Vegas → Irvine',
+   hotel:'Home sweet home', alert:'🎓 Class at 5:30 PM: leave Vegas by 9 AM',
+   acts:[
+     {t:'7:30 AM', badge:'meal', title:'Quick breakfast', loc:'Horseshoe, Las Vegas Strip', det:'Bags packed last night. Grab coffee and something to eat on the way out.'},
+     {t:'8:30 AM', badge:'hotel', title:'Check out + get the car', loc:'Horseshoe, Las Vegas Strip', det:'Use express checkout. Confirm the garage charge.'},
+     {t:'~8:45 AM', badge:'optional', title:'Welcome sign (if skipped Saturday)', loc:'South end of the Las Vegas Strip', det:'On the way to I-15 and quiet this early. Skip it if you\'re running late.'},
+     {t:'9:00 AM', badge:'drive', title:'Drive home to Irvine 🚗', loc:'Las Vegas → I-15 S → Irvine', det:'4.5–6 hrs. Check live I-15 traffic first. <a href="https://www.google.com/maps/dir/?api=1&origin=Horseshoe+Las+Vegas&destination=Irvine%2C+CA&travelmode=driving" target="_blank" rel="noopener">Directions</a>'},
+     {t:'~10:30 AM', badge:'drive', title:'Stop: Baker (fuel) or Barstow (early lunch)', loc:'Baker, CA', det:'Keep stops short to protect the buffer before class.'},
+     {t:'~1:30–3 PM', badge:'hotel', title:'Home in Irvine 🏠', loc:'Irvine, CA', det:'Time to unpack and get to the 5:30 PM class. What a trip! ♡'},
+   ]},
+];
+
+var sundayPlan = loadState('vegas-sunday-plan', 'balanced');
+if (!SUNDAY_PLANS[sundayPlan]) sundayPlan = 'balanced';
+
+function getDayActs(day) {
+  if (!day.variants) return day.acts;
+  var rest = SUNDAY_REST[sundayPlan];
+  if (sundayPlan === 'rain') {
+    return [
+      {t:'8:30 AM', badge:'meal', title:'Slow breakfast', loc:'Horseshoe, Las Vegas Strip', det:'Red Rock is off today: it\'s weather-dependent, and the reservation may not be usable.'},
+      {t:'12:30 PM', badge:'meal', title:'Lunch: Lotus of Siam', loc:'Off-Strip, Las Vegas', det:'Ask for no fish sauce, oyster sauce, shrimp paste or meat stock.'},
+    ].concat(rest);
+  }
+  return SUNDAY_MORNING.concat(rest);
+}
+
+var currentDayIdx = 0;
+
+// ── NEXT UP FOCUS CARD ─────────────────────────────────────────────
+function getNearestDayIdx() {
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+  var bestIdx = 0, bestScore = Infinity;
+  for (var i = 0; i < DAYS.length; i++) {
+    var diffDays = Math.round((new Date(DAYS[i].date + 'T00:00:00') - now) / 86400000);
+    var score = diffDays < 0 ? Math.abs(diffDays) + 1000 : diffDays;
+    if (score < bestScore) { bestScore = score; bestIdx = i; }
+  }
+  return bestIdx;
+}
+
+function getDiffDays(dateStr) {
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+  return Math.round((new Date(dateStr + 'T00:00:00') - now) / 86400000);
+}
+
+function renderFocusCard() {
+  var day = DAYS[getNearestDayIdx()];
+  var diff = getDiffDays(day.date);
+  var label = diff === 0 ? 'Today on the trip' : diff > 0 ? (diff === 1 ? 'Next up tomorrow' : 'Next up in ' + diff + ' days') : 'Most recent trip day';
+  var dateLabel = new Date(day.date + 'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+  var acts = getDayActs(day);
+
+  var html = '<div class="focus-card">';
+  html += '<div class="focus-kicker">' + label + '</div>';
+  html += '<div class="focus-title">' + day.title + '</div>';
+  html += '<div class="focus-meta">';
+  html += '<span class="focus-pill date">' + dateLabel + '</span>';
+  html += '<span class="focus-pill loc">📍 ' + day.loc + '</span>';
+  html += '</div>';
+  if (day.hotel) html += '<div class="focus-note">🏨 ' + day.hotel + '</div>';
+  html += '<div class="focus-acts">';
+  var max = Math.min(acts.length, 3);
+  for (var i = 0; i < max; i++) {
+    html += '<div class="focus-act"><span class="focus-act-time">' + acts[i].t + '</span><span class="focus-act-title">' + acts[i].title + '</span></div>';
+  }
+  if (acts.length > 3) {
+    html += '<div style="font-size:11px;color:var(--text3);text-align:center;padding:2px 0">+ ' + (acts.length - 3) + ' more → Schedule tab</div>';
+  }
+  html += '</div></div>';
+  setHTML('focusCard', html);
+}
+
+// ── OVERVIEW TIMELINE ───────────────────────────────────────────────
+function renderOverviewTimeline() {
+  var milestones = [
+    {date:'2026-10-24',title:'Leave Irvine at 7 AM',sub:'I-15 N · Barstow/Baker stop · Seven Magic Mountains',icon:'🚗',dot:'violet'},
+    {date:'2026-10-24',title:'Check in at Horseshoe',sub:'~2:30–3 PM · park once, walk the Strip',icon:'🐎',dot:'neon',badge:'Book',badgeCls:'pending'},
+    {date:'2026-10-24',title:'Bellagio Fountains after dark',sub:'Conservatory → Paris → Venetian → fountains',icon:'⛲',dot:'sky'},
+    {date:'2026-10-25',title:'Red Rock Canyon',sub:'Timed entry ~9:30–10 AM · 13-mile scenic loop',icon:'🏜',dot:'desert',badge:'Reserve',badgeCls:'pending'},
+    {date:'2026-10-25',title:'Lotus of Siam lunch',sub:'Off-peak · veg Thai, no fish sauce',icon:'🍜',dot:'gold'},
+    {date:'2026-10-25',title:'Evening: Fremont, a show, or AREA15',sub:'Pick one, not all three',icon:'🌟',dot:'neon'},
+    {date:'2026-10-26',title:'Check out early, drive home',sub:'Leave by 9 AM · home ~1:30–3 PM · class 5:30 PM',icon:'🏠',dot:'violet'},
+  ];
+  var html = '';
+  for (var i = 0; i < milestones.length; i++) {
+    var m = milestones[i];
+    var dateLabel = new Date(m.date + 'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+    html += '<div class="tl2-item">';
+    html += '<div class="tl2-dot ' + m.dot + '">' + m.icon + '</div>';
+    html += '<div class="tl2-content">';
+    html += '<div class="tl2-date">' + dateLabel + '</div>';
+    html += '<div class="tl2-title">' + m.title;
+    if (m.badge) html += ' <span class="tl2-badge ' + (m.badgeCls || '') + '">' + m.badge + '</span>';
+    html += '</div>';
+    html += '<div class="tl2-sub">' + m.sub + '</div>';
+    html += '</div></div>';
+  }
+  setHTML('overviewTimeline', html);
+}
+
+// ── SCHEDULE RENDERING ──────────────────────────────────────────────
+function buildScheduleHash(dateStr) {
+  return '#schedule/' + dateStr;
+}
+
+function updateScheduleHash() {
+  history.replaceState(null, '', buildScheduleHash(DAYS[currentDayIdx].date));
+}
+
+function renderDayStrip() {
+  var html = '';
+  for (var j = 0; j < DAYS.length; j++) {
+    var d = DAYS[j];
+    var diff = getDiffDays(d.date);
+    var classes = [];
+    if (j === currentDayIdx) classes.push('active');
+    if (diff === 0) classes.push('today');
+    if (diff < 0) classes.push('past');
+    html += '<button type="button" class="day-chip ' + classes.join(' ') + '" data-idx="' + j + '">' +
+      '<div class="dc-day">' + d.dayOfWeek + ' · Day ' + (j + 1) + '</div>' +
+      '<div class="dc-n">' + parseInt(d.date.split('-')[2], 10) + '</div>' +
+      '<div class="dc-mo">Oct</div></button>';
+  }
+  setHTML('dayStrip', html);
+}
+
+function getRelativeLabel(dateStr) {
+  var diff = getDiffDays(dateStr);
+  if (diff === 0) return 'Today';
+  if (diff === 1) return 'Tomorrow';
+  if (diff === -1) return 'Yesterday';
+  if (diff > 1) return 'Coming up in ' + diff + ' days';
+  return Math.abs(diff) + ' days ago';
+}
+
+function renderPlanPicker() {
+  var html = '<div class="plan-picker"><div class="plan-picker-lbl">Sunday plan: pick one</div><div class="plan-opts">';
+  var keys = Object.keys(SUNDAY_PLANS);
+  for (var i = 0; i < keys.length; i++) {
+    html += '<button type="button" class="plan-opt' + (keys[i] === sundayPlan ? ' active' : '') + '" data-plan="' + keys[i] + '">' + SUNDAY_PLANS[keys[i]].label + '</button>';
+  }
+  html += '</div><div class="plan-desc">' + SUNDAY_PLANS[sundayPlan].desc + '</div></div>';
+  return html;
+}
+
+function renderDayContent() {
+  var d = DAYS[currentDayIdx];
+  var isToday = getDiffDays(d.date) === 0;
+  var dateFormatted = new Date(d.date + 'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+  var scheduleLink = location.origin + location.pathname + buildScheduleHash(d.date);
+
+  var relPill = isToday
+    ? '<span class="day-tag" style="background:var(--gold-light);color:var(--gold);margin-left:6px">⭐ Today</span>'
+    : '<span class="day-tag" style="background:var(--bg);color:var(--text2);margin-left:6px">' + getRelativeLabel(d.date) + '</span>';
+  var alertPill = d.alert ? '<span class="day-tag" style="background:var(--desert-light);color:var(--desert);margin-left:6px">' + d.alert + '</span>' : '';
+
+  var acts = getDayActs(d).map(function(a) {
+    return '<div class="act">' +
+      '<div class="act-t">' + a.t + '</div>' +
+      '<div class="act-b">' +
+        '<span class="badge ' + a.badge + '">' + a.badge + '</span>' +
+        '<div class="act-title">' + a.title + '</div>' +
+        (a.loc ? '<div class="act-loc">📍 ' + a.loc + '</div>' : '') +
+        (a.det ? '<div class="act-det">' + a.det + '</div>' : '') +
+        (a.note ? '<div class="act-note">' + a.note + '</div>' : '') +
+      '</div></div>';
+  }).join('');
+
+  setHTML('day-content',
+    '<div class="day-detail">' +
+      '<div class="day-hdr">' +
+        '<div class="day-header-top">' +
+          '<div>' +
+            '<span class="day-tag">Day ' + (currentDayIdx + 1) + ' of 3</span>' + relPill + alertPill +
+            '<div class="day-title">' + dateFormatted + ': ' + d.title + '</div>' +
+            '<div class="day-loc">📍 ' + d.loc + '</div>' +
+            '<div class="day-hotel">🏨 ' + d.hotel + '</div>' +
+          '</div>' +
+          '<button class="day-link" data-copy-schedule-link="' + scheduleLink + '">Copy Day Link</button>' +
+        '</div>' +
+      '</div>' +
+      '<div id="weatherBar"><div class="weather-bar"><span style="font-size:16px">🌤️</span><span class="weather-loading">Checking forecast...</span></div></div>' +
+      (d.variants ? renderPlanPicker() : '') +
+      '<div class="acts">' + acts + '</div>' +
+    '</div>'
+  );
+
+  loadDayWeather(d);
+}
+
+function loadDayWeather(d) {
+  var wb = document.getElementById('weatherBar');
+  if (!wb) return;
+  var coords = getLocationCoords(d.loc) || COORDS['Las Vegas'];
+  fetchWeather(coords.lat, coords.lon, d.date).then(function(w) {
+    if (w) {
+      var emoji = w.desc.split(' ')[0];
+      var desc = w.desc.split(' ').slice(1).join(' ');
+      var precipStr = w.precip != null ? ' · ' + w.precip + '% precip' : '';
+      setHTML(wb, '<div class="weather-bar"><span style="font-size:24px">' + emoji + '</span><div><div class="temp">High ' + cToF(w.high) + '°F <span style="font-size:.75em;opacity:.6">(' + w.high + '°C)</span> • Low ' + cToF(w.low) + '°F <span style="font-size:.75em;opacity:.6">(' + w.low + '°C)</span></div><div class="desc">Live forecast •' + desc + precipStr + '</div></div></div>');
+    } else {
+      setHTML(wb, '<div class="weather-bar"><span style="font-size:24px">🌤️</span><div><div class="temp">70–75°F days · 50–55°F nights</div><div class="desc">Typical late October in Las Vegas • live forecast unavailable for this date</div></div></div>');
+    }
+  });
+}
+
+// ── WEATHER TAB ─────────────────────────────────────────────────────
+var weatherRendered = false;
+function renderWeatherTab() {
+  if (weatherRendered) return;
+  weatherRendered = true;
+  var html = '';
+  for (var i = 0; i < WEATHER_CITIES.length; i++) {
+    var wc = WEATHER_CITIES[i];
+    html += '<div class="weather-card" id="wcard-' + i + '">';
+    html += '<div class="wc-badge">Typical October</div>';
+    html += '<div class="wc-city">' + wc.city + '</div>';
+    html += '<div class="wc-icon">🌤️</div>';
+    html += '<div class="wc-temp">' + wc.avgHighF + '°F <span style="font-size:.6em;opacity:.5">(' + wc.avgHigh + '°C)</span></div>';
+    html += '<div class="wc-desc">Seasonal planning baseline</div>';
+    html += '<div class="wc-range">Typical low ' + wc.avgLowF + '°F • high ' + wc.avgHighF + '°F</div>';
+    html += '</div>';
+  }
+  setHTML('weatherGrid', html);
+
+  var gradients = [
+    'linear-gradient(135deg,#120A24,#8E1446)',
+    'linear-gradient(135deg,#3A1757,#C4622D)',
+    'linear-gradient(135deg,#120A24,#5B3A9A)',
+    'linear-gradient(135deg,#3A1757,#B7862C)',
+    'linear-gradient(135deg,#120A24,#2F6FA8)',
+  ];
+  for (var j = 0; j < WEATHER_CITIES.length; j++) {
+    (function(idx) {
+      var wc = WEATHER_CITIES[idx];
+      fetchWeatherSimple(wc.lat, wc.lon).then(function(w) {
+        var card = document.getElementById('wcard-' + idx);
+        if (!card || !w) return;
+        var emoji = w.desc.split(' ')[0];
+        var desc = w.desc.split(' ').slice(1).join(' ');
+        var primary = w.current != null ? w.current : w.high;
+        card.style.background = gradients[idx % gradients.length];
+        setHTML(card,
+          '<div class="wc-badge">Live now</div>' +
+          '<div class="wc-city">' + wc.city + '</div>' +
+          '<div class="wc-icon">' + emoji + '</div>' +
+          '<div class="wc-temp">' + cToF(primary) + '°F <span style="font-size:.6em;opacity:.5">(' + primary + '°C)</span></div>' +
+          '<div class="wc-desc">' + desc + '</div>' +
+          '<div class="wc-range">Today: low ' + cToF(w.low) + '°F • high ' + cToF(w.high) + '°F</div>'
+        );
+      });
+    })(j);
+  }
+
+  setHTML('packCard',
+    '<div class="pack-card"><h3>🧳 What to Pack for Vegas in October</h3><div class="pack-grid">' +
+    '<div class="pack-item">🧥 Light jacket for 55–60°F nights</div>' +
+    '<div class="pack-item">🧢 Hat + sunglasses + sunscreen</div>' +
+    '<div class="pack-item">💧 Refillable water bottles (desert!)</div>' +
+    '<div class="pack-item">👟 Comfortable walking shoes</div>' +
+    '<div class="pack-item">🎒 Small daypack for Red Rock</div>' +
+    '<div class="pack-item">🔌 Phone chargers + car charger</div>' +
+    '<div class="pack-item">🪪 Driver\'s license (ID for casinos/shows)</div>' +
+    '<div class="pack-item">👗 One nicer outfit for a show / dinner</div>' +
+    '</div></div>'
+  );
+}
+
+// ── TAB SWITCHING with hash-based deep links ────────────────────────
+function switchToTab(tabName) {
+  var tabEl = document.getElementById('tab-' + tabName);
+  if (!tabEl) return false;
+  var buttons = document.querySelectorAll('.nav button');
+  for (var i = 0; i < buttons.length; i++) buttons[i].classList.toggle('active', buttons[i].getAttribute('data-tab') === tabName);
+  var tabs = document.querySelectorAll('.tab');
+  for (var j = 0; j < tabs.length; j++) tabs[j].classList.remove('active');
+  tabEl.classList.add('active');
+  if (tabName === 'weather') renderWeatherTab();
+  return true;
+}
+
+function openSchedule(dayIdx) {
+  currentDayIdx = dayIdx;
+  renderDayStrip();
+  renderDayContent();
+  updateScheduleHash();
+}
+
+document.getElementById('topNav').addEventListener('click', function(e) {
+  var btn = e.target.closest('button');
+  if (!btn) return;
+  var tab = btn.getAttribute('data-tab');
+  switchToTab(tab);
+  window.scrollTo(0, 0);
+  if (tab === 'schedule') { openSchedule(getNearestDayIdx()); return; }
+  history.replaceState(null, '', '#' + tab);
+});
+
+function handleHash() {
+  var rawHash = location.hash.replace(/^#/, '');
+  if (!rawHash) return;
+  var parts = rawHash.split('/');
+  if (parts[0] !== 'schedule') { switchToTab(parts[0]); return; }
+  switchToTab('schedule');
+  var idx = getNearestDayIdx();
+  for (var i = 0; i < DAYS.length; i++) {
+    if (DAYS[i].date === parts[1]) { idx = i; break; }
+  }
+  currentDayIdx = idx;
+  renderDayStrip();
+  renderDayContent();
+}
+window.addEventListener('hashchange', handleHash);
+
+function copyTextToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text);
+  }
+  return new Promise(function(resolve, reject) {
+    var input = document.createElement('input');
+    input.value = text;
+    input.style.position = 'fixed';
+    input.style.opacity = '0';
+    document.body.appendChild(input);
+    input.select();
+    try { document.execCommand('copy'); document.body.removeChild(input); resolve(); }
+    catch (err) { document.body.removeChild(input); reject(err); }
+  });
+}
+
+// Event delegation for interactions
+document.addEventListener('click', function(e) {
+  // Let links inside cards/checklist items work without triggering toggles
+  if (e.target.closest('a')) return;
+
+  var dayChip = e.target.closest('.day-chip');
+  if (dayChip) { openSchedule(parseInt(dayChip.getAttribute('data-idx'), 10)); return; }
+
+  var planBtn = e.target.closest('.plan-opt');
+  if (planBtn) {
+    sundayPlan = planBtn.getAttribute('data-plan');
+    saveState('vegas-sunday-plan', sundayPlan);
+    addonOn = defaultAddons();
+    renderDayContent();
+    renderFocusCard();
+    renderBudget();
+    return;
+  }
+
+  var copyBtn = e.target.closest('[data-copy-schedule-link]');
+  if (copyBtn) {
+    copyTextToClipboard(copyBtn.getAttribute('data-copy-schedule-link')).then(function() {
+      copyBtn.textContent = 'Copied!';
+      copyBtn.classList.add('copied');
+      setTimeout(function() { copyBtn.textContent = 'Copy Day Link'; copyBtn.classList.remove('copied'); }, 1800);
+    }).catch(function() {
+      copyBtn.textContent = 'Copy Failed';
+      setTimeout(function() { copyBtn.textContent = 'Copy Day Link'; }, 1800);
+    });
+    return;
+  }
+
+  var chkItem = e.target.closest('.chk-item');
+  if (chkItem) {
+    var id = chkItem.getAttribute('data-id');
+    if (doneSet[id]) delete doneSet[id];
+    else doneSet[id] = true;
+    saveState('vegas-checklist', doneSet);
+    renderChecklist();
+  }
+});
+
+// ── CHECKLIST ────────────────────────────────────────────────────────
+var checklistData = [
+  {id:'hotel', title:'📌 Book Horseshoe: Oct 24–26, 2 adults, 1 room', det:'Re-check the price for the new dates (was ~$132 for Oct 11–13). Save the confirmation. <a href="https://www.booking.com/hotel/us/bally-s-las-vegas-casino.html?checkin=2026-10-24&checkout=2026-10-26&group_adults=2&no_rooms=1&group_children=0" target="_blank" rel="noopener">Booking.com</a> · <a href="https://www.caesars.com/horseshoe-las-vegas" target="_blank" rel="noopener">Caesars direct</a>', status:'action', badge:'Book Now'},
+  {id:'cancel', title:'Confirm Horseshoe cancellation terms', det:'2-night rate charges the first night if cancelled. Check the final policy before paying.', status:'needed', badge:'Before Paying'},
+  {id:'redrock', title:'📌 Reserve Red Rock Canyon timed entry (Sun Oct 25)', det:'Target 9:30–10 AM · $20/vehicle + $2 fee · required 8 AM–5 PM. <a href="https://www.recreation.gov/timed-entry/10075177" target="_blank" rel="noopener">Recreation.gov</a>', status:'action', badge:'Reserve'},
+  {id:'sunday', title:'📌 Pick Sunday evening', det:'Fremont + Neon Museum, Mystère, or Sphere. Tickets sell out. Set it in the Schedule tab.', status:'action', badge:'Decide'},
+  {id:'neon', title:'Reserve Neon Museum night tour (if Fremont night)', det:'$28–35 pp · evening slots sell out.', status:'needed', badge:'If Chosen'},
+  {id:'tickets', title:'Buy show or Omega Mart tickets (if chosen)', det:'<a href="https://www.cirquedusoleil.com/mystere" target="_blank" rel="noopener">Mystère</a> · <a href="https://www.thesphere.com/shows/calendar" target="_blank" rel="noopener">Sphere</a> (check Sunday times) · <a href="https://meowwolf.com/visit/las-vegas" target="_blank" rel="noopener">Omega Mart</a> (~$45 pp)', status:'needed', badge:'If Chosen'},
+  {id:'gas', title:'Fill gas before leaving Irvine', det:'Leave by 7:00 AM Saturday.', status:'needed', badge:'Sat Morning'},
+  {id:'traffic', title:'Check I-15 traffic before both legs', det:'Allow 4.5–6 hrs each way. Leave Vegas by 9 AM Monday for the 5:30 PM class.', status:'needed', badge:'Both Days'},
+  {id:'maps', title:'Download offline maps', det:'Red Rock has no cell signal in much of the park.', status:'needed', badge:'Before Trip'},
+  {id:'parking', title:'Verify parking rate + in/out privileges at check-in', det:'~$20–25/day. Confirm coverage through Monday checkout.', status:'needed', badge:'At Check-in'},
+  {id:'room', title:'Request a renovated tower room', det:'Non-smoking, away from the elevators.', status:'needed', badge:'At Check-in'},
+  {id:'pack', title:'Pack: jacket, water bottles, hat, sunscreen, walking shoes, chargers, daypack', det:'Full list in the Weather tab.', status:'needed', badge:'Pack'},
+];
+
+var doneSet = loadState('vegas-checklist', {});
+if (typeof doneSet !== 'object' || doneSet === null) doneSet = {};
+
+function renderChecklist() {
+  var done = 0;
+  var html = checklistData.map(function(item) {
+    var isDone = !!doneSet[item.id];
+    if (isDone) done++;
+    var boxCls = isDone ? 'done' : (item.status === 'action' ? 'action' : 'pending');
+    var boxIcon = isDone ? '✓' : (item.status === 'action' ? '!' : '○');
+    var badgeCls = isDone ? 'done' : item.status;
+    return '<div class="chk-item ' + (isDone ? 'is-done' : '') + '" data-id="' + item.id + '">' +
+      '<div class="chk-box ' + boxCls + '">' + boxIcon + '</div>' +
+      '<div>' +
+        '<div class="chk-title">' + item.title + '</div>' +
+        '<div class="chk-det">' + item.det + '</div>' +
+        '<span class="chk-badge ' + badgeCls + '">' + (isDone ? '✓ Done' : item.badge) + '</span>' +
+      '</div></div>';
+  }).join('');
+  setHTML('checklist-container', html);
+  var pct = Math.round(done / checklistData.length * 100);
+  document.getElementById('prog-pct').textContent = pct + '%';
+  document.getElementById('prog-fill').style.width = pct + '%';
+}
+
+// ── BUDGET ───────────────────────────────────────────────────────────
+var baseItems = [
+  {name:'Horseshoe (2 nights)', low:132, high:250, note:'Estimate · was $132 for Oct 11–13; Saturday night costs more · re-check'},
+  {name:'Hotel self-parking', low:40, high:75, note:'~$20–25/day · not included in room rate'},
+  {name:'Gas', low:85, high:140, note:'~540 mi round trip + Vegas driving'},
+  {name:'Food (3 days, two people)', low:180, high:300, note:'Casual vegetarian meals · one nicer dinner'},
+  {name:'Red Rock Canyon vehicle pass', low:25, high:35, note:'$20/vehicle + $2 reservation fee'},
+  {name:'Downtown parking / misc', low:25, high:60, note:'Fremont garage, snacks, tips'},
+];
+
+var addonItems = [
+  {id:'omega', name:'Omega Mart (2 people)', low:90, high:150, note:'~$45+ pp · Art plan'},
+  {id:'show', name:'One major show (2 people)', low:120, high:320, note:'Mystère is cheaper · Sphere $89–114 pp'},
+  {id:'neon', name:'Neon Museum night tour (2 people)', low:56, high:70, note:'$28–35 pp · reserve ahead'},
+  {id:'highroller', name:'High Roller (2 people)', low:44, high:102, note:'$22–51 pp · best at sunset'},
+];
+
+function defaultAddons() {
+  var on = {};
+  var ids = SUNDAY_PLANS[sundayPlan].addons;
+  for (var i = 0; i < ids.length; i++) on[ids[i]] = true;
+  return on;
+}
+var addonOn = defaultAddons();
+var BUDGET_BAR_MAX = 320;
+
+function fmt(n) { return '$' + n.toLocaleString('en-US'); }
+function fmtRange(lo, hi) { return lo === hi ? fmt(lo) : fmt(lo) + '–' + hi.toLocaleString('en-US'); }
+
+function budgetRow(item, addon) {
+  var off = addon && !addonOn[item.id];
+  var check = addon ? '<input type="checkbox" data-addon="' + item.id + '"' + (off ? '' : ' checked') + ' aria-label="Include ' + item.name + '">' : '';
+  return '<div class="bitem' + (off ? ' off' : '') + '">' +
+    '<div class="bitem-top">' +
+      '<label class="bitem-name">' + check + '<span>' + item.name + '</span></label>' +
+      '<span class="bitem-amt">' + fmtRange(item.low, item.high) + '</span>' +
+    '</div>' +
+    '<div class="bbar' + (addon ? ' addon' : '') + '">' +
+      '<div class="bbar-high" style="width:' + Math.min(100, item.high / BUDGET_BAR_MAX * 100) + '%"></div>' +
+      '<div class="bbar-low" style="width:' + Math.min(100, item.low / BUDGET_BAR_MAX * 100) + '%"></div>' +
+    '</div>' +
+    '<div class="bitem-note">' + item.note + '</div></div>';
+}
+
+function renderBudget() {
+  setHTML('budget-base', baseItems.map(function(i) { return budgetRow(i, false); }).join(''));
+  setHTML('budget-addons', addonItems.map(function(i) { return budgetRow(i, true); }).join(''));
+  var lo = 0, hi = 0;
+  baseItems.forEach(function(i) { lo += i.low; hi += i.high; });
+  addonItems.forEach(function(i) { if (addonOn[i.id]) { lo += i.low; hi += i.high; } });
+  document.getElementById('budget-total').textContent = fmtRange(lo, hi);
+  document.getElementById('budget-sub').textContent = 'Base trip + ticked extras (' + SUNDAY_PLANS[sundayPlan].label.replace(/^\S+\s/, '') + ' plan) · Prices checked Oct 10, 2026';
+}
+
+document.getElementById('tab-budget').addEventListener('change', function(e) {
+  var id = e.target.getAttribute('data-addon');
+  if (!id) return;
+  if (e.target.checked) addonOn[id] = true;
+  else delete addonOn[id];
+  renderBudget();
+});
+
+// ── INITIAL RENDER ──────────────────────────────────────────────────
+renderFocusCard();
+renderOverviewTimeline();
+renderChecklist();
+renderBudget();
+currentDayIdx = getNearestDayIdx();
+if (location.hash) handleHash();
+</script>
+</body>
+</html>
