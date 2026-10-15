@@ -1,16 +1,291 @@
 ---
 layout: archive
-title: "Talks and presentations"
+title: "Talks & Presentations"
 permalink: /talks/
 author_profile: true
+excerpt: "Invited talks, conference presentations, posters, seminars, lectures and webinars by Ayush Kumar Shah, with slides and posters where available."
 ---
 
-{% if site.talkmap_link == true %}
+{% include base_path %}
+{% assign talks = site.data.talks | sort: "date" | reverse %}
+{% assign types = talks | map: "type" | uniq | sort %}
+{% assign posters = talks | where: "type", "Poster" %}
+{% assign with_links = talks | where_exp: "t", "t.links" %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+<p class="talks-intro">
+  Invited talks, conference presentations, posters, research seminars and
+  lectures, from my Ph.D. work on document recognition to agentic AI in industry.
+  Slides and posters are linked where available.
+</p>
 
-{% endif %}
+<div class="talks-stats">
+  <div class="talks-stat"><span class="n">{{ talks | size }}</span><span class="l">Talks &amp; presentations</span></div>
+  <div class="talks-stat"><span class="n">{{ posters | size }}</span><span class="l">Poster presentations</span></div>
+  <div class="talks-stat"><span class="n">{{ with_links | size }}</span><span class="l">With slides, posters or video</span></div>
+</div>
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
+<div class="talks-filters" role="group" aria-label="Filter by type">
+  <button type="button" class="talks-chip is-active" data-filter="all">All</button>
+  {% for t in types %}
+    <button type="button" class="talks-chip" data-filter="{{ t | slugify }}">{{ t }}</button>
+  {% endfor %}
+</div>
+
+{% assign current_year = "" %}
+<div class="talks-list">
+{% for talk in talks %}
+  {% assign y = talk.date | date: "%Y" %}
+  {% if y != current_year %}
+    {% unless forloop.first %}</div>{% endunless %}
+    <h2 class="talks-year" data-year="{{ y }}">{{ y }}</h2>
+    <div class="talks-group">
+    {% assign current_year = y %}
+  {% endif %}
+
+  <article class="talk-card" data-type="{{ talk.type | slugify }}">
+    <div class="talk-card__meta">
+      <span class="talk-type talk-type--{{ talk.type | slugify }}">{{ talk.type }}</span>
+      <span class="talk-date">{{ talk.display_date }}</span>
+    </div>
+    <h3 class="talk-card__title">{{ talk.title }}</h3>
+    <p class="talk-card__event">{{ talk.event }}</p>
+    <p class="talk-card__location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ talk.location }}</p>
+    {% if talk.description %}<p class="talk-card__desc">{{ talk.description }}</p>{% endif %}
+    {% if talk.links %}
+      <div class="talk-card__links">
+        {% for link in talk.links %}
+          {% assign lbl = link.label | downcase %}
+          <a class="btn {% if lbl contains 'slides' %}btn-paper{% elsif lbl contains 'poster' %}btn-poster{% elsif lbl contains 'video' %}btn-video{% elsif lbl contains 'demo' %}btn-demo{% elsif lbl contains 'paper' %}btn-info{% else %}btn-pdf{% endif %}" href="{% if link.url contains '://' %}{{ link.url }}{% else %}{{ base_path }}{{ link.url }}{% endif %}" {% if link.url contains '://' or link.url contains '.pdf' or link.url contains '.mp4' %}target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </article>
+
+  {% if forloop.last %}</div>{% endif %}
 {% endfor %}
+</div>
+
+<style>
+  .talks-intro {
+    color: var(--text-muted);
+  }
+
+  .talks-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 1.4em 0 1.6em;
+  }
+
+  .talks-stat {
+    padding: 16px 12px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  .talks-stat .n {
+    display: block;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.1;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+  }
+
+  .talks-stat .l {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.72em;
+    color: var(--text-muted);
+  }
+
+  .talks-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45em;
+    margin-bottom: 0.5em;
+  }
+
+  .talks-chip {
+    padding: 0.35em 0.9em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.75em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .talks-chip:hover {
+    color: var(--heading);
+    border-color: var(--accent);
+  }
+
+  .talks-chip.is-active {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .archive .talks-year {
+    margin: 1.6em 0 0.7em;
+    padding-bottom: 0.3em;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.5rem;
+    border-bottom: 2px solid transparent;
+    border-image: var(--gradient) 1;
+  }
+
+  .talks-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    padding-left: 1.4em;
+  }
+
+  .talks-group:before {
+    content: "";
+    position: absolute;
+    left: 0.35em;
+    top: 0.4em;
+    bottom: 0.4em;
+    width: 2px;
+    border-radius: 2px;
+    background: var(--border);
+  }
+
+  .talk-card {
+    position: relative;
+    padding: 1em 1.2em 0.9em;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .talk-card:before {
+    content: "";
+    position: absolute;
+    left: -1.35em;
+    top: 1.2em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  .talk-card:hover {
+    transform: translateX(3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .talk-card[hidden] {
+    display: none;
+  }
+
+  .talk-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.72em;
+  }
+
+  .talk-type {
+    padding: 0.12em 0.65em;
+    border-radius: 999px;
+    font-weight: 700;
+    color: var(--c-blue);
+    background: var(--c-blue-bg);
+  }
+
+  .talk-type--invited-talk, .talk-type--conference-talk { color: var(--c-orange); background: var(--c-orange-bg); }
+  .talk-type--poster, .talk-type--demo { color: var(--c-purple); background: var(--c-purple-bg); }
+  .talk-type--defense { color: var(--c-green); background: var(--c-green-bg); }
+  .talk-type--video { color: var(--c-red); background: var(--c-red-bg); }
+  .talk-type--lecture, .talk-type--webinar { color: var(--c-slate); background: var(--c-slate-bg); }
+
+  .talk-date {
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .archive .talk-card__title {
+    margin: 0.45em 0 0.25em;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.12em;
+    line-height: 1.3;
+  }
+
+  .talk-card__event {
+    margin: 0 0 0.2em;
+    font-size: 0.86em;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .talk-card__location {
+    margin: 0;
+    font-size: 0.78em;
+    color: var(--text-muted);
+  }
+
+  .talk-card__desc {
+    margin: 0.5em 0 0;
+    font-size: 0.84em;
+    color: var(--text-muted);
+  }
+
+  .talk-card__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45em;
+    margin-top: 0.75em;
+  }
+
+  .talk-card__links .btn {
+    font-size: 0.72em;
+    padding: 0.35em 0.85em;
+  }
+</style>
+
+<script>
+  (function () {
+    var chips = document.querySelectorAll('.talks-chip');
+    var cards = document.querySelectorAll('.talk-card');
+    var years = document.querySelectorAll('.talks-year');
+
+    function apply(filter) {
+      for (var i = 0; i < cards.length; i++) {
+        cards[i].hidden = filter !== 'all' && cards[i].getAttribute('data-type') !== filter;
+      }
+      // hide year headings whose group has nothing left to show
+      for (var j = 0; j < years.length; j++) {
+        var group = years[j].nextElementSibling;
+        var visible = group && group.querySelector('.talk-card:not([hidden])');
+        years[j].hidden = !visible;
+        if (group) group.hidden = !visible;
+      }
+    }
+
+    for (var k = 0; k < chips.length; k++) {
+      chips[k].addEventListener('click', function () {
+        for (var c = 0; c < chips.length; c++) chips[c].classList.remove('is-active');
+        this.classList.add('is-active');
+        apply(this.getAttribute('data-filter'));
+      });
+    }
+  })();
+</script>

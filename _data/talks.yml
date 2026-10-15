@@ -1,0 +1,206 @@
+# Talks, lectures and poster presentations (newest first).
+# type: one of Invited Talk, Conference Talk, Poster, Demo, Seminar, Lecture, Webinar, Defense, Video
+# links: label + url pairs (slides, posters, videos, papers)
+
+- date: 2026-09-19
+  display_date: "September 19, 2026"
+  title: "Agentic AI in Industry: Context, Autonomy, and What Works"
+  type: Invited Talk
+  event: "Guest Lecture, Fusemachines AI Fellowship 2026"
+  location: "Online · Kathmandu, Nepal"
+  description: "A practical look at how AI agents are used in industry: the agent landscape, context engineering, autonomy and human oversight, and what actually works in production, for AI fellows in Nepal."
+
+- date: 2025-07-14
+  display_date: "July 14–15, 2025"
+  title: "Multimodal Search in Chemical Documents and Reactions"
+  type: Demo
+  event: "48th International ACM SIGIR Conference (SIGIR 2025), Demo & Poster Session"
+  location: "Padua, Italy"
+  description: "Demo of ReactionMiner, which searches reaction descriptions in PDF documents using text and chemical structures (SMILES/SMARTS)."
+  links:
+    - label: Poster
+      url: /files/reaction-search-poster.pdf
+    - label: Paper
+      url: /publications/2025-02-18-reaction-search
+    - label: Live Demo
+      url: https://reactionminer-demo.platform.moleculemaker.org/reaction-miner
+
+- date: 2025-06-27
+  display_date: "June 27, 2025"
+  title: "Parsing of Math Formulas and Chemical Diagrams using Graph-Based Representation and Attention Models"
+  type: Defense
+  event: "Ph.D. Dissertation Defense, Rochester Institute of Technology"
+  location: "Rochester, NY"
+  links:
+    - label: Dissertation
+      url: https://repository.rit.edu/theses/12254/
+
+- date: 2025-04-15
+  display_date: "April 15–16, 2025"
+  title: "ChemScraper: Pipeline for Parsing Raster and Vector Molecule Diagrams from PDFs"
+  type: Poster
+  event: "MMLI Research Symposium 2025, “AI Scientists? What Would It Take?!”"
+  location: "NCSA, University of Illinois Urbana-Champaign"
+
+- date: 2025-03-27
+  display_date: "March 2025"
+  title: "ChemScraper: Step-by-Step Video Tutorial"
+  type: Video
+  event: "AlphaSynthesis tools, Molecule Maker Lab Institute (prepared for the NSF site visit)"
+  location: "YouTube"
+  links:
+    - label: Watch Video
+      url: https://www.youtube.com/watch?v=9SiJCPm20dk
+
+- date: 2025-01-28
+  display_date: "January 28, 2025"
+  title: "Reaction Extraction from PDF: ChemScraper and ReactionMiner Integration"
+  type: Seminar
+  event: "Molecule Maker's Playhouse (inaugural MMLI all-institute meeting), Thrust 1: AI-Enabled Synthesis Planning"
+  location: "Champaign, IL"
+  links:
+    - label: Slides
+      url: /files/talks/mmli-playhouse-2025-reaction-extraction.pdf
+
+- date: 2024-12-19
+  display_date: "December 19, 2024"
+  title: "Parsing of Math Formulas and Chemical Diagrams using Graph-Based Representation and Attention Models"
+  type: Defense
+  event: "Ph.D. Dissertation Proposal Defense, Rochester Institute of Technology"
+  location: "Rochester, NY"
+  links:
+    - label: Slides
+      url: /files/talks/phd-proposal-2024.pdf
+
+- date: 2024-09-03
+  display_date: "September 3, 2024"
+  title: "ChemScraper: Leveraging PDF Graphics Instructions for Molecular Diagram Parsing"
+  type: Conference Talk
+  event: "18th International Conference on Document Analysis and Recognition (ICDAR 2024), Oral Presentation"
+  location: "Athens, Greece"
+  links:
+    - label: Slides
+      url: /files/ICDAR2024.pdf
+    - label: Paper
+      url: /publications/2023-11-18-chemscraper
+    - label: Live Demo
+      url: https://chemscraper.platform.moleculemaker.org/configuration
+
+- date: 2024-06-05
+  display_date: "June 2024"
+  title: "ChemScraper: Extracting and Parsing Molecular Diagrams from PDFs and Images"
+  type: Poster
+  event: "MMLI NSF Site Visit, Poster Session"
+  location: "University of Illinois Urbana-Champaign"
+  links:
+    - label: Poster
+      url: /files/talks/nsf-site-visit-2024-poster.pdf
+
+- date: 2024-06-04
+  display_date: "June 2024"
+  title: "Integration of ReactionMiner and ChemScraper: Mining Chemical Reactions from Literature"
+  type: Seminar
+  event: "MMLI All-Institute Meeting, Cross-Thrust Talk (Thrust 1 & Thrust 4)"
+  location: "University of Illinois Urbana-Champaign (hybrid)"
+  links:
+    - label: Slides
+      url: /files/talks/mmli-all-institute-2024-reactionminer-chemscraper.pdf
+
+- date: 2024-06-22
+  display_date: "June 2024"
+  title: "Intro to AI: Exploring Fundamentals, Research, and Career Opportunities"
+  type: Webinar
+  event: "AI Webinar for students"
+  location: "Online"
+  description: "An introduction to AI, machine learning, NLP and computer vision, how AI research works, and career paths in AI."
+
+- date: 2023-09-12
+  display_date: "September 12, 2023"
+  title: "ChemScraper: Extracting Molecule Diagrams from PDF Vector Images and Raster Images with CDXML (ChemDraw) and SMILES Output"
+  type: Poster
+  event: "MMLI All-Institute Retreat 2023"
+  location: "University of Illinois Urbana-Champaign"
+  links:
+    - label: Poster
+      url: /files/talks/mmli-retreat-2023-poster.pdf
+
+- date: 2023-08-22
+  display_date: "August 22–23, 2023"
+  title: "Line-of-Sight with Graph Attention and Task Interaction (LGATI) for Math Formulas"
+  type: Poster
+  event: "17th International Conference on Document Analysis and Recognition (ICDAR 2023), Poster Session & Doctoral Consortium"
+  location: "San José, CA"
+  links:
+    - label: Poster
+      url: /files/ICDAR2023.pdf
+    - label: Doctoral Consortium Slides
+      url: /files/talks/icdar2023-doctoral-consortium.pdf
+    - label: Teaser Video
+      url: /files/lgap-teaser.mp4
+    - label: Paper
+      url: /publications/2023-04-30-lgap
+
+- date: 2023-06-28
+  display_date: "June 28, 2023"
+  title: "ChemScraper: Extracting Molecule Diagrams from PDF Vector Images with Page-Level CDXML (ChemDraw) and SMILES Output"
+  type: Poster
+  event: "NSF Annual Review Meeting, Molecule Maker Lab Institute"
+  location: "University of Illinois Urbana-Champaign"
+
+- date: 2023-04-17
+  display_date: "April 17, 2023"
+  title: "Line-of-Sight with Graph Attention Parser (LGAP) for Math Formulas"
+  type: Seminar
+  event: "Research Idea Ring (RIR), Department of Computer Science, RIT"
+  location: "Rochester, NY"
+  links:
+    - label: Slides
+      url: /files/talks/rir-2023-lgap.pdf
+
+- date: 2022-09-28
+  display_date: "September 27–28, 2022"
+  title: "Reconstructing the Structure of Molecular Diagrams in PDF Documents using a CNN-Attention-Based Parsing Model"
+  type: Poster
+  event: "MMLI All-Institute Retreat 2022"
+  location: "University of Illinois Urbana-Champaign"
+  links:
+    - label: Poster
+      url: /files/talks/mmli-retreat-2022-poster.pdf
+
+- date: 2022-09-05
+  display_date: "September 5, 2022"
+  title: "Bayesian Decision Theory"
+  type: Lecture
+  event: "Guest Lecture, Introduction to Machine Learning (undergraduate, ~40 students), RIT"
+  location: "Rochester, NY"
+
+- date: 2022-04-07
+  display_date: "April 7, 2022"
+  title: "A Fast and Interpretable Context-aware Parser for Isolated Formulas and Chemical Diagrams"
+  type: Seminar
+  event: "Research Idea Ring (RIR), Department of Computer Science, RIT"
+  location: "Rochester, NY"
+  links:
+    - label: Slides
+      url: /files/talks/rir-2022-context-aware-parser.pdf
+
+- date: 2021-09-09
+  display_date: "September 9, 2021"
+  title: "A Math Formula Extraction and Evaluation Framework for PDF Documents"
+  type: Poster
+  event: "16th International Conference on Document Analysis and Recognition (ICDAR 2021)"
+  location: "Lausanne, Switzerland (virtual)"
+  links:
+    - label: Slides
+      url: /files/237-presentation.pdf
+    - label: Teaser Video
+      url: /files/237-teaser.mp4
+    - label: Paper
+      url: /publications/2021-09-01-mathseer-pipeline
+
+- date: 2021-05-01
+  display_date: "May 2021"
+  title: "Recognition of Mathematical Formulas"
+  type: Defense
+  event: "Ph.D. Research Potential Assessment (RPA), Rochester Institute of Technology"
+  location: "Rochester, NY"

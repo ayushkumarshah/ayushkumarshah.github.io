@@ -111,7 +111,7 @@
   // ── Scroll reveal for cards ──────────────────────────────────────────
   var selector = [
     '.news-item', '.publication-item', '.project-item', '.teaching-item',
-    '.review-stat', '.list__item', '.post-item'
+    '.review-stat', '.list__item', '.post-item', '.talk-card'
   ].join(',');
   var cards = document.querySelectorAll(selector);
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
