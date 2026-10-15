@@ -24,7 +24,6 @@ author_profile: true
       {% endfor %}
     </ul>
   </div>
-  <div class="teaching-separator"></div>
   {% endfor %}
 </div>
 
@@ -32,60 +31,77 @@ author_profile: true
   .teaching-experiences {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding: 20px;
-    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
-    border-radius: 10px;
+    gap: 1.1em;
   }
 
   .teaching-item {
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    <!--background: #ffffff;-->
+    position: relative;
+    padding: 1.3em 1.5em 1em 1.7em;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .teaching-item:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gradient);
   }
 
   .teaching-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
   }
 
-  .teaching-period, .teaching-location, .teaching-course {
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #444;
+  .teaching-item h2 {
+    margin: 0 0 0.4em;
+    padding: 0;
+    border: 0;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.3em;
   }
 
-  .teaching-course a {
-    color: #3498db;
-    text-decoration: none;
+  .teaching-item h3 {
+    margin: 1em 0 0.3em;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
   }
 
-  .teaching-course a:hover {
-    text-decoration: underline;
+  .teaching-period {
+    display: inline-block;
+    margin-bottom: 0.6em;
+    padding: 0.1em 0.7em;
+    border-radius: 999px;
+    font-size: 0.75em;
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  .teaching-location, .teaching-course {
+    margin-bottom: 0.5em;
+    font-size: 0.92em;
+    color: var(--text-muted);
   }
 
   .teaching-responsibilities {
     list-style: disc;
-    padding-left: 20px;
-    margin-top: 10px;
-  }
-
-  .teaching-separator {
-    height: 3px;
-    background: linear-gradient(to right, #3498db, #2ecc71);
-    margin: 15px 0;
+    padding-left: 1.2em;
+    margin-top: 0.3em;
+    font-size: 0.92em;
   }
 
   @media (max-width: 600px) {
     .teaching-item {
-      padding: 15px;
-    }
-
-    .teaching-period, .teaching-location {
-      font-size: 0.9rem;
+      padding: 1.1em 1.1em 0.8em 1.3em;
     }
   }
 </style>

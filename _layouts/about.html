@@ -4,127 +4,197 @@ layout: archive
 
   <!-- About Section -->
   <div class="about-section">
-    <!--<h1 class="page__title">{{ page.title }}</h1>-->
     <div class="about-content">
       {{ content }}
     </div>
   </div>
 
 
-  <!-- News Section -->
+  <!-- News Section: the two most recent years start open, older years collapse -->
 
 <div class="news-section">
-  <h1>📰 News</h1>
+  <h1 class="news-heading">📰 News</h1>
 
   {% assign news_by_year = site.data.news | group_by: "year" %}
 
   {% for year_group in news_by_year %}
-    <div class="news-year-section">
-      <h2 class="news-year">{{ year_group.name }}</h2>
-      <hr class="news-separator">
-      {% for news in year_group.items %}
-        <div class="news-item">
-          <span class="news-date">{{ news.date }}</span>
-          <p>{{ news.content | markdownify }}</p>
-        </div>
-      {% endfor %}
-    </div>
+    <details class="news-year-section" {% if forloop.index <= 2 %}open{% endif %}>
+      <summary class="news-year">
+        <span>{{ year_group.name }}</span>
+        <span class="news-count">{{ year_group.items | size }} update{% if year_group.items.size != 1 %}s{% endif %}</span>
+      </summary>
+      <div class="news-timeline">
+        {% for news in year_group.items %}
+          <div class="news-item">
+            <span class="news-date">{{ news.date }}</span>
+            <div class="news-body">{{ news.content | markdownify }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </details>
   {% endfor %}
 </div>
 
 
 <style>
-  .news-section {
-    margin-top: 20px;
-  }
-  .news-year {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-top: 20px;
-  }
-  .news-separator {
-    height: 3px;
-    background: linear-gradient(to right, #3498db, #fc6d26);
-    border-radius: 2px;
-    margin-bottom: 15px;
-  }
-  .news-item {
-    background: #f7f7f7;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  .news-date {
-    font-weight: bold;
-    color: #555;
+  .about-section {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 1.6em 1.8em 1.4em;
+    margin-bottom: 2.5em;
+    box-shadow: var(--shadow);
+    overflow: hidden;
   }
 
-  .about-section {
-    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 30px;
+  .about-section:before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--gradient);
+  }
+
+  .about-content > p:first-child {
+    font-size: 1.04em;
+  }
+
+  .about-content ul {
+    margin-top: 0.4em;
+  }
+
+  .about-content li {
+    margin-bottom: 0.35em;
   }
 
   .resume-container, .projects-container {
-      display: flex;
-      justify-content: center; /* Center horizontally */
-      align-items: center;
-      margin-top: 15px; /* Reduce top margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6em 0 0.4em;
   }
 
   .btn-resume, .btn-projects {
-      display: inline-block;
-      padding: 8px 14px; /* Reduced padding (height and width) */
-      border-radius: 4px;
-      text-decoration: none !important;
-      font-size: 0.9rem; /* Slightly smaller text */
-      font-weight: bold;
-      transition: background 0.3s ease, transform 0.2s ease;
-      text-align: center;
-      width: auto;
-      min-width: 90px; /* Reduced minimum width */
+    font-size: 0.85rem;
+    padding: 0.55em 1.3em;
   }
 
-  .btn-resume {
-      background-color: #3498db; /* Blue */
-      color: white;
+  .news-heading {
+    margin-bottom: 0.6em;
   }
 
-  .btn-resume:hover {
-      transform: scale(1.05);
-      background-color: #2980b9; /* Darker blue on hover */
+  .news-year-section {
+    margin-bottom: 0.6em;
   }
 
-  .btn-projects {
-      background-color: #2ecc71; /* Green */
-      color: white;
+  .news-year {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1em;
+    cursor: pointer;
+    list-style: none;
+    padding: 0.45em 0;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--heading);
+    border-bottom: 2px solid transparent;
+    border-image: var(--gradient) 1;
+    user-select: none;
   }
 
-  .btn-projects:hover {
-      transform: scale(1.05);
-      background-color: #27ae60; /* Darker green on hover */
+  .news-year::-webkit-details-marker { display: none; }
+
+  .news-year:after {
+    content: "▾";
+    font-size: 0.7em;
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
   }
 
-  /* Responsive Design */
+  .news-year-section:not([open]) .news-year:after {
+    transform: rotate(-90deg);
+  }
+
+  .news-count {
+    margin-left: auto;
+    font-family: "Inter", sans-serif;
+    font-size: 0.45em;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .news-timeline {
+    position: relative;
+    margin: 1em 0 1.5em;
+    padding-left: 1.4em;
+  }
+
+  .news-timeline:before {
+    content: "";
+    position: absolute;
+    left: 0.35em;
+    top: 0.4em;
+    bottom: 0.4em;
+    width: 2px;
+    border-radius: 2px;
+    background: var(--border);
+  }
+
+  .news-item {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85em 1.1em 0.2em;
+    margin-bottom: 0.75em;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .news-item:before {
+    content: "";
+    position: absolute;
+    left: -1.35em;
+    top: 1.05em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  .news-item:hover {
+    transform: translateX(3px);
+    border-color: var(--accent-soft);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .news-date {
+    display: inline-block;
+    margin-bottom: 0.35em;
+    padding: 0.1em 0.6em;
+    border-radius: 999px;
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  .news-body p {
+    margin-bottom: 0.8em;
+  }
+
   @media (max-width: 600px) {
-      .btn-resume, .btn-projects {
-          width: 70%; /* Reduce width for smaller screens */
-          font-size: 0.85rem; /* Slightly smaller text for mobile */
-          padding: 6px 12px; /* Further reduce padding */
-      }
+    .about-section {
+      padding: 1.2em 1.1em 1em;
+    }
+
+    .btn-resume, .btn-projects {
+      font-size: 0.8rem;
+    }
   }
-
 </style>
-
-<!-- JavaScript for Toggle -->
-<script>
-  document.querySelector('.older-news-toggle').addEventListener('click', function() {
-    const olderNews = document.querySelector('.older-news');
-    olderNews.style.display = olderNews.style.display === 'none' ? 'block' : 'none';
-    const icon = document.querySelector('.toggle-icon');
-    icon.textContent = icon.textContent === '▼' ? '▲' : '▼';
-  });
-</script>

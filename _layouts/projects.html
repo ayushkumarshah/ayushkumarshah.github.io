@@ -4,126 +4,105 @@ layout: archive
 
 <div class="projects">
   {% for project in site.data.projects %}
-  <div class="project-item">
-  <!--<div class="project-item" style="background: linear-gradient(135deg, #d3d3d3, #f0f0f0); color: #222;">-->
-    <h2>{{ project.title }}</h2>
-    <p>{{ project.description }}</p>
-
+  <article class="project-item">
     {% if project.image %}
     <div class="project-image">
-      <img src="{{ project.image }}" alt="{{ project.title }}">
+      <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">
     </div>
     {% endif %}
 
-    <div class="project-links">
-      {% if project.demo %}
-      <a href="{{ project.demo }}" class="btn btn-demo" target="_blank">Live Demo</a>
-      {% endif %}
-      {% if project.code %}
-      <a href="{{ project.code }}" class="btn btn-code" target="_blank">View Code</a>
-      {% endif %}
-      {% if project.video %}
-      <a href="{{ project.video }}" class="btn btn-video" target="_blank">Watch Video</a>
-      {% endif %}
+    <div class="project-body">
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.description }}</p>
+
+      <div class="project-links">
+        {% if project.demo %}
+        <a href="{{ project.demo }}" class="btn btn-demo" target="_blank" rel="noopener">Live Demo</a>
+        {% endif %}
+        {% if project.code %}
+        <a href="{{ project.code }}" class="btn btn-code" target="_blank" rel="noopener">View Code</a>
+        {% endif %}
+        {% if project.video %}
+        <a href="{{ project.video }}" class="btn btn-video" target="_blank" rel="noopener">Watch Video</a>
+        {% endif %}
+      </div>
     </div>
-  </div>
-  <div class="project-separator"></div>
+  </article>
   {% endfor %}
 </div>
 
 <style>
   .projects {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 20px;
-    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
-    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.3em;
   }
 
   .project-item {
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
 
   .project-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
   }
 
   .project-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15px 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
   }
 
   .project-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
     width: 100%;
-    max-height: 400px;
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .project-item:hover .project-image img {
+    transform: scale(1.04);
+  }
+
+  .project-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.1em 1.3em 1.2em;
+  }
+
+  .project-body h2 {
+    margin: 0 0 0.45em;
+    padding: 0;
+    border: 0;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.25em;
+  }
+
+  .project-body p {
+    flex: 1;
+    color: var(--text-muted);
+    font-size: 0.88em;
   }
 
   .project-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-    justify-content: center;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none !important;
-    border-radius: 5px;
-    font-weight: bold;
-    color: white;
-    transition: background 0.3s ease, transform 0.2s ease;
-    min-width: 120px;
-    text-align: center;
-  }
-
-  .btn:hover {
-    transform: scale(1.05);
+    gap: 0.5em;
   }
 
   @media (max-width: 480px) {
-    .project-links {
-      flex-direction: column;
-      align-items: center;
+    .projects {
+      grid-template-columns: 1fr;
     }
-    .project-image img {
-      width: 100%;
-      max-height: 250px;
-    }
-  }
-
-  .btn-demo {
-    background-color: #3498db;
-    color: white;
-  }
-
-  .btn-code {
-    background-color: #fc6d26;
-    color: white;
-  }
-
-  .btn-video {
-    background-color: #e74c3c;
-    color: white;
-  }
-
-  .project-separator {
-    height: 3px;
-    background: linear-gradient(to right, #3498db, #2ecc71);
-    margin: 15px 0;
   }
 </style>

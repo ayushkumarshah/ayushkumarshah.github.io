@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Review"
+title: "Peer Review"
 permalink: /review/
 author_profile: true
 excerpt: "Peer review and program committee service for journals and conferences in pattern recognition, document analysis, and multimodal AI: Pattern Recognition (Elsevier), IJDAR (Springer), and ICDAR."
@@ -67,28 +67,38 @@ kept confidential in line with each venue's reviewer policy.</p>
     margin: 1.5em 0 2em;
   }
   .review-stat {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 14px 12px;
+    padding: 16px 12px;
     text-align: center;
-    background: #fafafa;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .review-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
   }
   .review-stat .n {
     display: block;
-    font-size: 1.8em;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 2em;
     font-weight: 700;
-    line-height: 1.2;
-    color: #2a7ae2;
+    line-height: 1.1;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
   }
   .review-stat .l {
     display: block;
-    font-size: 0.75em;
-    color: #555;
-    margin-top: 4px;
+    margin-top: 6px;
+    font-size: 0.72em;
+    color: var(--text-muted);
   }
   .review-note {
-    font-size: 0.8em;
-    color: #777;
     margin-top: 2em;
+    font-size: 0.8em;
+    color: var(--text-muted);
   }
 </style>

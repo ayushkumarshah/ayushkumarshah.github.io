@@ -20,16 +20,20 @@ redirect_from:
 <div id="main" role="main">
   {% include sidebar.html %}
 
-  <h1 class="page__title">{{ page.title }}</h1>
   <div class="archive">
-    {% unless page.header.overlay_color or page.header.overlay_image %}
-    {% endunless %}
+    <h1 class="page__title">{{ page.title }}</h1>
+
+    <div class="post-filter">
+      <input type="search" id="post-filter-input" placeholder="Filter posts by title, topic or year…" aria-label="Filter blog posts">
+      <span class="post-filter-count" id="post-filter-count">{{ site.posts | size }} posts</span>
+    </div>
 
     {% include base_path %}
 
+    <div class="post-list">
     {% for post in site.posts %}
 
-      <div class="post-item">
+      <div class="post-item" data-search="{{ post.title | downcase | escape }} {{ post.categories | join: ' ' | downcase }} {{ post.tags | join: ' ' | downcase }} {{ post.date | date: '%Y' }}">
         <h3 class="post-title">
           <a href="{{ post.url }}">{{ post.title }}</a>
         </h3>
@@ -46,94 +50,135 @@ redirect_from:
         <!--  <strong>Category:</strong> {{ post.categories | join: ", " }} |-->
         <!--  <strong>Time to Read:</strong> {% include read-time.html %}-->
         <!--</p>-->
-        <p class="post-summary">{{ post.summary | markdownify }}</p>
-        <p class="post-excerpt">{{ post.excerpt | markdownify }}</p>
-        <a href="{{ post.url }}" class="btn btn-read-more">Read More</a>
+        <div class="post-summary">{{ post.summary | markdownify }}</div>
+        <div class="post-excerpt">{{ post.excerpt | markdownify }}</div>
+        <a href="{{ post.url }}" class="btn btn-read-more">Read more →</a>
       </div>
     {% endfor %}
+    </div>
   </div>
 </div>
 
 <style>
-  .archive {
+  .post-filter {
     display: flex;
-    flex-direction: column;
-    gap: 20px; /* Reduced spacing between cards */
-    padding: 20px;
-    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
-    border-radius: 10px;
+    align-items: center;
+    gap: 0.8em;
+    margin-bottom: 1.2em;
   }
 
-  .archive__subtitle {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-top: 20px;
-    text-align: center;
-    color: #34495e;
+  .post-filter input {
+    flex: 1;
+    margin: 0;
+    padding: 0.6em 1em;
+    font-size: 0.85em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: var(--shadow);
+  }
+
+  .post-filter input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  .post-filter-count {
+    font-size: 0.75em;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
   }
 
   .post-item {
-    padding: 10px;
-    <!--background: #ffffff;-->
-    border-radius: 10px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    text-align: left;
+    padding: 1.1em 1.4em 1.2em;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
 
   .post-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .post-item[hidden] {
+    display: none;
   }
 
   .post-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 5px;
+    margin: 0 0 0.3em;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+
+  .archive .post-title a,
+  .archive .post-title a:visited {
+    color: var(--heading);
+    text-decoration: none;
+  }
+
+  .archive .post-title a:hover {
+    color: var(--accent);
   }
 
   .post-meta {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 8px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6em;
   }
 
   .post-summary {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.92rem;
   }
 
   .post-excerpt {
-    font-size: 0.95rem;
-    color: #333;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .post-summary p, .post-excerpt p {
+    margin-bottom: 0.5em;
   }
 
   .btn-read-more {
-    display: inline-block;
-    padding: 8px 12px;
-    text-decoration: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-    transition: background 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
-  }
-
-  .btn-read-more:hover {
-    transform: scale(1.05);
-    background-color: #2980b9;
+    margin-top: 0.3em;
   }
 
   @media (max-width: 480px) {
     .post-title {
-      font-size: 1.3rem;
-    }
-
-    .btn-read-more {
-      width: 100%;
-      text-align: center;
+      font-size: 1.15rem;
     }
   }
 </style>
+
+<script>
+  (function () {
+    var input = document.getElementById('post-filter-input');
+    var count = document.getElementById('post-filter-count');
+    var posts = document.querySelectorAll('.post-item');
+    if (!input) return;
+    input.addEventListener('input', function () {
+      var q = input.value.trim().toLowerCase();
+      var shown = 0;
+      for (var i = 0; i < posts.length; i++) {
+        var hit = !q || posts[i].getAttribute('data-search').indexOf(q) !== -1;
+        posts[i].hidden = !hit;
+        if (hit) shown++;
+      }
+      count.textContent = shown + (shown === 1 ? ' post' : ' posts');
+    });
+  })();
+</script>

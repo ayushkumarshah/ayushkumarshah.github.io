@@ -17,44 +17,49 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html %}
 
+  <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
       <h1 class="page__title">{{ page.title }}</h1>
     {% endunless %}
-  <div class="archive">
+
+    <div class="publication-list">
     {% for post in site.publications reversed %}
-      <a href="{{ post.permalink }}" class="publication-link">
-        <div class="publication-item" style="background: linear-gradient(135deg, #d3d3d3, #f0f0f0); color: #222;">
-          <!--<div class="publication-item">-->
-          <h2>{{ post.title }} ({{ post.date | slice: 0, 4 }}) </h2>
-          <p><strong>Venue:</strong> {{ post.venue }} | <strong>Status:</strong> {{ post.status | default: "Published" }}</p>
-            <!--| <strong>Year:</strong> {{ post.date | slice: 0, 4 }}</p>-->
-          <!--<p><strong>Status:</strong> {{ post.status | default: "Published" }}</p>-->
-          <p>{{ post.excerpt }}</p>
-      </a>
+      <div class="publication-item">
+        <div class="publication-meta">
+          <span class="publication-year">{{ post.date | slice: 0, 4 }}</span>
+          <span class="publication-venue">{{ post.venue }}</span>
+          {% if post.status %}<span class="publication-status">{{ post.status }}</span>{% endif %}
+        </div>
 
-          <div class="publication-links">
-            {% if post.paperurl %}
-              <a href="{{ post.paperurl }}" class="btn btn-paper" target="_blank">Publisher PDF</a>
-            {% endif %}
-            {% if post.pdf %}
-              <a href="{{ post.pdf }}" class="btn btn-pdf" target="_blank">Preprint PDF</a>
-            {% endif %}
-            {% if post.poster %}
-              <a href="{{ post.poster }}" class="btn btn-poster" target="_blank">View Poster</a>
-            {% endif %}
-            {% if post.video %}
-              <a href="{{ post.video }}" class="btn btn-video" target="_blank">Watch Video</a>
-            {% endif %}
-            {% if post.code %}
-              <a href="{{ post.code }}" class="btn btn-code" target="_blank">View Code</a>
-            {% endif %}
-            {% if post.demo %}
-              <a href="{{ post.demo }}" class="btn btn-demo" target="_blank">Live Demo</a>
-            {% endif %}
-            <a href="{{ post.permalink }}" class="btn btn-info">More Info</a>
-          </div>
+        <h2 class="publication-title"><a href="{{ post.permalink }}" class="publication-link">{{ post.title }}</a></h2>
+        <p class="publication-excerpt">{{ post.excerpt }}</p>
 
-          <p><strong>Recommended Citation:</strong> {{ post.citation }}</p>
+        <div class="publication-links">
+          {% if post.paperurl %}
+            <a href="{{ post.paperurl }}" class="btn btn-paper" target="_blank" rel="noopener">Publisher PDF</a>
+          {% endif %}
+          {% if post.pdf %}
+            <a href="{{ post.pdf }}" class="btn btn-pdf" target="_blank" rel="noopener">Preprint</a>
+          {% endif %}
+          {% if post.poster %}
+            <a href="{{ post.poster }}" class="btn btn-poster" target="_blank" rel="noopener">Poster</a>
+          {% endif %}
+          {% if post.video %}
+            <a href="{{ post.video }}" class="btn btn-video" target="_blank" rel="noopener">Video</a>
+          {% endif %}
+          {% if post.code %}
+            <a href="{{ post.code }}" class="btn btn-code" target="_blank" rel="noopener">Code</a>
+          {% endif %}
+          {% if post.demo %}
+            <a href="{{ post.demo }}" class="btn btn-demo" target="_blank" rel="noopener">Live Demo</a>
+          {% endif %}
+          <a href="{{ post.permalink }}" class="btn btn-info">More Info</a>
+        </div>
+
+        <details class="publication-citation">
+          <summary>Recommended citation</summary>
+          <p>{{ post.citation }}</p>
+        </details>
 
         {% if post.bibtex %}
         <div class="bibtex-wrapper">
@@ -75,9 +80,7 @@ layout: default
         </div>
         {% endif %}
       </div>
-
-      <hr class="publication-separator">
     {% endfor %}
+    </div>
   </div>
 </div>
-
