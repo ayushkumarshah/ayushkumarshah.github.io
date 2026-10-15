@@ -16,7 +16,7 @@
   type: Demo
   event: "48th International ACM SIGIR Conference (SIGIR 2025), Demo & Poster Session"
   location: "Padua, Italy"
-  description: "Demo of ReactionMiner, which searches reaction descriptions in PDF documents using text and chemical structures (SMILES/SMARTS)."
+  description: "Demo of ReactionMiner, which searches reaction descriptions in PDF documents using text and chemical structures (SMILES/SMARTS). Presented in person by co-author Patrick Philippy."
   links:
     - label: Poster
       url: /files/reaction-search-poster.pdf
@@ -110,8 +110,8 @@
   display_date: "June 2024"
   title: "Intro to AI: Exploring Fundamentals, Research, and Career Opportunities"
   type: Webinar
-  event: "AI Webinar for students"
-  location: "Online"
+  event: "AI Webinar, PANA Academy"
+  location: "Online · Kathmandu, Nepal"
   description: "An introduction to AI, machine learning, NLP and computer vision, how AI research works, and career paths in AI."
 
 - date: 2023-09-12
