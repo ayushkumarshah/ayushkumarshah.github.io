@@ -20,10 +20,10 @@ understanding, graph neural networks, and multimodal / vision-language models.
 
 ## Recognition
 
-- **IAPR Outstanding Reviewer, ICDAR 2025** (Wuhan, China). Listed among the
+- **IAPR Outstanding Reviewer, ICDAR 2025** (Wuhan, China, September 16, 2025). Listed among the
   conference's outstanding reviewers.
   [View photo](/files/review/icdar2025-outstanding-reviewers.jpg)
-- **Full Member, Sigma Xi, The Scientific Research Honor Society** (elected 2026).
+- **Full Member, Sigma Xi, The Scientific Research Honor Society** (elected January 30, 2026).
   Membership is by nomination and recognizes noteworthy achievement as an
   original investigator.
   [View certificate](/files/review/sigma-xi-certificate.jpg)
