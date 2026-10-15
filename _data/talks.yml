@@ -9,6 +9,9 @@
   event: "Guest Lecture, Fusemachines AI Fellowship 2026"
   location: "Online · Kathmandu, Nepal"
   description: "A practical look at how AI agents are used in industry: the agent landscape, context engineering, autonomy and human oversight, and what actually works in production, for AI fellows in Nepal."
+  links:
+    - label: Slides
+      url: /files/talks/fusemachines-2026-agentic-ai-in-industry.pdf
 
 - date: 2025-07-14
   display_date: "July 14–15, 2025"
@@ -32,6 +35,8 @@
   event: "Ph.D. Dissertation Defense, Rochester Institute of Technology"
   location: "Rochester, NY"
   links:
+    - label: Slides
+      url: /files/talks/phd-defense-2025.pdf
     - label: Dissertation
       url: https://repository.rit.edu/theses/12254/
 
@@ -41,6 +46,9 @@
   type: Poster
   event: "MMLI Research Symposium 2025, “AI Scientists? What Would It Take?!”"
   location: "NCSA, University of Illinois Urbana-Champaign"
+  links:
+    - label: Poster
+      url: /files/talks/mmli-symposium-2025-poster.pdf
 
 - date: 2025-03-27
   display_date: "March 2025"
@@ -113,6 +121,9 @@
   event: "AI Webinar, PANA Academy"
   location: "Online · Kathmandu, Nepal"
   description: "An introduction to AI, machine learning, NLP and computer vision, how AI research works, and career paths in AI."
+  links:
+    - label: Slides
+      url: /files/talks/pana-academy-2024-intro-to-ai.pdf
 
 - date: 2023-09-12
   display_date: "September 12, 2023"
@@ -135,6 +146,8 @@
       url: /files/ICDAR2023.pdf
     - label: Doctoral Consortium Slides
       url: /files/talks/icdar2023-doctoral-consortium.pdf
+    - label: Doctoral Consortium Video
+      url: /files/talks/icdar2023-doctoral-consortium-teaser.mp4
     - label: Teaser Video
       url: /files/lgap-teaser.mp4
     - label: Paper
@@ -146,6 +159,9 @@
   type: Poster
   event: "NSF Annual Review Meeting, Molecule Maker Lab Institute"
   location: "University of Illinois Urbana-Champaign"
+  links:
+    - label: Poster
+      url: /files/talks/nsf-annual-review-2023-poster.pdf
 
 - date: 2023-04-17
   display_date: "April 17, 2023"
@@ -198,9 +214,12 @@
     - label: Paper
       url: /publications/2021-09-01-mathseer-pipeline
 
-- date: 2021-05-01
-  display_date: "May 2021"
-  title: "Recognition of Mathematical Formulas"
+- date: 2021-05-13
+  display_date: "May 13, 2021"
+  title: "Mathematical Formula Recognition"
   type: Defense
   event: "Ph.D. Research Potential Assessment (RPA), Rochester Institute of Technology"
   location: "Rochester, NY"
+  links:
+    - label: Slides
+      url: /files/talks/phd-rpa-2021.pdf

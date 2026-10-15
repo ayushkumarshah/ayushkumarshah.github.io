@@ -88,9 +88,9 @@
 - date: "September, 2021"
   year: 2021
   content: "MathSeer extraction pipeline released. This tool extracts formula locations and content in PDF documents. The pipeline is available from [GitLab](https://gitlab.com/dprl/MathSeer-extraction-pipeline), and includes improved versions of SymbolScraper, ScanSSD (now, ScanSSD-XYc), and QD-GGA. The pipeline was prepared by **Ayush K. Shah**, Abhisek Dey, Matt Langsenkamp, and Prof. Zanibbi."
-- date: "May 2021"
+- date: "May 13, 2021"
   year: 2021
-  content: 'Successfully defended and passed my **Ph.D. Research Potential Assessment (RPA)** on **"Recognition of Mathematical Formulas"**'
+  content: 'Successfully defended and passed my **Ph.D. Research Potential Assessment (RPA)** on **"Mathematical Formula Recognition"**. [Slides](/files/talks/phd-rpa-2021.pdf)'
 - date: "April 2021"
   year: 2021
   content: "Our [paper](https://shahayush.com/publications/2021-09-01-mathseer-pipeline) on the **\"MathSeer formula extraction and evaluation pipeline\"** has been accepted for publication at the 16th International Conference on Document Analysis and Recognition, [ICDAR 2021](https://icdar2021.org/), Lausanne, Switzerland."
