@@ -436,7 +436,7 @@ html[data-theme="dark"] .prose code{background:var(--amber-light)}
   /* ---------- theme toggle ---------- */
   var root = document.documentElement;
   var saved = null;
-  try { saved = localStorage.getItem('akx-theme'); } catch (e) {}
+  try { saved = localStorage.getItem('theme') || localStorage.getItem('akx-theme'); } catch (e) {}
   if (saved) {
     root.setAttribute('data-theme', saved);
   } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -445,7 +445,7 @@ html[data-theme="dark"] .prose code{background:var(--amber-light)}
   document.getElementById('themeBtn').addEventListener('click', function () {
     var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
-    try { localStorage.setItem('akx-theme', next); } catch (e) {}
+    try { localStorage.setItem('theme', next); } catch (e) {}
   });
 })();
 </script>

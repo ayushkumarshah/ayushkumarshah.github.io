@@ -190,6 +190,19 @@ pre, .highlight, div.highlighter-rouge, figure.highlight {
   border-radius: 10px;
 }
 
+/* code boxes outside blog posts (e.g. publication pages) */
+div.highlighter-rouge, figure.highlight {
+  background-color: var(--code-bg);
+  border-color: var(--border);
+  box-shadow: none;
+
+  &:before {
+    background-color: var(--surface-2);
+    color: var(--text-muted);
+    border-radius: 0 10px 0 8px;
+  }
+}
+
 /* ==========================================================================
    Masthead / tab bar
    ========================================================================== */
@@ -369,8 +382,9 @@ pre, .highlight, div.highlighter-rouge, figure.highlight {
 
   .author__name {
     font-family: "Source Serif 4", Georgia, serif;
-    font-size: 1.15em;
+    font-size: 0.98em;
     line-height: 1.25;
+    letter-spacing: -0.01em;
     color: var(--heading);
   }
 
@@ -394,7 +408,23 @@ pre, .highlight, div.highlighter-rouge, figure.highlight {
 }
 
 @media (min-width: 925px) {
-  .author__avatar img { padding: 4px; border: 0; }
+  .author__avatar img { padding: 4px; border: 0; max-width: 165px; }
+  .author__avatar { text-align: center; }
+
+  /* wider profile column so the name and location fit */
+  #main > .sidebar {
+    width: 20%;
+    margin-right: 0;
+  }
+
+  #main > .archive,
+  #main > .page {
+    float: right;
+    width: 76%;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   .sidebar {
     padding: 1.1em 0.9em 1em;

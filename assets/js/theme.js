@@ -82,7 +82,7 @@
   document.body.appendChild(topBtn);
 
   var progress = null;
-  var article = document.querySelector('article.page .page__content');
+  var article = document.querySelector('.post-prose, article.page .page__content');
   if (article && /^\/\d{4}\/\d{2}\//.test(path)) {
     progress = document.createElement('div');
     progress.className = 'reading-progress';

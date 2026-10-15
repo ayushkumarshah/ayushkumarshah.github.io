@@ -18,9 +18,8 @@ Luckily, there is a type of quick hack or technique, whatever you may call it, w
 
 ![Clean notebook](/assets/img/sample/clean_nb.png)
 
-> Note: Dark mode is available on this website. You can switch between the modes by clicking the leftmost button at the bottom of the left sidebar.
+> Note: Dark mode is available on this website. Use the round theme button at the top right of the page to switch between system, light and dark modes.
 
-  ![dark_mode](/assets/img/sample/dark_mode.png)
 
 # Untitled12.ipynb
 

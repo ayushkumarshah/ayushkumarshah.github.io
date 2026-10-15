@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<div id="main" class="post-shell" role="main">
+  <main class="post-main">
+    <header class="post-hero">
+      {% if page.categories.size > 0 %}
+        <div class="post-eyebrow">{{ page.categories | first | replace: '-', ' ' }}</div>
+      {% endif %}
+      <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
+      {% if page.summary %}<p class="post-standfirst">{{ page.summary }}</p>{% endif %}
+
+      <div class="post-byline">
+        <img class="post-avatar" src="{{ site.author.avatar | prepend: '/images/' | prepend: base_path }}" alt="{{ site.author.name }}">
+        <div>
+          <a class="post-author" href="{{ base_path }}/">{{ site.author.name }}</a>
+          <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+            <span class="post-dot"></span>
+            <span id="post-readtime">{% include read-time.html %}</span>
+          </div>
+        </div>
+      </div>
+
+      {% if page.tags.size > 0 %}
+      <div class="post-tags">
+        {% for t in page.tags %}<span class="post-tag">{{ t }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    <article class="post-prose" id="post-prose" itemprop="articleBody">
+      {{ content }}
+    </article>
+
+    {% if page.previous or page.next %}
+    <nav class="post-pager" aria-label="More posts">
+      {% if page.previous %}
+        <a class="post-pager__link" href="{{ base_path }}{{ page.previous.url }}">
+          <span class="post-pager__label">← Previous</span>
+          <span class="post-pager__title">{{ page.previous.title }}</span>
+        </a>
+      {% else %}<span></span>{% endif %}
+      {% if page.next %}
+        <a class="post-pager__link post-pager__link--next" href="{{ base_path }}{{ page.next.url }}">
+          <span class="post-pager__label">Next →</span>
+          <span class="post-pager__title">{{ page.next.title }}</span>
+        </a>
+      {% endif %}
+    </nav>
+    {% endif %}
+
+    <a class="post-backlink" href="{{ base_path }}/year-archive/">← All blog posts</a>
+  </main>
+
+  <aside class="post-toc" id="post-toc" aria-label="Table of contents">
+    <div class="post-toc__inner">
+      <div class="post-toc__title">On this page</div>
+      <nav class="post-toc__nav" id="post-toc-nav"></nav>
+    </div>
+  </aside>
+</div>
+
+<div class="post-scrim" id="post-scrim"></div>
+<button type="button" class="post-toc-fab" id="post-toc-fab" aria-label="Table of contents" hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+</button>
+
+<script src="{{ base_path }}/assets/js/post.js" defer></script>
