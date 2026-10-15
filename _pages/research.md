@@ -3,33 +3,60 @@ layout: archive
 title: "Research"
 permalink: /research/
 author_profile: true
-excerpt: "Welcome to my research page, where I share my academic interests, current projects, and past research contributions. My work primarily focuses on pattern recognition, graphical structure recognition, computer vision, speaker understanding, large language models, and multi-modal deep learning. Here, you'll find details about my ongoing research, including visual parsers for mathematical and chemical formulas, and past projects that explore innovative methods for document analysis and information retrieval. I’ve also included links to live demos, open-source code, and publications to make my research more accessible and engaging."
+excerpt: "Welcome to my research page. I currently work on post-training of Meta's frontier large language models (Muse), spanning LLM research, speech, audio and music, and coding. Here you'll also find my earlier work on video AI at Meta, speech AI at Amazon, and my Ph.D. research on visual parsers for mathematical and chemical formulas. I’ve also included links to live demos, open-source code, and publications to make my research more accessible and engaging."
 ---
 
-**Research Interests**: 
+**Research Interests**:
 
-Pattern recognition, recognition of graphical structures,
-computer vision, speaker understanding, large language models, multi-modal deep
-learning, natural language processing.
+Large language models (post-training and evaluation), speech, audio and music
+AI, multimodal deep learning, code generation, computer vision, video
+understanding and generation, pattern recognition, and recognition of
+graphical structures.
 
-## Current work:
-My current focus revolves around developing a fast, interpretable visual parser
-for math and chemical formulas. Exploring innovative graph attention-based task
-interaction techniques, I aim to enhance contextual information while
-maintaining a natural and interpretable graph representation to recognize
-graphical notations, including complex math and chemical formulas, across
-various mediums like born-digital PDFs, typeset images, and handwritten strokes.
+## Current work: Frontier LLMs at Meta (Applied AI)
+Since June 2026, I have been a Research Scientist in Meta's **Applied AI (AAI)**
+org, working on the post-training of Meta's frontier large language models,
+the **Muse** family. I contribute across three areas:
 
-<!--My work centers around designing fast, efficient, and interpretable parsers-->
-<!--for recognizing mathematical formulas and chemical diagrams-->
-<!--across multiple formats, including PDFs, typeset images, and-->
-<!--handwritten strokes. Through graph attention-based techniques and the-->
-<!--integration of Large Language Models (LLMs), I aim to enhance how contextual-->
-<!--information is processed while preserving a natural and interpretable graph-->
-<!--representation.-->
+- **LLM research.** Post-training, data curation, and evaluation methods,
+  including reinforcement learning and fine-tuning, that improve the models'
+  reasoning, instruction-following, and multi-turn dialogue.
+- **Speech, audio and music.** My current focus: advancing how the models
+  understand and generate speech, audio, and music.
+- **Coding.** Designing expert-level tasks, benchmarks, and training data that
+  measure capability gaps and strengthen the models' software engineering
+  abilities.
 
-## Past/ongoing research works:
-- [MultiModal Chemical Search](https://reactionminer-demo.platform.moleculemaker.org/reaction-miner),
+A common thread is rigorous measurement: building evaluations that expose
+where capable models still fail, and using those results to improve them.
+
+## Previous work at Meta: Video AI (Media Foundation Video team)
+From July 2025 to May 2026, I designed transformer- and diffusion-based models
+for video enhancement (super-resolution, restoration, denoising), compression,
+quality optimization, and accessibility across Meta's Family of Apps
+(Facebook, Instagram, WhatsApp, Messenger), and collaborated with the **Meta
+Superintelligence Lab** on large vision models (LVMs) for video generation,
+curation, and multimodal understanding.
+
+## Speech AI at Amazon (Alexa Speaker Understanding)
+As an Applied Scientist Intern (2022), I improved Alexa speaker identification
+accuracy by 5% with semi-supervised learning while cutting training time by
+80%, and built clustering-based annotation pipelines that labeled over 10
+million hours of speech data.
+
+## Ph.D. research (RIT, 2020 – 2025)
+My doctoral research at the
+[Document and Pattern Recognition Lab (DPRL)](https://www.cs.rit.edu/~dprl/),
+advised by [Dr. Richard Zanibbi](https://www.cs.rit.edu/~rlaz/), developed
+fast, interpretable visual parsers for math and chemical formulas. Using graph
+attention-based task interaction, I enhanced contextual information while
+keeping a natural and interpretable graph representation, recognizing complex
+notation across born-digital PDFs, typeset images, and handwritten strokes.
+Dissertation:
+[*Parsing of Math Formulas and Chemical Diagrams using Graph-Based Representation and Attention Models*](https://repository.rit.edu/theses/12254/).
+
+### Ph.D. projects
+- [Multimodal Chemical Search](https://reactionminer-demo.platform.moleculemaker.org/reaction-miner),
     A system for searching chemical reactions, molecular structures, and text in
     scientific literature. It integrates text, SMILES, and reaction-based
     queries, linking extracted reaction details with molecular diagrams and
