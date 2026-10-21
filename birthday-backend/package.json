@@ -2,7 +2,7 @@
   "name": "birthday-backend",
   "version": "0.1.0",
   "private": true,
-  "description": "Apps Script authentication and choice backend for the private birthday site",
+  "description": "Apps Script authentication and trusted clock backend for the private birthday site",
   "engines": {
     "node": ">=18"
   },

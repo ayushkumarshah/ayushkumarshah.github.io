@@ -13,15 +13,10 @@ function birthdayLoginResponse(account, token) {
   return { ok: true, token: token, name: account.name };
 }
 
-function birthdayChoiceIsValid(choice) {
-  return ["del-mar", "hyatt"].indexOf(String(choice)) >= 0;
-}
-
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     BIRTHDAY_ACCOUNTS: BIRTHDAY_ACCOUNTS,
     birthdayAccountFor: birthdayAccountFor,
-    birthdayLoginResponse: birthdayLoginResponse,
-    birthdayChoiceIsValid: birthdayChoiceIsValid
+    birthdayLoginResponse: birthdayLoginResponse
   };
 }

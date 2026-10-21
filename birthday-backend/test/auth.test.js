@@ -1,7 +1,6 @@
 const {
   birthdayAccountFor,
-  birthdayLoginResponse,
-  birthdayChoiceIsValid
+  birthdayLoginResponse
 } = require("../src/auth");
 
 describe("birthday authentication helpers", () => {
@@ -17,11 +16,5 @@ describe("birthday authentication helpers", () => {
       token: "TOKEN",
       name: "Saanu"
     });
-  });
-
-  it("accepts only the two displayed destination choices", () => {
-    expect(birthdayChoiceIsValid("del-mar")).toBe(true);
-    expect(birthdayChoiceIsValid("hyatt")).toBe(true);
-    expect(birthdayChoiceIsValid("other")).toBe(false);
   });
 });

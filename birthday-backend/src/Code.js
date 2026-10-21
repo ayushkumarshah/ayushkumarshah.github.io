@@ -3,8 +3,6 @@
 // only in Script Properties; the public frontend receives a token after login.
 
 var BIRTHDAY_SALT = "birthday-app-auth-v1::";
-var BIRTHDAY_CHOICE_KEY = "BIRTHDAY_DESTINATION_CHOICE";
-var BIRTHDAY_CHOICE_AT_KEY = "BIRTHDAY_DESTINATION_CHOICE_AT";
 var BIRTHDAY_PASSWORD_SETUP_KEY = "PASSWORD_SETUP";
 
 function birthdayToken_() {
@@ -62,12 +60,9 @@ function doGet(e) {
   if (!birthdayAuthorized_(parameters.token)) {
     return birthdayJson_({ error: "unauthorized" });
   }
-  var properties = PropertiesService.getScriptProperties();
   return birthdayJson_({
     ok: true,
-    serverTime: new Date().toISOString(),
-    choice: properties.getProperty(BIRTHDAY_CHOICE_KEY) || null,
-    choiceAt: properties.getProperty(BIRTHDAY_CHOICE_AT_KEY) || null
+    serverTime: new Date().toISOString()
   });
 }
 
@@ -95,16 +90,6 @@ function doPost(e) {
     return birthdayJson_({ ok: false, error: "unauthorized" });
   }
 
-  if (payload.action === "saveBirthdayChoice") {
-    if (!birthdayChoiceIsValid(payload.choice)) {
-      return birthdayJson_({ ok: false, error: "bad_choice" });
-    }
-    var properties = PropertiesService.getScriptProperties();
-    properties.setProperty(BIRTHDAY_CHOICE_KEY, String(payload.choice));
-    properties.setProperty(BIRTHDAY_CHOICE_AT_KEY, new Date().toISOString());
-    return birthdayJson_({ ok: true });
-  }
-
   return birthdayJson_({ ok: false, error: "unknown_action" });
 }
 
@@ -114,5 +99,4 @@ function verifyBirthdayBackend() {
   Logger.log("Saanu password set: " + (properties.getProperty("USER_saanu") ? "yes" : "NO"));
   Logger.log("Plain setup password removed: " +
     (properties.getProperty(BIRTHDAY_PASSWORD_SETUP_KEY) ? "NO — remove it" : "yes"));
-  Logger.log("Current choice: " + (properties.getProperty(BIRTHDAY_CHOICE_KEY) || "none"));
 }
