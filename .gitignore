@@ -26,3 +26,6 @@ health-frontend/node_modules/
 
 # Jekyll build output — GitHub Pages builds from source, so it is never served.
 _site/
+
+# Vegas trip — keep local for now
+vegas/
