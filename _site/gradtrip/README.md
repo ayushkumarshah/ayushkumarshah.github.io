@@ -1,1 +1,0 @@
-# grad-trip-website
