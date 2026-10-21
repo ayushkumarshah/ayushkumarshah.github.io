@@ -16,6 +16,7 @@ seattle/plans/.~lock.*
 seattle/plans/~$*
 # Graduation trip — sensitive booking files
 gradtrip/tickets/
+gradtrip/stays/
 
 # Superpowers brainstorming companion (mockups)
 .superpowers/
